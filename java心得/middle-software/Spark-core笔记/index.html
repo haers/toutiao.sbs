@@ -4667,6 +4667,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4781,20 +4795,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10044,7 +10044,7 @@
 <p>1）hadoop：离线处理；对时效性要求不高。</p>
 <p>2）spark：对时效性要求很高的场景，由于基于内存操作，大大加快计算速度。另外可应用机器学习领域。但 Spark 不具有 HDFS 的存储能力，要借助 HDFS 等持久化数据。</p>
 <p>下载地址：</p>
-<p>http://spark.apache.org/downloads.html</p>
+<p><a href="http://spark.apache.org/downloads.html">http://spark.apache.org/downloads.html</a></p>
 <p>spark 支持多种方式连接，可以从上面的官网下载，解压，进行 bin 目录，启动对应的客户端脚本（比如 scala 或者 python），然后就可以在终端敲入代码，执行相应的命令。</p>
 <p>通过 SparkContext 对象访问 Spark，SparkContext 对象代表和一个集群的连接。</p>
 <h4 id="rdd">RDD 常用的转换函数<a class="headerlink" href="#rdd" title="Permanent link">&para;</a></h4>
@@ -10097,18 +10097,18 @@
 <li>persist：通用版的 cache 方法 ，将 RDD 存储在硬盘上或者内存中。persist 支持多种选项：MEMORTY_ONLY、Disk_ONLY、MEMORY_AND_DISK 等</li>
 </ul>
 <h4 id="spark-master-url">传递给 spark 的 master url 可以有如下几种：<a class="headerlink" href="#spark-master-url" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>local 本地单线程
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>local[K] 本地多线程（指定K个内核）
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>local[*] 本地多线程（指定所有可用内核）
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>spark://HOST:PORT 连接到指定的 Spark standalone cluster master，需要指定端口。
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>mesos://HOST:PORT 连接到指定的 Mesos 集群，需要指定端口。
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>yarn-client客户端模式 连接到 YARN 集群。需要配置 HADOOP_CONF_DIR。
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>yarn-cluster集群模式 连接到 YARN 集群。需要配置 HADOOP_CONF_DIR。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>local 本地单线程
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>local[K] 本地多线程（指定K个内核）
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>local[*] 本地多线程（指定所有可用内核）
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>spark://HOST:PORT 连接到指定的 Spark standalone cluster master，需要指定端口。
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>mesos://HOST:PORT 连接到指定的 Mesos 集群，需要指定端口。
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>yarn-client客户端模式 连接到 YARN 集群。需要配置 HADOOP_CONF_DIR。
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>yarn-cluster集群模式 连接到 YARN 集群。需要配置 HADOOP_CONF_DIR。
+</span></code></pre></div>
 <h4 id="_4">参考资料<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <ul>
-<li>http://www.cnblogs.com/zhoudayang/p/5008010.html</li>
-<li>http://www.cnblogs.com/tovin/p/3832405.html</li>
+<li><a href="http://www.cnblogs.com/zhoudayang/p/5008010.html">http://www.cnblogs.com/zhoudayang/p/5008010.html</a></li>
+<li><a href="http://www.cnblogs.com/tovin/p/3832405.html">http://www.cnblogs.com/tovin/p/3832405.html</a></li>
 <li><a href="https://mp.weixin.qq.com/s/QCtiRWZhy9xlTqUFUAx3EQ">超实用的 Spark 数据倾斜解决姿势</a></li>
 </ul>
 
@@ -10196,6 +10196,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

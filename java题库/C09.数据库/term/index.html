@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9824,7 +9824,7 @@
 </ul>
 <p>TTL 是 Time To Live 的缩写，该字段指定 IP 包被路由器丢弃之前允许通过的最大网段数量。
 TTL 是 IPv4 报头的一个 8 bit 字段。</p>
-<div class="highlight"><pre><span></span><code>注意：TTL与DNS TTL有区别。二者都是生存时间，前者指ICMP包的转发次数（跳数），后者指域名解析信息在DNS中的存在时间。
+<div class="language-text highlight"><pre><span></span><code>注意：TTL与DNS TTL有区别。二者都是生存时间，前者指ICMP包的转发次数（跳数），后者指域名解析信息在DNS中的存在时间。
 </code></pre></div>
 <p>TTL 的作用是限制 IP 数据包在计算机网络中的存在的时间。TTL 的最大值是 255，TTL 的一个推荐值是 64。</p>
 <p>虽然 TTL 从字面上翻译，是可以存活的时间，但实际上 TTL 是 IP 数据包在计算机网络中可以转发的最大跳数。TTL 字段由 IP 数据包的发送者设置，在 IP 数据包从源到目的的整个转发路径上，每经过一个路由器，路由器都会修改这个 TTL 字段值，具体的做法是把该 TTL 的值减 1，然后再将 IP 包转发出去。如果在 IP 包到达目的 IP 之前，TTL 减少为 0，路由器将会丢弃收到的 TTL=0 的 IP 包并向 IP 包的发送者发送 ICMP time exceeded 消息。</p>
@@ -9949,6 +9949,12 @@ TTL 是 IPv4 报头的一个 8 bit 字段。</p>
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

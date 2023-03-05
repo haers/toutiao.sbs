@@ -4742,6 +4742,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4856,20 +4870,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10164,7 +10164,7 @@
 <li><a href="#参考资料">参考资料</a></li>
 </ul>
 <h4 id="1-id">1.分布式 id 如何生成？<a class="headerlink" href="#1-id" title="Permanent link">&para;</a></h4>
-<p>详见：https://mp.weixin.qq.com/s/eakphQDWKrsUnIwTj8zMQA</p>
+<p>详见：<a href="https://mp.weixin.qq.com/s/eakphQDWKrsUnIwTj8zMQA">https://mp.weixin.qq.com/s/eakphQDWKrsUnIwTj8zMQA</a></p>
 <h4 id="2">2.雪花算法了解过吗？<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
 <p>雪花算法生成的是 Long 类型的 ID，一个 Long 类型占 8 个字节，每个字节占 8 比特，也就是说一个 Long 类型占 64 个比特。 雪花 ID 组成结构：正数位（占 1 比特）+ 时间戳（占 41 比特）+ 机器 ID（占 5 比特）+ 数据中心（占 5 比特）+ 自增值（占 12 比特），总共 64 比特组成的一个 Long 类型。 第一个 bit 位（1bit）：Java 中 long 的最高位是符号位代表正负，正数是 0，负数是 1，一般生成 ID 都为正数，所以默认为 0。 时间戳部分（41bit）：毫秒级的时间，不建议存当前时间戳，而是用（当前时间戳 - 固定开始时间戳）的差值，可以使产生的 ID 从更小的值开始；41 位的时间戳可以使用 69 年，(1L &lt;&lt; 41) / (1000L _ 60 _ 60 _ 24 _ 365) = 69 年 工作机器 id（10bit）：也被叫做 workId，这个可以灵活配置，机房或者机器号组合都可以。 序列号部分（12bit），自增值支持同一毫秒内同一个节点可以生成 4096 个 ID</p>
 <h4 id="3-cap">3.什么是 CAP 定理？<a class="headerlink" href="#3-cap" title="Permanent link">&para;</a></h4>
@@ -10177,11 +10177,11 @@
 <h4 id="6tcc">6.TCC 了解过吗？<a class="headerlink" href="#6tcc" title="Permanent link">&para;</a></h4>
 <p>try,commit,cancel 的缩写,try 阶段进行检测,commit 提交执行,只要 try 阶段成功了 commit 就一定会被执行,cancel 业务出现错误时执行,回滚事务,释放资源.</p>
 <h4 id="7paxos">7.Paxos 算法了解过吗？<a class="headerlink" href="#7paxos" title="Permanent link">&para;</a></h4>
-<p>详见：https://blog.csdn.net/westbrookliu/article/details/99713365</p>
+<p>详见：<a href="https://blog.csdn.net/westbrookliu/article/details/99713365">https://blog.csdn.net/westbrookliu/article/details/99713365</a></p>
 <h4 id="8zookeeper-zab">8.Zookeeper 的 Zab 协议了解过吗？<a class="headerlink" href="#8zookeeper-zab" title="Permanent link">&para;</a></h4>
-<p>详见：https://blog.csdn.net/liuchang19950703/article/details/111406622</p>
+<p>详见：<a href="https://blog.csdn.net/liuchang19950703/article/details/111406622">https://blog.csdn.net/liuchang19950703/article/details/111406622</a></p>
 <h4 id="9-gossip">9.知道什么是 Gossip 协议吗？<a class="headerlink" href="#9-gossip" title="Permanent link">&para;</a></h4>
-<p>详见：https://mp.weixin.qq.com/s/dW0I29Sw86lU0qHpxyhdmw</p>
+<p>详见：<a href="https://mp.weixin.qq.com/s/dW0I29Sw86lU0qHpxyhdmw">https://mp.weixin.qq.com/s/dW0I29Sw86lU0qHpxyhdmw</a></p>
 <h4 id="10">10.了解过哪些负载均衡算法？<a class="headerlink" href="#10" title="Permanent link">&para;</a></h4>
 <p>轮询（Round Robin）
 轮询算法把每个请求轮流发送到每个服务器上。
@@ -10289,9 +10289,9 @@ Terracotta 的基本原理是对于集群间共享的数据，当在一个节点
 微服务由于粒度更细,所以微服务架构的耦合度相对于 SOA 架构的耦合度更低.
 微服务的服务规模相较于 SOA 一般要更大,所能承载的并发量也更高.</p>
 <h3 id="_2">参考资料<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>https://www.cnblogs.com/workstation-nigoudongma/p/9546801.html
-https://blog.csdn.net/zgsxhdzxl/article/details/104414475
-https://blog.csdn.net/lovexiaotaozi/article/details/89713937</p>
+<p><a href="https://www.cnblogs.com/workstation-nigoudongma/p/9546801.html">https://www.cnblogs.com/workstation-nigoudongma/p/9546801.html</a>
+<a href="https://blog.csdn.net/zgsxhdzxl/article/details/104414475">https://blog.csdn.net/zgsxhdzxl/article/details/104414475</a>
+<a href="https://blog.csdn.net/lovexiaotaozi/article/details/89713937">https://blog.csdn.net/lovexiaotaozi/article/details/89713937</a></p>
 
 
 
@@ -10377,6 +10377,12 @@ https://blog.csdn.net/lovexiaotaozi/article/details/89713937</p>
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

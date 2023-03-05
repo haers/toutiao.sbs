@@ -4632,6 +4632,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4746,20 +4760,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9921,32 +9921,32 @@
 <h2 id="fastjson">fastJson 相关<a class="headerlink" href="#fastjson" title="Permanent link">&para;</a></h2>
 <hr />
 <h3 id="pom">pom 依赖<a class="headerlink" href="#pom" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;dependency&gt;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &lt;version&gt;1.1.41&lt;/version&gt;
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>&lt;/dependency&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;dependency&gt;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &lt;version&gt;1.1.41&lt;/version&gt;
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>&lt;/dependency&gt;
+</span></code></pre></div>
 <h3 id="_1">一、介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>fastjson 是阿里的一个开源二方库，用于对象和 json 串之间的转换，是目前 Java 语言中最快的 JSON 库。接口简单易用，已经被广泛使用在缓存序列化、协议交互、Web 输出、Android 客户端等多种应用场景。</p>
 <h3 id="_2">二、常用的工具类<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>对象转换为字符串</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>com.alibaba.fastjson.JSON.toJSONString(Object)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>com.alibaba.fastjson.JSON.toJSONString(Object)
+</span></code></pre></div>
 <ul>
 <li>字符串反序列化为 Object</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>com.alibaba.fastjson.JSON.parseObject(String, Class&lt;ForumCache&gt;)
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>例子：https://github.com/alibaba/fastjson/wiki/Samples-DataBind
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>com.alibaba.fastjson.JSON.parseObject(String, Class&lt;ForumCache&gt;)
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>例子：https://github.com/alibaba/fastjson/wiki/Samples-DataBind
+</span></code></pre></div>
 <ul>
 <li>将字符串反序化为 List \<T></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;ForumCache&gt; List&lt;ForumCache&gt; com.alibaba.fastjson.JSONArray.parseArray(String text, Class&lt;ForumCache&gt; clazz)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;ForumCache&gt; List&lt;ForumCache&gt; com.alibaba.fastjson.JSONArray.parseArray(String text, Class&lt;ForumCache&gt; clazz)
+</span></code></pre></div>
 <h3 id="_3">三、手册<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://www.w3cschool.cn/fastjson/fastjson-jsonpath.html">Fastjson 的常用 API 使用例子</a></li>
@@ -10038,6 +10038,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

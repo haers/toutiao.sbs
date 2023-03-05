@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9968,35 +9968,35 @@
 
 <h1 id="topic">查看 Topic 列表、消息消费情况<a class="headerlink" href="#topic" title="Permanent link">&para;</a></h1>
 <h3 id="topic_1">查看所有 topic<a class="headerlink" href="#topic_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./kafka-topics.sh --zookeeper localhost:2181 --list
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./kafka-topics.sh --zookeeper localhost:2181 --list
+</span></code></pre></div>
 <h3 id="kafka-topic">查看 kafka 指定 topic 的详情<a class="headerlink" href="#kafka-topic" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./kafka-topics.sh --zookeeper localhost:2181 --topic topic1 --describe
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./kafka-topics.sh --zookeeper localhost:2181 --topic topic1 --describe
+</span></code></pre></div>
 <h3 id="consumer-group">查看消费者 consumer group 列表<a class="headerlink" href="#consumer-group" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --list
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --list
+</span></code></pre></div>
 <h3 id="consumer-group_1">查看消费者 consumer group 详情<a class="headerlink" href="#consumer-group_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group fooGroup --describe
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group fooGroup --describe
+</span></code></pre></div>
 <h3 id="_1">创建主题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+</span></code></pre></div>
 <h3 id="_2">从头读取消息<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./kafka-console-consumer.sh --topic topic1 --from-beginning --bootstrap-server localhost:9092
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./kafka-console-consumer.sh --topic topic1 --from-beginning --bootstrap-server localhost:9092
+</span></code></pre></div>
 <h3 id="kafka">删除本地 Kafka 环境的任何数据，包括创建的所有事件<a class="headerlink" href="#kafka" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    rm -rf /tmp/kafka-logs /tmp/zookeeper
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    rm -rf /tmp/kafka-logs /tmp/zookeeper
+</span></code></pre></div>
 <h3 id="_3">删除组<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --delete --group fooGroup
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --delete --group fooGroup
+</span></code></pre></div>
 <h3 id="_4">验证组的状态<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group fooGroup --state
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group fooGroup --state
+</span></code></pre></div>
 <p>GROUP COORDINATOR (ID) ASSIGNMENT-STRATEGY STATE #MEMBERS</p>
 <p>fooGroup 10.129.34.166:9092 (0) range Stable 1</p>
-<p>如果 #MEMBERS 不为 0 则<strong>删除</strong>组不可执行</p>
+<p>如果 #MEMBERS 不为 0 则**删除**组不可执行</p>
 
 
 
@@ -10082,6 +10082,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

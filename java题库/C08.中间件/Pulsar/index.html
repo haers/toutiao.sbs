@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9967,13 +9967,13 @@
 
 
 <h1 id="kafka-pulsar">比拼 Kafka，大数据分析新秀 Pulsar 到底好在哪<a class="headerlink" href="#kafka-pulsar" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>pulsar<span class="w"> </span>-m<span class="w"> </span>200m<span class="w"> </span>-p<span class="w"> </span><span class="m">6650</span>:6650<span class="w">  </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>pulsardata,target<span class="o">=</span>/pulsar/data<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>pulsarconf,target<span class="o">=</span>/pulsar/conf<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asiz/Shanghai<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>apachepulsar/pulsar:2.10.2<span class="w"> </span>bin/pulsar<span class="w"> </span>standalone<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-d<span class="w"> </span>pulsar
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>pulsar<span class="w"> </span>-m<span class="w"> </span>200m<span class="w"> </span>-p<span class="w"> </span><span class="m">6650</span>:6650<span class="w">  </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>pulsardata,target<span class="o">=</span>/pulsar/data<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>pulsarconf,target<span class="o">=</span>/pulsar/conf<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asiz/Shanghai<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>apachepulsar/pulsar:2.10.2<span class="w"> </span>bin/pulsar<span class="w"> </span>standalone<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-d<span class="w"> </span>pulsar
+</span></code></pre></div>
 <p>Apache Pulsar 和 Apache Kafka 到底有什么不同？今天，<strong>万众期待的对比文终于来了！</strong> 本文将详述 Pulsar 和 Kafka 消息模型之间的区别，以及 Pulsar 与 Kafka 在系统架构设计方面的差异。</p>
 <p>在用户选择一个消息系统时，消息模型是用户首先考虑的事情。消息模型应涵盖以下 3 个方面：</p>
 <ol>
@@ -10012,7 +10012,7 @@
 <p><strong>共享订阅（Queue 队列模型）</strong></p>
 <p>使用共享订阅，在同一个订阅背后，用户按照应用的需求挂载任意多的消费者。 订阅中的所有消息以循环分发形式发送给订阅背后的多个消费者，并且一个消息仅传递给一个消费者。</p>
 <p>当消费者断开连接时，所有传递给它但是未被确认（ack）的消息将被重新分配和组织，以便发送给该订阅上剩余的剩余消费者。</p>
-<p>下图是共享订阅的示例。 消费者 C-1，C-2 和 C-3 都在同一主题上消费消息。 每个消费者接收大约所有消息的 1/3。</p>
+<p>下图是共享订阅的示例。 消费者 C-1，C-2 和 C-3 都在同一主题上消费消息。 每个消费者接收大约所有消息的 &#8531;。</p>
 <p>如果想提高消费的速度，用户不需要不增加分区数量，只需要在同一个订阅中添加更多的消费者。</p>
 <p><img alt="img" src="https://pic2.zhimg.com/80/v2-436228c2a460aeb6cc04cb9939f28cf1_1440w.jpg" /></p>
 <p><strong>三种订阅模式的选择</strong></p>
@@ -10221,6 +10221,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

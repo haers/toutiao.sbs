@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10360,24 +10360,24 @@
 
 <h1 id="nginx">nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h1>
 <h3 id="docker">docker 安装<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ngnix
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>nginx<span class="w"> </span>-m<span class="w"> </span>200m<span class="w"> </span>-p<span class="w"> </span><span class="m">80</span>:80<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-v<span class="w"> </span>/Users/apple/DockerFile/nginx/nginx.conf:/etc/nginx/nginx.conf<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>-v<span class="w"> </span>/Users/apple/DockerFile/nginx/conf:/etc/nginx/conf.d<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>-v<span class="w"> </span>/Users/apple/DockerFile/nginx/html:/usr/share/nginx/html<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-d<span class="w"> </span>nginx
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker cp ecstatic_jepsen:/etc/nginx/nginx.conf /Users/apple/DockerFile/nginx/
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker cp ecstatic_jepsen:/etc/nginx/conf.d /Users/apple/DockerFile/nginx/conf
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ngnix
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>nginx<span class="w"> </span>-m<span class="w"> </span>200m<span class="w"> </span>-p<span class="w"> </span><span class="m">80</span>:80<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-v<span class="w"> </span>/Users/apple/DockerFile/nginx/nginx.conf:/etc/nginx/nginx.conf<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>-v<span class="w"> </span>/Users/apple/DockerFile/nginx/conf:/etc/nginx/conf.d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>-v<span class="w"> </span>/Users/apple/DockerFile/nginx/html:/usr/share/nginx/html<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-d<span class="w"> </span>nginx
+</span></code></pre></div>
+<div class="language-Text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker cp ecstatic_jepsen:/etc/nginx/nginx.conf /Users/apple/DockerFile/nginx/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker cp ecstatic_jepsen:/etc/nginx/conf.d /Users/apple/DockerFile/nginx/conf
+</span></code></pre></div>
 <h3 id="_1">静态资源解决跨域<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>server {
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>                listen          80;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>                add_header &#39;Access-Control-Allow-Origin&#39; &#39;*&#39;;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>server {
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>                listen          80;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>                add_header &#39;Access-Control-Allow-Origin&#39; &#39;*&#39;;
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        }
+</span></code></pre></div>
 <h2 id="nginx_1">为什么使用 nginx？<a class="headerlink" href="#nginx_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>限制其托管应用程序的对外公开部分</li>
@@ -10492,11 +10492,11 @@
 <h4 id="_7">详细内容，参考：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <h6 id="select-poll-epoll">select poll epoll 三者之间的比较<a class="headerlink" href="#select-poll-epoll" title="Permanent link">&para;</a></h6>
 <p>select/poll 系统调用：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="l l-Scalar l-Scalar-Plain">// select 系统调用</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="l l-Scalar l-Scalar-Plain">int select(int maxfdp,fd_set *readfds,fd_set *writefds,fd_set *errorfds,struct timeval *timeout);</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="l l-Scalar l-Scalar-Plain">// poll 系统调用</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="l l-Scalar l-Scalar-Plain">int poll(struct pollfd fds[], nfds_t nfds, int timeout)；</span>
-</code></pre></div>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="l l-Scalar l-Scalar-Plain">// select 系统调用</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="l l-Scalar l-Scalar-Plain">int select(int maxfdp,fd_set *readfds,fd_set *writefds,fd_set *errorfds,struct timeval *timeout);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="l l-Scalar l-Scalar-Plain">// poll 系统调用</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="l l-Scalar l-Scalar-Plain">int poll(struct pollfd fds[], nfds_t nfds, int timeout)；</span>
+</span></code></pre></div>
 <p><strong>select</strong></p>
 <ul>
 <li>查询 fd_set 中，是否有就绪的 fd，可以设定一个超时时间，当有 fd (File descripter) 就绪或超时返回；</li>
@@ -10594,11 +10594,11 @@
 <p><strong>第三：我们可以在 Nginx 下把静态资源、日志文件归属到不同域名下（也即是目录），这样方便管理维护。</strong></p>
 <p><strong>第四：Nginx 可以进行 IP 访问控制，有些电商平台，就可以在 Nginx 这一层，做一下处理，内置一个黑名单模块，那么就不必等请求通过 Nginx 达到后端在进行拦截，而是直接在 Nginx 这一层就处理掉。</strong></p>
 <h2 id="proxy_pass">反向代理【proxy_pass】<a class="headerlink" href="#proxy_pass" title="Permanent link">&para;</a></h2>
-<p>所谓反向代理，很简单，其实就是在 location 这一段配置中的 root 替换成<strong>proxy_pass</strong>即可。root 说明是静态资源，可以由 Nginx 进行返回；而 proxy_pass 说明是动态请求，需要进行转发，比如代理到 Tomcat 上。</p>
-<p>反向代理，上面已经说了，过程是透明的，比如说 request -&gt; Nginx -&gt; Tomcat，那么对于 Tomcat 而言，请求的 IP 地址就是 Nginx 的地址，而非真实的 request 地址，这一点需要注意。不过好在 Nginx 不仅仅可以反向代理请求，还可以由用户<strong>自定义设置 HTTP HEADER</strong>。</p>
+<p>所谓反向代理，很简单，其实就是在 location 这一段配置中的 root 替换成**proxy_pass**即可。root 说明是静态资源，可以由 Nginx 进行返回；而 proxy_pass 说明是动态请求，需要进行转发，比如代理到 Tomcat 上。</p>
+<p>反向代理，上面已经说了，过程是透明的，比如说 request -&gt; Nginx -&gt; Tomcat，那么对于 Tomcat 而言，请求的 IP 地址就是 Nginx 的地址，而非真实的 request 地址，这一点需要注意。不过好在 Nginx 不仅仅可以反向代理请求，还可以由用户**自定义设置 HTTP HEADER**。</p>
 <h2 id="upstream">负载均衡【upstream】<a class="headerlink" href="#upstream" title="Permanent link">&para;</a></h2>
 <p>上面的反向代理中，我们通过 proxy_pass 来指定 Tomcat 的地址，很显然我们只能指定一台 Tomcat 地址，那么我们如果想指定多台来达到负载均衡呢？</p>
-<p>第一，通过<strong>upstream</strong>来定义一组 Tomcat，并指定负载策略（IPHASH、加权论调、最少连接），健康检查策略（Nginx 可以监控这一组 Tomcat 的状态）等。</p>
+<p>第一，通过**upstream**来定义一组 Tomcat，并指定负载策略（IPHASH、加权论调、最少连接），健康检查策略（Nginx 可以监控这一组 Tomcat 的状态）等。</p>
 <p>第二，将 proxy_pass 替换成 upstream 指定的值即可。</p>
 <p><strong>负载均衡可能带来的问题？</strong></p>
 <p>负载均衡所带来的明显的问题是，一个请求，可以到 A server，也可以到 B server，这完全不受我们的控制，当然这也不是什么问题，只是我们得注意的是：<strong>用户状态的保存问题，如 Session 会话信息，不能在保存到服务器上。</strong></p>
@@ -10689,6 +10689,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

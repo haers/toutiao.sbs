@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9993,7 +9993,7 @@
 <h1 id="_1">垃圾回收<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">一个对象什么时候才能被回收<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h4 id="_3">怎样判断一个对象“已死”？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>在堆里面存放着 Java 世界中几乎所有的对象实例，垃圾收集器在对堆进行回收前，
+<div class="language-text highlight"><pre><span></span><code>在堆里面存放着 Java 世界中几乎所有的对象实例，垃圾收集器在对堆进行回收前，
 第一件事情就是要确定这些对象之中哪些还“存活”着，哪些已经“死去”（即不可能再被任何途径使用的对象）。
 </code></pre></div>
 <p>那么怎么判断一个对象“已死”呢，目前有两种算法可以判断对象“已死”。</p>
@@ -10018,7 +10018,7 @@
 <li>本地方法栈中 JNI（即一般说的 Native 方法）引用的对象。</li>
 </ul>
 <h4 id="_6">引用的分类<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>无论是通过引用计数算法判断对象的引用数量，还是通过可达性分析判断对象的引用链是否可达，判断对象是否存活都与“引用”有关。
+<div class="language-text highlight"><pre><span></span><code>无论是通过引用计数算法判断对象的引用数量，还是通过可达性分析判断对象的引用链是否可达，判断对象是否存活都与“引用”有关。
 </code></pre></div>
 <p>在 JDK 1.2 之后，Java 对引用的概念进行了扩充，将引用分为强引用（Strong Reference）、软引用（Soft Reference）、弱引用（Weak Reference）、虚引用（Phantom Reference） 4 种，这 4 种引用强度一次逐渐减弱。</p>
 <ul>
@@ -10034,7 +10034,7 @@
 <li>虚引用也成为幽灵引用或者幻影引用，它是最弱的一种引用。一个对象是否有虚引用的存在，完全不会对其生存周期时间构成影响， 也无法通过虚引用来取得一个对象实例。唯一的作用就是能在这个对象被收集器回收时收到一个系统通知。使用 PhantomReference 表示。</li>
 </ul>
 <h4 id="_7">回收方法区数据<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>方法区的垃圾收集主要回收两部分内容：废弃常量和无用的类。
+<div class="language-text highlight"><pre><span></span><code>方法区的垃圾收集主要回收两部分内容：废弃常量和无用的类。
 回收废弃常量与回收 Java 堆中的对象非常类似。
 以常量池中字面量的回收为例，
 假如一个字符串“abc”已经进入了常量池，
@@ -10238,6 +10238,12 @@ GC 并不一定会回收该对象。要完全回收一个对象，
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

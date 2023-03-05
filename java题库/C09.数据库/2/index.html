@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9860,11 +9860,11 @@
 <p>相反，假设我们要向表中插入一条记录 R，如果是先写 redolog 再写 binlog，那么假设 redolog 写完后崩溃了，此时 binlog 还没写。那么重启恢复的时候也会出问题：redolog 中已经有 R 的记录了，所以崩溃恢复之后，插入 R 记录的这个事务是有效的，通过该记录将数据恢复到数据库中；但是 binlog 中还没有关于 R 的记录，所以当从机从主机同步数据的时候或者我们使用 binlog 恢复数据的时候，就不会同步到 R 这条记录，这就造成了数据不一致。</p>
 <p>那么按照前面说的两阶段提交就能解决问题吗？</p>
 <p>我们来看如下三种情况：</p>
-<p><strong>情况一：</strong>一阶段提交之后崩溃了，即写入 redo log，处于 prepare 状态 的时候崩溃了，此时：</p>
+<p>**情况一：**一阶段提交之后崩溃了，即写入 redo log，处于 prepare 状态 的时候崩溃了，此时：</p>
 <p>由于 binlog 还没写，redo log 处于 prepare 状态还没提交，所以崩溃恢复的时候，这个事务会回滚，此时 binlog 还没写，所以也不会传到备库。</p>
-<p><strong>情况二：</strong>假设写完 binlog 之后崩溃了，此时：</p>
+<p>**情况二：**假设写完 binlog 之后崩溃了，此时：</p>
 <p>redolog 中的日志是不完整的，处于 prepare 状态，还没有提交，那么恢复的时候，首先检查 binlog 中的事务是否存在并且完整，如果存在且完整，则直接提交事务，如果不存在或者不完整，则回滚事务。</p>
-<p><strong>情况三：</strong>假设 redolog 处于 commit 状态的时候崩溃了，那么重启后的处理方案同情况二。</p>
+<p>**情况三：**假设 redolog 处于 commit 状态的时候崩溃了，那么重启后的处理方案同情况二。</p>
 <p>由此可见，两阶段提交能够确保数据的一致性。</p>
 <p>一条 SQL 更新语句执行流程
 让我们通过一条语句看一下 binlog、redo log、updo log 是如何联动的。更新语句真正的执行流程要比下面列的复杂的多，只说核心流程，方便理解。《MySQL45 讲》中对于这部分讲解缺乏一些细节，这里也做了补充。</p>
@@ -9965,6 +9965,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

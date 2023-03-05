@@ -4734,6 +4734,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4848,20 +4862,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10137,23 +10137,23 @@
 </ul>
 <h3 id="_3">分类<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <h5 id="1">1.惰性求值方法<a class="headerlink" href="#1" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>lists.stream().filter(f -&gt; f.getName().equals(&quot;p1&quot;))
-</code></pre></div>
-<p>如上示例，这行代码并未做什么实际性的工作，filter 只是<strong>描述</strong>了 Stream，<strong>没有产生新的集合</strong>。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>lists.stream().filter(f -&gt; f.getName().equals(&quot;p1&quot;))
+</span></code></pre></div>
+<p>如上示例，这行代码并未做什么实际性的工作，filter 只是**描述**了 Stream，<strong>没有产生新的集合</strong>。</p>
 <p>如果是多个条件组合，可以通过代码块{}</p>
 <h5 id="2">2.及早求值方法<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>List&lt;Persion&gt; list2 = lists.stream().filter(f -&gt; f.getName().equals(&quot;p1&quot;)).collect(Collectors.toList());
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>List&lt;Persion&gt; list2 = lists.stream().filter(f -&gt; f.getName().equals(&quot;p1&quot;)).collect(Collectors.toList());
+</span></code></pre></div>
 <p>如上示例，collect 最终会从 Stream 产生新值，拥有终止操作。</p>
 <p>理想方式是形成一个惰性求值的链，最后用一个及早求值的操作返回想要的结果。与建造者模式相似，建造者模式先是使用一系列操作设置属性和配置，最后调用 build 方法，创建对象。</p>
 <h3 id="_4">常用方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <h5 id="1collectcollectorstolist">1.collect(Collectors.toList())<a class="headerlink" href="#1collectcollectorstolist" title="Permanent link">&para;</a></h5>
 <p>Stream 流生成一个 List 列表</p>
 <p>Collectors.toSet() ，生成 set 集合。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Collectors.toMap(MemberModel::getUid, Function.identity())
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Function.identity() 表示遍历的对象
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Collectors.toMap(MemberModel::getUid, Function.identity())
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Function.identity() 表示遍历的对象
+</span></code></pre></div>
 <p>Collectors 里提供了很多方法，比如字符串拼接。</p>
 <h5 id="2map">2.map<a class="headerlink" href="#2map" title="Permanent link">&para;</a></h5>
 <p>将一种类型转换成另外一种类型</p>
@@ -10162,8 +10162,8 @@
 <p>true：保留；false：扔掉。</p>
 <h5 id="4flatmap">4.flatMap<a class="headerlink" href="#4flatmap" title="Permanent link">&para;</a></h5>
 <p>将多个 Stream 连接成一个 Stream</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> List&lt;Integer&gt; result= Stream.of(Arrays.asList(1,3),Arrays.asList(5,6)).flatMap(a-&gt;a.stream()).collect(Collectors.toList());
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> List&lt;Integer&gt; result= Stream.of(Arrays.asList(1,3),Arrays.asList(5,6)).flatMap(a-&gt;a.stream()).collect(Collectors.toList());
+</span></code></pre></div>
 <p>结果： [1, 3, 5, 6]</p>
 <h5 id="5distinct">5.distinct<a class="headerlink" href="#5distinct" title="Permanent link">&para;</a></h5>
 <p>去重</p>
@@ -10171,112 +10171,112 @@
 <p>计总数</p>
 <h5 id="7minmax">7.min,max<a class="headerlink" href="#7minmax" title="Permanent link">&para;</a></h5>
 <p>最小值，最大值</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>List&lt;Persion&gt; lists = new ArrayList&lt;Persion&gt;();
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>lists.add(new Persion(1L, &quot;p1&quot;));
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>lists.add(new Persion(2L, &quot;p2&quot;));
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>lists.add(new Persion(3L, &quot;p3&quot;));
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>lists.add(new Persion(4L, &quot;p4&quot;));
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Persion a = lists.stream().max(Comparator.comparing(t -&gt; t.getId())).get();
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>System.out.println(a.getId());
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>List&lt;Persion&gt; lists = new ArrayList&lt;Persion&gt;();
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>lists.add(new Persion(1L, &quot;p1&quot;));
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>lists.add(new Persion(2L, &quot;p2&quot;));
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>lists.add(new Persion(3L, &quot;p3&quot;));
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>lists.add(new Persion(4L, &quot;p4&quot;));
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Persion a = lists.stream().max(Comparator.comparing(t -&gt; t.getId())).get();
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>System.out.println(a.getId());
+</span></code></pre></div>
 <p>如果比较器涉及多个条件，比较复杂，可以定制</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> Persion a = lists.stream().min(new Comparator&lt;Persion&gt;() {
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>      @Override
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>      public int compare(Persion o1, Persion o2) {
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>           if (o1.getId() &gt; o2.getId()) return -1;
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>           if (o1.getId() &lt; o2.getId()) return 1;
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>           return 0;
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>       }
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a> }).get();
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> Persion a = lists.stream().min(new Comparator&lt;Persion&gt;() {
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>      @Override
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>      public int compare(Persion o1, Persion o2) {
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>           if (o1.getId() &gt; o2.getId()) return -1;
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>           if (o1.getId() &lt; o2.getId()) return 1;
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>           return 0;
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>       }
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a> }).get();
+</span></code></pre></div>
 <h3 id="_5">代码调试<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>可以使用 peek 方法，peek 方法可只包含一个空的方法体，只要能设置断点即可，但有些 IDE 不允许空，可以如下文示例，简单写一个打印逻辑。</p>
 <p>注意，调试完后要删掉。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>List&lt;Persion&gt; lists = new ArrayList&lt;Persion&gt;();
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>lists.add(new Persion(1L, &quot;p1&quot;));
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>lists.add(new Persion(2L, &quot;p2&quot;));
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>lists.add(new Persion(3L, &quot;p3&quot;));
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>lists.add(new Persion(4L, &quot;p4&quot;));
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>System.out.println(lists);
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>List&lt;Persion&gt; list2 = lists.stream()
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>                 .filter(f -&gt; f.getName().startsWith(&quot;p&quot;))
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>                .peek(t -&gt; {
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>                    System.out.println(t.getName());
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>                })
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>                .collect(Collectors.toList());
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>System.out.println(list2);
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>List&lt;Persion&gt; lists = new ArrayList&lt;Persion&gt;();
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>lists.add(new Persion(1L, &quot;p1&quot;));
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>lists.add(new Persion(2L, &quot;p2&quot;));
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>lists.add(new Persion(3L, &quot;p3&quot;));
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>lists.add(new Persion(4L, &quot;p4&quot;));
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>System.out.println(lists);
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>List&lt;Persion&gt; list2 = lists.stream()
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>                 .filter(f -&gt; f.getName().startsWith(&quot;p&quot;))
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>                .peek(t -&gt; {
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>                    System.out.println(t.getName());
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>                })
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>                .collect(Collectors.toList());
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>System.out.println(list2);
+</span></code></pre></div>
 <h3 id="_6">一些例子<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>集合--》取元素的一个属性--》去重---》组装成 List--》返回</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>List&lt;LikeDO&gt; likeDOs=new ArrayList&lt;LikeDO&gt;();
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a> //add一系列元素
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a> //得到收藏贴子的tid列表
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>List&lt;Long&gt; likeTidList = likeDOs.stream().map(LikeDO::getTid)
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>                .distinct().collect(Collectors.toList());
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>List&lt;LikeDO&gt; likeDOs=new ArrayList&lt;LikeDO&gt;();
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a> //add一系列元素
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a> //得到收藏贴子的tid列表
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>List&lt;Long&gt; likeTidList = likeDOs.stream().map(LikeDO::getTid)
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>                .distinct().collect(Collectors.toList());
+</span></code></pre></div>
 <ul>
 <li>集合--》按表达式过滤--》遍历、每个元系处理--》放入预先定义的集合中</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a> Map&lt;String, StkProduct&gt; newStockName2Product = Maps.newConcurrentMap();
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>       stockProducts.stream().filter(stkProduct -&gt; stkProduct.enabled).forEach(stkProduct -&gt; {
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>           String newName = BCConvert.bj2qj(StringUtils.replace(stkProduct.name, &quot; &quot;, &quot;&quot;));
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>           newStockName2Product.put(newName, stkProduct);
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>       });
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Set&lt;String&gt; qjStockNames;
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>qjStockNames.stream().filter(name -&gt; !acAutomaton.getKey2link().containsKey(name)).forEach(name -&gt; {
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>           String value = &quot;&quot;;
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>           StkProduct stkProduct = stockNameQj2Product.get(name);
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>           if (stkProduct != null) {
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>               value = stkProduct.name;
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>           }
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>           acAutomaton.getKey2link().put(name, value);
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>       });
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a> Map&lt;String, StkProduct&gt; newStockName2Product = Maps.newConcurrentMap();
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>       stockProducts.stream().filter(stkProduct -&gt; stkProduct.enabled).forEach(stkProduct -&gt; {
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>           String newName = BCConvert.bj2qj(StringUtils.replace(stkProduct.name, &quot; &quot;, &quot;&quot;));
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>           newStockName2Product.put(newName, stkProduct);
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>       });
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Set&lt;String&gt; qjStockNames;
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>qjStockNames.stream().filter(name -&gt; !acAutomaton.getKey2link().containsKey(name)).forEach(name -&gt; {
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>           String value = &quot;&quot;;
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>           StkProduct stkProduct = stockNameQj2Product.get(name);
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>           if (stkProduct != null) {
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>               value = stkProduct.name;
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>           }
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>           acAutomaton.getKey2link().put(name, value);
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>       });
+</span></code></pre></div>
 <ul>
 <li>集合--》map</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>List&lt;ImageModel&gt; imageModelList = null;
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Map&lt;Long, String&gt; imagesMap = null;
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>imagesMap = imageModelList.stream().collect(Collectors.toMap(ImageModel::getAid, o -&gt; IMAGE_ADDRESS_PREFIX + o.getUrl()));
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Map&lt;String, String&gt; kvMap = postDetailCacheList.stream().collect(Collectors.toMap((detailCache) -&gt;
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>                getBbsSimplePostKey(detailCache.getTid()), JSON::toJSONString));
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>Map&lt;Long, Long&gt; pidToTid；
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>List&lt;String&gt; pidKeyList = pidToTid.entrySet().stream().map((o) -&gt; getKeyBbsReplyPid(o.getValue(), o.getKey())).collect(Collectors.toList());
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>List&lt;ImageModel&gt; imageModelList = null;
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Map&lt;Long, String&gt; imagesMap = null;
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>imagesMap = imageModelList.stream().collect(Collectors.toMap(ImageModel::getAid, o -&gt; IMAGE_ADDRESS_PREFIX + o.getUrl()));
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Map&lt;String, String&gt; kvMap = postDetailCacheList.stream().collect(Collectors.toMap((detailCache) -&gt;
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>                getBbsSimplePostKey(detailCache.getTid()), JSON::toJSONString));
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>Map&lt;Long, Long&gt; pidToTid；
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>List&lt;String&gt; pidKeyList = pidToTid.entrySet().stream().map((o) -&gt; getKeyBbsReplyPid(o.getValue(), o.getKey())).collect(Collectors.toList());
+</span></code></pre></div>
 <ul>
 <li>DO 模型---》Model 模型</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>List&lt;AdDO&gt; adDOList;
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>adDOList.stream().map(adDo -&gt; convertAdModel(adDo))
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>               .collect(Collectors.toList());
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>List&lt;AdDO&gt; adDOList;
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>adDOList.stream().map(adDo -&gt; convertAdModel(adDo))
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>               .collect(Collectors.toList());
+</span></code></pre></div>
 <ul>
 <li>phones 是一个 List\<String>，将相同的元素分组、归类</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>List&lt;String&gt; phones=new ArrayList&lt;String&gt;();
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>       phones.add(&quot;a&quot;);
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>       phones.add(&quot;b&quot;);
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>       phones.add(&quot;a&quot;);
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>       phones.add(&quot;a&quot;);
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>       phones.add(&quot;c&quot;);
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>       phones.add(&quot;b&quot;);
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>       Map&lt;String, List&lt;String&gt;&gt; phoneClassify = phones.stream().collect(Collectors.groupingBy(item -&gt; item));
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>       System.out.println(phoneClassify);
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>返回结果：
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>{a=[a, a, a], b=[b, b], c=[c]}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>List&lt;String&gt; phones=new ArrayList&lt;String&gt;();
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>       phones.add(&quot;a&quot;);
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>       phones.add(&quot;b&quot;);
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>       phones.add(&quot;a&quot;);
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>       phones.add(&quot;a&quot;);
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>       phones.add(&quot;c&quot;);
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>       phones.add(&quot;b&quot;);
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>       Map&lt;String, List&lt;String&gt;&gt; phoneClassify = phones.stream().collect(Collectors.groupingBy(item -&gt; item));
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>       System.out.println(phoneClassify);
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>返回结果：
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>{a=[a, a, a], b=[b, b], c=[c]}
+</span></code></pre></div>
 <h3 id="_7">参考资料<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="http://blog.csdn.net/renfufei/article/details/24600507">http://blog.csdn.net/renfufei/article/details/24600507</a></li>
@@ -10367,6 +10367,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

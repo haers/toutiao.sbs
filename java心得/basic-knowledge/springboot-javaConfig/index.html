@@ -4598,6 +4598,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4712,20 +4726,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9853,276 +9853,276 @@
 <h2 id="springboot-javaconfig">springboot-javaConfig<a class="headerlink" href="#springboot-javaconfig" title="Permanent link">&para;</a></h2>
 <hr />
 <ul>
-<li>@SpringBootApplication</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/SpringBootApplication" title="GitHub User: SpringBootApplication">@SpringBootApplication</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@Target(ElementType.TYPE)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>@Retention(RetentionPolicy.RUNTIME)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>@Documented
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>@Inherited
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>@Configuration
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>@EnableAutoConfiguration
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>@ComponentScan
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>public @interface SpringBootApplication {
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    /**
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>     * Exclude specific auto-configuration classes such that they will never be applied.
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>     * @return the classes to exclude
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>     */
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    Class&lt;?&gt;[] exclude() default {};
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@Target(ElementType.TYPE)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>@Retention(RetentionPolicy.RUNTIME)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>@Documented
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>@Inherited
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>@Configuration
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>@EnableAutoConfiguration
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>@ComponentScan
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>public @interface SpringBootApplication {
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    /**
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>     * Exclude specific auto-configuration classes such that they will never be applied.
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>     * @return the classes to exclude
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>     */
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    Class&lt;?&gt;[] exclude() default {};
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>}
+</span></code></pre></div>
 <p>定义在 main 方法入口类处，用于启动 sping boot 应用项目</p>
 <ul>
-<li>@EnableAutoConfiguration</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableAutoConfiguration" title="GitHub User: EnableAutoConfiguration">@EnableAutoConfiguration</a></li>
 </ul>
 <p>让 spring boot 根据类路径中的 jar 包依赖当前项目进行自动配置</p>
 <p>在 src/main/resources 的 META-INF/spring.factories</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration,\
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>org.springframework.boot.autoconfigure.aop.AopAutoConfiguration
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>若有多个自动配置，用“，”隔开
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration,\
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>org.springframework.boot.autoconfigure.aop.AopAutoConfiguration
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>若有多个自动配置，用“，”隔开
+</span></code></pre></div>
 <ul>
-<li>@ImportResource</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ImportResource" title="GitHub User: ImportResource">@ImportResource</a></li>
 </ul>
 <p>加载 xml 配置，一般是放在启动 main 类上</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>@ImportResource(&quot;classpath*:/spring/*.xml&quot;)  单个
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>@ImportResource({&quot;classpath*:/spring/1.xml&quot;,&quot;classpath*:/spring/2.xml&quot;})   多个
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>@ImportResource(&quot;classpath*:/spring/*.xml&quot;)  单个
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>@ImportResource({&quot;classpath*:/spring/1.xml&quot;,&quot;classpath*:/spring/2.xml&quot;})   多个
+</span></code></pre></div>
 <ul>
-<li>@Value</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Value" title="GitHub User: Value">@Value</a></li>
 </ul>
-<p>application.properties 定义属性，直接使用@Value 注入即可</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>public class A{
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>     @Value(&quot;${push.start:0}&quot;)    如果缺失，默认值为0
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>     private Long  id;
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>}
-</code></pre></div>
+<p>application.properties 定义属性，直接使用<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Value" title="GitHub User: Value">@Value</a> 注入即可</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>public class A{
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>     @Value(&quot;${push.start:0}&quot;)    如果缺失，默认值为0
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>     private Long  id;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>}
+</span></code></pre></div>
 <ul>
-<li>@ConfigurationProperties(prefix="person")</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ConfigurationProperties" title="GitHub User: ConfigurationProperties">@ConfigurationProperties</a>(prefix="person")</li>
 </ul>
 <p>可以新建一个 properties 文件，ConfigurationProperties 的属性 prefix 指定 properties 的配置的前缀，通过 location 指定 properties 文件的位置</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>@ConfigurationProperties(prefix=&quot;person&quot;)
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>public class PersonProperties {
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    private String name ;
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    private int age;
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>@ConfigurationProperties(prefix=&quot;person&quot;)
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>public class PersonProperties {
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    private String name ;
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    private int age;
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>}
+</span></code></pre></div>
 <ul>
-<li>@EnableConfigurationProperties</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableConfigurationProperties" title="GitHub User: EnableConfigurationProperties">@EnableConfigurationProperties</a></li>
 </ul>
-<p>用 @EnableConfigurationProperties 注解使 @ConfigurationProperties 生效，并从 IOC 容器中获取 bean。</p>
-<p>https://blog.csdn.net/u010502101/article/details/78758330</p>
+<p>用 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableConfigurationProperties" title="GitHub User: EnableConfigurationProperties">@EnableConfigurationProperties</a> 注解使 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ConfigurationProperties" title="GitHub User: ConfigurationProperties">@ConfigurationProperties</a> 生效，并从 IOC 容器中获取 bean。</p>
+<p><a href="https://blog.csdn.net/u010502101/article/details/78758330">https://blog.csdn.net/u010502101/article/details/78758330</a></p>
 <ul>
-<li>@RestController</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/RestController" title="GitHub User: RestController">@RestController</a></li>
 </ul>
-<p>组合@Controller 和@ResponseBody，当你开发一个和页面交互数据的控制时，比如 bbs-web 的 api 接口需要此注解</p>
+<p>组合<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Controller" title="GitHub User: Controller">@Controller</a> 和<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ResponseBody" title="GitHub User: ResponseBody">@ResponseBody</a>，当你开发一个和页面交互数据的控制时，比如 bbs-web 的 api 接口需要此注解</p>
 <ul>
-<li>@RequestMapping("/api2/copper")</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/RequestMapping" title="GitHub User: RequestMapping">@RequestMapping</a>("/api2/copper")</li>
 </ul>
 <p>用来映射 web 请求（访问路径和参数）、处理类和方法，可以注解在类或方法上。注解在方法上的路径会继承注解在类上的路径。</p>
 <p>produces 属性：定制返回的 response 的媒体类型和字符集，或需返回值是 json 对象</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>@RequestMapping(value=&quot;/api2/copper&quot;,produces=&quot;application/json;charset=UTF-8&quot;,method = RequestMethod.POST)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>@RequestMapping(value=&quot;/api2/copper&quot;,produces=&quot;application/json;charset=UTF-8&quot;,method = RequestMethod.POST)
+</span></code></pre></div>
 <ul>
-<li>@RequestParam</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/RequestParam" title="GitHub User: RequestParam">@RequestParam</a></li>
 </ul>
 <p>获取 request 请求的参数值</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a> public List&lt;CopperVO&gt; getOpList(HttpServletRequest request,
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                                    @RequestParam(value = &quot;pageIndex&quot;, required = false) Integer pageIndex,
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                                    @RequestParam(value = &quot;pageSize&quot;, required = false) Integer pageSize) {
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a> public List&lt;CopperVO&gt; getOpList(HttpServletRequest request,
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                                    @RequestParam(value = &quot;pageIndex&quot;, required = false) Integer pageIndex,
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                                    @RequestParam(value = &quot;pageSize&quot;, required = false) Integer pageSize) {
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  }
+</span></code></pre></div>
 <ul>
-<li>@ResponseBody</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ResponseBody" title="GitHub User: ResponseBody">@ResponseBody</a></li>
 </ul>
 <p>支持将返回值放在 response 体内，而不是返回一个页面。比如 Ajax 接口，可以用此注解返回数据而不是页面。此注解可以放置在返回值前或方法前。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>另一个玩法，可以不用@ResponseBody。
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>继承FastJsonHttpMessageConverter类并对writeInternal方法扩展，在spring响应结果时，再次拦截、加工结果
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>// stringResult：json返回结果
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>//HttpOutputMessage outputMessage
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a> byte[] payload = stringResult.getBytes();
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a> outputMessage.getHeaders().setContentType(META_TYPE);
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a> outputMessage.getHeaders().setContentLength(payload.length);
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a> outputMessage.getBody().write(payload);
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a> outputMessage.getBody().flush();
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>另一个玩法，可以不用@ResponseBody。
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>继承FastJsonHttpMessageConverter类并对writeInternal方法扩展，在spring响应结果时，再次拦截、加工结果
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>// stringResult：json返回结果
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>//HttpOutputMessage outputMessage
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a> byte[] payload = stringResult.getBytes();
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a> outputMessage.getHeaders().setContentType(META_TYPE);
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a> outputMessage.getHeaders().setContentLength(payload.length);
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a> outputMessage.getBody().write(payload);
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a> outputMessage.getBody().flush();
+</span></code></pre></div>
 <ul>
-<li>@Bean(name="bean 的名字",initMethod="初始化时调用方法名字",destroyMethod="close")</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a>(name="bean 的名字",initMethod="初始化时调用方法名字",destroyMethod="close")</li>
 </ul>
 <p>定义在方法上，在容器内初始化一个 bean 实例类。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>@Bean(destroyMethod=&quot;close&quot;)
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>@ConditionalOnMissingBean
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>public PersonService registryService() {
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        return new PersonService();
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>@Bean(destroyMethod=&quot;close&quot;)
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>@ConditionalOnMissingBean
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>public PersonService registryService() {
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        return new PersonService();
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    }
+</span></code></pre></div>
 <ul>
 <li>
-<p>@Service 用于标注业务层组件</p>
+<p><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Service" title="GitHub User: Service">@Service</a> 用于标注业务层组件</p>
 </li>
 <li>
-<p>@Controller 用于标注控制层组件（如 struts 中的 action）</p>
+<p><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Controller" title="GitHub User: Controller">@Controller</a> 用于标注控制层组件（如 struts 中的 action）</p>
 </li>
 <li>
-<p>@Repository 用于标注数据访问组件，即 DAO 组件</p>
+<p><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Repository" title="GitHub User: Repository">@Repository</a> 用于标注数据访问组件，即 DAO 组件</p>
 </li>
 <li>
-<p>@Component 泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注。</p>
+<p><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注。</p>
 </li>
 <li>
-<p>@PostConstruct</p>
+<p><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/PostConstruct" title="GitHub User: PostConstruct">@PostConstruct</a></p>
 </li>
 </ul>
 <p>spring 容器初始化时，要执行该方法</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>@PostConstruct
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>public void init() {
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>@PostConstruct
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>public void init() {
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>}
+</span></code></pre></div>
 <ul>
-<li>@PathVariable 用来获得请求 url 中的动态参数</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/PathVariable" title="GitHub User: PathVariable">@PathVariable</a> 用来获得请求 url 中的动态参数</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>@Controller
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>public class TestController {
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>     @RequestMapping(value=&quot;/user/{userId}/roles/{roleId}&quot;,method = RequestMethod.GET)
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>     public String getLogin(@PathVariable(&quot;userId&quot;) String userId,
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>         @PathVariable(&quot;roleId&quot;) String roleId){
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>         System.out.println(&quot;User Id : &quot; + userId);
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>         System.out.println(&quot;Role Id : &quot; + roleId);
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>         return &quot;hello&quot;;
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>     }
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>@Controller
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>public class TestController {
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>     @RequestMapping(value=&quot;/user/{userId}/roles/{roleId}&quot;,method = RequestMethod.GET)
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>     public String getLogin(@PathVariable(&quot;userId&quot;) String userId,
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>         @PathVariable(&quot;roleId&quot;) String roleId){
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>         System.out.println(&quot;User Id : &quot; + userId);
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>         System.out.println(&quot;Role Id : &quot; + roleId);
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>         return &quot;hello&quot;;
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>     }
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>}
+</span></code></pre></div>
 <ul>
-<li>@ComponentScan 注解会告知 Spring 扫描指定的包来初始化 Spring</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ComponentScan" title="GitHub User: ComponentScan">@ComponentScan</a> 注解会告知 Spring 扫描指定的包来初始化 Spring</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>@ComponentScan(basePackages = &quot;com.bbs.xx&quot;)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>@ComponentScan(basePackages = &quot;com.bbs.xx&quot;)
+</span></code></pre></div>
 <ul>
-<li>@EnableZuulProxy</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableZuulProxy" title="GitHub User: EnableZuulProxy">@EnableZuulProxy</a></li>
 </ul>
-<p>路由网关的主要目的是为了让所有的微服务对外只有一个接口，我们只需访问一个网关地址，即可由网关将所有的请求代理到不同的服务中。Spring Cloud 是通过 Zuul 来实现的，支持自动路由映射到在 Eureka Server 上注册的服务。Spring Cloud 提供了注解@EnableZuulProxy 来启用路由代理。</p>
+<p>路由网关的主要目的是为了让所有的微服务对外只有一个接口，我们只需访问一个网关地址，即可由网关将所有的请求代理到不同的服务中。Spring Cloud 是通过 Zuul 来实现的，支持自动路由映射到在 Eureka Server 上注册的服务。Spring Cloud 提供了注解<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableZuulProxy" title="GitHub User: EnableZuulProxy">@EnableZuulProxy</a> 来启用路由代理。</p>
 <ul>
 <li>Autowired</li>
 </ul>
-<p>在默认情况下使用 @Autowired 注释进行自动注入时，Spring 容器中匹配的候选 Bean 数目必须有且仅有一个。当找不到一个匹配的 Bean 时，Spring 容器将抛出 BeanCreationException 异常，并指出必须至少拥有一个匹配的 Bean。</p>
-<p>当不能确定 Spring 容器中一定拥有某个类的 Bean 时，可以在需要自动注入该类 Bean 的地方可以使用 @Autowired(required = false)，这等于告诉 Spring：在找不到匹配 Bean 时也不报错</p>
+<p>在默认情况下使用 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a> 注释进行自动注入时，Spring 容器中匹配的候选 Bean 数目必须有且仅有一个。当找不到一个匹配的 Bean 时，Spring 容器将抛出 BeanCreationException 异常，并指出必须至少拥有一个匹配的 Bean。</p>
+<p>当不能确定 Spring 容器中一定拥有某个类的 Bean 时，可以在需要自动注入该类 Bean 的地方可以使用 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a>(required = false)，这等于告诉 Spring：在找不到匹配 Bean 时也不报错</p>
 <p><a href="https://blog.csdn.net/ethunsex/article/details/66475792">@Autowired 注解注入 map、list 与@Qualifier</a></p>
 <ul>
-<li>@Configuration</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Configuration" title="GitHub User: Configuration">@Configuration</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>@Configuration(&quot;name&quot;)//表示这是一个配置信息类,可以给这个配置类也起一个名称
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>@ComponentScan(&quot;spring4&quot;)//类似于xml中的&lt;context:component-scan base-package=&quot;spring4&quot;/&gt;
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>public class Config {
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    @Autowired//自动注入，如果容器中有多个符合的bean时，需要进一步明确
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    @Qualifier(&quot;compent&quot;)//进一步指明注入bean名称为compent的bean
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    private Compent compent;
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    @Bean//类似于xml中的&lt;bean id=&quot;newbean&quot; class=&quot;spring4.Compent&quot;/&gt;
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    public Compent newbean(){
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>        return new Compent();
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    }
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>@Configuration(&quot;name&quot;)//表示这是一个配置信息类,可以给这个配置类也起一个名称
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>@ComponentScan(&quot;spring4&quot;)//类似于xml中的&lt;context:component-scan base-package=&quot;spring4&quot;/&gt;
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>public class Config {
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    @Autowired//自动注入，如果容器中有多个符合的bean时，需要进一步明确
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    @Qualifier(&quot;compent&quot;)//进一步指明注入bean名称为compent的bean
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    private Compent compent;
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    @Bean//类似于xml中的&lt;bean id=&quot;newbean&quot; class=&quot;spring4.Compent&quot;/&gt;
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    public Compent newbean(){
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>        return new Compent();
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    }
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>}
+</span></code></pre></div>
 <ul>
-<li>@Import(Config1.class)</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Import" title="GitHub User: Import">@Import</a>(Config1.class)</li>
 </ul>
 <p>导入 Config1 配置类里实例化的 bean</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>@Configuration
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>public class CDConfig {
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    @Bean   // 将SgtPeppers注册为 SpringContext中的bean
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    public CompactDisc compactDisc() {
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        return new CompactDisc();  // CompactDisc类型的
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    }
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>}
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>@Configuration
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>@Import(CDConfig.class)  //导入CDConfig的配置
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>public class CDPlayerConfig {
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>    @Bean(name = &quot;cDPlayer&quot;)
-<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>    public CDPlayer cdPlayer(CompactDisc compactDisc) {
-<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>         // 这里会注入CompactDisc类型的bean
-<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>         // 这里注入的这个bean是CDConfig.class中的CompactDisc类型的那个bean
-<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>        return new CDPlayer(compactDisc);
-<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>    }
-<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>@Configuration
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>public class CDConfig {
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    @Bean   // 将SgtPeppers注册为 SpringContext中的bean
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    public CompactDisc compactDisc() {
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        return new CompactDisc();  // CompactDisc类型的
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    }
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>}
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>@Configuration
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>@Import(CDConfig.class)  //导入CDConfig的配置
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>public class CDPlayerConfig {
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>    @Bean(name = &quot;cDPlayer&quot;)
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>    public CDPlayer cdPlayer(CompactDisc compactDisc) {
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>         // 这里会注入CompactDisc类型的bean
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>         // 这里注入的这个bean是CDConfig.class中的CompactDisc类型的那个bean
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>        return new CDPlayer(compactDisc);
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>    }
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>}
+</span></code></pre></div>
 <ul>
-<li>@Order</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Order" title="GitHub User: Order">@Order</a></li>
 </ul>
-<p>@Order(1)，值越小优先级超高，越先运行</p>
+<p><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Order" title="GitHub User: Order">@Order</a>(1)，值越小优先级超高，越先运行</p>
 <ul>
-<li>@ConditionalOnExpression</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ConditionalOnExpression" title="GitHub User: ConditionalOnExpression">@ConditionalOnExpression</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>@Configuration
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>@ConditionalOnExpression(&quot;${enabled:false}&quot;)
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>public class BigpipeConfiguration {
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    @Bean
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    public OrderMessageMonitor orderMessageMonitor(ConfigContext configContext) {
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>        return new OrderMessageMonitor(configContext);
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    }
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>@Configuration
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>@ConditionalOnExpression(&quot;${enabled:false}&quot;)
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>public class BigpipeConfiguration {
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    @Bean
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    public OrderMessageMonitor orderMessageMonitor(ConfigContext configContext) {
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>        return new OrderMessageMonitor(configContext);
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    }
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>}
+</span></code></pre></div>
 <p>开关为 true 的时候才实例化 bean，后面是默认值</p>
 <ul>
 <li>ConditionalOnWebApplication</li>
 </ul>
 <p>当前项目是 WEB 项目的条件下</p>
-<p>https://www.jianshu.com/p/23f504713b94</p>
+<p><a href="https://www.jianshu.com/p/23f504713b94">https://www.jianshu.com/p/23f504713b94</a></p>
 <ul>
-<li>@ConditionalOnProperty</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ConditionalOnProperty" title="GitHub User: ConditionalOnProperty">@ConditionalOnProperty</a></li>
 </ul>
-<p>这个注解能够控制某个 @Configuration 是否生效。具体操作是通过其两个属性 name 以及 havingValue 来实现的，其中 name 用来从 application.properties 中读取某个属性值，如果该值为空，则返回 false;如果值不为空，则将该值与 havingValue 指定的值进行比较，如果一样则返回 true;否则返回 false。如果返回值为 false，则该 configuration 不生效；为 true 则生效。</p>
-<p>https://blog.csdn.net/dalangzhonghangxing/article/details/78420057</p>
+<p>这个注解能够控制某个 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Configuration" title="GitHub User: Configuration">@Configuration</a> 是否生效。具体操作是通过其两个属性 name 以及 havingValue 来实现的，其中 name 用来从 application.properties 中读取某个属性值，如果该值为空，则返回 false;如果值不为空，则将该值与 havingValue 指定的值进行比较，如果一样则返回 true;否则返回 false。如果返回值为 false，则该 configuration 不生效；为 true 则生效。</p>
+<p><a href="https://blog.csdn.net/dalangzhonghangxing/article/details/78420057">https://blog.csdn.net/dalangzhonghangxing/article/details/78420057</a></p>
 <ul>
-<li>@ConditionalOnClass</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ConditionalOnClass" title="GitHub User: ConditionalOnClass">@ConditionalOnClass</a></li>
 </ul>
 <p>该注解的参数对应的类在 class path 中，否则不解析该注解修饰的配置类</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>@Configuration
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>@ConditionalOnClass({Gson.class})
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>public class GsonAutoConfiguration {
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    public GsonAutoConfiguration() {
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    }
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    @Bean
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    @ConditionalOnMissingBean
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    public Gson gson() {
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>        return new Gson();
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>    }
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>@Configuration
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>@ConditionalOnClass({Gson.class})
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>public class GsonAutoConfiguration {
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    public GsonAutoConfiguration() {
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    }
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    @Bean
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    @ConditionalOnMissingBean
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    public Gson gson() {
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>        return new Gson();
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>    }
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>}
+</span></code></pre></div>
 <ul>
 <li>ConditionalOnBean</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>@Configuration
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>@ConditionalOnBean({LoadBalancerClient.class})
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>@EnableConfigurationProperties({LoadBalancerRetryProperties.class})
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>public class LoadBalancerAutoConfiguration {
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>。。。
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>@Configuration
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>@ConditionalOnBean({LoadBalancerClient.class})
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>@EnableConfigurationProperties({LoadBalancerRetryProperties.class})
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>public class LoadBalancerAutoConfiguration {
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>。。。
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>}
+</span></code></pre></div>
 <p>只有 LoadBalancerClient 类创建的 bean 对象在容器中存在时，才会执行 LoadBalancerAutoConfiguration 中的配置类</p>
 <ul>
-<li>@ConditionalOnMisssingClass({ApplicationManager.class})</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ConditionalOnMisssingClass" title="GitHub User: ConditionalOnMisssingClass">@ConditionalOnMisssingClass</a>({ApplicationManager.class})</li>
 </ul>
 <p>如果存在它修饰的类的 bean，则不需要再创建这个 bean；</p>
 <ul>
-<li>@ConditionOnMissingBean(name = "example")</li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ConditionOnMissingBean" title="GitHub User: ConditionOnMissingBean">@ConditionOnMissingBean</a>(name = "example")</li>
 </ul>
 <p>表示如果 name 为“example”的 bean 存在，该注解修饰的代码块不执行。</p>
 
@@ -10210,6 +10210,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

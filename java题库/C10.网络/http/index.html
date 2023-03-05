@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -8129,7 +8129,7 @@
       
         <li class="md-nav__item">
   <a href="#http-url" class="md-nav__link">
-    HTTP 协议详解之URL
+    HTTP 协议详解之*URL*
   </a>
   
 </li>
@@ -9936,7 +9936,7 @@
       
         <li class="md-nav__item">
   <a href="#http-url" class="md-nav__link">
-    HTTP 协议详解之URL
+    HTTP 协议详解之*URL*
   </a>
   
 </li>
@@ -10031,16 +10031,16 @@ Http/1.1 协议的持续连接有两种工作方式：非流水线方式和流�
 <li>突破限制， 也就是 FQ 了</li>
 <li>隐藏身份。</li>
 </ol>
-<h3 id="http-url">HTTP 协议详解之<em>URL</em><a class="headerlink" href="#http-url" title="Permanent link">&para;</a></h3>
+<h3 id="http-url">HTTP 协议详解之*URL*<a class="headerlink" href="#http-url" title="Permanent link">&para;</a></h3>
 <p>http（超文本传输协议）是一个基于请求与响应模式的、无状态的、应用层的协议，常基于 TCP 的连接方式，HTTP1.1 版本中给出一种持续连接的机制，绝大多数的 Web 开发，都是构建在 HTTP 协议之上的 Web 应用。</p>
 <p>HTTP URL (URL 是一种特殊类型的 URI，包含了用于查找某个资源的足够的信息)的格式如下：</p>
 <p>URL(Uniform Resource Locator) 地址用于描述一个网络上的资源, 基本格式如下</p>
-<div class="highlight"><pre><span></span><code>  schema://host[:port#]/path/.../[?query-string][#anchor]
+<div class="language-text highlight"><pre><span></span><code>  schema://host[:port#]/path/.../[?query-string][#anchor]
 </code></pre></div>
 <ul>
 <li>scheme: 指定低层使用的协议(例如：http, https, ftp)</li>
 <li>host: HTTP 服务器的 IP 地址或者域名</li>
-<li>port#: HTTP 服务器的默认端口是 80，这种情况下端口号可以省略。如果使用了别的端口，必须指明，例如 http://www.cnblogs.com:8080/</li>
+<li>port#: HTTP 服务器的默认端口是 80，这种情况下端口号可以省略。如果使用了别的端口，必须指明，例如 <a href="http://www.cnblogs.com:8080/">http://www.cnblogs.com:8080/</a></li>
 <li>path: 访问资源的路径</li>
 <li>query-string: 发送给 http 服务器的数据</li>
 <li>anchor-: 锚</li>
@@ -10075,7 +10075,7 @@ CRLF 表示回车和换行（除了作为结尾的 CRLF 外，不允许出现单
 <p>eg：POST /reg.jsp HTTP/ (CRLF)</p>
 <p>Accept:image/gif,image/x-xbit,... (CRLF)</p>
 <p>...</p>
-<p>HOST:www.guet.edu.cn (CRLF)</p>
+<p>HOST:<a href="http://www.guet.edu.cn">www.guet.edu.cn</a> (CRLF)</p>
 <p>Content-Length:22 (CRLF)</p>
 <p>Connection:Keep-Alive (CRLF)</p>
 <p>Cache-Control:no-cache (CRLF)</p>
@@ -10137,10 +10137,10 @@ CRLF 表示回车和换行（除了作为结尾的 CRLF 外，不允许出现单
 <p>Authorization 请求报头域主要用于证明客户端有权查看某个资源。当浏览器访问一个页面时，如果收到服务器的响应代码为 401（未授权），可以发送一个包含 Authorization 请求报头域的请求，要求服务器对其进行验证。</p>
 <p>Host（发送请求时，该报头域是必需的）</p>
 <p>Host 请求报头域主要用于指定被请求资源的 Internet 主机和端口号，它通常从 HTTP URL 中提取出来的，eg：</p>
-<p>我们在浏览器中输入：http://www.guet.edu.cn/index.html</p>
+<p>我们在浏览器中输入：<a href="http://www.guet.edu.cn/index.html">http://www.guet.edu.cn/index.html</a></p>
 <p>浏览器发送的请求消息中，就会包含 Host 请求报头域，如下：</p>
-<p>Host：www.guet.edu.cn</p>
-<p>此处使用缺省端口号 80，若指定了端口号，则变成：Host：www.guet.edu.cn:指定端口号</p>
+<p>Host：<a href="http://www.guet.edu.cn">www.guet.edu.cn</a></p>
+<p>此处使用缺省端口号 80，若指定了端口号，则变成：Host：<a href="http://www.guet.edu.cn:指定端口号">www.guet.edu.cn:指定端口号</a></p>
 <p>User-Agent</p>
 <p>我们上网登陆论坛的时候，往往会看到一些欢迎信息，其中列出了你的操作系统的名称和版本，你所使用的浏览器的名称和版本，这往往让很多人感到很神奇，实际上，服务器应用程序就是从 User-Agent 这个请求报头域中获取到这些信息。User-Agent 请求报头域允许客户端将它的操作系统、浏览器和其它属性告诉服务器。不过，这个报头域不是必需的，如果我们自己编写一个浏览器，不使用 User-Agent 请求报头域，那么服务器端就无法得知我们的信息了。</p>
 <p>请求报头举例：</p>
@@ -10151,7 +10151,7 @@ CRLF 表示回车和换行（除了作为结尾的 CRLF 外，不允许出现单
 <p>If-Modified-Since:Wed,05 Jan 2007 11:21:25 GMT (CRLF)</p>
 <p>If-None-Match:W/"80b1a4c018f3c41:8317" (CRLF)</p>
 <p>User-Agent:Mozilla/4.0(compatible;MSIE6.0;Windows NT 5.0) (CRLF)</p>
-<p>Host:www.guet.edu.cn (CRLF)</p>
+<p>Host:<a href="http://www.guet.edu.cn">www.guet.edu.cn</a> (CRLF)</p>
 <p>Connection:Keep-Alive (CRLF)</p>
 <p>(CRLF)</p>
 <p>3、响应报头</p>
@@ -10191,20 +10191,20 @@ CRLF 表示回车和换行（除了作为结尾的 CRLF 外，不允许出现单
 <p>实验步骤：</p>
 <p>1、打开 telnet</p>
 <p>1.1 打开 telnet</p>
-<p>运行--&gt;cmd--&gt;telnet</p>
+<p>运行&rarr;cmd&rarr;telnet</p>
 <p>1.2 打开 telnet 回显功能</p>
 <p>set localecho</p>
 <p>2、连接服务器并发送请求</p>
-<p>2.1 open www.guet.edu.cn 80 //注意端口号不能省略</p>
+<p>2.1 open <a href="http://www.guet.edu.cn">www.guet.edu.cn</a> 80 //注意端口号不能省略</p>
 <p>HEAD /index.asp HTTP/1.0</p>
-<p>Host:www.guet.edu.cn</p>
+<p>Host:<a href="http://www.guet.edu.cn">www.guet.edu.cn</a></p>
 <p>/<em>我们可以变换请求方法,请求桂林电子主页内容,输入消息如下</em>/</p>
-<p>open www.guet.edu.cn 80</p>
+<p>open <a href="http://www.guet.edu.cn">www.guet.edu.cn</a> 80</p>
 <p>GET /index.asp HTTP/1.0 //请求资源的内容</p>
-<p>Host:www.guet.edu.cn</p>
-<p>2.2 open www.sina.com.cn 80 //在命令提示符号下直接输入 telnet www.sina.com.cn 80</p>
+<p>Host:<a href="http://www.guet.edu.cn">www.guet.edu.cn</a></p>
+<p>2.2 open <a href="http://www.sina.com.cn">www.sina.com.cn</a> 80 //在命令提示符号下直接输入 telnet <a href="http://www.sina.com.cn">www.sina.com.cn</a> 80</p>
 <p>HEAD /index.asp HTTP/1.0</p>
-<p>Host:www.sina.com.cn</p>
+<p>Host:<a href="http://www.sina.com.cn">www.sina.com.cn</a></p>
 <p>3 实验结果：</p>
 <p>3.1 请求信息 2.1 得到的响应是:</p>
 <p>HTTP/1.1 200 OK //请求成功</p>
@@ -10235,7 +10235,7 @@ CRLF 表示回车和换行（除了作为结尾的 CRLF 外，不允许出现单
 <p>按任意键继续...</p>
 <p>4 .注意事项：1、出现输入错误，则请求不会成功。</p>
 <p>2、报头域不分大小写。</p>
-<p>3、更深一步了解 HTTP 协议，可以查看 RFC2616，在http://www.letf.org/rfc上找到该文件。</p>
+<p>3、更深一步了解 HTTP 协议，可以查看 RFC2616，在http://<a href="http://www.letf.org/rfc上找到该文件">www.letf.org/rfc上找到该文件</a>。</p>
 <p>4、开发后台程序必须掌握 http 协议</p>
 <h3 id="http-connection-keep-alive">HTTP 协议是无状态的和 Connection: keep-alive 的区别<a class="headerlink" href="#http-connection-keep-alive" title="Permanent link">&para;</a></h3>
 <p>无状态是指协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。
@@ -10327,6 +10327,12 @@ Keep-Alive 不会永久保持连接，它有一个保持时间，可以在不同
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

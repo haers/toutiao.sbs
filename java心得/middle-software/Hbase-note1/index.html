@@ -4674,6 +4674,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4788,20 +4802,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10027,11 +10027,11 @@
 <li>Rowkey</li>
 </ul>
 <p>Hbase 通过行键（Rowkey）检索数据，仅支持单行事务，单表可以有百亿行、百万列，数据矩阵横向和纵向两个维度所支持的数据量级都很有弹性。 RowKey 按照字典顺序排序的，且只能存储 64K 的字节数据。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>HBase只能在RowKey上建立索引。非RowKey的访问，只能全表扫描。
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>RowKey是以字典顺序由小到大的排序。
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>RowKey尽量散列，可以保证数据都不在一个Region上，从而避免读写的压力集中在个别Region。
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>RowKey的长度尽量短。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>HBase只能在RowKey上建立索引。非RowKey的访问，只能全表扫描。
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>RowKey是以字典顺序由小到大的排序。
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>RowKey尽量散列，可以保证数据都不在一个Region上，从而避免读写的压力集中在个别Region。
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>RowKey的长度尽量短。
+</span></code></pre></div>
 <ul>
 <li>列族</li>
 </ul>
@@ -10053,11 +10053,11 @@
 <li>主节点 HMaster</li>
 </ul>
 <p>在 HBase 中可以启动多个 HMaster，通过选举机制保证只有一个 Master 正常运行并提供服务。HMaster 主要负责 Tabel 和 Region 的管理工作。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>管理用户对Table的增、删、改、查操作
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>管理RegionServer的负载均衡，调整Region分布
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>在Region分裂后，负责新Region的分配
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>在RegionServer死机后，负责失效的RegionServer上的Region迁移
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>管理用户对Table的增、删、改、查操作
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>管理RegionServer的负载均衡，调整Region分布
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>在Region分裂后，负责新Region的分配
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>在RegionServer死机后，负责失效的RegionServer上的Region迁移
+</span></code></pre></div>
 <ul>
 <li>RegionServer</li>
 </ul>
@@ -10130,10 +10130,10 @@
 <li>flush</li>
 </ul>
 <p>强制将 memstore 中的数据刷到 storeFile 中。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1. 安装hbase后，修改数据存储目录，编辑 conf/hbase-site.xml 配置hbase.rootdir 为/Users/onlyone/software/temp/hbase
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>2. flush &#39;表名&#39;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>3. hbase hfile -p -f 74ca443e934c4b4bbf6c7fa4b899d16a 解压查看存储的数据
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1. 安装hbase后，修改数据存储目录，编辑 conf/hbase-site.xml 配置hbase.rootdir 为/Users/onlyone/software/temp/hbase
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>2. flush &#39;表名&#39;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>3. hbase hfile -p -f 74ca443e934c4b4bbf6c7fa4b899d16a 解压查看存储的数据
+</span></code></pre></div>
 <h4 id="_7">过滤器<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>过滤器可以根据列族、列、版本等更多的条件来对数据进行过滤，带有过滤条件的 RPC 查询请求会把过滤器分发到各个 RegionServer 中，可以降低网络传输的压力。</p>
 <ul>
@@ -10262,6 +10262,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

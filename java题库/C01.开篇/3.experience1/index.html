@@ -4571,6 +4571,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4685,20 +4699,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9823,22 +9823,22 @@
 遇到不存在于新数组的元素，我就扔进去，遇到已经存在于新数组的，那我就不往新数组扔了，
 而且我还要把新数组里这个数丢出来，因为它不是我要找的只出现过一次的数，等遍历结束，
 自然最后新数组就只剩下那个只出现过一次的数了。好，那么用代码写出来：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>var singleNumber = function(nums) {
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   var list = [];
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   for (var i = 0; i &lt; nums.length; i++) {
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>       if (list.indexOf(nums[i]) &lt; 0) {
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>           list.push(nums[i]);
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      } else {
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>           list.splice(list.indexOf(nums[i]), 1);
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      }
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  }
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>   return list[0];
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>};
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>var singleNumber = function(nums) {
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   var list = [];
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   for (var i = 0; i &lt; nums.length; i++) {
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>       if (list.indexOf(nums[i]) &lt; 0) {
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>           list.push(nums[i]);
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      } else {
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>           list.splice(list.indexOf(nums[i]), 1);
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      }
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  }
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>   return list[0];
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>};
+</span></code></pre></div>
 <p>实现了，但是有什么问题呢？这时候就是第一个区分程序员水平的分水岭</p>
 <p>普通程序员会觉得这方法很好，代码简洁、易懂、好维护，
 然后就提交代码了，剩下的交给测试，提了 bug 再解决就好了。</p>
-<p>那么这样的程序员如果不是到某一天突然觉悟，如此下去，就会变成业界所说的那种<strong>工作三年但只有一年经</strong>的人。
+<p>那么这样的程序员如果不是到某一天突然觉悟，如此下去，就会变成业界所说的那种**工作三年但只有一年经**的人。
 想要自我救赎，不沦为咸鱼应该怎么办呢？写完这段代码，你盯着它再看看，用批判性的眼光挑挑毛病。
 或许你就会发现，如果我们要找的数在数组的最后一个，那你前面的数组遍历、数组插入、数组移出的操作就都是在浪费计算机的时间和资源。
 如果这个待处理的数组有几百万几千万的长度呢，那你要拿到结果可能就会感觉你的电脑卡住了一样，
@@ -9858,16 +9858,16 @@
 <p>就是字典，意如其名，我们如果使用一个字典找某个字，是不是通过索引目录就可以快速翻到某页找到要找的字，
 而不是像字谱一样从头到尾找一遍。</p>
 <p>那么我们试着把 if (list.indexOf(nums[i]) &lt; 0)这部分用字典替换掉</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>var map = {};
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>for (var i = 0; i &lt; nums.length; i++) {
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   if (map[nums[i]]) {
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>       delete map[nums[i]];
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  } else {
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>       map[nums[i]] = 1;
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  }
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>}
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>return Object.keys(map)[0]
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>var map = {};
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>for (var i = 0; i &lt; nums.length; i++) {
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   if (map[nums[i]]) {
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>       delete map[nums[i]];
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  } else {
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>       map[nums[i]] = 1;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  }
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>}
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>return Object.keys(map)[0]
+</span></code></pre></div>
 <p>程序的运行变得稍微快了一点，并且没有影响程序的可读性，只是巧用了不同的数据结构，这是一名中级程序员应该做到的。</p>
 <p>那么有没有更厉害的办法呢，这时就是所谓大牛的思路了（是时候展现真正的技术了！）大牛都是学过高数的，
 而且能把高数中的知识实实在在用到编程中的
@@ -9884,18 +9884,18 @@
 不然就不会有老师的水平参差不齐了，有时候你学不懂一个东西，也许不是你理解能力的问题，
 而是你的老师讲解能力的问题）</p>
 <p>那么我们根据这个数学公式编写出如下的代码（toutiao.sbs 注释，实际上这个方法使用的是 abcd-abc=d 的方法，用两个值存储然后做的减法，偷了巧，平常谁去想这个，不是做专业数学的，不会特定去研究。算法专门做这个）</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">sumOfNums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nx">sumOfSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">();</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">set</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nx">sumOfSet</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nx">set</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nx">sumOfNums</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">sumOfNums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nx">sumOfSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Set</span><span class="p">();</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">set</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nx">sumOfSet</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nx">set</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nx">sumOfNums</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>这就是单纯利用数学公式得出的结果，感受到数学的力量了吗。</p>
 <p>但这也没多厉害，因为数学的本质是通过挖掘规律总结出一系列的公式，从而使得计算变得更快，
 但数学没有数据结构的概念，也就是数学的公式是不提供存储功能，只是一个公式，你给它输入，它给你结果。</p>
@@ -9909,26 +9909,26 @@
 <p>计算机是如何利用电实现了这么多功能呢，其实就回到了初中物理——通路和短路，电路正常接电就是通路，电路中间有断开的部分，整个电路都不工作，就是断路，这就是二进制的理论基础，计算机就是通过不断地组合线路板上数量非常庞大的电子元件实现了不同的逻辑组合，那数量有多庞大呢，一开始是没多大的，所以电脑所产生的功能也有限，但后来有了集成电路，计算机主板上能放的电子元件数量爆炸性增长，电脑的功能随之变得越来越多。甚至有一个叫摩尔的外国人提出“集成电路上可容纳的晶体管数量，约每隔两年就会增加一倍”（摩尔定律）这样的预言，这个预言到现在都一直没被打破，的确是按照这个规律发展的。</p>
 <p>这样我们就好理解为什么在今天有了人工智能、大数据，为什么阿尔法狗可以在围棋上战胜人类，答案就是因为同样大小的一台电脑，每过两年，其功能数量就能翻倍，其计算能力地增长更是不可预测。这样就把计算机从组成到发展串起来了，这样再来看看今天你手中的手机，手机中的 APP，是不是就更好理解了。</p>
 <p>那么回归正题，我们看看离散数学是怎么用于日常编程的，离散数学里有一种很强但是稍微有些难理解的运算叫做“异或”，我们试着从名字拆解以理解，“异或”即“不同”+“或”，或运算是离散数学中的基本运算，比如 1 或 0 就是 1，0 或 0 还是 0，1 或 1 也是 1，0 或 1 即是 1，有没有发现规律，这就是初中物理中的并联，如果两条电路是并联的，其中一条电路断掉是不影响整个电路通电的，这相当于什么呢，就相当于备用电器，你用两个插板都接着电，其中一个坏掉是不会影响你正常用电的，代码中也常见，比如</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>if (a || b) {
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  console.log(&#39;hello world&#39;)
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>if (a || b) {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  console.log(&#39;hello world&#39;)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>}
+</span></code></pre></div>
 <p>这段代码中 a 或 b 有一个为真，就会打印出“hello world”。当然，程序员看到这里还会指出一个知识点就是如果 a 已经是真了，那么计算机就不会再去看 b 是否为真了，就直接打印“hello world”了，俗称“断路”，即或操作中先为真的数会导致后面判断断掉而不去进行判断。当然，这都是程序员关心的小知识了，无足挂齿。</p>
 <p>那么我们继续看“异或”，先说结果，”异或“意味着两个数相同的时候结果就为假，而不同的时候则为真，即 1 异或 0 是 1，0 异或 1 也是 1，但 1 异或 1 是 0，0 异或 0 也是 0，纵观其规律就是两个字”拧巴“，就是两个数闹别扭，我偏不和你一样，这也符合当今时代年轻人的个性，不喜欢苟同，喜欢个性，与众不同。这样记“异或”就够了，就不用去咬文嚼字理解为什么这样的操作叫“异或”，记住“异或”重点在于“ 异”。只要“异”了就是真，“异”了就像在做“或”操作了，而“或”操作的精髓在于“有真则真”（后面这段解释可以不看，免得产生误导）</p>
 <p>那么怎么利用”异或计算“这个东西呢，有以下这样的推导公式：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>a ^ 0 == a
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>a ^ a == 0
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>a ^ b ^ a == a ^ a ^ b == 0 ^ b == b
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>a ^ 0 == a
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>a ^ a == 0
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>a ^ b ^ a == a ^ a ^ b == 0 ^ b == b
+</span></code></pre></div>
 <p>一个数和 0 进行异或操作，如果这个数是 0，那么结果为 0，因为 0 异或 0 是 0，那么结果是不是就和这个数相同了，如果这个数不是 0 呢，那就和 0 不同，结果就是这个数了；那如果这个数和自身进行异或操作呢，那永远是 0，因为和自身异或，相当于两个相同的数进行异或；同时多个数进行异或操作允许交换顺序，利用交换顺序，结合上面两个规律，便得出如果有两个相同的数和一个只出现一次的数进行异或操作，最后得出的便是那个只出现过一次的数，也就是本题的解。</p>
 <p>那我们只需要依次将数组的每个数都进行异或操作，即能得到那个”另类“的数，但给我们的是一个数组，我们只能依次遍历每一个数，那么如何记住上一次两个数的遍历结果呢，我们可以用一个变量存储这个值，那么这个数初始化为多少合适呢，只能是 0，假如是别的数，比如是 1，那么数组第一个数如果是 1，那么第一次异或结果就是 0，这样外部数据影响了数组内部数据的异或结果。但如果我们把外部变量初始化为 0，那么数组第一个数无论是几，第一次的异或结果都是数组第一个数本身，因为有理论做支撑（a 异或 0 等于 a）。因为所给数组中只存在出现两次的数和一个只出现一次的数，所以结果必然符合我们的异或推到公式（a ^ b ^ a == a ^ a ^ b == 0 ^ b == b），即多个出现两次的数和一个单独的仅出现一次的数在一次，都进行异或，顺序无所谓，最后只等于那个只出现一次的数。</p>
 <p>最终代码如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>var a = 0;
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>for (var i = 0; i &lt; nums.length; i++) {
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>   a = a ^= nums[i]
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>}
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>return a
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>var a = 0;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>for (var i = 0; i &lt; nums.length; i++) {
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>   a = a ^= nums[i]
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>}
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>return a
+</span></code></pre></div>
 <p>这样地计算既利用了计算机的数据结构，也利用到了算法，是应该优先考虑的解法，至于代码可读性自然没有前面的容易理解，这就要求编程人员掌握足够的计算机基础知识，知道什么”异或“操作，以及”异或“操作可以推导多个数进行”异或“的规律，而“异或”的知识就藏在《离散数学》那本书中。（这里我也不是推荐程序员都去写一些晦涩难懂的代码，从而其他和你水平不相当的人接手骂爹，因为看不懂你写的东西而全部重写。我们提供的是一种思路，作为程序员，应该拥有程序员精神，即是要有意识地提高你程序运行的速度，并使用尽可能少的内存资源，这种追求极致的精神其实在任何行业都是高手的基本素养）</p>
 <p>总算是首尾呼应，自圆其说了。曾经有很多人说大学学习的东西和毕业后工作的内容没什么联系，也就是大学学的东西都没什么用。我也曾慢慢加入到这样的呼声中，但可能再过一个阶段，你回过头再去看一切，也许就会理解到这世上不可能存在没有任何联系的事物，一切都在一个大的网络联络之中。如果你觉得两个事情没有任何联系，那可能只是你还没找到联络其两物之间的那复杂的联系。</p>
 
@@ -10016,6 +10016,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10128,12 +10128,12 @@
 <h6 id="_5">读屏障<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h6>
 <p>读屏障是 JVM 向应用代码插入一小段代码的技术。当应用线程从堆中读取对象引用时，就会执行这段代码。需要注意的是，仅“从堆中读取对象引用”才会触发这段代码。</p>
 <p>读屏障示例：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Object o = obj.FieldA // 从堆中读取引用，需要加入屏障
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;Load barrier&gt;
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Object p = o // 无需加入屏障，因为不是从堆中读取引用
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>o.dosomething // 无需加入屏障，因为不是从堆中读取引用
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>int i = obj.FieldB //无需加入屏障，因为不是对象引用
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Object o = obj.FieldA // 从堆中读取引用，需要加入屏障
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;Load barrier&gt;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Object p = o // 无需加入屏障，因为不是从堆中读取引用
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>o.dosomething // 无需加入屏障，因为不是从堆中读取引用
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>int i = obj.FieldB //无需加入屏障，因为不是对象引用
+</span></code></pre></div>
 <p>ZGC 中读屏障的代码作用：在对象标记和转移过程中，用于确定对象的引用地址是否满足条件，并作出相应动作。</p>
 <p>ZGC 并发处理演示</p>
 <p>接下来详细介绍 ZGC 一次垃圾回收周期中地址视图的切换过程：</p>
@@ -10148,14 +10148,14 @@
 <h4 id="zgc_3">ZGC 调优实践<a class="headerlink" href="#zgc_3" title="Permanent link">&para;</a></h4>
 <p>ZGC 不是“银弹”，需要根据服务的具体特点进行调优。网络上能搜索到实战经验较少，调优理论需自行摸索，我们在此阶段也耗费了不少时间，最终才达到理想的性能。本文的一个目的是列举一些使用 ZGC 时常见的问题，帮助大家使用 ZGC 提高服务可用性。</p>
 <p>重要参数配置样例：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>-Xms10G -Xmx10G
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-XX:ReservedCodeCacheSize=256m -XX:InitialCodeCacheSize=256m
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>-XX:+UnlockExperimentalVMOptions -XX:+UseZGC
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>-XX:ConcGCThreads=2 -XX:ParallelGCThreads=6
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>-XX:ZCollectionInterval=120 -XX:ZAllocationSpikeTolerance=5
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>-XX:+UnlockDiagnosticVMOptions -XX:-ZProactive
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>-Xlog:safepoint,classhisto*=trace,age*,gc*=info:file=/opt/logs/logs/gc-%t.log:time,tid,tags:filecount=5,filesize=50m
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>-Xms10G -Xmx10G
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-XX:ReservedCodeCacheSize=256m -XX:InitialCodeCacheSize=256m
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>-XX:+UnlockExperimentalVMOptions -XX:+UseZGC
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>-XX:ConcGCThreads=2 -XX:ParallelGCThreads=6
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>-XX:ZCollectionInterval=120 -XX:ZAllocationSpikeTolerance=5
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>-XX:+UnlockDiagnosticVMOptions -XX:-ZProactive
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>-Xlog:safepoint,classhisto*=trace,age*,gc*=info:file=/opt/logs/logs/gc-%t.log:time,tid,tags:filecount=5,filesize=50m
+</span></code></pre></div>
 <ul>
 <li>-Xms -Xmx：堆的最大内存和最小内存，这里都设置为 10G，程序的堆内存将保持 10G 不变。</li>
 <li>-XX:ReservedCodeCacheSize -XX:InitialCodeCacheSize: 设置 CodeCache 的大小， JIT 编译的代码都放在 CodeCache 中，一般服务 64m 或 128m 就已经足够。我们的服务因为有一定特殊性，所以设置的较大，后面会详细介绍。</li>
@@ -10292,6 +10292,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

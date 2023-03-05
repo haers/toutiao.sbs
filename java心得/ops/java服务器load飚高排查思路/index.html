@@ -4564,6 +4564,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4678,20 +4692,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9806,94 +9806,94 @@
 <br><br></p>
 <p>1.首先通过 jps 命令，查看当前进程 id，如 id 为 28174</p>
 <p>2.查看该进程下的线程资源使用情况</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>top -p 28174 –H
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>32694 root      20   0 3249m 2.0g  11m S    2  6.4   3:31.12 java
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>28175 root      20   0 3249m 2.0g  11m S    0  6.4   0:00.06 java
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>28176 root      20   0 3249m 2.0g  11m S    0  6.4   1:40.79 java
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>28177 root      20   0 3249m 2.0g  11m S    0  6.4   1:41.12 java
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>28178 root      20   0 3249m 2.0g  11m S    0  6.4   1:41.11 java
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>28179 root      20   0 3249m 2.0g  11m S    0  6.4   1:41.33 java
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>28180 root      20   0 3249m 2.0g  11m S    0  6.4   1:41.58 java
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>28181 root      20   0 3249m 2.0g  11m S    0  6.4   1:40.36 java
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>28182 root      20   0 3249m 2.0g  11m S    0  6.4   1:41.02 java
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>28183 root      20   0 3249m 2.0g  11m S    0  6.4   1:40.96 java
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>28184 root      20   0 3249m 2.0g  11m S    0  6.4   4:38.30 java
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>28185 root      20   0 3249m 2.0g  11m S    0  6.4   0:00.46 java
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>28186 root      20   0 3249m 2.0g  11m S    0  6.4   0:01.83 java
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>28187 root      20   0 3249m 2.0g  11m S    0  6.4   0:00.00 java
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>28189 root      20   0 3249m 2.0g  11m S    0  6.4   0:00.01 java
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>28190 root      20   0 3249m 2.0g  11m S    0  6.4   0:49.01 java
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>top -p 28174 –H
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>32694 root      20   0 3249m 2.0g  11m S    2  6.4   3:31.12 java
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>28175 root      20   0 3249m 2.0g  11m S    0  6.4   0:00.06 java
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>28176 root      20   0 3249m 2.0g  11m S    0  6.4   1:40.79 java
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>28177 root      20   0 3249m 2.0g  11m S    0  6.4   1:41.12 java
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>28178 root      20   0 3249m 2.0g  11m S    0  6.4   1:41.11 java
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>28179 root      20   0 3249m 2.0g  11m S    0  6.4   1:41.33 java
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>28180 root      20   0 3249m 2.0g  11m S    0  6.4   1:41.58 java
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>28181 root      20   0 3249m 2.0g  11m S    0  6.4   1:40.36 java
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>28182 root      20   0 3249m 2.0g  11m S    0  6.4   1:41.02 java
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>28183 root      20   0 3249m 2.0g  11m S    0  6.4   1:40.96 java
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>28184 root      20   0 3249m 2.0g  11m S    0  6.4   4:38.30 java
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>28185 root      20   0 3249m 2.0g  11m S    0  6.4   0:00.46 java
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>28186 root      20   0 3249m 2.0g  11m S    0  6.4   0:01.83 java
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>28187 root      20   0 3249m 2.0g  11m S    0  6.4   0:00.00 java
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>28189 root      20   0 3249m 2.0g  11m S    0  6.4   0:00.01 java
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>28190 root      20   0 3249m 2.0g  11m S    0  6.4   0:49.01 java
+</span></code></pre></div>
 <p>3.打印 JAVA 进程 28174 的堆栈信息</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>jstack 28174 &gt;&gt; stack.log
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>jstack 28174 &gt;&gt; stack.log
+</span></code></pre></div>
 <p>4.将 cpu 消耗高的线程的 pid 换算为 16 进制</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>printf 0x%x 32694
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>printf 0x%x 32694
+</span></code></pre></div>
 <p>转换后的 16 进制为 0x7fb6</p>
 <p>5.从刚才的栈日志中查找该线程正在运行的方法</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>grep 0x7fb6  stack.log -a3
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&quot;MSXMLProcessorThread&quot; prio=10 tid=0x00002b469923a800 [color=darkred]nid=0x7fb6[/color] sleeping[0x00002b46b0200000]
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   java.lang.Thread.State: TIMED_WAITING (sleeping)
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        at java.lang.Thread.sleep(Native Method)
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        at com.adventnet.management.xml.MSXmlProcessor.listen(MSXmlProcessor.java:279)
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        at com.adventnet.management.xml.MSXmlProcessor.run(MSXmlProcessor.java:264)
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        at java.lang.Thread.run(Thread.java:619)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>grep 0x7fb6  stack.log -a3
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&quot;MSXMLProcessorThread&quot; prio=10 tid=0x00002b469923a800 [color=darkred]nid=0x7fb6[/color] sleeping[0x00002b46b0200000]
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   java.lang.Thread.State: TIMED_WAITING (sleeping)
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        at java.lang.Thread.sleep(Native Method)
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        at com.adventnet.management.xml.MSXmlProcessor.listen(MSXmlProcessor.java:279)
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        at com.adventnet.management.xml.MSXmlProcessor.run(MSXmlProcessor.java:264)
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        at java.lang.Thread.run(Thread.java:619)
+</span></code></pre></div>
 <p>6.另外也可以查找正在运行的线程，及线程处于运行状态的位置，从这些线程中来查找资源消耗过高的代码。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>grep RUNNABLE stack.log  -a1
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>grep RUNNABLE stack.log  -a1
+</span></code></pre></div>
 <p><img alt="image" src="../img/1364394978_1570.jpg" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>less a.log |awk &#39;{FS=&quot;java.lang.Thread.State:&quot;;print $2}&#39;|sort |uniq -c |sort -nr
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>less a.log |awk &#39;{FS=&quot;java.lang.Thread.State:&quot;;print $2}&#39;|sort |uniq -c |sort -nr
+</span></code></pre></div>
 <p><img alt="image" src="../img/20130812130234781.jpeg" /></p>
 <p>7、查看当前 jvm 内存各堆区的占比</p>
 <p>jmap -heap 8002</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Heap Configuration:
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   MinHeapFreeRatio         = 40
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>   MaxHeapFreeRatio         = 70
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>   MaxHeapSize              = 2147483648 (2048.0MB)
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>   NewSize                  = 786432000 (750.0MB)
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>   MaxNewSize               = 786432000 (750.0MB)
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>   OldSize                  = 1361051648 (1298.0MB)
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>   NewRatio                 = 2
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>   SurvivorRatio            = 8
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>   MetaspaceSize            = 39845888 (38.0MB)
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>   CompressedClassSpaceSize = 1073741824 (1024.0MB)
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>   MaxMetaspaceSize         = 398458880 (380.0MB)
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>   G1HeapRegionSize         = 0 (0.0MB)
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>Heap Usage:
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>New Generation (Eden + 1 Survivor Space):
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>   capacity = 707788800 (675.0MB)
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>   used     = 383204272 (365.4520721435547MB)
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>   free     = 324584528 (309.5479278564453MB)
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>   54.14104772497107% used
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>Eden Space:
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>   capacity = 629145600 (600.0MB)
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>   used     = 334989624 (319.4710006713867MB)
-<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>   free     = 294155976 (280.5289993286133MB)
-<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>   53.24516677856445% used
-<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>From Space:
-<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>   capacity = 78643200 (75.0MB)
-<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>   used     = 48214648 (45.98107147216797MB)
-<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>   free     = 30428552 (29.01892852783203MB)
-<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>   61.30809529622396% used
-<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>To Space:
-<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>   capacity = 78643200 (75.0MB)
-<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>   used     = 0 (0.0MB)
-<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>   free     = 78643200 (75.0MB)
-<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>   0.0% used
-<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>concurrent mark-sweep generation:
-<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>   capacity = 1361051648 (1298.0MB)
-<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>   used     = 985748664 (940.0831832885742MB)
-<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>   free     = 375302984 (357.9168167114258MB)
-<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>   72.4255148912615% used
-<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>
-<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>49647 interned Strings occupying 5512480 bytes.
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Heap Configuration:
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>   MinHeapFreeRatio         = 40
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>   MaxHeapFreeRatio         = 70
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>   MaxHeapSize              = 2147483648 (2048.0MB)
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>   NewSize                  = 786432000 (750.0MB)
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>   MaxNewSize               = 786432000 (750.0MB)
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>   OldSize                  = 1361051648 (1298.0MB)
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>   NewRatio                 = 2
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>   SurvivorRatio            = 8
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>   MetaspaceSize            = 39845888 (38.0MB)
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>   CompressedClassSpaceSize = 1073741824 (1024.0MB)
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>   MaxMetaspaceSize         = 398458880 (380.0MB)
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>   G1HeapRegionSize         = 0 (0.0MB)
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>Heap Usage:
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>New Generation (Eden + 1 Survivor Space):
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>   capacity = 707788800 (675.0MB)
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>   used     = 383204272 (365.4520721435547MB)
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>   free     = 324584528 (309.5479278564453MB)
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>   54.14104772497107% used
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>Eden Space:
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>   capacity = 629145600 (600.0MB)
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>   used     = 334989624 (319.4710006713867MB)
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>   free     = 294155976 (280.5289993286133MB)
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>   53.24516677856445% used
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>From Space:
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>   capacity = 78643200 (75.0MB)
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>   used     = 48214648 (45.98107147216797MB)
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>   free     = 30428552 (29.01892852783203MB)
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>   61.30809529622396% used
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>To Space:
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>   capacity = 78643200 (75.0MB)
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>   used     = 0 (0.0MB)
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>   free     = 78643200 (75.0MB)
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>   0.0% used
+</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>concurrent mark-sweep generation:
+</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>   capacity = 1361051648 (1298.0MB)
+</span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>   used     = 985748664 (940.0831832885742MB)
+</span><span id="__span-8-39"><a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>   free     = 375302984 (357.9168167114258MB)
+</span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>   72.4255148912615% used
+</span><span id="__span-8-41"><a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>
+</span><span id="__span-8-42"><a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>49647 interned Strings occupying 5512480 bytes.
+</span></code></pre></div>
 
 
 
@@ -9979,6 +9979,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

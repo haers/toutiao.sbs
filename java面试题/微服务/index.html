@@ -4721,6 +4721,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4835,20 +4849,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10133,9 +10133,9 @@
 本地调用变成 RPC 调用，接口耗时增加；
 可能会引入分布式事务。</p>
 <h4 id="2zookeeper-eureka">2.作为注册中心，Zookeeper 和 Eureka 有什么区别？<a class="headerlink" href="#2zookeeper-eureka" title="Permanent link">&para;</a></h4>
-<p>详见：https://mp.weixin.qq.com/s/B6F9Ea1GnDIou41Po3NMAQ</p>
+<p>详见：<a href="https://mp.weixin.qq.com/s/B6F9Ea1GnDIou41Po3NMAQ">https://mp.weixin.qq.com/s/B6F9Ea1GnDIou41Po3NMAQ</a></p>
 <h4 id="3service-mesh">3.Service Mesh 了解过吗？<a class="headerlink" href="#3service-mesh" title="Permanent link">&para;</a></h4>
-<p>详见：https://www.jianshu.com/p/27a742e349f7</p>
+<p>详见：<a href="https://www.jianshu.com/p/27a742e349f7">https://www.jianshu.com/p/27a742e349f7</a></p>
 <h4 id="4">4.微服务有哪些特点？<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
 <p>· 解耦 – 系统内的服务很大程度上是分离的。因此，整个应用程序可以轻松构建，更改和扩展
 · 组件化 – 微服务被视为可以轻松更换和升级的独立组件
@@ -10189,7 +10189,7 @@ SpringBoot 专注于快速、方便的开发单个微服务个体，SpringCloud 
 Spring Boot 可以离开 Spring Cloud 独立使用开发项目，但是 Spring Cloud 离不开 Spring Boot，属于依赖的关系。</p>
 <h4 id="12">12.什么是服务熔断，什么是服务降级<a class="headerlink" href="#12" title="Permanent link">&para;</a></h4>
 <p>服务熔断
-熔断机制是应对雪崩效应的一种微服务链路保护机制。当扇出链路的某个微服务不可用或者响应时间太长时，会进行服务的降级，进而熔断该节点微服务的调用，快速返回”错误”的响应信息。当检测到该节点微服务调用响应正常后恢复调用链路。在 SpringCloud 框架里熔断机制通过 Hystrix 实现。Hystrix 会监控微服务间调用的状况，当失败的调用到一定阈值，缺省是 5 秒内 20 次调用失败就会启动熔断机制。熔断机制的注解是@HystrixCommand。</p>
+熔断机制是应对雪崩效应的一种微服务链路保护机制。当扇出链路的某个微服务不可用或者响应时间太长时，会进行服务的降级，进而熔断该节点微服务的调用，快速返回”错误”的响应信息。当检测到该节点微服务调用响应正常后恢复调用链路。在 SpringCloud 框架里熔断机制通过 Hystrix 实现。Hystrix 会监控微服务间调用的状况，当失败的调用到一定阈值，缺省是 5 秒内 20 次调用失败就会启动熔断机制。熔断机制的注解是<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/HystrixCommand" title="GitHub User: HystrixCommand">@HystrixCommand</a>。</p>
 <p>服务降级
 其实就是线程池中单个线程障处理，防止单个线程请求时间太长，导致资源长期被占有而得不到释放，从而导致线程池被快速占用完，导致服务崩溃。</p>
 <p>Hystrix 能解决如下问题：
@@ -10235,8 +10235,8 @@ Eureka 仍然能够接受新服务的注册和查询请求，但是不会被同�
 当网络稳定时，当前实例新的注册信息会被同步到其它节点中
 因此， Eureka 可以很好的应对因网络故障导致部分节点失去联系的情况，而不会像 zookeeper 那样使整个注册服务瘫痪。</p>
 <h3 id="_2">参考资料<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>https://www.cnblogs.com/zhuifeng523/p/12294904.html</p>
-<p>https://baijiahao.baidu.com/s?id=1655329799036379323</p>
+<p><a href="https://www.cnblogs.com/zhuifeng523/p/12294904.html">https://www.cnblogs.com/zhuifeng523/p/12294904.html</a></p>
+<p><a href="https://baijiahao.baidu.com/s?id=1655329799036379323">https://baijiahao.baidu.com/s?id=1655329799036379323</a></p>
 
 
 
@@ -10322,6 +10322,12 @@ Eureka 仍然能够接受新服务的注册和查询请求，但是不会被同�
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

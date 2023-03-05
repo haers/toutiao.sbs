@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9958,19 +9958,19 @@ jvm 就会将 class 常量池中的内容存放到运行时常量池中，由此
 也就是说他们存的并不是对象的实例，而是对象的符号引用值。而经过解析（resolve）之后，也就是把符号引用替换为直接引用，解析的过程会去查询全局字符串池，
 也就是我们上面所说的 StringTable，以保证运行时常量池所引用的字符串与全局字符串池中所引用的是一致的。</p>
 <p>举个实例来说明一下:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>public class HelloWorld {
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    public static void main(String []args) {
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        String str1 = &quot;abc&quot;;
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        String str2 = new String(&quot;def&quot;);
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        String str3 = &quot;abc&quot;;
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        String str4 = str2.intern();
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        String str5 = &quot;def&quot;;
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        System.out.println(str1 == str3);//true
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        System.out.println(str2 == str4);//false
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        System.out.println(str4 == str5);//true
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    }
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>public class HelloWorld {
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    public static void main(String []args) {
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        String str1 = &quot;abc&quot;;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        String str2 = new String(&quot;def&quot;);
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        String str3 = &quot;abc&quot;;
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        String str4 = str2.intern();
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        String str5 = &quot;def&quot;;
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        System.out.println(str1 == str3);//true
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        System.out.println(str2 == str4);//false
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        System.out.println(str4 == str5);//true
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    }
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>}
+</span></code></pre></div>
 <p>回到上面的那个程序，现在就很容易解释整个程序的内存分配过程了，首先，在堆中会有一个”abc”实例，全局 StringTable 中存放着”abc”的一个引用值，然后在运行第二句的时候会生成两个实例，一个是”def”的实例对象，并且 StringTable 中存储一个”def”的引用值，还有一个是 new 出来的一个”def”的实例对象，与上面那个是不同的实例，当在解析 str3 的时候查找 StringTable，里面有”abc”的全局驻留字符串引用，所以 str3 的引用地址与之前的那个已存在的相同，str4 是在运行的时候调用 intern()函数，返回 StringTable 中”def”的引用值，如果没有就将 str2 的引用值添加进去，在这里，StringTable 中已经有了”def”的引用值了，所以返回上面在 new str2 的时候添加到 StringTable 中的 “def”引用值，最后 str5 在解析的时候就也是指向存在于 StringTable 中的”def”的引用值，那么这样一分析之后，下面三个打印的值就容易理解了。上面程序的首先经过编译之后，在该类的 class 常量池中存放一些符号引用，然后类加载之后，将 class 常量池中存放的符号引用转存到运行时常量池中，然后经过验证，准备阶段之后，在堆中生成驻留字符串的实例对象（也就是上例中 str1 所指向的”abc”实例对象），然后将这个对象的引用存到全局 String Pool 中，也就是 StringTable 中，最后在解析阶段，要把运行时常量池中的符号引用替换成直接引用，那么就直接查询 StringTable，保证 StringTable 里的引用值与运行时常量池中的引用值一致，大概整个过程就是这样了。</p>
 <h2 id="_2">总结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
@@ -10077,13 +10077,13 @@ jvm 就会将 class 常量池中的内容存放到运行时常量池中，由此
 <p>方法区里存储着 class 文件的信息和运行时常量池,class 文件的信息包括类信息和 class 文件常量池。</p>
 <p>运行时常量池里的内容除了是 class 文件常量池里的内容外，还将 class 文件常量池里的符号引用转变为直接引用，而且运行时常量池里的内容是能动态添加的。例如调用 String 的 intern 方法就能将 string 的值添加到 String 常量池中，这里 String 常量池是包含在运行时常量池里的，但在 jdk1.8 后，将 String 常量池放到了堆中</p>
 <p>首先看一下这道常见的面试题，下面代码中，会创建几个字符串对象？</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>String s=&quot;a&quot;+&quot;b&quot;+&quot;c&quot;;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>String s=&quot;a&quot;+&quot;b&quot;+&quot;c&quot;;
+</span></code></pre></div>
 <p>如果你比较一下 Java 源代码和反编译后的字节码文件，就可以直观的看到答案，只创建了一个 String 对象。</p>
 <p><img alt="img" src="https://img.bosszhipin.com/beijin/upload/tmp/20211227/4558a342cf65918702461f48e52e3d90d3efabd63def9b40aa27e39782ed1e2cc93416f946dd09f1.jpg" /></p>
 <p>估计大家会有疑问了，为什么源代码中字符串拼接的操作，在编译完成后会消失，直接呈现为一个拼接后的完整字符串呢？</p>
-<p>这是因为在编译期间，应用了编译器优化中一种被称为<strong>常量折叠</strong>(Constant Folding)的技术，会将<strong>编译期常量</strong>的加减乘除的运算过程在编译过程中折叠。编译器通过语法分析，会将常量表达式计算求值，并用求出的值来替换表达式，而不必等到运行期间再进行运算处理，从而在运行期间节省处理器资源。</p>
-<p>而上边提到的<strong>编译期常量</strong>的特点就是它的值在编译期就可以确定，并且需要完整满足下面的要求，才可能是一个编译期常量：</p>
+<p>这是因为在编译期间，应用了编译器优化中一种被称为**常量折叠**(Constant Folding)的技术，会将**编译期常量**的加减乘除的运算过程在编译过程中折叠。编译器通过语法分析，会将常量表达式计算求值，并用求出的值来替换表达式，而不必等到运行期间再进行运算处理，从而在运行期间节省处理器资源。</p>
+<p>而上边提到的**编译期常量**的特点就是它的值在编译期就可以确定，并且需要完整满足下面的要求，才可能是一个编译期常量：</p>
 <ul>
 <li>被声明为<code>final</code></li>
 <li>基本类型或者字符串类型</li>
@@ -10091,62 +10091,62 @@ jvm 就会将 class 常量池中的内容存放到运行时常量池中，由此
 <li>使用常量表达式进行初始化</li>
 </ul>
 <p>上面的前两条比较容易理解，需要注意的是第三和第四条，通过下面的例子进行说明：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>final String s1=&quot;hello &quot;+&quot;Hydra&quot;;
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>final String s2=UUID.randomUUID().toString()+&quot;Hydra&quot;;
-</code></pre></div>
-<p>编译器能够在编译期就得到<code>s1</code>的值是<code>hello Hydra</code>，不需要等到程序的运行期间，因此<code>s1</code>属于编译期常量。而对<code>s2</code>来说，虽然也被声明为<code>final</code>类型，并且在声明时就已经初始化，但使用的不是常量表达式，因此不属于编译期常量，这一类型的常量被称为<strong>运行时常量</strong>。再看一下编译后的字节码文件中的常量池区域：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>final String s1=&quot;hello &quot;+&quot;Hydra&quot;;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>final String s2=UUID.randomUUID().toString()+&quot;Hydra&quot;;
+</span></code></pre></div>
+<p>编译器能够在编译期就得到<code>s1</code>的值是<code>hello Hydra</code>，不需要等到程序的运行期间，因此<code>s1</code>属于编译期常量。而对<code>s2</code>来说，虽然也被声明为<code>final</code>类型，并且在声明时就已经初始化，但使用的不是常量表达式，因此不属于编译期常量，这一类型的常量被称为**运行时常量**。再看一下编译后的字节码文件中的常量池区域：</p>
 <p><img alt="img" src="https://img.bosszhipin.com/beijin/upload/tmp/20211227/4558a342cf6591875432a679575194696cd6e4d16962f965aa27e39782ed1e2cc93416f946dd09f1.jpg" /></p>
 <p>可以看到常量池中只有一个<code>String</code>类型的常量<code>hello Hydra</code>，而<code>s2</code>对应的字符串常量则不在此区域。对编译器来说，运行时常量在编译期间无法进行折叠，编译器只会对尝试修改它的操作进行报错处理。</p>
 <p>另外值得一提的是，编译期常量与运行时常量的另一个不同就是是否需要对类进行初始化，下面通过两个例子进行对比：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>public class IntTest1 {
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    public static void main(String[] args) {
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        System.out.println(a1.a);
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    }
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>}
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>class a1{
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    static {
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        System.out.println(&quot;init class&quot;);
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    }
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    public static int a=1;
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>public class IntTest1 {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    public static void main(String[] args) {
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        System.out.println(a1.a);
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    }
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>}
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>class a1{
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    static {
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        System.out.println(&quot;init class&quot;);
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    }
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    public static int a=1;
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>}
+</span></code></pre></div>
 <p>运行上面的代码，输出：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>init class
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>1
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>init class
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>1
+</span></code></pre></div>
 <p>如果对上面进行修改，对变量<code>a</code>添加<code>final</code>进行修饰：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>public static final int a=1;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>public static final int a=1;
+</span></code></pre></div>
 <p>再次执行上面的代码，会输出：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1
+</span></code></pre></div>
 <p>可以看到在添加了<code>final</code>修饰后，两次运行的结果是不同的，这是因为在添加<code>final</code>后，变量<code>a</code>成为了编译期常量，不会导致类的初始化。另外，在声明编译器常量时，<code>final</code>关键字是必要的，而<code>static</code>关键字是非必要的，上面加<code>static</code>修饰只是为了验证类是否被初始化过。</p>
 <p>我们再看几个例子来加深对<code>final</code>关键字的理解，运行下面的代码：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>public static void main(String[] args) {
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    final String h1 = &quot;hello&quot;;
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    String h2 = &quot;hello&quot;;
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    String s1 = h1 + &quot;Hydra&quot;;
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    String s2 = h2 + &quot;Hydra&quot;;
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    System.out.println((s1 == &quot;helloHydra&quot;));
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    System.out.println((s2 == &quot;helloHydra&quot;));
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>public static void main(String[] args) {
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    final String h1 = &quot;hello&quot;;
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    String h2 = &quot;hello&quot;;
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    String s1 = h1 + &quot;Hydra&quot;;
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    String s2 = h2 + &quot;Hydra&quot;;
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    System.out.println((s1 == &quot;helloHydra&quot;));
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    System.out.println((s2 == &quot;helloHydra&quot;));
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>}
+</span></code></pre></div>
 <p>执行结果：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>true
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>false
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>true
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>false
+</span></code></pre></div>
 <p>代码中字符串<code>h1</code>和<code>h2</code>都使用常量赋值，区别在于是否使用了<code>final</code>进行修饰，对比编译后的代码，<code>s1</code>进行了折叠而<code>s2</code>没有，可以印证上面的理论，<code>final</code>修饰的字符串变量属于编译期常量。</p>
 <p><img alt="img" src="https://img.bosszhipin.com/beijin/upload/tmp/20211227/4558a342cf6591875d40afce702d71de2d8f4befb8f2636daa27e39782ed1e2cc93416f946dd09f1.jpg" /></p>
 <p>再看一段代码，执行下面的程序，结果会返回什么呢？</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>public static void main(String[] args) {
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    String h =&quot;hello&quot;;
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    final String h2 = h;
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    String s = h2 + &quot;Hydra&quot;;
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    System.out.println(s==&quot;helloHydra&quot;);
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>public static void main(String[] args) {
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    String h =&quot;hello&quot;;
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    final String h2 = h;
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    String s = h2 + &quot;Hydra&quot;;
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    System.out.println(s==&quot;helloHydra&quot;);
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>}
+</span></code></pre></div>
 <p>答案是<code>false</code>，因为虽然这里字符串<code>h2</code>被<code>final</code>修饰，但是初始化时没有使用编译期常量，因此它也不是编译期常量。</p>
-<p>在上面的一些例子中，在执行常量折叠的过程中都遵循了<strong>使用常量表达式进行初始化</strong>这一原则，这里可能有的同学还会有疑问，到底什么样才能算得上是常量表达式呢？在<code>Oracle</code>官网的文档中，列举了很多种情况，下面对常见的情况进行列举（除了下面这些之外官方文档上还列举了不少情况，如果有兴趣的话，可以自己查看）：</p>
+<p>在上面的一些例子中，在执行常量折叠的过程中都遵循了**使用常量表达式进行初始化**这一原则，这里可能有的同学还会有疑问，到底什么样才能算得上是常量表达式呢？在<code>Oracle</code>官网的文档中，列举了很多种情况，下面对常见的情况进行列举（除了下面这些之外官方文档上还列举了不少情况，如果有兴趣的话，可以自己查看）：</p>
 <ul>
 <li>基本类型和 String 类型的字面量</li>
 <li>基本类型和 String 类型的强制类型转换</li>
@@ -10156,47 +10156,47 @@ jvm 就会将 class 常量池中的内容存放到运行时常量池中，由此
 <li>……</li>
 </ul>
 <p>字面量（literals）是用于表达源代码中一个固定值的表示法，在 Java 中创建一个对象时需要使用<code>new</code>关键字，但是给一个基本类型变量赋值时不需要使用<code>new</code>关键字，这种方式就可以被称为字面量。Java 中字面量主要包括了以下类型的字面量：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>//整数型字面量：
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>long l=1L;
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>int i=1;
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>//浮点类型字面量：
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>float f=11.1f;
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>double d=11.1;
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>//字符和字符串类型字面量：
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>char c=&#39;h&#39;;
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>String s=&quot;Hydra&quot;;
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>//布尔类型字面量：
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>boolean b=true;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>//整数型字面量：
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>long l=1L;
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>int i=1;
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>//浮点类型字面量：
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>float f=11.1f;
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>double d=11.1;
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>//字符和字符串类型字面量：
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>char c=&#39;h&#39;;
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>String s=&quot;Hydra&quot;;
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>//布尔类型字面量：
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>boolean b=true;
+</span></code></pre></div>
 <p>当我们在代码中定义并初始化一个字符串对象后，程序会在常量池（<code>constant pool</code>）中缓存该字符串的字面量，如果后面的代码再次用到这个字符串的字面量，会直接使用常量池中的字符串字面量。</p>
 <p>除此之外，还有一类比较特殊的<code>null</code>类型字面量，这个类型的字面量只有一个就是<code>null</code>，这个字面量可以赋值给任意引用类型的变量，表示这个引用类型变量中保存的地址为空，也就是还没有指向任何有效的对象。</p>
 <p>那么，如果不是使用的常量表达式进行初始化，在变量的初始化过程中引入了其他变量（且没有被<code>final</code>修饰）的话，编译器会怎样进行处理呢？我们下面再看一个例子：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>public static void main(String[] args) {
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    String s1=&quot;a&quot;;
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    String s2=s1+&quot;b&quot;;
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    String s3=&quot;a&quot;+&quot;b&quot;;
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    System.out.println(s2==&quot;ab&quot;);
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    System.out.println(s3==&quot;ab&quot;);
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>public static void main(String[] args) {
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    String s1=&quot;a&quot;;
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    String s2=s1+&quot;b&quot;;
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    String s3=&quot;a&quot;+&quot;b&quot;;
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    System.out.println(s2==&quot;ab&quot;);
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    System.out.println(s3==&quot;ab&quot;);
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>}
+</span></code></pre></div>
 <p>结果打印：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>false
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>true
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>false
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>true
+</span></code></pre></div>
 <p>为什么会出现不同的结果？在 Java 中，String 类型在使用<code>==</code>进行比较时，是判断的引用是否指向堆内存中的同一块地址，出现上面的结果那么说明指向的不是内存中的同一块地址。</p>
 <p>通过之前的分析，我们知道<code>s3</code>会进行常量折叠，引用的是常量池中的<code>ab</code>，所以相等。而字符串<code>s2</code>在进行拼接时，表达式中引用了其他对象，不属于编译期常量，因此不能进行折叠。</p>
 <p>那么，在没有常量折叠的情况下，为什么最后返回的是<code>false</code>呢？我们看一下这种情况下，编译器是如何实现，先执行下面的代码：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>public static void main(String[] args) {
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    String s1=&quot;my &quot;;
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    String s2=&quot;name &quot;;
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    String s3=&quot;is &quot;;
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    String s4=&quot;Hydra&quot;;
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    String s=s1+s2+s3+s4;
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>public static void main(String[] args) {
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    String s1=&quot;my &quot;;
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    String s2=&quot;name &quot;;
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    String s3=&quot;is &quot;;
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    String s4=&quot;Hydra&quot;;
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    String s=s1+s2+s3+s4;
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>}
+</span></code></pre></div>
 <p>然后使用<code>javap</code>对字节码文件进行反编译，可以看到在这一过程中，编译器同样会进行优化：</p>
 <p><img alt="img" src="https://img.bosszhipin.com/beijin/upload/tmp/20211227/4558a342cf659187846a8031f1dce85594f2bbbd0899f907aa27e39782ed1e2cc93416f946dd09f1.jpg" /></p>
 <p>可以看到，虽然我们在代码中没有显示的调用<code>StringBuilder</code>，但是在字符串拼接的场景下，Java 编译器会自动进行优化，新建一个<code>StringBuilder</code>对象，然后调用<code>append</code>方法进行字符串的拼接。而在最后，调用了<code>StringBuilder</code>的<code>toString</code>方法，生成了一个新的字符串对象，而不是引用的常量池中的常量。这样，也就能解释为什么在上面的例子中，<code>s2=="ab"</code>会返回<code>false</code>了。</p>
@@ -10288,6 +10288,12 @@ jvm 就会将 class 常量池中的内容存放到运行时常量池中，由此
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

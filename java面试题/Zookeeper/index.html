@@ -4798,6 +4798,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4912,20 +4926,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10301,11 +10301,11 @@
 对于第一类，我们将 zookeeper 上的一个 znode 看作是一把锁，通过 createznode 的方式来实现。所有客户端都去创建 /distribute_lock 节点，最终成功创建的那个客户端也即拥有了这把锁。用完删除掉自己创建的 distribute_lock 节点就释放出锁。
 对于第二类， /distribute_lock 已经预先存在，所有客户端在它下面创建临时顺序编号目录节点，和选 master 一样，编号最小的获得锁，用完删除，依次方便。</p>
 <h4 id="4zookeeper">4.Zookeeper 是怎么保证数据一致性的？<a class="headerlink" href="#4zookeeper" title="Permanent link">&para;</a></h4>
-<p>详见：https://blog.csdn.net/liuchang19950703/article/details/111406622</p>
+<p>详见：<a href="https://blog.csdn.net/liuchang19950703/article/details/111406622">https://blog.csdn.net/liuchang19950703/article/details/111406622</a></p>
 <h4 id="5zookeeper-leader">5.Zookeeper Leader 选举过程是怎样的？<a class="headerlink" href="#5zookeeper-leader" title="Permanent link">&para;</a></h4>
-<p>详见：https://blog.csdn.net/liuchang19950703/article/details/111406622</p>
+<p>详见：<a href="https://blog.csdn.net/liuchang19950703/article/details/111406622">https://blog.csdn.net/liuchang19950703/article/details/111406622</a></p>
 <h4 id="6zookeeper">6.Zookeeper 怎么实现服务注册？<a class="headerlink" href="#6zookeeper" title="Permanent link">&para;</a></h4>
-<p>详见：https://segmentfault.com/a/1190000019670015</p>
+<p>详见：<a href="https://segmentfault.com/a/1190000019670015">https://segmentfault.com/a/1190000019670015</a></p>
 <h4 id="7zookeeper">7.ZooKeeper 是什么？<a class="headerlink" href="#7zookeeper" title="Permanent link">&para;</a></h4>
 <p>ZooKeeper 是一个开放源码的分布式协调服务，它是集群的管理者，监视着集群中各个节点的状态根据节点提交的反馈进行下一步合理操作。最终，将简单易用的接口和性能高效、功能稳定的系统提供给用户。</p>
 <p>分布式应用程序可以基于 Zookeeper 实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master 选举、分布式锁和分布式队列等功能。</p>
@@ -10481,11 +10481,11 @@ Dubbo 的将注册中心进行抽象，它可以外接不同的存储媒介给�
 每次负载，都充当一次中间人转发角色，增加网络负载量（消费方与服务方间接通信）
 自带负载均衡算法</p>
 <h3 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>https://www.cnblogs.com/lanqiu5ge/p/9405601.html
-https://blog.csdn.net/weixin_43122090/article/details/103645642
-https://www.cnblogs.com/liulong99/p/13036794.html
-https://zhuanlan.zhihu.com/p/94146775
-https://segmentfault.com/a/1190000014479433</p>
+<p><a href="https://www.cnblogs.com/lanqiu5ge/p/9405601.html">https://www.cnblogs.com/lanqiu5ge/p/9405601.html</a>
+<a href="https://blog.csdn.net/weixin_43122090/article/details/103645642">https://blog.csdn.net/weixin_43122090/article/details/103645642</a>
+<a href="https://www.cnblogs.com/liulong99/p/13036794.html">https://www.cnblogs.com/liulong99/p/13036794.html</a>
+<a href="https://zhuanlan.zhihu.com/p/94146775">https://zhuanlan.zhihu.com/p/94146775</a>
+<a href="https://segmentfault.com/a/1190000014479433">https://segmentfault.com/a/1190000014479433</a></p>
 
 
 
@@ -10571,6 +10571,12 @@ https://segmentfault.com/a/1190000014479433</p>
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

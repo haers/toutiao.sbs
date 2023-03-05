@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10058,17 +10058,17 @@
 <p>思考题：这个失败的原因是因为从 redis 立刻升级为主 redis，如果能够过 TTL 时间再升级为主 redis（延迟升级）后，或者立刻升级为主 redis 但是过 TTL 的时间后再执行获取锁的任务，就能成功产生互斥效果；是不是这样就能实现基于 redis 主从的 Redlock;</p>
 <h2 id="redis">redis 单实例中实现分布式锁的正确方式（原子性非常重要）<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h2>
 <h4 id="set-setnxexpire-key-key-true-key">设置锁时，使用 set 命令，因为其包含了 setnx,expire 的功能，起到了原子操作的效果，给 key 设置随机值，并且只有在 key 不存在时才设置成功返回 True,并且设置 key 的过期时间（最好用毫秒）<a class="headerlink" href="#set-setnxexpire-key-key-true-key" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>SET key_name my_random_value NX PX 30000                  # NX 表示if not exist 就设置并返回True，否则不设置并返回False   PX 表示过期时间用毫秒级， 30000 表示这些毫秒时间后此key过期
+<div class="language-text highlight"><pre><span></span><code>SET key_name my_random_value NX PX 30000                  # NX 表示if not exist 就设置并返回True，否则不设置并返回False   PX 表示过期时间用毫秒级， 30000 表示这些毫秒时间后此key过期
 </code></pre></div>
 <h4 id="_2">在获取锁后，并完成相关业务后，需要删除自己设置的锁（必须是只能删除自己设置的锁，不能删除他人设置的锁）；<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <p>删除原因：保证服务器资源的高利用效率，不用等到锁自动过期才删除；</p>
 <p>删除方法：最好使用 Lua 脚本删除（redis 保证执行此脚本时不执行其他操作，保证操作的原子性），代码如下；逻辑是 先获取 key，如果存在并且值是自己设置的就删除此 key;否则就跳过；</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>if redis.call(&quot;get&quot;,KEYS[1]) == ARGV[1] then
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    return redis.call(&quot;del&quot;,KEYS[1])
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>else
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    return 0
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>end
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>if redis.call(&quot;get&quot;,KEYS[1]) == ARGV[1] then
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    return redis.call(&quot;del&quot;,KEYS[1])
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>else
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    return 0
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>end
+</span></code></pre></div>
 <h2 id="redis-redlock_1">多节点 redis 实现的分布式锁算法(RedLock):有效防止单点故障<a class="headerlink" href="#redis-redlock_1" title="Permanent link">&para;</a></h2>
 <p>假设有 5 个完全独立的 redis 主服务器</p>
 <p>1.获取当前时间戳
@@ -10195,6 +10195,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

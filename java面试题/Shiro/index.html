@@ -4679,6 +4679,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4793,20 +4807,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10078,7 +10078,7 @@ If(subject.hasRole(“admin”){
 // 无权限
 }
 2）注解
-@RequiresRoles(“admin”)
+<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/RequiresRoles" title="GitHub User: RequiresRoles">@RequiresRoles</a>(“admin”)
 public void helloWord(){
 // 有权限
 }
@@ -10110,10 +10110,10 @@ subject().checkPermissions(“user:auth:1”, “user:auth:2”);
 all 实 all 限：role=”user:?”;
 subject().checkPermissions(“user:view:1”, “user:auth:2”);</p>
 <p>授权流程：
-1）首先调用 Subject.isPermitted<em>/hasRole</em>接口，其会委托给 SecurityManager，而 SecurityManager 接着会委托给 Authorizer；
+1）首先调用 Subject.isPermitted*/hasRole*接口，其会委托给 SecurityManager，而 SecurityManager 接着会委托给 Authorizer；
 2）Authorizer 是真正的授权者，如果我们调用如 isPermitted(“user:view”), 其首先会通过 PermissionResolver 把字符串转换成相应的 Permission 实例；
 3）在进行授权之前，其会调用相应的 Realm 获取 Subject 相应的角色/权限用于匹配传入的角色/权限；
-4）Authorizer 会判断 Realm 的角色/权限是否和传入的匹配，如果有多个 Realm，会委托给 ModularRealmAuthorizer 进行循环判断，如果匹配如 isPermitted<em>/hasRole</em>会返回 true, 否则返回 false 表示授权失败。</p>
+4）Authorizer 会判断 Realm 的角色/权限是否和传入的匹配，如果有多个 Realm，会委托给 ModularRealmAuthorizer 进行循环判断，如果匹配如 isPermitted*/hasRole*会返回 true, 否则返回 false 表示授权失败。</p>
 <h4 id="7cryptography">7.Cryptography 加密的过程是这样的？<a class="headerlink" href="#7cryptography" title="Permanent link">&para;</a></h4>
 <p>编码/解码
 Shiro 提供了 base64 和 16 进制字符串编码/解码的 API 支持,方便一些编码解码操作
@@ -10194,8 +10194,8 @@ DefaultSessionManager：DefaultSecurityManager 使用的默认实现，用于 Ja
 ServletContainerSessionManager: DefaultWebSecurityManager 使用的默认实现，用于 Web 环境，其直接使用 Servlet 容器的会话；
 DefaultWebSessionManager：用于 Web 环境的实现，可以替代 ServletContainerSessionManager，自己维护着会话，直接废弃了 Servlet 容器的会话管理。</p>
 <h4 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p>https://blog.csdn.net/qq_37254736/article/details/99350029</p>
-<p>https://blog.csdn.net/pzq915981048/article/details/88971300</p>
+<p><a href="https://blog.csdn.net/qq_37254736/article/details/99350029">https://blog.csdn.net/qq_37254736/article/details/99350029</a></p>
+<p><a href="https://blog.csdn.net/pzq915981048/article/details/88971300">https://blog.csdn.net/pzq915981048/article/details/88971300</a></p>
 
 
 
@@ -10281,6 +10281,12 @@ DefaultWebSessionManager：用于 Web 环境的实现，可以替代 ServletCont
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

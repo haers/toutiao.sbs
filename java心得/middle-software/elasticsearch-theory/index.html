@@ -4639,6 +4639,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4753,20 +4767,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9935,19 +9935,19 @@
 <h2 id="_1">进阶型原理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <hr />
 <p>传统关系型数据库的行和列存储，这相当于是把一个表现力丰富的对象挤压到一个非常大的电子表格中：你必须将这个对象扁平化来适应表结构--通常一个字段&gt;对应一列--而且又不得不在每次查询时重新构造对象。</p>
-<p>Elasticsearch 是 面向文档 的，意味着它存储整个对象或 文档<em>。Elasticsearch 不仅存储文档，而且 </em>索引 每个文档的内容使之可以被检索。在 Elasticsearch 中，你 对文档进行索引、检索、排序和过滤--而不是对行列数据。这是一种完全不同的思考数据的方式，也是 Elasticsearch 能支持复杂全文检索的原因。</p>
+<p>Elasticsearch 是 面向文档 的，意味着它存储整个对象或 文档*。Elasticsearch 不仅存储文档，而且 *索引 每个文档的内容使之可以被检索。在 Elasticsearch 中，你 对文档进行索引、检索、排序和过滤--而不是对行列数据。这是一种完全不同的思考数据的方式，也是 Elasticsearch 能支持复杂全文检索的原因。</p>
 <h3 id="_2">集群相关<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>节点、主节点、主分片、副本分片</li>
 </ul>
 <p>一个运行中的 Elasticsearch 实例称为一个 节点，而集群是由一个或者多个拥有相同 cluster.name 配置的节点组成， 它们共同承担数据和负载的压力。<strong>当有节点加入集群中或者从集群中移除节点时，集群将会重新平均分布所有的数据。</strong></p>
 <p>当一个节点被选举成为主节点时， 它将负责管理集群范围内的所有变更，例如增加、删除索引，或者增加、删除节点等。 而主节点并不需要涉及到文档级别的变更和搜索等操作，所以当集群只拥有一个主节点的情况下，即使流量的增加它也不会成为瓶颈。 任何节点都可以成为主节点。集群状态存在于集群中的每个节点，包括客户端节点。但只有主节点被允许更新集群状态，然后向所有集群中的所有节点发布一个新的版本。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>集群状态 是一种数据结构，贮存下列集群级别的信息：
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1.集群级别的设置
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2.集群中的节点
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>3.索引以及它们的设置、映射、分析器、预热器（Warmers）和别名
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>4.与每个索引关联的分片以及它们分配到的节点
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>集群状态 是一种数据结构，贮存下列集群级别的信息：
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1.集群级别的设置
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2.集群中的节点
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>3.索引以及它们的设置、映射、分析器、预热器（Warmers）和别名
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>4.与每个索引关联的分片以及它们分配到的节点
+</span></code></pre></div>
 <p><strong>每个节点上都有若干分片（即可以有主分片也可以有副分片）。</strong></p>
 <p>作为用户，我们可以将请求发送到集群中的任何节点，包括主节点。 每个节点都知道任意文档所处的位置，并且能够将我们的请求直接转发到存储我们所需文档的节点。 无论我们将请求发送到哪个节点，它都能负责从各个包含我们所需文档的节点收集回数据，并将最终结果返回給客户端。 Elasticsearch 对这一切的管理都是透明的。</p>
 <ul>
@@ -9960,42 +9960,42 @@
 <li>水平扩容</li>
 </ul>
 <p>创建更多的副本分片，提供服务（读操作——搜索和返回数据——可以同时被主分片 或 副本分片所处理），提高系统的吞吐量。</p>
-<p>https://www.elastic.co/guide/cn/elasticsearch/guide/current/_scale_horizontally.html</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>PUT /blogs/_settings
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   &quot;number_of_replicas&quot; : 2
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>}
-</code></pre></div>
+<p><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/_scale_horizontally.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/_scale_horizontally.html</a></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>PUT /blogs/_settings
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   &quot;number_of_replicas&quot; : 2
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>}
+</span></code></pre></div>
 <h3 id="_3">分布式文档存储<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>当我们创建文档时，被存储到哪一个主分片？有一个公式</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>shard = hash(routing) % number_of_primary_shards
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>注：routing 是一个可变值，默认是文档的 _id ，也可以设置成一个自定义的值。number_of_primary_shards 是主分片的个数。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>shard = hash(routing) % number_of_primary_shards
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>注：routing 是一个可变值，默认是文档的 _id ，也可以设置成一个自定义的值。number_of_primary_shards 是主分片的个数。
+</span></code></pre></div>
 <ul>
 <li>
 <p><strong>新建、更新和删除 请求都是 写 操作， 必须在主分片上面完成之后才能被复制到相关的副本分片。</strong>
-  https://www.elastic.co/guide/cn/elasticsearch/guide/current/distrib-write.html</p>
+  <a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/distrib-write.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/distrib-write.html</a></p>
 </li>
 <li>
-<p><strong>当主分片把更改转发到副本分片时， 它不会转发更新请求。 相反，它转发完整文档的新版本。
-  </strong> https://www.elastic.co/guide/cn/elasticsearch/guide/current/_partial_updates_to_a_document.html</p>
+<p>**当主分片把更改转发到副本分片时， 它不会转发更新请求。 相反，它转发完整文档的新版本。
+  ** <a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/_partial_updates_to_a_document.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/_partial_updates_to_a_document.html</a></p>
 </li>
 <li>
 <p><strong>读取请求，协调节点在每次请求的时候将选择不同的副本分片来达到负载均衡；通过轮询所有的副本分片。</strong>
-  https://www.elastic.co/guide/cn/elasticsearch/guide/current/distrib-read.html</p>
+  <a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/distrib-read.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/distrib-read.html</a></p>
 </li>
 </ul>
 <p>注：在分布式系统中，对结果排序的成本随分页的深度成指数上升。这就是 web 搜索引擎对任何查询都不要返回超过 1000 个结果的原因。</p>
 <h3 id="_4">倒排索引<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>Elasticsearch 使用一种称为 倒排索引 的结构，它适用于快速的全文搜索。一个倒排索引由文档中所有不重复词的列表构成，对于其中每个词，有一个包含它的文档列表。
-https://www.elastic.co/guide/cn/elasticsearch/guide/current/inverted-index.html</p>
+<a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/inverted-index.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/inverted-index.html</a></p>
 <h3 id="_5">分布式检索<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>当一个节点接收搜索请求时，这个节点就变成了协调节点。 这个节点的任务是广播查询请求到所有相关分片并将它们的响应整合成全局排序后的结果集合，这个结果集合会返回给客户端。
-https://www.elastic.co/guide/cn/elasticsearch/guide/current/_query_phase.html</p>
+<a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/_query_phase.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/_query_phase.html</a></p>
 <p>对于楼梯式的翻页，随着页号越大，效率越差。每个分片在本地执行查询请求并且创建一个长度为 from + size 的优先队列，也就是说，每个分片创建的结果集足够大，均可以满足全局的搜索请求。 分片返回一个轻量级的结果列表到协调节点，它仅包含文档 ID 集合以及任何排序需要用到的值，例如 _score 。协调节点将这些分片级的结果合并到自己的有序优先队列里，它代表了全局排序结果集合。至此查询过程结束。</p>
 <h3 id="_6">过滤器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>例子：https://www.elastic.co/guide/cn/elasticsearch/guide/current/_finding_exact_values.html#_internal_filter_operation</p>
+<p>例子：<a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/_finding_exact_values.html#_internal_filter_operation">https://www.elastic.co/guide/cn/elasticsearch/guide/current/_finding_exact_values.html#_internal_filter_operation</a></p>
 <p>在内部，Elasticsearch 会在运行非评分查询的时执行多个操作：</p>
 <ul>
 <li>查找匹配文档.</li>
@@ -10096,6 +10096,12 @@ https://www.elastic.co/guide/cn/elasticsearch/guide/current/_query_phase.html</p
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

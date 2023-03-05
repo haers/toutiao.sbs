@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9950,12 +9950,12 @@
 <p>以上就是我们对 Java 对象头内存模型的解析，只要是 Java 对象，那么就肯定会包括对象头，也就是说这部分内存占用是避免不了的。所以，在笔者 64 位虚拟机，Jdk1.8（开启了指针压缩）的环境下，任何一个对象，啥也不做，只要声明一个类，那么它的内存占用就至少是 96bits，也就是至少 12 字节。</p>
 <h2 id="_3">验证模型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>首先添加 maven 依赖</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>       &lt;dependency&gt;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>            &lt;groupId&gt;org.openjdk.jol&lt;/groupId&gt;
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>            &lt;artifactId&gt;jol-core&lt;/artifactId&gt;
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            &lt;version&gt;0.10&lt;/version&gt;
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        &lt;/dependency&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>       &lt;dependency&gt;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>            &lt;groupId&gt;org.openjdk.jol&lt;/groupId&gt;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>            &lt;artifactId&gt;jol-core&lt;/artifactId&gt;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            &lt;version&gt;0.10&lt;/version&gt;
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        &lt;/dependency&gt;
+</span></code></pre></div>
 <h1 id="java-jvm-">从 Java 代码运行聊到 JVM 及对象创建-分配-定位-布局-垃圾回收<a class="headerlink" href="#java-jvm-" title="Permanent link">&para;</a></h1>
 <h1 id="java">Java 代码到底是如何运行的呢？<a class="headerlink" href="#java" title="Permanent link">&para;</a></h1>
 <p>看下面的流程图理解 Java 代码是如何运行：</p>
@@ -10010,9 +10010,9 @@
 <p>虚拟机栈详细图解</p>
 <p><strong>对于 JVM 中虚拟机栈参数的设置</strong></p>
 <p>-Xss ：用于设置栈的大小，栈的大小决定了方法调用的深度。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># 设置线程栈大小为 512k（以字节为单位）
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-Xss512k
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># 设置线程栈大小为 512k（以字节为单位）
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-Xss512k
+</span></code></pre></div>
 <p>该区域可能会出现 StackOverflowException 栈溢出异常。</p>
 <p><strong>本地方法栈</strong></p>
 <ul>
@@ -10031,17 +10031,17 @@
 <p><img alt="image-20221013152104724" src="../../image/c6/jvm11.png" /></p>
 <p>堆区</p>
 <p><strong>对于 JVM 中堆区参数的设置</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># 设置堆区的初始大小
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>-Xms1024m
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># 设置堆区的存储空间最大值，一般与堆区的初始大小相等
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>-Xmx1024m
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a># 设置年轻代堆的大小
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>-Xmn512m
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a># 设置如下参数，在出现OOM时进行堆转储
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>-XX:+HeapDumpOnOutOfMemoryError
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a># 设置以上设置时，需配置以下参数，堆转储文件输出的位置
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>-XX:HeapDumpPath=/usr/log/java_dump.hprof
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># 设置堆区的初始大小
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>-Xms1024m
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># 设置堆区的存储空间最大值，一般与堆区的初始大小相等
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>-Xmx1024m
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a># 设置年轻代堆的大小
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>-Xmn512m
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a># 设置如下参数，在出现OOM时进行堆转储
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>-XX:+HeapDumpOnOutOfMemoryError
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a># 设置以上设置时，需配置以下参数，堆转储文件输出的位置
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>-XX:HeapDumpPath=/usr/log/java_dump.hprof
+</span></code></pre></div>
 <p><strong>方法区与永久代</strong></p>
 <ul>
 <li>方法区被所有线程共享。采用永久代的方式实现了方法区。</li>
@@ -10056,15 +10056,15 @@
 <p><img alt="image-20221013152205326" src="../../image/c6/jvm14.png" /></p>
 <p>方法区和元空间区别</p>
 <p><strong>对于 JVM 中永久代或元空间参数的设置</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># jdk1.7 设置永久代内存初始大小
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>-XX:PermSize=512m
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a># jdk1.7 设置永久代内存最大值
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>-XX:MaxPermSize=512m
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a># jdk1.8 设置元空间内存初始大小
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>-XX:MetaspaceSize=1024m
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a># jdk1.8 设置元空间内存最大值
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>-XX:MaxMetaspaceSize=1024m
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># jdk1.7 设置永久代内存初始大小
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>-XX:PermSize=512m
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a># jdk1.7 设置永久代内存最大值
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>-XX:MaxPermSize=512m
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a># jdk1.8 设置元空间内存初始大小
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>-XX:MetaspaceSize=1024m
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a># jdk1.8 设置元空间内存最大值
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>-XX:MaxMetaspaceSize=1024m
+</span></code></pre></div>
 <h1 id="objecta-a-new-objecta">以 ObjectA a = new ObjectA(); 为例<a class="headerlink" href="#objecta-a-new-objecta" title="Permanent link">&para;</a></h1>
 <p>聊一聊，对象在 JVM 虚拟机中是如何创建的，在什么地方分配内存，又是如何分配的，对象是如何定位的，以及对象的内存布局，最后又是如何回收的。</p>
 <p><strong>1）对象的创建</strong></p>
@@ -10072,21 +10072,21 @@
 <p><img alt="image-20221013152226652" src="../../image/c6/jvm16.png" /></p>
 <p>对象创建过程</p>
 <p><strong>2）Java 堆内存分配过程</strong></p>
-<p>想要更好的理解 Java 堆区内存分配过程，得先了解内存分配方法有哪些，内存分配方法分为<strong>指针碰撞法</strong>和<strong>空闲列表法</strong>。</p>
+<p>想要更好的理解 Java 堆区内存分配过程，得先了解内存分配方法有哪些，内存分配方法分为**指针碰撞法**和**空闲列表法**。</p>
 <ul>
 <li><strong>指针碰撞法</strong>
-  支持<strong>压缩整理</strong>功能的垃圾回收器 Serial、ParNew 等（<strong>Compact</strong> 过程），使得已使用的内存和未使用的内存分开，两者之间存在一个指针作为分界点指示器。
+  支持**压缩整理**功能的垃圾回收器 Serial、ParNew 等（<strong>Compact</strong> 过程），使得已使用的内存和未使用的内存分开，两者之间存在一个指针作为分界点指示器。
   分配内存只需移动指针，分界点指示器向未使用的内存一侧移动一段与对象大小相等的空间，这种分配内存的方法叫做指针碰撞法。如下图所示：</li>
 </ul>
 <p><img alt="image-20221013152248334" src="../../image/c6/jvm17.png" />指针碰撞法</p>
 <ul>
 <li><strong>空闲列表法</strong>
-  基于<strong>标记清除</strong>（Mark-Sweep）算法的 CMS 垃圾回收器，其内存划分成网格区（Region），内存分配不规整，即已使用的和未使用的内存随机分布，JVM 会维护一个记录表，用于记录那些内存可用于分配，当需要给对象分配内存区域时，寻找一块足够大的内存空间分配给对象，并更新记录表，这种分配内存的方法叫做空闲列表法。如下图所示：</li>
+  基于**标记清除**（Mark-Sweep）算法的 CMS 垃圾回收器，其内存划分成网格区（Region），内存分配不规整，即已使用的和未使用的内存随机分布，JVM 会维护一个记录表，用于记录那些内存可用于分配，当需要给对象分配内存区域时，寻找一块足够大的内存空间分配给对象，并更新记录表，这种分配内存的方法叫做空闲列表法。如下图所示：</li>
 </ul>
 <p><img alt="image-20221013152334403" src="../../image/c6/jvm18.png" /></p>
 <p>空闲列表法</p>
 <p><strong>Java 堆区对象内存分配</strong></p>
-<p>JVM 中内存分配纷繁复杂，为了防止内存分配混乱，需要解决并发问题，解决并发问题有两种方式：<strong>同步处理方式</strong>和 <strong>TLAB 方式</strong></p>
+<p>JVM 中内存分配纷繁复杂，为了防止内存分配混乱，需要解决并发问题，解决并发问题有两种方式：<strong>同步处理方式**和 **TLAB 方式</strong></p>
 <ul>
 <li><strong>同步处理</strong>：内存分配的动作采用同步机制，JVM 为了增加效率采用了 CAS 方式。</li>
 </ul>
@@ -10112,7 +10112,7 @@
 </ul>
 <p><img alt="image-20221013152548990" src="../../image/c6/jvm21.png" /></p>
 <p>直接访问</p>
-<p><strong>优点</strong>：相对于句柄访问定位的方式，减少了一次指针定位的开销（也减少了句柄池的存储空间），HotSpot JVM 实现采用的是<strong>直接访问</strong>的方式进行对象访问定位。</p>
+<p><strong>优点</strong>：相对于句柄访问定位的方式，减少了一次指针定位的开销（也减少了句柄池的存储空间），HotSpot JVM 实现采用的是**直接访问**的方式进行对象访问定位。</p>
 <p><strong>4）对象的内存布局</strong></p>
 <p>对象的组成：对象头（对象自身运行时数据和类型指针）、实例数据和对齐填充。</p>
 <p>可参考这篇文章（<a href="https://www.toutiao.com/i6799522958990639628/?group_id=6799522958990639628">记一次生产频繁出现 Full GC 的 GC 日志图文详解</a>）中的第 3 部分关于线上系统 JVM 内存估算方法。如下图所示：</p>
@@ -10125,17 +10125,17 @@
 <li>GC 针对的 JVM 区域 从上面对 JVM 内存布局的介绍，发生 GC 主要是针对 Java Heap 区 和 元空间（或方法区）。其他区域都是线程私有的，即随着线程的创建而创建，随着线程的销毁而销毁。</li>
 <li>对于 JVM 中 GC 参数的设置</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># 在控制台输出GC情况
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>-verbose:gc
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a># GC日志输出
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>-XX:+PrintGC
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a># GC日志详细输出
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>-XX:+PrintGCDetails
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a># GC输出时间戳
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>-XX:+PrintGCDateStamps
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a># GC日志输出指定文件中
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>-Xloggc:/log/gc.log
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># 在控制台输出GC情况
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>-verbose:gc
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a># GC日志输出
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>-XX:+PrintGC
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a># GC日志详细输出
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>-XX:+PrintGCDetails
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a># GC输出时间戳
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>-XX:+PrintGCDateStamps
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a># GC日志输出指定文件中
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>-Xloggc:/log/gc.log
+</span></code></pre></div>
 <h1 id="_4">小结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
 <p>从 Java 代码如何运行的，聊到 JVM 内存布局，虚拟机参数的配置说明，Java 对象的创建（new）过程，包括对象内存的堆分配、对象的定位、对象内存布局等，以及最后简单介绍了垃圾回收相关内容。本文以图文并茂的方式分享，希望加速大家的理解和阅读体验，也希望本文能给大家带来一些小小的收获。</p>
 
@@ -10223,6 +10223,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

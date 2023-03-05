@@ -4638,6 +4638,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4752,20 +4766,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9948,7 +9948,7 @@
 <ul>
 <li>信息流</li>
 </ul>
-<p>当一个用户访问它的首页信息流时候，他可以看到他所有关注用户最新的信息。key 是当前用户的 uid, 信息流的内容以 id --&gt; timestamp 的形式保存在 zset 中，timestamp 用于排序，以便返回的列表是按照时间顺序排列。微博的 id 用于业务下一步获取微博的相关信息。</p>
+<p>当一个用户访问它的首页信息流时候，他可以看到他所有关注用户最新的信息。key 是当前用户的 uid, 信息流的内容以 id &rarr; timestamp 的形式保存在 zset 中，timestamp 用于排序，以便返回的列表是按照时间顺序排列。微博的 id 用于业务下一步获取微博的相关信息。</p>
 <p>理财社区由于业务的特殊性，动态流有两部分来源：人工推荐+订阅的版块热门。</p>
 <p>但每一块的存储结构采用 zset，通过时间戳来排序，有一点区别是里面的 field，采用字符串，由“tid|uid”组成，方便后面可以并行取贴子和用户信息。</p>
 <p><img alt="image" src="../img/Snip20160806_25.png" /></p>
@@ -9989,7 +9989,7 @@
 <p>解决从服务器重同步（resync）问题的其中一个方法，就是减少主服务器需要传送给从服务器的数据数量，这可以通过构建树状复制中间层来完成。</p>
 <p><img alt="image" src="../img/Snip20160806_26.png" /></p>
 <p>从服务器树非常有用，在对不同数据中心（data center）进行复制的时候，这种从服务器树甚至是必需的：通过缓慢的广域网（WAN）连接进行重同步是一件相当耗费资源的工作，这种工作应该交给位于中间层的从服务器去做，而不必劳烦最顶层的主服务器。但是另一方面，构建从服务器树也会带来复杂的网络拓扑结构（topology），这增加了手动和自动处理故障转移的难度。</p>
-<p>除了构建树状的从服务器群组之外，解决从服务器重同步问题的另一个方法就是对网络连接进行压缩，从而减少需要传送的数据量。一些 Redis 用户就发现使用带压缩的 SSH 隧道（tunnel）进行连接可以明显地降低带宽占用，比如某个公司就曾经使用这种方法，将复制单个从服务器所需的带宽从原来的 21Mbit 降低为 1.8Mbit（http://mng.bz/2ivv）。如果读者也打算使用这个方法的话，那么请记得使用 SSH 提供的选项来让 SSH 连接在断线后自动重连。</p>
+<p>除了构建树状的从服务器群组之外，解决从服务器重同步问题的另一个方法就是对网络连接进行压缩，从而减少需要传送的数据量。一些 Redis 用户就发现使用带压缩的 SSH 隧道（tunnel）进行连接可以明显地降低带宽占用，比如某个公司就曾经使用这种方法，将复制单个从服务器所需的带宽从原来的 21Mbit 降低为 1.8Mbit（<a href="http://mng.bz/2ivv">http://mng.bz/2ivv</a>）。如果读者也打算使用这个方法的话，那么请记得使用 SSH 提供的选项来让 SSH 连接在断线后自动重连。</p>
 <p><strong>加密和压缩开销</strong></p>
 <p>一般来说，使用 SSH 隧道带来的加密开销并不会给服务器造成大的负担，因为 2.6 GHz 主频的英特尔酷睿 2 单核处理器在只使用单个处理核心的情况下，每秒能够使用 AES-128 算法加密 180MB 数据，而在使用 RC4 算法的情况下，每秒则可以加密大约 350MB 数据。在处理器足够强劲并且拥有千兆网络连接的情况下，程序即使在加密的情况下也能够充分地使用整个网络连接。</p>
 <p>唯一可能会出问题的地方是压缩—因为 SSH 默认使用的是 gzip 压缩算法。SSH 提供了配置选项，可以让用户选择指定的压缩级别（具体信息可以参考 SSH 的文档），它的 1 级压缩在使用之前提到的 2.6GHz 处理器的情况下，可以在复制的初始时候，以每秒 24 ～ 52MB 的速度对 Redis 的 RDB 文件进行压缩；并在复制进入持续更新阶段之后，以每秒 60 ～ 80MB 的速度对 Redis 的 AOF 文件进行压缩。</p>
@@ -10005,8 +10005,8 @@
 </ul>
 <p>虽然对信息流进行扩展的方法相当直观易懂，但是对关注和粉丝列表这些由有序集合构成的“列表”进行扩展却并不容易。这些有序集合绝大多数都很短（如 Twitter 上 99.99% 的用户的关注者都少于 1,000 人），但是也存在少量用户的列表非常大，他们关注了非常多的人或者拥有数量庞大的粉丝。</p>
 <p>从实用性的角度来考虑，一个合理的做法是给用户以及分组可以关注的人数设置一个上限（比如新浪微博普通用户最大允许关注 2,000 用户）。不过这个方法虽然可以控制用户的关注人数，但是仍然解决不了单个用户的粉丝数人数过多的问题。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>目前理财社区也做了同样的限制，一个用户关注上限2000！
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>目前理财社区也做了同样的限制，一个用户关注上限2000！
+</span></code></pre></div>
 <p>为了处理关注和粉丝列表变得非常巨大的情况，我们需要将实现这些列表的有序集合划分到多个分片上面，说得更具体一样，也就是根据分片的数量把用户的粉丝划分为多个部分，存在多个 zset 中。为此，我们需要为 ZADD 命令、ZREM 命令和 ZRANGEBYSCORE 命令实现特定的分片版本。</p>
 <p>和信息流分片的区别是，这次分片的对象是数据而不是键。此外，为了减少程序创建和调用连接的数量，把关注和粉丝的数据放置在同一个分片里面将是一种非常有意义的做法。因此这次我们将使用新的方法对数据进行分片。</p>
 <p>为了能够在关注及粉丝数据进行分片的时候，把两者数据都存储到同一个分片里面，程序将会把关注者和被关注者双方的 ID 用作查找分片键的其中一个参数。</p>
@@ -10020,7 +10020,7 @@
 <p>临时活动放在一块；</p>
 <p>扩容或系统故障，也只是影响一小块业务，降低各个业务之间的影响。</p>
 <p><strong>参考资料：</strong></p>
-<p>http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&amp;mid=2653547053&amp;idx=1&amp;sn=833fddbc83379d9cac8d7f757343412e&amp;scene=1&amp;srcid=0805WKvrSVA1WS4VKoGcR9rK#rd</p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&amp;mid=2653547053&amp;idx=1&amp;sn=833fddbc83379d9cac8d7f757343412e&amp;scene=1&amp;srcid=0805WKvrSVA1WS4VKoGcR9rK#rd">http://mp.weixin.qq.com/s?__biz=MzAwMDU1MTE1OQ==&amp;mid=2653547053&amp;idx=1&amp;sn=833fddbc83379d9cac8d7f757343412e&amp;scene=1&amp;srcid=0805WKvrSVA1WS4VKoGcR9rK#rd</a></p>
 
 
 
@@ -10106,6 +10106,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

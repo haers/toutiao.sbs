@@ -4611,6 +4611,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4725,20 +4739,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9879,14 +9879,14 @@
 <h2 id="_1">正则表达式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <hr />
 <p>在 Sun 的 Java JDK 1.40 版本中，Java 自带了支持正则表达式的包，主要是放在 java.util.regex 包下面。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> Pattern p_script = Pattern.compile(&quot;正则表达式&quot;, Pattern.CASE_INSENSITIVE);
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> Matcher m_script = p_script.matcher(content);
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> while (m_script.find()) {
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>           // 找到匹配内容，进行后续事情
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            String strAid = m_script.group(1);
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            。。。。
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a> }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> Pattern p_script = Pattern.compile(&quot;正则表达式&quot;, Pattern.CASE_INSENSITIVE);
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> Matcher m_script = p_script.matcher(content);
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> while (m_script.find()) {
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>           // 找到匹配内容，进行后续事情
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            String strAid = m_script.group(1);
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            。。。。
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a> }
+</span></code></pre></div>
 <p><strong>Matcher 类的常用方法：</strong></p>
 <ul>
 <li>
@@ -9908,10 +9908,10 @@
 <p><strong>正则表达式语法</strong></p>
 <p>| 元字符 | 描述                                                                                                                                                                      |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ---------------------------- |
-| \      | 将下一个字符标记符、或一个向后引用、或一个八进制转义符。例如，“\n”匹配\n。“\n”匹配换行符。序列“\”匹配“\”而“(”则匹配“(”。即相当于多种编程语言中都有的“转义字符”的概念。 |
+|       | 将下一个字符标记符、或一个向后引用、或一个八进制转义符。例如，“\n”匹配\n。“\n”匹配换行符。序列“\”匹配“\”而“(”则匹配“(”。即相当于多种编程语言中都有的“转义字符”的概念。 |
 | ^      | 匹配输入字符串的开始位置。如果设置了 RegExp 对象的 Multiline 属性，^也匹配“\n”或“\r”之后的位置。                                                                          |
 | $      | 匹配输入字符串的结束位置。如果设置了 RegExp 对象的 Multiline 属性，$也匹配“\n”或“\r”之前的位置。                                                                          |
-| *     | 匹配前面的子表达式任意次。例如，zo<em>能匹配“z”，“zo”以及“zoo”。</em>等价于{0,}                                                                                                  |
+| *     | 匹配前面的子表达式任意次。例如，zo*能匹配“z”，“zo”以及“zoo”。*等价于{0,}                                                                                                  |
 | +      | 匹配前面的子表达式一次或多次(大于等于 1 次）。例如，“zo+”能匹配“zo”以及“zoo”，但不能匹配“z”。+等价于{1,}。                                                                |
 | ?      | 匹配前面的子表达式零次或一次。例如，“do(es)?”可以匹配“do”或“does”中的“do”。?等价于{0,1}。                                                                                 |
 | {n}    | n 是一个非负整数。匹配确定的 n 次。例如，“o{2}”不能匹配“Bob”中的“o”，但是能匹配“food”中的两个 o。                                                                         |
@@ -9927,7 +9927,7 @@
 | \D     | 匹配一个非数字字符。等价于[^0-9]                                                                                                                                          |
 | \s     | 匹配所有的空白字符，包括空格、制表符、换页符、换行符、回车符 等等。等价于[ \f\n\r\t\v]。                                                                                  |
 | \S     | 匹配所有的非空白字符                                                                                                                                                      |</p>
-<p>更多内容参考：http://www.cnblogs.com/lzq198754/p/5780340.html</p>
+<p>更多内容参考：<a href="http://www.cnblogs.com/lzq198754/p/5780340.html">http://www.cnblogs.com/lzq198754/p/5780340.html</a></p>
 <p><strong>常用正则表达式</strong></p>
 <p>| 规则                                  | 正则表达式语法                                                       |
 | ------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------- | --------------------------------------- | ------------- | ---- |
@@ -9940,20 +9940,20 @@
 | 18 位身份证号                         | ^(\d{6})(18                                                          | 19                                             | 20)?(\d{2})([01]\d)([0123]\d)(\d{3})(\d | X             | x)?$ |
 | 邮箱                                  | ^[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}.){1,3}[a-zA-z-]{1,}$ |</p>
 <h3 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>示例：
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>\\[img(\\=(\\d+)\\,(\\d+))?\\](((http\\:|https\\:)?\\/\\/[a-zA-Z|\\.|0-9]*\\/)?[a-zA-Z|\\/|0-9]*\\.[a-zA-Z]*)\\[\\/img\\]
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>[img=225,165]http://bbsimg.wacdn.com/forum/201702/07/120732h4p5yw6wk4bwyk5q.jpg[/img]火炉上一分钟如一小时那
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>group（0）=[img=225,165]http://bbsimg.wacdn.com/forum/201702/07/120732h4p5yw6wk4bwyk5q.jpg[/img]
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>group（1）==225,165
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>group（2）=225
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>group（3）=165
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>group（4）=http://bbsimg.wacdn.com/forum/201702/07/120732h4p5yw6wk4bwyk5q.jpg
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>group（5）=http://bbsimg.wacdn.com/
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>group（6）=http:
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>示例：
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>\\[img(\\=(\\d+)\\,(\\d+))?\\](((http\\:|https\\:)?\\/\\/[a-zA-Z|\\.|0-9]*\\/)?[a-zA-Z|\\/|0-9]*\\.[a-zA-Z]*)\\[\\/img\\]
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>[img=225,165]http://bbsimg.wacdn.com/forum/201702/07/120732h4p5yw6wk4bwyk5q.jpg[/img]火炉上一分钟如一小时那
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>group（0）=[img=225,165]http://bbsimg.wacdn.com/forum/201702/07/120732h4p5yw6wk4bwyk5q.jpg[/img]
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>group（1）==225,165
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>group（2）=225
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>group（3）=165
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>group（4）=http://bbsimg.wacdn.com/forum/201702/07/120732h4p5yw6wk4bwyk5q.jpg
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>group（5）=http://bbsimg.wacdn.com/
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>group（6）=http:
+</span></code></pre></div>
 
 
 
@@ -10039,6 +10039,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10089,7 +10089,7 @@
 <p>从 SSL 协议所提供的服务及其工作流程可以看出，SSL 协议运行的基础是商家对消费者信息保密的承诺，这就有利于商家而不利于消费者。在电子商务初级阶段，由于运作电子商务的企业大多是信誉较高的大公司，因此这问题还没有充分暴露出来。但随着电子商务的发展，各中小型公司也参与进来，这样在电子支付过程中的单一认证问题就越来越突出。虽然在 SSL3.0 中通过数字签名和数字证书可实现浏览器和 Web 服务器双方的身份验证，但是 SSL 协议仍存在一些问题，比如，只能提供交易中客户与服务器间的双方认证，在涉及多方的电子交易中，SSL 协议并不能协调各方间的安全传输和信任关系。在这种情况下，Visa 和 MasterCard 两大信用卡公组织制定了 SET 协议，为网上信用卡支付提供了全球性的标准。</p>
 <h4 id="java-keytool">使用使用 java 自带 keytool 创建本地密钥库<a class="headerlink" href="#java-keytool" title="Permanent link">&para;</a></h4>
 <p>创建本地密钥库命令:</p>
-<div class="highlight"><pre><span></span><code>keytool -genkey -alias testkey -keyalg RSA -keystore &quot;C:\Program Files\Java\Testkey&quot;
+<div class="language-text highlight"><pre><span></span><code>keytool -genkey -alias testkey -keyalg RSA -keystore &quot;C:\Program Files\Java\Testkey&quot;
 or
 keytool -genkey -alias caskeystore -keypass 123456 -keyalg RSA -keystore thekeystore
 </code></pre></div>
@@ -10181,7 +10181,7 @@ keytool -genkey -alias caskeystore -keypass 123456 -keyalg RSA -keystore thekeys
 <li>判断证书是否已吊销：通过 CRL（Certificate Revocation List 证书注销列表）和 OCSP（Online Certificate Status Protocol 在线证书状态协议）实现，其中 OCSP 可用于第 3 步中以减少与 CA 服务器的交互，提高验证效率。</li>
 </ol>
 <p>以上任意一步都满足的情况下浏览器才认为证书是合法的。</p>
-<p><strong> 这里插一个我想了很久的但其实答案很简单的问题</strong></p>
+<p>** 这里插一个我想了很久的但其实答案很简单的问题**</p>
 <blockquote>
 <p>既然证书是公开的，如果要发起中间人攻击，我在官网上下载一份证书作为我的服务器证书，那客户端肯定会认同这个证书是合法的，如何避免这种证书冒用的情况？</p>
 <p>其实这就是非加密对称中公私钥的用处，虽然中间人可以得到证书，但私钥是无法获取的，一份公钥是不可能推算出其对应的私钥，中间人即使拿到证书也无法伪装成合法服务端，因为无法对客户端传入的加密数据进行解密。</p>
@@ -10284,6 +10284,12 @@ keytool -genkey -alias caskeystore -keypass 123456 -keyalg RSA -keystore thekeys
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

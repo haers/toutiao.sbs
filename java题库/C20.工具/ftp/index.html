@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9903,18 +9903,18 @@
 FTP 允许用户以文件操作的方式（如文件的增、删、改、查、传送等）与另一主机相互通信。然而， 用户并不真正登录到自己想要存取的计算机上面而成为完全用户， 可用 FTP 程序访问远程资源， 实现用户往返传输文件、目录管理以及访问电子邮件等等， 即使双方计算机可能配有不同的操作系统和文件存储方式。</p>
 <p>使用 Docker 搭建 FTP 服务，不仅十分简单，而且可以对宿主机有一定的隔离。下面介绍下 Docker 创建 FTP 服务器，内容介绍如下所示：</p>
 <h2 id="_1">一.创建命令如下<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w">  </span><span class="m">21</span>:21<span class="w"> </span>-p<span class="w">  </span><span class="m">20</span>:20<span class="w"> </span>-p<span class="w"> </span><span class="m">21100</span>-21110:21100-21110<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-v<span class="w"> </span>/Users/apple/DockerFile/ftp:/home/vsftpd<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>-e<span class="w"> </span><span class="nv">FTP_USER</span><span class="o">=</span>admin<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-e<span class="w"> </span><span class="nv">FTP_PASS</span><span class="o">=</span><span class="m">1234</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>-e<span class="w"> </span><span class="nv">PASV_MIN_PORT</span><span class="o">=</span><span class="m">21100</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>-e<span class="w"> </span><span class="nv">PASV_MAX_PORT</span><span class="o">=</span><span class="m">21110</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>-e<span class="w"> </span><span class="nv">PASV_ADDRESS</span><span class="o">=</span><span class="m">192</span>.168.2.22<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>-e<span class="w"> </span><span class="nv">PASV_ENABLE</span><span class="o">=</span>YES<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>--name<span class="w"> </span>ftp<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>fauria/vsftpd
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w">  </span><span class="m">21</span>:21<span class="w"> </span>-p<span class="w">  </span><span class="m">20</span>:20<span class="w"> </span>-p<span class="w"> </span><span class="m">21100</span>-21110:21100-21110<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-v<span class="w"> </span>/Users/apple/DockerFile/ftp:/home/vsftpd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>-e<span class="w"> </span><span class="nv">FTP_USER</span><span class="o">=</span>admin<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-e<span class="w"> </span><span class="nv">FTP_PASS</span><span class="o">=</span><span class="m">1234</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>-e<span class="w"> </span><span class="nv">PASV_MIN_PORT</span><span class="o">=</span><span class="m">21100</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>-e<span class="w"> </span><span class="nv">PASV_MAX_PORT</span><span class="o">=</span><span class="m">21110</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>-e<span class="w"> </span><span class="nv">PASV_ADDRESS</span><span class="o">=</span><span class="m">192</span>.168.2.22<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>-e<span class="w"> </span><span class="nv">PASV_ENABLE</span><span class="o">=</span>YES<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>--name<span class="w"> </span>ftp<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>fauria/vsftpd
+</span></code></pre></div>
 <h2 id="_2">二.命令含义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -9989,12 +9989,12 @@ FTP 允许用户以文件操作的方式（如文件的增、删、改、查、�
 <h2 id="_3">三.客户端连接<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>1.客户端可以直接安装 filezilla 进行连接</p>
 <p>如果你的客户端连接不上，你需要用 telnet 命令来看下</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>telnet  10.73.139.201 21
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>telnet  10.73.139.201 21
+</span></code></pre></div>
 <p>如果报错，那可能是防火墙没有打通</p>
 <p>2.如果是 mac 用户，也可以浏览器进行连接</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ftp://192.168.2.22
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ftp://192.168.2.22
+</span></code></pre></div>
 <p>输入账号 admin，密码 1234</p>
 <p>然后 ls 命令，如果报错</p>
 <blockquote>
@@ -10003,16 +10003,16 @@ FTP 允许用户以文件操作的方式（如文件的增、删、改、查、�
 425 Use PORT or PASV first.</p>
 </blockquote>
 <p>可以在 ftp 下执行以下命令</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pass
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pass
+</span></code></pre></div>
 <p>输出</p>
 <blockquote>
 <p>Passive mode on</p>
 </blockquote>
 <p>这个时候，就可以正常的 ls 了</p>
-<p>curl -T oa-fe.tar.gz -u admin:1234 ftp://172.17.0.5</p>
-<p>curl -O -u admin:1234 ftp://172.17.0.5/96a89bf5fa5f49ef86c38f3789a95330.gz</p>
-<p>curl -T oa-fe.tar.gz -u admin:1234 ftp://192.168.2.22</p>
+<p>curl -T oa-fe.tar.gz -u admin:1234 <a href="ftp://172.17.0.5">ftp://172.17.0.5</a></p>
+<p>curl -O -u admin:1234 <a href="ftp://172.17.0.5/96a89bf5fa5f49ef86c38f3789a95330.gz">ftp://172.17.0.5/96a89bf5fa5f49ef86c38f3789a95330.gz</a></p>
+<p>curl -T oa-fe.tar.gz -u admin:1234 <a href="ftp://192.168.2.22">ftp://192.168.2.22</a></p>
 
 
 
@@ -10098,6 +10098,12 @@ FTP 允许用户以文件操作的方式（如文件的增、删、改、查、�
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

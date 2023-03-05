@@ -4714,6 +4714,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4828,20 +4842,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10159,7 +10159,7 @@ Maven 定义了三套生命周期：clean、default、site，每个生命周期�
 <li><code>pom.xml</code> ：配置文件</li>
 </ul>
 <p>Maven 要负责项目的自动化构建，以编译为例，Maven 要想自动进行编译，那么它必须知道 Java 的源文件保存在哪里，这样约定之后，不用我们手动指定位置，Maven 能知道位置，从而帮我们完成自动编译。</p>
-<p>遵循<strong>“约定&gt;&gt;&gt;配置&gt;&gt;&gt;编码”</strong>。即能进行配置的不要去编码指定，能事先约定规则的不要去进行配置。这样既减轻了劳动力，也能防止出错。</p>
+<p>遵循**“约定&gt;&gt;&gt;配置&gt;&gt;&gt;编码”**。即能进行配置的不要去编码指定，能事先约定规则的不要去进行配置。这样既减轻了劳动力，也能防止出错。</p>
 <h4 id="7maven">7.Maven 常用命令<a class="headerlink" href="#7maven" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>mvn archetype：create</code> ：创建 Maven 项目。</li>
@@ -10273,13 +10273,13 @@ Maven 定义了三套生命周期：clean、default、site，每个生命周期�
 <h4 id="14maven">14.Maven 依赖冲突<a class="headerlink" href="#14maven" title="Permanent link">&para;</a></h4>
 <p>每个显式声明的类包都会依赖于一些其它的隐式类包，这些隐式的类包会被 maven 间接引入进来，因而可能造成一个我们不想要的类包的载入，严重的甚至会引起类包之间的冲突。</p>
 <p>要解决这个问题，首先就是要查看 pom.xml 显式和隐式的依赖类包，然后通过这个类包树找出我们不想要的依赖类包，手工将其排除在外就可以了。 例如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;exclusions&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;exclusion&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>unitils-database<span class="nt">&lt;/artifactId&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="nt">&lt;groupId&gt;</span>org.unitils<span class="nt">&lt;/groupId&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;/exclusion&gt;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">&lt;/exclusions&gt;</span>
-</code></pre></div>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;exclusions&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;exclusion&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>unitils-database<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="nt">&lt;groupId&gt;</span>org.unitils<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;/exclusion&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">&lt;/exclusions&gt;</span>
+</span></code></pre></div>
 <h4 id="15">15.依赖的解析机制<a class="headerlink" href="#15" title="Permanent link">&para;</a></h4>
 <p>当依赖的范围是 system 的时候，Maven 直接从本地文件系统中解析构件。</p>
 <p>根据依赖坐标计算仓库路径，尝试直接从本地仓库寻找构件，如果发现对应的构件，就解析成功。</p>
@@ -10288,9 +10288,9 @@ Maven 定义了三套生命周期：clean、default、site，每个生命周期�
 <p>如果依赖的版本是 SNAPSHOT，就基于更新策略读取所有远程仓库的元数据文件，将它与本地仓库对应的元数据合并，得到最新快照版本的值，然后根据该值检查本地仓库，或从远程仓库下载。</p>
 <p>如果最后解析得到的构件版本包含有时间戳，先将该文件下载下来，再将文件名中时间戳信息删除，剩下 SNAPSHOT 并使用（以非时间戳的形式使用）。</p>
 <h4 id="_1">参考链接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p>https://blog.csdn.net/weixin_44450768/article/details/104218776</p>
-<p>https://blog.csdn.net/a303549861/article/details/93752178</p>
-<p>https://www.cnblogs.com/lin0/p/14153982.html</p>
+<p><a href="https://blog.csdn.net/weixin_44450768/article/details/104218776">https://blog.csdn.net/weixin_44450768/article/details/104218776</a></p>
+<p><a href="https://blog.csdn.net/a303549861/article/details/93752178">https://blog.csdn.net/a303549861/article/details/93752178</a></p>
+<p><a href="https://www.cnblogs.com/lin0/p/14153982.html">https://www.cnblogs.com/lin0/p/14153982.html</a></p>
 
 
 
@@ -10376,6 +10376,12 @@ Maven 定义了三套生命周期：clean、default、site，每个生命周期�
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

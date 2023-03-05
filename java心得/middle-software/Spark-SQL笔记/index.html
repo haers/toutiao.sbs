@@ -4639,6 +4639,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4753,20 +4767,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10051,9 +10051,9 @@
 </ul>
 <p>保存 DataFrame：</p>
 <p>如果将 DataFrame 保存到关系型数据库、NoSQL 数据存储以及其他各种文件格式的文件中，需要借助 DataFrameWrite 类，其内部定义将数据写入数据源的接口，可以指定存储格式、分区等属性。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>比如：
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>jdbcDF.write.jdbc(&quot;jdbc:postgresql:dbserver&quot;, &quot;schema.tablename&quot;, connectionProperties)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>比如：
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>jdbcDF.write.jdbc(&quot;jdbc:postgresql:dbserver&quot;, &quot;schema.tablename&quot;, connectionProperties)
+</span></code></pre></div>
 <p>可以将 DataFrame 存储至任何 Hadoop 支持的存储系统中，包括本地文件系统、HDFS、Amazon S3，可以使用的格式包括 Parquet、JSON、OCR、CSV。</p>
 <p>《Spark 大数据分析》P132</p>
 <p>保存 DataFrame 时，如果目的路径和表已经存在，Spark SQL 默认会抛出异常。可以能过 mode 方法来改变这一行为。mode 方法只有一个参数。</p>
@@ -10065,16 +10065,16 @@
 </ul>
 <h5 id="_3">内置函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
 <p>即可用于 DataFrame API，也可以用于 SQL 接口。前提需要引入一行代码</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>import org.apache.spark.sql.functions._
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>import org.apache.spark.sql.functions._
+</span></code></pre></div>
 <p>可以分为几类：聚合操作、集合操作、日期/时间、数学、字符串、窗口操作、其他选项。</p>
 <ul>
 <li>聚合操作</li>
 </ul>
 <p>内置的聚合操作函数包括 approx_count_distinct、avg、count、countDistinct、first、last、max、min、sum、sumDistinct 等</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>如：
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>peopleDF.select(min($&quot;price&quot;))
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>如：
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>peopleDF.select(min($&quot;price&quot;))
+</span></code></pre></div>
 <ul>
 <li>集合操作</li>
 </ul>
@@ -10181,6 +10181,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

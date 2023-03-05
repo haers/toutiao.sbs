@@ -4798,6 +4798,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4912,20 +4926,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10329,15 +10329,15 @@ singletonsCurrentlyInCreation：存放正在被创建的 Bean 的集合</p>
 </ol>
 <h4 id="5spring-boot">5.Spring Boot 手动装配有哪几种方式？<a class="headerlink" href="#5spring-boot" title="Permanent link">&para;</a></h4>
 <ol>
-<li>使用模式注解 @Component 等（Spring2.5+）</li>
-<li>使用配置类 @Configuration 与 @Bean （Spring3.0+）</li>
-<li>使用模块装配 @EnableXXX 与 @Import （Spring3.1+）</li>
+<li>使用模式注解 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 等（Spring2.5+）</li>
+<li>使用配置类 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Configuration" title="GitHub User: Configuration">@Configuration</a> 与 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a> （Spring3.0+）</li>
+<li>使用模块装配 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableXXX" title="GitHub User: EnableXXX">@EnableXXX</a> 与 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Import" title="GitHub User: Import">@Import</a> （Spring3.1+）</li>
 </ol>
-<p>其中使用 @Component 及衍生注解很常见，咱开发中常用的套路，不再赘述。
-但模式注解只能在自己编写的代码中标注，无法装配 jar 包中的组件。为此可以使用 @Configuration 与 @Bean，手动装配组件（如上一篇的 @Configuration 示例）。但这种方式一旦注册过多，会导致编码成本高，维护不灵活等问题。
-SpringFramework 提供了模块装配功能，通过给配置类标注 @EnableXXX 注解，再在注解上标注 @Import 注解，即可完成组件装配的效果。</p>
+<p>其中使用 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 及衍生注解很常见，咱开发中常用的套路，不再赘述。
+但模式注解只能在自己编写的代码中标注，无法装配 jar 包中的组件。为此可以使用 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Configuration" title="GitHub User: Configuration">@Configuration</a> 与 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a>，手动装配组件（如上一篇的 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Configuration" title="GitHub User: Configuration">@Configuration</a> 示例）。但这种方式一旦注册过多，会导致编码成本高，维护不灵活等问题。
+SpringFramework 提供了模块装配功能，通过给配置类标注 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableXXX" title="GitHub User: EnableXXX">@EnableXXX</a> 注解，再在注解上标注 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Import" title="GitHub User: Import">@Import</a> 注解，即可完成组件装配的效果。</p>
 <h4 id="6spring-boot">6.Spring Boot 自动配置原理<a class="headerlink" href="#6spring-boot" title="Permanent link">&para;</a></h4>
-<p>详见：https://blog.csdn.net/Dongguabai/article/details/80865599</p>
+<p>详见：<a href="https://blog.csdn.net/Dongguabai/article/details/80865599">https://blog.csdn.net/Dongguabai/article/details/80865599</a></p>
 <h4 id="7-spring-ioc">7.谈谈自己对于 Spring IOC 的理解<a class="headerlink" href="#7-spring-ioc" title="Permanent link">&para;</a></h4>
 <p>IOC（Inversion Of Controll，控制反转）是一种设计思想，就是将原本在程序中手动创建对象的控制权，交由给 Spring 框架来管理。IOC 在其他语言中也有应用，并非 Spring 特有。IOC 容器是 Spring 用来实现 IOC 的载体，IOC 容器实际上就是一个 Map(key, value)，Map 中存放的是各种对象。</p>
 <p>将对象之间的相互依赖关系交给 IOC 容器来管理，并由 IOC 容器完成对象的注入。这样可以很大程度上简化应用的开发，把应用从复杂的依赖关系中解放出来。IOC 容器就像是一个工厂一样，当我们需要创建一个对象的时候，只需要配置好配置文件/注解即可，完全不用考虑对象是如何被创建出来的。在实际项目中一个 Service 类可能由几百甚至上千个类作为它的底层，假如我们需要实例化这个 Service，可能要每次都搞清楚这个 Service 所有底层类的构造函数，这可能会把人逼疯。如果利用 IOC 的话，你只需要配置好，然后在需要的地方引用就行了，大大增加了项目的可维护性且降低了开发难度。</p>
@@ -10370,16 +10370,16 @@ SpringFramework 提供了模块装配功能，通过给配置类标注 @EnableXX
 7.DispatcherServlet 把返回的 Model 传给 View（视图渲染）。 8.把 View 返回给请求者（浏览器）。</p>
 <h4 id="14spring">14.Spring 框架中用到了哪些设计模式？<a class="headerlink" href="#14spring" title="Permanent link">&para;</a></h4>
 <p>1.工厂设计模式：Spring 使用工厂模式通过 BeanFactory 和 ApplicationContext 创建 bean 对象。 2.代理设计模式：Spring AOP 功能的实现。 3.单例设计模式：Spring 中的 bean 默认都是单例的。 4.模板方法模式：Spring 中的 jdbcTemplate、hibernateTemplate 等以 Template 结尾的对数据库操作的类，它们就使用到了模板模式。 5.包装器设计模式：我们的项目需要连接多个数据库，而且不同的客户在每次访问中根据需要会去访问不同的数据库。这种模式让我们可以根据客户的需求能够动态切换不同的数据源。 6.观察者模式：Spring 事件驱动模型就是观察者模式很经典的一个应用。 7.适配器模式：Spring AOP 的增强或通知（Advice）使用到了适配器模式、Spring MVC 中也是用到了适配器模式适配 Controller。</p>
-<h4 id="15component-bean">15.@Component 和@Bean 的区别是什么？<a class="headerlink" href="#15component-bean" title="Permanent link">&para;</a></h4>
-<p>1.作用对象不同。@Component 注解作用于类，而@Bean 注解作用于方法。
-2.@Component 注解通常是通过类路径扫描来自动侦测以及自动装配到 Spring 容器中（我们可以使用@ComponentScan 注解定义要扫描的路径）。@Bean 注解通常是在标有该注解的方法中定义产生这个 bean，告诉 Spring 这是某个类的实例，当我需要用它的时候还给我。
-3.@Bean 注解比@Component 注解的自定义性更强，而且很多地方只能通过@Bean 注解来注册 bean。比如当引用第三方库的类需要装配到 Spring 容器的时候，就只能通过@Bean 注解来实现。</p>
+<h4 id="15component-bean">15.<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 和<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a> 的区别是什么？<a class="headerlink" href="#15component-bean" title="Permanent link">&para;</a></h4>
+<p>1.作用对象不同。<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 注解作用于类，而<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a> 注解作用于方法。
+2.<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 注解通常是通过类路径扫描来自动侦测以及自动装配到 Spring 容器中（我们可以使用<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/ComponentScan" title="GitHub User: ComponentScan">@ComponentScan</a> 注解定义要扫描的路径）。<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a> 注解通常是在标有该注解的方法中定义产生这个 bean，告诉 Spring 这是某个类的实例，当我需要用它的时候还给我。
+3.<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a> 注解比<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 注解的自定义性更强，而且很多地方只能通过<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a> 注解来注册 bean。比如当引用第三方库的类需要装配到 Spring 容器的时候，就只能通过<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a> 注解来实现。</p>
 <h4 id="16-spring-bean">16.将一个类声明为 Spring 的 bean 的注解有哪些？<a class="headerlink" href="#16-spring-bean" title="Permanent link">&para;</a></h4>
-<p>我们一般使用@Autowired 注解去自动装配 bean。而想要把一个类标识为可以用@Autowired 注解自动装配的 bean，可以采用以下的注解实现：
-1.@Component 注解。通用的注解，可标注任意类为 Spring 组件。如果一个 Bean 不知道属于哪一个层，可以使用@Component 注解标注。
-2.@Repository 注解。对应持久层，即 Dao 层，主要用于数据库相关操作。
-3.@Service 注解。对应服务层，即 Service 层，主要涉及一些复杂的逻辑，需要用到 Dao 层（注入）。
-4.@Controller 注解。对应 Spring MVC 的控制层，即 Controller 层，主要用于接受用户请求并调用 Service 层的方法返回数据给前端页面。</p>
+<p>我们一般使用<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a> 注解去自动装配 bean。而想要把一个类标识为可以用<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a> 注解自动装配的 bean，可以采用以下的注解实现：
+1.<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 注解。通用的注解，可标注任意类为 Spring 组件。如果一个 Bean 不知道属于哪一个层，可以使用<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 注解标注。
+2.<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Repository" title="GitHub User: Repository">@Repository</a> 注解。对应持久层，即 Dao 层，主要用于数据库相关操作。
+3.<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Service" title="GitHub User: Service">@Service</a> 注解。对应服务层，即 Service 层，主要涉及一些复杂的逻辑，需要用到 Dao 层（注入）。
+4.<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Controller" title="GitHub User: Controller">@Controller</a> 注解。对应 Spring MVC 的控制层，即 Controller 层，主要用于接受用户请求并调用 Service 层的方法返回数据给前端页面。</p>
 <h4 id="17spring">17.Spring 事务管理的方式有几种？<a class="headerlink" href="#17spring" title="Permanent link">&para;</a></h4>
 <p>1.编程式事务：在代码中硬编码（不推荐使用）。 2.声明式事务：在配置文件中配置（推荐使用），分为基于 XML 的声明式事务和基于注解的声明式事务。</p>
 <h4 id="18spring">18.Spring 事务中的隔离级别有哪几种？<a class="headerlink" href="#18spring" title="Permanent link">&para;</a></h4>
@@ -10447,9 +10447,9 @@ CGLib 采用底层的字节码技术，为一个类创建子类，并在子类�
 <h4 id="27-bean-application-contexts">27. Bean 工厂和 Application contexts 有什么区别？<a class="headerlink" href="#27-bean-application-contexts" title="Permanent link">&para;</a></h4>
 <p>Application contexts 提供一种方法处理文本消息，一个通常的做法是加载文件资源（比如镜像），它们可以向注册为监听器的 bean 发布事件。另外，在容器或容器内的对象上执行的那些不得不由 bean 工厂以程序化方式处理的操作，可以在 Application contexts 中以声明的方式处理。Application contexts 实现了 MessageSource 接口，该接口的实现以可插拔的方式提供获取本地化消息的方法。</p>
 <h3 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>https://www.cnblogs.com/yanggb/p/11004887.html
-https://www.jianshu.com/p/a5d960c6f6dd
-https://ifeve.com/spring-interview-questions-and-answers/</p>
+<p><a href="https://www.cnblogs.com/yanggb/p/11004887.html">https://www.cnblogs.com/yanggb/p/11004887.html</a>
+<a href="https://www.jianshu.com/p/a5d960c6f6dd">https://www.jianshu.com/p/a5d960c6f6dd</a>
+<a href="https://ifeve.com/spring-interview-questions-and-answers/">https://ifeve.com/spring-interview-questions-and-answers/</a></p>
 
 
 
@@ -10535,6 +10535,12 @@ https://ifeve.com/spring-interview-questions-and-answers/</p>
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

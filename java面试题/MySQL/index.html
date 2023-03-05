@@ -4973,6 +4973,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -5087,20 +5101,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10712,9 +10712,9 @@ MyISAM：不支持事务、不支持外键、不支持行级锁、支持全文�
 <p>4、串行化</p>
 <p>是最严格的事务隔离级别，它要求所有事务被串行执行，即事务只能一个接一个的进行处理，不能并发执行。</p>
 <h4 id="8-innodb">8.说说 InnoDB 的索引原理<a class="headerlink" href="#8-innodb" title="Permanent link">&para;</a></h4>
-<p>详见：https://www.cnblogs.com/williamjie/p/11081081.html</p>
+<p>详见：<a href="https://www.cnblogs.com/williamjie/p/11081081.html">https://www.cnblogs.com/williamjie/p/11081081.html</a></p>
 <h4 id="innodb-mvcc">说说 InnoDB 的 MVCC 机制<a class="headerlink" href="#innodb-mvcc" title="Permanent link">&para;</a></h4>
-<p>详见：https://baijiahao.baidu.com/s?id=1629409989970483292</p>
+<p>详见：<a href="https://baijiahao.baidu.com/s?id=1629409989970483292">https://baijiahao.baidu.com/s?id=1629409989970483292</a></p>
 <h4 id="9">9.有了解过“回表”的概念吗？什么情况下会出现“回表”？<a class="headerlink" href="#9" title="Permanent link">&para;</a></h4>
 <p>回表就是先通过数据库索引扫描出数据所在的行，再通过行主键 id 取出索引中未提供的数据，即基于非主键索引的查询需要多扫描一棵索引树。
 当查询的字段在二级索引上没有的时候，就需要“回表”在主键索引上再查一次。</p>
@@ -10722,7 +10722,7 @@ MyISAM：不支持事务、不支持外键、不支持行级锁、支持全文�
 <p>聚簇索引、二级（辅助）索引
 B 树索引、hash 索引</p>
 <h4 id="11-mysql">11.有做过 MySQL 的索引优化吗<a class="headerlink" href="#11-mysql" title="Permanent link">&para;</a></h4>
-<p>详见：https://blog.csdn.net/m0_37984616/article/details/81047676</p>
+<p>详见：<a href="https://blog.csdn.net/m0_37984616/article/details/81047676">https://blog.csdn.net/m0_37984616/article/details/81047676</a></p>
 <h4 id="12">12.什么是聚簇索引？<a class="headerlink" href="#12" title="Permanent link">&para;</a></h4>
 <p>聚簇索引：将数据存储与索引放到了一块，找到索引也就找到了数据
 非聚簇索引：将数据与索引分开存储，索引结构的叶子节点指向了数据的对应行</p>
@@ -10742,7 +10742,7 @@ B 树索引、hash 索引</p>
 <h4 id="19-innodb">19.为什么 InnoDB 一定会生成主键？<a class="headerlink" href="#19-innodb" title="Permanent link">&para;</a></h4>
 <p>因为 Innodb 的数据结构是通过聚簇索引组织起来的，如果没有主键的话，通过其他索引回表的时候没法查到相应的数据行。</p>
 <h4 id="20mysql">20.MySQL 分库分表了解过吗？<a class="headerlink" href="#20mysql" title="Permanent link">&para;</a></h4>
-<p>详见：https://baijiahao.baidu.com/s?id=1622441635115622194</p>
+<p>详见：<a href="https://baijiahao.baidu.com/s?id=1622441635115622194">https://baijiahao.baidu.com/s?id=1622441635115622194</a></p>
 <h4 id="21mysql-redo-undo">21.MySQL 的 redo 日志和 undo 日志分别有什么用？<a class="headerlink" href="#21mysql-redo-undo" title="Permanent link">&para;</a></h4>
 <p>1）redo
 作用：保证事务的持久性
@@ -10760,7 +10760,7 @@ Undo 记录中存储的是老版本数据，当一个旧的事务需要读取数
 正常关闭服务器时
 做所谓的 checkpoint 时</p>
 <h4 id="23mysql">23.MySQL 有哪些锁？以及各种锁的作用？<a class="headerlink" href="#23mysql" title="Permanent link">&para;</a></h4>
-<p>详见：https://blog.csdn.net/qq_40378034/article/details/90904573</p>
+<p>详见：<a href="https://blog.csdn.net/qq_40378034/article/details/90904573">https://blog.csdn.net/qq_40378034/article/details/90904573</a></p>
 <h4 id="24mysql-varchar-char-varchar50-50">24.MySQL 中 varchar 与 char 的区别以及 varchar(50)中的 50 代表的涵义<a class="headerlink" href="#24mysql-varchar-char-varchar50-50" title="Permanent link">&para;</a></h4>
 <p>(1)、varchar 与 char 的区别
 (2)、varchar(50)中 50 的涵义
@@ -10942,10 +10942,10 @@ Undo 记录中存储的是老版本数据，当一个旧的事务需要读取数
 的所有数据行，这三种情况依次称之为左外连接，右外连接，和全外连接。</p>
 <p>左外连接，也称左连接，左表为主表，左表中的所有记录都会出现在结果集中，对于那些在右表中并没有匹配的记录，仍然要显示，右边对应的那些字段值以 NULL 来填充。右外连接，也称右连接，右表为主表，右表中的所有记录都会出现在结果集中。左连接和右连接可以互换，MySQL 目前还不支持全外连接。</p>
 <h4 id="_1">参考链接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p>https://article.itxueyuan.com/eoJEMj</p>
-<p>https://www.cnblogs.com/williamjie/p/11081592.html</p>
-<p>http://www.100mian.com/mianshi/mysql/49909.html</p>
-<p>https://leisure.wang/procedural-framework/database/241.html</p>
+<p><a href="https://article.itxueyuan.com/eoJEMj">https://article.itxueyuan.com/eoJEMj</a></p>
+<p><a href="https://www.cnblogs.com/williamjie/p/11081592.html">https://www.cnblogs.com/williamjie/p/11081592.html</a></p>
+<p><a href="http://www.100mian.com/mianshi/mysql/49909.html">http://www.100mian.com/mianshi/mysql/49909.html</a></p>
+<p><a href="https://leisure.wang/procedural-framework/database/241.html">https://leisure.wang/procedural-framework/database/241.html</a></p>
 
 
 
@@ -11031,6 +11031,12 @@ Undo 记录中存储的是老版本数据，当一个旧的事务需要读取数
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

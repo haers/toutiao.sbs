@@ -4646,6 +4646,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4760,20 +4774,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9982,7 +9982,7 @@
 <li>Cobar 的主备切换有两种触发方式,一种是用户手动触发,一种是 Cobar 的心跳语句检测到异常后自动触 发。那么,当心跳检测到主机异常,切换到备机,如果主机恢复了,需要用户手动切回主机工作,Cobar 不 会在主机恢复时自动切换回主机,除非备机的心跳也返回异常。</li>
 <li>Cobar 只检查 MySQL 主备异常,不关心主备之间的数据同步,因此用户需要在使用 Cobar 之前在 MySQL 主 备上配置双向同步,详情可以参阅 MySQL 参考手册。</li>
 </ul>
-<p><strong>注意事项 </strong></p>
+<p>**注意事项 **</p>
 <p>1.请注意表的拆分方式,一张表水平拆分多份到不同的库中,而不是放入同一个库中。</p>
 <p>2.如果使用 HA 功能,请在 MySQL 主备之间配置双向同步</p>
 <h4 id="_3">逻辑层次图<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
@@ -9997,32 +9997,32 @@
 </ul>
 <h4 id="_4">使用手册<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p>Cobar 的主要目录如下:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bin #包含Cobar的启动、重启、停止等脚本文件
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conf #包含Cobar所有配置文件
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>lib #包含Cobar及其依赖的jar文件
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>logs #包含Cobar所有日志文件
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bin #包含Cobar的启动、重启、停止等脚本文件
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conf #包含Cobar所有配置文件
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>lib #包含Cobar及其依赖的jar文件
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>logs #包含Cobar所有日志文件
+</span></code></pre></div>
 <p>Cobar 的所有配置文件全部放在 conf 目录中,进入 conf 目录,可以看到:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>server.xml #Cobar系统、用户、集群等相关配置
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>schema.xml #schema,dataNode,dataSource相关配置
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>rule.xml #分布式规则定义
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>log4j.xml #日志相关配置
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>server.xml #Cobar系统、用户、集群等相关配置
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>schema.xml #schema,dataNode,dataSource相关配置
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>rule.xml #分布式规则定义
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>log4j.xml #日志相关配置
+</span></code></pre></div>
 <ul>
 <li>dataSource</li>
 </ul>
 <p>数据源是一个具体的后端数据连接的表示</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;dataSource name=&quot;ds_shard_master&quot;  type=&quot;mysql&quot;&gt;
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    &lt;property name=&quot;location&quot;&gt;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        &lt;location&gt;192.168.0.4:3306/shard&lt;/location&gt;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        &lt;!--shard$1-3是shard1、shard2、shard3的缩写,在后续介绍的Cobar配 置中,我们也会经常看到类似的缩写形式--&gt;
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        &lt;location&gt;192.168.0.4:3306/shard$1-3&lt;/location&gt;
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    &lt;/property&gt;
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    &lt;property name=&quot;user&quot;&gt;test&lt;/property&gt;
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    &lt;property name=&quot;password&quot;&gt;&lt;/property&gt;
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    &lt;property name=&quot;sqlMode&quot;&gt;STRICT_TRANS_TABLES&lt;/property&gt;
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼&lt;/dataSource&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;dataSource name=&quot;ds_shard_master&quot;  type=&quot;mysql&quot;&gt;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    &lt;property name=&quot;location&quot;&gt;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        &lt;location&gt;192.168.0.4:3306/shard&lt;/location&gt;
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        &lt;!--shard$1-3是shard1、shard2、shard3的缩写,在后续介绍的Cobar配 置中,我们也会经常看到类似的缩写形式--&gt;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        &lt;location&gt;192.168.0.4:3306/shard$1-3&lt;/location&gt;
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    &lt;/property&gt;
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    &lt;property name=&quot;user&quot;&gt;test&lt;/property&gt;
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    &lt;property name=&quot;password&quot;&gt;&lt;/property&gt;
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    &lt;property name=&quot;sqlMode&quot;&gt;STRICT_TRANS_TABLES&lt;/property&gt;
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼&lt;/dataSource&gt;
+</span></code></pre></div>
 <p>上例中配置了 4 个数据源,数据源名称分别为 ds_shard_master[0]、ds_shard_master[1]、 ds_shard_master[2]、ds_shard_master[3],按照用户 location 中配置的顺序,对应关系如下:</p>
 <table>
 <thead>
@@ -10054,19 +10054,19 @@
 <li>dataNode</li>
 </ul>
 <p>数据节点由主、备数据源,心跳,连接池等配置组成</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;dataNode name=&quot;dn_shard&quot;&gt;
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    &lt;property name=&quot;dataSource&quot;&gt;
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        &lt;!--三个数据节点的主数据源,可用逗号分隔,支持$1-3的缩写形式, 表示ds_shard_master[1],ds_shard_master[2],ds_shard_master[3]--&gt;
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        &lt;dataSourceRef&gt;ds_shard_master[0],ds_shard_master$1-3&lt;/dataSourceRef&gt;
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        &lt;!--三个数据节点的备数据源,必须与主数据源一一对应(个数,顺序都要 对应)--&gt;
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        &lt;dataSourceRef&gt;ds_shard_slave$0-3&lt;/dataSourceRef&gt;
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    &lt;/property&gt;
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    &lt;property name=&quot;poolSize&quot;&gt;256&lt;/property&gt;
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    &lt;property name=&quot;heartbeatSQL&quot;&gt;update xdual setx=now() where
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>id=${(1,10)}&lt;/property&gt;
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>&lt;/dataNode&gt;
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;dataNode name=&quot;dn_shard&quot;&gt;
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    &lt;property name=&quot;dataSource&quot;&gt;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        &lt;!--三个数据节点的主数据源,可用逗号分隔,支持$1-3的缩写形式, 表示ds_shard_master[1],ds_shard_master[2],ds_shard_master[3]--&gt;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        &lt;dataSourceRef&gt;ds_shard_master[0],ds_shard_master$1-3&lt;/dataSourceRef&gt;
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        &lt;!--三个数据节点的备数据源,必须与主数据源一一对应(个数,顺序都要 对应)--&gt;
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        &lt;dataSourceRef&gt;ds_shard_slave$0-3&lt;/dataSourceRef&gt;
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    &lt;/property&gt;
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    &lt;property name=&quot;poolSize&quot;&gt;256&lt;/property&gt;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    &lt;property name=&quot;heartbeatSQL&quot;&gt;update xdual setx=now() where
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>id=${(1,10)}&lt;/property&gt;
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>&lt;/dataNode&gt;
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼
+</span></code></pre></div>
 <p>数据节点的主备对应关系如下:</p>
 <table>
 <thead>
@@ -10103,18 +10103,18 @@
 <li>schema</li>
 </ul>
 <p>schema 定义了 Cobar 展示给用户的 schema，schema 由 dataNode 以及 rule.xml 中定义的路由规则共同组成。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>// 所有除tb1,tb2,tb3,tb4之外表的访问都路由到dn_shard[0]去执行
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>&lt;schema name=&quot;db_shard&quot; dataNode=&quot;dn_shard[0]&quot;&gt;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    // 对tb1的访问会根据规则tb1Rule路由到dn_shard$0-3的某一个或某几个datanode执行
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    &lt;table name=&quot;tb1&quot; dataNode=&quot;dn_shard$0-3&quot; rule=&quot;tb1Rule&quot;/&gt;
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    // 对tb2的访问会根据规则tb2Rule路由到dn_shard[0],dn_shard[3]的某一个或两个datanode执行
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    &lt;table name=&quot;tb2&quot; dataNode=&quot;dn_shard[0],dn_shard[3]&quot; rule=&quot;tb2Rule&quot; /&gt;
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    // 对tb3的访问会根据规则tb3Rule路由到dn_shard$0-3的某一个或某几个datanode执行
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    &lt;table name=&quot;tb3&quot; dataNode=&quot;dn_shard$0-3&quot; rule=&quot;tb3Rule&quot;/&gt;
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    // 对tb4的访问会直接路由到dn_shard[2]执行,如果datanode中只有一个node,可以不用配置rule
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    &lt;table name=&quot;tb4&quot; dataNode=&quot;dn_shard[2]&quot; ruleRequired=&quot;false&quot;/&gt;
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>&lt;/schema&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>// 所有除tb1,tb2,tb3,tb4之外表的访问都路由到dn_shard[0]去执行
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>&lt;schema name=&quot;db_shard&quot; dataNode=&quot;dn_shard[0]&quot;&gt;
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    // 对tb1的访问会根据规则tb1Rule路由到dn_shard$0-3的某一个或某几个datanode执行
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    &lt;table name=&quot;tb1&quot; dataNode=&quot;dn_shard$0-3&quot; rule=&quot;tb1Rule&quot;/&gt;
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    // 对tb2的访问会根据规则tb2Rule路由到dn_shard[0],dn_shard[3]的某一个或两个datanode执行
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    &lt;table name=&quot;tb2&quot; dataNode=&quot;dn_shard[0],dn_shard[3]&quot; rule=&quot;tb2Rule&quot; /&gt;
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    // 对tb3的访问会根据规则tb3Rule路由到dn_shard$0-3的某一个或某几个datanode执行
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    &lt;table name=&quot;tb3&quot; dataNode=&quot;dn_shard$0-3&quot; rule=&quot;tb3Rule&quot;/&gt;
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    // 对tb4的访问会直接路由到dn_shard[2]执行,如果datanode中只有一个node,可以不用配置rule
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    &lt;table name=&quot;tb4&quot; dataNode=&quot;dn_shard[2]&quot; ruleRequired=&quot;false&quot;/&gt;
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>&lt;/schema&gt;
+</span></code></pre></div>
 <ul>
 <li>rule.xml</li>
 </ul>
@@ -10122,85 +10122,85 @@
 <p>因此，tableRule 定义两个要素:</p>
 <p>1）按表中的哪个字段路由?------下文中我们称此字段为路由字段</p>
 <p>2）有了字段值，如何路由?------即路由函数</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>// tableRule名称
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&lt;tableRule name=&quot;tb1Rule&quot;&gt;
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    &lt;rule&gt;
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        //id为路由字段, id是int型字段
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        &lt;columns&gt;id&lt;/columns&gt;
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        //int_4是路由函数，参数为id，int_4在function中定义
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        &lt;algorithm&gt;&lt;![CDATA[int_4(${id})]]&gt;&lt;/algorithm&gt;
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    &lt;/rule&gt;
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>&lt;/tableRule&gt;
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>&lt;tableRule name=&quot;tb2Rule&quot;&gt;
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    &lt;rule&gt;
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        //val为路由字段，val是varchar型字段
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        &lt;columns&gt;val&lt;/columns&gt;
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        //string_2是路由函数,参数为val
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        &lt;algorithm&gt;&lt;![CDATA[string_2(${val})]]&gt;&lt;/algorithm&gt;
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    &lt;/rule&gt;
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>&lt;/tableRule&gt;
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>&lt;tableRulename=&quot;tb3Rule&quot;&gt;
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    &lt;rule&gt;
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        //id和val共同组成路由字段，id是int型字段，val是varchar型字段
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        &lt;columns&gt;id,val&lt;/columns&gt;
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>        &lt;algorithm&gt;&lt;![CDATA[twoDimensionFunc(${id},${val})]]&gt; &lt;/algorithm&gt;
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    &lt;/rule&gt;
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>    //按多个字段路由时需要考虑SQL中只有一个字段的情况
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>    &lt;rule&gt;
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>        //当SQL语句中只有id,无val字段时,匹配此规则,val参数设置为 null
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>        &lt;columns&gt;id&lt;/columns&gt;
-<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>        &lt;algorithm&gt;&lt;![CDATA[twoDimensionFunc(${pid},null)]]&gt;&lt;/algorithm&gt;
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>    &lt;/rule&gt;
-<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>    //当SQL语句中只有val,无id字段时,匹配此规则,id参数设置为null
-<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>    &lt;rule&gt;
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>        &lt;columns&gt;val&lt;/columns&gt;
-<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>        &lt;algorithm&gt;&lt;![CDATA[twoDimensionFunc(null,${uid})]]&gt;&lt;/algorithm&gt;
-<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>    &lt;/rule&gt;
-<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
-<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>&lt;/tableRule&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>// tableRule名称
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&lt;tableRule name=&quot;tb1Rule&quot;&gt;
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    &lt;rule&gt;
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        //id为路由字段, id是int型字段
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        &lt;columns&gt;id&lt;/columns&gt;
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        //int_4是路由函数，参数为id，int_4在function中定义
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        &lt;algorithm&gt;&lt;![CDATA[int_4(${id})]]&gt;&lt;/algorithm&gt;
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    &lt;/rule&gt;
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>&lt;/tableRule&gt;
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>&lt;tableRule name=&quot;tb2Rule&quot;&gt;
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    &lt;rule&gt;
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        //val为路由字段，val是varchar型字段
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        &lt;columns&gt;val&lt;/columns&gt;
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        //string_2是路由函数,参数为val
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        &lt;algorithm&gt;&lt;![CDATA[string_2(${val})]]&gt;&lt;/algorithm&gt;
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    &lt;/rule&gt;
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>&lt;/tableRule&gt;
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>&lt;tableRulename=&quot;tb3Rule&quot;&gt;
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    &lt;rule&gt;
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        //id和val共同组成路由字段，id是int型字段，val是varchar型字段
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        &lt;columns&gt;id,val&lt;/columns&gt;
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>        &lt;algorithm&gt;&lt;![CDATA[twoDimensionFunc(${id},${val})]]&gt; &lt;/algorithm&gt;
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    &lt;/rule&gt;
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>    //按多个字段路由时需要考虑SQL中只有一个字段的情况
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>    &lt;rule&gt;
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>        //当SQL语句中只有id,无val字段时,匹配此规则,val参数设置为 null
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>        &lt;columns&gt;id&lt;/columns&gt;
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>        &lt;algorithm&gt;&lt;![CDATA[twoDimensionFunc(${pid},null)]]&gt;&lt;/algorithm&gt;
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>    &lt;/rule&gt;
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>    //当SQL语句中只有val,无id字段时,匹配此规则,id参数设置为null
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>    &lt;rule&gt;
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>        &lt;columns&gt;val&lt;/columns&gt;
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>        &lt;algorithm&gt;&lt;![CDATA[twoDimensionFunc(null,${uid})]]&gt;&lt;/algorithm&gt;
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>    &lt;/rule&gt;
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>&lt;/tableRule&gt;
+</span></code></pre></div>
 <p>Cobar 支持按 1-2 个字段做路由，因此路由算法分为单维路由和多维路由(2 维)。</p>
 <ul>
 <li>server.xml</li>
 </ul>
 <p>system 主要是系统参数定义，包括服务端口、管理端口、处理器个数、线程池等</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&lt;system&gt;
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>//Cobar服务端口,通过此端口执行SQL语句,默认值8066
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>&lt;property name=&quot;serverPort&quot;&gt;8066&lt;/property&gt;
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>//Cobar管理端口,通过此端口执行Cobar管理命令, 默认值9066
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>&lt;property name=&quot;managerPort&quot;&gt;9066&lt;/property&gt;
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>//initExecutor:处理初始化任务的线程
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>&lt;property name=&quot;initExecutor&quot;&gt;16&lt;/property&gt;
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>//timerExecutor:处理定时任务的线程
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>&lt;property name=&quot;timerExecutor&quot;&gt;4&lt;/property&gt;
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>//managerExecutor:处理来自9066端口任务的线程
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>&lt;property name=&quot;managerExecutor&quot;&gt;4&lt;/property&gt;
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>//processors:Cobar内部处理器个数,默认与系统cpu个数相同
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>&lt;property name=&quot;processors&quot;&gt;4&lt;/property&gt;
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>//processorHandler:前端处理线程,负责处理所有8066端口前端连接
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>&lt;property name=&quot;processorHandler&quot;&gt;8&lt;/property&gt;
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>//processorExcutor:后端处理线程,负责处理Cobar与MySQL之间的连接,
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>可以适当设置大一些
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>&lt;property name=&quot;processorExecutor&quot;&gt;8&lt;/property&gt;
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>//Cobar与Cobar间心跳的用户名和密码,默认值即是_HEARTBEAT_USER_和 _HEARTBEAT_PASS_
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>//如果两台Cobar之间需要心跳,这两项配置必须相同,一般不建议自行配 置,使用默认值即可
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>&lt;property name=&quot;clusterHeartbeatUser&quot;&gt;_HEARTBEAT_USER_&lt;/property&gt;
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>&lt;property name=&quot;clusterHeartbeatPass&quot;&gt;_HEARTBEAT_PASS_&lt;/property&gt;
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>
-<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>&lt;/system&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&lt;system&gt;
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>//Cobar服务端口,通过此端口执行SQL语句,默认值8066
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>&lt;property name=&quot;serverPort&quot;&gt;8066&lt;/property&gt;
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>//Cobar管理端口,通过此端口执行Cobar管理命令, 默认值9066
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>&lt;property name=&quot;managerPort&quot;&gt;9066&lt;/property&gt;
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>//initExecutor:处理初始化任务的线程
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>&lt;property name=&quot;initExecutor&quot;&gt;16&lt;/property&gt;
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>//timerExecutor:处理定时任务的线程
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>&lt;property name=&quot;timerExecutor&quot;&gt;4&lt;/property&gt;
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>//managerExecutor:处理来自9066端口任务的线程
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>&lt;property name=&quot;managerExecutor&quot;&gt;4&lt;/property&gt;
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>//processors:Cobar内部处理器个数,默认与系统cpu个数相同
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>&lt;property name=&quot;processors&quot;&gt;4&lt;/property&gt;
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>//processorHandler:前端处理线程,负责处理所有8066端口前端连接
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>&lt;property name=&quot;processorHandler&quot;&gt;8&lt;/property&gt;
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>//processorExcutor:后端处理线程,负责处理Cobar与MySQL之间的连接,
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>可以适当设置大一些
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>&lt;property name=&quot;processorExecutor&quot;&gt;8&lt;/property&gt;
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>//Cobar与Cobar间心跳的用户名和密码,默认值即是_HEARTBEAT_USER_和 _HEARTBEAT_PASS_
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>//如果两台Cobar之间需要心跳,这两项配置必须相同,一般不建议自行配 置,使用默认值即可
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>&lt;property name=&quot;clusterHeartbeatUser&quot;&gt;_HEARTBEAT_USER_&lt;/property&gt;
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>&lt;property name=&quot;clusterHeartbeatPass&quot;&gt;_HEARTBEAT_PASS_&lt;/property&gt;
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>&lt;/system&gt;
+</span></code></pre></div>
 <h4 id="_5">参考资料<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p>http://hualong.iteye.com/blog/2102798</p>
-<p>http://www.cnblogs.com/super-d2/p/4276021.html</p>
+<p><a href="http://hualong.iteye.com/blog/2102798">http://hualong.iteye.com/blog/2102798</a></p>
+<p><a href="http://www.cnblogs.com/super-d2/p/4276021.html">http://www.cnblogs.com/super-d2/p/4276021.html</a></p>
 
 
 
@@ -10286,6 +10286,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

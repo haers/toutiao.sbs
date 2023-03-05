@@ -4561,6 +4561,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4770,20 +4784,6 @@
     <li class="md-nav__item">
       <a href="../BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9966,14 +9966,14 @@
 <p>二叉堆是一种特殊的堆，二叉堆是完全二元树（二叉树）或者是近似完全二元树（二叉树）。</p>
 <h3 id="_2">二叉堆有两种<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>最大堆：父结点的键值总是<strong>大于或等于</strong>任何一个子节点的键值；</li>
+<li>最大堆：父结点的键值总是**大于或等于**任何一个子节点的键值；</li>
 </ul>
 <p><img alt="大顶堆" src="../../image/c2/bh-1.png" /></p>
 <ul>
-<li>最小堆：父结点的键值总是<strong>小于或等于</strong>任何一个子节点的键值。</li>
+<li>最小堆：父结点的键值总是**小于或等于**任何一个子节点的键值。</li>
 </ul>
 <p><img alt="小顶堆" src="../../image/c2/bh-2.png" /></p>
-<p>二叉堆的根节点叫做<strong>堆顶</strong></p>
+<p>二叉堆的根节点叫做**堆顶**</p>
 <p>最大堆和最小堆的特点，决定了在最大堆的堆顶是整个堆中的最大元素；最小堆的堆顶是整个堆中的最小元素。</p>
 <h3 id="_3">堆的自我调整<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>对于二叉堆，如下有几种操作：</p>
@@ -10005,7 +10005,7 @@
 <p><img alt="插入新元素4" src="../../image/c2/bh-10.png" /></p>
 <p>这样一来，二叉堆重新得到了调整。</p>
 <h4 id="_6">构建二叉堆<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>构建二叉堆，也就是把一个无序的完全二叉树调整为二叉堆，本质上就是让<strong>所有非叶子节点依次下沉</strong>。</p>
+<p>构建二叉堆，也就是把一个无序的完全二叉树调整为二叉堆，本质上就是让**所有非叶子节点依次下沉**。</p>
 <p>我们举一个无序完全二叉树的例子：</p>
 <p><img alt="插入新元素4" src="../../image/c2/bh-11.png" /></p>
 <p>首先，我们从最后一个非叶子节点开始，也就是从节点 10 开始。如果节点 10 大于它左右孩子中最小的一个，则节点 10 下沉。</p>
@@ -10020,7 +10020,7 @@
 <p>这样一来，一颗无序的完全二叉树就构建成了一个最小堆。</p>
 <h2 id="_7">堆的代码实现<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>在撸代码之前，我们还需要明确一点：</p>
-<div class="highlight"><pre><span></span><code>二叉堆虽然是一颗完全二叉树,但它的存储方式并不是链式存储，而是顺序存储。换句话说，二叉堆的所有节点都存储在数组当中。
+<div class="language-text highlight"><pre><span></span><code>二叉堆虽然是一颗完全二叉树,但它的存储方式并不是链式存储，而是顺序存储。换句话说，二叉堆的所有节点都存储在数组当中。
 </code></pre></div>
 <p><img alt="插入新元素4" src="../../image/c2/bh-16.png" /></p>
 <p>数组中，在没有左右指针的情况下，如何定位到一个父节点的左孩子和右孩子呢？</p>
@@ -10032,8 +10032,8 @@
 <p>刚好符合规律。</p>
 <p>还有一个规律就是完全二叉树的的叶子节点占总长度的一半;比如一个长度为 10 的完全二叉树那么它的非叶子节点占 5 个,叶子节点就是总下表 5 开始的。</p>
 <p>有了这个前提，下面的代码就更好理解了：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
-</code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>
+</span></code></pre></div>
 <p>代码中有一个优化的点，就是父节点和孩子节点做连续交换时，并不一定要真的交换，只需要先把交换一方的值存入 temp 变量，做单向覆盖，循环结束后，再把 temp 的值存入交换后的最终位置。</p>
 <h4 id="_8">堆的好处<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>二叉堆正是实现堆排序以及<a href="../PriorityQueue/">优先级队列</a>的基础。</p>
@@ -10122,6 +10122,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

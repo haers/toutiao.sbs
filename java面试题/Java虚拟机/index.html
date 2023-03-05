@@ -4924,6 +4924,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -5038,20 +5052,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10554,7 +10554,7 @@
 <li><a href="#参考资料">参考资料</a></li>
 </ul>
 <h4 id="1-jvm">1.说一下 JVM 的内存结构？<a class="headerlink" href="#1-jvm" title="Permanent link">&para;</a></h4>
-<p>详见：https://blog.csdn.net/rongtaoup/article/details/89142396</p>
+<p>详见：<a href="https://blog.csdn.net/rongtaoup/article/details/89142396">https://blog.csdn.net/rongtaoup/article/details/89142396</a></p>
 <h4 id="2">2.栈帧里面包含哪些东西？<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
 <p>局部变量表、操作数栈、动态连接、返回地址等</p>
 <h4 id="3">3.程序计数器有什么作用？<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
@@ -10722,7 +10722,7 @@ happen-before 的传递性原则：如果 A 操作 happen-before B 操作，B �
 -Xss128k： 每个线程的堆栈大小为 128k。
 -XX:MaxPermSize： 设置持久代大小为 16m
 -XX:NewRatio=4: 设置年轻代（包括 Eden 和两个 Survivor 区）与年老代的比值（除去持久代）。
--XX:SurvivorRatio=4： 设置年轻代中 Eden 区与 Survivor 区的大小比值。设置为 4，则两个 Survivor 区与一个 Eden 区的比值为 2:4，一个 Survivor 区占整个年轻代的 1/6
+-XX:SurvivorRatio=4： 设置年轻代中 Eden 区与 Survivor 区的大小比值。设置为 4，则两个 Survivor 区与一个 Eden 区的比值为 2:4，一个 Survivor 区占整个年轻代的 &#8537;
 -XX:MaxTenuringThreshold=0： 设置垃圾最大年龄。如果设置为 0 的话，则年轻代对象不经过 Survivor 区，直接进入年老代。</p>
 <p>2）垃圾收集器相关
 -XX:+UseParallelGC： 选择垃圾收集器为并行收集器。
@@ -10825,9 +10825,9 @@ jinfo，JVM Conﬁguration info 这个命令作用是实时查看和调整虚拟
 <h4 id="45">45.如何判断一个常量是废弃常量 ？<a class="headerlink" href="#45" title="Permanent link">&para;</a></h4>
 <p>运行时常量池主要回收的是废弃的常量。假如在常量池中存在字符串 "abc"，如果当前没有任何 String 对象引用该字符串常量的话，就说明常量 "abc" 就是废弃常量，如果这时发生内存回收的话而且有必要的话，"abc" 就会被系统清理出常量池。</p>
 <h3 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>https://blog.csdn.net/qq_41701956/article/details/100074023
-https://blog.csdn.net/cunily/article/details/106915944
-https://www.cnblogs.com/chengxuyuanxiaoyang/p/13692997.html</p>
+<p><a href="https://blog.csdn.net/qq_41701956/article/details/100074023">https://blog.csdn.net/qq_41701956/article/details/100074023</a>
+<a href="https://blog.csdn.net/cunily/article/details/106915944">https://blog.csdn.net/cunily/article/details/106915944</a>
+<a href="https://www.cnblogs.com/chengxuyuanxiaoyang/p/13692997.html">https://www.cnblogs.com/chengxuyuanxiaoyang/p/13692997.html</a></p>
 
 
 
@@ -10913,6 +10913,12 @@ https://www.cnblogs.com/chengxuyuanxiaoyang/p/13692997.html</p>
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9880,77 +9880,77 @@
 
 <h2 id="completablefuture">CompletableFuture<a class="headerlink" href="#completablefuture" title="Permanent link">&para;</a></h2>
 <p><strong>CompletableFuture 是否使用默认线程池的依据，和机器的 CPU 核心数有关。当 CPU 核心数-1 大于 1 时，才会使用默认的线程池，否则将会为每个 CompletableFuture 的任务创建一个新线程去执行</strong>。</p>
-<p>即，CompletableFuture 的默认线程池，只有在<strong>双核以上的机器</strong>内才会使用。在双核及以下的机器中，会为每个任务创建一个新线程，<strong>等于没有使用线程池，且有资源耗尽的风险</strong>。</p>
+<p>即，CompletableFuture 的默认线程池，只有在**双核以上的机器**内才会使用。在双核及以下的机器中，会为每个任务创建一个新线程，<strong>等于没有使用线程池，且有资源耗尽的风险</strong>。</p>
 <p>因此建议，在使用 CompletableFuture 时，<strong>务必要自定义线程池</strong>。因为即便是用到了默认线程池，<strong>池内的核心线程数，也为机器核心数-1</strong>。也就意味着假设你是 4 核机器，那最多也只有 3 个核心线程，对于 CPU 密集型的任务来说倒还好，但是我们平常写业务代码，更多的是 IO 密集型任务，对于 IO 密集型的任务来说，这其实远远不够用的，<strong>会导致大量的 IO 任务在等待</strong>，导致吞吐率大幅度下降，即默认线程池比较适用于 CPU 密集型任务。</p>
 <p>在带着疑问翻阅了 CompletableFuture 的源码之后，终于找到了原因：<strong>【是否使用默认的 ForkJoinPool 线程池，和机器的配置有关】</strong></p>
 <p>我们点进 supplyAsync 方法的源码</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>public static &lt;U&gt; CompletableFuture&lt;U&gt; supplyAsync(Supplier&lt;U&gt; supplier) {
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        return asyncSupplyStage(asyncPool, supplier);
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>public static &lt;U&gt; CompletableFuture&lt;U&gt; supplyAsync(Supplier&lt;U&gt; supplier) {
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        return asyncSupplyStage(asyncPool, supplier);
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    }
+</span></code></pre></div>
 <p>可以看到这里使用了默认使用了一个 asyncPool，点进这个 asyncPool</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>  //是否使用默认线程池的判断依据
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>private static final Executor asyncPool = useCommonPool ?
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        ForkJoinPool.commonPool() : new ThreadPerTaskExecutor();
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>//useCommonPool的来源
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a> private static final boolean useCommonPool =
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        (ForkJoinPool.getCommonPoolParallelism() &gt; 1);
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>  //是否使用默认线程池的判断依据
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>private static final Executor asyncPool = useCommonPool ?
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        ForkJoinPool.commonPool() : new ThreadPerTaskExecutor();
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>//useCommonPool的来源
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a> private static final boolean useCommonPool =
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        (ForkJoinPool.getCommonPoolParallelism() &gt; 1);
+</span></code></pre></div>
 <p>其实代码看到这里就很清晰了，CompletableFuture 是否使用默认线程池，是根据这个 useCommonPool 的 boolean 值来的，如果为 true，就使用默认的 ForkJoinPool，否则就为每个任务创建一个新线程，也就是这个 ThreadPerTaskExecutor，见名知义。</p>
 <p>那这个 useCommonPool 的布尔值什么情况下才为 true，也就是什么时候才能使用到默认的线程池呢。即 getCommonPoolParallelism（）返回的值要大于 1，我们继续跟进这个 getCommonPoolParallelism（）方法</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>//类顶SMASK常量的值
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>static final int SMASK  = 0xffff;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>final int config;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>static final ForkJoinPool common;
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>//该方法返回了一个commonParallelism的值
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>public static int getCommonPoolParallelism() {
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        return commonParallelism;
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    }
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    //而commonParallelism的值是在一个静态代码块里被初始化的，也就是类加载的时候初始化
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>static {
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        //初始化common，这个common即ForkJoinPool自身
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        common = java.security.AccessController.doPrivileged
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>            (new java.security.PrivilegedAction&lt;ForkJoinPool&gt;() {
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>                public ForkJoinPool run() { return makeCommonPool(); }});
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    //根据par的值来初始化commonParallelism的值
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        int par = common.config &amp; SMASK; // report 1 even if threads disabled
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>        commonParallelism = par &gt; 0 ? par : 1;
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>//类顶SMASK常量的值
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>static final int SMASK  = 0xffff;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>final int config;
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>static final ForkJoinPool common;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>//该方法返回了一个commonParallelism的值
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>public static int getCommonPoolParallelism() {
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        return commonParallelism;
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    }
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    //而commonParallelism的值是在一个静态代码块里被初始化的，也就是类加载的时候初始化
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>static {
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        //初始化common，这个common即ForkJoinPool自身
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        common = java.security.AccessController.doPrivileged
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>            (new java.security.PrivilegedAction&lt;ForkJoinPool&gt;() {
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>                public ForkJoinPool run() { return makeCommonPool(); }});
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    //根据par的值来初始化commonParallelism的值
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        int par = common.config &amp; SMASK; // report 1 even if threads disabled
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>        commonParallelism = par &gt; 0 ? par : 1;
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    }
+</span></code></pre></div>
 <p>总结一下上面三部分代码，结合在一起看，这部分代码主要是初始化了 commonParallelism 的值，也就是 getCommonPoolParallelism（）方法的返回值，这个返回值也决定了是否使用默认线程池。而 commonParallelism 的值又是通过 par 的值来确定的，par 的值是 common 来确定的，而 common 则是在 makeCommonPool()这个方法中初始化的。</p>
 <p>我们继续跟进 makeCommonPool（）方法</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>private static ForkJoinPool makeCommonPool() {
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        int parallelism = -1;
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        if (parallelism &lt; 0 &amp;&amp; // default 1 less than #cores
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            //获取机器的cpu核心数 将机器的核心数-1 赋值给parallelism 这一段是是否使用线程池的关键
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            //同时 parallelism也是ForkJoinPool的核心线程数
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            (parallelism = Runtime.getRuntime().availableProcessors() - 1) &lt;= 0)
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            parallelism = 1;
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        if (parallelism &gt; MAX_CAP)
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>            parallelism = MAX_CAP;
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        return new ForkJoinPool(parallelism, factory, handler, LIFO_QUEUE,
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                                &quot;ForkJoinPool.commonPool-worker-&quot;);
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    }
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>//上面的那个构造方法，可以看到把parallelism赋值给了config变量
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>private ForkJoinPool(int parallelism,
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                         ForkJoinWorkerThreadFactory factory,
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                         UncaughtExceptionHandler handler,
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>                         int mode,
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>                         String workerNamePrefix) {
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        this.workerNamePrefix = workerNamePrefix;
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        this.factory = factory;
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        this.ueh = handler;
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>        this.config = (parallelism &amp; SMASK) | mode;
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>        long np = (long)(-parallelism); // offset ctl counts
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>        this.ctl = ((np &lt;&lt; AC_SHIFT) &amp; AC_MASK) | ((np &lt;&lt; TC_SHIFT) &amp; TC_MASK);
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    }
-</code></pre></div>
-<p>总结一下上面两段代码，获取<strong>机器核心数-1 的值</strong>，赋值给 parallelism 变量，再通过构造方法把 parallelism 的值赋值给 config 变量。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>private static ForkJoinPool makeCommonPool() {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        int parallelism = -1;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        if (parallelism &lt; 0 &amp;&amp; // default 1 less than #cores
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            //获取机器的cpu核心数 将机器的核心数-1 赋值给parallelism 这一段是是否使用线程池的关键
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            //同时 parallelism也是ForkJoinPool的核心线程数
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            (parallelism = Runtime.getRuntime().availableProcessors() - 1) &lt;= 0)
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            parallelism = 1;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        if (parallelism &gt; MAX_CAP)
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>            parallelism = MAX_CAP;
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        return new ForkJoinPool(parallelism, factory, handler, LIFO_QUEUE,
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                                &quot;ForkJoinPool.commonPool-worker-&quot;);
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    }
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>//上面的那个构造方法，可以看到把parallelism赋值给了config变量
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>private ForkJoinPool(int parallelism,
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                         ForkJoinWorkerThreadFactory factory,
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                         UncaughtExceptionHandler handler,
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>                         int mode,
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>                         String workerNamePrefix) {
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        this.workerNamePrefix = workerNamePrefix;
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        this.factory = factory;
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        this.ueh = handler;
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>        this.config = (parallelism &amp; SMASK) | mode;
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>        long np = (long)(-parallelism); // offset ctl counts
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>        this.ctl = ((np &lt;&lt; AC_SHIFT) &amp; AC_MASK) | ((np &lt;&lt; TC_SHIFT) &amp; TC_MASK);
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    }
+</span></code></pre></div>
+<p>总结一下上面两段代码，获取**机器核心数-1 的值**，赋值给 parallelism 变量，再通过构造方法把 parallelism 的值赋值给 config 变量。</p>
 <p>然后初始化 ForkJoinPool 的时候。再将 config 的值赋值给 par 变量。如果 par 大于 0 则将 par 的值赋给 commonParallelism，如果 commonParallelism 的值大于 1 的话，useCommonPool 的值就为 true，就使用默认的线程池，否则就为每个任务创建一个新线程。<strong>另外即便是用到了默认线程池，池内的核心线程数，也为机器核心数-1。也就意味着假设你是 4 核机器，那最多也只有 3 个核心线程，对于 IO 密集型的任务来说，这其实远远不够的</strong>。</p>
 <h2 id="_1">解释<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>以上就是 CompletableFuture 中默认线程池使用依据的源码分析了。看完这一系列源码，就能解释文章一开头出现的那个问题。</p>
@@ -10047,6 +10047,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

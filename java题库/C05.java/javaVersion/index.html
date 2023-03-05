@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9872,7 +9872,7 @@
 <h1 id="jdk14-2020-3">JDK14 新特性（2020 年 3 月）<a class="headerlink" href="#jdk14-2020-3" title="Permanent link">&para;</a></h1>
 <ul>
 <li>instanceof 模式匹配，instanceof 类型匹配语法简化，可以直接给对象赋值，如 if(obj instanceof String str),如果 obj 是字符串类型则直接赋值给了 str 变量</li>
-<li>引入 Record 类型，类似于 Lombok 的@Data 注解，可以向 Lombok 一样自动生成构造器、equals、getter 等方法；</li>
+<li>引入 Record 类型，类似于 Lombok 的<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Data" title="GitHub User: Data">@Data</a> 注解，可以向 Lombok 一样自动生成构造器、equals、getter 等方法；</li>
 <li>Switch 表达式-标准化</li>
 <li>改进 NullPointerExceptions 提示信息，打印具体哪个方法抛的空指针异常，避免同一行代码多个函数调用时无法判断具体是哪个函数抛异常的困扰，方便异常排查；</li>
 <li>删除 CMS 垃圾回收器</li>
@@ -9893,7 +9893,7 @@
 <li>弹性元空间能力</li>
 <li>提供用于打包独立 Java 应用程序的 jpackage 工具</li>
 </ul>
-<p><strong>JDK16 相当于是将 JDK14、JDK15 的一些特性进行了正式引入，如 instanceof 模式匹配（Pattern matching）、record 的引入等</strong>最终到 JDK16 变成了 final 版本</p>
+<p>**JDK16 相当于是将 JDK14、JDK15 的一些特性进行了正式引入，如 instanceof 模式匹配（Pattern matching）、record 的引入等**最终到 JDK16 变成了 final 版本</p>
 <h1 id="jdk17-2021-9-lts">JDK17 新特性（2021 年 9 月）（LTS 版本）<a class="headerlink" href="#jdk17-2021-9-lts" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Free Java License</li>
@@ -9908,21 +9908,21 @@
 <h1 id="_1">重要特性详解<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h1 id="java">Java 模块化<a class="headerlink" href="#java" title="Permanent link">&para;</a></h1>
 <p>JPMS（Java Platform Module System）是 Java 9 发行版的核心亮点。它也被称为 Jigshaw 项目。模块是新的结构，就像我们已经有包一样。使用新的模块化编程开发的应用程序可以看作是交互模块的集合，这些模块之间具有明确定义的边界和依赖关系。</p>
-<p>JPMS 包括为编写模块化应用程序提供支持，以及将 JDK 源代码模块化。JDK 9 附带了大约 92 个模块（在 GA 版本中可以进行更改）。Java 9 Module System 有一个<strong>"java.base"</strong>模块。它被称为基本模块。它是一个独立的模块，不依赖于任何其他模块。默认情况下，所有其他模块都依赖于"java.base"。</p>
+<p>JPMS 包括为编写模块化应用程序提供支持，以及将 JDK 源代码模块化。JDK 9 附带了大约 92 个模块（在 GA 版本中可以进行更改）。Java 9 Module System 有一个**"java.base"**模块。它被称为基本模块。它是一个独立的模块，不依赖于任何其他模块。默认情况下，所有其他模块都依赖于"java.base"。</p>
 <p>在 java 模块化编程中：</p>
 <ul>
 <li>一个模块通常只是一个 jar 文件，在根目录下有一个文件 module-info.class。</li>
 <li>要使用模块，请将 jar 文件包含到 modulepath 而不是 classpath. 添加到类路径的模块化 jar 文件是普通的 jar 文件，module-info.class 文件将被忽略。</li>
 </ul>
 <p>典型的 module-info.java 类如下所示：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module helloworld {
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    exports com.alibaba.eight;
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>}
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>module test {
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    requires helloworld;
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>}
-</code></pre></div>
-<p><strong>总结：模块化的目的，是让 jdk 的各个组件可以被分拆，复用和替换重写，</strong>比如对 java 的 gui 不满意，可以自己实现一个 gui，对 java 的语法不满意，可以把 javac 替换成其他语言和其他语言的编译器，比如 kotlin 和 kotlinc 等，没有模块化，几乎很难实现，每次修改某个模块，总不能把整个 jdk 给重新编译一遍，再发布一个整个 sdk 吧，模块化可以帮助更有效的定制化和部署</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>module helloworld {
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    exports com.alibaba.eight;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>}
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>module test {
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    requires helloworld;
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>}
+</span></code></pre></div>
+<p>**总结：模块化的目的，是让 jdk 的各个组件可以被分拆，复用和替换重写，**比如对 java 的 gui 不满意，可以自己实现一个 gui，对 java 的语法不满意，可以把 javac 替换成其他语言和其他语言的编译器，比如 kotlin 和 kotlinc 等，没有模块化，几乎很难实现，每次修改某个模块，总不能把整个 jdk 给重新编译一遍，再发布一个整个 sdk 吧，模块化可以帮助更有效的定制化和部署</p>
 <h1 id="_2">本地变量类型推断<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <p>在 Java 10 之前版本中，我们想定义定义局部变量时。我们需要在赋值的左侧提供显式类型，并在赋值的右边提供实现类型：</p>
 <p>MyObject value = new MyObject();</p>
@@ -9932,7 +9932,7 @@
 <p>其实，所谓的本地变量类型推断，也是 Java 10 提供给开发者的语法糖。</p>
 <p>虽然我们在代码中使用 var 进行了定义，但是对于虚拟机来说他是不认识这个 var 的，在 java 文件编译成 class 文件的过程中，会进行解糖，使用变量真正的类型来替代 var</p>
 <h1 id="http-api-httpclient">HTTP 客户端 API-响应式流实现的 HttpClient<a class="headerlink" href="#http-api-httpclient" title="Permanent link">&para;</a></h1>
-<p>Java 使用 HttpURLConnection 进行 HTTP 通信已经很长一段时间了。但随着时间的推移，要求变得越来越复杂，应用程序的要求也越来越高。在 Java 11 之前，开发人员不得不求助于功能丰富的库，如<em>Apache HttpComponents</em>或<em>OkHttp</em>等。</p>
+<p>Java 使用 HttpURLConnection 进行 HTTP 通信已经很长一段时间了。但随着时间的推移，要求变得越来越复杂，应用程序的要求也越来越高。在 Java 11 之前，开发人员不得不求助于功能丰富的库，如*Apache HttpComponents*或*OkHttp*等。</p>
 <p>我们看到 Java 9 发布包含一个 HttpClient 实现作为实验性功能。它随着时间的推移而发展，现在是 Java 11 的最终功能。现在 Java 应用程序可以进行 HTTP 通信，而无需任何外部依赖。</p>
 <p>作为 JDK11 中正式推出的新 Http 连接器，支持的功能还是比较新的，主要的特性有：</p>
 <ul>
@@ -9948,86 +9948,86 @@
 <h1 id="_3">语法糖<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
 <h1 id="stream-api">Stream API 改进<a class="headerlink" href="#stream-api" title="Permanent link">&para;</a></h1>
 <h1 id="collectorsteeing">Collectors.teeing()<a class="headerlink" href="#collectorsteeing" title="Permanent link">&para;</a></h1>
-<p>teeing 收集器已公开为静态方法<strong>Collectors::teeing</strong>。该收集器将其输入转发给其他两个收集器，然后将它们的结果使用函数合并。</p>
+<p>teeing 收集器已公开为静态方法**Collectors::teeing**。该收集器将其输入转发给其他两个收集器，然后将它们的结果使用函数合并。</p>
 <p><strong>示例：</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>List&lt;Student&gt; list = Arrays.asList(
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        new Student(&quot;唐一&quot;, 55),
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        new Student(&quot;唐二&quot;, 60),
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        new Student(&quot;唐三&quot;, 90));
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>//平均分 总分
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>String result = list.stream().collect(Collectors.teeing(
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        Collectors.averagingInt(Student::getScore),
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        Collectors.summingInt(Student::getScore),
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        (s1, s2) -&gt; s1 + &quot;:&quot; + s2));
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>//最低分  最高分
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>String result2 = list.stream().collect(Collectors.teeing(
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        Collectors.minBy(Comparator.comparing(Student::getScore)),
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        Collectors.maxBy(Comparator.comparing(Student::getScore)),
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        (s1, s2) -&gt; s1.orElseThrow() + &quot;:&quot; + s2.orElseThrow()
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>));
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>System.out.println(result);
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>System.out.println(result2);
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>List&lt;Student&gt; list = Arrays.asList(
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        new Student(&quot;唐一&quot;, 55),
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        new Student(&quot;唐二&quot;, 60),
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        new Student(&quot;唐三&quot;, 90));
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>//平均分 总分
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>String result = list.stream().collect(Collectors.teeing(
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        Collectors.averagingInt(Student::getScore),
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        Collectors.summingInt(Student::getScore),
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        (s1, s2) -&gt; s1 + &quot;:&quot; + s2));
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>//最低分  最高分
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>String result2 = list.stream().collect(Collectors.teeing(
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        Collectors.minBy(Comparator.comparing(Student::getScore)),
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        Collectors.maxBy(Comparator.comparing(Student::getScore)),
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        (s1, s2) -&gt; s1.orElseThrow() + &quot;:&quot; + s2.orElseThrow()
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>));
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>System.out.println(result);
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>System.out.println(result2);
+</span></code></pre></div>
 <h1 id="streamtolist-jdk16">添加 Stream.toList 方法(jdk16)<a class="headerlink" href="#streamtolist-jdk16" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>List&lt;String&gt; list = Arrays.asList(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;);
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>//之前这样写
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>List&lt;Integer&gt; oneList = list.stream()
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    .map(Integer::parseInt)
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    .collect(Collectors.toList());
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>//现在可以这样写
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>List&lt;Integer&gt; twoList = list.stream()
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    .map(Integer::parseInt)
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    .toList();
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>List&lt;String&gt; list = Arrays.asList(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;);
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>//之前这样写
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>List&lt;Integer&gt; oneList = list.stream()
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    .map(Integer::parseInt)
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    .collect(Collectors.toList());
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>//现在可以这样写
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>List&lt;Integer&gt; twoList = list.stream()
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    .map(Integer::parseInt)
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    .toList();
+</span></code></pre></div>
 <h1 id="switch">Switch 表达式改进<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h1>
 <p>支持箭头表达式（jdk12 预览 jdk14 标准）</p>
-<p>此更改扩展了 switch 语句以便它可以用作语句或表达式。不必为 break 每个 case 块定义一个语句，我们可以简单地使用<strong>箭头语法</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>boolean isWeekend = switch (day) {
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -&gt; false;
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  case SATURDAY, SUNDAY -&gt; true;
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  default -&gt; throw new IllegalStateException(&quot;Illegal day entry :: &quot; + day);
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>};
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>int size = 3;
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>String cn = switch (size) {
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    case 1 -&gt; &quot;壹&quot;;
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    case 2 -&gt; &quot;贰&quot;;
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    case 3, 4 -&gt; &quot;叁&quot;;
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    default -&gt; &quot;未知&quot;;
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>};
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>System.out.println(cn);
-</code></pre></div>
+<p>此更改扩展了 switch 语句以便它可以用作语句或表达式。不必为 break 每个 case 块定义一个语句，我们可以简单地使用**箭头语法**</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>boolean isWeekend = switch (day) {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -&gt; false;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  case SATURDAY, SUNDAY -&gt; true;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  default -&gt; throw new IllegalStateException(&quot;Illegal day entry :: &quot; + day);
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>};
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>int size = 3;
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>String cn = switch (size) {
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    case 1 -&gt; &quot;壹&quot;;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    case 2 -&gt; &quot;贰&quot;;
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    case 3, 4 -&gt; &quot;叁&quot;;
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    default -&gt; &quot;未知&quot;;
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>};
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>System.out.println(cn);
+</span></code></pre></div>
 <p>//要使用此预览功能，我们必须在应用程序启动期间使用–enable-preview 标志明确指示 JVM。</p>
 <p>yield 关键字（jdk13）</p>
 <p>使用 yield，我们现在可以有效地从 switch 表达式返回值，并能够更容易实现策略模式。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public class SwitchTest {
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    public static void main(String[] args) {
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        var me = 4;
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        var operation = &quot;平方&quot;;
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        var result = switch (operation) {
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            case &quot;加倍&quot; -&gt; {
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                yield me * 2;
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>            }
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            case &quot;平方&quot; -&gt; {
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                yield me * me;
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            }
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>            default -&gt; me;
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        };
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        System.out.println(result);
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    }
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public class SwitchTest {
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    public static void main(String[] args) {
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        var me = 4;
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        var operation = &quot;平方&quot;;
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        var result = switch (operation) {
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            case &quot;加倍&quot; -&gt; {
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                yield me * 2;
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>            }
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            case &quot;平方&quot; -&gt; {
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                yield me * me;
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            }
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>            default -&gt; me;
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        };
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        System.out.println(result);
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    }
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>}
+</span></code></pre></div>
 <h1 id="_4">字符串<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
 <h1 id="jdk13">文本块改进（jdk13）<a class="headerlink" href="#jdk13" title="Permanent link">&para;</a></h1>
-<p>早些时候，为了在我们的代码中嵌入 JSON，我们将其声明为<em>字符串</em>文字：</p>
-<p>String json = "{\r\n" + "\"name\" : \"lingli\",\r\n" + "\"website\" : \"https://www.alibaba.com/\"\r\n" + "}";</p>
-<p><em>现在让我们使用字符串</em>文本块编写相同的 JSON ：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>String json = &quot;&quot;&quot;
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    &quot;name&quot; : &quot;Baeldung&quot;,
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    &quot;website&quot; : &quot;https://www.alibaba.com/&quot;
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>}
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>&quot;&quot;&quot;;
-</code></pre></div>
+<p>早些时候，为了在我们的代码中嵌入 JSON，我们将其声明为*字符串*文字：</p>
+<p>String json = "{\r\n" + "\"name\" : \"lingli\",\r\n" + "\"website\" : \"<a href="https://www.alibaba.com/">https://www.alibaba.com/</a>\"\r\n" + "}";</p>
+<p>*现在让我们使用字符串*文本块编写相同的 JSON ：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>String json = &quot;&quot;&quot;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    &quot;name&quot; : &quot;Baeldung&quot;,
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    &quot;website&quot; : &quot;https://www.alibaba.com/&quot;
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>}
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>&quot;&quot;&quot;;
+</span></code></pre></div>
 <p>很明显，不需要转义双引号或添加回车。通过使用文本块，嵌入的 JSON 更易于编写，更易于阅读和维护。</p>
 <h1 id="api">更多的 API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
 <ul>
@@ -10126,6 +10126,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

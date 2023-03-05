@@ -4666,6 +4666,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4780,20 +4794,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9992,174 +9992,174 @@
 <h3 id="_1">一、集群模式（首选推荐，一般用于生产环境）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <h5 id="1">1.下载<a class="headerlink" href="#1" title="Permanent link">&para;</a></h5>
 <p>ZooKeeper 安装包可以在其官网下载页面下载，下载地址如下，为加快下载速度可以选择中国境内的镜像，选择稳定版本 zookeeper-3.4.8.tar.gz 安装包。</p>
-<p>http://zookeeper.apache.org/releases.html#download</p>
+<p><a href="http://zookeeper.apache.org/releases.html#download">http://zookeeper.apache.org/releases.html#download</a></p>
 <h5 id="2">2.解压并配置环境变量<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
 <p>下载后把安装包方放在目录/Users/onlyone/software/zookeeper 目录下，并解压</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$cd /Users/onlyone/software/zookeeper
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$tar -zxvf zookeeper-3.4.8.tar.gz
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$cd /Users/onlyone/software/zookeeper
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$tar -zxvf zookeeper-3.4.8.tar.gz
+</span></code></pre></div>
 <p>将 ZooKeeper 的 bin 路径加入到/Users/onlyone/.bash_profile 中，设置如下内容（分发到各节点后，在各节点上做同样设置）：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>export ZOOKEEPER_HOME=/Users/onlyone/software/zookeeper/zookeeper-3.4.8
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>export PATH=$PATH:$ZOOKEEPER_HOME/bin
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>export ZOOKEEPER_HOME=/Users/onlyone/software/zookeeper/zookeeper-3.4.8
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>export PATH=$PATH:$ZOOKEEPER_HOME/bin
+</span></code></pre></div>
 <p>设置完毕后使用如下命令使配置生效：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$source .bash_profile
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$source .bash_profile
+</span></code></pre></div>
 <h5 id="3-zookeeper">3.修改 ZooKeeper 的配置文件<a class="headerlink" href="#3-zookeeper" title="Permanent link">&para;</a></h5>
 <p>在 ZooKeeper 的根目录下建立 data 和 log 目录用于存放工作数据和日志文件：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$mkdir /Users/onlyone/software/zookeeper/zookeeper-3.4.8/data/
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$mkdir /Users/onlyone/software/zookeeper/zookeeper-3.4.8/log/
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$mkdir /Users/onlyone/software/zookeeper/zookeeper-3.4.8/data/
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$mkdir /Users/onlyone/software/zookeeper/zookeeper-3.4.8/log/
+</span></code></pre></div>
 <p>在 ZooKeeper 配置目录下默认情况下，不存在在 zoo.cfg 文件，需要复制一份，然后进行修改，命令如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$cd /Users/onlyone/software/zookeeper/zookeeper-3.4.8/conf/
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$cp zoo_sample.cfg zoo.cfg
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$sudo vi zoo.cfg
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$cd /Users/onlyone/software/zookeeper/zookeeper-3.4.8/conf/
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$cp zoo_sample.cfg zoo.cfg
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$sudo vi zoo.cfg
+</span></code></pre></div>
 <p>修改 zoo.cfg 配置文件内容（仅列出重要配置）：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>//用于存放ZooKeeper的数据和日志
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>dataDir=/Users/onlyone/software/zookeeper/zookeeper-3.4.8/data
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>dataLogDir=/Users/onlyone/software/zookeeper/zookeeper-3.4.8/log
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>//外部客户端连接端口号，在Kafka中将使用该端口号
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>clientPort=2181
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>//ZooKeeper集群相关配置信息
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>server.1=ip1:2888:3888
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>server.2=ip2:2888:3888
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>server.3=ip3:2888:3888
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>配置中server.A=B：C：D含义如下
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>* A为数字，表示这个是第几号服务器；
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>* B 表示该服务器的 ip 地址；
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>* C 表示该服务器与集群中的 Leader 服务器交换信息的端口；
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>* D 表示的是万一集群中的 Leader 服务器挂了，需要一个端口来重新进行选举，选出一个新的 Leader，而这个端口就是用来执行选举时服务器相互通信的端口。
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>如果是伪集群的配置方式，由于 B 都是一样，所以不同的 ZooKeeper 实例通信端口号不能一样，所以要给它们分配不同的端口号。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>//用于存放ZooKeeper的数据和日志
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>dataDir=/Users/onlyone/software/zookeeper/zookeeper-3.4.8/data
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>dataLogDir=/Users/onlyone/software/zookeeper/zookeeper-3.4.8/log
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>//外部客户端连接端口号，在Kafka中将使用该端口号
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>clientPort=2181
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>//ZooKeeper集群相关配置信息
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>server.1=ip1:2888:3888
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>server.2=ip2:2888:3888
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>server.3=ip3:2888:3888
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>配置中server.A=B：C：D含义如下
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>* A为数字，表示这个是第几号服务器；
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>* B 表示该服务器的 ip 地址；
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>* C 表示该服务器与集群中的 Leader 服务器交换信息的端口；
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>* D 表示的是万一集群中的 Leader 服务器挂了，需要一个端口来重新进行选举，选出一个新的 Leader，而这个端口就是用来执行选举时服务器相互通信的端口。
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>如果是伪集群的配置方式，由于 B 都是一样，所以不同的 ZooKeeper 实例通信端口号不能一样，所以要给它们分配不同的端口号。
+</span></code></pre></div>
 <h5 id="4-zookeeper">4.分发 ZooKeeper 到各节点<a class="headerlink" href="#4-zookeeper" title="Permanent link">&para;</a></h5>
 <p>使用 scp 命令到 ZooKeeper 分发到 slave1 和 slave2 节点上：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$cd /app/soft/
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$scp -r zookeeper-3.4.8 spark@slave1:/app/soft
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$scp -r zookeeper-3.4.8 spark@slave2:/app/soft
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>在dataDir目录下创建一个myid文件，然后分别在myid文件中按照zoo.cfg文件的server.A中A的数值，在不同机器上的该文件中填写相应的值，如master节点该值为1、slave1节点该值为2、slave2节点该值为3。
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>$cd /app/soft/zookeeper-3.4.8/data
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>$vi myid
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$cd /app/soft/
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$scp -r zookeeper-3.4.8 spark@slave1:/app/soft
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$scp -r zookeeper-3.4.8 spark@slave2:/app/soft
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>在dataDir目录下创建一个myid文件，然后分别在myid文件中按照zoo.cfg文件的server.A中A的数值，在不同机器上的该文件中填写相应的值，如master节点该值为1、slave1节点该值为2、slave2节点该值为3。
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>$cd /app/soft/zookeeper-3.4.8/data
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>$vi myid
+</span></code></pre></div>
 <h5 id="5">5.启动并验证<a class="headerlink" href="#5" title="Permanent link">&para;</a></h5>
 <p>执行命令“zkServer.sh start”将会启动 ZooKeeper。在此大家需要注意的是，不同节点上的 ZooKeeper 需要单独启动。</p>
 <p>而执行命令“zkServer.sh stop”将会停止 ZooKeeper。</p>
 <p>使用命令“JPS”查看 ZooKeeper 是否成功启动，或执行命令“zkServer.sh status”查看 ZooKeeper 集群状态：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$zkServer.sh start
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$zkServer.sh status
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$zkServer.sh start
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$zkServer.sh status
+</span></code></pre></div>
 <p>当第一个节点启动 ZooKeeper 时由于集群的其他节点未启动 ZooKeeper，使用 zkServer.sh status 命令查看当前状态时会提示错误。但是随着后续节点的 ZooKeeper 的陆续启动，使用 status 查看状态时会显示当前节点的状态，本次 master 作为了 follower。</p>
 <h3 id="_2">二、单机模式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>zk 支持单机部署，只要启动一台 zk 机器，就可以提供正常服务</p>
 <p>单机模式的部署步骤和集群模式的部署步骤基本一致，只是在 zoo.cfg 文件的配置上有些差异。</p>
 <p>进入目录中的 conf 目录，有一个 zoo_sample.cfg 文件，将其重命名为 zoo.cfg，然后打开，在最后添加</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>dataDir=/Users/onlyone/software/zookeeper/zookeeper-3.4.8/data
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>dataLogDir=/Users/onlyone/software/zookeeper/zookeeper-3.4.8/log
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>clientPort=2181
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>dataDir=/Users/onlyone/software/zookeeper/zookeeper-3.4.8/data
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>dataLogDir=/Users/onlyone/software/zookeeper/zookeeper-3.4.8/log
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>clientPort=2181
+</span></code></pre></div>
 <p>启动</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>/Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh start
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>➜  zookeeper-3.4.8 telnet 127.0.0.1 2181
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Trying 127.0.0.1...
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Connected to localhost.
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Escape character is &#39;^]&#39;.
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>stat
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Zookeeper version: 3.4.8--1, built on 02/06/2016 03:18 GMT
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Clients:
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a> /127.0.0.1:50446[0](queued=0,recved=1,sent=0)
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>Latency min/avg/max: 0/0/0
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>Received: 2
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>Sent: 1
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>Connections: 1
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>Outstanding: 0
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>Zxid: 0x0
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>Mode: standalone
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>Node count: 4
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>Connection closed by foreign host.
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>/Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh start
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>➜  zookeeper-3.4.8 telnet 127.0.0.1 2181
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Trying 127.0.0.1...
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Connected to localhost.
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Escape character is &#39;^]&#39;.
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>stat
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Zookeeper version: 3.4.8--1, built on 02/06/2016 03:18 GMT
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Clients:
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a> /127.0.0.1:50446[0](queued=0,recved=1,sent=0)
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>Latency min/avg/max: 0/0/0
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>Received: 2
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>Sent: 1
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>Connections: 1
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>Outstanding: 0
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>Zxid: 0x0
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>Mode: standalone
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>Node count: 4
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>Connection closed by foreign host.
+</span></code></pre></div>
 <p>集群模式和单机模式下输出的服务器验证信息基本一致，只有 Mode 属性不一样。</p>
 <h3 id="_3">三、伪集群模式（一般用于测试环境）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>比如有一台物理机（10 核 16G 内存），如果做为单机模式有点浪费，如果按照集群模式，需要借助硬件的虚拟化技术，把一台物理机转换成几台虚拟机。</p>
 <p>伪集群，集群所有的机器都在一台机器上，但是还是以集群的特性对外提供服务。</p>
 <p>创建环境目录</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mkdir /Users/onlyone/software/zookeeper/zk-cluster/zk1
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>mkdir /Users/onlyone/software/zookeeper/zk-cluster/zk2
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>mkdir /Users/onlyone/software/zookeeper/zk-cluster/zk3
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>echo &quot;1&quot; &gt; /Users/onlyone/software/zookeeper/zk-cluster/zk1/data/myid
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>echo &quot;2&quot; &gt; /Users/onlyone/software/zookeeper/zk-cluster/zk2/data/myid
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>echo &quot;3&quot; &gt; /Users/onlyone/software/zookeeper/zk-cluster/zk3/data/myid
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mkdir /Users/onlyone/software/zookeeper/zk-cluster/zk1
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>mkdir /Users/onlyone/software/zookeeper/zk-cluster/zk2
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>mkdir /Users/onlyone/software/zookeeper/zk-cluster/zk3
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>echo &quot;1&quot; &gt; /Users/onlyone/software/zookeeper/zk-cluster/zk1/data/myid
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>echo &quot;2&quot; &gt; /Users/onlyone/software/zookeeper/zk-cluster/zk2/data/myid
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>echo &quot;3&quot; &gt; /Users/onlyone/software/zookeeper/zk-cluster/zk3/data/myid
+</span></code></pre></div>
 <p>分别修改配置文件</p>
 <p>修改：dataDir、dataLogDir、clientPort</p>
 <p>增加：集群的实例，server.X，”X”表示每个目录中的 myid 的值</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>vi /Users/onlyone/software/zookeeper/zk-cluster/zk1/conf/zoo.cfg
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>tickTime=2000
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>initLimit=10
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>syncLimit=5
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>dataDir=/Users/onlyone/software/zookeeper/zk-cluster/zk1/data
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>dataLogDir=/Users/onlyone/software/zookeeper/zk-cluster/zk1/log
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>clientPort=2181
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>server.1=192.168.0.14:2888:3888
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>server.2=192.168.0.14:2889:3889
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>server.3=192.168.0.14:2890:3890
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>vi /Users/onlyone/software/zookeeper/zk-cluster/zk2/conf/zoo.cfg
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>tickTime=2000
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>initLimit=10
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>syncLimit=5
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>dataDir=/Users/onlyone/software/zookeeper/zk-cluster/zk2/data
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>dataLogDir=/Users/onlyone/software/zookeeper/zk-cluster/zk2/log
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>clientPort=2182
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>server.1=192.168.0.14:2888:3888
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>server.2=192.168.0.14:2889:3889
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>server.3=192.168.0.14:2890:3890
-<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>
-<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>vi /Users/onlyone/software/zookeeper/zk-cluster/zk3/conf/zoo.cfg
-<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>
-<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>tickTime=2000
-<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>initLimit=10
-<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>syncLimit=5
-<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>dataDir=/Users/onlyone/software/zookeeper/zk-cluster/zk3/data
-<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>dataLogDir=/Users/onlyone/software/zookeeper/zk-cluster/zk3/log
-<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>clientPort=2183
-<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>server.1=192.168.0.14:2888:3888
-<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>server.2=192.168.0.14:2889:3889
-<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>server.3=192.168.0.14:2890:3890
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>vi /Users/onlyone/software/zookeeper/zk-cluster/zk1/conf/zoo.cfg
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>tickTime=2000
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>initLimit=10
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>syncLimit=5
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>dataDir=/Users/onlyone/software/zookeeper/zk-cluster/zk1/data
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>dataLogDir=/Users/onlyone/software/zookeeper/zk-cluster/zk1/log
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>clientPort=2181
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>server.1=192.168.0.14:2888:3888
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>server.2=192.168.0.14:2889:3889
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>server.3=192.168.0.14:2890:3890
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>vi /Users/onlyone/software/zookeeper/zk-cluster/zk2/conf/zoo.cfg
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>tickTime=2000
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>initLimit=10
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>syncLimit=5
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>dataDir=/Users/onlyone/software/zookeeper/zk-cluster/zk2/data
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>dataLogDir=/Users/onlyone/software/zookeeper/zk-cluster/zk2/log
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>clientPort=2182
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>server.1=192.168.0.14:2888:3888
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>server.2=192.168.0.14:2889:3889
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>server.3=192.168.0.14:2890:3890
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>vi /Users/onlyone/software/zookeeper/zk-cluster/zk3/conf/zoo.cfg
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>tickTime=2000
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>initLimit=10
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>syncLimit=5
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>dataDir=/Users/onlyone/software/zookeeper/zk-cluster/zk3/data
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>dataLogDir=/Users/onlyone/software/zookeeper/zk-cluster/zk3/log
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>clientPort=2183
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>server.1=192.168.0.14:2888:3888
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>server.2=192.168.0.14:2889:3889
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>server.3=192.168.0.14:2890:3890
+</span></code></pre></div>
 <p>注意：本地启动，要注意更改 ip</p>
 <p>3 个节点配置完成，然后启动集群</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh start /Users/onlyone/software/zookeeper/zk-cluster/zk1/conf/zoo.cfg
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>/Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh start /Users/onlyone/software/zookeeper/zk-cluster/zk2/conf/zoo.cfg
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>/Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh start /Users/onlyone/software/zookeeper/zk-cluster/zk3/conf/zoo.cfg
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh start /Users/onlyone/software/zookeeper/zk-cluster/zk1/conf/zoo.cfg
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>/Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh start /Users/onlyone/software/zookeeper/zk-cluster/zk2/conf/zoo.cfg
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>/Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh start /Users/onlyone/software/zookeeper/zk-cluster/zk3/conf/zoo.cfg
+</span></code></pre></div>
 <p>查看节点状态</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>➜  bin /Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh status /Users/onlyone/software/zookeeper/zk-cluster/zk1/conf/zoo.cfg
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>ZooKeeper JMX enabled by default
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Using config: /Users/onlyone/software/zookeeper/zk-cluster/zk1/conf/zoo.cfg
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Mode: follower
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>➜  bin /Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh status /Users/onlyone/software/zookeeper/zk-cluster/zk2/conf/zoo.cfg
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>ZooKeeper JMX enabled by default
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>Using config: /Users/onlyone/software/zookeeper/zk-cluster/zk2/conf/zoo.cfg
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>Mode: leader
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>➜  bin /Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh status /Users/onlyone/software/zookeeper/zk-cluster/zk3/conf/zoo.cfg
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>ZooKeeper JMX enabled by default
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>Using config: /Users/onlyone/software/zookeeper/zk-cluster/zk3/conf/zoo.cfg
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>Mode: follower
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>➜  bin /Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh status /Users/onlyone/software/zookeeper/zk-cluster/zk1/conf/zoo.cfg
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>ZooKeeper JMX enabled by default
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Using config: /Users/onlyone/software/zookeeper/zk-cluster/zk1/conf/zoo.cfg
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Mode: follower
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>➜  bin /Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh status /Users/onlyone/software/zookeeper/zk-cluster/zk2/conf/zoo.cfg
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>ZooKeeper JMX enabled by default
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>Using config: /Users/onlyone/software/zookeeper/zk-cluster/zk2/conf/zoo.cfg
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>Mode: leader
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>➜  bin /Users/onlyone/software/zookeeper/zookeeper-3.4.8/bin/zkServer.sh status /Users/onlyone/software/zookeeper/zk-cluster/zk3/conf/zoo.cfg
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>ZooKeeper JMX enabled by default
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>Using config: /Users/onlyone/software/zookeeper/zk-cluster/zk3/conf/zoo.cfg
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>Mode: follower
+</span></code></pre></div>
 <p>可以看出 zk2 是 leader，zk1 和 zk3 是 follower</p>
 
 
@@ -10246,6 +10246,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

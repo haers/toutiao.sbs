@@ -4561,6 +4561,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4675,20 +4689,6 @@
     <li class="md-nav__item">
       <a href="../BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9883,8 +9883,8 @@
 
 
 <h1 id="_1">堆<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>堆就是用<strong>数组实现的二叉树</strong>，所有它没有使用父指针或者子指针。
-堆根据<strong>堆属性</strong>来排序，<strong>堆属性</strong>决定了树中节点的位置。</p>
+<p>堆就是用**数组实现的二叉树**，所有它没有使用父指针或者子指针。
+堆根据**堆属性**来排序，**堆属性**决定了树中节点的位置。</p>
 <p>堆是利用完全二叉树的结构来维护一组数据，然后进行相关操作，
 一般的操作进行一次的时间复杂度在 O(1)~O(logn)之间。</p>
 <h3 id="_2">堆的常用方法：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -9905,12 +9905,12 @@
 <h3 id="_4">来自数组的树<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>用数组来实现树相关的数据结构也许看起来有点古怪，但是它在时间和空间山都是很高效的。</p>
 <p>我们准备将上面的例子中的树这样存储：</p>
-<div class="highlight"><pre><span></span><code>[ 10, 7, 2, 5, 1 ]
+<div class="language-text highlight"><pre><span></span><code>[ 10, 7, 2, 5, 1 ]
 </code></pre></div>
 <p>就这多！我们除了一个简单的数组以外，不需要任何额外的空间。</p>
 <p>如果我们不允许使用指针，那么我们怎么知道哪一个节点是父节点，哪一个节点是它的子节点呢？问得好！节点在数组中的位置 index 和它的父节点已经子节点的索引之间有一个映射关系。</p>
 <p>如果 i 是节点的索引，那么下面的公式就给出了它的父节点和子节点在数组中的位置：</p>
-<div class="highlight"><pre><span></span><code>parent(i) = floor((i - 1)/2)
+<div class="language-text highlight"><pre><span></span><code>parent(i) = floor((i - 1)/2)
 left(i)   = 2i + 1
 right(i)  = 2i + 2
 </code></pre></div>
@@ -10000,6 +10000,12 @@ right(i)  = 2i + 2
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -4646,6 +4646,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4760,20 +4774,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9985,11 +9985,11 @@
 <li>布尔查询</li>
 </ul>
 <p>在多个字段上查询多种多样的文本，并且根据一系列的标准来过滤，将多查询组合成单一查询。可以用 bool 查询来实现你的需求。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>must 文档 必须 匹配这些条件才能被包含进来。
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>must_not 文档 必须不 匹配这些条件才能被包含进来。
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>should 如果满足这些语句中的任意语句，将增加 _score ，否则，无任何影响。它们主要用于修正每个文档的相关性得分。
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>filter 必须 匹配，但它以不评分、过滤模式来进行。这些语句对评分没有贡献，只是根据过滤标准来排除或包含文档。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>must 文档 必须 匹配这些条件才能被包含进来。
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>must_not 文档 必须不 匹配这些条件才能被包含进来。
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>should 如果满足这些语句中的任意语句，将增加 _score ，否则，无任何影响。它们主要用于修正每个文档的相关性得分。
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>filter 必须 匹配，但它以不评分、过滤模式来进行。这些语句对评分没有贡献，只是根据过滤标准来排除或包含文档。
+</span></code></pre></div>
 <ul>
 <li>加权查询</li>
 <li>constant_score 查询</li>
@@ -9998,7 +9998,7 @@
 <h3 id="_4">过滤器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>filter 过滤器不影响评分，只是选择索引中的某个子集。过滤器很容易被缓存，从而进一步提高过滤查询的性能。另外过滤器提供了十几种不同类型，如：范围过滤器、脚本过滤器等等，可以根据不同场景选择合适的。</p>
 <h3 id="_5">深入搜索<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>https://www.elastic.co/guide/cn/elasticsearch/guide/current/search-in-depth.html
+<p><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/search-in-depth.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/search-in-depth.html</a>
 里面提供了多维度、更灵活的搜索场景以及案例。</p>
 <p><img alt="image" src="../img/13.png" /></p>
 <h3 id="_6">排序与相关性<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
@@ -10009,7 +10009,7 @@
 </li>
 <li>
 <p>多级排序
-  比如我们想要结合使用 date 和 _score 进行查询，并且匹配的结果首先按照日期排序，然后按照相关性排序。https://www.elastic.co/guide/cn/elasticsearch/guide/current/_Sorting.html
+  比如我们想要结合使用 date 和 _score 进行查询，并且匹配的结果首先按照日期排序，然后按照相关性排序。<a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/_Sorting.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/_Sorting.html</a>
   。多级排序并不一定包含 _score 。你可以根据一些不同的字段进行排序， 如地理距离或是脚本计算的特定值。</p>
 </li>
 </ul>
@@ -10104,6 +10104,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

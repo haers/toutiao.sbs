@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9897,11 +9897,11 @@
 
 
 <h1 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>redis<span class="w"> </span>-m<span class="w"> </span>200m<span class="w"> </span>-p<span class="w"> </span><span class="m">6379</span>:6379<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asiz/Shanghai<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>--requirepass<span class="w"> </span><span class="m">123455</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-d<span class="w"> </span>redis
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>redis<span class="w"> </span>-m<span class="w"> </span>200m<span class="w"> </span>-p<span class="w"> </span><span class="m">6379</span>:6379<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asiz/Shanghai<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>--requirepass<span class="w"> </span><span class="m">123455</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-d<span class="w"> </span>redis
+</span></code></pre></div>
 <h2 id="redis-key">Redis 删除过期 key 的策略<a class="headerlink" href="#redis-key" title="Permanent link">&para;</a></h2>
 <h2 id="redis-100w-key-key-2-2-redis-key">在 Redis 中，假如我们设置了 100w 个 key，这些 key 设置了只能存活 2 个小时，那么在 2 个小时后，redis 是如何来删除这些 key 的？<a class="headerlink" href="#redis-100w-key-key-2-2-redis-key" title="Permanent link">&para;</a></h2>
 <p>答案：定期删除 and 惰性删除。</p>
@@ -9924,7 +9924,7 @@
 <p>被动删除：当读/写一个已经过期的 key 时，会触发惰性删除策略，直接删除掉这个过期 key
 主动删除：由于惰性删除策略无法保证冷数据被及时删掉，所以 Redis 会定期主动淘汰一批已过期的 key,当前已用内存超过 maxmemory 限定时，触发主动清理策略</p>
 <p>被动删除</p>
-<p>只有 key 被操作时(如 GET)，REDIS 才会被动检查该 key 是否过期，如果过期则删除之并且返回 NIL。 1、这种删除策略对 CPU 是友好的，删除操作只有在不得不的情况下才会进行，不会对其他的 expire key 上浪费无谓的 CPU 时间。 2、但是这种策略对内存不友好，一个 key 已经过期，但是在它被操作之前不会被删除，仍然占据内存空间。如果有大量的过期键存在但是又很少被访问到，那会造成大量的内存空间浪费。expireIfNeeded(redisDb <em>db, robj </em>key)函数位于 src/db.c。 但仅是这样是不够的，因为可能存在一些 key 永远不会被再次访问到，这些设置了过期时间的 key 也是需要在过期后被删除的，我们甚至可以将这种情况看作是一种内存泄露—-无用的垃圾数据占用了大量的内存，而服务器却不会自己去释放它们，这对于运行状态非常依赖于内存的 Redis 服务器来说，肯定不是一个好消息。</p>
+<p>只有 key 被操作时(如 GET)，REDIS 才会被动检查该 key 是否过期，如果过期则删除之并且返回 NIL。 1、这种删除策略对 CPU 是友好的，删除操作只有在不得不的情况下才会进行，不会对其他的 expire key 上浪费无谓的 CPU 时间。 2、但是这种策略对内存不友好，一个 key 已经过期，但是在它被操作之前不会被删除，仍然占据内存空间。如果有大量的过期键存在但是又很少被访问到，那会造成大量的内存空间浪费。expireIfNeeded(redisDb *db, robj *key)函数位于 src/db.c。 但仅是这样是不够的，因为可能存在一些 key 永远不会被再次访问到，这些设置了过期时间的 key 也是需要在过期后被删除的，我们甚至可以将这种情况看作是一种内存泄露—-无用的垃圾数据占用了大量的内存，而服务器却不会自己去释放它们，这对于运行状态非常依赖于内存的 Redis 服务器来说，肯定不是一个好消息。</p>
 <p>主动删除</p>
 <p>先说一下时间事件，对于持续运行的服务器来说， 服务器需要定期对自身的资源和状态进行必要的检查和整理， 从而让服务器维持在一个健康稳定的状态， 这类操作被统称为常规操作（cron job）</p>
 <p>在 Redis 中， 常规操作由 redis.c/serverCron 实现， 它主要执行以下操作</p>
@@ -9945,7 +9945,7 @@ Redis 将 serverCron 作为时间事件来运行， 从而确保它每隔一段�
 这是一个基于概率的简单算法，基本的假设是抽出的样本能够代表整个 key 空间，redis 持续清理过期的数据直至将要过期的 key 的百分比降到了 25%以下。这也意味着在任何给定的时刻已经过期但仍占据着内存空间的 key 的量最多为每秒的写操作量除以 4.</p>
 <p>Redis-3.0.0 中的默认值是 10，代表每秒钟调用 10 次后台任务。</p>
 <p>除了主动淘汰的频率外，Redis 对每次淘汰任务执行的最大时长也有一个限定，这样保证了每次主动淘汰不会过多阻塞应用请求，以下是这个限定计算公式：</p>
-<h1 id="define-activeexpire_cycle_slow_time_perc-25-cpu-max-for-keys-collection-_">define ACTIVE<em>EXPIRE_CYCLE_SLOW_TIME_PERC 25 /</em> CPU max % for keys collection _/<a class="headerlink" href="#define-activeexpire_cycle_slow_time_perc-25-cpu-max-for-keys-collection-_" title="Permanent link">&para;</a></h1>
+<h1 id="define-activeexpire_cycle_slow_time_perc-25-cpu-max-for-keys-collection-_">define ACTIVE*EXPIRE_CYCLE_SLOW_TIME_PERC 25 /* CPU max % for keys collection _/<a class="headerlink" href="#define-activeexpire_cycle_slow_time_perc-25-cpu-max-for-keys-collection-_" title="Permanent link">&para;</a></h1>
 <p>...<br />
 timelimit = 1000000*ACTIVE_EXPIRE_CYCLE_SLOW_TIME_PERC/server.hz/100;
 hz 调大将会提高 Redis 主动淘汰的频率，如果你的 Redis 存储中包含很多冷数据占用内存过大的话，可以考虑将这个值调大，但 Redis 作者建议这个值不要超过 100。我们实际线上将这个值调大到 100，观察到 CPU 会增加 2%左右，但对冷数据的内存释放速度确实有明显的提高（通过观察 keyspace 个数和 used_memory 大小）。</p>
@@ -9973,21 +9973,21 @@ noeviction ： 永不过期，返回错误
 <p>lazy free 的使用分为 2 类：第一类是与 DEL 命令对应的主动删除，第二类是过期 key 删除、maxmemory key 驱逐淘汰删除。</p>
 <h4 id="_1">主动删除<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p>UNLINK 命令是与 DEL 一样删除 key 功能的 lazy free 实现。唯一不同时，UNLINK 在删除集合类键时，如果集合键的元素个数大于 64 个(详细后文），会把真正的内存释放操作，给单独的 bio 来操作。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>127.0.0.1:7000&gt; UNLINK mylist
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>(integer) 1
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>FLUSHALL/FLUSHDB ASYNC
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>127.0.0.1:7000&gt; flushall async //异步清理实例数据
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>127.0.0.1:7000&gt; UNLINK mylist
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>(integer) 1
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>FLUSHALL/FLUSHDB ASYNC
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>127.0.0.1:7000&gt; flushall async //异步清理实例数据
+</span></code></pre></div>
 <h4 id="_2">被动删除<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <p>lazy free 应用于被动删除中，目前有 4 种场景，每种场景对应一个配置参数； 默认都是关闭。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>lazyfree-lazy-eviction no
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>lazyfree-lazy-expire no
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>lazyfree-lazy-server-del no
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a> slave-lazy-flush n
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>lazyfree-lazy-eviction no
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>lazyfree-lazy-expire no
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>lazyfree-lazy-server-del no
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a> slave-lazy-flush n
+</span></code></pre></div>
 <h6 id="lazyfree-lazy-eviction">lazyfree-lazy-eviction<a class="headerlink" href="#lazyfree-lazy-eviction" title="Permanent link">&para;</a></h6>
 <p>针对 redis 内存使用达到 maxmeory，并设置有淘汰策略时；在被动淘汰键时，是否采用 lazy free 机制；</p>
 <p>因为此场景开启 lazy free, 可能使用淘汰键的内存释放不及时，导致 redis 内存超用，超过 maxmemory 的限制。此场景使用时，请结合业务测试。</p>
@@ -10086,6 +10086,12 @@ noeviction ： 永不过期，返回错误
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

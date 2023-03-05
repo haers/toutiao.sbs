@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10001,57 +10001,57 @@
 <p><img alt="" src="../../image/c5/hashmap-3.png" /></p>
 <p>这里需要讲明白两个问题：数据底层具体存储的是什么？这样的存储方式有什么优点呢？</p>
 <p>(1) 从源码可知，HashMap 类中有一个非常重要的字段，就是 Node[] table，即哈希桶数组，明显它是一个 Node 的数组。我们来看 Node[JDK1.8]是何物。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    static class Node&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        final int hash; //用来定位数组索引位置
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        final K key;  //链表的下一个node
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        V value;
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        Node&lt;K,V&gt; next;
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        Node(int hash, K key, V value, Node&lt;K,V&gt; next) {
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            this.hash = hash;
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            this.key = key;
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            this.value = value;
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            this.next = next;
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        }
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        public final K getKey()        { return key; }
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        public final V getValue()      { return value; }
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        public final String toString() { return key + &quot;=&quot; + value; }
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        public final int hashCode() {
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>            return Objects.hashCode(key) ^ Objects.hashCode(value);
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        }
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        public final V setValue(V newValue) {
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>            V oldValue = value;
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>            value = newValue;
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>            return oldValue;
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        }
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        public final boolean equals(Object o) {
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>            if (o == this)
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>                return true;
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>            if (o instanceof Map.Entry) {
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>                Map.Entry&lt;?,?&gt; e = (Map.Entry&lt;?,?&gt;)o;
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>                if (Objects.equals(key, e.getKey()) &amp;&amp;
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>                    Objects.equals(value, e.getValue()))
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>                    return true;
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>            }
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>            return false;
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        }
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    static class Node&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; {
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        final int hash; //用来定位数组索引位置
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        final K key;  //链表的下一个node
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        V value;
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        Node&lt;K,V&gt; next;
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        Node(int hash, K key, V value, Node&lt;K,V&gt; next) {
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            this.hash = hash;
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            this.key = key;
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            this.value = value;
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            this.next = next;
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        }
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        public final K getKey()        { return key; }
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        public final V getValue()      { return value; }
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        public final String toString() { return key + &quot;=&quot; + value; }
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        public final int hashCode() {
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>            return Objects.hashCode(key) ^ Objects.hashCode(value);
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        }
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        public final V setValue(V newValue) {
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>            V oldValue = value;
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>            value = newValue;
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>            return oldValue;
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        }
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        public final boolean equals(Object o) {
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>            if (o == this)
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>                return true;
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>            if (o instanceof Map.Entry) {
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>                Map.Entry&lt;?,?&gt; e = (Map.Entry&lt;?,?&gt;)o;
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>                if (Objects.equals(key, e.getKey()) &amp;&amp;
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>                    Objects.equals(value, e.getValue()))
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>                    return true;
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>            }
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>            return false;
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        }
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    }
+</span></code></pre></div>
 <p>Node 是 HashMap 的一个内部类，实现了 Map.Entry 接口，本质是就是一个映射(键值对)。上图中的每个黑色圆点就是一个 Node 对象。</p>
 <p>(2) HashMap 就是使用哈希表来存储的。哈希表为解决冲突，可以采用开放地址法和链地址法等来解决问题，Java 中 HashMap 采用了链地址法。
 链地址法，简单来说，就是数组加链表的结合。在每个数组元素上都一个链表结构，当数据被 Hash 后，得到数组下标，把数据放在对应下标元素的链表上。</p>
 <p>系统将调用"key"这个 key 的 hashCode()方法得到其 hashCode 值（该方法适用于每个 Java 对象），然后再通过 Hash 算法的后两步运算（高位运算和取模运算，下文有介绍）来定位该键值对的存储位置，有时两个 key 会定位到相同的位置，表示发生了 Hash 碰撞。当然 Hash 算法计算结果越分散均匀，Hash 碰撞的概率就越小，map 的存取效率就会越高。</p>
 <p>如果哈希桶数组很大，即使较差的 Hash 算法也会比较分散，如果哈希桶数组数组很小，即使好的 Hash 算法也会出现较多碰撞，所以就需要在空间成本和时间成本之间权衡，其实就是在根据实际情况确定哈希桶数组的大小，并在此基础上设计好的 hash 算法减少 Hash 碰撞。那么通过什么方式来控制 map 使得 Hash 碰撞的概率又小，哈希桶数组（Node[] table）占用空间又少呢？答案就是好的 Hash 算法和扩容机制。</p>
 <p>在理解 Hash 和扩容流程之前，我们得先了解下 HashMap 的几个字段。从 HashMap 的默认构造函数源码可知，构造函数就是对下面几个字段进行初始化，源码如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    int threshold;             // 所能容纳的key-value对极限
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>     final float loadFactor;    // 负载因子
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>     int modCount;
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>     int size;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    int threshold;             // 所能容纳的key-value对极限
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>     final float loadFactor;    // 负载因子
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>     int modCount;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>     int size;
+</span></code></pre></div>
 <p>首先，Node[] table 的初始化长度 length(默认值是 16)，Load factor 为负载因子(默认值是 0.75)，threshold 是 HashMap 所能容纳的最大数据量的 Node(键值对)个数。threshold = length * Load factor。也就是说，在数组定义好长度之后，负载因子越大，所能容纳的键值对个数越多。</p>
 <p>结合负载因子的定义公式可知，threshold 就是在此 Load factor 和 length(数组长度)对应下允许的最大元素数目，超过这个数目就重新 resize(扩容)，扩容后的 HashMap 容量是之前容量的两倍。默认的负载因子 0.75 是对空间和时间效率的一个平衡选择，建议大家不要修改，除非在时间和空间比较特殊的情况下，如果内存空间很多而又对时间效率要求很高，可以降低负载因子 Load factor 的值；相反，如果内存空间紧张而对时间效率要求不高，可以增加负载因子 loadFactor 的值，这个值可以大于 1。</p>
 <p>size 这个字段其实很好理解，就是 HashMap 中实际存在的键值对数量。注意和 table 的长度 length、容纳最大键值对数量 threshold 的区别。而 modCount 字段主要用来记录 HashMap 内部结构发生变化的次数，主要用于迭代的快速失败。强调一点，内部结构发生变化指的是结构发生变化，例如 put 新键值对，但是某个 key 对应的 value 值被覆盖不属于结构变化。</p>
@@ -10062,19 +10062,19 @@
 <h4 id="_3">确定哈希桶数组索引位置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>不管增加、删除、查找键值对，定位到哈希桶数组的位置都是很关键的第一步。前面说过 HashMap 的数据结构是数组和链表的结合，所以我们当然希望这个 HashMap 里面的元素位置尽量分布均匀些，尽量使得每个位置上的元素数量只有一个，那么当我们用 hash 算法求得这个位置的时候，马上就可以知道对应位置的元素就是我们要的，不用遍历链表，大大优化了查询的效率。
 HashMap 定位数组索引位置，直接决定了 hash 方法的离散性能。先看看源码的实现(方法一+方法二):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>方法一：
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>static final int hash(Object key) {   //jdk1.8 &amp; jdk1.7
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>     int h;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>     // h = key.hashCode() 为第一步 取hashCode值
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>     // h ^ (h &gt;&gt;&gt; 16)  为第二步 高位参与运算
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>     return (key == null) ? 0 : (h = key.hashCode()) ^ (h &gt;&gt;&gt; 16);
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>}
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>方法二：
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>static int indexFor(int h, int length) {  //jdk1.7的源码，jdk1.8没有这个方法，但是实现原理一样的
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>     return h &amp; (length-1);  //第三步 取模运算
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>方法一：
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>static final int hash(Object key) {   //jdk1.8 &amp; jdk1.7
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>     int h;
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>     // h = key.hashCode() 为第一步 取hashCode值
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>     // h ^ (h &gt;&gt;&gt; 16)  为第二步 高位参与运算
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>     return (key == null) ? 0 : (h = key.hashCode()) ^ (h &gt;&gt;&gt; 16);
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>}
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>方法二：
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>static int indexFor(int h, int length) {  //jdk1.7的源码，jdk1.8没有这个方法，但是实现原理一样的
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>     return h &amp; (length-1);  //第三步 取模运算
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>}
+</span></code></pre></div>
 <p>这里的 Hash 算法本质上就是三步：取 key 的 hashCode 值、高位运算、取模运算。</p>
 <p>对于任意给定的对象，只要它的 hashCode()返回值相同，那么程序调用方法一所计算得到的 Hash 码值总是相同的。我们首先想到的就是把 hash 值对数组长度取模运算，这样一来，元素的分布相对来说是比较均匀的。但是，模运算的消耗还是比较大的，在 HashMap 中是这样做的：调用方法二来计算该对象应该保存在 table 数组的哪个索引处。</p>
 <p>这个方法非常巧妙，它通过 h &amp; (table.length -1)来得到该对象的保存位，而 HashMap 底层数组的长度总是 2 的 n 次方，这是 HashMap 在速度上的优化。当 length 总是 2 的 n 次方时，h&amp; (length-1)运算等价于对 length 取模，也就是 h%length，但是&amp;比%具有更高的效率。</p>
@@ -10091,99 +10091,99 @@ HashMap 定位数组索引位置，直接决定了 hash 方法的离散性能。
 <p>⑤.遍历 table[i]，判断链表长度是否大于 8，大于 8 的话把链表转换为红黑树，在红黑树中执行插入操作，否则进行链表的插入操作；遍历过程中若发现 key 已经存在直接覆盖 value 即可；</p>
 <p>⑥.插入成功后，判断实际存在的键值对数量 size 是否超多了最大容量 threshold，如果超过，进行扩容。</p>
 <p>JDK1.8HashMap 的 put 方法源码如下:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>  public V put(K key, V value) {
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>      // 对key的hashCode()做hash
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>     return putVal(hash(key), key, value, false, true);
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  }
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>                 boolean evict) {
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>      Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; int n, i;
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>      // 步骤①：tab为空则创建
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>     if ((tab = table) == null || (n = tab.length) == 0)
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>         n = (tab = resize()).length;
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>     // 步骤②：计算index，并对null做处理
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>     if ((p = tab[i = (n - 1) &amp; hash]) == null)
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>         tab[i] = newNode(hash, key, value, null);
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>     else {
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>         Node&lt;K,V&gt; e; K k;
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>         // 步骤③：节点key存在，直接覆盖value
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>         if (p.hash == hash &amp;&amp;
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>             ((k = p.key) == key || (key != null &amp;&amp; key.equals(k))))
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>             e = p;
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>         // 步骤④：判断该链为红黑树
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>         else if (p instanceof TreeNode)
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>             e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(this, tab, hash, key, value);
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>         // 步骤⑤：该链为链表
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>         else {
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>             for (int binCount = 0; ; ++binCount) {
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>                 if ((e = p.next) == null) {
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>                     p.next = newNode(hash, key,value,null);
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>                        //链表长度大于8转换为红黑树进行处理
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>                     if (binCount &gt;= TREEIFY_THRESHOLD - 1) // -1 for 1st
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>                         treeifyBin(tab, hash);
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>                     break;
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>                 }
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>                    // key已经存在直接覆盖value
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>                 if (e.hash == hash &amp;&amp;
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>                     ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))                                          break;
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>                 p = e;
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>             }
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>         }
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>         if (e != null) { // existing mapping for key
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>             V oldValue = e.value;
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>             if (!onlyIfAbsent || oldValue == null)
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>                 e.value = value;
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>             afterNodeAccess(e);
-<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>             return oldValue;
-<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>         }
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>     }
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>
-<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>     ++modCount;
-<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>     // 步骤⑥：超过最大容量 就扩容
-<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>     if (++size &gt; threshold)
-<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>         resize();
-<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>     afterNodeInsertion(evict);
-<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>     return null;
-<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a> }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>  public V put(K key, V value) {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>      // 对key的hashCode()做hash
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>     return putVal(hash(key), key, value, false, true);
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  }
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>                 boolean evict) {
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>      Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; int n, i;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>      // 步骤①：tab为空则创建
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>     if ((tab = table) == null || (n = tab.length) == 0)
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>         n = (tab = resize()).length;
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>     // 步骤②：计算index，并对null做处理
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>     if ((p = tab[i = (n - 1) &amp; hash]) == null)
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>         tab[i] = newNode(hash, key, value, null);
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>     else {
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>         Node&lt;K,V&gt; e; K k;
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>         // 步骤③：节点key存在，直接覆盖value
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>         if (p.hash == hash &amp;&amp;
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>             ((k = p.key) == key || (key != null &amp;&amp; key.equals(k))))
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>             e = p;
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>         // 步骤④：判断该链为红黑树
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>         else if (p instanceof TreeNode)
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>             e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(this, tab, hash, key, value);
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>         // 步骤⑤：该链为链表
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>         else {
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>             for (int binCount = 0; ; ++binCount) {
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>                 if ((e = p.next) == null) {
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>                     p.next = newNode(hash, key,value,null);
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>                        //链表长度大于8转换为红黑树进行处理
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>                     if (binCount &gt;= TREEIFY_THRESHOLD - 1) // -1 for 1st
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>                         treeifyBin(tab, hash);
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>                     break;
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>                 }
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>                    // key已经存在直接覆盖value
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>                 if (e.hash == hash &amp;&amp;
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>                     ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))                                          break;
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>                 p = e;
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>             }
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>         }
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>         if (e != null) { // existing mapping for key
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>             V oldValue = e.value;
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>             if (!onlyIfAbsent || oldValue == null)
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>                 e.value = value;
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>             afterNodeAccess(e);
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>             return oldValue;
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>         }
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>     }
+</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>
+</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>     ++modCount;
+</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>     // 步骤⑥：超过最大容量 就扩容
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>     if (++size &gt; threshold)
+</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>         resize();
+</span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>     afterNodeInsertion(evict);
+</span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>     return null;
+</span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a> }
+</span></code></pre></div>
 <h4 id="_4">扩容机制<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p>扩容(resize)就是重新计算容量，向 HashMap 对象里不停的添加元素，而 HashMap 对象内部的数组无法装载更多的元素时，对象就需要扩大数组的长度，以便能装入更多的元素。当然 Java 里的数组是无法自动扩容的，方法是使用一个新的数组代替已有的容量小的数组，就像我们用一个小桶装水，如果想装更多的水，就得换大水桶。</p>
 <p>我们分析下 resize 的源码，鉴于 JDK1.8 融入了红黑树，较复杂，为了便于理解我们仍然使用 JDK1.7 的代码，好理解一些，本质上区别不大，具体区别后文再说。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>  void resize(int newCapacity) {   //传入新的容量
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>      Entry[] oldTable = table;    //引用扩容前的Entry数组
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>      int oldCapacity = oldTable.length;
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>      if (oldCapacity == MAXIMUM_CAPACITY) {  //扩容前的数组大小如果已经达到最大(2^30)了
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>          threshold = Integer.MAX_VALUE; //修改阈值为int的最大值(2^31-1)，这样以后就不会扩容了
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>          return;
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>      }
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>      Entry[] newTable = new Entry[newCapacity];  //初始化一个新的Entry数组
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>     transfer(newTable);                         //！！将数据转移到新的Entry数组里
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>     table = newTable;                           //HashMap的table属性引用新的Entry数组
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>     threshold = (int)(newCapacity * loadFactor);//修改阈值
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a> }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>  void resize(int newCapacity) {   //传入新的容量
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>      Entry[] oldTable = table;    //引用扩容前的Entry数组
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>      int oldCapacity = oldTable.length;
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>      if (oldCapacity == MAXIMUM_CAPACITY) {  //扩容前的数组大小如果已经达到最大(2^30)了
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>          threshold = Integer.MAX_VALUE; //修改阈值为int的最大值(2^31-1)，这样以后就不会扩容了
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>          return;
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>      }
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>      Entry[] newTable = new Entry[newCapacity];  //初始化一个新的Entry数组
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>     transfer(newTable);                         //！！将数据转移到新的Entry数组里
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>     table = newTable;                           //HashMap的table属性引用新的Entry数组
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>     threshold = (int)(newCapacity * loadFactor);//修改阈值
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a> }
+</span></code></pre></div>
 <p>这里就是使用一个容量更大的数组来代替已有的容量小的数组，transfer()方法将原有 Entry 数组的元素拷贝到新的 Entry 数组里。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>  void transfer(Entry[] newTable) {
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>      Entry[] src = table;                   //src引用了旧的Entry数组
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>      int newCapacity = newTable.length;
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>      for (int j = 0; j &lt; src.length; j++) { //遍历旧的Entry数组
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>          Entry&lt;K,V&gt; e = src[j];             //取得旧Entry数组的每个元素
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>          if (e != null) {
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>              src[j] = null;//释放旧Entry数组的对象引用（for循环后，旧的Entry数组不再引用任何对象）
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>              do {
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>                  Entry&lt;K,V&gt; next = e.next;
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>                 int i = indexFor(e.hash, newCapacity); //！！重新计算每个元素在数组中的位置
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>                 e.next = newTable[i]; //标记[1]
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>                 newTable[i] = e;      //将元素放在数组上
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>                 e = next;             //访问下一个Entry链上的元素
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>             } while (e != null);
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>         }
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>     }
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a> }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>  void transfer(Entry[] newTable) {
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>      Entry[] src = table;                   //src引用了旧的Entry数组
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>      int newCapacity = newTable.length;
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>      for (int j = 0; j &lt; src.length; j++) { //遍历旧的Entry数组
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>          Entry&lt;K,V&gt; e = src[j];             //取得旧Entry数组的每个元素
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>          if (e != null) {
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>              src[j] = null;//释放旧Entry数组的对象引用（for循环后，旧的Entry数组不再引用任何对象）
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>              do {
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>                  Entry&lt;K,V&gt; next = e.next;
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>                 int i = indexFor(e.hash, newCapacity); //！！重新计算每个元素在数组中的位置
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>                 e.next = newTable[i]; //标记[1]
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>                 newTable[i] = e;      //将元素放在数组上
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>                 e = next;             //访问下一个Entry链上的元素
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>             } while (e != null);
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>         }
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>     }
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a> }
+</span></code></pre></div>
 <p>newTable[i]的引用赋给了 e.next，也就是使用了单链表的头插入方式，同一位置上新元素总会被放在链表的头部位置；这样先放在一个索引上的元素终会被放到 Entry 链的尾部(如果发生了 hash 冲突的话），这一点和 Jdk1.8 有区别，下文详解。在旧数组中同一条 Entry 链上的元素，通过重新计算索引位置后，有可能被放到了新数组的不同位置上。</p>
 <p>下面举个例子说明下扩容过程。假设了我们的 hash 算法就是简单的用 key mod 一下表的大小（也就是数组的长度）。其中的哈希桶数组 table 的 size=2， 所以 key = 3、7、5，put 顺序依次为 5、7、3。在 mod 2 以后都冲突在 table[1]这里了。这里假设负载因子 loadFactor=1，即当键值对的实际大小 size 大于 table 的实际大小时进行扩容。接下来的三个步骤是哈希桶数组 resize 成 4，然后所有的 Node 重新 rehash 的过程。</p>
 <p><img alt="" src="../../image/c5/hashmap-6.png" /></p>
@@ -10195,112 +10195,112 @@ HashMap 定位数组索引位置，直接决定了 hash 方法的离散性能。
 <p>因此，我们在扩充 HashMap 的时候，不需要像 JDK1.7 的实现那样重新计算 hash，只需要看看原来的 hash 值新增的那个 bit 是 1 还是 0 就好了，是 0 的话索引没变，是 1 的话索引变成“原索引+oldCap”，可以看看下图为 16 扩充为 32 的 resize 示意图：</p>
 <p><img alt="" src="../../image/c5/hashmap-9.png" /></p>
 <p>这个设计确实非常的巧妙，既省去了重新计算 hash 值的时间，而且同时，由于新增的 1bit 是 0 还是 1 可以认为是随机的，因此 resize 的过程，均匀的把之前的冲突的节点分散到新的 bucket 了。这一块就是 JDK1.8 新增的优化点。有一点注意区别，JDK1.7 中 rehash 的时候，旧链表迁移新链表的时候，如果在新表的数组索引位置相同，则链表元素会倒置，但是从上图可以看出，JDK1.8 不会倒置。有兴趣的同学可以研究下 JDK1.8 的 resize 源码，写的很赞，如下:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>final Node&lt;K,V&gt;[] resize() {
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>      Node&lt;K,V&gt;[] oldTab = table;
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>      int oldCap = (oldTab == null) ? 0 : oldTab.length;
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>      int oldThr = threshold;
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>      int newCap, newThr = 0;
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>      if (oldCap &gt; 0) {
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>          // 超过最大值就不再扩充了，就只好随你碰撞去吧
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>          if (oldCap &gt;= MAXIMUM_CAPACITY) {
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>              threshold = Integer.MAX_VALUE;
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>             return oldTab;
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>         }
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>         // 没超过最大值，就扩充为原来的2倍
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>         else if ((newCap = oldCap &lt;&lt; 1) &lt; MAXIMUM_CAPACITY &amp;&amp;
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>                  oldCap &gt;= DEFAULT_INITIAL_CAPACITY)
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>             newThr = oldThr &lt;&lt; 1; // double threshold
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>     }
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>     else if (oldThr &gt; 0) // initial capacity was placed in threshold
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>         newCap = oldThr;
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>     else {               // zero initial threshold signifies using defaults
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>         newCap = DEFAULT_INITIAL_CAPACITY;
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>         newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>     }
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>     // 计算新的resize上限
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>     if (newThr == 0) {
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>         float ft = (float)newCap * loadFactor;
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>         newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (float)MAXIMUM_CAPACITY ?
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>                   (int)ft : Integer.MAX_VALUE);
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>     }
-<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>     threshold = newThr;
-<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>     @SuppressWarnings({&quot;rawtypes&quot;，&quot;unchecked&quot;})
-<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>         Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])new Node[newCap];
-<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>     table = newTab;
-<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>     if (oldTab != null) {
-<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>         // 把每个bucket都移动到新的buckets中
-<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>         for (int j = 0; j &lt; oldCap; ++j) {
-<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>             Node&lt;K,V&gt; e;
-<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>             if ((e = oldTab[j]) != null) {
-<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>                 oldTab[j] = null;
-<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>                 if (e.next == null)
-<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>                     newTab[e.hash &amp; (newCap - 1)] = e;
-<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>                else if (e instanceof TreeNode)
-<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>                     ((TreeNode&lt;K,V&gt;)e).split(this, newTab, j, oldCap);
-<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>                 else { // 链表优化重hash的代码块
-<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>                     Node&lt;K,V&gt; loHead = null, loTail = null;
-<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>                     Node&lt;K,V&gt; hiHead = null, hiTail = null;
-<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>                     Node&lt;K,V&gt; next;
-<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>                     do {
-<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>                         next = e.next;
-<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>                         // 原索引
-<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>                         if ((e.hash &amp; oldCap) == 0) {
-<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>                             if (loTail == null)
-<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>                                 loHead = e;
-<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>                             else
-<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>                                 loTail.next = e;
-<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>                             loTail = e;
-<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>                         }
-<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>                         // 原索引+oldCap
-<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>                         else {
-<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>                             if (hiTail == null)
-<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>                                 hiHead = e;
-<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>                             else
-<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a>                                 hiTail.next = e;
-<a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a>                             hiTail = e;
-<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a>                         }
-<a id="__codelineno-6-66" name="__codelineno-6-66" href="#__codelineno-6-66"></a>                     } while ((e = next) != null);
-<a id="__codelineno-6-67" name="__codelineno-6-67" href="#__codelineno-6-67"></a>                     // 原索引放到bucket里
-<a id="__codelineno-6-68" name="__codelineno-6-68" href="#__codelineno-6-68"></a>                     if (loTail != null) {
-<a id="__codelineno-6-69" name="__codelineno-6-69" href="#__codelineno-6-69"></a>                         loTail.next = null;
-<a id="__codelineno-6-70" name="__codelineno-6-70" href="#__codelineno-6-70"></a>                         newTab[j] = loHead;
-<a id="__codelineno-6-71" name="__codelineno-6-71" href="#__codelineno-6-71"></a>                     }
-<a id="__codelineno-6-72" name="__codelineno-6-72" href="#__codelineno-6-72"></a>                     // 原索引+oldCap放到bucket里
-<a id="__codelineno-6-73" name="__codelineno-6-73" href="#__codelineno-6-73"></a>                     if (hiTail != null) {
-<a id="__codelineno-6-74" name="__codelineno-6-74" href="#__codelineno-6-74"></a>                         hiTail.next = null;
-<a id="__codelineno-6-75" name="__codelineno-6-75" href="#__codelineno-6-75"></a>                         newTab[j + oldCap] = hiHead;
-<a id="__codelineno-6-76" name="__codelineno-6-76" href="#__codelineno-6-76"></a>                     }
-<a id="__codelineno-6-77" name="__codelineno-6-77" href="#__codelineno-6-77"></a>                 }
-<a id="__codelineno-6-78" name="__codelineno-6-78" href="#__codelineno-6-78"></a>             }
-<a id="__codelineno-6-79" name="__codelineno-6-79" href="#__codelineno-6-79"></a>         }
-<a id="__codelineno-6-80" name="__codelineno-6-80" href="#__codelineno-6-80"></a>     }
-<a id="__codelineno-6-81" name="__codelineno-6-81" href="#__codelineno-6-81"></a>     return newTab;
-<a id="__codelineno-6-82" name="__codelineno-6-82" href="#__codelineno-6-82"></a> }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>final Node&lt;K,V&gt;[] resize() {
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>      Node&lt;K,V&gt;[] oldTab = table;
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>      int oldCap = (oldTab == null) ? 0 : oldTab.length;
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>      int oldThr = threshold;
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>      int newCap, newThr = 0;
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>      if (oldCap &gt; 0) {
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>          // 超过最大值就不再扩充了，就只好随你碰撞去吧
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>          if (oldCap &gt;= MAXIMUM_CAPACITY) {
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>              threshold = Integer.MAX_VALUE;
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>             return oldTab;
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>         }
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>         // 没超过最大值，就扩充为原来的2倍
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>         else if ((newCap = oldCap &lt;&lt; 1) &lt; MAXIMUM_CAPACITY &amp;&amp;
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>                  oldCap &gt;= DEFAULT_INITIAL_CAPACITY)
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>             newThr = oldThr &lt;&lt; 1; // double threshold
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>     }
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>     else if (oldThr &gt; 0) // initial capacity was placed in threshold
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>         newCap = oldThr;
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>     else {               // zero initial threshold signifies using defaults
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>         newCap = DEFAULT_INITIAL_CAPACITY;
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>         newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>     }
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>     // 计算新的resize上限
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>     if (newThr == 0) {
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>         float ft = (float)newCap * loadFactor;
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>         newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (float)MAXIMUM_CAPACITY ?
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>                   (int)ft : Integer.MAX_VALUE);
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>     }
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>     threshold = newThr;
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>     @SuppressWarnings({&quot;rawtypes&quot;，&quot;unchecked&quot;})
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>         Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])new Node[newCap];
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>     table = newTab;
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>     if (oldTab != null) {
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>         // 把每个bucket都移动到新的buckets中
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>         for (int j = 0; j &lt; oldCap; ++j) {
+</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>             Node&lt;K,V&gt; e;
+</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>             if ((e = oldTab[j]) != null) {
+</span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>                 oldTab[j] = null;
+</span><span id="__span-6-40"><a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>                 if (e.next == null)
+</span><span id="__span-6-41"><a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>                     newTab[e.hash &amp; (newCap - 1)] = e;
+</span><span id="__span-6-42"><a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>                else if (e instanceof TreeNode)
+</span><span id="__span-6-43"><a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>                     ((TreeNode&lt;K,V&gt;)e).split(this, newTab, j, oldCap);
+</span><span id="__span-6-44"><a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>                 else { // 链表优化重hash的代码块
+</span><span id="__span-6-45"><a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>                     Node&lt;K,V&gt; loHead = null, loTail = null;
+</span><span id="__span-6-46"><a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>                     Node&lt;K,V&gt; hiHead = null, hiTail = null;
+</span><span id="__span-6-47"><a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>                     Node&lt;K,V&gt; next;
+</span><span id="__span-6-48"><a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>                     do {
+</span><span id="__span-6-49"><a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>                         next = e.next;
+</span><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>                         // 原索引
+</span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>                         if ((e.hash &amp; oldCap) == 0) {
+</span><span id="__span-6-52"><a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>                             if (loTail == null)
+</span><span id="__span-6-53"><a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>                                 loHead = e;
+</span><span id="__span-6-54"><a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>                             else
+</span><span id="__span-6-55"><a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>                                 loTail.next = e;
+</span><span id="__span-6-56"><a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>                             loTail = e;
+</span><span id="__span-6-57"><a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>                         }
+</span><span id="__span-6-58"><a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>                         // 原索引+oldCap
+</span><span id="__span-6-59"><a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>                         else {
+</span><span id="__span-6-60"><a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>                             if (hiTail == null)
+</span><span id="__span-6-61"><a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>                                 hiHead = e;
+</span><span id="__span-6-62"><a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>                             else
+</span><span id="__span-6-63"><a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a>                                 hiTail.next = e;
+</span><span id="__span-6-64"><a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a>                             hiTail = e;
+</span><span id="__span-6-65"><a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a>                         }
+</span><span id="__span-6-66"><a id="__codelineno-6-66" name="__codelineno-6-66" href="#__codelineno-6-66"></a>                     } while ((e = next) != null);
+</span><span id="__span-6-67"><a id="__codelineno-6-67" name="__codelineno-6-67" href="#__codelineno-6-67"></a>                     // 原索引放到bucket里
+</span><span id="__span-6-68"><a id="__codelineno-6-68" name="__codelineno-6-68" href="#__codelineno-6-68"></a>                     if (loTail != null) {
+</span><span id="__span-6-69"><a id="__codelineno-6-69" name="__codelineno-6-69" href="#__codelineno-6-69"></a>                         loTail.next = null;
+</span><span id="__span-6-70"><a id="__codelineno-6-70" name="__codelineno-6-70" href="#__codelineno-6-70"></a>                         newTab[j] = loHead;
+</span><span id="__span-6-71"><a id="__codelineno-6-71" name="__codelineno-6-71" href="#__codelineno-6-71"></a>                     }
+</span><span id="__span-6-72"><a id="__codelineno-6-72" name="__codelineno-6-72" href="#__codelineno-6-72"></a>                     // 原索引+oldCap放到bucket里
+</span><span id="__span-6-73"><a id="__codelineno-6-73" name="__codelineno-6-73" href="#__codelineno-6-73"></a>                     if (hiTail != null) {
+</span><span id="__span-6-74"><a id="__codelineno-6-74" name="__codelineno-6-74" href="#__codelineno-6-74"></a>                         hiTail.next = null;
+</span><span id="__span-6-75"><a id="__codelineno-6-75" name="__codelineno-6-75" href="#__codelineno-6-75"></a>                         newTab[j + oldCap] = hiHead;
+</span><span id="__span-6-76"><a id="__codelineno-6-76" name="__codelineno-6-76" href="#__codelineno-6-76"></a>                     }
+</span><span id="__span-6-77"><a id="__codelineno-6-77" name="__codelineno-6-77" href="#__codelineno-6-77"></a>                 }
+</span><span id="__span-6-78"><a id="__codelineno-6-78" name="__codelineno-6-78" href="#__codelineno-6-78"></a>             }
+</span><span id="__span-6-79"><a id="__codelineno-6-79" name="__codelineno-6-79" href="#__codelineno-6-79"></a>         }
+</span><span id="__span-6-80"><a id="__codelineno-6-80" name="__codelineno-6-80" href="#__codelineno-6-80"></a>     }
+</span><span id="__span-6-81"><a id="__codelineno-6-81" name="__codelineno-6-81" href="#__codelineno-6-81"></a>     return newTab;
+</span><span id="__span-6-82"><a id="__codelineno-6-82" name="__codelineno-6-82" href="#__codelineno-6-82"></a> }
+</span></code></pre></div>
 <h2 id="_5">线程安全性<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>在多线程使用场景中，应该尽量避免使用线程不安全的 HashMap，而使用线程安全的 ConcurrentHashMap。那么为什么说 HashMap 是线程不安全的，下面举例子说明在并发的多线程使用场景中使用 HashMap 可能造成死循环。代码例子如下(便于理解，仍然使用 JDK1.7 的环境)：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>public class HashMapInfiniteLoop {
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    private static HashMap&lt;Integer,String&gt; map = new HashMap&lt;Integer,String&gt;(2，0.75f);
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    public static void main(String[] args) {
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        map.put(5， &quot;C&quot;);
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        new Thread(&quot;Thread1&quot;) {
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>            public void run() {
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>                map.put(7, &quot;B&quot;);
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>                System.out.println(map);
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>            };
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        }.start();
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        new Thread(&quot;Thread2&quot;) {
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>            public void run() {
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>                map.put(3, &quot;A);
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>                System.out.println(map);
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>            };
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>        }.start();
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    }
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>public class HashMapInfiniteLoop {
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    private static HashMap&lt;Integer,String&gt; map = new HashMap&lt;Integer,String&gt;(2，0.75f);
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    public static void main(String[] args) {
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        map.put(5， &quot;C&quot;);
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        new Thread(&quot;Thread1&quot;) {
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>            public void run() {
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>                map.put(7, &quot;B&quot;);
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>                System.out.println(map);
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>            };
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        }.start();
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        new Thread(&quot;Thread2&quot;) {
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>            public void run() {
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>                map.put(3, &quot;A);
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>                System.out.println(map);
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>            };
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>        }.start();
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    }
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>}
+</span></code></pre></div>
 <p>其中，map 初始化为一个长度为 2 的数组，loadFactor=0.75，threshold=2*0.75=1，也就是说当 put 第二个 key 的时候，map 就需要进行 resize。</p>
 <p>通过设置断点让线程 1 和线程 2 同时 debug 到 transfer 方法(3.3 小节代码块)的首行。注意此时两个线程已经成功添加数据。放开 thread1 的断点至 transfer 方法的“Entry next = e.next;” 这一行；然后放开线程 2 的的断点，让线程 2 进行 resize。结果如下图。</p>
 <p><img alt="" src="../../image/c5/hashmap-10.png" /></p>
@@ -10315,78 +10315,78 @@ HashMap 定位数组索引位置，直接决定了 hash 方法的离散性能。
 <p>他们前者返回了一个 Set，后者返回了一个 Collection，但是 Set 和 Collection 都只是接口，既然是接口，那就大有文章可以做。很重要的一点就是，接口可以不是 new someClass()的来的，也就是说，它可以不对应与一个类，而只提供一些方法。实际上，HashMap 中所有的数据都是放在一个 Node<E,V>[]的数组中的，而返回的 Set 接口也好，Collection 也罢，都是直接针对这个 Node<E,V>[]数组的，所以，当使用返回的 Set 接口或者 Collection 接口进行操作是，实际上操作的还是那个 Node<E,V>[]数组。但是，返回的 Collection 只能做有限的操作，限定哪些呢？一句话总结就是：只能读，不能写，但能删能清。</p>
 <p>不信？我们可以看源码。</p>
 <p>首先来看 values 方法：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>public Collection&lt;V&gt; values() {
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>        Collection&lt;V&gt; vs = values;
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        if (vs == null) {
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>            vs = new Values();
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>            values = vs;
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        }
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        return vs;
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>public Collection&lt;V&gt; values() {
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>        Collection&lt;V&gt; vs = values;
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        if (vs == null) {
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>            vs = new Values();
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>            values = vs;
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        }
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        return vs;
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    }
+</span></code></pre></div>
 <p>可以看到 values 其实是返回了一个 Values 类的，这是个内部类，就在它后面：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>final class Values extends AbstractCollection&lt;V&gt; {
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>        public final int size()                 { return size; }
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        public final void clear()               { HashMap.this.clear(); }
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        public final Iterator&lt;V&gt; iterator()     { return new ValueIterator(); }
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        public final boolean contains(Object o) { return containsValue(o); }
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        public final Spliterator&lt;V&gt; spliterator() {
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>            return new ValueSpliterator&lt;&gt;(HashMap.this, 0, -1, 0, 0);
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        }
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        public final void forEach(Consumer&lt;? super V&gt; action) {
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>            Node&lt;K,V&gt;[] tab;
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>            if (action == null)
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>                throw new NullPointerException();
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>            if (size &gt; 0 &amp;&amp; (tab = table) != null) {
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>                int mc = modCount;
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>                for (int i = 0; i &lt; tab.length; ++i) {
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>                    for (Node&lt;K,V&gt; e = tab[i]; e != null; e = e.next)
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>                        action.accept(e.value);
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>                }
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>                if (modCount != mc)
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>                    throw new ConcurrentModificationException();
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>            }
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>        }
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>final class Values extends AbstractCollection&lt;V&gt; {
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>        public final int size()                 { return size; }
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        public final void clear()               { HashMap.this.clear(); }
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        public final Iterator&lt;V&gt; iterator()     { return new ValueIterator(); }
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        public final boolean contains(Object o) { return containsValue(o); }
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        public final Spliterator&lt;V&gt; spliterator() {
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>            return new ValueSpliterator&lt;&gt;(HashMap.this, 0, -1, 0, 0);
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        }
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        public final void forEach(Consumer&lt;? super V&gt; action) {
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>            Node&lt;K,V&gt;[] tab;
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>            if (action == null)
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>                throw new NullPointerException();
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>            if (size &gt; 0 &amp;&amp; (tab = table) != null) {
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>                int mc = modCount;
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>                for (int i = 0; i &lt; tab.length; ++i) {
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>                    for (Node&lt;K,V&gt; e = tab[i]; e != null; e = e.next)
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>                        action.accept(e.value);
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>                }
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>                if (modCount != mc)
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>                    throw new ConcurrentModificationException();
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>            }
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>        }
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    }
+</span></code></pre></div>
 <p>看到没有，完全没有提供新数据，完全是操作那个 table，或者调用 hashMap 自己的方法。我之前傻呵呵的找源码是怎么为 values（HashMap 除了有 values 这个方法，还有一个属性也叫 values，坑爹不？）赋值的，现在才知道自己是这么傻，因为根本就没有复制嘛。</p>
 <p>再来看 keySet，也是一样的思路：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>public Set&lt;K&gt; keySet() {
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>        Set&lt;K&gt; ks = keySet;
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        if (ks == null) {
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>            ks = new KeySet();
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>            keySet = ks;
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        }
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        return ks;
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    }
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    final class KeySet extends AbstractSet&lt;K&gt; {
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        public final int size()                 { return size; }
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        public final void clear()               { HashMap.this.clear(); }
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>        public final Iterator&lt;K&gt; iterator()     { return new KeyIterator(); }
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>        public final boolean contains(Object o) { return containsKey(o); }
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>        public final boolean remove(Object key) {
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>            return removeNode(hash(key), key, null, false, true) != null;
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>        }
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>        public final Spliterator&lt;K&gt; spliterator() {
-<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>            return new KeySpliterator&lt;&gt;(HashMap.this, 0, -1, 0, 0);
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>        }
-<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>        public final void forEach(Consumer&lt;? super K&gt; action) {
-<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>            Node&lt;K,V&gt;[] tab;
-<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>            if (action == null)
-<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>                throw new NullPointerException();
-<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>            if (size &gt; 0 &amp;&amp; (tab = table) != null) {
-<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>                int mc = modCount;
-<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>                for (int i = 0; i &lt; tab.length; ++i) {
-<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>                    for (Node&lt;K,V&gt; e = tab[i]; e != null; e = e.next)
-<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>                        action.accept(e.key);
-<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>                }
-<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>                if (modCount != mc)
-<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>                    throw new ConcurrentModificationException();
-<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>            }
-<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>        }
-<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>public Set&lt;K&gt; keySet() {
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>        Set&lt;K&gt; ks = keySet;
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        if (ks == null) {
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>            ks = new KeySet();
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>            keySet = ks;
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        }
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        return ks;
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    }
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    final class KeySet extends AbstractSet&lt;K&gt; {
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        public final int size()                 { return size; }
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        public final void clear()               { HashMap.this.clear(); }
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>        public final Iterator&lt;K&gt; iterator()     { return new KeyIterator(); }
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>        public final boolean contains(Object o) { return containsKey(o); }
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>        public final boolean remove(Object key) {
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>            return removeNode(hash(key), key, null, false, true) != null;
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>        }
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>        public final Spliterator&lt;K&gt; spliterator() {
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>            return new KeySpliterator&lt;&gt;(HashMap.this, 0, -1, 0, 0);
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>        }
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>        public final void forEach(Consumer&lt;? super K&gt; action) {
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>            Node&lt;K,V&gt;[] tab;
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>            if (action == null)
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>                throw new NullPointerException();
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>            if (size &gt; 0 &amp;&amp; (tab = table) != null) {
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>                int mc = modCount;
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>                for (int i = 0; i &lt; tab.length; ++i) {
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>                    for (Node&lt;K,V&gt; e = tab[i]; e != null; e = e.next)
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>                        action.accept(e.key);
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>                }
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>                if (modCount != mc)
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>                    throw new ConcurrentModificationException();
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>            }
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>        }
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>    }
+</span></code></pre></div>
 
 
 
@@ -10472,6 +10472,12 @@ HashMap 定位数组索引位置，直接决定了 hash 方法的离散性能。
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

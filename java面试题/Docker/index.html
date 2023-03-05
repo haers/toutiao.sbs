@@ -4756,6 +4756,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4870,20 +4884,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10280,8 +10280,8 @@ F 容器中的资源管理是通过 cgroup 实现的。Cgroups 不允许容器�
 <li>容器到主机：docker cp 96f7f14e99ab:/www /tmp</li>
 </ul>
 <h4 id="10-nginx-html">10.启动 nginx 容器（随机端口映射），并挂载本地文件目录到容器 html 的命令？<a class="headerlink" href="#10-nginx-html" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Docker run -d -p --name nginx2 -v /home/nginx:/usr/share/nginx/html nginx
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Docker run -d -p --name nginx2 -v /home/nginx:/usr/share/nginx/html nginx
+</span></code></pre></div>
 <h4 id="11-docker">11.如何使用 Docker 技术创建与环境无关的容器系统？<a class="headerlink" href="#11-docker" title="Permanent link">&para;</a></h4>
 <p>Docker 技术有三中主要的技术途径辅助完成此需求：</p>
 <ul>
@@ -10291,18 +10291,18 @@ F 容器中的资源管理是通过 cgroup 实现的。Cgroups 不允许容器�
 </ul>
 <h4 id="12-docker">12.有什么方法确定一个 Docker 容器运行状态<a class="headerlink" href="#12-docker" title="Permanent link">&para;</a></h4>
 <p>使用如下命令行命令确定一个 Docker 容器的运行状态</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ docker ps –a
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ docker ps –a
+</span></code></pre></div>
 <p>这将列表形式输出运行在主机上的所有 Docker 容器及其运行状态。从这个列表中很容易找到想要的容器及其运行状态。</p>
 <h4 id="13-docker-image-docker-layer">13. Docker Image 和 Docker Layer (层) 有什么不同<a class="headerlink" href="#13-docker-image-docker-layer" title="Permanent link">&para;</a></h4>
 <p>Image ：一个 Docker Image 是由一系列 Docker 只读层（read-only Layer） 创建出来的。
 Layer： 在 Dockerfile 配置文件中完成的一条配置指令，即表示一个 Docker 层（Layer）。
 如下 Dockerfile 文件包含 4 条指令，每条指令创建一个层（Layer）。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>FROM ubuntu:15.04
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>COPY . /app
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>RUN make /app
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>CMD python /app/app.py
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>FROM ubuntu:15.04
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>COPY . /app
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>RUN make /app
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>CMD python /app/app.py
+</span></code></pre></div>
 <p>重点，每层只对其前一层进行一（某）些进化。</p>
 <h4 id="14">14.如何停止所有正在运行的容器？<a class="headerlink" href="#14" title="Permanent link">&para;</a></h4>
 <p>使用 docker kill $(sudo docker ps -q)</p>
@@ -10326,11 +10326,11 @@ Docker events ：Docker 事件是一个命令，用于观察显示运行中的 D
 <p>容器化虚拟技术概念可能来源于，在 Linux 内核版本 2.6.24 上加入的对 命名空间（ namespace） 的技术支持特性。 容器化进程加入其进程 ID 到其创建的每个进程上并且对每个进程中的系统级调用进行访问控制及审查。 其本身是由系统级调用 clone () 克隆出来的进程， 允许其创建属于自己命名空间的进程实例，而区别于之前的，归属与整个本机系统的进程实例。</p>
 <p>如果上述在 Linux 系统内核上的技术实现成为可能， 那么明显的问题是如何在 非 Linux 系统上运行容器化的 Docker 。过去， Mac 和 Windows 系统上运行 Docker 容器都使用 Linux 虚拟机（VMs） 技术， Docker 工具箱使用的容器运行在 Virtual Box 虚拟机上。 现在，最新的情况是， Windows 平台上使用的是 Hyper-V 产品技术，Mac 平台上使用的是 Hypervisor.framework （框架）产品技术。</p>
 <h4 id="_1">参考链接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p>https://www.cnblogs.com/xiaoyangjia/p/11388806.html</p>
-<p>https://www.wkcto.com/article/detail/662</p>
-<p>https://blog.csdn.net/qq_43286578/article/details/105160725</p>
-<p>https://learnku.com/server/t/42179</p>
-<p>https://www.jianshu.com/p/f11077d7b301</p>
+<p><a href="https://www.cnblogs.com/xiaoyangjia/p/11388806.html">https://www.cnblogs.com/xiaoyangjia/p/11388806.html</a></p>
+<p><a href="https://www.wkcto.com/article/detail/662">https://www.wkcto.com/article/detail/662</a></p>
+<p><a href="https://blog.csdn.net/qq_43286578/article/details/105160725">https://blog.csdn.net/qq_43286578/article/details/105160725</a></p>
+<p><a href="https://learnku.com/server/t/42179">https://learnku.com/server/t/42179</a></p>
+<p><a href="https://www.jianshu.com/p/f11077d7b301">https://www.jianshu.com/p/f11077d7b301</a></p>
 
 
 
@@ -10416,6 +10416,12 @@ Docker events ：Docker 事件是一个命令，用于观察显示运行中的 D
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

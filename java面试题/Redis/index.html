@@ -4833,6 +4833,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4947,20 +4961,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10381,7 +10381,7 @@
 2、单线程，省去线程切换、锁竞争的开销；
 3、非阻塞 IO 模型，epoll。</p>
 <h4 id="8redis">8.Redis 如何实现分布式锁？<a class="headerlink" href="#8redis" title="Permanent link">&para;</a></h4>
-<p>详见：https://www.cnblogs.com/wlwl/p/11651409.html</p>
+<p>详见：<a href="https://www.cnblogs.com/wlwl/p/11651409.html">https://www.cnblogs.com/wlwl/p/11651409.html</a></p>
 <h4 id="9redis">9.Redis 是单线程还是多线程？<a class="headerlink" href="#9redis" title="Permanent link">&para;</a></h4>
 <p>Redis6.0 采用多线程 IO，不过命令的执行还是单线程的。
 Redis6.0 之前，IO 线程和执行线程都是单线程的。</p>
@@ -10470,7 +10470,7 @@ AOF：以协议文本方式，将所有对数据库进行过写入的命令和�
 如果槽位正在迁移中，那么 redis 集群会返回 asking 指令给客户端，这是临时纠正，客户端不会刷新本地的节点槽位映射关系</p>
 <h4 id="23redis">23.Redis 集群各个节点之间是怎么保持数据一致性的？<a class="headerlink" href="#23redis" title="Permanent link">&para;</a></h4>
 <p>主要考察点是 Redis 的 Gossip 协议。
-详见：https://mp.weixin.qq.com/s/dW0I29Sw86lU0qHpxyhdmw</p>
+详见：<a href="https://mp.weixin.qq.com/s/dW0I29Sw86lU0qHpxyhdmw">https://mp.weixin.qq.com/s/dW0I29Sw86lU0qHpxyhdmw</a></p>
 <h4 id="24-redis">24.用 Redis 做延时队列，具体应该怎么实现？<a class="headerlink" href="#24-redis" title="Permanent link">&para;</a></h4>
 <p>可以使用 Zset 实现。member 是任务描述，score 是执行时间，然后用定时器定时去扫描，一旦有执行时间小于或等于当前时间的任务，就立即执行。</p>
 <h4 id="25redis-string">25.Redis String 的内部编码有哪些？<a class="headerlink" href="#25redis-string" title="Permanent link">&para;</a></h4>
@@ -10520,8 +10520,8 @@ AOF：以协议文本方式，将所有对数据库进行过写入的命令和�
 <p>尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。</p>
 <p>比如你的 web 系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码设置单独的 key,而是应该把这个用户的所有信息存储到一张散列表里面。</p>
 <h4 id="_1">参考链接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p>http://blog.itpub.net/31545684/viewspace-2213990/</p>
-<p>https://blog.csdn.net/weixin_34081595/article/details/92420220</p>
+<p><a href="http://blog.itpub.net/31545684/viewspace-2213990/">http://blog.itpub.net/31545684/viewspace-2213990/</a></p>
+<p><a href="https://blog.csdn.net/weixin_34081595/article/details/92420220">https://blog.csdn.net/weixin_34081595/article/details/92420220</a></p>
 
 
 
@@ -10607,6 +10607,12 @@ AOF：以协议文本方式，将所有对数据库进行过写入的命令和�
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

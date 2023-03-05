@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10184,9 +10184,9 @@
 <h4 id="_7">针对数据传输不需要经过应用程序地址空间的零拷贝技术<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <h6 id="mmap">利用 mmap()<a class="headerlink" href="#mmap" title="Permanent link">&para;</a></h6>
 <p>在 Linux 中，减少拷贝次数的一种方法是调用 mmap() 来代替调用 read，比如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tmp_buf = mmap(file, len);
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>write(socket, tmp_buf, len);
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tmp_buf = mmap(file, len);
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>write(socket, tmp_buf, len);
+</span></code></pre></div>
 <p>首先，应用程序调用了 mmap() 之后，数据会先通过 DMA 拷贝到操作系统内核的缓冲区中去。接着，应用程序跟操作系统共享这个缓冲区，这样，操作系统内核和应用程序存储空间就不需要再进行任何的数据拷贝操作。应用程序调用了 write() 之后，操作系统内核将数据从原来的内核缓冲区中拷贝到与 socket 相关的内核缓冲区中。接下来，数据从内核 socket 缓冲区拷贝到协议引擎中去，这是第三次数据拷贝操作。</p>
 <p><img alt="利用 mmap() 代替 read()" src="../../image/c16/zc-3.png" /></p>
 <p>通过使用 mmap() 来代替 read(), 已经可以减半操作系统需要进行数据拷贝的次数。当大量数据需要传输的时候，这样做就会有一个比较好的效率。但是，这种改进也是需要代价的，使用 mma()p 其实是存在潜在的问题的。当对文件进行了内存映射，然后调用 write() 系统调用，如果此时其他的进程截断了这个文件，那么 write() 系统调用将会被总线错误信号 SIGBUS 中断，因为此时正在执行的是一个错误的存储访问。这个信号将会导致进程被杀死，解决这个问题可以通过以下这两种方法：</p>
@@ -10214,8 +10214,8 @@
 <p>splice() 系统调用和 sendfile() 非常类似，用户应用程序必须拥有两个已经打开的文件描述符，一个用于表示输入设备，一个用于表示输出设备。与 sendfile() 不同的是，splice() 允许任意两个文件之间互相连接，而并不只是文件到 socket 进行数据传输。对于从一个文件描述符发送数据到 socket 这种特例来说，一直都是使用 sendfile() 这个系统调用，而 splice 一直以来就只是一种机制，它并不仅限于 sendfile() 的功能。也就是说，sendfile() 只是 splice() 的一个子集，在 Linux 2.6.23 中，sendfile() 这种机制的实现已经没有了，但是这个 API 以及相应的功能还存在，只不过 API 以及相应的功能是利用了 splice() 这种机制来实现的。</p>
 <p>在数据传输的过程中，splice() 机制交替地发送相关的文件描述符的读写操作，并且可以将读缓冲区重新用于写操作。它也利用了一种简单的流控制，通过预先定义的水印（ watermark ）来阻塞写请求。有实验表明，利用这种方法将数据从一个磁盘传输到另一个磁盘会增加 30% 到 70% 的吞吐量，数据传输的过程中， CPU 的负载也会减少一半。</p>
 <p>Linux 2.6.17 内核引入了 splice() 系统调用，但是，这个概念在此之前 ] 其实已经存在了很长一段时间了。1988 年，Larry McVoy 提出了这个概念，它被看成是一种改进服务器端系统的 I/O 性能的一种技术，尽管在之后的若干年中经常被提及，但是 splice 系统调用从来没有在主流的 Linux 操作系统内核中实现过，一直到 Linux 2.6.17 版本的出现。splice 系统调用需要用到四个参数，其中两个是文件描述符，一个表示文件长度，还有一个用于控制如何进行数据拷贝。splice 系统调用可以同步实现，也可以使用异步方式来实现。在使用异步方式的时候，用户应用程序会通过信号 SIGIO 来获知数据传输已经终止。splice() 系统调用的接口如下所示：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>long splice(int fdin, int fdout, size_t len, unsigned int flags);
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>long splice(int fdin, int fdout, size_t len, unsigned int flags);
+</span></code></pre></div>
 <p>调用 splice() 系统调用会导致操作系统内核从数据源 fdin 移动最多 len 个字节的数据到 fdout 中去，这个数据的移动过程只是经过操作系统内核空间，需要最少的拷贝次数。使用 splice() 系统调用需要这两个文件描述符中的一个必须是用来表示一个管道设备的。不难看出，这种设计具有局限性，Linux 的后续版本针对这一问题将会有所改进。参数 flags 用于表示拷贝操作的执行方法，当前的 flags 有如下这些取值：</p>
 <ul>
 <li>SPLICE_F_NONBLOCK：splice 操作不会被阻塞。然而，如果文件描述符没有被设置为不可被阻塞方式的 I/O ，那么调用 splice 有可能仍然被阻塞。</li>
@@ -10223,9 +10223,9 @@
 <li>SPLICE_F_MOVE：如果输出是文件，这个值则会使得操作系统内核尝试从输入管道缓冲区直接将数据读入到输出地址空间，这个数据传输过程没有任何数据拷贝操作发生。</li>
 </ul>
 <p>Splice() 系统调用利用了 Linux 提出的管道缓冲区（ pipe buffer ）机制，这就是为什么这个系统调用的两个文件描述符参数中至少有一个必须要指代管道设备的原因。为了支持 splice 这种机制，Linux 在用于设备和文件系统的 file_operations 结构中增加了下边这两个定义：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssize_t (*splice_write)(struct inode *pipe, strucuct file *out, size_t len, unsigned int flags);
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>ssize_t (*splice_read)(struct inode *in, strucuct file *pipe, size_t len, unsigned int flags);
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssize_t (*splice_write)(struct inode *pipe, strucuct file *out, size_t len, unsigned int flags);
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>ssize_t (*splice_read)(struct inode *in, strucuct file *pipe, size_t len, unsigned int flags);
+</span></code></pre></div>
 <p>这两个新的操作可以根据 flags 的设定在 pipe 和 in 或者 out 之间移动 len 个字节。Linux 文件系统已经实现了具有上述功能并且可以使用的操作，而且还实现了一个 generic_splice_sendpage() 函数用于和 socket 之间的接合。</p>
 <h4 id="_8">对应用程序地址空间和内核之间的数据传输进行优化的零拷贝技术<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>前面提到的几种零拷贝技术都是通过尽量避免用户应用程序和操作系统内核缓冲区之间的数据拷贝来实现的，使用上面那些零拷贝技术的应用程序通常都要局限于某些特殊的情况：要么不能在操作系统内核中处理数据，要么不能在用户地址空间中处理数据。而这一小节提出的零拷贝技术保留了传统在用户应用程序地址空间和操作系统内核地址空间之间传递数据的技术，但却在传输上进行优化。我们知道，数据在系统软件和硬件之间的传递可以通过 DMA 传输来提高效率，但是对于用户应用程序和操作系统之间进行数据传输这种情况来说，并没有类似的工具可以使用。本节介绍的技术就是针对这种情况提出来的。</p>
@@ -10275,16 +10275,16 @@
 <p>本系列文章的目的是想帮助读者理清这些出现在 Linux 操作系统中的零拷贝技术都是从何种角度来帮助改善数据传输过程中遇到的性能问题的。关于各种零拷贝技术的具体实现细节，本系列文章没有做详细描述。同时，零拷贝技术一直是在不断地发展和完善当中的，本系列文章并没有涵盖 Linux 上出现的所有零拷贝技术。</p>
 <h2 id="_12">相关主题<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Zero Copy I: User-Mode Perspective, Linux Journal (2003), http://www.linuxjournal.com/node/6345描述了几种 Linux 操作系统中存在的零拷贝技术。</li>
-<li>在 http://www.ibm.com/developerworks/cn/aix/library/au-tcpsystemcalls/这篇文章中可以找到关于 TCP 系统调用序列的介绍。</li>
+<li>Zero Copy I: User-Mode Perspective, Linux Journal (2003), <a href="http://www.linuxjournal.com/node/6345描述了几种">http://www.linuxjournal.com/node/6345描述了几种</a> Linux 操作系统中存在的零拷贝技术。</li>
+<li>在 <a href="http://www.ibm.com/developerworks/cn/aix/library/au-tcpsystemcalls/这篇文章中可以找到关于">http://www.ibm.com/developerworks/cn/aix/library/au-tcpsystemcalls/这篇文章中可以找到关于</a> TCP 系统调用序列的介绍。</li>
 <li>关于 Linux 中直接 I/O 技术的设计与实现请参考 developerWorks 上的文章 ”Linux 中直接 I/O 机制的介绍”。</li>
-<li>http://lwn.net/Articles/28548/上可以找到 Linux 上零拷贝技术中关于用户地址空间访问技术的介绍。</li>
-<li>http://articles.techrepublic.com.com/5100-10878_11-1044112.html?tag=content;leftCol，这篇文章描述了如何利用 sendfile() 优化数据传输的介绍。</li>
-<li>关于 splice() 系统调用的介绍，可以参考 http://lwn.net/Articles/178199/。</li>
-<li>http://en.scientificcommons.org/43480276这篇文章介绍了如何通过在操作系统内核中直接传输数据来提高 I/O 的性能以及 CPU 的可用性，并详细描述了 splice 系统调用如何在用户应用程序不参与的情况下进行异步数据传输。</li>
-<li>在 Understanding the Linux Kernel(3rd Edition) 中，有关于 Linux 内核的实现。</li>
-<li>http://pages.cs.wisc.edu/~cao/cs736/slides/cs736-class18.ps这篇文章提出并详细介绍了 fbufs 这种用于 I/O 缓冲区管理的机制，以及基于共享存储的数据传输机制。</li>
-<li>http://www.cs.inf.ethz.ch/group/stricker/sada/archive/chihaia.pdf，这篇文章列举了一些 Linux 中出现的零拷贝技术，并在测试系统上实现了 fbufs 技术。</li>
+<li><a href="http://lwn.net/Articles/28548/上可以找到">http://lwn.net/Articles/28548/上可以找到</a> Linux 上零拷贝技术中关于用户地址空间访问技术的介绍。</li>
+<li><a href="http://articles.techrepublic.com.com/5100-10878_11-1044112.html?tag=content;leftCol">http://articles.techrepublic.com.com/5100-10878_11-1044112.html?tag=content;leftCol</a>，这篇文章描述了如何利用 sendfile() 优化数据传输的介绍。</li>
+<li>关于 splice() 系统调用的介绍，可以参考 <a href="http://lwn.net/Articles/178199/">http://lwn.net/Articles/178199/</a>。</li>
+<li><a href="http://en.scientificcommons.org/43480276这篇文章介绍了如何通过在操作系统内核中直接传输数据来提高">http://en.scientificcommons.org/43480276这篇文章介绍了如何通过在操作系统内核中直接传输数据来提高</a> I/O 的性能以及 CPU 的可用性，并详细描述了 splice 系统调用如何在用户应用程序不参与的情况下进行异步数据传输。</li>
+<li>在 Understanding the Linux Kernel(3<sup>rd</sup> Edition) 中，有关于 Linux 内核的实现。</li>
+<li><a href="http://pages.cs.wisc.edu/~cao/cs736/slides/cs736-class18.ps这篇文章提出并详细介绍了">http://pages.cs.wisc.edu/~cao/cs736/slides/cs736-class18.ps这篇文章提出并详细介绍了</a> fbufs 这种用于 I/O 缓冲区管理的机制，以及基于共享存储的数据传输机制。</li>
+<li><a href="http://www.cs.inf.ethz.ch/group/stricker/sada/archive/chihaia.pdf">http://www.cs.inf.ethz.ch/group/stricker/sada/archive/chihaia.pdf</a>，这篇文章列举了一些 Linux 中出现的零拷贝技术，并在测试系统上实现了 fbufs 技术。</li>
 </ul>
 
 
@@ -10371,6 +10371,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

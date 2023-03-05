@@ -4639,6 +4639,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4753,20 +4767,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9991,12 +9991,12 @@ Producer 向 broker push 消息；Consumer 从 broker pull 消息（pull 模式�
 </ul>
 <h3 id="_3">消息的有序性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li>https://github.com/chenryn/logstash-best-practice-cn/blob/master/contrib_plugins/kafka.md</li>
-<li>https://github.com/chenryn/ELKstack-guide-cn/blob/master/logstash/scale/kafka.md</li>
-<li>http://blog.csdn.net/chunlongyu/article/details/53977819</li>
-<li>http://www.cnblogs.com/intsmaze/p/6386616.html</li>
-<li>http://zqhxuyuan.github.io/2016/02/20/Kafka-Consumer-New/</li>
-<li>http://zqhxuyuan.github.io/2016/10/27/Kafka-Definitive-Guide-cn-04/</li>
+<li><a href="https://github.com/chenryn/logstash-best-practice-cn/blob/master/contrib_plugins/kafka.md">https://github.com/chenryn/logstash-best-practice-cn/blob/master/contrib_plugins/kafka.md</a></li>
+<li><a href="https://github.com/chenryn/ELKstack-guide-cn/blob/master/logstash/scale/kafka.md">https://github.com/chenryn/ELKstack-guide-cn/blob/master/logstash/scale/kafka.md</a></li>
+<li><a href="http://blog.csdn.net/chunlongyu/article/details/53977819">http://blog.csdn.net/chunlongyu/article/details/53977819</a></li>
+<li><a href="http://www.cnblogs.com/intsmaze/p/6386616.html">http://www.cnblogs.com/intsmaze/p/6386616.html</a></li>
+<li><a href="http://zqhxuyuan.github.io/2016/02/20/Kafka-Consumer-New/">http://zqhxuyuan.github.io/2016/02/20/Kafka-Consumer-New/</a></li>
+<li><a href="http://zqhxuyuan.github.io/2016/10/27/Kafka-Definitive-Guide-cn-04/">http://zqhxuyuan.github.io/2016/10/27/Kafka-Definitive-Guide-cn-04/</a></li>
 </ul>
 <p>kafka 的消息模型是对 topic 分区以达到分布式效果。每个 topic 下的不同的 partitions (区)只能有一个 Owner 去消费。所以只有多个分区后才能启动多个消费者，对应不同的区去消费。其中协调消费部分是由 server 端协调而成。使用者不必考虑太多。只是消息的消费是无序的。</p>
 <p>总结：如果想保证消息的顺序，那就用一个 partition。 kafka 的每个 partition 只能同时被同一个 group 中的一个 consumer 消费。</p>
@@ -10096,6 +10096,12 @@ Producer 向 broker push 消息；Consumer 从 broker pull 消息（pull 模式�
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

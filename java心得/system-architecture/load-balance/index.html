@@ -4646,6 +4646,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4760,20 +4774,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9951,7 +9951,7 @@
 <h3 id="1">1、随机算法<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>从可用的节点中，随机挑选一个节点来访问</p>
 <p>一般通过生成一个随机数来实现</p>
-<p>https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/RandomLoadBalance.java</p>
+<p><a href="https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/RandomLoadBalance.java">https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/RandomLoadBalance.java</a></p>
 <p>适用场景：</p>
 <p>实现比较简单，在请求量远超可用服务节点数量的情况下，各个服务节点被访问的概率基本相同，主要应用在各个服务节点的性能差异不大的情况下。</p>
 <h3 id="2">2、轮询算法<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
@@ -9960,7 +9960,7 @@
 务有 10 个节点，放到数组里就是一个大小为 10 的数组，这样的话就可以从序号为 0 的节点开始访
 问，访问后序号自动加 1，下一次就会访问序号为 1 的节点，以此类推。</p>
 <p>轮询算法能够保证所有节点被访问到的概率是相同的。</p>
-<p>https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/RoundRobinLoadBalance.java</p>
+<p><a href="https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/RoundRobinLoadBalance.java">https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/RoundRobinLoadBalance.java</a></p>
 <p>适用场景：</p>
 <p>跟随机算法类似，各个服务节点被访问的概率也基本相同，也主要应用在各个服务节点性能差异不大的情况下。</p>
 <h3 id="3">3、加权轮询算法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
@@ -9975,7 +9975,7 @@
 <p>在应用加权轮询算法的时候，根据我的经验，要尽可能保证生产的序列的均匀，如果生成的不均匀会
 造成节点访问失衡，比如刚才的例子，如果生成的序列是{a、a、a、b、b、c}，就会导致前 3 次访
 问的节点都是 a。</p>
-<p>https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/ConfigurableWeightLoadBalance.java</p>
+<p><a href="https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/ConfigurableWeightLoadBalance.java">https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/ConfigurableWeightLoadBalance.java</a></p>
 <p>适用场景：</p>
 <p>主要被用在服务节点性能差异比较大的情况。比如经常会出现一种情况，因为采购时间
 的不同，新的服务节点的性能往往要高于旧的节点，这个时候可以给新的节点设置更高的权重，
@@ -9986,7 +9986,7 @@
 请求慢，而连接数小的节点，可以认为是处理请求快。所以在挑选节点时，可以以连接数为依据，选
 择连接数最少的节点访问。</p>
 <p>在实现时，需要记录跟每一个节点的连接数，这样在选择节点时，才能比较出连接数最小的节点。</p>
-<p>https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/ActiveWeightLoadBalance.java</p>
+<p><a href="https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/ActiveWeightLoadBalance.java">https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/ActiveWeightLoadBalance.java</a></p>
 <p>适用场景：</p>
 <p>与加权轮询算法预先定义好每个节点的访问权重不同，采用最少活跃连接算
 法，客户端同服务端节点的连接数是在时刻变化的，理论上连接数越少代表此时服务端节点越空
@@ -9996,7 +9996,7 @@
 <p>一致性 hash 算法，是通过某个 hash 函数，把同一个来源的请求都映射到同一个节点上。一致性
 hash 算法最大的特点就是同一个来源的请求，只会映射到同一个节点上，可以说是具有记忆功能。
 只有当这个节点不可用时，请求才会被分配到相邻的可用节点上。</p>
-<p>https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/ConsistentHashLoadBalance.java</p>
+<p><a href="https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/ConsistentHashLoadBalance.java">https://github.com/weibocom/motan/blob/master/motan-core/src/main/java/com/weibo/api/motan/cluster/loadbalance/ConsistentHashLoadBalance.java</a></p>
 <p>适用场景：</p>
 <p>因为它能够保证同一个客户端的请求始终访问同一个服务节点，所以适合服务端节点处理不同客户端请求差异较大的场景。比如服务端缓存里保存着客户端的请求结果，如果同一客户端一直访问一个服务节点，那么就可以一直从缓存中获取数据。</p>
 <h3 id="6">6、自适应最优选择算法<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
@@ -10004,7 +10004,7 @@ hash 算法最大的特点就是同一个来源的请求，只会映射到同一
 去更新这个快照。在发起请求时，根据“二八原则”，把服务节点分成两部分，找出 20% 的那部分
 响应最慢的节点，然后降低权重。这样的话，客户端就能够实时的根据自身访问每个节点性能的快
 慢，动态调整访问最慢的那些节点的权重，来减少访问量，从而可以优化长尾请求。</p>
-<p>由此可见，自适应最优选择算法是对加权轮询算法的改良，可以看作是一种<strong>动态加权轮询算法</strong>。它的
+<p>由此可见，自适应最优选择算法是对加权轮询算法的改良，可以看作是一种**动态加权轮询算法**。它的
 实现关键之处就在于两点：第一点是每隔一段时间获取客户端同每个服务节点之间调用的平均性能统
 计；第二点是按照这个性能统计对服务节点进行排序，对排在性能倒数 20% 的那部分节点赋予一个
 较低的权重，其余的节点赋予正常的权重。</p>
@@ -10100,6 +10100,12 @@ hash 算法最大的特点就是同一个来源的请求，只会映射到同一
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -4646,6 +4646,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4760,20 +4774,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9953,107 +9953,107 @@
 <p>ab 命令对发出负载的计算机要求很低，既不会占用很多 CPU，也不会占用太多的内存，但却会给目标服务器造成巨大的负载，因此是某些 DDOS 攻击之必备良药，老少皆宜。自己使用也须谨慎。否则一次上太多的负载，造成目标服务器直接因内存耗光死机，而不得不硬重启，得不偿失。</p>
 <h5 id="linux-ab-web">采用 linux 的 ab 命令执行 web 接口性能测试<a class="headerlink" href="#linux-ab-web" title="Permanent link">&para;</a></h5>
 <p>Mac OS X 中配置 Apache</p>
-<p>参考 http://www.cnblogs.com/snandy/archive/2012/11/13/2765381.html</p>
+<p>参考 <a href="http://www.cnblogs.com/snandy/archive/2012/11/13/2765381.html">http://www.cnblogs.com/snandy/archive/2012/11/13/2765381.html</a></p>
 <h5 id="mac-apache">mac 中应该是自带了 Apache<a class="headerlink" href="#mac-apache" title="Permanent link">&para;</a></h5>
 <p>终端查看 mac 版本</p>
 <p>more /System/Library/CoreServices/SystemVersion.plist</p>
 <p>显示：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;key&gt;ProductVersion&lt;/key&gt;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;string&gt;10.9.3&lt;/string&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;key&gt;ProductVersion&lt;/key&gt;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&lt;string&gt;10.9.3&lt;/string&gt;
+</span></code></pre></div>
 <p>Apache 启动</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo apachectl start
-</code></pre></div>
-<p>打开 Safari 浏览器地址栏输入 “http://localhost”，可以看到内容为“It works!”的页面。表示启动成功。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo apachectl start
+</span></code></pre></div>
+<p>打开 Safari 浏览器地址栏输入 “<a href="http://localhost">http://localhost</a>”，可以看到内容为“It works!”的页面。表示启动成功。</p>
 <h5 id="httpd-2410">下载安装 httpd-2.4.10<a class="headerlink" href="#httpd-2410" title="Permanent link">&para;</a></h5>
-<p>下载链接：http://httpd.apache.org/download.cgi</p>
+<p>下载链接：<a href="http://httpd.apache.org/download.cgi">http://httpd.apache.org/download.cgi</a></p>
 <h5 id="ab-web">使用 ab 进行 web 接口性能测试<a class="headerlink" href="#ab-web" title="Permanent link">&para;</a></h5>
 <p>终端进入到 httpd-2.4.10/support 目录</p>
 <p>cd /Users/onlyone/software/httpd-2.4.27</p>
-<p>ab -r -n 200 -c 10 http://localhost:8092/data/get1</p>
+<p>ab -r -n 200 -c 10 <a href="http://localhost:8092/data/get1">http://localhost:8092/data/get1</a></p>
 <p>-n：请求数</p>
 <p>-c：并发数</p>
 <p>注意：压测时如果报错：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Benchmarking localhost (be patient)
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>socket: Too many open files in system (23)
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Total of 327 requests completed
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Benchmarking localhost (be patient)
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>socket: Too many open files in system (23)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Total of 327 requests completed
+</span></code></pre></div>
 <p>mac 或 linux 系统有文件限制，结果文件数超过最大限制，导致程序异常。</p>
 <p>ulimit -a</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>-t: cpu time (seconds)              unlimited
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>-f: file size (blocks)              unlimited
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>-d: data seg size (kbytes)          unlimited
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>-s: stack size (kbytes)             8192
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>-c: core file size (blocks)         0
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>-v: address space (kbytes)          unlimited
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>-l: locked-in-memory size (kbytes)  unlimited
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>-u: processes                       709
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>-n: file descriptors                327  (文件数)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>-t: cpu time (seconds)              unlimited
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>-f: file size (blocks)              unlimited
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>-d: data seg size (kbytes)          unlimited
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>-s: stack size (kbytes)             8192
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>-c: core file size (blocks)         0
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>-v: address space (kbytes)          unlimited
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>-l: locked-in-memory size (kbytes)  unlimited
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>-u: processes                       709
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>-n: file descriptors                327  (文件数)
+</span></code></pre></div>
 <p>调整文件系统值</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ulimit -n 8192
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ulimit -n 8192
+</span></code></pre></div>
 <h5 id="ab_2">ab 压测结果分析<a class="headerlink" href="#ab_2" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt;
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Licensed to The Apache Software Foundation, http://www.apache.org/
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Benchmarking 192.168.0.10 (be patient)
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Completed 100 requests
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Completed 200 requests
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Completed 300 requests
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>Completed 400 requests
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Completed 500 requests
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Completed 600 requests
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>Completed 700 requests
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Completed 800 requests
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>Finished 800 requests
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>Server Software:        Microsoft-HTTPAPI/2.0
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>Server Hostname:        192.168.0.10
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>Server Port:            80
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>Document Path:          /
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>Document Length:        315 bytes       HTTP响应数据的正文长度
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>Concurrency Level:      800
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>Time taken for tests:   0.914 seconds    所有这些请求处理完成所花费的时间
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>Complete requests:      800             完成请求数
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>Failed requests:        0                失败请求数
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>Write errors:           0
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>Non-2xx responses:      800
-<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>Total transferred:      393600 bytes     网络总传输量
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>HTML transferred:       252000 bytes     HTML内容传输量
-<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>Requests per second:    875.22 [#/sec] (mean) 吞吐量-每秒请求数
-<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>Time per request:       914.052 [ms] (mean)  服务器收到请求，响应页面要花费的时间
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>Time per request:       1.143 [ms] (mean, across all concurrent requests) 并发的每个请求平均消耗时间
-<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>Transfer rate:          420.52 [Kbytes/sec] received 平均每秒网络上的流量，可以帮助排除是否存在网络流量过大导致响应时间延长的问题
-<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
-<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
-<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>网络上消耗的时间的分解：
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>Connection Times (ms)
-<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>              min  mean[+/-sd] median   max
-<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>Connect:        0    1   0.5      1       3
-<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>Processing:   245  534 125.2    570     682
-<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>Waiting:       11  386 189.1    409     669
-<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>Total:        246  535 125.0    571     684
-<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>
-<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>整个场景中所有请求的响应情况。在场景中每个请求都有一个响应时间
-<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>其中 50％ 的用户响应时间小于 571 毫秒
-<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>80 ％ 的用户响应时间小于 652 毫秒
-<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>最大的响应时间小于 684 毫秒
-<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>Percentage of the requests served within a certain time (ms)
-<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>  50%    571
-<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>  66%    627
-<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>  75%    646
-<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>  80%    652
-<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>  90%    666
-<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>  95%    677
-<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>  98%    681
-<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>  99%    682
-<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>100%    684 (longest request)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>This is ApacheBench, Version 2.3 &lt;$Revision: 655654 $&gt;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Licensed to The Apache Software Foundation, http://www.apache.org/
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Benchmarking 192.168.0.10 (be patient)
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Completed 100 requests
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Completed 200 requests
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Completed 300 requests
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>Completed 400 requests
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Completed 500 requests
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Completed 600 requests
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>Completed 700 requests
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Completed 800 requests
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>Finished 800 requests
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>Server Software:        Microsoft-HTTPAPI/2.0
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>Server Hostname:        192.168.0.10
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>Server Port:            80
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>Document Path:          /
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>Document Length:        315 bytes       HTTP响应数据的正文长度
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>Concurrency Level:      800
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>Time taken for tests:   0.914 seconds    所有这些请求处理完成所花费的时间
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>Complete requests:      800             完成请求数
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>Failed requests:        0                失败请求数
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>Write errors:           0
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>Non-2xx responses:      800
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>Total transferred:      393600 bytes     网络总传输量
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>HTML transferred:       252000 bytes     HTML内容传输量
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>Requests per second:    875.22 [#/sec] (mean) 吞吐量-每秒请求数
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>Time per request:       914.052 [ms] (mean)  服务器收到请求，响应页面要花费的时间
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>Time per request:       1.143 [ms] (mean, across all concurrent requests) 并发的每个请求平均消耗时间
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>Transfer rate:          420.52 [Kbytes/sec] received 平均每秒网络上的流量，可以帮助排除是否存在网络流量过大导致响应时间延长的问题
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>网络上消耗的时间的分解：
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>Connection Times (ms)
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>              min  mean[+/-sd] median   max
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>Connect:        0    1   0.5      1       3
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>Processing:   245  534 125.2    570     682
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>Waiting:       11  386 189.1    409     669
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>Total:        246  535 125.0    571     684
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>整个场景中所有请求的响应情况。在场景中每个请求都有一个响应时间
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>其中 50％ 的用户响应时间小于 571 毫秒
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>80 ％ 的用户响应时间小于 652 毫秒
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>最大的响应时间小于 684 毫秒
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>Percentage of the requests served within a certain time (ms)
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>  50%    571
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>  66%    627
+</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>  75%    646
+</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>  80%    652
+</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>  90%    666
+</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>  95%    677
+</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>  98%    681
+</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>  99%    682
+</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>100%    684 (longest request)
+</span></code></pre></div>
 
 
 
@@ -10139,6 +10139,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

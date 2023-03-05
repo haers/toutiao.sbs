@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10161,10 +10161,10 @@
 <li>no：操作系统控制，性能最好，可靠性最差</li>
 </ul>
 <p>为了解决 AOF 文件体检不断增大的问题，用户可以向 Redis 发送 bgrewriteaof 命令，可以将 AOF 文件进行压缩，也可以选择自动触发，在配置文件中配置</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>auto-aof-rewrite-precentage 100
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>auto-aof-rewrite-min-zise 64mb
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>复制代码
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>auto-aof-rewrite-precentage 100
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>auto-aof-rewrite-min-zise 64mb
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>复制代码
+</span></code></pre></div>
 <p><strong><em>优点</em></strong></p>
 <ol>
 <li>实现持久化，数据安全，AOF 持久化可以配置 appendfsync 属性为 always，每进行一次命令操作就记录到 AOF 文件中一次，数据最多丢失一次</li>
@@ -10286,12 +10286,12 @@
 <p>如何解决</p>
 </blockquote>
 <p>通过配置文件修改两个参数</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>min-slaves-to-write 3  # 表示连接到 master 最少 slave 的数量
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>min-slaves-max-lag 10  # 表示slave连接到master最大的延迟时间
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>--------------------新版本写法-----------------
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>min-replicas-to-write 3
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>min-replicas-max-lag  10
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>min-slaves-to-write 3  # 表示连接到 master 最少 slave 的数量
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>min-slaves-max-lag 10  # 表示slave连接到master最大的延迟时间
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>--------------------新版本写法-----------------
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>min-replicas-to-write 3
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>min-replicas-max-lag  10
+</span></code></pre></div>
 <p>配置这两个参数之后，如果发生集群脑裂，原先的 master 节点接收到写入请求就会拒绝，就会减少数据同步之后的数据丢失</p>
 <h2 id="redis_15">redis 应用场景<a class="headerlink" href="#redis_15" title="Permanent link">&para;</a></h2>
 <p><strong>1、数据缓存</strong></p>
@@ -10320,22 +10320,22 @@
 </ul>
 <p><strong>方式 2：bitMap 结构</strong></p>
 <p>Key 的格式为 u:sign:uid:yyyyMM，Value 则采用长度为 4 个字节（32 位）的位图（最大月份只有 31 天）。位图的每一位代表一天的签到，1 表示已签，0 表示未签。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># 用户2月17号签到
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>SETBIT u:sign:1000:201902 16 1 # 偏移量是从0开始，所以要把17减1
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a># 检查2月17号是否签到
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>GETBIT u:sign:1000:201902 16 # 偏移量是从0开始，所以要把17减1
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a># 统计2月份的签到次数
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>BITCOUNT u:sign:1000:201902
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a># 获取2月份前28天的签到数据
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>BITFIELD u:sign:1000:201902 get u28 0
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a># 获取2月份首次签到的日期
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>BITPOS u:sign:1000:201902 1 # 返回的首次签到的偏移量，加上1即为当月的某一天
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>复制代码
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># 用户2月17号签到
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>SETBIT u:sign:1000:201902 16 1 # 偏移量是从0开始，所以要把17减1
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a># 检查2月17号是否签到
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>GETBIT u:sign:1000:201902 16 # 偏移量是从0开始，所以要把17减1
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a># 统计2月份的签到次数
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>BITCOUNT u:sign:1000:201902
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a># 获取2月份前28天的签到数据
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>BITFIELD u:sign:1000:201902 get u28 0
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a># 获取2月份首次签到的日期
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>BITPOS u:sign:1000:201902 1 # 返回的首次签到的偏移量，加上1即为当月的某一天
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>复制代码
+</span></code></pre></div>
 <p><strong><em>两者对比</em></strong></p>
 <ol>
 <li>使用 set 的方式所占用的内存只与数量相关，和存储哪些 ID 无关</li>
@@ -10428,6 +10428,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

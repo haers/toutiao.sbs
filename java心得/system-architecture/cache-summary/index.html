@@ -4694,6 +4694,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4808,20 +4822,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10090,7 +10090,7 @@
 </tbody>
 </table>
 <p><a href="../img/UC2005-Advanced-Innodb-Optimization.pdf">详细压测报告：</a></p>
-<p>https://www.percona.com/blog/files/presentations/UC2005-Advanced-Innodb-Optimization.pdf</p>
+<p><a href="https://www.percona.com/blog/files/presentations/UC2005-Advanced-Innodb-Optimization.pdf">https://www.percona.com/blog/files/presentations/UC2005-Advanced-Innodb-Optimization.pdf</a></p>
 <p>对于一个 PV 上亿的网站，每一次请求涉及多次数据库交互，每天的读写请求量远远超过关系型数据库的处理能力，所以必须通过高效的缓存抵挡大部分的数据请求。</p>
 <h3 id="_1">缓存类型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
@@ -10127,7 +10127,7 @@
 <li>Memcached</li>
 <li>Redis</li>
 </ul>
-<p>更多缓存框架：http://www.oschina.net/project/tag/109/cacheserver</p>
+<p>更多缓存框架：<a href="http://www.oschina.net/project/tag/109/cacheserver">http://www.oschina.net/project/tag/109/cacheserver</a></p>
 <h3 id="_3">更新策略<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>被动失效</li>
@@ -10139,12 +10139,12 @@
 </ul>
 <p>主动更新，很容易理解，就是数据库存储发生变化时，会直接同步更新到 Cache，主要是为了解决 cache 空窗期引发的问题。比如电商的卖家修改商品详情，具有读多写少特点。</p>
 <p>但如果是读多写多，同样会带来另一个问题，就是并发更新。多台应用服务器同时访问一份数据是很正常的，这样就会存在一台服务器读取并修改了缓存数据，但是还没来得及写入的情况下，另一台服务器也读取并修改旧的数据，这时候，后写入的将会覆盖前面的，从而导致数据丢失。解决的方式主要有三种：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    1、锁控制。这种方式一般在客户端实现(在服务端加锁是另外一种情况)，其基本原理就是使用读写锁，即任何线程要调用写方法时，先要获取一个排他锁，阻塞住所有的其他访问，等自己完全修改完后才能释放。如果遇到其他线程也在修改或读取数据，那么则需要等待。锁控制虽然是一种方案，但是很少有真的这样去做的，其缺点显而易见，其并发性只存在于读操作之间，只要有写操作存在，就只能串行。
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    2、单版本机制（乐观锁）。为每份数据保存一个版本号，当缓存数据写入时，需要回传这个版本号，然后服务端将传入的版本号和数据当前的版本号进行比对，如果等于当前版本号，则成功写入，否则失败。这样解决方式比较简单;但是增加了高并发下客户端的写失败概率;
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    3、多版本机制。即存储系统为每个数据保存多份，每份都有自己的版本号，互不冲突，然后通过一定的策略来定期合并，再或者就是交由客户端自己去选择读取哪个版本的数据。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    1、锁控制。这种方式一般在客户端实现(在服务端加锁是另外一种情况)，其基本原理就是使用读写锁，即任何线程要调用写方法时，先要获取一个排他锁，阻塞住所有的其他访问，等自己完全修改完后才能释放。如果遇到其他线程也在修改或读取数据，那么则需要等待。锁控制虽然是一种方案，但是很少有真的这样去做的，其缺点显而易见，其并发性只存在于读操作之间，只要有写操作存在，就只能串行。
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    2、单版本机制（乐观锁）。为每份数据保存一个版本号，当缓存数据写入时，需要回传这个版本号，然后服务端将传入的版本号和数据当前的版本号进行比对，如果等于当前版本号，则成功写入，否则失败。这样解决方式比较简单;但是增加了高并发下客户端的写失败概率;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    3、多版本机制。即存储系统为每个数据保存多份，每份都有自己的版本号，互不冲突，然后通过一定的策略来定期合并，再或者就是交由客户端自己去选择读取哪个版本的数据。
+</span></code></pre></div>
 <h3 id="_4">序列化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>分布式缓存的本质就是将所有的业务数据对象序列化为字节数组，然后保存到自己的内存中。所使用的序列化方案也自然会成为影响系统性能的关键点之一</p>
 <ul>
@@ -10169,13 +10169,13 @@
 <li>key 定义遵循一定规则，相同业务采用同一前缀</li>
 <li>缓存对象粒度。高内聚低耦合，考虑尽可能复用，不要一个小字段修改导整个大对象全部失效</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>方案一：
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>uid---&gt; 发过的贴子内容列表
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>方案二：
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>uid---&gt;发过的贴子tid列表
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>tid---&gt;贴子内容
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>方案一：
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>uid---&gt; 发过的贴子内容列表
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>方案二：
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>uid---&gt;发过的贴子tid列表
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>tid---&gt;贴子内容
+</span></code></pre></div>
 <ul>
 <li>另外缓存对象大小要控制，不要过大，占用过多带宽。之前遇到过一个业务团队，单 key 下挂了 5M 的大对象，每次用时，从缓存中取出，反序列化，然后取其中一小部分。后来随着业务并发量上升，把网卡打爆，进而影响其它正常业务访问。</li>
 <li>根据业务需求，选择合适的缓存框架，比如 memcache 只支持 kv 对存储，redis 则支持较丰富的数据结构</li>
@@ -10296,6 +10296,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

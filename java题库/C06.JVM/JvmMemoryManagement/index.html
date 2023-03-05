@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10030,7 +10030,7 @@ HostSpot 虚拟机中 1.在 jdk1.7 以及前的版本实现的方法区称为- -
 运行时常量池除了存储编译期常量外，也可以存储在运行时间产生的常量，
 比如 String 类的 intern()方法，作用是 String 维护了一个常量池，如果调用的字符“abc”已经在常量池中，
 则返回池中的字符串地址，否则，新建一个常量加入池中，并返回地址。</p>
-<p>分配在方法区（永久代）中的，<strong>但是 1.7 版本把 字符串常量池 单独拿到了堆空间中 </strong>
+<p>分配在方法区（永久代）中的，**但是 1.7 版本把 字符串常量池 单独拿到了堆空间中 **
 存的内容：用于存放编译期生成的各种字面量以及符号引用，时机可能是静态编译期 也可以是动态编译时候</p>
 <h4 id="_2">堆<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <p>堆区是理解 Java GC 机制最重要的区域。
@@ -10039,7 +10039,7 @@ HostSpot 虚拟机中 1.在 jdk1.7 以及前的版本实现的方法区称为- -
 可以认为 java 中所有通过 new 创建的对象都在此分配。</p>
 <p>对于堆区大小，可以通过参数-Xms 和-Xmx 来控制，-Xms 为 JVM 启动时申请的最新 heap 内存，
 默认为物理内存的 1/64 但小于 1GB;-Xmx 为 JVM 可申请的最大 Heap 内存，
-默认为物理内存的 1/4 但小于 1GB,默认当剩余堆空间小于 40%时，JVM 会增大 Heap 到-Xmx 大小，
+默认为物理内存的 &frac14; 但小于 1GB,默认当剩余堆空间小于 40%时，JVM 会增大 Heap 到-Xmx 大小，
 可通过-XX:MinHeapFreeRadio 参数来控制这个比例；
 当空余堆内存大于 70%时，JVM 会减小 Heap 大小到-Xms 指定大小，
 可通过-XX:MaxHeapFreeRatio 来指定这个比例。对于系统而言，为了避免在运行期间频繁的调整 Heap 大小，
@@ -10139,12 +10139,12 @@ Java 虚拟机栈/本地方法栈——线程私有的，主要存放局部变�
 其他的虚拟机实现并没有永久带这一说法。在 1.7 之前在(JDK1.2 ~ JDK6)的实现中，
 HotSpot 使用永久代实现方法区，HotSpot 使用 GC 分代来实现方法区内存回收，
 可以使用如下参数来调节方法区的大小:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>-XX:PermSize
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>方法区初始大小
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>-XX:MaxPermSize
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>方法区最大大小
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>超过这个值将会抛出OutOfMemoryError异常:java.lang.OutOfMemoryError: PermGen
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>-XX:PermSize
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>方法区初始大小
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>-XX:MaxPermSize
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>方法区最大大小
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>超过这个值将会抛出OutOfMemoryError异常:java.lang.OutOfMemoryError: PermGen
+</span></code></pre></div>
 <h4 id="3">3.元空间<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
 <p>对于 Java8， HotSpots 取消了永久代，那么是不是也就没有方法区了呢？
 当然不是，方法区是一个规范，规范没变，它就一直在。那么取代永久代的就是元空间。
@@ -10189,8 +10189,8 @@ JVM 中除了字符串常量池，8 种基本数据类型中除了两种浮点�
 <p>在 jdk1.6（含）之前也是方法区的一部分，并且其中存放的是字符串的实例；</p>
 <p>在 jdk1.7（含）之后是在堆内存之中，存储的是字符串对象的引用，字符串实例是在堆中；</p>
 <p>jdk1.8 已移除永久代，字符串常量池是在本地内存当中，存储的也只是引用。</p>
-<p>https://docs.oracle.com/javase/specs/jvms/se13/jvms13.pdf
-https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6</p>
+<p><a href="https://docs.oracle.com/javase/specs/jvms/se13/jvms13.pdf">https://docs.oracle.com/javase/specs/jvms/se13/jvms13.pdf</a>
+<a href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6">https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6</a></p>
 <h2 id="class">Class 对象是什么<a class="headerlink" href="#class" title="Permanent link">&para;</a></h2>
 <p>可以简单这么说：Class 对象就是字节码文件存储的内容。所以将字节码加载进入内存中时，即在内存中生成了 Class 对象（Class 对象和普通对象一样，也是存放在堆中；尽管加载进来的类信息是放在方法区当中的，这点要注意！）。</p>
 <p>有 Class 对象，就有 Class 类。</p>
@@ -10213,85 +10213,85 @@ Class 类只存私有构造函数，因此对应 Class 对象只能有 JVM 创�
 Class 类的对象的作用是运行时提供或获得某个对象的类型信息，这点对于反射技术很重要。</p>
 <h2 id="_7">类字面常量<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>java 还提供了另一种方法来生成对 Class 对象的引用。即使用类字面常量，就像这样：Cat.class，这样做不仅更简单，而且更安全，因为它在编译时就会受到检查(因此不需要置于 try 语句块中)。并且根除了对 forName()方法的调用，所有也更高效。类字面量不仅可以应用于普通的类，也可以应用于接口、数组及基本数据类型。</p>
-<div class="highlight"><pre><span></span><code>注意：基本数据类型的Class对象和包装类的Class对象是不一样的
+<div class="language-text highlight"><pre><span></span><code>注意：基本数据类型的Class对象和包装类的Class对象是不一样的
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Class c1 = Integer.class;
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Class c2 = int.class;
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>System.out.println(c1);
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>System.out.println(c2);
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>System.out.println(c1 == c2);
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>/* Output
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>class java.lang.Integer
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>int
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>false
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Class c1 = Integer.class;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Class c2 = int.class;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>System.out.println(c1);
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>System.out.println(c2);
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>System.out.println(c1 == c2);
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>/* Output
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>class java.lang.Integer
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>int
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>false
+</span></code></pre></div>
 <h2 id="oop">oop<a class="headerlink" href="#oop" title="Permanent link">&para;</a></h2>
 <p>详细解释一下，定义这样一个类：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>class Main {
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>class Main {
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>}
+</span></code></pre></div>
 <p>那么当这个类所在的文件被加载，更准确地说，这个类被 ClassLoader 加载到 JVM 中的时候，Hotspot 虚拟机会为这个类在虚拟机内部创建一个叫做 Klass 的数据结构：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>class Klass : public Metadata {
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  friend class VMStructs;
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a> protected:
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  // note: put frequently-used fields together at start of klass structure
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  // for better cache behavior (may not make much of a difference but sure won&#39;t hurt)
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  enum { _primary_super_limit = 8 };
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  jint        _layout_helper;
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  juint       _super_check_offset;
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  Symbol*     _name;
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  Klass*      _secondary_super_cache;
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  // Array of all secondary supertypes
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  Array&lt;Klass*&gt;* _secondary_supers;
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  // Ordered list of all primary supertypes
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>  Klass*      _primary_supers[_primary_super_limit];
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>  // java/lang/Class instance mirroring this class
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>  oop       _java_mirror;
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>  // Superclass
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>  Klass*      _super;
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>  // First subclass (NULL if none); _subklass-&gt;next_sibling() is next one
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>  Klass*      _subklass;
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>  // Sibling link (or NULL); links all subklasses of a klass
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>  Klass*      _next_sibling;
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>  Klass*      _next_link;
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>  // The VM&#39;s representation of the ClassLoader used to load this class.
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>  // Provide access the corresponding instance java.lang.ClassLoader.
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>  ClassLoaderData* _class_loader_data;
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>  jint        _modifier_flags;  // Processed access flags, for use by Class.getModifiers.
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>  AccessFlags _access_flags;    // Access flags. The class/interface distinction is stored here.
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>  // Biased locking implementation and statistics
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>  // (the 64-bit chunk goes first, to avoid some fragmentation)
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>  jlong    _last_biased_lock_bulk_revocation_time;
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>  markOop  _prototype_header;   // Used when biased locking is both enabled and disabled for this type
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>  jint     _biased_lock_revocation_count;
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>  TRACE_DEFINE_KLASS_TRACE_ID;
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>  // Remembered sets support for the oops in the klasses.
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>  jbyte _modified_oops;             // Card Table Equivalent (YC/CMS support)
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>  jbyte _accumulated_modified_oops; // Mod Union Equivalent (CMS support)
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>....
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>class Klass : public Metadata {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  friend class VMStructs;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a> protected:
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  // note: put frequently-used fields together at start of klass structure
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  // for better cache behavior (may not make much of a difference but sure won&#39;t hurt)
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  enum { _primary_super_limit = 8 };
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  jint        _layout_helper;
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  juint       _super_check_offset;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  Symbol*     _name;
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  Klass*      _secondary_super_cache;
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  // Array of all secondary supertypes
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  Array&lt;Klass*&gt;* _secondary_supers;
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  // Ordered list of all primary supertypes
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>  Klass*      _primary_supers[_primary_super_limit];
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>  // java/lang/Class instance mirroring this class
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>  oop       _java_mirror;
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>  // Superclass
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>  Klass*      _super;
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>  // First subclass (NULL if none); _subklass-&gt;next_sibling() is next one
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>  Klass*      _subklass;
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>  // Sibling link (or NULL); links all subklasses of a klass
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>  Klass*      _next_sibling;
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>  Klass*      _next_link;
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>  // The VM&#39;s representation of the ClassLoader used to load this class.
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>  // Provide access the corresponding instance java.lang.ClassLoader.
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>  ClassLoaderData* _class_loader_data;
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>  jint        _modifier_flags;  // Processed access flags, for use by Class.getModifiers.
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>  AccessFlags _access_flags;    // Access flags. The class/interface distinction is stored here.
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>  // Biased locking implementation and statistics
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>  // (the 64-bit chunk goes first, to avoid some fragmentation)
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>  jlong    _last_biased_lock_bulk_revocation_time;
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>  markOop  _prototype_header;   // Used when biased locking is both enabled and disabled for this type
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>  jint     _biased_lock_revocation_count;
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>  TRACE_DEFINE_KLASS_TRACE_ID;
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>  // Remembered sets support for the oops in the klasses.
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>  jbyte _modified_oops;             // Card Table Equivalent (YC/CMS support)
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>  jbyte _accumulated_modified_oops; // Mod Union Equivalent (CMS support)
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>....
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>}
+</span></code></pre></div>
 <p>这个类的完整定义，大家可以去看 hotspot/src/share/vm/oops/klass.hpp。</p>
 <p>我们这里就不再多列了。这些属性已经足够我们讲解的了。</p>
 <p>如果 Main class 被加载，那么虚拟机内部就会为它创建一个 Klass，它的 _name 属性就是字符串 "Main"。</p>
 <p>_primary_supers 代表了这个类的父类。比如，我们看 IOException, 是 Exception 的子类，而 Exception 又是 Throwable 的子类。那么，如果你去看 IOException 的 _primary_supers 属性就会发现，它是这样的：[Throwable, Exception, IOException]，后面 5 位为空。</p>
 <p>其他的属性我们先不看，以后有时间会慢慢再来讲。今天重点说一下 oop，这个我猜是 ordinary object pointer 的缩写，到底是什么的缩写，其实我也不确定。但我能确定的是，这种类型代表是一个真正的 Java 对象。比如说，</p>
-<div class="highlight"><pre><span></span><code>Main m = new Main();
+<div class="language-text highlight"><pre><span></span><code>Main m = new Main();
 </code></pre></div>
 <p>这行语句里创建的 m 在 JVM 中，就是一个 oop，是一个普通的 Java 对象，而 Main 在 JVM 里则是一个 Klass。</p>
 <p>大家理清了这里面的关系了吗？我建议没看懂的，再多看一遍。一般地来说，我不是很鼓励新手学习 JVM 源代码。但是有一些核心概念，如果能加以掌握的话，还是有利于快速掌握概念的本质的。</p>
 <p>好了。说了这么多，才刚来到我们今天的主题：java_mirror。不起眼的一行：</p>
-<div class="highlight"><pre><span></span><code>  // java/lang/Class instance mirroring this class
+<div class="language-text highlight"><pre><span></span><code>  // java/lang/Class instance mirroring this class
   oop       _java_mirror;
 </code></pre></div>
 <p>注释说得很清楚了，这个属性代表的就是本 class 的 Class 对象。举例来说，如果 JVM 加载了 Main 这个类，那么除了为 Main 创建了一个名为"Main"的 Klass，还默默地背后创建一个 object，并且把这个 object 挂到了 Klass 的 _java_mirror 属性上了。</p>
 <p>那我们通过 Java 代码能不能访问到这个背后的对象呢？你肯定已经猜到了，当然能啊，这就是 Main 的 class 对象啊。有两种写法来访问它：</p>
-<div class="highlight"><pre><span></span><code>Class m = Main.class;
+<div class="language-text highlight"><pre><span></span><code>Class m = Main.class;
 Class m = Class.forName(&quot;Main&quot;);
 </code></pre></div>
 <p>这两种方法都能访问到 Main 的 Class object，也就是 Klass 上那个不起眼的_java_mirror。那么这个_java_mirror 上定义的 newInstance 方法，其实最终也是通过 JVM 中的方法来创建真正的对象：</p>
@@ -10303,7 +10303,7 @@ Class m = Class.forName(&quot;Main&quot;);
 <p>如果以上三个条件全部满足，jvm 就会在方法区垃圾回收的时候对类进行卸载，类的卸载过程其实就是在方法区中清空类信息，java 类的整个生命周期就结束了。</p>
 <h2 id="java_1">Java 中的常量池<a class="headerlink" href="#java_1" title="Permanent link">&para;</a></h2>
 <p>Java 中的常量池，实际上分为两种形态：静态常量池和运行时常量池。</p>
-<div class="highlight"><pre><span></span><code> 所谓静态常量池，即*.class文件中的常量池，class文件中的常量池不仅仅包含字符串(数字)字面量，还包含类、方法的信息，占用class文件绝大部分空间。这种常量池主要用于存放两大类常量：字面量(Literal)和符号引用量(Symbolic References)，字面量相当于Java语言层面常量的概念，如文本字符串，声明为final的常量值等，符号引用则属于编译原理方面的概念，包括了如下三种类型的常量：
+<div class="language-text highlight"><pre><span></span><code> 所谓静态常量池，即*.class文件中的常量池，class文件中的常量池不仅仅包含字符串(数字)字面量，还包含类、方法的信息，占用class文件绝大部分空间。这种常量池主要用于存放两大类常量：字面量(Literal)和符号引用量(Symbolic References)，字面量相当于Java语言层面常量的概念，如文本字符串，声明为final的常量值等，符号引用则属于编译原理方面的概念，包括了如下三种类型的常量：
 </code></pre></div>
 <p>类和接口的全限定名
 字段名称和描述符
@@ -10318,7 +10318,7 @@ Class m = Class.forName(&quot;Main&quot;);
 （2）节省运行时间：比较字符串时，==比 equals()快。对于两个引用变量，只用==判断引用是否相等，也就可以判断实际值是否相等。</p>
 <p>因此 public static final String FIANL_VALUE = "fianl value loading"; 字面量 被存储到了常量池中。</p>
 <p>但是不能说所有的静态常用访问都不需要类的加载，这里还要判断这个常量是否属于“编译期常量”，即在编译期即可确定常量值。如果常量值必须在运行时才能确定，如常量值是一个随机值，也会引起类的加载，如下：</p>
-<div class="highlight"><pre><span></span><code>public static final int FINAL_VALUE_INT = new Random(66).nextInt();
+<div class="language-text highlight"><pre><span></span><code>public static final int FINAL_VALUE_INT = new Random(66).nextInt();
 </code></pre></div>
 <h2 id="_9">静态常量和常量<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h4 id="staticfinal">static+final<a class="headerlink" href="#staticfinal" title="Permanent link">&para;</a></h4>
@@ -10416,6 +10416,12 @@ Class m = Class.forName(&quot;Main&quot;);
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9888,7 +9888,7 @@
 <p><img alt="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAABCAYAAACYJC2PAAAAIklEQVQYV2N89+7dfwYoEBQUBLPev3/PQC02NrPJtQ+bPgDdIyrLXIrSMwAAAABJRU5ErkJggg==" /><img alt="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAABCAYAAAA8TpVcAAAAH0lEQVQYV2N89+7df0FBQQYQeP/+PQMyGyzIwEC0GAD0/Q/L4ezaxgAAAABJRU5ErkJggg==" /><img alt="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAABCAYAAACCGM0BAAAAKUlEQVQYV2N89+7df0FBQQYQeP/+PZgGAWQxYtiE9GGTp4UeXG6F2QUARNswyxtqtlAAAAAASUVORK5CYII=" /><img alt="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAABCAYAAAA8TpVcAAAAH0lEQVQYV2N89+7df0FBQQYQeP/+PZgGAWQxQvIwPQDc/Q/LeObL3gAAAABJRU5ErkJggg==" /></p>
 <p></p>
 <p>00:00</p>
-<p><a href="javascript:;">1.0x<em></em></a></p>
+<p><a href="javascript:;">1.0x**</a></p>
 <p>讲述：丁伟 大小：12.90M 时长：14:01</p>
 <p>你好，我是七牛云许式伟。</p>
 <p>在“03 | 汇编：编程语言的诞生”中，我给出了一个架构思考题：</p>
@@ -9938,13 +9938,13 @@
 <p>首先，BIOS 和外置存储上的软件分工的标准是什么？BIOS 是刻在计算机主板 ROM 上的启动程序，它的变更非常麻烦。所以 BIOS 负责的事情最好越少越好，只做最稳定不变的事情。</p>
 <p>我们一一来看当前已知的需求。</p>
 <p><strong>首先是外部设备的驱动程序</strong>：键盘和显示器的驱动程序、外置存储设备的驱动程序。一方面，只要键盘、显示器、外置存储没有大的演进，驱动程序就不变，所以这块是稳定的；另一方面，它们是 BIOS 干其他业务的基础。所以，这个事情 BIOS 必然会做。</p>
-<p><strong>其次是汇编程序编辑器。</strong>编辑器的需求是模糊的，虽然我们知道它支持用户来编写程序，但是整个编辑器的操作范式是什么样的，没有规定。所以它不像是给键盘写一个驱动程序那样，是一个确定性的需求，而有很多额外的交互细节，需要去进一步明确。</p>
+<p>**其次是汇编程序编辑器。**编辑器的需求是模糊的，虽然我们知道它支持用户来编写程序，但是整个编辑器的操作范式是什么样的，没有规定。所以它不像是给键盘写一个驱动程序那样，是一个确定性的需求，而有很多额外的交互细节，需要去进一步明确。</p>
 <p>你可以留意下自己日常使用的编辑器，去试着列一下它们的功能列表。你会发现小小的编辑器，功能远比你接触的大部分常规软件要多得多。</p>
-<p><strong>再次是汇编编译器。</strong>汇编编译器从输入输出来看，似乎需求相对确定。输入的是汇编源代码，输出的是可执行程序。但认真分析你会发现，它实际上也有很大的不确定性。</p>
+<p>**再次是汇编编译器。**汇编编译器从输入输出来看，似乎需求相对确定。输入的是汇编源代码，输出的是可执行程序。但认真分析你会发现，它实际上也有很大的不确定性。</p>
 <p>其一，CPU 会增加指令，这时候汇编指令也会相应地增加。对于大部分应用程序，CPU 新增的指令如果自己用不到，可以当它不存在。但是汇编语言及编译器需要完整呈现 CPU 的能力，因此需要及时跟进。</p>
 <p>其二，虽然汇编指令基本上和机器指令一一对应，但是它毕竟是面向程序员的生产力工具，所以汇编语言还是会演进出一些高阶的语法，比如宏汇编指令。</p>
 <p>所谓宏汇编指令，就是用一个命令去取代一小段汇编指令序列，它和 C 语言里面的宏非常类似。所以汇编语言并不是稳定的东西，它和其他高级语言类似，也会迭代变化。这就意味着汇编编译器也需要相应地迭代变化。</p>
-<p><strong>最后，执行一段保存在外置存储设备中的机器代码程序。</strong>这个需求看似比较明确，但是实际上需求也需要进一步细化。它究竟是基于外置存储的物理地址来执行程序，还是基于文件系统中的文件（文件内容逻辑上连续，但是物理上很可能不连续）来执行程序？</p>
+<p>**最后，执行一段保存在外置存储设备中的机器代码程序。**这个需求看似比较明确，但是实际上需求也需要进一步细化。它究竟是基于外置存储的物理地址来执行程序，还是基于文件系统中的文件（文件内容逻辑上连续，但是物理上很可能不连续）来执行程序？</p>
 <p>实现上，这两者有很大的不同。前者只需要依赖外置存储的驱动程序就可以完成，后者则还需要额外理解文件系统的格式才能做到。</p>
 <p>那么，BIOS 到底怎么把执行控制权交到外置存储呢？</p>
 <p>在学冯·诺依曼结构的时候，我们提到过，CPU 加电启动时，它会从存储的一个固定地址开始执行指令，这个固定地址指向的正是 BIOS 程序。</p>
@@ -10064,6 +10064,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

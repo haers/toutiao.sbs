@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9993,8 +9993,8 @@
 <h1 id="_1">进程和线程的概念、区别及进程线程间通信<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h4 id="_2">进程与线程的概念，以及为什么要有进程线程，其中有什么区别，他们各自又是怎么同步的?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <h5 id="1">1. 基本概念：<a class="headerlink" href="#1" title="Permanent link">&para;</a></h5>
-<p>进程是对运行时程序的封装，是<strong>系统进行资源调度和分配的的基本单位，实现了操作系统的并发</strong>；</p>
-<p>线程是进程的子任务，<strong>是 CPU 调度和分派的基本单位</strong>，<strong>用于保证程序的实时性，实现进程内部的并发；线程是操作系统可识别的最小执行和调度单位</strong>。每个线程都独自占用一个<strong>虚拟处理器</strong>：独自的<strong>寄存器组</strong>，<strong>指令计数器和处理器状态</strong>。每个线程完成不同的任务，但是<strong>共享同一地址空间</strong>（也就是同样的<strong>动态内存，映射文件，目标代码等等</strong>），<strong>打开的文件队列和其他内核资源</strong>。</p>
+<p>进程是对运行时程序的封装，是**系统进行资源调度和分配的的基本单位，实现了操作系统的并发**；</p>
+<p>线程是进程的子任务，<strong>是 CPU 调度和分派的基本单位</strong>，<strong>用于保证程序的实时性，实现进程内部的并发；线程是操作系统可识别的最小执行和调度单位</strong>。每个线程都独自占用一个**虚拟处理器**：独自的**寄存器组**，<strong>指令计数器和处理器状态</strong>。每个线程完成不同的任务，但是**共享同一地址空间**（也就是同样的**动态内存，映射文件，目标代码等等**），<strong>打开的文件队列和其他内核资源</strong>。</p>
 <h5 id="2">2. 区别：<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
 <ol>
 <li><strong>一个线程只能属于一个进程，而一个进程可以有多个线程</strong>，但至少有一个线程。线程依赖于进程而存在。</li>
@@ -10007,17 +10007,17 @@
 <li><strong>进程适应于多核、多机分布；线程适用于多核</strong></li>
 </ol>
 <h5 id="_3">进程间通信的方式：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
-<p>进程间通信主要包括<strong>管道、系统 IPC（包括</strong><a href="https://cloud.tencent.com/product/cmq?from=10680"><strong>消息队列</strong></a><strong>、信号量、信号、共享内存等）、以及套接字 socket</strong>。</p>
+<p>进程间通信主要包括**管道、系统 IPC（包括**<a href="https://cloud.tencent.com/product/cmq?from=10680"><strong>消息队列</strong></a><strong>、信号量、信号、共享内存等）、以及套接字 socket</strong>。</p>
 <h6 id="1_1">1.管道：<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h6>
-<p>管道主要包括<strong>匿名管道和命名管道</strong>:管道可用于具有亲缘关系的父子进程间的通信，命名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信</p>
+<p>管道主要包括**匿名管道和命名管道**:管道可用于具有亲缘关系的父子进程间的通信，命名管道除了具有管道所具有的功能外，它还允许无亲缘关系进程间的通信</p>
 <ul>
 <li>
 <p>1.1 <strong>匿名管道 PIPE</strong>：</p>
 </li>
 <li>
-<p>它是<strong>半双工</strong>的（即数据只能在一个方向上流动），具有固定的读端和写端</p>
+<p>它是**半双工**的（即数据只能在一个方向上流动），具有固定的读端和写端</p>
 </li>
-<li>它<strong>只能用于具有亲缘关系的进程之间的通信</strong>（也是父子进程或者兄弟进程之间）</li>
+<li>它**只能用于具有亲缘关系的进程之间的通信**（也是父子进程或者兄弟进程之间）</li>
 <li>
 <p>它可以看成是一种特殊的文件，<strong>对于它的读写也可以使用普通的 read、write 等函数</strong>。但是它不是普通的文件，并不属于其他任何文件系统，并且只存在于内存中。</p>
 </li>
@@ -10025,9 +10025,9 @@
 <p>1.2 命名管道 FIFO：</p>
 </li>
 <li>
-<p>FIFO<strong>可以在无关的进程之间交换数据</strong></p>
+<p>FIFO**可以在无关的进程之间交换数据**</p>
 </li>
-<li>FIFO 有路径名与之相关联，它<strong>以一种特殊设备文件形式存在于文件系统中</strong>。</li>
+<li>FIFO 有路径名与之相关联，它**以一种特殊设备文件形式存在于文件系统中**。</li>
 </ul>
 <h6 id="2-ipc">2. 系统 IPC：<a class="headerlink" href="#2-ipc" title="Permanent link">&para;</a></h6>
 <ul>
@@ -10035,26 +10035,26 @@
 </ul>
 <p>特点：</p>
 <ol>
-<li>消息队列是<strong>面向记录的</strong>，其中的消息具有特定的格式以及特定的优先级。</li>
-<li>消息队列<strong>独立于发送与接收进程</strong>。进程终止时，消息队列及其内容并不会被删除。</li>
+<li>消息队列是**面向记录的**，其中的消息具有特定的格式以及特定的优先级。</li>
+<li>消息队列**独立于发送与接收进程**。进程终止时，消息队列及其内容并不会被删除。</li>
 <li>
-<p>消息队列<strong>可以实现消息的随机查询</strong>,消息不一定要以先进先出的次序读取,也可以按消息的类型读取。</p>
+<p>消息队列**可以实现消息的随机查询**,消息不一定要以先进先出的次序读取,也可以按消息的类型读取。</p>
 </li>
 <li>
-<p>2.2 信号量 semaphore 信号量（semaphore）与已经介绍过的 IPC 结构不同，它是一个<strong>计数器，可以用来控制多个进程对共享资源的访问</strong>。信号量用于实现进程间的互斥与同步，而不是用于存储进程间通信数据。</p>
+<p>2.2 信号量 semaphore 信号量（semaphore）与已经介绍过的 IPC 结构不同，它是一个**计数器，可以用来控制多个进程对共享资源的访问**。信号量用于实现进程间的互斥与同步，而不是用于存储进程间通信数据。</p>
 </li>
 </ol>
 <p>特点：</p>
 <ol>
-<li>信号量用于<strong>进程间同步</strong>，若要在进程间传递数据需要结合共享内存。</li>
-<li>信号量<strong>基于操作系统的 PV 操作</strong>，程序对信号量的操作都是原子操作。</li>
+<li>信号量用于**进程间同步**，若要在进程间传递数据需要结合共享内存。</li>
+<li>信号量**基于操作系统的 PV 操作**，程序对信号量的操作都是原子操作。</li>
 <li><strong>每次对信号量的 PV 操作不仅限于对信号量值加 1 或减 1，而且可以加减任意正整数</strong>。</li>
 <li><strong>支持信号量组</strong>。</li>
 </ol>
 <h6 id="23-signal">2.3 信号 signal<a class="headerlink" href="#23-signal" title="Permanent link">&para;</a></h6>
 <p>信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。</p>
 <h6 id="24-shared-memory">2.4 共享内存（Shared Memory）<a class="headerlink" href="#24-shared-memory" title="Permanent link">&para;</a></h6>
-<p>它使得<strong>多个进程可以访问同一块内存空间，不同进程可以及时看到对方进程中对共享内存中数据得更新</strong>。这种方式需要依靠某种同步操作，如互斥锁和信号量等</p>
+<p>它使得**多个进程可以访问同一块内存空间，不同进程可以及时看到对方进程中对共享内存中数据得更新**。这种方式需要依靠某种同步操作，如互斥锁和信号量等</p>
 <p>特点：</p>
 <ol>
 <li>共享内存是最快的一种 IPC，因为进程是直接对内存进行存取</li>
@@ -10066,7 +10066,7 @@
 <ul>
 <li>线程间通信的方式: 临界区：通过多线程的串行化来访问公共资源或一段代码，速度快，适合控制数据访问； 互斥量 Synchronized/Lock：采用互斥对象机制，只有拥有互斥对象的线程才有访问公共资源的权限。因为互斥对象只有一个，所以可以保证公共资源不会被多个线程同时访问 信号量 Semphare：为控制具有有限数量的用户资源而设计的，它允许多个线程在同一时刻去访问同一个资源，但一般需要限制同一时刻访问此资源的最大线程数目。 事件(信号)，Wait/Notify：通过通知操作的方式来保持多线程同步，还可以方便的实现多线程优先级的比较操作进程间通信的方式： 进程间通信主要包括管道、系统 IPC（包括消息队列、信号量、信号、共享内存等）、以及套接字 socket。</li>
 </ul>
-<p>原文：https://cloud.tencent.com/developer/article/1688297</p>
+<p>原文：<a href="https://cloud.tencent.com/developer/article/1688297">https://cloud.tencent.com/developer/article/1688297</a></p>
 
 
 
@@ -10152,6 +10152,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

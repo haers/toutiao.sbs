@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9820,101 +9820,101 @@
 <li><strong>定义自定义事件</strong></li>
 </ul>
 <p>自定义一个事件在使用上很简单，继承 ApplicationEvent 即可:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// 事件需要继承ApplicationEvent
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>public class MyApplicationEvent extends ApplicationEvent {
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    private Long id;
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    public MyApplicationEvent(Long id) {
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        super(id);
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        this.id = id;
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    }
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    public Long getId() {
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        return id;
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    }
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// 事件需要继承ApplicationEvent
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>public class MyApplicationEvent extends ApplicationEvent {
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    private Long id;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    public MyApplicationEvent(Long id) {
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        super(id);
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        this.id = id;
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    }
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    public Long getId() {
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        return id;
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    }
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>}
+</span></code></pre></div>
 <ul>
 <li><strong>发布自定义事件</strong>
     现在自定义事件已经有了，该如何进行发布呢？Spring 提供了 ApplicationEventPublisher 进行事件的发布，我们平常使用最多的 ApplicationContext 也继承了该发布器，所以我们可以直接使用 applicationContext 进行事件的发布。</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>// 发布MyApplicationEvent类型事件
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>applicationContext.publishEvent(new MyApplicationEvent(1L));
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>// 发布MyApplicationEvent类型事件
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>applicationContext.publishEvent(new MyApplicationEvent(1L));
+</span></code></pre></div>
 <ul>
 <li><strong>处理自定义事件</strong>
     现在事件已经发布了，谁负责处理事件呢？当然是监听器了，Spring 要求监听器需要实现 ApplicationListener 接口，同时需要通过泛型参数指定处理的事件类型。有了监听器需要处理的事件类型信息，Spring 在进行事件广播的时候，就能找到需要广播的监听器了，从而准确传递事件了。</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>// 需要继承ApplicationListener，并指定事件类型
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>public class MyEventListener implements ApplicationListener&lt;MyApplicationEvent&gt; {
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    // 处理指定类型的事件
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    @Override
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    public void onApplicationEvent(MyApplicationEvent event) {
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        System.out.println(Thread.currentThread().getName() + &quot;接受到事件:&quot;+event.getSource());
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    }
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>// 需要继承ApplicationListener，并指定事件类型
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>public class MyEventListener implements ApplicationListener&lt;MyApplicationEvent&gt; {
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    // 处理指定类型的事件
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    @Override
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    public void onApplicationEvent(MyApplicationEvent event) {
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        System.out.println(Thread.currentThread().getName() + &quot;接受到事件:&quot;+event.getSource());
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    }
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>}
+</span></code></pre></div>
 <h1 id="12-spring">1.2 Spring 内置事件<a class="headerlink" href="#12-spring" title="Permanent link">&para;</a></h1>
 <h1 id="121-contextrefreshedevent">1.2.1 ContextRefreshedEvent<a class="headerlink" href="#121-contextrefreshedevent" title="Permanent link">&para;</a></h1>
 <p>在 ConfigurableApplicationContext 的 refresh()执行完成时，会发出 ContextRefreshedEvent 事件。refresh()是 Spring 最核心的方法，该方法内部完成的 Spring 容器的启动，是研究 Spring 的重中之重。在该方法内部，当 Spring 容器启动完成，会在 finishRefresh()发出 ContextRefreshedEvent 事件，通知容器刷新完成。我们一起来看一下源码：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>// ConfigurableApplicationContext.java
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>public void refresh() throws BeansException, IllegalStateException {
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    try {
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        // ...省略部分非关键代码
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        //完成普通单例Bean的实例化(非延迟的)
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        this.finishBeanFactoryInitialization(beanFactory);
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        // 初始化声明周期处理器,并发出对应的时间通知
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        this.finishRefresh();
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    }
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>}
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>protected void finishRefresh() {
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    // ...省略部分非核心代码
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    // 发布上下文已经刷新完成的事件
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    this.publishEvent(new ContextRefreshedEvent(this));
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>// ConfigurableApplicationContext.java
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>public void refresh() throws BeansException, IllegalStateException {
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    try {
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        // ...省略部分非关键代码
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        //完成普通单例Bean的实例化(非延迟的)
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        this.finishBeanFactoryInitialization(beanFactory);
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        // 初始化声明周期处理器,并发出对应的时间通知
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        this.finishRefresh();
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    }
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>}
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>protected void finishRefresh() {
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    // ...省略部分非核心代码
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    // 发布上下文已经刷新完成的事件
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    this.publishEvent(new ContextRefreshedEvent(this));
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>}
+</span></code></pre></div>
 <p>其实这是 Spring 提供给我们的拓展点，此时容器已经启动完成，容器中的 bean 也已经创建完成，对应的属性、init()、Aware 回调等，也全部执行。很适合我们做一些系统启动后的准备工作，此时我们就可以监听该事件，作为系统启动后初始预热的契机。其实 Spring 内部也是这样使用 ContextRefreshedEvent 的， 比如我们常用的 Spring 内置的调度器，就是在接收到该事件后，才进行调度器的执行的。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public class ScheduledAnnotationBeanPostProcessor implements ApplicationListener&lt;ContextRefreshedEvent&gt; {
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    @Override
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    public void onApplicationEvent(ContextRefreshedEvent event) {
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>      if (event.getApplicationContext() == this.applicationContext) {
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        finishRegistration();
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>      }
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    }
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public class ScheduledAnnotationBeanPostProcessor implements ApplicationListener&lt;ContextRefreshedEvent&gt; {
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    @Override
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    public void onApplicationEvent(ContextRefreshedEvent event) {
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>      if (event.getApplicationContext() == this.applicationContext) {
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        finishRegistration();
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>      }
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    }
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>}
+</span></code></pre></div>
 <h1 id="122-contextstartedevent">1.2.2 ContextStartedEvent<a class="headerlink" href="#122-contextstartedevent" title="Permanent link">&para;</a></h1>
 <p>在 ConfigurableApplicationContext 的 start()执行完成时，会发出 ContextStartedEvent 事件。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>@Override
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>public void start() {
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    this.getLifecycleProcessor().start();
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    this.publishEvent(new ContextStartedEvent(this));
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>@Override
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>public void start() {
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    this.getLifecycleProcessor().start();
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    this.publishEvent(new ContextStartedEvent(this));
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>}
+</span></code></pre></div>
 <p>ContextRefreshedEvent 事件的触发是所有的单例 bean 创建完成后发布，此时实现了 Lifecycle 接口的 bean 还没有回调 start()，当这些 start()被调用后，才会发布 ContextStartedEvent 事件。</p>
 <h1 id="123-contextclosedevent">1.2.3 ContextClosedEvent<a class="headerlink" href="#123-contextclosedevent" title="Permanent link">&para;</a></h1>
 <p>在 ConfigurableApplicationContext 的 close()执行完成时，会发出 ContextStartedEvent 事件。此时 IOC 容器已经关闭，但尚未销毁所有的 bean。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>@Override
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>public void close() {
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    synchronized (this.startupShutdownMonitor) {
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        this.doClose();
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    }
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>}
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>protected void doClose() {
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    // 发布ContextClosedEvent事件
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    this.publishEvent(new ContextClosedEvent(this));
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>@Override
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>public void close() {
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    synchronized (this.startupShutdownMonitor) {
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        this.doClose();
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    }
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>}
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>protected void doClose() {
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    // 发布ContextClosedEvent事件
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    this.publishEvent(new ContextClosedEvent(this));
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>}
+</span></code></pre></div>
 <h1 id="124-contextstoppedevent">1.2.4 ContextStoppedEvent<a class="headerlink" href="#124-contextstoppedevent" title="Permanent link">&para;</a></h1>
 <p>在 ConfigurableApplicationContext 的 stop()执行完成时，会发出 ContextStartedEvent 事件。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>@Override
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>public void stop() {
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    this.getLifecycleProcessor().stop();
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    this.publishEvent(new ContextStoppedEvent(this));
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>@Override
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>public void stop() {
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    this.getLifecycleProcessor().stop();
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    this.publishEvent(new ContextStoppedEvent(this));
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>}
+</span></code></pre></div>
 <p>该事件在 ContextClosedEvent 事件触发之后才会触发，此时单例 bean 还没有被销毁，要先把他们都停掉才可以释放资源，销毁 bean。</p>
 <h1 id="2-spring">2. Spring 事件是如何运转的<a class="headerlink" href="#2-spring" title="Permanent link">&para;</a></h1>
 <p>经过第一章节的探讨，我们已经清楚 Spring 事件是如何使用的，然而这只是皮毛而已，我们的目标是把 Spring 事件机制脱光扒净的展示给大家看。所以这一章节我们深入探讨一下，Spring 事件的运行机制，重点我们看一下：</p>
@@ -9929,49 +9929,49 @@
 <p>在第一章节，我们直接通过 applicationContext 发布了事件，同时也提到了，它之所以能发布事件，是因为它是 ApplicationEventPublisher 的子类，因此是具备事件发布能力的。但按照接口隔离原则，如果我们只需要进行事件发布，applicationContext 提供的能力太多，还是推荐直接使用 ApplicationEventPublisher 进行操作。</p>
 <h1 id="211">2.1.1 获取事件发布器的方式<a class="headerlink" href="#211" title="Permanent link">&para;</a></h1>
 <p>我们先来 ApplicationEventPublisher 的提供的能力，它是一个接口，结构如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>@FunctionalInterface
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>public interface ApplicationEventPublisher {
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    //发布ApplicationEvent事件
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    default void publishEvent(ApplicationEvent event) {
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        publishEvent((Object) event);
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    }
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    //发布PayloadApplicationEvent事件
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    void publishEvent(Object event);
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>}
-</code></pre></div>
-<p>通过源码我们发现 ApplicationEventPublisher 仅仅提供了事件发布的能力，支持自定义类型和 PayloadApplicationEvent 类型(如果没有定义事件类型，默认包装为该类型)。那我们如何获取该发布器呢，我们最常使用的@Autowired 注入是否可以呢，试一下呗。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>@FunctionalInterface
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>public interface ApplicationEventPublisher {
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    //发布ApplicationEvent事件
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    default void publishEvent(ApplicationEvent event) {
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        publishEvent((Object) event);
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    }
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    //发布PayloadApplicationEvent事件
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    void publishEvent(Object event);
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>}
+</span></code></pre></div>
+<p>通过源码我们发现 ApplicationEventPublisher 仅仅提供了事件发布的能力，支持自定义类型和 PayloadApplicationEvent 类型(如果没有定义事件类型，默认包装为该类型)。那我们如何获取该发布器呢，我们最常使用的<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a> 注入是否可以呢，试一下呗。</p>
 <ul>
-<li><strong>通过@Autowired 注入 ApplicationEventPublisher</strong></li>
+<li><strong>通过<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a> 注入 ApplicationEventPublisher</strong></li>
 </ul>
 <p><img alt="img" src="https://p3-sign.toutiaoimg.com/tos-cn-i-qvj2lq49k0/3c66ff78099747e694d12e58798bbc37~noop.image?_iz=58558&amp;from=article.pc_detail&amp;x-expires=1670205544&amp;x-signature=5WgfAd5W3D7mfNiKkHNhVuqkExQ%3D" /></p>
 <p>通过 debug，我们可以直观的看到：是可以的，而且注入的就是 ApplicationContext 实例。也就是说注入 ApplicationContext 和注入 ApplicationEventPublisher 是等价的，都是一个 ApplicationContext 实例。</p>
 <ul>
 <li><strong>通过 ApplicationEventPublisherAware 获取 ApplicationEventPublisher</strong>
-    除了@Autowired 注入，Spring 还提供了使用 ApplicationEventPublisherAware 获取 ApplicationEventPublisher 的方式，如果实现了这个感知接口，Spring 会在合适的时机，回调 setApplicationEventPublisher()，将 applicationEventPublisher 传递给我们。使用起来也很方便。代码所示：</li>
+    除了<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a> 注入，Spring 还提供了使用 ApplicationEventPublisherAware 获取 ApplicationEventPublisher 的方式，如果实现了这个感知接口，Spring 会在合适的时机，回调 setApplicationEventPublisher()，将 applicationEventPublisher 传递给我们。使用起来也很方便。代码所示：</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>public class UserService implements ApplicationEventPublisherAware {
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    private ApplicationEventPublisher applicationEventPublisher;
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    public void login(String username, String password){
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        // 1： 进行登录处理
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        ...
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        // 2： 发送登录事件，用于记录操作
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        applicationEventPublisher.publishEvent(new UserLoginEvent(userId));
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    }
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    // Aware接口回调注入applicationEventPublisher
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    @Override
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>            this.applicationEventPublisher = applicationEventPublisher;
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    }
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>}
-</code></pre></div>
-<p>现在我们已经知道通过@Autowired 和 ApplicationEventPublisherAware 回调都能获取到事件发布器，两种有什么区别吗? 其实区别不大，主要是调用时机的细小差别，另外就是默写特殊场景下，@Autowired 注入可能无法正常注入，实际开发中完成可以忽略不计。所以优先推荐小伙伴们使用 ApplicationEventPublisherAware，如果觉得麻烦，使用@Autowired 也未尝不可。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>public class UserService implements ApplicationEventPublisherAware {
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    private ApplicationEventPublisher applicationEventPublisher;
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    public void login(String username, String password){
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        // 1： 进行登录处理
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        ...
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        // 2： 发送登录事件，用于记录操作
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        applicationEventPublisher.publishEvent(new UserLoginEvent(userId));
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    }
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    // Aware接口回调注入applicationEventPublisher
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    @Override
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>            this.applicationEventPublisher = applicationEventPublisher;
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    }
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>}
+</span></code></pre></div>
+<p>现在我们已经知道通过<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a> 和 ApplicationEventPublisherAware 回调都能获取到事件发布器，两种有什么区别吗? 其实区别不大，主要是调用时机的细小差别，另外就是默写特殊场景下，<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a> 注入可能无法正常注入，实际开发中完成可以忽略不计。所以优先推荐小伙伴们使用 ApplicationEventPublisherAware，如果觉得麻烦，使用<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a> 也未尝不可。</p>
 <p><img alt="img" src="https://p3-sign.toutiaoimg.com/tos-cn-i-qvj2lq49k0/e10519e391b149a49bb279492d7352bc~noop.image?_iz=58558&amp;from=article.pc_detail&amp;x-expires=1670205544&amp;x-signature=ga5X4OcXgrLCce1PF8x5y8CCMeg%3D" /></p>
 <blockquote>
 <p>如果使是自动注入模型，是无法通过 setter()注入 ApplicationEventPublisher 的，因为在 prepareBeanFactory 时已经指定忽略此接口的注入了(
-beanFactory.ignoreDependencyInterface(ApplicationEventPublisherAware.class))。顺便说一句，@Autowired 不算自动注入哦。</p>
+beanFactory.ignoreDependencyInterface(ApplicationEventPublisherAware.class))。顺便说一句，<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Autowired" title="GitHub User: Autowired">@Autowired</a> 不算自动注入哦。</p>
 </blockquote>
 <h1 id="212">2.1.2 事件的广播方式<a class="headerlink" href="#212" title="Permanent link">&para;</a></h1>
 <p>现在我们已经知道，可以通过 ApplicationEventPublisher 发送事件了，那么这个事件发送后肯定是要分发给对应的监听器处理啊，谁处理这个分发逻辑呢？又是怎么匹配对应的监听器的呢？我们带着这两个问题来看 ApplicationEventMulticaster。</p>
@@ -9979,92 +9979,92 @@ beanFactory.ignoreDependencyInterface(ApplicationEventPublisherAware.class))。�
 <li><strong>事件是如何广播的</strong>
     要探查事件是如何广播的，需要跟随事件发布后的逻辑一起看一下：</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>@Override
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>public void publishEvent(ApplicationEvent event) {
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    this.publishEvent(event, null);
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>}
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>protected void publishEvent(Object event, @Nullable ResolvableType eventType) {
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    // ...省略部分代码
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    if (this.earlyApplicationEvents != null) {
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>      this.earlyApplicationEvents.add(applicationEvent);
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    }
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    else {
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>      // 将事件广播给Listener
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>      this.getApplicationEventMulticaster().multicastEvent(applicationEvent, eventType);
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    }
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>}
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>// 获取事件广播器
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>ApplicationEventMulticaster getApplicationEventMulticaster() throws IllegalStateException {
-<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    if (this.applicationEventMulticaster == null) {
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>      throw new IllegalStateException(&quot;ApplicationEventMulticaster not initialized - &quot; +
-<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>                                      &quot;call &#39;refresh&#39; before multicasting events via the context: &quot; + this);
-<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>    }
-<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>    return this.applicationEventMulticaster;
-<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>@Override
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>public void publishEvent(ApplicationEvent event) {
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    this.publishEvent(event, null);
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>}
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>protected void publishEvent(Object event, @Nullable ResolvableType eventType) {
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    // ...省略部分代码
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    if (this.earlyApplicationEvents != null) {
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>      this.earlyApplicationEvents.add(applicationEvent);
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    }
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    else {
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>      // 将事件广播给Listener
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>      this.getApplicationEventMulticaster().multicastEvent(applicationEvent, eventType);
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    }
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>}
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>// 获取事件广播器
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>ApplicationEventMulticaster getApplicationEventMulticaster() throws IllegalStateException {
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    if (this.applicationEventMulticaster == null) {
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>      throw new IllegalStateException(&quot;ApplicationEventMulticaster not initialized - &quot; +
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>                                      &quot;call &#39;refresh&#39; before multicasting events via the context: &quot; + this);
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>    }
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>    return this.applicationEventMulticaster;
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>}
+</span></code></pre></div>
 <p>通过上面源码，我们发现发布器直接把事件转交给 applicationEventMulticaster 了，我们再去里面看一下广播器里面做了什么。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>// SimpleApplicationEventMulticaster.java
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>public void multicastEvent(final ApplicationEvent event, @Nullable ResolvableType eventType) {
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    // ...省略部分代码
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    // getApplicationListeners 获取符合的监听器
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    for (ApplicationListener&lt;?&gt; listener : getApplicationListeners(event, type)) {
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        // 执行每个监听器的逻辑
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        invokeListener(listener, event);
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    }
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>}
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>private void doInvokeListener(ApplicationListener listener, ApplicationEvent event) {
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    try {
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>      // 调用监听器的onApplicationEvent方法进行处理
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>      listener.onApplicationEvent(event);
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>    }
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>// SimpleApplicationEventMulticaster.java
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>public void multicastEvent(final ApplicationEvent event, @Nullable ResolvableType eventType) {
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    // ...省略部分代码
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    // getApplicationListeners 获取符合的监听器
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    for (ApplicationListener&lt;?&gt; listener : getApplicationListeners(event, type)) {
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        // 执行每个监听器的逻辑
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        invokeListener(listener, event);
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    }
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>}
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>private void doInvokeListener(ApplicationListener listener, ApplicationEvent event) {
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    try {
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>      // 调用监听器的onApplicationEvent方法进行处理
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>      listener.onApplicationEvent(event);
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>    }
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>}
+</span></code></pre></div>
 <p>看到这里，我们发现事件的分发逻辑：先找到匹配的监听器，然后逐个调用 onApplicationEvent()进行事件处理。</p>
 <p><img alt="img" src="https://p3-sign.toutiaoimg.com/tos-cn-i-qvj2lq49k0/6401a2527a394136a80475243cf04c73~noop.image?_iz=58558&amp;from=article.pc_detail&amp;x-expires=1670205544&amp;x-signature=k%2BNuech6yGhXUMbTkjK1lBxb8FI%3D" /></p>
 <ul>
 <li><strong>事件和监听器是如何匹配的</strong>
     通过上述源码，我们发现通过 getApplicationListeners(event, type)找到了所有匹配的监听器，我们继续跟踪看一下是如何匹配的。</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>protected Collection&lt;ApplicationListener&lt;?&gt;&gt; getApplicationListeners(
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>      ApplicationEvent event, ResolvableType eventType) {
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>   // 省略缓存相关代码
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>   return retrieveApplicationListeners(eventType, sourceType, newRetriever);
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>}
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>private Collection&lt;ApplicationListener&lt;?&gt;&gt; retrieveApplicationListeners(
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>ResolvableType eventType, @Nullable Class&lt;?&gt; sourceType, @Nullable CachedListenerRetriever retriever) {
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    // 1: 获取所有的ApplicationListener
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    Set&lt;ApplicationListener&lt;?&gt;&gt; listeners;
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    Set&lt;String&gt; listenerBeans;
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>    synchronized (this.defaultRetriever) {
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>        listeners = new LinkedHashSet&lt;&gt;(this.defaultRetriever.applicationListeners);
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>        listenerBeans = new LinkedHashSet&lt;&gt;(this.defaultRetriever.applicationListenerBeans);
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    }
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    for (ApplicationListener&lt;?&gt; listener : listeners) {
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>        // 2: 遍历判断是否匹配
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>        if (supportsEvent(listener, eventType, sourceType)) {
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>            if (retriever != null) {
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>                filteredListeners.add(listener);
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>            }
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>            allListeners.add(listener);
-<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>        }
-<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>    }
-<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>}
-<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>
-<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>protected boolean supportsEvent(
-<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>  ApplicationListener&lt;?&gt; listener, ResolvableType eventType, @Nullable Class&lt;?&gt; sourceType) {
-<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>  GenericApplicationListener smartListener = (listener instanceof GenericApplicationListener ?
-<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>                                              (GenericApplicationListener) listener : new GenericApplicationListenerAdapter(listener));
-<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>  // supportsEventType 根据ApplicationListener的泛型, 和事件类型,看是否匹配
-<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>  // supportsSourceType 根据事件源类型，判断是否匹配
-<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>  return (smartListener.supportsEventType(eventType) &amp;&amp; smartListener.supportsSourceType(sourceType));
-<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>protected Collection&lt;ApplicationListener&lt;?&gt;&gt; getApplicationListeners(
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>      ApplicationEvent event, ResolvableType eventType) {
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>   // 省略缓存相关代码
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>   return retrieveApplicationListeners(eventType, sourceType, newRetriever);
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>}
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>private Collection&lt;ApplicationListener&lt;?&gt;&gt; retrieveApplicationListeners(
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>ResolvableType eventType, @Nullable Class&lt;?&gt; sourceType, @Nullable CachedListenerRetriever retriever) {
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    // 1: 获取所有的ApplicationListener
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    Set&lt;ApplicationListener&lt;?&gt;&gt; listeners;
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    Set&lt;String&gt; listenerBeans;
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>    synchronized (this.defaultRetriever) {
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>        listeners = new LinkedHashSet&lt;&gt;(this.defaultRetriever.applicationListeners);
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>        listenerBeans = new LinkedHashSet&lt;&gt;(this.defaultRetriever.applicationListenerBeans);
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    }
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    for (ApplicationListener&lt;?&gt; listener : listeners) {
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>        // 2: 遍历判断是否匹配
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>        if (supportsEvent(listener, eventType, sourceType)) {
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>            if (retriever != null) {
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>                filteredListeners.add(listener);
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>            }
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>            allListeners.add(listener);
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>        }
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>    }
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>}
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>protected boolean supportsEvent(
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>  ApplicationListener&lt;?&gt; listener, ResolvableType eventType, @Nullable Class&lt;?&gt; sourceType) {
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>  GenericApplicationListener smartListener = (listener instanceof GenericApplicationListener ?
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>                                              (GenericApplicationListener) listener : new GenericApplicationListenerAdapter(listener));
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>  // supportsEventType 根据ApplicationListener的泛型, 和事件类型,看是否匹配
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>  // supportsSourceType 根据事件源类型，判断是否匹配
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>  return (smartListener.supportsEventType(eventType) &amp;&amp; smartListener.supportsSourceType(sourceType));
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>}
+</span></code></pre></div>
 <p>通过源码跟踪，我们发现监听器匹配是根据事件类型匹配的，先获取容器中所有的监听器，在用 supportsEvent()去判断对应的监听器是否匹配事件。这里匹配主要看两点：</p>
 <ol>
 <li>判断事件类型和监听器上的泛型类型，是否匹配(子类也能匹配)。</li>
@@ -10076,249 +10076,249 @@ beanFactory.ignoreDependencyInterface(ApplicationEventPublisherAware.class))。�
 <li><strong>ApplicationEventMulticaster 是如何获取的（选读）</strong>
     在事件广播时，Spring 直接调用 getApplicationEventMulticaster()去获取属性 applicationEventMulticaster，并且当 applicationEventMulticaster 为空时，直接异常终止了。那么就要求该成员变量提早初始化，那么它是何时初始化的呢。</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>public void refresh() throws BeansException, IllegalStateException {
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    // ...省略无关代码
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    // 初始化事件广播器(转发ApplicationEvent给对应的ApplicationListener处理)
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    this.initApplicationEventMulticaster();
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>}
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>protected void initApplicationEventMulticaster() {
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    ConfigurableListableBeanFactory beanFactory = this.getBeanFactory();
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    // spring容器中存在，直接返回
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    if (beanFactory.containsLocalBean(APPLICATION_EVENT_MULTICASTER_BEAN_NAME)) {
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>        this.applicationEventMulticaster =
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>      beanFactory.getBean(APPLICATION_EVENT_MULTICASTER_BEAN_NAME, ApplicationEventMulticaster.class);
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        if (this.logger.isTraceEnabled()) {
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>            this.logger.trace(&quot;Using ApplicationEventMulticaster [&quot; + this.applicationEventMulticaster + &quot;]&quot;);
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>        }
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>    }
-<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>    else {
-<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>        // 容器中不存在，创建SimpleApplicationEventMulticaster，放入容器
-<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>        this.applicationEventMulticaster = new SimpleApplicationEventMulticaster(beanFactory);
-<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>        beanFactory.registerSingleton(APPLICATION_EVENT_MULTICASTER_BEAN_NAME, this.applicationEventMulticaster);
-<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>        if (this.logger.isTraceEnabled()) {
-<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>            this.logger.trace(&quot;No &#39;&quot; + APPLICATION_EVENT_MULTICASTER_BEAN_NAME + &quot;&#39; bean, using &quot; +
-<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>                                &quot;[&quot; + this.applicationEventMulticaster.getClass().getSimpleName() + &quot;]&quot;);
-<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>        }
-<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>    }
-<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>}
-<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>复制代码
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>public void refresh() throws BeansException, IllegalStateException {
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    // ...省略无关代码
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    // 初始化事件广播器(转发ApplicationEvent给对应的ApplicationListener处理)
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    this.initApplicationEventMulticaster();
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>}
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>protected void initApplicationEventMulticaster() {
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    ConfigurableListableBeanFactory beanFactory = this.getBeanFactory();
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    // spring容器中存在，直接返回
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    if (beanFactory.containsLocalBean(APPLICATION_EVENT_MULTICASTER_BEAN_NAME)) {
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>        this.applicationEventMulticaster =
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>      beanFactory.getBean(APPLICATION_EVENT_MULTICASTER_BEAN_NAME, ApplicationEventMulticaster.class);
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        if (this.logger.isTraceEnabled()) {
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>            this.logger.trace(&quot;Using ApplicationEventMulticaster [&quot; + this.applicationEventMulticaster + &quot;]&quot;);
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>        }
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>    }
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>    else {
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>        // 容器中不存在，创建SimpleApplicationEventMulticaster，放入容器
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>        this.applicationEventMulticaster = new SimpleApplicationEventMulticaster(beanFactory);
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>        beanFactory.registerSingleton(APPLICATION_EVENT_MULTICASTER_BEAN_NAME, this.applicationEventMulticaster);
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>        if (this.logger.isTraceEnabled()) {
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>            this.logger.trace(&quot;No &#39;&quot; + APPLICATION_EVENT_MULTICASTER_BEAN_NAME + &quot;&#39; bean, using &quot; +
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>                                &quot;[&quot; + this.applicationEventMulticaster.getClass().getSimpleName() + &quot;]&quot;);
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>        }
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>    }
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>}
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>复制代码
+</span></code></pre></div>
 <p>看到这里，是不是豁然开朗，原来在容器启动的时候，专门调用了 initApplicationEventMulticaster()对 applicationEventMulticaster 进行了初始化，并放到了 spring 容器中。</p>
 <blockquote>
 <p>其实这里还有个问题，就是事件整体的初始化流程在 BeanFactoryPostProcessor 之后，如果在自定义的 BeanFactoryPostProcessor 发布事件，此时
 applicationEventMulticaster 还没有初始化，监听器也没有注册，是无法进行事件的广播的。该问题在 Spring3 之前普遍存在，在最近的版本已经解决，其思路是：先将早期事件放入集合中，待广播器、监听器注册后，再从集合中取出进行广播。</p>
 </blockquote>
 <h1 id="22">2.2 事件监听器<a class="headerlink" href="#22" title="Permanent link">&para;</a></h1>
-<p>监听器是负责处理事件的，在广播器将对应的事件广播给它之后，它正式上岗开始处理事件。Spring 默认的监听器是同步执行的，并且支持一个事件由多个监听器处理，并可通过@Order 指定监听器处理顺序。</p>
+<p>监听器是负责处理事件的，在广播器将对应的事件广播给它之后，它正式上岗开始处理事件。Spring 默认的监听器是同步执行的，并且支持一个事件由多个监听器处理，并可通过<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Order" title="GitHub User: Order">@Order</a> 指定监听器处理顺序。</p>
 <h1 id="221">2.2.1 定义监听器的方式<a class="headerlink" href="#221" title="Permanent link">&para;</a></h1>
 <p><img alt="img" src="https://p3-sign.toutiaoimg.com/tos-cn-i-qvj2lq49k0/28c0e7c491234132a4617ba8f326d5d3~noop.image?_iz=58558&amp;from=article.pc_detail&amp;x-expires=1670205544&amp;x-signature=yZ8jQF2B5K11mCSv6LI5rFeNK1g%3D" /></p>
 <ul>
 <li><strong>实现 ApplicationListener 定义监听器</strong>
     第一种方式定义的方式当然是通过直接继承 ApplicationListener，同时不要忘记通过泛型指定事件类型，它可是将事件广播给监听器的核心匹配标志。</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>public class MyEventListener implements ApplicationListener&lt;MyApplicationEvent&gt; {
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    @Override
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    public void onApplicationEvent(MyApplicationEvent event) {
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>            System.out.println(Thread.currentThread().getName() + &quot;接受到事件:&quot;+event.getSource());
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    }
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>public class MyEventListener implements ApplicationListener&lt;MyApplicationEvent&gt; {
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    @Override
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    public void onApplicationEvent(MyApplicationEvent event) {
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>            System.out.println(Thread.currentThread().getName() + &quot;接受到事件:&quot;+event.getSource());
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    }
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>}
+</span></code></pre></div>
 <blockquote>
 <p>通过 ApplicationListener 定义的监听器，本质上是一个单事件监听器，也就是只能处理一种类型的事件。</p>
 </blockquote>
 <ul>
-<li><strong>使用@EventListener 定义监听器</strong>
-    第二种方式我们还可以使用@EventListener 标注方法为监听器，该注解标注的方法上，方法参数为事件类型，标注该监听器要处理的事件类型。</li>
+<li><strong>使用<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 定义监听器</strong>
+    第二种方式我们还可以使用<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 标注方法为监听器，该注解标注的方法上，方法参数为事件类型，标注该监听器要处理的事件类型。</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>public class AnnotationEventListener {
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    // 使用@EventListener标注方法为监听器，参数类型为事件类型
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    @EventListener
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    public void onApplicationEvent(MyApplicationEvent event) {
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        System.out.println(Thread.currentThread().getName() + &quot;接受到事件:&quot;+event.getSource());
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    }
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    @EventListener
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    public void onApplicationEvent(PayloadApplicationEvent payloadApplicationEvent) {
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>        System.out.println(Thread.currentThread().getName() + &quot;接受到事件:&quot;+payloadApplicationEvent.getPayload());
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>    }
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>public class AnnotationEventListener {
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    // 使用@EventListener标注方法为监听器，参数类型为事件类型
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    @EventListener
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    public void onApplicationEvent(MyApplicationEvent event) {
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        System.out.println(Thread.currentThread().getName() + &quot;接受到事件:&quot;+event.getSource());
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    }
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    @EventListener
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    public void onApplicationEvent(PayloadApplicationEvent payloadApplicationEvent) {
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>        System.out.println(Thread.currentThread().getName() + &quot;接受到事件:&quot;+payloadApplicationEvent.getPayload());
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>    }
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>}
+</span></code></pre></div>
 <blockquote>
-<p>通过广播器分发事件的逻辑，我们知道事件只能分发给 ApplicationListener 类型的监听器实例处理，这里仅仅是标注了@EventListener 的方法，也能被是识别成 ApplicationListener 类型的监听器吗？答案是肯定的，只是 Spring 在底层进行了包装，偷偷把@EventListener 标注的方法包装成了
+<p>通过广播器分发事件的逻辑，我们知道事件只能分发给 ApplicationListener 类型的监听器实例处理，这里仅仅是标注了<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 的方法，也能被是识别成 ApplicationListener 类型的监听器吗？答案是肯定的，只是 Spring 在底层进行了包装，偷偷把<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 标注的方法包装成了
 ApplicationListenerMethodAdapter，它也是 ApplicationListener 的子类，这样就成功的把方法转换成 ApplicationListener 实例了，后续章节我们会详细揭露 Spring 偷梁换柱的小把戏，小伙伴们稍安勿躁。</p>
 </blockquote>
 <h1 id="222-applicationlistener">2.2.2 ApplicationListener 监听器是如何被识别的<a class="headerlink" href="#222-applicationlistener" title="Permanent link">&para;</a></h1>
-<p>本小节我们一起看一下监听器是如何被是识别的，毕竟大多数情况下，我们只是直接加了@Component 注解，然后实现了一下 ApplicationListener 接口，并没有特殊指定为监听器。那有没有可能就是基于这个继承关系，Spring 自己在容器中进行类型查找呢？</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>public void refresh() throws BeansException, IllegalStateException {
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>  try {
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    // ...省略部分代码
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    // 初始化各种监听器
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    this.registerListeners();
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>  }
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>}
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>// 注册监听器
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>protected void registerListeners() {
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>  // 1: 处理context.addApplicationListener(new MyEventListener()) 方式注册的监听器，并将监听器注册到广播器中，
-<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>  for (ApplicationListener&lt;?&gt; listener : this.getApplicationListeners()) {
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>    this.getApplicationEventMulticaster().addApplicationListener(listener);
-<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>  }
-<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
-<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>  // 2: 去Spring容器中获取监听器（处理扫描的或者register方式注册的）,同样也是添加到广播器中
-<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>  String[] listenerBeanNames = this.getBeanNamesForType(ApplicationListener.class, true, false);
-<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>  for (String listenerBeanName : listenerBeanNames) {
-<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>    this.getApplicationEventMulticaster().addApplicationListenerBean(listenerBeanName);
-<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>  }
-<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>}
-<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>复制代码
-</code></pre></div>
+<p>本小节我们一起看一下监听器是如何被是识别的，毕竟大多数情况下，我们只是直接加了<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 注解，然后实现了一下 ApplicationListener 接口，并没有特殊指定为监听器。那有没有可能就是基于这个继承关系，Spring 自己在容器中进行类型查找呢？</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>public void refresh() throws BeansException, IllegalStateException {
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>  try {
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    // ...省略部分代码
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    // 初始化各种监听器
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    this.registerListeners();
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>  }
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>}
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>// 注册监听器
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>protected void registerListeners() {
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>  // 1: 处理context.addApplicationListener(new MyEventListener()) 方式注册的监听器，并将监听器注册到广播器中，
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>  for (ApplicationListener&lt;?&gt; listener : this.getApplicationListeners()) {
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>    this.getApplicationEventMulticaster().addApplicationListener(listener);
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>  }
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>  // 2: 去Spring容器中获取监听器（处理扫描的或者register方式注册的）,同样也是添加到广播器中
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>  String[] listenerBeanNames = this.getBeanNamesForType(ApplicationListener.class, true, false);
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>  for (String listenerBeanName : listenerBeanNames) {
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>    this.getApplicationEventMulticaster().addApplicationListenerBean(listenerBeanName);
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>  }
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>}
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>复制代码
+</span></code></pre></div>
 <p>通过上述源码跟踪，我们发现原来在容器 refresh()的时候，专门有个步骤是用来初始化各种监听器的。它的具体实现是：先把通过 addApplicationListener()直接指定的注册为监听器 -&gt; 再通过类型查找，把当做普通 bean 注册到容器中，类似是 ApplicationListener 的找了出来 -&gt; 缓存到 ApplicationEventMulticaster 中的监听器集合中了。一路跟踪下来，确实是根据类型查找的，和我们的猜想完全一致。</p>
-<h1 id="223-eventlistener">2.2.3 @EventListener 标注的处理器是如何识别注册的<a class="headerlink" href="#223-eventlistener" title="Permanent link">&para;</a></h1>
-<p>本小节我们探究一下，标注了@EventListener 的方法是如何被包装成 ApplicationListener 实例的。我们直接从源码入手，Spring 在实例化 bean 后，调用了 afterSingletonsInstantiated()对@EventListener 的方法进行了保证，我们一起看一下。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>public void refresh() throws BeansException, IllegalStateException {
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  try {
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    // ...省略部分代码
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    //完成普通单例Bean的实例化(非延迟的)
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    this.finishBeanFactoryInitialization(beanFactory);
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    // ...省略部分代码
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>  }
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>}
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>protected void finishBeanFactoryInitialization(ConfigurableListableBeanFactory beanFactory) {
-<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    // ...省略部分代码
-<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>    // 初始化非延迟加载的单例bean
-<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    beanFactory.preInstantiateSingletons();
-<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>}
-<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
-<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>@Override
-<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>public void preInstantiateSingletons() throws BeansException {
-<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>    List&lt;String&gt; beanNames = new ArrayList&lt;&gt;(this.beanDefinitionNames);
-<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>    // 1: 完成bean的实例化
-<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>    for (String beanName : beanNames) {
-<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>        //通过beanName获取bean,bean不存在会创建bean
-<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>        getBean(beanName);
-<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>    }
-<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>
-<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>    // 2: 调用bean的后置处理方法
-<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>    for (String beanName : beanNames) {
-<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>        // ...省略部分代码
-<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>        // 调用到EventListenerMethodProcessor的afterSingletonsInstantiated()，完成@EventListener的方法的转换注册
-<a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>        smartSingleton.afterSingletonsInstantiated();
-<a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a>    }
-<a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>}
-<a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>
-<a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a>// EventListenerMethodProcessor.java
-<a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>public void afterSingletonsInstantiated() {
-<a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a>    // ...省略部分代码
-<a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a>    for (String beanName : beanNames) {
-<a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a>        // ...省略部分代码
-<a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a>        processBean(beanName, type);
-<a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a>    }
-<a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a>}
-<a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a>
-<a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a>private void processBean(final String beanName, final Class&lt;?&gt; targetType) {
-<a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a>    // 1: 解析bean上加了@EventListener的方法
-<a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a>    Map&lt;Method, EventListener&gt; annotatedMethods = null;
-<a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a>    try {
-<a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a>        annotatedMethods = MethodIntrospector.selectMethods(targetType,
-<a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a>                        (MethodIntrospector.MetadataLookup&lt;EventListener&gt;) method -&gt;
-<a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a>        AnnotatedElementUtils.findMergedAnnotation(method, EventListener.class));
-<a id="__codelineno-17-49" name="__codelineno-17-49" href="#__codelineno-17-49"></a>    }
-<a id="__codelineno-17-50" name="__codelineno-17-50" href="#__codelineno-17-50"></a>
-<a id="__codelineno-17-51" name="__codelineno-17-51" href="#__codelineno-17-51"></a>    // ...省略部分代码
-<a id="__codelineno-17-52" name="__codelineno-17-52" href="#__codelineno-17-52"></a>    // 2: 遍历加了@EventListener的方法，注册为事件监听器
-<a id="__codelineno-17-53" name="__codelineno-17-53" href="#__codelineno-17-53"></a>    for (Method method : annotatedMethods.keySet()) {
-<a id="__codelineno-17-54" name="__codelineno-17-54" href="#__codelineno-17-54"></a>        for (EventListenerFactory factory : factories) {
-<a id="__codelineno-17-55" name="__codelineno-17-55" href="#__codelineno-17-55"></a>            if (factory.supportsMethod(method)) {
-<a id="__codelineno-17-56" name="__codelineno-17-56" href="#__codelineno-17-56"></a>                Method methodToUse = AopUtils.selectInvocableMethod(method, context.getType(beanName));
-<a id="__codelineno-17-57" name="__codelineno-17-57" href="#__codelineno-17-57"></a>                // 2.1 通过EventListenerFactory，将方法创建为监听器实例(ApplicationListenerMethodAdapter)
-<a id="__codelineno-17-58" name="__codelineno-17-58" href="#__codelineno-17-58"></a>                ApplicationListener&lt;?&gt; applicationListener = factory.createApplicationListener(beanName, targetType, methodToUse);
-<a id="__codelineno-17-59" name="__codelineno-17-59" href="#__codelineno-17-59"></a>                if (applicationListener instanceof ApplicationListenerMethodAdapter) {
-<a id="__codelineno-17-60" name="__codelineno-17-60" href="#__codelineno-17-60"></a>                        ((ApplicationListenerMethodAdapter) applicationListener).init(context, this.evaluator);
-<a id="__codelineno-17-61" name="__codelineno-17-61" href="#__codelineno-17-61"></a>                }
-<a id="__codelineno-17-62" name="__codelineno-17-62" href="#__codelineno-17-62"></a>                // 2.2 注册为ApplicationListener
-<a id="__codelineno-17-63" name="__codelineno-17-63" href="#__codelineno-17-63"></a>                context.addApplicationListener(applicationListener);
-<a id="__codelineno-17-64" name="__codelineno-17-64" href="#__codelineno-17-64"></a>                break;
-<a id="__codelineno-17-65" name="__codelineno-17-65" href="#__codelineno-17-65"></a>            }
-<a id="__codelineno-17-66" name="__codelineno-17-66" href="#__codelineno-17-66"></a>        }
-<a id="__codelineno-17-67" name="__codelineno-17-67" href="#__codelineno-17-67"></a>    }
-<a id="__codelineno-17-68" name="__codelineno-17-68" href="#__codelineno-17-68"></a>    // ...省略部分代码
-<a id="__codelineno-17-69" name="__codelineno-17-69" href="#__codelineno-17-69"></a>}
-</code></pre></div>
-<p>我们整理一下调用关系：refresh() -&gt; finishBeanFactoryInitialization(beanFactory) -&gt; beanFactory.preInstantiateSingletons() -&gt; eventListenerMethodProcessor.afterSingletonsInstantiated() -&gt; eventListenerMethodProcessor.processBean()；在容器中所有的 bean 实例化后，会再次遍历遍历所有 bean，调用 SmartInitializingSingleton 类型的 bean 的 afterSingletonsInstantiated()的方法，此时符合条件的 EventListenerMethodProcessor 就会被调用，进而通过 processBean()，先找出标注了@EventListener 的方法，然后遍历这些方法，通过 EventListenerFactory 工厂，包装方法为 EventListener 实例，最后在注册到容器中。至此，完成了查找，转换的过程。</p>
+<h1 id="223-eventlistener">2.2.3 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 标注的处理器是如何识别注册的<a class="headerlink" href="#223-eventlistener" title="Permanent link">&para;</a></h1>
+<p>本小节我们探究一下，标注了<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 的方法是如何被包装成 ApplicationListener 实例的。我们直接从源码入手，Spring 在实例化 bean 后，调用了 afterSingletonsInstantiated()对<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 的方法进行了保证，我们一起看一下。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>public void refresh() throws BeansException, IllegalStateException {
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  try {
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    // ...省略部分代码
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    //完成普通单例Bean的实例化(非延迟的)
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    this.finishBeanFactoryInitialization(beanFactory);
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    // ...省略部分代码
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>  }
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>}
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>protected void finishBeanFactoryInitialization(ConfigurableListableBeanFactory beanFactory) {
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    // ...省略部分代码
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>    // 初始化非延迟加载的单例bean
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    beanFactory.preInstantiateSingletons();
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>}
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>@Override
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>public void preInstantiateSingletons() throws BeansException {
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>    List&lt;String&gt; beanNames = new ArrayList&lt;&gt;(this.beanDefinitionNames);
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>    // 1: 完成bean的实例化
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>    for (String beanName : beanNames) {
+</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>        //通过beanName获取bean,bean不存在会创建bean
+</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>        getBean(beanName);
+</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>    }
+</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>
+</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>    // 2: 调用bean的后置处理方法
+</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>    for (String beanName : beanNames) {
+</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>        // ...省略部分代码
+</span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>        // 调用到EventListenerMethodProcessor的afterSingletonsInstantiated()，完成@EventListener的方法的转换注册
+</span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>        smartSingleton.afterSingletonsInstantiated();
+</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a>    }
+</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>}
+</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>
+</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a>// EventListenerMethodProcessor.java
+</span><span id="__span-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>public void afterSingletonsInstantiated() {
+</span><span id="__span-17-35"><a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a>    // ...省略部分代码
+</span><span id="__span-17-36"><a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a>    for (String beanName : beanNames) {
+</span><span id="__span-17-37"><a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a>        // ...省略部分代码
+</span><span id="__span-17-38"><a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a>        processBean(beanName, type);
+</span><span id="__span-17-39"><a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a>    }
+</span><span id="__span-17-40"><a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a>}
+</span><span id="__span-17-41"><a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a>
+</span><span id="__span-17-42"><a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a>private void processBean(final String beanName, final Class&lt;?&gt; targetType) {
+</span><span id="__span-17-43"><a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a>    // 1: 解析bean上加了@EventListener的方法
+</span><span id="__span-17-44"><a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a>    Map&lt;Method, EventListener&gt; annotatedMethods = null;
+</span><span id="__span-17-45"><a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a>    try {
+</span><span id="__span-17-46"><a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a>        annotatedMethods = MethodIntrospector.selectMethods(targetType,
+</span><span id="__span-17-47"><a id="__codelineno-17-47" name="__codelineno-17-47" href="#__codelineno-17-47"></a>                        (MethodIntrospector.MetadataLookup&lt;EventListener&gt;) method -&gt;
+</span><span id="__span-17-48"><a id="__codelineno-17-48" name="__codelineno-17-48" href="#__codelineno-17-48"></a>        AnnotatedElementUtils.findMergedAnnotation(method, EventListener.class));
+</span><span id="__span-17-49"><a id="__codelineno-17-49" name="__codelineno-17-49" href="#__codelineno-17-49"></a>    }
+</span><span id="__span-17-50"><a id="__codelineno-17-50" name="__codelineno-17-50" href="#__codelineno-17-50"></a>
+</span><span id="__span-17-51"><a id="__codelineno-17-51" name="__codelineno-17-51" href="#__codelineno-17-51"></a>    // ...省略部分代码
+</span><span id="__span-17-52"><a id="__codelineno-17-52" name="__codelineno-17-52" href="#__codelineno-17-52"></a>    // 2: 遍历加了@EventListener的方法，注册为事件监听器
+</span><span id="__span-17-53"><a id="__codelineno-17-53" name="__codelineno-17-53" href="#__codelineno-17-53"></a>    for (Method method : annotatedMethods.keySet()) {
+</span><span id="__span-17-54"><a id="__codelineno-17-54" name="__codelineno-17-54" href="#__codelineno-17-54"></a>        for (EventListenerFactory factory : factories) {
+</span><span id="__span-17-55"><a id="__codelineno-17-55" name="__codelineno-17-55" href="#__codelineno-17-55"></a>            if (factory.supportsMethod(method)) {
+</span><span id="__span-17-56"><a id="__codelineno-17-56" name="__codelineno-17-56" href="#__codelineno-17-56"></a>                Method methodToUse = AopUtils.selectInvocableMethod(method, context.getType(beanName));
+</span><span id="__span-17-57"><a id="__codelineno-17-57" name="__codelineno-17-57" href="#__codelineno-17-57"></a>                // 2.1 通过EventListenerFactory，将方法创建为监听器实例(ApplicationListenerMethodAdapter)
+</span><span id="__span-17-58"><a id="__codelineno-17-58" name="__codelineno-17-58" href="#__codelineno-17-58"></a>                ApplicationListener&lt;?&gt; applicationListener = factory.createApplicationListener(beanName, targetType, methodToUse);
+</span><span id="__span-17-59"><a id="__codelineno-17-59" name="__codelineno-17-59" href="#__codelineno-17-59"></a>                if (applicationListener instanceof ApplicationListenerMethodAdapter) {
+</span><span id="__span-17-60"><a id="__codelineno-17-60" name="__codelineno-17-60" href="#__codelineno-17-60"></a>                        ((ApplicationListenerMethodAdapter) applicationListener).init(context, this.evaluator);
+</span><span id="__span-17-61"><a id="__codelineno-17-61" name="__codelineno-17-61" href="#__codelineno-17-61"></a>                }
+</span><span id="__span-17-62"><a id="__codelineno-17-62" name="__codelineno-17-62" href="#__codelineno-17-62"></a>                // 2.2 注册为ApplicationListener
+</span><span id="__span-17-63"><a id="__codelineno-17-63" name="__codelineno-17-63" href="#__codelineno-17-63"></a>                context.addApplicationListener(applicationListener);
+</span><span id="__span-17-64"><a id="__codelineno-17-64" name="__codelineno-17-64" href="#__codelineno-17-64"></a>                break;
+</span><span id="__span-17-65"><a id="__codelineno-17-65" name="__codelineno-17-65" href="#__codelineno-17-65"></a>            }
+</span><span id="__span-17-66"><a id="__codelineno-17-66" name="__codelineno-17-66" href="#__codelineno-17-66"></a>        }
+</span><span id="__span-17-67"><a id="__codelineno-17-67" name="__codelineno-17-67" href="#__codelineno-17-67"></a>    }
+</span><span id="__span-17-68"><a id="__codelineno-17-68" name="__codelineno-17-68" href="#__codelineno-17-68"></a>    // ...省略部分代码
+</span><span id="__span-17-69"><a id="__codelineno-17-69" name="__codelineno-17-69" href="#__codelineno-17-69"></a>}
+</span></code></pre></div>
+<p>我们整理一下调用关系：refresh() -&gt; finishBeanFactoryInitialization(beanFactory) -&gt; beanFactory.preInstantiateSingletons() -&gt; eventListenerMethodProcessor.afterSingletonsInstantiated() -&gt; eventListenerMethodProcessor.processBean()；在容器中所有的 bean 实例化后，会再次遍历遍历所有 bean，调用 SmartInitializingSingleton 类型的 bean 的 afterSingletonsInstantiated()的方法，此时符合条件的 EventListenerMethodProcessor 就会被调用，进而通过 processBean()，先找出标注了<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 的方法，然后遍历这些方法，通过 EventListenerFactory 工厂，包装方法为 EventListener 实例，最后在注册到容器中。至此，完成了查找，转换的过程。</p>
 <p><img alt="img" src="https://p3-sign.toutiaoimg.com/tos-cn-i-qvj2lq49k0/204d36cb6a914abe96768ba5aea70bbb~noop.image?_iz=58558&amp;from=article.pc_detail&amp;x-expires=1670205544&amp;x-signature=nh0RhkIsAUiKcLdsAlbMyiFimCs%3D" /></p>
 <blockquote>
-<p>关于@EventListener 标注方法的解析时机，笔者首先想到的应该和@Bean 的处理时机一致，在扫描类的时候，就解析出来加了@EventListener 的方法，抽象为 BeanDefinition 放到容器中，后面实例化时候，和正常扫描出来的 bean 是一样的实例化流程。但是查找下来发现 Spring 并没有这样处理，而是在 bean 初始化后回调阶段处理的。究其原因，大概是@Bean 真的是需要托付给 Spring 管理，而@EventListener 只是一个标识，无需放入放入容器，防止对完暴露所致吧。</p>
+<p>关于<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 标注方法的解析时机，笔者首先想到的应该和<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a> 的处理时机一致，在扫描类的时候，就解析出来加了<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 的方法，抽象为 BeanDefinition 放到容器中，后面实例化时候，和正常扫描出来的 bean 是一样的实例化流程。但是查找下来发现 Spring 并没有这样处理，而是在 bean 初始化后回调阶段处理的。究其原因，大概是<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Bean" title="GitHub User: Bean">@Bean</a> 真的是需要托付给 Spring 管理，而<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 只是一个标识，无需放入放入容器，防止对完暴露所致吧。</p>
 </blockquote>
 <ul>
 <li><strong>EventListenerMethodProcessors 是如何注册的</strong>
-    通过上述的源码分析，我们清楚对于@EventListener 的方法的处理，EventListenerMethodProcessor 可谓是至关重要，那么他是怎么注册到 Spring 中的。而且我们也没有通过@EnableXXX 进行开启啊。其实 Spring 除了管理我们定义的 bean，还会有一些内置的 bean，来承接一些 Spring 核心工作，这些内置的 bean 一般在 application 容器创建的时候，就放入到 Spring 容器中了。下面我们来看一下是不是这样：</li>
+    通过上述的源码分析，我们清楚对于<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EventListener" title="GitHub User: EventListener">@EventListener</a> 的方法的处理，EventListenerMethodProcessor 可谓是至关重要，那么他是怎么注册到 Spring 中的。而且我们也没有通过<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableXXX" title="GitHub User: EnableXXX">@EnableXXX</a> 进行开启啊。其实 Spring 除了管理我们定义的 bean，还会有一些内置的 bean，来承接一些 Spring 核心工作，这些内置的 bean 一般在 application 容器创建的时候，就放入到 Spring 容器中了。下面我们来看一下是不是这样：</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>// 构造方法
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>public AnnotationConfigApplicationContext() {
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    // 1: 初始化BeanDefinition渲染器，注册一下Spring内置的BeanDefinition
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    this.reader = new AnnotatedBeanDefinitionReader(this);
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    this.scanner = new ClassPathBeanDefinitionScanner(this);
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>}
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>// AnnotatedBeanDefinitionReader.java
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>public class AnnotatedBeanDefinitionReader {
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    public AnnotatedBeanDefinitionReader(BeanDefinitionRegistry registry, Environment environment) {
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        // ...省略部分代码
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>        // 注册一些内置后置处理器的BeanDefinition,是spring这两个最核心的功能类
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>        AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>    }
-<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>}
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
-<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>
-<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>// AnnotationConfigUtils.java
-<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>public static Set&lt;BeanDefinitionHolder&gt; registerAnnotationConfigProcessors(
-<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>                BeanDefinitionRegistry registry, @Nullable Object source) {
-<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>    // ...省略部分代码
-<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>    // 注册EventListenerMethodProcessor
-<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>    if (!registry.containsBeanDefinition(EVENT_LISTENER_PROCESSOR_BEAN_NAME)) {
-<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>        RootBeanDefinition def = new RootBeanDefinition(EventListenerMethodProcessor.class);
-<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>        def.setSource(source);
-<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>        beanDefs.add(registerPostProcessor(registry, def, EVENT_LISTENER_PROCESSOR_BEAN_NAME));
-<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>    }
-<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>// 构造方法
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>public AnnotationConfigApplicationContext() {
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    // 1: 初始化BeanDefinition渲染器，注册一下Spring内置的BeanDefinition
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    this.reader = new AnnotatedBeanDefinitionReader(this);
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    this.scanner = new ClassPathBeanDefinitionScanner(this);
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>}
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>// AnnotatedBeanDefinitionReader.java
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>public class AnnotatedBeanDefinitionReader {
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    public AnnotatedBeanDefinitionReader(BeanDefinitionRegistry registry, Environment environment) {
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        // ...省略部分代码
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>        // 注册一些内置后置处理器的BeanDefinition,是spring这两个最核心的功能类
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>        AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>    }
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>}
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>// AnnotationConfigUtils.java
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>public static Set&lt;BeanDefinitionHolder&gt; registerAnnotationConfigProcessors(
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>                BeanDefinitionRegistry registry, @Nullable Object source) {
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>    // ...省略部分代码
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>    // 注册EventListenerMethodProcessor
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>    if (!registry.containsBeanDefinition(EVENT_LISTENER_PROCESSOR_BEAN_NAME)) {
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>        RootBeanDefinition def = new RootBeanDefinition(EventListenerMethodProcessor.class);
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>        def.setSource(source);
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>        beanDefs.add(registerPostProcessor(registry, def, EVENT_LISTENER_PROCESSOR_BEAN_NAME));
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>    }
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>}
+</span></code></pre></div>
 <h1 id="23">2.3 异步处理事件<a class="headerlink" href="#23" title="Permanent link">&para;</a></h1>
 <p>通过上面的分析，我们知道事件在广播时是同步执行的，广播流程为：先找到匹配的监听器 -&gt; 逐个调用 onApplicationEvent()进行事件处理，整个过程是同步处理的。下面我们做一个测试验证一下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>public void applicationListenerTest(){
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    context.register(AnnotationEventListener.class);
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    context.refresh();
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    System.out.printf(&quot;线程:[%s],时间:[%s],开始发布事件\n&quot;, new Date(), Thread.currentThread().getName());
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    context.publishEvent(new MyApplicationEvent(1L));
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    System.out.printf(&quot;线程:[%s],时间:[%s],发布事件完成\n&quot;, new Date(), Thread.currentThread().getName());
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>    context.stop();
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>}
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>public class AnnotationEventListener {
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>    @EventListener
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>    @Order(1)
-<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>    public void onApplicationEvent(MyApplicationEvent event) {
-<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>        Date start = new Date();
-<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>        Thread.sleep(3000);
-<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>        System.out.printf(&quot;线程:[%s],监听器1,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
-<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    }
-<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>
-<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>    @EventListener
-<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>    @Order(2)
-<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>    public void onApplicationEvent2(MyApplicationEvent event) {
-<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>        Date start = new Date();
-<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>        System.out.printf(&quot;线程:[%s],监听器2,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
-<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>    }
-<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>}
-<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>
-<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>// 输出信息:
-<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>// 线程:[main],时间[22:59:24],开始发布事件
-<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>// 线程:[main],监听器1,接收时间:[22:59:24]，处理完成时间:[22:59:27],接收到事件:1
-<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>// 线程:[main],监听器1,接收时间:[22:59:27]，处理完成时间:[22:59:27],接收到事件:1
-<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>// 线程:[main],时间[22:59:27],，发布事件完成
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>public void applicationListenerTest(){
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    context.register(AnnotationEventListener.class);
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    context.refresh();
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    System.out.printf(&quot;线程:[%s],时间:[%s],开始发布事件\n&quot;, new Date(), Thread.currentThread().getName());
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    context.publishEvent(new MyApplicationEvent(1L));
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    System.out.printf(&quot;线程:[%s],时间:[%s],发布事件完成\n&quot;, new Date(), Thread.currentThread().getName());
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>    context.stop();
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>}
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>public class AnnotationEventListener {
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>    @EventListener
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>    @Order(1)
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>    public void onApplicationEvent(MyApplicationEvent event) {
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>        Date start = new Date();
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>        Thread.sleep(3000);
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>        System.out.printf(&quot;线程:[%s],监听器1,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    }
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>    @EventListener
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>    @Order(2)
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>    public void onApplicationEvent2(MyApplicationEvent event) {
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>        Date start = new Date();
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>        System.out.printf(&quot;线程:[%s],监听器2,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>    }
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>}
+</span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>
+</span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>// 输出信息:
+</span><span id="__span-19-29"><a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>// 线程:[main],时间[22:59:24],开始发布事件
+</span><span id="__span-19-30"><a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>// 线程:[main],监听器1,接收时间:[22:59:24]，处理完成时间:[22:59:27],接收到事件:1
+</span><span id="__span-19-31"><a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>// 线程:[main],监听器1,接收时间:[22:59:27]，处理完成时间:[22:59:27],接收到事件:1
+</span><span id="__span-19-32"><a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>// 线程:[main],时间[22:59:27],，发布事件完成
+</span></code></pre></div>
 <p>通过上述示例代码，发现确实是同步调用的，处理线程都是 main，监听器 1 处理缓慢，监听器 2 只能默默等待监听器 1 处理后才能接收到事件。这能满足我们的需求吗，毕竟现在系统动辄就要求毫秒计返回，QPS 没有 1000+你都不好意思出门，哪怕只有十个用户。</p>
 <p>除了性能问题，我们基于真实业务场景出发，考虑一下什么场景下，我们使用事件比较合适。个人使用最多的场景是：在执行某个业务时，需要通知别的业务方，该业务的执行情况时，会使用事件机制进行通知。就拿这个场景来说，我们考虑几个问题：</p>
 <ol>
@@ -10328,101 +10328,101 @@ ApplicationListenerMethodAdapter，它也是 ApplicationListener 的子类，这
 <p>大多数情况下，其实我们并不关心的监听者什么时候执行，执行结果如何的。如果对执行结果有依赖，通常直接调用了，如果有可能，还能享受事务的便利，还借助事件干什么呢。所以这里其实有个需求，希望 Spring 事件的处理是异步的，那如何实现呢？</p>
 <h1 id="231-taskexecutor">2.3.1 通过注入 taskExecutor，异步处理事件<a class="headerlink" href="#231-taskexecutor" title="Permanent link">&para;</a></h1>
 <p>通过前文的分析，我们知道事件的广播是由 ApplicationEventMulticaster 进行处理的，那我们去看看，是否支持异步处理呢。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>@Override
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>public void multicastEvent(final ApplicationEvent event, @Nullable ResolvableType eventType) {
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    // 获取执行线程池
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    Executor executor = getTaskExecutor();
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    for (ApplicationListener&lt;?&gt; listener : getApplicationListeners(event, type)) {
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>        // 如果存在线程池，使用线程池异步执行
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>        if (executor != null) {
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>            executor.execute(() -&gt; invokeListener(listener, event));
-<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>        }
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>        // 如果不存在线程池，同步执行
-<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>        else {
-<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>            invokeListener(listener, event);
-<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>        }
-<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>    }
-<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>}
-<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>
-<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>// 获取线程池
-<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>protected Executor getTaskExecutor() {
-<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>    return this.taskExecutor;
-<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>}
-<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>
-<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>// 设置线程池
-<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>public void setTaskExecutor(@Nullable Executor taskExecutor) {
-<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>    this.taskExecutor = taskExecutor;
-<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>@Override
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>public void multicastEvent(final ApplicationEvent event, @Nullable ResolvableType eventType) {
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    // 获取执行线程池
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    Executor executor = getTaskExecutor();
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    for (ApplicationListener&lt;?&gt; listener : getApplicationListeners(event, type)) {
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>        // 如果存在线程池，使用线程池异步执行
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>        if (executor != null) {
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>            executor.execute(() -&gt; invokeListener(listener, event));
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>        }
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>        // 如果不存在线程池，同步执行
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>        else {
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>            invokeListener(listener, event);
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>        }
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>    }
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>}
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>// 获取线程池
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>protected Executor getTaskExecutor() {
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>    return this.taskExecutor;
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>}
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>// 设置线程池
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>public void setTaskExecutor(@Nullable Executor taskExecutor) {
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>    this.taskExecutor = taskExecutor;
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>}
+</span></code></pre></div>
 <p>通过源码我们发现，其实 Spring 提供了使用线程池异步执行的逻辑，前提是需要先设置线程池，只是这里设置线程池的方式稍微麻烦些，需要通过 applicationEventMulticaster 实例的 setTaskExecutor()设置，下面我们试一下是否可行。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>public void applicationListenerTest(){
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    context.register(AnnotationEventListener.class);
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    context.refresh();
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    ApplicationEventMulticaster multicaster = context.getBean(AbstractApplicationContext.APPLICATION_EVENT_MULTICASTER_BEAN_NAME, ApplicationEventMulticaster.class);
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    if (multicaster instanceof SimpleApplicationEventMulticaster) {
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>        ((SimpleApplicationEventMulticaster) multicaster).setTaskExecutor(Executors.newFixedThreadPool(10));
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>    }
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>    System.out.printf(&quot;线程:[%s],时间:[%s],开始发布事件\n&quot;, new Date(), Thread.currentThread().getName());
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    context.publishEvent(new MyApplicationEvent(1L));
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>    System.out.printf(&quot;线程:[%s],时间:[%s],发布事件完成\n&quot;, new Date(), Thread.currentThread().getName());
-<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>    context.stop();
-<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>}
-<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
-<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>public class AnnotationEventListener {
-<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>    @EventListener
-<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>    @Order(1)
-<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>    public void onApplicationEvent(MyApplicationEvent event) {
-<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>        Date start = new Date();
-<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>        Thread.sleep(3000);
-<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>        System.out.printf(&quot;线程:[%s],监听器1,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
-<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>    }
-<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>
-<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>    @EventListener
-<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>    @Order(2)
-<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>    public void onApplicationEvent2(MyApplicationEvent event) {
-<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>        Date start = new Date();
-<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>        System.out.printf(&quot;线程:[%s],监听器2,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
-<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>    }
-<a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>}
-<a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>
-<a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>// 输出信息:
-<a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>// 线程:[main],时间[22:57:13],开始发布事件
-<a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>// 线程:[main],时间[22:57:13],，发布事件完成
-<a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a>// 线程:[pool-2-thread-1],监听器2,接收时间:[22:57:13]，处理完成时间:[22:57:13],接收到事件:1
-<a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a>// 线程:[pool-2-thread-2],监听器1,接收时间:[22:57:13]，处理完成时间:[22:57:16],接收到事件:1
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>public void applicationListenerTest(){
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    context.register(AnnotationEventListener.class);
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    context.refresh();
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    ApplicationEventMulticaster multicaster = context.getBean(AbstractApplicationContext.APPLICATION_EVENT_MULTICASTER_BEAN_NAME, ApplicationEventMulticaster.class);
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    if (multicaster instanceof SimpleApplicationEventMulticaster) {
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>        ((SimpleApplicationEventMulticaster) multicaster).setTaskExecutor(Executors.newFixedThreadPool(10));
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>    }
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>    System.out.printf(&quot;线程:[%s],时间:[%s],开始发布事件\n&quot;, new Date(), Thread.currentThread().getName());
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    context.publishEvent(new MyApplicationEvent(1L));
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>    System.out.printf(&quot;线程:[%s],时间:[%s],发布事件完成\n&quot;, new Date(), Thread.currentThread().getName());
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>    context.stop();
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>}
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>public class AnnotationEventListener {
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>    @EventListener
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>    @Order(1)
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>    public void onApplicationEvent(MyApplicationEvent event) {
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>        Date start = new Date();
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>        Thread.sleep(3000);
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>        System.out.printf(&quot;线程:[%s],监听器1,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>    }
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>    @EventListener
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>    @Order(2)
+</span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>    public void onApplicationEvent2(MyApplicationEvent event) {
+</span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>        Date start = new Date();
+</span><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>        System.out.printf(&quot;线程:[%s],监听器2,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
+</span><span id="__span-21-29"><a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>    }
+</span><span id="__span-21-30"><a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>}
+</span><span id="__span-21-31"><a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>
+</span><span id="__span-21-32"><a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>// 输出信息:
+</span><span id="__span-21-33"><a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>// 线程:[main],时间[22:57:13],开始发布事件
+</span><span id="__span-21-34"><a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>// 线程:[main],时间[22:57:13],，发布事件完成
+</span><span id="__span-21-35"><a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a>// 线程:[pool-2-thread-1],监听器2,接收时间:[22:57:13]，处理完成时间:[22:57:13],接收到事件:1
+</span><span id="__span-21-36"><a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a>// 线程:[pool-2-thread-2],监听器1,接收时间:[22:57:13]，处理完成时间:[22:57:16],接收到事件:1
+</span></code></pre></div>
 <p>经过测试发现：设置了线程池之后，监听器确实是异步执行的，并且是全局生效，对所有类型的监听器都适用。只是这里的设置稍显不便，需要先获取到 applicationEventMulticaster 这个 bean 之后，再使用内置方法设置。</p>
-<h1 id="232-async">2.3.2 使用@Async，异步处理事件<a class="headerlink" href="#232-async" title="Permanent link">&para;</a></h1>
-<p>通过注入线程池，是全局生效的。如果我们项目中有些事件需要异步处理，又有些事件需要同步执行的，怎么办，总不能告诉你的 leader 做不了吧。NO，那不是显得我很没有用。面对这种情况，我们可以借助@Async 注解，使单个监听器异步执行。我们测试一下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>// 使用@EnableAsync开启异步
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>@EnableAsync
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>public class AnnotationEventListener {
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    @EventListener
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    @Order(1)
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    public void onApplicationEvent(MyApplicationEvent event) {
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>        Date start = new Date();
-<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>        Thread.sleep(3000);
-<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>        System.out.printf(&quot;线程:[%s],监听器1,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
-<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>    }
-<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
-<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>    @EventListener
-<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>    @Order(2)
-<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>    public void onApplicationEvent2(MyApplicationEvent event) {
-<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>        Date start = new Date();
-<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>        Thread.sleep(1000);
-<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>        System.out.printf(&quot;线程:[%s],监听器2,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
-<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>    }
-<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>}
-<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>
-<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>// 输出信息:
-<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>// 线程:[main],时间[23:18:32],开始发布事件
-<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>// 线程:[main],监听器1,接收时间:[23:18:32]，处理完成时间:[23:18:35],接收到事件:1
-<a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>// 线程:[main],时间[23:18:35],，发布事件完成
-<a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>// 线程:[SimpleAsyncTaskExecutor-1],监听器2,接收时间:[23:18:35]，处理完成时间:[23:18:36],接收到事件:1
-</code></pre></div>
-<p>经过测试发现：在@Async 的加持下，确实可以控制某个监听器异步执行。其实@Async 也是使用了线程池执行的，对@Async 感兴趣的同学可以自行查阅资料，这里我们不做展开了。</p>
+<h1 id="232-async">2.3.2 使用<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Async" title="GitHub User: Async">@Async</a>，异步处理事件<a class="headerlink" href="#232-async" title="Permanent link">&para;</a></h1>
+<p>通过注入线程池，是全局生效的。如果我们项目中有些事件需要异步处理，又有些事件需要同步执行的，怎么办，总不能告诉你的 leader 做不了吧。NO，那不是显得我很没有用。面对这种情况，我们可以借助<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Async" title="GitHub User: Async">@Async</a> 注解，使单个监听器异步执行。我们测试一下：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>// 使用@EnableAsync开启异步
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>@EnableAsync
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>public class AnnotationEventListener {
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    @EventListener
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    @Order(1)
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    public void onApplicationEvent(MyApplicationEvent event) {
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>        Date start = new Date();
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>        Thread.sleep(3000);
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>        System.out.printf(&quot;线程:[%s],监听器1,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>    }
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>    @EventListener
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>    @Order(2)
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>    public void onApplicationEvent2(MyApplicationEvent event) {
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>        Date start = new Date();
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>        Thread.sleep(1000);
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>        System.out.printf(&quot;线程:[%s],监听器2,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>    }
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>}
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>// 输出信息:
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>// 线程:[main],时间[23:18:32],开始发布事件
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>// 线程:[main],监听器1,接收时间:[23:18:32]，处理完成时间:[23:18:35],接收到事件:1
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>// 线程:[main],时间[23:18:35],，发布事件完成
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>// 线程:[SimpleAsyncTaskExecutor-1],监听器2,接收时间:[23:18:35]，处理完成时间:[23:18:36],接收到事件:1
+</span></code></pre></div>
+<p>经过测试发现：在<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Async" title="GitHub User: Async">@Async</a> 的加持下，确实可以控制某个监听器异步执行。其实<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Async" title="GitHub User: Async">@Async</a> 也是使用了线程池执行的，对<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Async" title="GitHub User: Async">@Async</a> 感兴趣的同学可以自行查阅资料，这里我们不做展开了。</p>
 <p><img alt="img" src="https://p3-sign.toutiaoimg.com/tos-cn-i-qvj2lq49k0/f0af2a8e821242468862490af3b8efdc~noop.image?_iz=58558&amp;from=article.pc_detail&amp;x-expires=1670205544&amp;x-signature=7yk9gZcei65UFV6XZS7Qcz1dVw4%3D" /></p>
 <h1 id="24">2.4 全局异常处理<a class="headerlink" href="#24" title="Permanent link">&para;</a></h1>
 <p>通过我们长时间的啰嗦，聪明的你肯定清楚：Spring 事件的处理，默认是同步依次执行。那如果前面的监听器出现了异常，并且没有处理异常，会对后续的监听器还能顺利接收该事件吗？其实不能的，因为异常中断了事件的发送了，这里我们不做演示了，有兴趣的同学们可以自行验证一下。</p>
@@ -10430,71 +10430,71 @@ ApplicationListenerMethodAdapter，它也是 ApplicationListener 的子类，这
 <p>那如果我们设置了异步执行呢，还会有影响吗，对线程池有所了解的同学肯定可以给出答案：不会，因为不是一个线程执行，是不会互相影响的。</p>
 </blockquote>
 <p>难道同步执行我们就要在每个监听器都 try catch 一下，避免相互影响吗，不能全局处理吗？当前可以了，贴心的 Spring 为了简化我们的开发逻辑，特意提供了 ErrorHandler 来统一处理，话不多说，我们赶紧来试一下吧。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>public class AnnotationEventListener {
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    @EventListener
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    @Order(1)
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    public void onApplicationEvent(MyApplicationEvent event) {
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>        Date start = new Date();
-<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>        // 制造异常
-<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>        int i = 1/0;
-<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>        System.out.printf(&quot;线程:[%s],监听器1,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
-<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>    }
-<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
-<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>    @EventListener
-<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>    @Order(2)
-<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>    public void onApplicationEvent2(MyApplicationEvent event) {
-<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>        Date start = new Date();
-<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>        System.out.printf(&quot;线程:[%s],监听器2,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
-<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>    }
-<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>}
-<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>
-<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>// 测试方法
-<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>public void applicationListenerTest() throws InterruptedException {
-<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>    context.register(AnnotationEventListener.class);
-<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>    context.refresh();
-<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>    ApplicationEventMulticaster multicaster = context.getBean(AbstractApplicationContext.APPLICATION_EVENT_MULTICASTER_BEAN_NAME, ApplicationEventMulticaster.class);
-<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>    if (multicaster instanceof SimpleApplicationEventMulticaster) {
-<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>        // 简单打印异常信息
-<a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>        ((SimpleApplicationEventMulticaster) multicaster).setErrorHandler(t -&gt; System.out.println(t));
-<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>    }
-<a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a>   System.out.printf(&quot;线程:[%s],时间:[%s],开始发布事件\n&quot;, new Date(), Thread.currentThread().getName());
-<a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a>    context.publishEvent(new MyApplicationEvent(1L));
-<a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a>    System.out.printf(&quot;线程:[%s],时间:[%s],发布事件完成\n&quot;, new Date(), Thread.currentThread().getName());
-<a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a>    context.stop();
-<a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a>}
-<a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a>
-<a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a>// 输出信息:
-<a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a>// 线程:[main],时间[23:35:15],开始发布事件
-<a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a>// java.lang.ArithmeticException: / by zero
-<a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a>// 线程:[main],监听器2,接收时间:[23:35:15]，处理完成时间:[23:35:15],接收到事件:1
-<a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a>// 线程:[main],时间[23:35:15],，发布事件完成
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>public class AnnotationEventListener {
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    @EventListener
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    @Order(1)
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    public void onApplicationEvent(MyApplicationEvent event) {
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>        Date start = new Date();
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>        // 制造异常
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>        int i = 1/0;
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>        System.out.printf(&quot;线程:[%s],监听器1,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>    }
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>    @EventListener
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>    @Order(2)
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>    public void onApplicationEvent2(MyApplicationEvent event) {
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>        Date start = new Date();
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>        System.out.printf(&quot;线程:[%s],监听器2,接收时间:[%s],处理完成时间:[%s],接收到事件:%s\n&quot;, Thread.currentThread().getName(), start, new Date(), event.getSource());
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>    }
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>}
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>// 测试方法
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>public void applicationListenerTest() throws InterruptedException {
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>    context.register(AnnotationEventListener.class);
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>    context.refresh();
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>    ApplicationEventMulticaster multicaster = context.getBean(AbstractApplicationContext.APPLICATION_EVENT_MULTICASTER_BEAN_NAME, ApplicationEventMulticaster.class);
+</span><span id="__span-23-26"><a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>    if (multicaster instanceof SimpleApplicationEventMulticaster) {
+</span><span id="__span-23-27"><a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>        // 简单打印异常信息
+</span><span id="__span-23-28"><a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>        ((SimpleApplicationEventMulticaster) multicaster).setErrorHandler(t -&gt; System.out.println(t));
+</span><span id="__span-23-29"><a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>    }
+</span><span id="__span-23-30"><a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a>   System.out.printf(&quot;线程:[%s],时间:[%s],开始发布事件\n&quot;, new Date(), Thread.currentThread().getName());
+</span><span id="__span-23-31"><a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a>    context.publishEvent(new MyApplicationEvent(1L));
+</span><span id="__span-23-32"><a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a>    System.out.printf(&quot;线程:[%s],时间:[%s],发布事件完成\n&quot;, new Date(), Thread.currentThread().getName());
+</span><span id="__span-23-33"><a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a>    context.stop();
+</span><span id="__span-23-34"><a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a>}
+</span><span id="__span-23-35"><a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a>
+</span><span id="__span-23-36"><a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a>// 输出信息:
+</span><span id="__span-23-37"><a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a>// 线程:[main],时间[23:35:15],开始发布事件
+</span><span id="__span-23-38"><a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a>// java.lang.ArithmeticException: / by zero
+</span><span id="__span-23-39"><a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a>// 线程:[main],监听器2,接收时间:[23:35:15]，处理完成时间:[23:35:15],接收到事件:1
+</span><span id="__span-23-40"><a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a>// 线程:[main],时间[23:35:15],，发布事件完成
+</span></code></pre></div>
 <p>经过测试发现：设置了 ErrorHandler 之后，确实可以对异常进行统一的管理了，再也不用繁琐的 try catch 了，今天又多了快乐划水五分钟的理由呢。老规矩，我们不光要做到知其然，还要做到知其所以然，我们探究一下为什么加了 ErrorHandler 之后，就可以全局处理呢？</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>protected void invokeListener(ApplicationListener&lt;?&gt; listener, ApplicationEvent event) {
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    // 获取ErrorHandler
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    ErrorHandler errorHandler = getErrorHandler();
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>    // 如果ErrorHandler存在，监听器执行出现异常，交给errorHandler处理，不会传递向上抛出异常。
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>    if (errorHandler != null) {
-<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>        try {
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>            doInvokeListener(listener, event);
-<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>        }
-<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>        catch (Throwable err) {
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>            errorHandler.handleError(err);
-<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>        }
-<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>    }
-<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>    else {
-<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>        // 调用监听器处理
-<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>        doInvokeListener(listener, event);
-<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>    }
-<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>protected void invokeListener(ApplicationListener&lt;?&gt; listener, ApplicationEvent event) {
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    // 获取ErrorHandler
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    ErrorHandler errorHandler = getErrorHandler();
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>    // 如果ErrorHandler存在，监听器执行出现异常，交给errorHandler处理，不会传递向上抛出异常。
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>    if (errorHandler != null) {
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>        try {
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>            doInvokeListener(listener, event);
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>        }
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>        catch (Throwable err) {
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>            errorHandler.handleError(err);
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>        }
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>    }
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>    else {
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>        // 调用监听器处理
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>        doInvokeListener(listener, event);
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>    }
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>}
+</span></code></pre></div>
 <p>经过阅读源码，我们发现：Sring 先查找是否配置了 ErrorHandler，如果配置了，在发生异常的时候，把异常信息转交给 errorHandler 处理，并且不会在向上传递异常了。这样可以达到异常全局处理的效果了。</p>
 <h1 id="3-spring">3. Spring 事件机制存在什么问题<a class="headerlink" href="#3-spring" title="Permanent link">&para;</a></h1>
 <h1 id="31">3.1 发布阻塞<a class="headerlink" href="#31" title="Permanent link">&para;</a></h1>
 <p>Spring 发布事件的时候，由 applicationEventMulticaster 来处理分发逻辑，这是单线程处理，处理逻辑我们分析过，就是：找到事件对应的监听器(有缓存) -&gt; 逐个分发给监听器处理(默认同步，可异步)。我们考虑一下这种设计会不会有性能问题了？同步执行的情况我们就不讨论了，对应的场景一定是事件发生频率较低，这种场景讨论性能没有意义。</p>
-<p>我们主要讨论异步模式，无论是@Async 还是注入线程池，本质都是：通过线程池执行，并且线程池的线程是所有监听器共同使用的(@Async 对应的线程池供所有加了@Async 的方法使用)。我们都清楚线程池的执行流程：先创建线程执行任务，之后会放到缓冲队列，最后可能直接拒绝。</p>
+<p>我们主要讨论异步模式，无论是<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Async" title="GitHub User: Async">@Async</a> 还是注入线程池，本质都是：通过线程池执行，并且线程池的线程是所有监听器共同使用的(<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Async" title="GitHub User: Async">@Async</a> 对应的线程池供所有加了<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Async" title="GitHub User: Async">@Async</a> 的方法使用)。我们都清楚线程池的执行流程：先创建线程执行任务，之后会放到缓冲队列，最后可能直接拒绝。</p>
 <p>基于共享线程池执行的监听器的模式，有什么问题呢？最严重的问题就是：监听器的执行速度会互相影响、甚至会发生阻塞。假如某一个监听器执行的很慢，把线程池中线程都占用了，此时其他的事件虽然发布但没有资源执行，只能在缓存队列等待线程释放，哪怕该事件的处理很快、很重要，也不行。</p>
 <p>其实这里可以参考 Netty 的 boss-work 工作模型，广播器只负责分发事件，调度执行监听器的逻辑交给由具体的 work 线程负责会更合适。</p>
 <h1 id="32">3.2 无法订制监听器执行线程数<a class="headerlink" href="#32" title="Permanent link">&para;</a></h1>
@@ -10585,6 +10585,12 @@ ApplicationListenerMethodAdapter，它也是 ApplicationListener 的子类，这
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

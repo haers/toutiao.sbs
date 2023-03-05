@@ -4714,6 +4714,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4828,20 +4842,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10134,10 +10134,10 @@
 <p>第二种是使用 sql 列的别名功能，将列的别名书写为对象属性名。</p>
 <p>有了列名与属性名的映射关系后，Mybatis 通过反射创建对象，同时使用反射给对象的属性逐一赋值并返回，那些找不到映射关系的属性，是无法完成赋值的。</p>
 <h4 id="7">7.如何获取自动生成的(主)键值?<a class="headerlink" href="#7" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;insert id=”insertname” usegeneratedkeys=”true” keyproperty=”id”&gt;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>     insert into names (name) values (#{name})
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>&lt;/insert&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;insert id=”insertname” usegeneratedkeys=”true” keyproperty=”id”&gt;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>     insert into names (name) values (#{name})
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>&lt;/insert&gt;
+</span></code></pre></div>
 <h4 id="8mybatis-xml-xml-id">8.Mybatis 的 Xml 映射文件中，不同的 Xml 映射文件，id 是否可以重复？<a class="headerlink" href="#8mybatis-xml-xml-id" title="Permanent link">&para;</a></h4>
 <p>不同的 Xml 映射文件，如果配置了 namespace，那么 id 可以重复；如果没有配置 namespace，那么 id 不能重复</p>
 <h4 id="9-mybatis-sql">9. Mybatis 动态 SQL？<a class="headerlink" href="#9-mybatis-sql" title="Permanent link">&para;</a></h4>
@@ -10186,12 +10186,12 @@ mappers 映射器</p>
 <p>（2）二级缓存与一级缓存其机制相同，默认也是采用 PerpetualCache，HashMap 存储，不同在于其存储作用域为 Mapper(Namespace)，并且可自定义存储源，如 Ehcache。默认不打开二级缓存，要开启二级缓存，使用二级缓存属性类需要实现 Serializable 序列化接口(可用来保存对象的状态),可在它的映射文件中配置<cache/> ；</p>
 <p>（3）对于缓存数据更新机制，当某一个作用域(一级缓存 Session/二级缓存 Namespaces)的进行了 C/U/D 操作后，默认该作用域下所有 select 中的缓存将被 clear 掉并重新更新，如果开启了二级缓存，则只根据配置判断是否刷新。</p>
 <h3 id="_1">参考链接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>https://my.oschina.net/u/4116655/blog/3055230</p>
-<p>https://www.w3cschool.cn/kzsow/kzsow-4ovb2grl.html</p>
-<p>https://www.cnblogs.com/lukelook/p/11099039.html</p>
-<p>https://zhuanlan.zhihu.com/p/60257737</p>
-<p>https://www.cnblogs.com/qmillet/p/12523636.html</p>
-<p>https://blog.csdn.net/a745233700/article/details/80977133</p>
+<p><a href="https://my.oschina.net/u/4116655/blog/3055230">https://my.oschina.net/u/4116655/blog/3055230</a></p>
+<p><a href="https://www.w3cschool.cn/kzsow/kzsow-4ovb2grl.html">https://www.w3cschool.cn/kzsow/kzsow-4ovb2grl.html</a></p>
+<p><a href="https://www.cnblogs.com/lukelook/p/11099039.html">https://www.cnblogs.com/lukelook/p/11099039.html</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/60257737">https://zhuanlan.zhihu.com/p/60257737</a></p>
+<p><a href="https://www.cnblogs.com/qmillet/p/12523636.html">https://www.cnblogs.com/qmillet/p/12523636.html</a></p>
+<p><a href="https://blog.csdn.net/a745233700/article/details/80977133">https://blog.csdn.net/a745233700/article/details/80977133</a></p>
 
 
 
@@ -10277,6 +10277,12 @@ mappers 映射器</p>
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

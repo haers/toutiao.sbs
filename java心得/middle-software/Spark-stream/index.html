@@ -4625,6 +4625,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4739,20 +4753,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9908,41 +9908,41 @@
 <hr />
 <h4 id="_1">下载安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p>下载地址：</p>
-<p>http://spark.apache.org/</p>
+<p><a href="http://spark.apache.org/">http://spark.apache.org/</a></p>
 <p>根据需要选择安装包，spark-2.1.1-bin-hadoop2.7.tgz</p>
 <p>然后解压，并在 vi ~/.bash_profile 配置环境变量</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SPARK_HOME=/Users/onlyone/software/spark-2.1.1-bin-hadoop2.7
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SPARK_HOME=/Users/onlyone/software/spark-2.1.1-bin-hadoop2.7
+</span></code></pre></div>
 <h4 id="_2">启动<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>启动 Master，Master 会记录并分配系统资源。</li>
 </ul>
-<p>并提供界面查看系统的运行情况 ： http://172.16.104.120:8080/</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./sbin/start-master.sh
-</code></pre></div>
+<p>并提供界面查看系统的运行情况 ： <a href="http://172.16.104.120:8080/">http://172.16.104.120:8080/</a></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./sbin/start-master.sh
+</span></code></pre></div>
 <ul>
 <li>启动工作节点，它将会执行 Spark 作业</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./bin/spark-class org.apache.spark.deploy.worker.Worker spark://onlyonedeMacBook-Pro.local:7077 &amp;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./bin/spark-class org.apache.spark.deploy.worker.Worker spark://onlyonedeMacBook-Pro.local:7077 &amp;
+</span></code></pre></div>
 <ul>
 <li>如果想停止所有的进程</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> ./sbin/stop-all.sh
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> ./sbin/stop-all.sh
+</span></code></pre></div>
 <h4 id="_3">运行任务<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>将工程导出 jar 文件，并保存在$SPARK_HOME 根目录下</p>
 <p>终端执行下面命令，提交任务：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./bin/spark-submit --class com.data.spark.StudentAvgScore  --master spark://onlyonedeMacBook-Pro.local:7077 spark-core-1.0-SNAPSHOT.jar
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./bin/spark-submit --class com.data.spark.StudentAvgScore  --master spark://onlyonedeMacBook-Pro.local:7077 spark-core-1.0-SNAPSHOT.jar
+</span></code></pre></div>
 <p>运行结果：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>//若干spark系统日志
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>。。。。。
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>zhangsan的平均分：85.5
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>lihua的平均分：85.0
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>xiaoming的平均分：93.0
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>wangwu的平均分：76.5
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>//若干spark系统日志
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>。。。。。
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>zhangsan的平均分：85.5
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>lihua的平均分：85.0
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>xiaoming的平均分：93.0
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>wangwu的平均分：76.5
+</span></code></pre></div>
 
 
 
@@ -10028,6 +10028,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

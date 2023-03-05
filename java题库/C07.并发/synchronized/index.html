@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10147,9 +10147,9 @@
 </blockquote>
 <p>在 jdk1.6 之前，<code>synchronized</code>被称为重量级锁，在 jdk1.6 中，为了减少获得锁和释放锁带来的性能开销，引入了偏向锁和轻量级锁。下面先介绍 jdk1.6 之前的<code>synchronized</code>原理。</p>
 <h3 id="1">1. <strong>对象头</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>在 HotSpot 虚拟机中，Java 对象在内存中的布局大致可以分为三部分：<strong>对象头</strong>、<strong>实例数据</strong>和<strong>填充对齐</strong>。因为<code>synchronized</code>用的锁是存在对象头里的，这里我们需要重点了解对象头。如果对象头是数组类型，则对象头由<strong>Mark Word</strong>、<strong>Class MetadataAddress</strong>和<strong>Array length</strong>组成，如果对象头非数组类型，对象头则由<strong>Mark Word</strong>和<strong>Class MetadataAddress</strong>组成。在 32 位虚拟机中，数组类型的 Java 对象头的组成如下表：</p>
+<p>在 HotSpot 虚拟机中，Java 对象在内存中的布局大致可以分为三部分：<strong>对象头</strong>、<strong>实例数据**和**填充对齐</strong>。因为<code>synchronized</code>用的锁是存在对象头里的，这里我们需要重点了解对象头。如果对象头是数组类型，则对象头由**Mark Word**、**Class MetadataAddress**和**Array length**组成，如果对象头非数组类型，对象头则由**Mark Word**和**Class MetadataAddress**组成。在 32 位虚拟机中，数组类型的 Java 对象头的组成如下表：</p>
 <p><img alt="img" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f33da470a8d0499a90de8b3c4d4733db~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp" /></p>
-<p>这里我们需要重点掌握的是<strong>Mark Word</strong>。</p>
+<p>这里我们需要重点掌握的是**Mark Word**。</p>
 <h4 id="11-mark-word">1.1 <strong>Mark Word</strong><a class="headerlink" href="#11-mark-word" title="Permanent link">&para;</a></h4>
 <p>在运行期间，Mark Word 中存储的数据会随着锁标志位的变化而变化，在 32 位虚拟机中，不同状态下的组成如下：</p>
 <ul>
@@ -10160,25 +10160,25 @@
 <p>其中线程 ID 表示持有偏向锁线程的 ID，Epoch 表示偏向锁的时间戳，偏向锁和轻量级锁是在 jdk1.6 中引入的。</p>
 <h3 id="2-monitor">2. <strong>重量级锁的底部实现原理：Monitor</strong><a class="headerlink" href="#2-monitor" title="Permanent link">&para;</a></h3>
 <p>在 jdk1.6 之前，<code>synchronized</code>只能实现重量级锁，Java 虚拟机是基于 Monitor 对象来实现重量级锁的，所以首先来了解下 Monitor，在 Hotspot 虚拟机中，Monitor 是由 ObjectMonitor 实现的，其源码是用 C++语言编写的。找到 ObjectMonitor.hpp 文件，看下其数据结构</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">ObjectMonitor() {</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="na">_header</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="c1">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="na">_count</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="c1">; //锁的计数器，获取锁时count数值加1，释放锁时count值减1，直到</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="na">_waiters</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">0, //等待线程数</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="na">_recursions</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="c1">; //锁的重入次数</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="na">_object</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="c1">;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="na">_owner</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="c1">; //指向持有ObjectMonitor对象的线程地址</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="na">_WaitSet</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="c1">; //处于wait状态的线程，会被加入到_WaitSet</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="na">_WaitSetLock</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="c1">;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="na">_Responsible</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="w"> </span><span class="c1">;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="na">_succ</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="w"> </span><span class="c1">;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="na">_cxq</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="w"> </span><span class="c1">; //阻塞在EntryList上的单向线程列表</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="na">FreeNext</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="w"> </span><span class="c1">;</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="na">_EntryList</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="w"> </span><span class="c1">; //处于等待锁block状态的线程，会被加入到该列表</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="na">_SpinFreq</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="c1">;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="na">_SpinClock</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="c1">;</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="na">OwnerIsThread</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="c1">;</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="na">}</span>
-</code></pre></div>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">ObjectMonitor() {</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="na">_header</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="c1">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="na">_count</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="c1">; //锁的计数器，获取锁时count数值加1，释放锁时count值减1，直到</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="na">_waiters</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">0, //等待线程数</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="na">_recursions</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="c1">; //锁的重入次数</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="na">_object</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="c1">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="na">_owner</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="c1">; //指向持有ObjectMonitor对象的线程地址</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="na">_WaitSet</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="c1">; //处于wait状态的线程，会被加入到_WaitSet</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="na">_WaitSetLock</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="c1">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="na">_Responsible</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="w"> </span><span class="c1">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="na">_succ</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="w"> </span><span class="c1">;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="na">_cxq</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="w"> </span><span class="c1">; //阻塞在EntryList上的单向线程列表</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="na">FreeNext</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="w"> </span><span class="c1">;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="na">_EntryList</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">NULL</span><span class="w"> </span><span class="c1">; //处于等待锁block状态的线程，会被加入到该列表</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="na">_SpinFreq</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="c1">;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="na">_SpinClock</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="c1">;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="na">OwnerIsThread</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span><span class="w"> </span><span class="c1">;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="na">}</span>
+</span></code></pre></div>
 <p>其中 _owner、_WaitSet 和_EntryList 字段比较重要，它们之间的转换关系如下图</p>
 <ul>
 <li><code>entryList(锁池)</code></li>
@@ -10196,54 +10196,54 @@
 </blockquote>
 <h4 id="21-synchronized">2.1 <strong>synchronized 作用于同步代码块的实现原理</strong><a class="headerlink" href="#21-synchronized" title="Permanent link">&para;</a></h4>
 <p>前面已经了解 Monitor 的实现细节，而 Java 虚拟机则是通过进入和退出 Monitor 对象来实现方法同步和代码块同步的。这里为了更方便看程序字节码执行指令，我先在 IDEA 中安装了一个<code>jclasslib Bytecode viewer</code>插件。我们先来看这个<code>synchronized</code>作用于同步代码块的代码。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="c1">//其他操作.......</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">){</span><span class="w">   </span><span class="c1">//this表示当前对象实例，这里还可以使用syncTest.class，表示class对象锁</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">                </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">}</span>
-</code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="c1">//其他操作.......</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">){</span><span class="w">   </span><span class="c1">//this表示当前对象实例，这里还可以使用syncTest.class，表示class对象锁</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">                </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div>
 <p>查看代码字节码指令如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="n">dup</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="n">astore_1</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="n">monitorenter</span><span class="w">     </span><span class="c1">//进入同步代码块的指令</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="n">iconst_0</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="n">istore_2</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="n">iload_2</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="n">sipush</span><span class="w"> </span><span class="m">10000</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="m">10</span><span class="w"> </span><span class="n">if_icmpge</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="p">(</span><span class="o">+</span><span class="m">17</span><span class="p">)</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="m">13</span><span class="w"> </span><span class="n">getstatic</span><span class="w"> </span><span class="err">#</span><span class="m">2</span><span class="w"> </span><span class="o">&lt;</span><span class="n">com</span><span class="o">/</span><span class="n">company</span><span class="o">/</span><span class="n">syncTest</span><span class="p">.</span><span class="n">i</span><span class="o">&gt;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="m">16</span><span class="w"> </span><span class="n">iconst_1</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="m">17</span><span class="w"> </span><span class="n">iadd</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="m">18</span><span class="w"> </span><span class="n">putstatic</span><span class="w"> </span><span class="err">#</span><span class="m">2</span><span class="w"> </span><span class="o">&lt;</span><span class="n">com</span><span class="o">/</span><span class="n">company</span><span class="o">/</span><span class="n">syncTest</span><span class="p">.</span><span class="n">i</span><span class="o">&gt;</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="m">21</span><span class="w"> </span><span class="n">iinc</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="m">24</span><span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="m">18</span><span class="p">)</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="m">27</span><span class="w"> </span><span class="n">aload_1</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="m">28</span><span class="w"> </span><span class="n">monitorexit</span><span class="w">     </span><span class="c1">//结束同步代码块的指令</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="m">29</span><span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="m">37</span><span class="w"> </span><span class="p">(</span><span class="o">+</span><span class="m">8</span><span class="p">)</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="m">32</span><span class="w"> </span><span class="n">astore_3</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="m">33</span><span class="w"> </span><span class="n">aload_1</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="m">34</span><span class="w"> </span><span class="n">monitorexit</span><span class="w">     </span><span class="c1">//遇到异常时执行的指令</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="m">35</span><span class="w"> </span><span class="n">aload_3</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="m">36</span><span class="w"> </span><span class="n">athrow</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="m">37</span><span class="w"> </span><span class="k">return</span>
-</code></pre></div>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="n">dup</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="n">astore_1</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="n">monitorenter</span><span class="w">     </span><span class="c1">//进入同步代码块的指令</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="n">iconst_0</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="n">istore_2</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="n">iload_2</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="n">sipush</span><span class="w"> </span><span class="m">10000</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="m">10</span><span class="w"> </span><span class="n">if_icmpge</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="p">(</span><span class="o">+</span><span class="m">17</span><span class="p">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="m">13</span><span class="w"> </span><span class="n">getstatic</span><span class="w"> </span><span class="err">#</span><span class="m">2</span><span class="w"> </span><span class="o">&lt;</span><span class="n">com</span><span class="o">/</span><span class="n">company</span><span class="o">/</span><span class="n">syncTest</span><span class="p">.</span><span class="n">i</span><span class="o">&gt;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="m">16</span><span class="w"> </span><span class="n">iconst_1</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="m">17</span><span class="w"> </span><span class="n">iadd</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="m">18</span><span class="w"> </span><span class="n">putstatic</span><span class="w"> </span><span class="err">#</span><span class="m">2</span><span class="w"> </span><span class="o">&lt;</span><span class="n">com</span><span class="o">/</span><span class="n">company</span><span class="o">/</span><span class="n">syncTest</span><span class="p">.</span><span class="n">i</span><span class="o">&gt;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="m">21</span><span class="w"> </span><span class="n">iinc</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="m">24</span><span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="m">18</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="m">27</span><span class="w"> </span><span class="n">aload_1</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="m">28</span><span class="w"> </span><span class="n">monitorexit</span><span class="w">     </span><span class="c1">//结束同步代码块的指令</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="m">29</span><span class="w"> </span><span class="k">goto</span><span class="w"> </span><span class="m">37</span><span class="w"> </span><span class="p">(</span><span class="o">+</span><span class="m">8</span><span class="p">)</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="m">32</span><span class="w"> </span><span class="n">astore_3</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="m">33</span><span class="w"> </span><span class="n">aload_1</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="m">34</span><span class="w"> </span><span class="n">monitorexit</span><span class="w">     </span><span class="c1">//遇到异常时执行的指令</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="m">35</span><span class="w"> </span><span class="n">aload_3</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="m">36</span><span class="w"> </span><span class="n">athrow</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="m">37</span><span class="w"> </span><span class="k">return</span>
+</span></code></pre></div>
 <p>从上述字节码中可以看到同步代码块的实现是由<code>monitorenter</code> 和<code>monitorexit</code>指令完成的，其中<code>monitorenter</code>指令所在的位置是同步代码块开始的位置，第一个<code>monitorexit</code>指令是用于正常结束同步代码块的指令，第二个<code>monitorexit</code>指令是用于异常结束时所执行的释放 Monitor 指令。</p>
 <h4 id="22-synchronized">2.2 <strong>synchronized 作用于同步方法原理</strong><a class="headerlink" href="#22-synchronized" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">synchronized</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">add</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">}</span>
-</code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">synchronized</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">add</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div>
 <p>查看字节码如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="m">0</span><span class="w"> </span>getstatic<span class="w"> </span><span class="c1">#2 &lt;com/company/syncTest.i&gt;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="m">3</span><span class="w"> </span>iconst_1
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="m">4</span><span class="w"> </span>iadd
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="m">5</span><span class="w"> </span>putstatic<span class="w"> </span><span class="c1">#2 &lt;com/company/syncTest.i&gt;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="m">8</span><span class="w"> </span><span class="k">return</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="m">0</span><span class="w"> </span>getstatic<span class="w"> </span><span class="c1">#2 &lt;com/company/syncTest.i&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="m">3</span><span class="w"> </span>iconst_1
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="m">4</span><span class="w"> </span>iadd
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="m">5</span><span class="w"> </span>putstatic<span class="w"> </span><span class="c1">#2 &lt;com/company/syncTest.i&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="m">8</span><span class="w"> </span><span class="k">return</span>
+</span></code></pre></div>
 <p>发现这个没有<code>monitorenter</code> 和 <code>monitorexit</code> 这两个指令了，而在查看该方法的 class 文件的结构信息时发现了<code>Access flags</code>后边的 synchronized 标识，该标识表明了该方法是一个同步方法。Java 虚拟机通过该标识可以来辨别一个方法是否为同步方法，如果有该标识，线程将持有 Monitor，在执行方法，最后释放 Monitor。</p>
 <p><img alt="image.png" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a817b0a7592a4fb8830b413e93bb6163~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp?" /></p>
 <p>原理大概就是这样，最后总结一下，面试中应该简洁地如何回答<code>synchroized</code>的底层原理这个问题。</p>
@@ -10365,34 +10365,34 @@
 <p>锁消除是指 Java 虚拟机在即时编译时，通过对运行上下的扫描，消除那些不可能存在共享资源竞争的锁。锁消除可以节约无意义的请求锁时间。</p>
 </blockquote>
 <p>锁消除的主要判定依据来源于逃逸分析的数据支持，<code>如果判断在一段代码中，堆上的所有数据都不会逃逸出去从而被其他线程访问到，那就可以把它们当做栈上数据对待</code>，认为它们是线程私有的，同步加锁自然就无须进行。变量是否逃逸，对于虚拟机来说需要使用数据流分析来确定，但是程序员自己应该是很清楚的，怎么会在明知道不存在数据争用的情况下要求同步呢?实际上有许多同步措施并不是程序员自己加入的，同步的代码在 Java 程序中的普遍程度也许超过了大部分读者的想象。下面这段非常简单的代码仅仅是输出两次字符串相加的结果，无论是源码字面上还是程序语义上都没有同步。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Append</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Thread</span><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="n">appendHello</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">,)</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">appendHello</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuffer</span><span class="p">().</span><span class="na">append</span><span class="p">(</span><span class="n">s1</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="n">s2</span><span class="p">).</span><span class="na">toString</span><span class="p">();</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Append</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Thread</span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="n">appendHello</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">,)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">appendHello</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuffer</span><span class="p">().</span><span class="na">append</span><span class="p">(</span><span class="n">s1</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="n">s2</span><span class="p">).</span><span class="na">toString</span><span class="p">();</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+</span></code></pre></div>
 <p><code>StringBuffer的append ( )</code>是一个同步方法，锁就是 this 也就是<code>(new StringBuilder())</code>。虚拟机发现它的动态作用域被限制在<code>cappendHello( )</code>方法内部。也就是说, <code>new StringBuilder()</code>对象的引用永远不会“逃逸”到<code>appendHello ( )</code>方法之外，其他线程无法访问到它，因此，虽然这里有锁，但是可以被安全地消除掉，在即时编译之后，这段代码就会忽略掉所有的同步而直接执行了。</p>
 <p><img alt="image.png" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d27f498b2f2e45f98a935662b0deca6c~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp?" /></p>
 <p>append 方法是同步的，进行了两次的字符串的拼接，方法的调用者是 StringBuffer 对象，它是一个局部变量没有逃逸出这个方法内部，即使是多个线程来执行对象也没有逃逸出这个方法，此时 append 方法的锁就可以消除掉。</p>
 <h3 id="7">7. <strong>锁粗化</strong><a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
 <p>一般情况下，为了提高性能，总是将同步块的作用范围限制到最小，这样可以使得需要同步的操作尽可能地少。但如果一系列连续的操作一直对某个对象反复加锁和解锁，频繁地进行互斥同步操作也会引起不必要的性能消耗。</p>
 <p>如果虚拟机检测到有一系列操作都是对某个对象反复加锁和解锁，会将加锁同步的范围粗化到整个操作序列的外部。如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kd">synchronized</span><span class="p">(</span><span class="n">lock</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="err">&#39;</span><span class="n">i</span><span class="p">:</span><span class="err">&#39;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">);</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kd">synchronized</span><span class="p">(</span><span class="n">lock</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="err">&#39;</span><span class="n">i</span><span class="p">:</span><span class="err">&#39;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>这段代码会导致频繁地加锁和解锁，锁粗化后</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">synchronized</span><span class="p">(</span><span class="n">lock</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="err">&#39;</span><span class="n">i</span><span class="p">:</span><span class="err">&#39;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">);</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
-</code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">synchronized</span><span class="p">(</span><span class="n">lock</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="err">&#39;</span><span class="n">i</span><span class="p">:</span><span class="err">&#39;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">);</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>将同步代码块的范围放大，放到 for 循环的外面，这样只需要加一次锁即可。</p>
 <h3 id="8-synchronized">8. <strong>对 synchronized 的优化</strong><a class="headerlink" href="#8-synchronized" title="Permanent link">&para;</a></h3>
 <p>（1）减少 synchronized 的范围</p>
@@ -10506,6 +10506,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

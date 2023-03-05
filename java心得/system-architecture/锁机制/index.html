@@ -4660,6 +4660,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4774,20 +4788,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9979,7 +9979,7 @@
 <p>在如今分布式、高并发、各种负载纵横天下的时代，支持高访问量成为检验一个系统合不合格的重要标准，然而我们除了在运算过程中要求系统更加效率外，在最终的数据存储过程中也希望其能够准确。</p>
 <p>并发修改同一记录时为避免更新丢失，要么在应用层加锁，要么在缓存加锁，要么在数据库层使用乐观锁，使用 version 作为更新依据。</p>
 <h4 id="_2">悲观锁：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>正如其名，它指对数据被外界（可能是本机的其他事务，也可能是来自其它服务器的事务处理）的修改持保守态度。在整个数据处理过程中，将数据处于锁定状态。悲观锁大多数情况下<strong>依靠数据库的锁机制实现，以保证操作最大程度的独占性</strong>。如果加锁的时间过长，其他用户长时间无法访问，影响程序的并发访问性，同时这样对数据库性能开销影响也很大，特别是长事务而言，这样的开销往往无法承受。</p>
+<p>正如其名，它指对数据被外界（可能是本机的其他事务，也可能是来自其它服务器的事务处理）的修改持保守态度。在整个数据处理过程中，将数据处于锁定状态。悲观锁大多数情况下**依靠数据库的锁机制实现，以保证操作最大程度的独占性**。如果加锁的时间过长，其他用户长时间无法访问，影响程序的并发访问性，同时这样对数据库性能开销影响也很大，特别是长事务而言，这样的开销往往无法承受。</p>
 <h4 id="_3">乐观锁：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>分为三个阶段：数据读取、写入校验、数据写入。</p>
 <p>假设数据一般情况下不会造成冲突，只有在数据进行提交更新时，才会正式对数据的冲突与否进行检测，如果发现冲突了，则返回错误信息，让用户决定如何去做。fail-fast 机制。</p>
@@ -10093,15 +10093,15 @@ update 订单表 set status="交易成功" where id=#orderId# and status="等待
 <p>mysql innoDB 默认使用行锁，需要明确指定主键，否则 mysql 将会执行表锁（将整个表锁住）。除了主键外，使用索引也会影响数据库的锁定级别。</p>
 <h4 id="_8">案例五：<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>商品减库存时，如果在秒杀等高并发的场景下，如果采用 version 作为乐观锁，虽然每次只有一个事务能更新成功，但业务感知上会有大量的操作失败。解决方案可以采用库存数做为乐观锁</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>update item
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>set quantity=quantity - #sub_quantity#
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>where item_id=#id#
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      and quantity - #sub_quantity# &gt; 0
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>update item
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>set quantity=quantity - #sub_quantity#
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>where item_id=#id#
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      and quantity - #sub_quantity# &gt; 0
+</span></code></pre></div>
 <h4 id="20-3">注意：如果每次访问冲突概率小于 20%，推荐使用乐观锁，否则使用悲观锁。乐观锁的重试次数不得小于 3 次。<a class="headerlink" href="#20-3" title="Permanent link">&para;</a></h4>
 <hr />
 <p><strong>参考资料：</strong></p>
-<p>https://mp.weixin.qq.com/s?__biz=MjM5NzMyMjAwMA==&amp;mid=2651477385&amp;idx=1&amp;sn=2db07fdbf148b47e88613cc648c9135a&amp;scene=0&amp;key=305bc10ec50ec19bec2be639b7fb5203e5461f172af5f913e52e8da9ab78acb42a407104893c37f972167b8d7b080be1&amp;ascene=0&amp;uin=Mzc2MDAyNDU%3D&amp;devicetype=iMac+MacBookPro11%2C1+OSX+OSX+10.10.1+build(14B25)&amp;version=11000003&amp;pass_ticket=wALAc3GK4Gz2wCm4YcYmcfVkSIKhak3fraNYqyqYFaU%3D</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5NzMyMjAwMA==&amp;mid=2651477385&amp;idx=1&amp;sn=2db07fdbf148b47e88613cc648c9135a&amp;scene=0&amp;key=305bc10ec50ec19bec2be639b7fb5203e5461f172af5f913e52e8da9ab78acb42a407104893c37f972167b8d7b080be1&amp;ascene=0&amp;uin=Mzc2MDAyNDU%3D&amp;devicetype=iMac+MacBookPro11%2C1+OSX+OSX+10.10.1+build(14B25)&amp;version=11000003&amp;pass_ticket=wALAc3GK4Gz2wCm4YcYmcfVkSIKhak3fraNYqyqYFaU%3D">https://mp.weixin.qq.com/s?__biz=MjM5NzMyMjAwMA==&amp;mid=2651477385&amp;idx=1&amp;sn=2db07fdbf148b47e88613cc648c9135a&amp;scene=0&amp;key=305bc10ec50ec19bec2be639b7fb5203e5461f172af5f913e52e8da9ab78acb42a407104893c37f972167b8d7b080be1&amp;ascene=0&amp;uin=Mzc2MDAyNDU%3D&amp;devicetype=iMac+MacBookPro11%2C1+OSX+OSX+10.10.1+build(14B25)&amp;version=11000003&amp;pass_ticket=wALAc3GK4Gz2wCm4YcYmcfVkSIKhak3fraNYqyqYFaU%3D</a></p>
 
 
 
@@ -10187,6 +10187,12 @@ update 订单表 set status="交易成功" where id=#orderId# and status="等待
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

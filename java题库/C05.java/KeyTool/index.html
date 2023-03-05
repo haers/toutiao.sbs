@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9990,19 +9990,19 @@
 </ul>
 <h2 id="keystore">keystore 的生成<a class="headerlink" href="#keystore" title="Permanent link">&para;</a></h2>
 <h4 id="_1">分阶段生成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>keytool -genkey -alias yushan(别名) -keypass yushan(别名密码) -keyalg RSA(算法) -keysize 1024(密钥长度) -validity 365(有效期，天单位) -keystore   e:/yushan.keystore(指定生成证书的位置和证书名称) -storepass 123456(获取keystore信息的密码)
+<div class="language-text highlight"><pre><span></span><code>keytool -genkey -alias yushan(别名) -keypass yushan(别名密码) -keyalg RSA(算法) -keysize 1024(密钥长度) -validity 365(有效期，天单位) -keystore   e:/yushan.keystore(指定生成证书的位置和证书名称) -storepass 123456(获取keystore信息的密码)
 </code></pre></div>
 <h4 id="_2">一次性生成<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>keytool -genkey -alias yushan -keypass yushan -keyalg RSA -keysize 1024 -validity 365 -keystore  e:/yushan.keystore -storepass 123456 -dname &quot;CN=(名字(名字与姓氏), OU=(组织单位名称), O=(组织名称), L=(城市或区域名称), ST=(州或省份名称), C=(单位的两字母国家代码)&quot;;(中英文即可)
+<div class="language-text highlight"><pre><span></span><code>keytool -genkey -alias yushan -keypass yushan -keyalg RSA -keysize 1024 -validity 365 -keystore  e:/yushan.keystore -storepass 123456 -dname &quot;CN=(名字(名字与姓氏), OU=(组织单位名称), O=(组织名称), L=(城市或区域名称), ST=(州或省份名称), C=(单位的两字母国家代码)&quot;;(中英文即可)
 </code></pre></div>
 <h2 id="keystore_1">keystore 信息的查看<a class="headerlink" href="#keystore_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>keytool -list  -v -keystore e:/keytool /yushan.keystore -storepass 123456
+<div class="language-text highlight"><pre><span></span><code>keytool -list  -v -keystore e:/keytool /yushan.keystore -storepass 123456
 </code></pre></div>
 <h2 id="_3">证书的导出<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>keytool -export -alias yushan -keystore e:/yushan.keystore -file e:/yushan.crt(指定导出的证书位置及证书名称) -storepass 123456
+<div class="language-text highlight"><pre><span></span><code>keytool -export -alias yushan -keystore e:/yushan.keystore -file e:/yushan.crt(指定导出的证书位置及证书名称) -storepass 123456
 </code></pre></div>
 <h2 id="_4">查看导出的证书信息<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>keytool -printcert -file yushan.crt
+<div class="language-text highlight"><pre><span></span><code>keytool -printcert -file yushan.crt
 </code></pre></div>
 <h2 id="_5">证书的导入<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 
@@ -10090,6 +10090,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

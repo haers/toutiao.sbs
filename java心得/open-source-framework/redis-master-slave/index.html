@@ -4673,6 +4673,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4787,20 +4801,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10004,76 +10004,76 @@
 <hr />
 <h3 id="_1">一、安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <h5 id="_2">下载安装包<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
-<p>https://redis.io/download</p>
+<p><a href="https://redis.io/download">https://redis.io/download</a></p>
 <h5 id="_3">解压<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar zxvf redis-4.0.2.tar.gz
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar zxvf redis-4.0.2.tar.gz
+</span></code></pre></div>
 <h5 id="_4">编译源程序<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cd redis-4.0.2-6379
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>make
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cd redis-4.0.2-6379
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>make
+</span></code></pre></div>
 <h5 id="_5">服务启动<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cd src
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>./redis-server &amp;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cd src
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>./redis-server &amp;
+</span></code></pre></div>
 <h5 id="redis_1">查看一下启动的 Redis 实例<a class="headerlink" href="#redis_1" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ps -ef|grep redis
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ps -ef|grep redis
+</span></code></pre></div>
 <h5 id="shell">客户端 shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cd src
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>./redis-cli
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cd src
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>./redis-cli
+</span></code></pre></div>
 <h4 id="redisconf">配置参数(redis.conf)<a class="headerlink" href="#redisconf" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>   daemonize：如需要在后台运行，把该项的值改为yes
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>　　pdifile：把pid文件放在/var/run/redis.pid，可以配置到其他地址
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>　　bind：指定redis只接收来自该IP的请求，如果不设置，那么将处理所有请求，在生产环节中最好设置该项
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>　　port：监听端口，默认为6379
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>　　timeout：设置客户端连接时的超时时间，单位为秒
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>　　loglevel：等级分为4级，debug，revbose，notice和warning。生产环境下一般开启notice
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>　　logfile：配置log文件地址，默认使用标准输出，即打印在命令行终端的端口上
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>　　database：设置数据库的个数，默认使用的数据库是0
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>　　save：设置redis进行数据库镜像的频率
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>　　rdbcompression：在进行镜像备份时，是否进行压缩
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>　　dbfilename：镜像备份文件的文件名
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>　　dir：数据库镜像备份的文件放置的路径
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>　　slaveof：设置该数据库为其他数据库的从数据库
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>　　masterauth：当主数据库连接需要密码验证时，在这里设定
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>　　requirepass：设置客户端连接后进行任何其他指定前需要使用的密码
-<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>　　maxclients：限制同时连接的客户端数量
-<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
-<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>　　maxmemory：设置redis能够使用的最大内存
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
-<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>　　appendonly：开启appendonly模式后，redis会把每一次所接收到的写操作都追加到appendonly.aof文件中，当redis重新启动时，会从该文件恢复出之前的状态
-<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
-<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>　　appendfsync：设置appendonly.aof文件进行同步的频率
-<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>　　vm_enabled：是否开启虚拟内存支持
-<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
-<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>　　vm_swap_file：设置虚拟内存的交换文件的路径
-<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
-<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>　　vm_max_momery：设置开启虚拟内存后，redis将使用的最大物理内存的大小，默认为0
-<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
-<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>　　vm_page_size：设置虚拟内存页的大小
-<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>
-<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>　　vm_pages：设置交换文件的总的page数量
-<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
-<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>　　vm_max_thrrads：设置vm IO同时使用的线程数量
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>   daemonize：如需要在后台运行，把该项的值改为yes
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>　　pdifile：把pid文件放在/var/run/redis.pid，可以配置到其他地址
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>　　bind：指定redis只接收来自该IP的请求，如果不设置，那么将处理所有请求，在生产环节中最好设置该项
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>　　port：监听端口，默认为6379
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>　　timeout：设置客户端连接时的超时时间，单位为秒
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>　　loglevel：等级分为4级，debug，revbose，notice和warning。生产环境下一般开启notice
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>　　logfile：配置log文件地址，默认使用标准输出，即打印在命令行终端的端口上
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>　　database：设置数据库的个数，默认使用的数据库是0
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>　　save：设置redis进行数据库镜像的频率
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>　　rdbcompression：在进行镜像备份时，是否进行压缩
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>　　dbfilename：镜像备份文件的文件名
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>　　dir：数据库镜像备份的文件放置的路径
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>　　slaveof：设置该数据库为其他数据库的从数据库
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>　　masterauth：当主数据库连接需要密码验证时，在这里设定
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>　　requirepass：设置客户端连接后进行任何其他指定前需要使用的密码
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>　　maxclients：限制同时连接的客户端数量
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>　　maxmemory：设置redis能够使用的最大内存
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>　　appendonly：开启appendonly模式后，redis会把每一次所接收到的写操作都追加到appendonly.aof文件中，当redis重新启动时，会从该文件恢复出之前的状态
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>　　appendfsync：设置appendonly.aof文件进行同步的频率
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>　　vm_enabled：是否开启虚拟内存支持
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>　　vm_swap_file：设置虚拟内存的交换文件的路径
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>　　vm_max_momery：设置开启虚拟内存后，redis将使用的最大物理内存的大小，默认为0
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>　　vm_page_size：设置虚拟内存页的大小
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>　　vm_pages：设置交换文件的总的page数量
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>　　vm_max_thrrads：设置vm IO同时使用的线程数量
+</span></code></pre></div>
 <h3 id="_6">二、主从复制<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://yq.aliyun.com/articles/79223?spm=5176.8091938.0.0.TKdCyN">主从复制原理</a></li>
@@ -10084,104 +10084,104 @@
 <ul>
 <li>（master）修改 6379/conf 目录下的 redis.conf 配置</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>daemonize yes　　　　　　　　　　　　　　　　　　　　 &lt;== daemon进程运行
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>pidfile /Users/onlyone/software/redis/6379/redis.pid   &lt;== 进程id存放文件
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>port 6379                                　　　　&lt;== 端口
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>logfile /Users/onlyone/software/redis/6379/log/redis.log   　　　　&lt;== 日志目录
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>dir /Users/onlyone/software/redis/6379/db/                 　　　　&lt;== db目录
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>daemonize yes　　　　　　　　　　　　　　　　　　　　 &lt;== daemon进程运行
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>pidfile /Users/onlyone/software/redis/6379/redis.pid   &lt;== 进程id存放文件
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>port 6379                                　　　　&lt;== 端口
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>logfile /Users/onlyone/software/redis/6379/log/redis.log   　　　　&lt;== 日志目录
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>dir /Users/onlyone/software/redis/6379/db/                 　　　　&lt;== db目录
+</span></code></pre></div>
 <ul>
 <li>（slave） 修改 6380/conf 目录下的 redis.conf 配置</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>daemonize yes　　　　　　　　　　　　　　　　　　　　 &lt;== daemon进程运行
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>pidfile /Users/onlyone/software/redis/6380/redis.pid     &lt;== 进程id存放文件
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>port 6380                               　　　　&lt;== 端口
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>logfile /Users/onlyone/software/redis/6380/log/redis.log   　　　　&lt;== 日志目录
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>dir /Users/onlyone/software/redis/6380/db/                 　　　　&lt;== db目录
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>slaveof 127.0.0.1 6379      &lt;== master机器
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>daemonize yes　　　　　　　　　　　　　　　　　　　　 &lt;== daemon进程运行
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>pidfile /Users/onlyone/software/redis/6380/redis.pid     &lt;== 进程id存放文件
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>port 6380                               　　　　&lt;== 端口
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>logfile /Users/onlyone/software/redis/6380/log/redis.log   　　　　&lt;== 日志目录
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>dir /Users/onlyone/software/redis/6380/db/                 　　　　&lt;== db目录
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>slaveof 127.0.0.1 6379      &lt;== master机器
+</span></code></pre></div>
 <ul>
 <li>（slave） 修改 6381/conf 目录下的 redis.conf 配置</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>daemonize yes　　　　　　　　　　　　　　　　　　　　 &lt;== daemon进程运行
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>pidfile /Users/onlyone/software/redis/6381/redis.pid   &lt;== 进程id存放文件
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>port 6381                               　　　　&lt;== 端口
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>logfile /Users/onlyone/software/redis/6381/log/redis.log   　　　　&lt;== 日志目录
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>dir /Users/onlyone/software/redis/6381/db/                 　　　　&lt;== db目录
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>slaveof 127.0.0.1 6379      &lt;== master机器
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>daemonize yes　　　　　　　　　　　　　　　　　　　　 &lt;== daemon进程运行
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>pidfile /Users/onlyone/software/redis/6381/redis.pid   &lt;== 进程id存放文件
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>port 6381                               　　　　&lt;== 端口
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>logfile /Users/onlyone/software/redis/6381/log/redis.log   　　　　&lt;== 日志目录
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>dir /Users/onlyone/software/redis/6381/db/                 　　　　&lt;== db目录
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>slaveof 127.0.0.1 6379      &lt;== master机器
+</span></code></pre></div>
 <p>启动实例</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>./redis-server  /Users/onlyone/software/redis/6379/conf/redis.conf &amp;
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>./redis-server  /Users/onlyone/software/redis/6380/conf/redis.conf &amp;
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>./redis-server  /Users/onlyone/software/redis/6381/conf/redis.conf &amp;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>./redis-server  /Users/onlyone/software/redis/6379/conf/redis.conf &amp;
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>./redis-server  /Users/onlyone/software/redis/6380/conf/redis.conf &amp;
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>./redis-server  /Users/onlyone/software/redis/6381/conf/redis.conf &amp;
+</span></code></pre></div>
 <p>查看进程信息</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ps -ef|grep redis
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>501 32933     1   0 10:24上午 ??         0:00.25 ./redis-server 127.0.0.1:6380
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>501 32986     1   0 10:27上午 ??         0:00.09 ./redis-server 127.0.0.1:6381
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>501 32880 12633   0 10:22上午 ttys000    0:00.43 ./redis-server *:6379
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ps -ef|grep redis
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>501 32933     1   0 10:24上午 ??         0:00.25 ./redis-server 127.0.0.1:6380
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>501 32986     1   0 10:27上午 ??         0:00.09 ./redis-server 127.0.0.1:6381
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>501 32880 12633   0 10:22上午 ttys000    0:00.43 ./redis-server *:6379
+</span></code></pre></div>
 <p>查看 master 节点信息</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>./redis-cli -p 6379 &quot;info&quot;
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>。。。省略。。。
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>\# Replication
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>role:master
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>connected_slaves:2
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>slave0:ip=127.0.0.1,port=6380,state=online,offset=518,lag=1
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>slave1:ip=127.0.0.1,port=6381,state=online,offset=518,lag=1
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>master_replid:38605ae9c8d326685b9d114b31efffc405b54129
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>master_replid2:0000000000000000000000000000000000000000
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>master_repl_offset:518
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>second_repl_offset:-1
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>repl_backlog_active:1
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>repl_backlog_size:1048576
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>repl_backlog_first_byte_offset:1
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>repl_backlog_histlen:518
-<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>。。。省略。。。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>./redis-cli -p 6379 &quot;info&quot;
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>。。。省略。。。
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>\# Replication
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>role:master
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>connected_slaves:2
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>slave0:ip=127.0.0.1,port=6380,state=online,offset=518,lag=1
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>slave1:ip=127.0.0.1,port=6381,state=online,offset=518,lag=1
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>master_replid:38605ae9c8d326685b9d114b31efffc405b54129
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>master_replid2:0000000000000000000000000000000000000000
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>master_repl_offset:518
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>second_repl_offset:-1
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>repl_backlog_active:1
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>repl_backlog_size:1048576
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>repl_backlog_first_byte_offset:1
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>repl_backlog_histlen:518
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>。。。省略。。。
+</span></code></pre></div>
 <p>查看 slave（6380）节点信息</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>./redis-cli -p 6380 &quot;info&quot;
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>。。。省略。。。
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>\# Replication
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>role:slave
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>master_host:127.0.0.1
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>master_port:6379
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>master_link_status:up
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>master_last_io_seconds_ago:10
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>master_sync_in_progress:0
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>slave_repl_offset:658
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>slave_priority:100
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>slave_read_only:1
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>connected_slaves:0
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>master_replid:38605ae9c8d326685b9d114b31efffc405b54129
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>master_replid2:0000000000000000000000000000000000000000
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>master_repl_offset:658
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>second_repl_offset:-1
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>repl_backlog_active:1
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>repl_backlog_size:1048576
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>repl_backlog_first_byte_offset:1
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>repl_backlog_histlen:658
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>。。。省略。。。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>./redis-cli -p 6380 &quot;info&quot;
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>。。。省略。。。
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>\# Replication
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>role:slave
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>master_host:127.0.0.1
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>master_port:6379
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>master_link_status:up
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>master_last_io_seconds_ago:10
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>master_sync_in_progress:0
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>slave_repl_offset:658
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>slave_priority:100
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>slave_read_only:1
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>connected_slaves:0
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>master_replid:38605ae9c8d326685b9d114b31efffc405b54129
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>master_replid2:0000000000000000000000000000000000000000
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>master_repl_offset:658
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>second_repl_offset:-1
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>repl_backlog_active:1
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>repl_backlog_size:1048576
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>repl_backlog_first_byte_offset:1
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>repl_backlog_histlen:658
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>。。。省略。。。
+</span></code></pre></div>
 <p>主库写数据</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>➜  src ./redis-cli -p 6379
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>127.0.0.1:6379&gt; set name tom
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>OK
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>127.0.0.1:6379&gt; get name
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>&quot;tom&quot;
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>127.0.0.1:6379&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>➜  src ./redis-cli -p 6379
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>127.0.0.1:6379&gt; set name tom
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>OK
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>127.0.0.1:6379&gt; get name
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>&quot;tom&quot;
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>127.0.0.1:6379&gt;
+</span></code></pre></div>
 <p>查看从库同步数据</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>➜  src ./redis-cli -p 6380
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>127.0.0.1:6380&gt; get name
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>&quot;tom&quot;
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>127.0.0.1:6380&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>➜  src ./redis-cli -p 6380
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>127.0.0.1:6380&gt; get name
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>&quot;tom&quot;
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>127.0.0.1:6380&gt;
+</span></code></pre></div>
 
 
 
@@ -10267,6 +10267,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

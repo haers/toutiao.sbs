@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10161,7 +10161,7 @@
 <h6 id="mark">mark 标记<a class="headerlink" href="#mark" title="Permanent link">&para;</a></h6>
 <p>一个备忘位置。调用 mark( )来设定 mark = postion。调用 reset( )设定 position =mark。标记在设定前是未定义的(undefined)。</p>
 <p>这四个属性之间总是遵循以下关系：</p>
-<div class="highlight"><pre><span></span><code>0 &lt;= mark &lt;= position &lt;= limit &lt;= capacity
+<div class="language-text highlight"><pre><span></span><code>0 &lt;= mark &lt;= position &lt;= limit &lt;= capacity
 </code></pre></div>
 <h2 id="channel">Channel<a class="headerlink" href="#channel" title="Permanent link">&para;</a></h2>
 <p>通道（Channel）是 java.nio 的第二个主要创新。它们既不是一个扩展也不是一项增强，而是全新、极好的 Java I/O 示例，提供与 I/O 服务的直接连接。
@@ -10199,7 +10199,7 @@ Channel 用于在字节缓冲区和位于通道另一侧的实体（通常是一
 <p>通道在被注册到一个选择器上之前，必须先设置为非阻塞模式（通过调用 configureBlocking(false)）。</p>
 <p>调用可选择通道的 register( )方法会将它注册到一个选择器上。如果您试图注册一个处于阻塞状态的通道，register( )将抛出未检查的 IllegalBlockingModeException 异常。
 此外，通道一旦被注册，就不能回到阻塞状态。试图这么做的话，将在调用 configureBlocking( )方法时将抛出 IllegalBlockingModeException 异常。</p>
-<div class="highlight"><pre><span></span><code>选择器才是提供管理功能的对象，而不是可选择通道对象。选择器对象对注册到它之上的通道执行就绪选择，并管理选择键。、
+<div class="language-text highlight"><pre><span></span><code>选择器才是提供管理功能的对象，而不是可选择通道对象。选择器对象对注册到它之上的通道执行就绪选择，并管理选择键。、
 </code></pre></div>
 <h2 id="pipe">Pipe<a class="headerlink" href="#pipe" title="Permanent link">&para;</a></h2>
 <p>Java NIO 管道是 2 个线程之间的单向数据连接。Pipe 有一个 source 通道和一个 sink 通道。数据会被写到 sink 通道，从 source 通道读取。</p>
@@ -10297,6 +10297,12 @@ Channel 用于在字节缓冲区和位于通道另一侧的实体（通常是一
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -4701,6 +4701,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4815,20 +4829,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10060,20 +10060,20 @@
 <hr />
 <h3 id="_2">单例模式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>保证一个类仅有一个实例，并提供一个访问它的全局访问点</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>public class SingletonClass{
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    private static SingletonClass instance=null;
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    public static SingletonClass getInstance(){
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        if(instance==null){
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            synchronized(SingletonClass.class){
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                if(instance==null){
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                    instance=new SingletonClass();
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                }
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            }
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        }
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        return instance;
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    }
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>public class SingletonClass{
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    private static SingletonClass instance=null;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    public static SingletonClass getInstance(){
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        if(instance==null){
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            synchronized(SingletonClass.class){
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                if(instance==null){
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                    instance=new SingletonClass();
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                }
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            }
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        }
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        return instance;
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    }
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>}
+</span></code></pre></div>
 <p><a href="https://mp.weixin.qq.com/s/2ARZEkUZWKN0fxHfkayYHA">如何实现一个正确的单例模式</a></p>
 <p><a href="https://mp.weixin.qq.com/s/1fQkkdtzYh_OikbYJnmZWg">漫画：什么是单例模式？（整合版）</a></p>
 <h3 id="_3">工厂模式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -10087,17 +10087,17 @@
 <p>ComponentImpl：抽象组件实现类，完成了基本的功能实现。</p>
 <p>Decorator：装饰器角色，持有 Component 的实例引用，有点递归的感觉。</p>
 <p>伪代码：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Component c=new ComponentImpl();
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Decorator d1=new Decorator();
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>d1.setComponent(c);
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Decorator d2=new Decorator();
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>d2.setComponent(d1);
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Decorator d3=new Decorator();
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>d3.setComponent(d2);
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Decorator d4=new Decorator();
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>d4.setComponent(d3);
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>d4.methodA();
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Component c=new ComponentImpl();
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Decorator d1=new Decorator();
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>d1.setComponent(c);
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Decorator d2=new Decorator();
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>d2.setComponent(d1);
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Decorator d3=new Decorator();
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>d3.setComponent(d2);
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Decorator d4=new Decorator();
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>d4.setComponent(d3);
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>d4.methodA();
+</span></code></pre></div>
 <p>装饰者模式和适配器模式有点类似，都是包装（wrapper）了一个类，但目地却不相同。适配器模式是将一个接口转换成另一个接口，从而达成匹配。而装饰者模式并没有改变原来的接口，而是改变原有对象的处理方法，借助递归提升性能。</p>
 <h3 id="_5">适配器模式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>适配器模式就是一个类的接口不能被客户端接受，需要转换为另一种接口，从而使两个不匹配的接口能在一起工作。</p>
@@ -10134,7 +10134,7 @@
 <li>找到对应的点，执行，跳出。如：for 循环的 break</li>
 <li>所有的节点都执行一遍，上个节点的返回结果作为下个节点的入参</li>
 </ul>
-<p>http://blog.csdn.net/itomge/article/details/20792567</p>
+<p><a href="http://blog.csdn.net/itomge/article/details/20792567">http://blog.csdn.net/itomge/article/details/20792567</a></p>
 <h3 id="_8">策略模式<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>策略模式通常是指完成某个操作可能会有多种方法，适用于多种场合。我们需要把每个操作方法当做一个实现策略，调用者可根据需要（特定的规则）选择合适的策略</p>
 <p><strong>结构类图：</strong></p>
@@ -10144,17 +10144,17 @@
 <li>Strategy:抽象策略，定义每个策略都要实现的方法</li>
 <li>Realize1，Realize2：负责实现抽象策略中定义的策略方法。</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>例子：
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> @Override
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    @Enhancement({ @Capability(type = CapabilityTypeEnum.INVOCATION_STATS) })
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    public void sendGoods(SendGoodsParam param) throws ServiceException {
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        if (null == param || null == param.getId()) {
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>            this.throwInvalidError(ErrorCodeEnum.NULL_PARAM, null, param);
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        }
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        TradeFlowService t = createTradeFlowServiceByOrderId(param.getId());
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        t.sendGoods(param);
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>例子：
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> @Override
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    @Enhancement({ @Capability(type = CapabilityTypeEnum.INVOCATION_STATS) })
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    public void sendGoods(SendGoodsParam param) throws ServiceException {
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        if (null == param || null == param.getId()) {
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>            this.throwInvalidError(ErrorCodeEnum.NULL_PARAM, null, param);
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        }
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        TradeFlowService t = createTradeFlowServiceByOrderId(param.getId());
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        t.sendGoods(param);
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    }
+</span></code></pre></div>
 <p>createTradeFlowServiceByOrderId 方法会根据”订单号的长短“选择具体的子策略</p>
 <ul>
 <li>长订单号：tpTradeFlowService</li>
@@ -10173,40 +10173,40 @@
 <li>AbstractTemplate：定义一个完整的框架，方法的调用顺序已经确定，但会定义一些抽象的方法留给子类去实现</li>
 <li>SubTemplate：实现抽象模板中定义的抽象方法，从而形成一个完整的流程逻辑</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>public TradeFlowActionResult execute(TradeFlowActionParam param, Map context) throws ServiceException {
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        try {    // 业务逻辑校验
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>            this.validateBusinessLogic(param, context);
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        } catch (ServiceException ex) {
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;validateBusinessLogic got exception. param is &quot; + param, ex);
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            throw ex;
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        } catch (RuntimeException ex) {
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;validateBusinessLogic got runtime exception. param is &quot; + param, ex);
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            throw ex;
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        }
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        try {
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            // 卖家发货业务逻辑
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            this.sendGoods(param, context);
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        } catch (ServiceException ex) {
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;sendGoods got exception. param is &quot; + param, ex);
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            throw ex;
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        } catch (RuntimeException ex) {
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;sendGoods got runtime exception. param is &quot; + param, ex);
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>            throw ex;
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        }
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        try {
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>            // 补充业务（结果不影响核心业务）
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>            this.addition(param, context);
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>        } catch (ServiceException ex) {
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;addition got exception. param is &quot; + param, ex);
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            throw ex;
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>        } catch (RuntimeException ex) {
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;addition got runtime exception. param is &quot; + param, ex);
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>            throw ex;
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>        }
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>        // 处理结果
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>        return null;
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>public TradeFlowActionResult execute(TradeFlowActionParam param, Map context) throws ServiceException {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        try {    // 业务逻辑校验
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>            this.validateBusinessLogic(param, context);
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        } catch (ServiceException ex) {
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;validateBusinessLogic got exception. param is &quot; + param, ex);
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            throw ex;
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        } catch (RuntimeException ex) {
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;validateBusinessLogic got runtime exception. param is &quot; + param, ex);
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            throw ex;
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        }
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        try {
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            // 卖家发货业务逻辑
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            this.sendGoods(param, context);
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        } catch (ServiceException ex) {
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;sendGoods got exception. param is &quot; + param, ex);
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            throw ex;
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        } catch (RuntimeException ex) {
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;sendGoods got runtime exception. param is &quot; + param, ex);
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>            throw ex;
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        }
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        try {
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>            // 补充业务（结果不影响核心业务）
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>            this.addition(param, context);
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>        } catch (ServiceException ex) {
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;addition got exception. param is &quot; + param, ex);
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            throw ex;
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>        } catch (RuntimeException ex) {
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>            sendGoodsLog.info(&quot;SendGoodsAction-&gt;addition got runtime exception. param is &quot; + param, ex);
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>            throw ex;
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>        }
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>        // 处理结果
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>        return null;
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    }
+</span></code></pre></div>
 <p>上面提到的三个抽象方法（业务逻辑校验、卖家发货业务逻辑、补充业务）都是在子类中实现的</p>
 <p>即控制了主流程结构，又不失灵活性，可以让使用者在其基础上定制开发。</p>
 <h4 id="_11">代理模式<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
@@ -10219,17 +10219,17 @@
 <li>ProxySubject：代理类，保存一个 Subject 引用，可以注入一个具体的子类比如 RealSubject。</li>
 </ul>
 <p>代理模式其实就是在操作对象时引入一定程度的间接性。这种间接性，可以增加很多附加操作。比如权限控制，参数校验等等</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public class ProxyPersonManager implements PersonManager {
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    // 接口引用
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    PersonManager realPersonManager = new RealPersonManager();
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    @Override
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    public double getSalary(String name, String operateName) {
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        // 1. 增加一些的权限判断。比如操作人是否有查询某人工资的权限
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        // 2. 具体类的调用
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        return realPersonManager.getSalary(name, operateName);
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    }
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public class ProxyPersonManager implements PersonManager {
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    // 接口引用
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    PersonManager realPersonManager = new RealPersonManager();
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    @Override
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    public double getSalary(String name, String operateName) {
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        // 1. 增加一些的权限判断。比如操作人是否有查询某人工资的权限
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        // 2. 具体类的调用
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        return realPersonManager.getSalary(name, operateName);
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    }
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>}
+</span></code></pre></div>
 <h4 id="rbac">RBAC<a class="headerlink" href="#rbac" title="Permanent link">&para;</a></h4>
 <p>基于角色的权限访问控制。</p>
 <p>用户---》用户的身份（店铺、达人）--》对应的权限集合</p>
@@ -10237,12 +10237,12 @@
 <h4 id="event-sourcing">事件溯源 Event Sourcing<a class="headerlink" href="#event-sourcing" title="Permanent link">&para;</a></h4>
 <p>几乎所有数据库都支持高可用性集群，大多数数据库对系统一致性模型提供一个易于理解的方式，保证强一致性模型的安全方式是维持数据库事务操作的有序日志，理论上理由非常简单，一个事务日志是一系列数据更新操作的动作有序记录集合，当其他节点从主节点获得这个事务日志时，能够按照这种有序动作集合重新播放这些操作，从而更新自己所在节点的数据库状态，当这个事务日志完成后，次节点的状态最终会和主节点状态一致，</p>
 <p>Event sourcing 事件溯源是借鉴数据库事务日志的一种数据持久方式，在事务日志中记录导致状态变化的一系列领域事件。通过持久化记录改变状态的事件，通过重新播放获得状态改变的历史。 事件回放可以返回系统到任何状态。</p>
-<p>https://www.jdon.com/event.html</p>
+<p><a href="https://www.jdon.com/event.html">https://www.jdon.com/event.html</a></p>
 <h4 id="sidecar">Sidecar 模式<a class="headerlink" href="#sidecar" title="Permanent link">&para;</a></h4>
 <p>Sidecar 主张以额外的容器来扩展或增强主容器，而这个额外的容器被称为 Sidecar 容器。也可以理解为插件。</p>
 <p>主要是用来改造已有服务。我们知道，要在一个架构中实施一些架构变更时，需要业务方一起过来进行一些改造。然而业务方的事情比较多，像架构上的变更会低优先级处理，这就导致架构变更的 " 政治复杂度 " 太大。而通过 Sidecar 的方式，我们可以适配应用服务，成为应用服务进出请求的代理。这样，我们就可以干很多对于业务方完全透明的事情了。</p>
-<p>https://blog.csdn.net/ZYQDuron/article/details/80757232</p>
-<p>https://www.cnblogs.com/waterlufei/p/7145746.html</p>
+<p><a href="https://blog.csdn.net/ZYQDuron/article/details/80757232">https://blog.csdn.net/ZYQDuron/article/details/80757232</a></p>
+<p><a href="https://www.cnblogs.com/waterlufei/p/7145746.html">https://www.cnblogs.com/waterlufei/p/7145746.html</a></p>
 
 
 
@@ -10328,6 +10328,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

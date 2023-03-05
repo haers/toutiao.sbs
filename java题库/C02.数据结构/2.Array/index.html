@@ -4714,6 +4714,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4828,20 +4842,6 @@
     <li class="md-nav__item">
       <a href="../BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10080,7 +10080,7 @@
 
 <h1 id="2array">2.数组(array)<a class="headerlink" href="#2array" title="Permanent link">&para;</a></h1>
 <p>数组是数据结构中很基本的结构，很多编程语言都内置数组。</p>
-<p>在 Java 中当创建数组时会在内存中划分出<strong>一块连续的内存</strong>，
+<p>在 Java 中当创建数组时会在内存中划分出**一块连续的内存**，
 然后当有数据进入的时候会将数据按顺序的存储在这块连续的内存中。
 当需要读取数组中的数据时，需要提供数组中的索引，然后数组根据索引将内存中的数据取出来，
 返回给读取程序。</p>
@@ -10109,7 +10109,7 @@
 <p>一个数组中编号 0-&gt;1-&gt;2-&gt;3-&gt;4 这五个内存地址中都存了数组的数据，
 但现在你需要往 4 中插入一个数据，那就代表着从 4 开始，
 后面的所有内存中的数据都要往后移一个位置。这可是很耗时的。</p>
-<div class="highlight"><pre><span></span><code>数组是线性表，就是数据排成像一条直线一样的结构，除了数组，链表，队列，栈都是线性结构
+<div class="language-text highlight"><pre><span></span><code>数组是线性表，就是数据排成像一条直线一样的结构，除了数组，链表，队列，栈都是线性结构
 而非线性表就是二叉树，堆，图等，数据之间不是简单的先后关系。
 </code></pre></div>
 <h5 id="_4">数组和链表的区别？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
@@ -10132,15 +10132,15 @@
 <h5 id="0-1">为什么大多数语言数组都是 0 开头？而不是 1 开头呢？<a class="headerlink" href="#0-1" title="Permanent link">&para;</a></h5>
 <p>从数组存储的内存模型上来看，“下标”最确切的定义应该是“偏移(offset)”,
 如果用 a 来表示数组的首地址，
-a[0]就是偏移为 0 的位置，也就是首地址，a[k]就表示偏移 k 个 type<em>size 的位置，
-所以计算 a[k]的内存地址只需要 a[k]_address = base_address + k * type</em>size
+a[0]就是偏移为 0 的位置，也就是首地址，a[k]就表示偏移 k 个 type*size 的位置，
+所以计算 a[k]的内存地址只需要 a[k]_address = base_address + k * type*size
 若是数组从 1 开始计数，
 那么我们计算数组元素 a[k]的内存地址就是
 a[k]_address = base_address + (k-1) * type_size</p>
 <p>从 1 开始编号，每次随机访问数组元素都多了一次减法运算，
 对于 cpu 来说，就是多了一次减法指令。</p>
 <h5 id="characters-string">一个 Characters 数组不是一个 String<a class="headerlink" href="#characters-string" title="Permanent link">&para;</a></h5>
-<p>在 Java 语言中，一个 char 数组并不是一个 String，并且 String 和 char 数组都不会被'\ u0000'（NUL 字符）终止。</p>
+<p>在 Java 语言中，一个 char 数组并不是一个 String，并且 String 和 char 数组都不会被' u0000'（NUL 字符）终止。</p>
 <p>String 对象是不可变的，它的内容永远不变，而 char 数组有可变元素。</p>
 <p>String 类中的 toCharArray 方法返回一个包含与 String 相同字符序列的字符数组。StringBuffer 类在可变字符数组上实现有用的方法。</p>
 <h5 id="length-length">为什么数组有 length 属性，而字符串没有？或者，为什么字符串有 length()方法，而数组没有？<a class="headerlink" href="#length-length" title="Permanent link">&para;</a></h5>
@@ -10342,6 +10342,12 @@ a[k]_address = base_address + (k-1) * type_size</p>
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

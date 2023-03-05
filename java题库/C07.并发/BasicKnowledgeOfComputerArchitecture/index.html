@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9978,12 +9978,12 @@ CPU 与主存的通过总线进行通信，CPU 通过控制单元能够操作主
 <h3 id="_5">指令如何执行<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>比如我们要计算 11+22，假设过程为：将主存地址为 00 的内容加载到寄存器 1 中-&gt;将主存地址为 01 的内容加载到寄存器 2 中-&gt;将寄存器 1 和寄存器 2 的数据相加并将结果保存到寄存器 3-&gt;将寄存器 3 的结果存储到主存地址为 02 的位置-&gt;停止。</p>
 <p>这个过程 CPU 涉及到四个操作：加载(load)、存储(store)、加法(add)和停止(halt)。可以对这些操作进行编码，比如可以分别用 1、2、3、0000 表示。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1100
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1201
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>3312
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>2302
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>0000
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1100
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1201
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>3312
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>2302
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>0000
+</span></code></pre></div>
 <p><img alt="CPU与主存" src="../../image/c7/bkoca-3.png" /></p>
 <h3 id="_6">控制器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>CPU 与其他设备的通信一般通过控制器来实现，控制器可能在主板上，也可能以电路板形式查到主板。控制器本身可以看成是小型计算机，也有自己简单的 CPU。
@@ -10077,6 +10077,12 @@ CPU 与主存的通过总线进行通信，CPU 通过控制单元能够操作主
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

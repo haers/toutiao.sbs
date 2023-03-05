@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10023,10 +10023,10 @@
 释放锁的时候则会把 state 重新置为 0，同时当前线程 ID 置为空</p>
 <p><img alt="" src="../../image/c7/ReentrantLock-11.png" /></p>
 <p>AbstractOwnableSynchronizer#setExclusiveOwnerThread</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    protected final void setExclusiveOwnerThread(Thread thread) {
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        exclusiveOwnerThread = thread;
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    protected final void setExclusiveOwnerThread(Thread thread) {
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        exclusiveOwnerThread = thread;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    }
+</span></code></pre></div>
 <h3 id="_2">可重入锁<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>Java 中的可重入锁（ReentrantLock）是用于控制并发的一种工具，它的功能类似于 Java 内置的 Synchronized 语法。
 可重入锁是指一个线程可以多次对某个锁进行加锁操作，比如程序在多层调用中多次使用锁。
@@ -10076,26 +10076,26 @@ unlock 方法用于释放锁操作，其间接调用 AQS 同步器的 release �
 <p>这是一个简单的例子，三个线程启动后都执行加锁操作，独占锁的特性保证了三个线程轮流进行加锁和释放锁。某个运行的输出如下面所示，线程二调用 lock 方法后先成功获取锁，睡眠两秒后释放锁。
 接着线程一又成功获取锁，它也睡眠两秒后释放掉锁。最后线程三成功获取锁，睡眠两秒后释放锁。注意这里使用了 ReentrantLock 的五参数构造函数，意味着使用了非公平模式，所以三个线程在竞争锁时都使用了闯入策略。</p>
 <p><img alt="例子一" src="../../image/c7/ReentrantLock-8.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>thread2 got the lock
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>thread2 release the lock
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>thread1 got the lock
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>thread1 release the lock
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>thread3 got the lock
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>thread3 release the lock
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>thread2 got the lock
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>thread2 release the lock
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>thread1 got the lock
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>thread1 release the lock
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>thread3 got the lock
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>thread3 release the lock
+</span></code></pre></div>
 <h3 id="_7">例子二<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>接着看第二个例子，这个例子是为了说明 ReentrantLock 的可重入性。线程一调用 lock 方法成功获取锁后又一次调用 lock 方法获取锁，这便是锁的重入操作。
 此时我们调用 getHoldCount 方法输出该锁被加锁的次数，输出为 2。睡眠两秒后调用 unlock 方法进行一次锁释放操作，此时再调用 getHoldCount 方法得知锁被加锁的次数为 1。
 最后再调用一次 unlock 方法完全释放该锁，此时锁被加锁的次数为 0。</p>
 <p><img alt="例子二" src="../../image/c7/ReentrantLock-9.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>thread1 got the lock
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>thread1 got the lock again
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>lock times : 2
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>thread1 release the lock
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>lock times : 1
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>thread1 release the lock again
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>lock times : 0
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>thread1 got the lock
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>thread1 got the lock again
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>lock times : 2
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>thread1 release the lock
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>lock times : 1
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>thread1 release the lock again
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>lock times : 0
+</span></code></pre></div>
 <h3 id="_8">例子三<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>第三个例子主要看 ReentrantLock 的 Condition 的使用，通过 ReentrantLock 的 newCondition 方法能得到一个 Condition 对象，通过这个对象就能实现等待与唤醒操作。
 ReentrantLock 与 Condition 对象的 await、signalAll 方法，对应着 Synchronized 与 Object 对象的 wait、notifyAll()方法。
@@ -10103,11 +10103,11 @@ ReentrantLock 与 Condition 对象的 await、signalAll 方法，对应着 Synch
 所以两个线程都能依次获得锁。而当主线程中调用 Condition 对象的 signalAll 方法唤醒所有等待的线程时，线程一和线程二都会依次被唤醒。
 唤醒后又会把原来的线程放到等待队列中，所以还需要 unlock 方法进行锁释放操作，该操作即将线程从等待队列中移除，最终才能往下执行。</p>
 <p><img alt="例子三" src="../../image/c7/ReentrantLock-10.png" /></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>thread1 waiting for signal
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>thread2 waiting for signal
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>thread1 release the lock
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>thread2 release the lock
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>thread1 waiting for signal
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>thread2 waiting for signal
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>thread1 release the lock
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>thread2 release the lock
+</span></code></pre></div>
 <h3 id="_9">总结<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>本文介绍了 Java 中的可重入锁（ReentrantLock），包括它的核心四要素以及实现原理。ReentrantLock 具有可重入性，它是一种独占锁，包括了公平模式和非公平模式。
 ReentrantLock 类的实现基于 AQS 同步器，我们对公平与非公平的实现机制都进行了深入的讲解。此外，还提供了三个例子，分别展示了 ReentrantLock 的普通用法、可重入性质以及 Condition 的使用。</p>
@@ -10196,6 +10196,12 @@ ReentrantLock 类的实现基于 AQS 同步器，我们对公平与非公平的�
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

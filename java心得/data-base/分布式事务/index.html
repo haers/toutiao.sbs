@@ -4660,6 +4660,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4774,20 +4788,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9990,11 +9990,11 @@
 <p>例如：李雷账户中有 500 块钱，韩梅梅账户有 200 块钱，李雷要从自己的账户中转 100 块钱给韩梅梅，转账（事务）成功执行完成后应该是李雷账户减 100 变为 400，韩梅梅账户加 100 变为 300，不能出现其他情况，即在事务开始和结束时数据都必须保持一致状态（一致性），事务结束时所有的数据及结构都必须是正确的。并且同样的转账操作（同一流水，即一次转账操作）无论执行多少次结果都相同（幂等性）。</p>
 <h4 id="_3">电商场景：流量充值业务<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>再说我们做的一个项目：中国移动-流量充值能力中心，核心业务流程为：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  1. 用户进入流量充值商品购买页面，选择流量商品；
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  2. 购买流量充值商品，有库存限制则判断库存，生成流量购买订单；
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  3. 选择对应的支付方式（和包、银联、支付宝、微信）进行支付操作；
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  4. 支付成功后，近实时流量到账即可使用流量商品；
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>  1. 用户进入流量充值商品购买页面，选择流量商品；
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  2. 购买流量充值商品，有库存限制则判断库存，生成流量购买订单；
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  3. 选择对应的支付方式（和包、银联、支付宝、微信）进行支付操作；
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  4. 支付成功后，近实时流量到账即可使用流量商品；
+</span></code></pre></div>
 <p>此业务流程看似不是很复杂对吧，不涉及到类似电商业务的实物购买，但是我认为其中的区别并不是很大，只是缺少电商中的物流发货流程，其他流程几乎是一样的，也有库存以及优惠折扣等业务存在。</p>
 <p>整个系统交互如下图：</p>
 <p><img alt="image" src="../img/1.png" /></p>
@@ -10142,6 +10142,12 @@ Ps：以下是流量中心的部分架构设计，总体原则方向：微服务
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

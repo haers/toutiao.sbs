@@ -4868,6 +4868,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4982,20 +4996,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10499,8 +10499,8 @@
 以降序对文件内容排序：sort -r names.txt 。
 以第三个字段对 /etc/passwd 的内容排序：sort -t: -k 3n /etc/passwd | more 。</p>
 <h4 id="22xargs">22.xargs 命令<a class="headerlink" href="#22xargs" title="Permanent link">&para;</a></h4>
-<p>将所有图片文件拷贝到外部驱动器：ls <em>.jpg | xargs -n1 -i cp {} /external-hard-drive/directory 。
-将系统中所有 jpg 文件压缩打包：find / -name </em>.jpg -type f -print | xargs tar -cvzf images.tar.gz 。
+<p>将所有图片文件拷贝到外部驱动器：ls _.jpg | xargs -n1 -i cp {} /external-hard-drive/directory 。
+将系统中所有 jpg 文件压缩打包：find / -name _.jpg -type f -print | xargs tar -cvzf images.tar.gz 。
 下载文件中列出的所有 url 对应的页面：cat url-list.txt | xargs wget –c 。</p>
 <h4 id="23-txt-777">23.把当前目录下所有后缀名为 .txt 的文件的权限修改为 777 ？<a class="headerlink" href="#23-txt-777" title="Permanent link">&para;</a></h4>
 <p>方式一，使用 xargs 命令：find ./ -type f -name "<em>.txt" |xargs chmod 777 。
@@ -10510,15 +10510,15 @@
 解压 tar 文件：tar xvf archive_name.tar 。
 查看 tar 文件：tar tvf archive_name.tar 。</p>
 <h4 id="25gzip">25.gzip 命令<a class="headerlink" href="#25gzip" title="Permanent link">&para;</a></h4>
-<p>创建一个 <em>.gz 的压缩文件：gzip test.txt 。
-解压 </em>.gz 文件：gzip -d test.txt.gz 。
+<p>创建一个 _.gz 的压缩文件：gzip test.txt 。
+解压 _.gz 文件：gzip -d test.txt.gz 。
 显示压缩的比率：gzip -l *.gz 。</p>
 <h4 id="26bzip2">26.bzip2 命令<a class="headerlink" href="#26bzip2" title="Permanent link">&para;</a></h4>
-<p>创建 <em>.bz2 压缩文件：bzip2 test.txt 。
-解压 </em>.bz2 文件：bzip2 -d test.txt.bz2 。</p>
+<p>创建 _.bz2 压缩文件：bzip2 test.txt 。
+解压 _.bz2 文件：bzip2 -d test.txt.bz2 。</p>
 <h4 id="27unzip">27.unzip 命令<a class="headerlink" href="#27unzip" title="Permanent link">&para;</a></h4>
-<p>解压 <em>.zip 文件：unzip test.zip 。
-查看 </em>.zip 文件的内容：unzip -l jasper.zip 。</p>
+<p>解压 _.zip 文件：unzip test.zip 。
+查看 _.zip 文件的内容：unzip -l jasper.zip 。</p>
 <h4 id="28export">28.export 命令<a class="headerlink" href="#28export" title="Permanent link">&para;</a></h4>
 <p>输出跟字符串 oracle 匹配的环境变量：export | grep ORCALE 。
 设置全局环境变量：export ORACLE_HOME=/u01/app/oracle/product/10.2.0 。</p>
@@ -10562,9 +10562,9 @@ ip addr|grep eth0|grep inet|awk '{print $2}'|awk -F '/' '{print $1}'</p>
 <p>全局的配置，可以在 /etc/resolv.conf 文件中配置。
 指定网卡的配置，可以在 /etc/sysconfig/network-scripts/ifcfg-eth0 文件中配置。</p>
 <h4 id="37-linux-dns">37.在 Linux 下如何指定 dns 服务器，来解析某个域名？<a class="headerlink" href="#37-linux-dns" title="Permanent link">&para;</a></h4>
-<p>使用谷歌 DNS 解析百度：dig @8.8.8.8 www.baidu.com</p>
+<p>使用谷歌 DNS 解析百度：dig <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/8" title="GitHub User: 8">@8</a>.8.8.8 <a href="http://www.baidu.com">www.baidu.com</a></p>
 <h3 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>https://blog.csdn.net/a303549861/article/details/93754526</p>
+<p><a href="https://blog.csdn.net/a303549861/article/details/93754526">https://blog.csdn.net/a303549861/article/details/93754526</a></p>
 
 
 
@@ -10650,6 +10650,12 @@ ip addr|grep eth0|grep inet|awk '{print $2}'|awk -F '/' '{print $1}'</p>
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

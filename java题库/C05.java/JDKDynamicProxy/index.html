@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9915,20 +9915,20 @@ java.lang.reflect 包中的 Proxy 类和 InvocationHandler 接口提供了生成
 </ol>
 <h2 id="jdk_2">JDK 动态代理到底是怎么实现的呢<a class="headerlink" href="#jdk_2" title="Permanent link">&para;</a></h2>
 <p>动态代码涉及了一个非常重要的类 Proxy 。正是通过 Proxy 的静态方法 newProxyInstance 才会动态创建代理。具体怎么去创建代理类就不分析了,感兴趣的可以去看下源码。我们直接看下生成的代理类。 如何查看生成的代理类？ 在生成代理类之前加上以下代码(我用的 jdk1.8)：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//新版本 jdk产生代理类</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperties</span><span class="p">().</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;jdk.proxy.ProxyGenerator.saveGeneratedFiles&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//新版本 jdk产生代理类</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperties</span><span class="p">().</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;jdk.proxy.ProxyGenerator.saveGeneratedFiles&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+</span></code></pre></div>
 <p>如果上述代码加上不生效可以考虑加下下面的代码：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// 老版本jdk</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">System</span><span class="p">.</span><span class="na">getProperties</span><span class="p">().</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;sun.misc.ProxyGenerator.saveGeneratedFiles&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">//  该设置用于输出cglib动态代理产生的类</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">System</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="n">DebuggingClassWriter</span><span class="p">.</span><span class="na">DEBUG_LOCATION_PROPERTY</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C:\\class&quot;</span><span class="p">);</span>
-</code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// 老版本jdk</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">System</span><span class="p">.</span><span class="na">getProperties</span><span class="p">().</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;sun.misc.ProxyGenerator.saveGeneratedFiles&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">//  该设置用于输出cglib动态代理产生的类</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">System</span><span class="p">.</span><span class="na">setProperty</span><span class="p">(</span><span class="n">DebuggingClassWriter</span><span class="p">.</span><span class="na">DEBUG_LOCATION_PROPERTY</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C:\\class&quot;</span><span class="p">);</span>
+</span></code></pre></div>
 <p>代码如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
-</code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
+</span></code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
+</span></code></pre></div>
 <h2 id="_2">写在最后<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>JDK 动态代理实际上是在运行时通过反射的方式来实现的，将代理的方法调用转到到目标对象上，最终将目标对象生成的任何结果返回给调用方。由于这是个链式调用，所以很方便代理在目标对象方法调用前后增加处理逻辑。根据这种思路可以在多种设计模式中使用 JDK 的动态代理比如代理模式、Facade、Decorator 等。</p>
 <p>在面向方面编程(AOP)也应用广泛，如事务管理、日志记录、数据校验等，主要是将横切关注点从业务逻辑中分离出来，所以一通百通。</p>
@@ -10020,6 +10020,12 @@ java.lang.reflect 包中的 Proxy 类和 InvocationHandler 接口提供了生成
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

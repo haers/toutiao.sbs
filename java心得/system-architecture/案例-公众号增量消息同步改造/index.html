@@ -4624,6 +4624,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4738,20 +4752,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9909,91 +9909,91 @@
 <h4 id="_3">优化过程：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p><strong>第一次优化：</strong></p>
 <p>当时写代码的同学已线离职，大致过程如下：</p>
-<p>采用<strong>异步拉取</strong>的方式，当用户打开消息列表页时，正常加载数据库数据，同时创建一个异步任务，扔到一个 BlockQueue 中（会控制长度），同时启动 10 个消费线程，对任务消费，为当前用户同步最新的公众号增量消息。
+<p>采用**异步拉取**的方式，当用户打开消息列表页时，正常加载数据库数据，同时创建一个异步任务，扔到一个 BlockQueue 中（会控制长度），同时启动 10 个消费线程，对任务消费，为当前用户同步最新的公众号增量消息。
 为了控制频率，15 分钟同步一次</p>
 <p>缺点：</p>
 <p>1.不实时，用户主动打开消息通知页面，并不会马上获取最新消息，而只是触发同步任务，需要第二次打开页面才能看到最新的消息。体验不好</p>
 <p><strong>第二次优化：</strong></p>
-<p>公众号消息采用<strong>同步拉取</strong>的方式，大致过程：</p>
+<p>公众号消息采用**同步拉取**的方式，大致过程：</p>
 <p>1.运营发送全量活动消息，入 db 表，同时扔到最新的消息 cache 列表</p>
 <p>2.当社区用户打开消息通知页时，会查询上一次的同步时间，并从 cache 列表中加载最新的公众号增量消息，并修改会话列表&amp;提醒数，异步线程将增量消息插入私信分表中。</p>
 <p>3.按修改时间分页查询会话列表</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>补充：
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>用户第一次打开消息通知页面，就能获取最新消息，基本上可以满足用户需求，体验也不错。
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>但产品又提出新的要求，希望在首页可以看到消息数量提醒（如果有新的消息时），刺激用户点击。原来的逻辑是打开通知页时才会同步，现在触发条件又要升级，今天是推荐首页，明天可能是其它页面，有没有会什么通用的方式来收集所有的触发点。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>补充：
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>用户第一次打开消息通知页面，就能获取最新消息，基本上可以满足用户需求，体验也不错。
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>但产品又提出新的要求，希望在首页可以看到消息数量提醒（如果有新的消息时），刺激用户点击。原来的逻辑是打开通知页时才会同步，现在触发条件又要升级，今天是推荐首页，明天可能是其它页面，有没有会什么通用的方式来收集所有的触发点。
+</span></code></pre></div>
 <p><strong>第三次优化：</strong></p>
 <p>这次是对第二次优化的一个补充，扩展增量消息的触发来源！</p>
 <p>1.定义并收集“活跃用户”。</p>
 <p>改造后的系统（php-&gt;java），每多业务功能都要取当前用户信息，因此就涉及 token 验证。因此将这样的用户定义为“活跃用户”。token 校验成功后，发 kafka 消息。</p>
 <p>2.编写 kafka 消费任务，触发同步操作</p>
 <p>3.由于运营并不会经常用公众号推送消息，所以设定一个间隔时间（距上一次同步 15 分钟后）才扫描一次。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>绝大部分的扫描都是空处理，设定这个时间间隔就显得很重要，如果太小，扫描频率比较高，系统压力大，实时性会好。反之，扫描频率低，系统压力小，实时性会差一些。
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>经验先设定15分钟，后面根据情况再调整。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>绝大部分的扫描都是空处理，设定这个时间间隔就显得很重要，如果太小，扫描频率比较高，系统压力大，实时性会好。反之，扫描频率低，系统压力小，实时性会差一些。
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>经验先设定15分钟，后面根据情况再调整。
+</span></code></pre></div>
 <p>4.考虑并发，看过 kafka 消息日志，确实挺多，为什么？因为一个页面，比如详情页，会同时请求多个 api 接口。</p>
 <p>并发控制是借助于 redis 来实现的。</p>
 <p>加锁---（成功）---处理业务---释放锁</p>
 <p>加锁---（失败）---方法结束，不做任何事情。</p>
 <p>其中：加锁和解锁是一对操作，如果因为系统的一些未知异常，导致解锁失败，那么后面可能再也无法拿到锁。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>public boolean isLock(Long uid) {
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        try {
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>            long value = bbsRedisClient.incr(KEY_BBS_PUBLIC_SYNC_LOCK + uid);
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>            if (value == 1) return true;
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            if (value &gt;= 14) {
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                // 补偿机制，防止解锁失败时，后面永远无法再拿到锁
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>                releaseLock(uid);
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            }
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        } catch (Exception e) {
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>            logger.error(&quot;[MessageCacheManager.isLock] invoke error! uid={}&quot;, uid);
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        }
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        return false;
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    }
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a> 加锁逻辑，里面加了补偿机制，可能会比较猥琐
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>public void releaseLock(Long uid) {
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        try {
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>            bbsRedisClient.del(KEY_BBS_PUBLIC_SYNC_LOCK + uid);
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        } catch (Exception e) {
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            logger.error(&quot;[MessageCacheManager.releaseLock] invoke error! uid={}&quot;, uid);
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        }
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    }
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>释放锁
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public void syncPublicMessage(Long uid, boolean isAutoCheck) {
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        if (uid == null) return;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        try {
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>            Long currentTime = System.currentTimeMillis() / 1000;// 当前时间
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            Long lastSyncTime = messageCacheManager.getSyncTime(uid); // 上一次同步时间
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            if (lastSyncTime == null) {
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                lastSyncTime = 0L;
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>            }
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>            // 如果自动同步检测,15分钟同步一次
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            if (isAutoCheck) {
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>                if (lastSyncTime + 900 &gt; currentTime) {
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>                    return;
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>                }
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>            }
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>            // 加锁成功，处理业务
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>            if (messageCacheManager.isLock(uid)) {
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>                handleSyncPublicMessage(uid, lastSyncTime, currentTime);
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>                messageCacheManager.releaseLock(uid);
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>            }
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        } catch (Exception e) {
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>            messageCacheManager.releaseLock(uid);
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        }
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>    }
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>小提醒：
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>1.原来逻辑是先加锁--加锁成功--15分钟的频率检测--（根据需要，可能会执行业务逻辑）---再释放锁。这种写法其浪费很多，每次任务执行都要执行加锁、解锁，严重浪费系统开销。
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>2.早上上班时，在路上推敲这个过程时，觉的可以将顺序颠倒一下
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>先15分钟的频率检测---加锁---执行业务逻辑---释放锁
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>相信第一步的频率检测就会拦截掉很多请求，也将没有必要抢锁了
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>public boolean isLock(Long uid) {
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        try {
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>            long value = bbsRedisClient.incr(KEY_BBS_PUBLIC_SYNC_LOCK + uid);
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>            if (value == 1) return true;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            if (value &gt;= 14) {
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                // 补偿机制，防止解锁失败时，后面永远无法再拿到锁
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>                releaseLock(uid);
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            }
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        } catch (Exception e) {
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>            logger.error(&quot;[MessageCacheManager.isLock] invoke error! uid={}&quot;, uid);
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        }
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        return false;
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    }
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a> 加锁逻辑，里面加了补偿机制，可能会比较猥琐
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>public void releaseLock(Long uid) {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        try {
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>            bbsRedisClient.del(KEY_BBS_PUBLIC_SYNC_LOCK + uid);
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        } catch (Exception e) {
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            logger.error(&quot;[MessageCacheManager.releaseLock] invoke error! uid={}&quot;, uid);
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        }
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    }
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>释放锁
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public void syncPublicMessage(Long uid, boolean isAutoCheck) {
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        if (uid == null) return;
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        try {
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>            Long currentTime = System.currentTimeMillis() / 1000;// 当前时间
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            Long lastSyncTime = messageCacheManager.getSyncTime(uid); // 上一次同步时间
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            if (lastSyncTime == null) {
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                lastSyncTime = 0L;
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>            }
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>            // 如果自动同步检测,15分钟同步一次
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            if (isAutoCheck) {
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>                if (lastSyncTime + 900 &gt; currentTime) {
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>                    return;
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>                }
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>            }
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>            // 加锁成功，处理业务
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>            if (messageCacheManager.isLock(uid)) {
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>                handleSyncPublicMessage(uid, lastSyncTime, currentTime);
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>                messageCacheManager.releaseLock(uid);
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>            }
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        } catch (Exception e) {
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>            messageCacheManager.releaseLock(uid);
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        }
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>    }
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>小提醒：
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>1.原来逻辑是先加锁--加锁成功--15分钟的频率检测--（根据需要，可能会执行业务逻辑）---再释放锁。这种写法其浪费很多，每次任务执行都要执行加锁、解锁，严重浪费系统开销。
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>2.早上上班时，在路上推敲这个过程时，觉的可以将顺序颠倒一下
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>先15分钟的频率检测---加锁---执行业务逻辑---释放锁
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>相信第一步的频率检测就会拦截掉很多请求，也将没有必要抢锁了
+</span></code></pre></div>
 
 
 
@@ -10079,6 +10079,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

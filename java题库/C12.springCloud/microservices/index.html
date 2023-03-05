@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9814,10 +9814,10 @@
 <p>消息方式是松耦合方式，比紧耦合的 RPC 方式要优越，但 RPC 方式如果用在适合的场景也有它的一席之地。</p>
 <p>我们总在谈耦合，那么耦合到底意味着什么呢？</p>
 <h1 id="_1">耦合的种类：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><strong>时间耦合：</strong>客户端和服务端必须同时上线才能工作。发消息时，接受消息队列必须运行，但后台处理程序暂时不工作也不影响。</p>
-<p><strong>容量耦合：</strong>客户端和服务端的处理容量必须匹配。发消息时，如果后台处理能力不足也不要紧，消息队列会起到缓冲的作用。</p>
-<p><strong>接口耦合：</strong>RPC 调用有函数标签，而消息队列只是一个消息。例如买了商品之后要调用发货服务，如果是发消息，那么就只需发送一个商品被买消息。</p>
-<p><strong>发送方式耦合：</strong>RPC 是点对点方式，需要知道对方是谁，它的好处是能够传回返回值。消息既可以点对点，也可以用广播的方式，这样减少了耦合，但也使返回值比较困难。</p>
+<p>**时间耦合：**客户端和服务端必须同时上线才能工作。发消息时，接受消息队列必须运行，但后台处理程序暂时不工作也不影响。</p>
+<p>**容量耦合：**客户端和服务端的处理容量必须匹配。发消息时，如果后台处理能力不足也不要紧，消息队列会起到缓冲的作用。</p>
+<p>**接口耦合：**RPC 调用有函数标签，而消息队列只是一个消息。例如买了商品之后要调用发货服务，如果是发消息，那么就只需发送一个商品被买消息。</p>
+<p>**发送方式耦合：**RPC 是点对点方式，需要知道对方是谁，它的好处是能够传回返回值。消息既可以点对点，也可以用广播的方式，这样减少了耦合，但也使返回值比较困难。</p>
 <p>下面我们来逐一分析这些耦合的影响。第一，时间耦合，对于多数应用来讲，你希望能马上得到回答，因此即使使用消息队列，后台也需要一直工作。</p>
 <p>第二，容量耦合，如果你对回复有时间要求，那么消息队列的缓冲功能作用不大，因为你希望及时响应。</p>
 <p>真正需要的是自动伸缩（Auto-scaling），它能自动调整服务端处理能力去匹配请求数量。第三和第四，接口耦合和发送方式耦合，这两个确实是 RPC 方式的软肋。</p>
@@ -9943,6 +9943,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

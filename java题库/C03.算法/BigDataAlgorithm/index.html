@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10276,7 +10276,7 @@ hash_map 统计：当大文件转化了小文件，那么我们便可以采用�
 <li>hash_map 统计：先对这批海量数据预处理。具体方法是：维护一个 Key 为 Query 字串，Value 为该 Query 出现次数的 HashTable，即 hash_map(Query，Value)，每次读取一个 Query，如果该字串不在 Table 中，那么加入该字串，并且将 Value 值设为 1；如果该字串在 Table 中，那么将该字串的计数加一即可。最终我们在 O(N)的时间复杂度内用 Hash 表完成了统计；</li>
 <li>堆排序：第二步、借助堆这个数据结构，找出 Top K，时间复杂度为 N‘logK。即借助堆结构，我们可以在 log 量级的时间内查找和调整/移动。因此，维护一个 K(该题目中是 10)大小的小根堆，然后遍历 300 万的 Query，分别和根元素进行对比。所以，我们最终的时间复杂度是：O（N） + N' * O（logK），（N 为 1000 万，N’为 300 万）。</li>
 </ul>
-<p>别忘了这篇文章中所述的堆排序思路：“维护 k 个元素的最小堆，即用容量为 k 的最小堆存储最先遍历到的 k 个数，并假设它们即是最大的 k 个数，建堆费时 O（k），并调整堆(费时 O（logk）)后，有 k1&gt;k2&gt;...kmin（kmin 设为小顶堆中最小元素）。继续遍历数列，每次遍历一个元素 x，与堆顶元素比较，若 x&gt;kmin，则更新堆（x 入堆，用时 logk），否则不更新堆。这样下来，总费时 O（k<em>logk+（n-k）</em>logk）=O（n*logk）。此方法得益于在堆中，查找等各项操作时间复杂度均为 logk。”--第三章续、Top K 算法问题的实现。
+<p>别忘了这篇文章中所述的堆排序思路：“维护 k 个元素的最小堆，即用容量为 k 的最小堆存储最先遍历到的 k 个数，并假设它们即是最大的 k 个数，建堆费时 O（k），并调整堆(费时 O（logk）)后，有 k1&gt;k2&gt;...kmin（kmin 设为小顶堆中最小元素）。继续遍历数列，每次遍历一个元素 x，与堆顶元素比较，若 x&gt;kmin，则更新堆（x 入堆，用时 logk），否则不更新堆。这样下来，总费时 O（k*logk+（n-k）*logk）=O（n*logk）。此方法得益于在堆中，查找等各项操作时间复杂度均为 logk。”--第三章续、Top K 算法问题的实现。
 当然，你也可以采用 trie 树，关键字域存该查询串出现的次数，没有出现为 0。最后用 10 个元素的最小推来对出现频率进行排序。</p>
 <h6 id="1g-16-1m-100">有一个 1G 大小的一个文件，里面每一行是一个词，词的大小不超过 16 字节，内存限制大小是 1M。返回频数最高的 100 个词。<a class="headerlink" href="#1g-16-1m-100" title="Permanent link">&para;</a></h6>
 <p>由上面那两个例题，分而治之 + hash 统计 + 堆/快速排序这个套路，我们已经开始有了屡试不爽的感觉。下面，再拿几道再多多验证下。请看此第 3 题：又是文件很大，又是内存受限，咋办?还能怎么办呢?无非还是：</p>
@@ -10319,7 +10319,7 @@ hash_map 统计：当大文件转化了小文件，那么我们便可以采用�
 <p>案：上千万或上亿的数据，现在的机器的内存应该能存下。所以考虑采用 hash_map/搜索二叉树/红黑树等来进行统计次数。然后利用堆取出前 N 个出现次数最多的数据。</p>
 <h6 id="10">一个文本文件，大约有一万行，每行一个词，要求统计出其中最频繁出现的前 10 个词，请给出思想，给出时间复杂度分析。<a class="headerlink" href="#10" title="Permanent link">&para;</a></h6>
 <p>方案 1：如果文件比较大，无法一次性读入内存，可以采用 hash 取模的方法，将大文件分解为多个小文件，对于单个小文件利用 hash_map 统计出每个小文件中 10 个最常出现的词，然后再进行归并处理，找出最终的 10 个最常出现的词。</p>
-<p>方案 2：通过 hash 取模将大文件分解为多个小文件后，除了可以用 hash_map 统计出每个小文件中 10 个最常出现的词，也可以用 trie 树统计每个词出现的次数，时间复杂度是 O(n<em>le)（le 表示单词的平准长度），最终同样找出出现最频繁的前 10 个词（可用堆来实现），时间复杂度是 O(n</em>lg10)。</p>
+<p>方案 2：通过 hash 取模将大文件分解为多个小文件后，除了可以用 hash_map 统计出每个小文件中 10 个最常出现的词，也可以用 trie 树统计每个词出现的次数，时间复杂度是 O(n*le)（le 表示单词的平准长度），最终同样找出出现最频繁的前 10 个词（可用堆来实现），时间复杂度是 O(n*lg10)。</p>
 <h6 id="1000">1000 万字符串，其中有些是重复的，需要把重复的全部去掉，保留没有重复的字符串。请怎么设计和实现？<a class="headerlink" href="#1000" title="Permanent link">&para;</a></h6>
 <p>方案 1：这题用 trie 树比较合适，hash_map 也行。</p>
 <p>方案 2：from xjbzju:，1000w 的数据规模插入操作完全不现实，以前试过在 stl 下 100w 元素插入 set 中已经慢得不能忍受，觉得基于 hash 的实现不会比红黑树好太多，使用 vector+sort+unique 都要可行许多，建议还是先 hash 成小文件分开处理再综合。</p>
@@ -10370,9 +10370,9 @@ hash_map 统计：当大文件转化了小文件，那么我们便可以采用�
 </ul>
 <h4 id="_6">数据库索引<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <ul>
-<li>关于数据库索引及其优化，更多可参见此文：http://www.cnblogs.com/pkuoliver/archive/2011/08/17/mass-data-topic-7-index-and-optimize.html；</li>
-<li>关于 MySQL 索引背后的数据结构及算法原理，这里还有一篇很好的文章：http://blog.codinglabs.org/articles/theory-of-mysql-index.html；</li>
-<li>关于 B 树、B+ 树、B* 树及 R 树，本 blog 内有篇绝佳文章：http://blog.csdn.net/v_JULY_v/article/details/6530142。</li>
+<li>关于数据库索引及其优化，更多可参见此文：<a href="http://www.cnblogs.com/pkuoliver/archive/2011/08/17/mass-data-topic-7-index-and-optimize.html">http://www.cnblogs.com/pkuoliver/archive/2011/08/17/mass-data-topic-7-index-and-optimize.html</a>；</li>
+<li>关于 MySQL 索引背后的数据结构及算法原理，这里还有一篇很好的文章：<a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html">http://blog.codinglabs.org/articles/theory-of-mysql-index.html</a>；</li>
+<li>关于 B 树、B+ 树、B* 树及 R 树，本 blog 内有篇绝佳文章：<a href="http://blog.csdn.net/v_JULY_v/article/details/6530142">http://blog.csdn.net/v_JULY_v/article/details/6530142</a>。</li>
 </ul>
 <h4 id="_7">密匙五、外排序<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>适用范围：大数据的排序，去重</p>
@@ -10467,6 +10467,12 @@ hash_map 统计：当大文件转化了小文件，那么我们便可以采用�
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

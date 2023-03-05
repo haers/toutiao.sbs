@@ -4598,6 +4598,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4712,20 +4726,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9854,31 +9854,31 @@
 <hr />
 <p>1、首先安装 zookeeper
 2、下载 kafka</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget https://mirrors.cnnic.cn/apache/kafka/2.1.0/kafka_2.11-2.1.0.tgz
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget https://mirrors.cnnic.cn/apache/kafka/2.1.0/kafka_2.11-2.1.0.tgz
+</span></code></pre></div>
 <p>解压：</p>
 <p>tar zxf kafka_2.11-2.1.0.tgz</p>
 <p>3、修改配置</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cd kafka_2.11-2.1.0/config/
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>vim server.properties
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cd kafka_2.11-2.1.0/config/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>vim server.properties
+</span></code></pre></div>
 <p>kafka 最为重要三个配置依次为：broker.id、log.dir、zookeeper.connect</p>
 <p>参数详细说明：</p>
-<p>https://blog.csdn.net/lizhitao/article/details/25667831</p>
+<p><a href="https://blog.csdn.net/lizhitao/article/details/25667831">https://blog.csdn.net/lizhitao/article/details/25667831</a></p>
 <p>4、启动</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cd /Users/onlyone/software/kafka/kafka_2.11-2.1.0
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>bin/kafka-server-start.sh config/server.properties &amp;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cd /Users/onlyone/software/kafka/kafka_2.11-2.1.0
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>bin/kafka-server-start.sh config/server.properties &amp;
+</span></code></pre></div>
 <p>停止 kafka</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bin/kafka-server-stop.sh
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bin/kafka-server-stop.sh
+</span></code></pre></div>
 <p>5、检测</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>➜  jps
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>41505 QuorumPeerMain
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>66244 Jps
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>64472 Kafka
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>252
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>➜  jps
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>41505 QuorumPeerMain
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>66244 Jps
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>64472 Kafka
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>252
+</span></code></pre></div>
 <ul>
 <li>QuorumPeerMain 为对应的 zookeeper 实例</li>
 <li>Kafka 的进程 ID 为 64472</li>
@@ -9887,39 +9887,39 @@
 <ul>
 <li>创建 topic</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test1
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test1
+</span></code></pre></div>
 <ul>
 <li>查看 topic 创建情况</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>bin/kafka-topics.sh --list --zookeeper localhost:2181
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>bin/kafka-topics.sh --describe --zookeeper localhost:2181
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>bin/kafka-topics.sh --list --zookeeper localhost:2181
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>bin/kafka-topics.sh --describe --zookeeper localhost:2181
+</span></code></pre></div>
 <p>运行结果：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Topic:test1 PartitionCount:1    ReplicationFactor:1 Configs:
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    Topic: test1    Partition: 0    Leader: 1   Replicas: 1 Isr: 1
-</code></pre></div>
-<p>参数解析：https://www.cnblogs.com/shengulong/p/9013282.html</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Topic:test1 PartitionCount:1    ReplicationFactor:1 Configs:
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    Topic: test1    Partition: 0    Leader: 1   Replicas: 1 Isr: 1
+</span></code></pre></div>
+<p>参数解析：<a href="https://www.cnblogs.com/shengulong/p/9013282.html">https://www.cnblogs.com/shengulong/p/9013282.html</a></p>
 <ul>
 <li>启动生产端 producer，并发送消息</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>bin/kafka-console-producer.sh --broker-list 192.168.0.14:9092 --topic test1
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>注意：首次，topic不存在时，会自动创建
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>上面命令是在控制台输入要发送的消息，“回车”单条消息结束。
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>echo &#39;{&quot;name&quot;:&quot;Steve&quot;, &quot;title&quot;:&quot;Captain America&quot;}&#39; | bin/kafka-console-producer.sh --broker-list 192.168.0.14:9092 --topic test1
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>将发送的消息放在执行命令中。
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>bin/kafka-console-producer.sh --broker-list 192.168.0.14:9092 --topic test1
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>注意：首次，topic不存在时，会自动创建
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>上面命令是在控制台输入要发送的消息，“回车”单条消息结束。
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>echo &#39;{&quot;name&quot;:&quot;Steve&quot;, &quot;title&quot;:&quot;Captain America&quot;}&#39; | bin/kafka-console-producer.sh --broker-list 192.168.0.14:9092 --topic test1
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>将发送的消息放在执行命令中。
+</span></code></pre></div>
 <ul>
 <li>启动消费端 consumer，可以看到刚才发送的消息列表</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>bin/kafka-console-consumer.sh --bootstrap-server 192.168.0.14:9092 --topic test1 --from-beginning
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>bin/kafka-console-consumer.sh --bootstrap-server 192.168.0.14:9092 --topic test1 --from-beginning
+</span></code></pre></div>
 
 
 
@@ -10005,6 +10005,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

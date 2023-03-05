@@ -4652,6 +4652,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4766,20 +4780,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10036,22 +10036,22 @@
 <h4 id="_6">常见问题：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>1、dubbo 默认有重试机制（2 次），结合自己的业务是否需要重试，不必要的重试可能会导致脏数据。
 如果服务提供方响应速度慢，不断的重试，会额外加重系统负担。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;dubbo:reference id=&quot;privateMessageService&quot; interface=&quot;com.onlyone.bbs.service.PrivateMessageService&quot;  retries=&quot;0&quot; /&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;dubbo:reference id=&quot;privateMessageService&quot; interface=&quot;com.onlyone.bbs.service.PrivateMessageService&quot;  retries=&quot;0&quot; /&gt;
+</span></code></pre></div>
 <p>2.启动时服务是否注册检查，这种情况一般在预发环境遇到，有些业务部门的服务没有布预发环境，会导致我们的应用在预发环境启动不了。启动时需要取消检查</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>//单个服务维度
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a> &lt;dubbo:reference id=&quot;stockService&quot; interface=&quot;com.onlyone.stock.service.StockService&quot; check=&quot;false&quot;  /&gt;
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>//全局维度
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&lt;dubbo:consumer check=&quot;false&quot; /&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>//单个服务维度
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a> &lt;dubbo:reference id=&quot;stockService&quot; interface=&quot;com.onlyone.stock.service.StockService&quot; check=&quot;false&quot;  /&gt;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>//全局维度
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&lt;dubbo:consumer check=&quot;false&quot; /&gt;
+</span></code></pre></div>
 <p>3.调用远程接口，如果因为非正常原因而响应慢会阻塞业务线程，此时需要及早结束。
 可以配置超时时间</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a> &lt;dubbo:reference id=&quot;memberService&quot; interface=&quot;com.onlyone.bbs.service.MemberService&quot; timeout=&quot;5000&quot;  /&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a> &lt;dubbo:reference id=&quot;memberService&quot; interface=&quot;com.onlyone.bbs.service.MemberService&quot; timeout=&quot;5000&quot;  /&gt;
+</span></code></pre></div>
 <p>4.dubbo 默认是随机路由方式，如果消费方只有一台机器，服务提供方有多台，1 对多关系，可能会产生负载不均衡，导致大量请求压到一台机器，把一台机器压死，进而引发雪崩效应。可以调整路由策略，改为轮询方式。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;dubbo:reference id=&quot;***&quot; interface=&quot;******&quot; loadbalance=&quot;roundrobin&quot; /&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;dubbo:reference id=&quot;***&quot; interface=&quot;******&quot; loadbalance=&quot;roundrobin&quot; /&gt;
+</span></code></pre></div>
 <p>5.<a href="https://dubbo.gitbooks.io/dubbo-user-book/best-practice.html">项目中使用注意事项</a></p>
 <ul>
 <li>分包</li>
@@ -10064,47 +10064,47 @@
 <li>调用</li>
 </ul>
 <p>6.服务注册不上怎么办？</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>检查暴露服务的 Spring 配置有没有加载
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>查看有没有错误日志
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>在服务提供者机器上测试与注册中心的网络是否通畅(telnet 172.22.3.94 20880)
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>检查与注册中心的连接是否存在(netstat -anp | grep 172.22.3.94)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>检查暴露服务的 Spring 配置有没有加载
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>查看有没有错误日志
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>在服务提供者机器上测试与注册中心的网络是否通畅(telnet 172.22.3.94 20880)
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>检查与注册中心的连接是否存在(netstat -anp | grep 172.22.3.94)
+</span></code></pre></div>
 <p>7.RpcException: No provider available for the service 异常怎么办？</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>表示没有可用的服务提供者：
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>检查连接的注册中心地址是否正确(若是 Zookeeper 注册中心，根节点(registry.group)是否一样)
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>到监控中心/注册中心查看相应的服务提供者是否存在
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>检查服务提供者是否正常运行
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>表示没有可用的服务提供者：
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>检查连接的注册中心地址是否正确(若是 Zookeeper 注册中心，根节点(registry.group)是否一样)
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>到监控中心/注册中心查看相应的服务提供者是否存在
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>检查服务提供者是否正常运行
+</span></code></pre></div>
 <p>8.出现调用超时 TimeoutException 异常怎么办？</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>通常是业务(提供方)处理太慢，也可能是网络抖动引起。 如果一直超时，可在服务提供方执行：jstack PID &gt; jstack.log 分析线程都卡在哪个方法调用上，这里就是慢的原因。 如果不能调优性能，请将 timeout 设大
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>通常是业务(提供方)处理太慢，也可能是网络抖动引起。 如果一直超时，可在服务提供方执行：jstack PID &gt; jstack.log 分析线程都卡在哪个方法调用上，这里就是慢的原因。 如果不能调优性能，请将 timeout 设大
+</span></code></pre></div>
 <p>9.出现 RpcException: Forbid consumer xxx access service XxxService from registry 异常怎么办？</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>该异常表示有服务提供者注册到注册中心，但服务提供者与消费者未匹配。那服务的路由规则是什么？ 默认的路由规则是 服务名=[group/]serviceName[:version]。
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>检查两边应用的注册中心与服务相关配置是否完全一样：
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>注册中心：dubbo.registry.address、dubbo.registry.group
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>服务：ServiceInterface、group、version
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>该异常表示有服务提供者注册到注册中心，但服务提供者与消费者未匹配。那服务的路由规则是什么？ 默认的路由规则是 服务名=[group/]serviceName[:version]。
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>检查两边应用的注册中心与服务相关配置是否完全一样：
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>注册中心：dubbo.registry.address、dubbo.registry.group
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>服务：ServiceInterface、group、version
+</span></code></pre></div>
 <p>10.Dubbo 服务注册的地址与实际部署的机器地址不一样</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>某业务同学反馈，在 172.16.47.59 上面部署了一个应用，部署完结果在注册中心显示这个服务的IP不是在实际部署的机器上。 之前没清理dubbo的cache文件显示在 172.16.50.196，清理缓存以后显示在 172.16.47.53 上面。(dubbo-2.5.3)
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>问题根源：NetUtils.getLocalHost() 调用的 InetAddress.getLocalHost() 返回了一个错误的IP地址。 其原理是通过获取本机的 hostname，然后对此 hostname 做解析，从而获取IP地址。 即机器的 hostname 映射的IP地址不是机器实际的IP地址。
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>解决方案：
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>修改 hostname
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>在 /etc/hosts 中配置 hostname -&gt; 本机IP地址
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>某业务同学反馈，在 172.16.47.59 上面部署了一个应用，部署完结果在注册中心显示这个服务的IP不是在实际部署的机器上。 之前没清理dubbo的cache文件显示在 172.16.50.196，清理缓存以后显示在 172.16.47.53 上面。(dubbo-2.5.3)
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>问题根源：NetUtils.getLocalHost() 调用的 InetAddress.getLocalHost() 返回了一个错误的IP地址。 其原理是通过获取本机的 hostname，然后对此 hostname 做解析，从而获取IP地址。 即机器的 hostname 映射的IP地址不是机器实际的IP地址。
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>解决方案：
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>修改 hostname
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>在 /etc/hosts 中配置 hostname -&gt; 本机IP地址
+</span></code></pre></div>
 <p>11.zookeeper.KeeperException$UnimplementedException: KeeperErrorCode = Unimplemented for {root.path}</p>
 <p>Dubbo 应用使用 ZooKeeper 作为注册中心，启动时报该异常。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>问题根源：Curator/ZooKeeper的JAR版本不匹配ZooKeeper服务器安装的版本
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>问题根源：Curator/ZooKeeper的JAR版本不匹配ZooKeeper服务器安装的版本
+</span></code></pre></div>
 <p>12.Curator 报 NoSuchMethodError: org.apache.zookeeper.server.quorum.flexible.QuorumMaj.(Ljava/util/Map;)V</p>
 <p>Dubbo 应用使用 ZooKeeper 作为注册中心，启动时发生该异常。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>问题根源：QuorumMaj类未定义单个Map参数的构造函数，而EnsembleTracker类却引用了它
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>问题根源：QuorumMaj类未定义单个Map参数的构造函数，而EnsembleTracker类却引用了它
+</span></code></pre></div>
 
 
 
@@ -10190,6 +10190,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

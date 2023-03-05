@@ -4639,6 +4639,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4753,20 +4767,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -9999,8 +9999,8 @@
 </li>
 </ol>
 <h3 id="3set-nx">3.SET NX（推荐）<a class="headerlink" href="#3set-nx" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SET resource_name my_random_value NX PX 30000
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SET resource_name my_random_value NX PX 30000
+</span></code></pre></div>
 <p><a href="https://redis.io/topics/distlock">Redis 的官方文档</a></p>
 <ul>
 <li>
@@ -10014,12 +10014,12 @@
 </li>
 </ul>
 <p>至于解锁，为了防止客户端 1 获得的锁，被客户端 2 给释放,采用下面的 Lua 脚本来释放锁</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>if redis.call(&quot;get&quot;,KEYS[1]) == ARGV[1] then
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    return redis.call(&quot;del&quot;,KEYS[1])
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>else
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    return 0
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>end
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>if redis.call(&quot;get&quot;,KEYS[1]) == ARGV[1] then
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    return redis.call(&quot;del&quot;,KEYS[1])
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>else
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    return 0
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>end
+</span></code></pre></div>
 <p>在执行这段 LUA 脚本的时候，KEYS[1]的值为 resource_name，ARGV[1]的值为 my_random_value。原理就是先获取锁对应的 value 值，保证和客户端传进去的 my_random_value 值相等，这样就能避免自己的锁被其他人释放。另外，采取 Lua 脚本操作保证了原子性。</p>
 <p>例如，下面的例子演示了不区分 Client 会导致错误</p>
 <ul>
@@ -10048,7 +10048,7 @@
 </li>
 </ol>
 <h3 id="_3">其它资料<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>http://mp.weixin.qq.com/s/JTsJCDuasgIJ0j95K8Ay8w?utm_source=tuicool&amp;utm_medium=referral</p>
+<p><a href="http://mp.weixin.qq.com/s/JTsJCDuasgIJ0j95K8Ay8w?utm_source=tuicool&amp;utm_medium=referral">http://mp.weixin.qq.com/s/JTsJCDuasgIJ0j95K8Ay8w?utm_source=tuicool&amp;utm_medium=referral</a></p>
 
 
 
@@ -10134,6 +10134,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

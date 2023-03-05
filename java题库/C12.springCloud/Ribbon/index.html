@@ -4559,6 +4559,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4673,20 +4687,6 @@
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10184,100 +10184,100 @@
 <p>负载均衡器是从 EurekaClient（EurekaClient 的实现类为 DiscoveryClient）获取服务信息，根据 IRule 去路由，并且根据 IPing 判断服务的可用性。</p>
 <p>负载均衡器多久一次去获取一次从 Eureka Client 获取注册信息呢？在 BaseLoadBalancer 类下，BaseLoadBalancer 的构造函数，
 该构造函数开启了一个 PingTask 任务 setupPingTask();，代码如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    public BaseLoadBalancer() {
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        this.name = DEFAULT_NAME;
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        this.ping = null;
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>//配置默认的负载均衡规则 RoundRobinRule
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        setRule(DEFAULT_RULE);
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        setupPingTask();
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        lbStats = new LoadBalancerStats(DEFAULT_NAME);
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    public BaseLoadBalancer() {
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        this.name = DEFAULT_NAME;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        this.ping = null;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>//配置默认的负载均衡规则 RoundRobinRule
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        setRule(DEFAULT_RULE);
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        setupPingTask();
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        lbStats = new LoadBalancerStats(DEFAULT_NAME);
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    }
+</span></code></pre></div>
 <p>setupPingTask()的具体代码逻辑，
 它开启了 ShutdownEnabledTimer 执行 PingTask 任务，在默认情况下 pingIntervalSeconds 为 10，即每 10 秒钟，向 EurekaClient 发送一次”ping”。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    void setupPingTask() {
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        if (canSkipPing()) {
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            return;
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        }
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        if (lbTimer != null) {
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            lbTimer.cancel();
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        }
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        lbTimer = new ShutdownEnabledTimer(&quot;NFLoadBalancer-PingTimer-&quot; + name,
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                true);
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        lbTimer.schedule(new PingTask(), 0, pingIntervalSeconds * 1000);
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        forceQuickPing();
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    void setupPingTask() {
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        if (canSkipPing()) {
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            return;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        }
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        if (lbTimer != null) {
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            lbTimer.cancel();
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        }
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        lbTimer = new ShutdownEnabledTimer(&quot;NFLoadBalancer-PingTimer-&quot; + name,
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                true);
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        lbTimer.schedule(new PingTask(), 0, pingIntervalSeconds * 1000);
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        forceQuickPing();
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    }
+</span></code></pre></div>
 <p>PingTask 源码，即 new 一个 Pinger 对象，并执行 runPinger()方法。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    class PingTask extends TimerTask {
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        public void run() {
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>            try {
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                new Pinger(pingStrategy).runPinger();
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            } catch (Exception e) {
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                logger.error(&quot;LoadBalancer [{}]: Error pinging&quot;, name, e);
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            }
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        }
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    class PingTask extends TimerTask {
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        public void run() {
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>            try {
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                new Pinger(pingStrategy).runPinger();
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            } catch (Exception e) {
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                logger.error(&quot;LoadBalancer [{}]: Error pinging&quot;, name, e);
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            }
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        }
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    }
+</span></code></pre></div>
 <p>查看 Pinger 的 runPinger()方法，最终根据 pingerStrategy.pingServers(ping, allServers)来获取服务的可用性，如果该返回结果和之前相同，则不去向 EurekaClient 获取注册列表
 ，如果不同则通知 ServerStatusChangeListener 或者 changeListeners 发生了改变，进行更新或者重新拉取。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>        public void runPinger() throws Exception {
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>            if (!pingInProgress.compareAndSet(false, true)) {
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                return; // Ping in progress - nothing to do
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>            }
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            // we are &quot;in&quot; - we get to Ping
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            Server[] allServers = null;
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            boolean[] results = null;
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            Lock allLock = null;
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            Lock upLock = null;
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            try {
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                /*
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                 * The readLock should be free unless an addServer operation is
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                 * going on...
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                 */
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>                allLock = allServerLock.readLock();
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>                allLock.lock();
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>                allServers = allServerList.toArray(new Server[allServerList.size()]);
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>                allLock.unlock();
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>                int numCandidates = allServers.length;
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>                results = pingerStrategy.pingServers(ping, allServers);
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>                final List&lt;Server&gt; newUpList = new ArrayList&lt;Server&gt;();
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>                final List&lt;Server&gt; changedServers = new ArrayList&lt;Server&gt;();
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>                for (int i = 0; i &lt; numCandidates; i++) {
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>                    boolean isAlive = results[i];
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>                    Server svr = allServers[i];
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>                    boolean oldIsAlive = svr.isAlive();
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>                    svr.setAlive(isAlive);
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>                    if (oldIsAlive != isAlive) {
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>                        changedServers.add(svr);
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>                        logger.debug(&quot;LoadBalancer [{}]:  Server [{}] status changed to {}&quot;,
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>                            name, svr.getId(), (isAlive ? &quot;ALIVE&quot; : &quot;DEAD&quot;));
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>                    }
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>                    if (isAlive) {
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>                        newUpList.add(svr);
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>                    }
-<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>                }
-<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>                upLock = upServerLock.writeLock();
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>                upLock.lock();
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>                upServerList = newUpList;
-<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>                upLock.unlock();
-<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>
-<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>                notifyServerStatusChangeListener(changedServers);
-<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>            } finally {
-<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>                pingInProgress.set(false);
-<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>            }
-<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>        }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>        public void runPinger() throws Exception {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>            if (!pingInProgress.compareAndSet(false, true)) {
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                return; // Ping in progress - nothing to do
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>            }
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            // we are &quot;in&quot; - we get to Ping
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            Server[] allServers = null;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            boolean[] results = null;
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            Lock allLock = null;
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            Lock upLock = null;
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            try {
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                /*
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                 * The readLock should be free unless an addServer operation is
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                 * going on...
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                 */
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>                allLock = allServerLock.readLock();
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>                allLock.lock();
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>                allServers = allServerList.toArray(new Server[allServerList.size()]);
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>                allLock.unlock();
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>                int numCandidates = allServers.length;
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>                results = pingerStrategy.pingServers(ping, allServers);
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>                final List&lt;Server&gt; newUpList = new ArrayList&lt;Server&gt;();
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>                final List&lt;Server&gt; changedServers = new ArrayList&lt;Server&gt;();
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>                for (int i = 0; i &lt; numCandidates; i++) {
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>                    boolean isAlive = results[i];
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>                    Server svr = allServers[i];
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>                    boolean oldIsAlive = svr.isAlive();
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>                    svr.setAlive(isAlive);
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>                    if (oldIsAlive != isAlive) {
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>                        changedServers.add(svr);
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>                        logger.debug(&quot;LoadBalancer [{}]:  Server [{}] status changed to {}&quot;,
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>                            name, svr.getId(), (isAlive ? &quot;ALIVE&quot; : &quot;DEAD&quot;));
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>                    }
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>                    if (isAlive) {
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>                        newUpList.add(svr);
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>                    }
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>                }
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>                upLock = upServerLock.writeLock();
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>                upLock.lock();
+</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>                upServerList = newUpList;
+</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>                upLock.unlock();
+</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>                notifyServerStatusChangeListener(changedServers);
+</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>            } finally {
+</span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>                pingInProgress.set(false);
+</span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>            }
+</span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>        }
+</span></code></pre></div>
 <h3 id="_2">完整过程是：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>LoadBalancerClient（RibbonLoadBalancerClient 是实现类）在初始化的时候（execute 方法），会通过 ILoadBalance（BaseLoadBalancer 是实现类）向 Eureka 注册中心获取服务注册列表，并且每 10s 一次向 EurekaClient 发送“ping”，来判断服务的可用性，如果服务的可用性发生了改变或者服务数量和之前的不一致，则从注册中心更新或者重新拉取。LoadBalancerClient 有了这些服务注册列表，就可以根据具体的 IRule 来进行负载均衡。</p>
 <h2 id="irule">IRule 路由<a class="headerlink" href="#irule" title="Permanent link">&para;</a></h2>
@@ -10289,140 +10289,140 @@
 <li>BestAvailableRule： 表示请求数最少策略等等;</li>
 </ul>
 <h4 id="roundrobinrule">RoundRobinRule<a class="headerlink" href="#roundrobinrule" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public class RoundRobinRule extends AbstractLoadBalancerRule {
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    private AtomicInteger nextServerCyclicCounter;
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    private static final boolean AVAILABLE_ONLY_SERVERS = true;
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    private static final boolean ALL_SERVERS = false;
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    private static Logger log = LoggerFactory.getLogger(RoundRobinRule.class);
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    public RoundRobinRule() {
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        nextServerCyclicCounter = new AtomicInteger(0);
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    }
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    public Server choose(ILoadBalancer lb, Object key) {
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>        if (lb == null) {
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>            log.warn(&quot;no load balancer&quot;);
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>            return null;
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        }
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        Server server = null;
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        int count = 0;
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        while (server == null &amp;&amp; count++ &lt; 10) {
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>            List&lt;Server&gt; reachableServers = lb.getReachableServers();
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>            List&lt;Server&gt; allServers = lb.getAllServers();
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            int upCount = reachableServers.size();
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            int serverCount = allServers.size();
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>            if ((upCount == 0) || (serverCount == 0)) {
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>                log.warn(&quot;No up servers available from load balancer: &quot; + lb);
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>                return null;
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>            }
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>            int nextServerIndex = incrementAndGetModulo(serverCount);
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>            server = allServers.get(nextServerIndex);
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>            if (server == null) {
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>                /* Transient. */
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>                Thread.yield();
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>                continue;
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>            }
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>            if (server.isAlive() &amp;&amp; (server.isReadyToServe())) {
-<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>                return (server);
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>            }
-<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
-<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>            // Next.
-<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>            server = null;
-<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>        }
-<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
-<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>        if (count &gt;= 10) {
-<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>            log.warn(&quot;No available alive servers after 10 tries from load balancer: &quot;
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>                    + lb);
-<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>        }
-<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>        return server;
-<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>public class RoundRobinRule extends AbstractLoadBalancerRule {
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    private AtomicInteger nextServerCyclicCounter;
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    private static final boolean AVAILABLE_ONLY_SERVERS = true;
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    private static final boolean ALL_SERVERS = false;
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    private static Logger log = LoggerFactory.getLogger(RoundRobinRule.class);
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    public RoundRobinRule() {
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        nextServerCyclicCounter = new AtomicInteger(0);
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    }
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    public Server choose(ILoadBalancer lb, Object key) {
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>        if (lb == null) {
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>            log.warn(&quot;no load balancer&quot;);
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>            return null;
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        }
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        Server server = null;
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        int count = 0;
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        while (server == null &amp;&amp; count++ &lt; 10) {
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>            List&lt;Server&gt; reachableServers = lb.getReachableServers();
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>            List&lt;Server&gt; allServers = lb.getAllServers();
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            int upCount = reachableServers.size();
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            int serverCount = allServers.size();
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>            if ((upCount == 0) || (serverCount == 0)) {
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>                log.warn(&quot;No up servers available from load balancer: &quot; + lb);
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>                return null;
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>            }
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>            int nextServerIndex = incrementAndGetModulo(serverCount);
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>            server = allServers.get(nextServerIndex);
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>            if (server == null) {
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>                /* Transient. */
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>                Thread.yield();
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>                continue;
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>            }
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>            if (server.isAlive() &amp;&amp; (server.isReadyToServe())) {
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>                return (server);
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>            }
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>            // Next.
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>            server = null;
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>        }
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>        if (count &gt;= 10) {
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>            log.warn(&quot;No available alive servers after 10 tries from load balancer: &quot;
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>                    + lb);
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>        }
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>        return server;
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>    }
+</span></code></pre></div>
 <h6 id="weightedresponsetimerulechoose">WeightedResponseTimeRule#choose<a class="headerlink" href="#weightedresponsetimerulechoose" title="Permanent link">&para;</a></h6>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    public Server choose(ILoadBalancer lb, Object key) {
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>        if (lb == null) {
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>            return null;
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        }
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        Server server = null;
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        while (server == null) {
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>            // get hold of the current reference in case it is changed from the other thread
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            List&lt;Double&gt; currentWeights = accumulatedWeights;
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>            if (Thread.interrupted()) {
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>                return null;
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>            }
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>            List&lt;Server&gt; allList = lb.getAllServers();
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>            int serverCount = allList.size();
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>            if (serverCount == 0) {
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>                return null;
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>            }
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>            int serverIndex = 0;
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>            // last one in the list is the sum of all weights
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>            double maxTotalWeight = currentWeights.size() == 0 ? 0 : currentWeights.get(currentWeights.size() - 1);
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>            // No server has been hit yet and total weight is not initialized
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>            // fallback to use round robin
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>            if (maxTotalWeight &lt; 0.001d || serverCount != currentWeights.size()) {
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>                server =  super.choose(getLoadBalancer(), key);
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>                if(server == null) {
-<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>                    return server;
-<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>                }
-<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>            } else {
-<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>                // generate a random weight between 0 (inclusive) to maxTotalWeight (exclusive)
-<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>                double randomWeight = random.nextDouble() * maxTotalWeight;
-<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>                // pick the server index based on the randomIndex
-<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>                int n = 0;
-<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>                for (Double d : currentWeights) {
-<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>                    if (d &gt;= randomWeight) {
-<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>                        serverIndex = n;
-<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>                        break;
-<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>                    } else {
-<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>                        n++;
-<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>                    }
-<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>                }
-<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>
-<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>                server = allList.get(serverIndex);
-<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>            }
-<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>
-<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>            if (server == null) {
-<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>                /* Transient. */
-<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>                Thread.yield();
-<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>                continue;
-<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>            }
-<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>
-<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>            if (server.isAlive()) {
-<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>                return (server);
-<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>            }
-<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>
-<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>            // Next.
-<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>            server = null;
-<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>        }
-<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>        return server;
-<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    public Server choose(ILoadBalancer lb, Object key) {
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>        if (lb == null) {
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>            return null;
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        }
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        Server server = null;
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        while (server == null) {
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>            // get hold of the current reference in case it is changed from the other thread
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            List&lt;Double&gt; currentWeights = accumulatedWeights;
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>            if (Thread.interrupted()) {
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>                return null;
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>            }
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>            List&lt;Server&gt; allList = lb.getAllServers();
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>            int serverCount = allList.size();
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>            if (serverCount == 0) {
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>                return null;
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>            }
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>            int serverIndex = 0;
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>            // last one in the list is the sum of all weights
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>            double maxTotalWeight = currentWeights.size() == 0 ? 0 : currentWeights.get(currentWeights.size() - 1);
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>            // No server has been hit yet and total weight is not initialized
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>            // fallback to use round robin
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>            if (maxTotalWeight &lt; 0.001d || serverCount != currentWeights.size()) {
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>                server =  super.choose(getLoadBalancer(), key);
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>                if(server == null) {
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>                    return server;
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>                }
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>            } else {
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>                // generate a random weight between 0 (inclusive) to maxTotalWeight (exclusive)
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>                double randomWeight = random.nextDouble() * maxTotalWeight;
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>                // pick the server index based on the randomIndex
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>                int n = 0;
+</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>                for (Double d : currentWeights) {
+</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>                    if (d &gt;= randomWeight) {
+</span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>                        serverIndex = n;
+</span><span id="__span-6-40"><a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>                        break;
+</span><span id="__span-6-41"><a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>                    } else {
+</span><span id="__span-6-42"><a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>                        n++;
+</span><span id="__span-6-43"><a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>                    }
+</span><span id="__span-6-44"><a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>                }
+</span><span id="__span-6-45"><a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>
+</span><span id="__span-6-46"><a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>                server = allList.get(serverIndex);
+</span><span id="__span-6-47"><a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>            }
+</span><span id="__span-6-48"><a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>
+</span><span id="__span-6-49"><a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>            if (server == null) {
+</span><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>                /* Transient. */
+</span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>                Thread.yield();
+</span><span id="__span-6-52"><a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>                continue;
+</span><span id="__span-6-53"><a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>            }
+</span><span id="__span-6-54"><a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>
+</span><span id="__span-6-55"><a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>            if (server.isAlive()) {
+</span><span id="__span-6-56"><a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>                return (server);
+</span><span id="__span-6-57"><a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>            }
+</span><span id="__span-6-58"><a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>
+</span><span id="__span-6-59"><a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>            // Next.
+</span><span id="__span-6-60"><a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>            server = null;
+</span><span id="__span-6-61"><a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>        }
+</span><span id="__span-6-62"><a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>        return server;
+</span><span id="__span-6-63"><a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a>    }
+</span></code></pre></div>
 <h2 id="_3">如何使用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>创建具有负载均衡功能的 RestTemplate 实例</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>@Bean
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>@LoadBalanced
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>RestTemplate restTemplate() {
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    return new RestTemplate();
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>@Bean
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>@LoadBalanced
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>RestTemplate restTemplate() {
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    return new RestTemplate();
+</span></code></pre></div>
 <p>使用 RestTemplate 进行 rest 操作的时候，会自动使用负载均衡策略，它内部会在 RestTemplate 中加入 LoadBalancerInterceptor 这个拦截器，这个拦截器的作用就是使用负载均衡。
 默认情况下会采用轮询策略，如果希望采用其它策略，则指定 IRule 实现，如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>@Bean
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>public IRule ribbonRule() {
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    return new BestAvailableRule();
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>@Bean
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>public IRule ribbonRule() {
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    return new BestAvailableRule();
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>}
+</span></code></pre></div>
 <p>这种方式对 Feign 也有效。</p>
 <h2 id="spring-cloud-ribbon">Spring Cloud Ribbon 配置详解<a class="headerlink" href="#spring-cloud-ribbon" title="Permanent link">&para;</a></h2>
 <p>由于 Ribbon 中定义的每一个接口都有多种不同的策略，同时接口之间又有依赖关系，使得我们在用的时候不知道如何选择具体的实现策略已经组织他们的依赖关系。
@@ -10440,23 +10440,23 @@ Spring Cloud Ribbon 的自动化配置恰好能解决这样的痛点，在引入
 <p>通过自动化配置的实现，我们可以轻松地实现客户端负载均衡。同时，针对一些个性化需求，我们也可以方便地替换上面的这些默认实现。
 只需在 Spring Boot 应用中创建对应的实现实例就能覆盖这些默认的配置实现。
 比如下面的配置内容，由于创建了 PingUrl 实例，所以默认的 NoOpPing 就不会被创建。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>    @Bean
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    public IPing ribbonPing(){
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        return new PingUrl();
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>    @Bean
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    public IPing ribbonPing(){
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        return new PingUrl();
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    }
+</span></code></pre></div>
 <p>改变负载均衡规则</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a> @Bean
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    public IRule ribbonRule(){
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        // 负载均衡规则改为随机
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        return new RandomRule();
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    }
-</code></pre></div>
-<p>另外，也可以通过使用@RibbonClient 注解来实现更细粒度的客户端配置，
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a> @Bean
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    public IRule ribbonRule(){
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        // 负载均衡规则改为随机
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        return new RandomRule();
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    }
+</span></code></pre></div>
+<p>另外，也可以通过使用<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/RibbonClient" title="GitHub User: RibbonClient">@RibbonClient</a> 注解来实现更细粒度的客户端配置，
 比如下面的代码实现了为 helloService 服务使用 HelloConfig 中的配置。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>@RibbonClient(name = &quot;helloService&quot;, configuration = HelloConfig.class)
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>public class RibbonConfig {
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>@RibbonClient(name = &quot;helloService&quot;, configuration = HelloConfig.class)
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>public class RibbonConfig {
+</span></code></pre></div>
 <h4 id="_4">参数配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <h5 id="_5">文件配置方式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
 <p>对于 Ribbon 的参数配置通常有两种方式:全局配置以及指定客户端配置。</p>
@@ -10467,36 +10467,36 @@ Spring Cloud Ribbon 的自动化配置恰好能解决这样的痛点，在引入
 <p>NIWSServerListClassName: 配置 ServerList 的实现类</p>
 <p>NIWSServerListFilterClassName: 配置 ServerListtFilter 的实现类</p>
 <p>如配置 life-base 这个 Ribbon Client 的负载均衡规则，在 yml 文件中可以这样配置</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>life-base：
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  ribbon：
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    NFLoadBalancerRuleClassName：com.netflix.loadbalancer.RandomRule
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>life-base：
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  ribbon：
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    NFLoadBalancerRuleClassName：com.netflix.loadbalancer.RandomRule
+</span></code></pre></div>
 <h6 id="_6">全局配置的方式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h6>
 <p>只需使用 ribbon.<key>=<value>格式进行配置即可。其中，<key>代表了 Ribbon 客户端配置的参数名，<value> 则代表了对应参数的值。
 比如，我们可以像下面这样全局配置 Ribbon 创建连接的超时时间:</p>
-<div class="highlight"><pre><span></span><code>ribbon.ConnectTimeout 250
+<div class="language-text highlight"><pre><span></span><code>ribbon.ConnectTimeout 250
 </code></pre></div>
 <p>全局配置可以作为默认值进行设置，当指定客户端配置了相应 key 的值时，将覆盖全局配置的内容。</p>
 <h6 id="_7">指定客户端的配置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h6>
 <p>方式采用<client>.ribbon.<key>=<value>的格式进行配置。其中，<key>和<value>的含义同全局配置相同，而<client>代表了客户端的名称，
-如上文中我们在@RibbonClient 中指定的名称，也可以将它理解为是一-个服务名。为了方便理解这种配置方式，我们举一一个具体的例子:
+如上文中我们在<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/RibbonClient" title="GitHub User: RibbonClient">@RibbonClient</a> 中指定的名称，也可以将它理解为是一-个服务名。为了方便理解这种配置方式，我们举一一个具体的例子:
 假设，有一个服务消费者通过 RestTemplate 来访问 hello-service 服务的/hello 接口，
-这时我们会这样调用 restTemplate.getForEntity ("http://hello-service/hello", String.class) .getBody();.
+这时我们会这样调用 restTemplate.getForEntity ("<a href="http://hello-service/hello">http://hello-service/hello</a>", String.class) .getBody();.
 如果没有服务治理框架的帮助，我们需要为该客户端指定具体的实例清单，可以指定服务名来做详细的配置，具体如下:</p>
-<div class="highlight"><pre><span></span><code>hello-service.ribbon.listOfServers-localhost: 8001. localhost:8002, 1ocalhost:8003
+<div class="language-text highlight"><pre><span></span><code>hello-service.ribbon.listOfServers-localhost: 8001. localhost:8002, 1ocalhost:8003
 </code></pre></div>
 <p>对于 Ribbon 参数的 key 以及 value 类型的定义,可以通过查看 com.netflix.client.config.CommonClientConfigKey 类获得更为详细的配置内容</p>
 <h4 id="ribbon_2">ribbon 的重试机制<a class="headerlink" href="#ribbon_2" title="Permanent link">&para;</a></h4>
 <p>默认是开启的，需要添加超时与重试的策略配置，如下：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>client-a:
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  ribbon:
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    ConnectTimeout: 250 # 连接超时时间（ms），默认值为250ms
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    ReadTimeout: 2000 # 通信超时时间（ms），默认值为2000ms
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    MaxAutoRetries: 1 #对第一次请求的服务的重试次数# 对同一实例重试的次数（单个集群节点服务重试的次数）
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    MaxAutoRetriesNextServer: 1 #要重试的下一个服务的最大数量（不包括第一个服务）对同一服务不同实例重试次数（同一服务下集群个数的重试次数）
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    OkToRetryOnAllOperations: true #是否对所有操作都进行重试 说明：这里配置的ConnectTimeout和ReadTimeout是当HTTP客户端使用的是HttpClient才生效，这个时间最终会被设置到HttpClient中。#在设置的时候需要结合hystrix的超时时间来综合考虑，针对使用的场景，设置太小会导致很多请求失败，设置太大会导致熔断控制变差。
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    # 开启熔断机制，超过六秒即开启熔断机制，网关内的时间排序：zuul的通信时间 &gt; hystrix熔断时间 &gt; retry重试时间
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>client-a:
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  ribbon:
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    ConnectTimeout: 250 # 连接超时时间（ms），默认值为250ms
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    ReadTimeout: 2000 # 通信超时时间（ms），默认值为2000ms
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    MaxAutoRetries: 1 #对第一次请求的服务的重试次数# 对同一实例重试的次数（单个集群节点服务重试的次数）
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    MaxAutoRetriesNextServer: 1 #要重试的下一个服务的最大数量（不包括第一个服务）对同一服务不同实例重试次数（同一服务下集群个数的重试次数）
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    OkToRetryOnAllOperations: true #是否对所有操作都进行重试 说明：这里配置的ConnectTimeout和ReadTimeout是当HTTP客户端使用的是HttpClient才生效，这个时间最终会被设置到HttpClient中。#在设置的时候需要结合hystrix的超时时间来综合考虑，针对使用的场景，设置太小会导致很多请求失败，设置太大会导致熔断控制变差。
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    # 开启熔断机制，超过六秒即开启熔断机制，网关内的时间排序：zuul的通信时间 &gt; hystrix熔断时间 &gt; retry重试时间
+</span></code></pre></div>
 <h4 id="_8">默认实现<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -10545,62 +10545,62 @@ Spring Cloud Ribbon 的自动化配置恰好能解决这样的痛点，在引入
 </tbody>
 </table>
 <h4 id="_9">全局配置<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>hystrix:
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  command: #用于控制HystrixCommand的行为
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    default:
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>      execution:
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>        isolation:
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>          strategy: THREAD #控制HystrixCommand的隔离策略，THREAD-&gt;线程池隔离策略(默认)，SEMAPHORE-&gt;信号量隔离策略
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>          thread:
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>            timeoutInMilliseconds: 1000 #配置HystrixCommand执行的超时时间，执行超过该时间会进行服务降级处理
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>            interruptOnTimeout: true #配置HystrixCommand执行超时的时候是否要中断
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>            interruptOnCancel: true #配置HystrixCommand执行被取消的时候是否要中断
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>          timeout:
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>            enabled: true #配置HystrixCommand的执行是否启用超时时间
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>          semaphore:
-<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>            maxConcurrentRequests: 10 #当使用信号量隔离策略时，用来控制并发量的大小，超过该并发量的请求会被拒绝
-<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>      fallback:
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>        enabled: true #用于控制是否启用服务降级
-<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>      circuitBreaker: #用于控制HystrixCircuitBreaker的行为
-<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>        enabled: true #用于控制断路器是否跟踪健康状况以及熔断请求
-<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>        requestVolumeThreshold: 20 #超过该请求数的请求会被拒绝
-<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>        forceOpen: false #强制打开断路器，拒绝所有请求
-<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>        forceClosed: false #强制关闭断路器，接收所有请求
-<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>      requestCache:
-<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>        enabled: true #用于控制是否开启请求缓存
-<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>  collapser: #用于控制HystrixCollapser的执行行为
-<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    default:
-<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>      maxRequestsInBatch: 100 #控制一次合并请求合并的最大请求数
-<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>      timerDelayinMilliseconds: 10 #控制多少毫秒内的请求会被合并成一个
-<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>      requestCache:
-<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>        enabled: true #控制合并请求是否开启缓存
-<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>  threadpool: #用于控制HystrixCommand执行所在线程池的行为
-<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>    default:
-<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>      coreSize: 10 #线程池的核心线程数
-<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>      maximumSize: 10 #线程池的最大线程数，超过该线程数的请求会被拒绝
-<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>      maxQueueSize: -1 #用于设置线程池的最大队列大小，-1采用SynchronousQueue，其他正数采用LinkedBlockingQueue
-<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>      queueSizeRejectionThreshold: 5 #用于设置线程池队列的拒绝阀值，由于LinkedBlockingQueue不能动态改版大小，使用时需要用该参数来控制线程数
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>hystrix:
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  command: #用于控制HystrixCommand的行为
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    default:
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>      execution:
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>        isolation:
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>          strategy: THREAD #控制HystrixCommand的隔离策略，THREAD-&gt;线程池隔离策略(默认)，SEMAPHORE-&gt;信号量隔离策略
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>          thread:
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>            timeoutInMilliseconds: 1000 #配置HystrixCommand执行的超时时间，执行超过该时间会进行服务降级处理
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>            interruptOnTimeout: true #配置HystrixCommand执行超时的时候是否要中断
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>            interruptOnCancel: true #配置HystrixCommand执行被取消的时候是否要中断
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>          timeout:
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>            enabled: true #配置HystrixCommand的执行是否启用超时时间
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>          semaphore:
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>            maxConcurrentRequests: 10 #当使用信号量隔离策略时，用来控制并发量的大小，超过该并发量的请求会被拒绝
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>      fallback:
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>        enabled: true #用于控制是否启用服务降级
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>      circuitBreaker: #用于控制HystrixCircuitBreaker的行为
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>        enabled: true #用于控制断路器是否跟踪健康状况以及熔断请求
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>        requestVolumeThreshold: 20 #超过该请求数的请求会被拒绝
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>        forceOpen: false #强制打开断路器，拒绝所有请求
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>        forceClosed: false #强制关闭断路器，接收所有请求
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>      requestCache:
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>        enabled: true #用于控制是否开启请求缓存
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>  collapser: #用于控制HystrixCollapser的执行行为
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    default:
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>      maxRequestsInBatch: 100 #控制一次合并请求合并的最大请求数
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>      timerDelayinMilliseconds: 10 #控制多少毫秒内的请求会被合并成一个
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>      requestCache:
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>        enabled: true #控制合并请求是否开启缓存
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>  threadpool: #用于控制HystrixCommand执行所在线程池的行为
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>    default:
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>      coreSize: 10 #线程池的核心线程数
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>      maximumSize: 10 #线程池的最大线程数，超过该线程数的请求会被拒绝
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>      maxQueueSize: -1 #用于设置线程池的最大队列大小，-1采用SynchronousQueue，其他正数采用LinkedBlockingQueue
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>      queueSizeRejectionThreshold: 5 #用于设置线程池队列的拒绝阀值，由于LinkedBlockingQueue不能动态改版大小，使用时需要用该参数来控制线程数
+</span></code></pre></div>
 <blockquote>
 <p>实例配置只需要将全局配置中的 default 换成与之对应的 key 即可。</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>hystrix:
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>  command:
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    HystrixComandKey: #将default换成HystrixComrnandKey
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>      execution:
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        isolation:
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>          strategy: THREAD
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>  collapser:
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    HystrixCollapserKey: #将default换成HystrixCollapserKey
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>      maxRequestsInBatch: 100
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>  threadpool:
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>    HystrixThreadPoolKey: #将default换成HystrixThreadPoolKey
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>      coreSize: 10
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>hystrix:
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>  command:
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    HystrixComandKey: #将default换成HystrixComrnandKey
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>      execution:
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        isolation:
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>          strategy: THREAD
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>  collapser:
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    HystrixCollapserKey: #将default换成HystrixCollapserKey
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>      maxRequestsInBatch: 100
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>  threadpool:
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>    HystrixThreadPoolKey: #将default换成HystrixThreadPoolKey
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>      coreSize: 10
+</span></code></pre></div>
 <p>配置文件中相关 key 的说明</p>
-<p>HystrixComandKey 对应@HystrixCommand 中的 commandKey 属性；</p>
-<p>HystrixCollapserKey 对应@HystrixCollapser 注解中的 collapserKey 属性；</p>
-<p>HystrixThreadPoolKey 对应@HystrixCommand 中的 threadPoolKey 属性。</p>
+<p>HystrixComandKey 对应<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/HystrixCommand" title="GitHub User: HystrixCommand">@HystrixCommand</a> 中的 commandKey 属性；</p>
+<p>HystrixCollapserKey 对应<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/HystrixCollapser" title="GitHub User: HystrixCollapser">@HystrixCollapser</a> 注解中的 collapserKey 属性；</p>
+<p>HystrixThreadPoolKey 对应<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/HystrixCommand" title="GitHub User: HystrixCommand">@HystrixCommand</a> 中的 threadPoolKey 属性。</p>
 <h4 id="_10">配置的优先级<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>配置文件的优先级 &gt; java 代码的配置方式 &gt; netflix 自定义的配置方式</p>
@@ -10695,6 +10695,12 @@ Spring Cloud Ribbon 的自动化配置恰好能解决这样的痛点，在引入
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

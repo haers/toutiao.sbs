@@ -4714,6 +4714,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4828,20 +4842,6 @@
     <li class="md-nav__item">
       <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10134,29 +10134,29 @@
 <li>逻辑表（table）</li>
 </ul>
 <p>逻辑表可以分布在一个或多个分片库中，也可以不分片。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> &lt;table name=&quot;t_user&quot; dataNode=&quot;dn1,dn2&quot; rule=&quot;sharding-by-mod2&quot;/&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> &lt;table name=&quot;t_user&quot; dataNode=&quot;dn1,dn2&quot; rule=&quot;sharding-by-mod2&quot;/&gt;
+</span></code></pre></div>
 <p>t_user 分片表，数据按照规则被切分到 dn1、dn2 两个节点。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a> &lt;table name=&quot;t_node&quot; primaryKey=&quot;id&quot; autoIncrement=&quot;true&quot; dataNode=&quot;dn1&quot; /&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a> &lt;table name=&quot;t_node&quot; primaryKey=&quot;id&quot; autoIncrement=&quot;true&quot; dataNode=&quot;dn1&quot; /&gt;
+</span></code></pre></div>
 <p>t_node 表，非分片表，只存在于节点 dn1。</p>
 <p><code>primaryKey：逻辑表对应真实表的主键。对于分片规则使用非主键进行分表，如果使用主键查询会，会扫描所有分表，配置了该属性，mycat会缓存主键与dn的信息，避免所有表扫描，提升性能。但如果缓存没有命中，还是会把SQL发给所有的dn执行来获取数据。</code></p>
 <ul>
 <li>分片节点（dataNode）</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a> &lt;dataNode name=&quot;dn1&quot; dataHost=&quot;localhost1&quot; database=&quot;mycat_node1&quot;/&gt;
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> &lt;dataNode name=&quot;dn2&quot; dataHost=&quot;localhost1&quot; database=&quot;mycat_node2&quot;/&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a> &lt;dataNode name=&quot;dn1&quot; dataHost=&quot;localhost1&quot; database=&quot;mycat_node1&quot;/&gt;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> &lt;dataNode name=&quot;dn2&quot; dataHost=&quot;localhost1&quot; database=&quot;mycat_node2&quot;/&gt;
+</span></code></pre></div>
 <p>一个大表被分到不同的分片数据库上，每个表分片所在的数据库就是分片节点</p>
 <ul>
 <li>节点主机（dataHost）</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;dataHost name=&quot;localhost1&quot; writeType=&quot;0&quot; switchType=&quot;1&quot; slaveThreshold=&quot;100&quot; balance=&quot;1&quot; dbType=&quot;mysql&quot; maxCon=&quot;10&quot; minCon=&quot;1&quot; dbDriver=&quot;native&quot;&gt;
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    &lt;heartbeat&gt;show status like &#39;wsrep%&#39;&lt;/heartbeat&gt;
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &lt;writeHost host=&quot;hostM1&quot; url=&quot;127.0.0.1:3306&quot; user=&quot;root&quot; password=&quot;root&quot; &gt;
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &lt;/writeHost&gt;
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&lt;/dataHost&gt;
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;dataHost name=&quot;localhost1&quot; writeType=&quot;0&quot; switchType=&quot;1&quot; slaveThreshold=&quot;100&quot; balance=&quot;1&quot; dbType=&quot;mysql&quot; maxCon=&quot;10&quot; minCon=&quot;1&quot; dbDriver=&quot;native&quot;&gt;
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    &lt;heartbeat&gt;show status like &#39;wsrep%&#39;&lt;/heartbeat&gt;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &lt;writeHost host=&quot;hostM1&quot; url=&quot;127.0.0.1:3306&quot; user=&quot;root&quot; password=&quot;root&quot; &gt;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &lt;/writeHost&gt;
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&lt;/dataHost&gt;
+</span></code></pre></div>
 <p>同一台机器上可以有多个分片数据库。为了避免单节点主机并发数量的限制，尽量将读写压力高的分片节点均匀地放在不同的节点主机上。</p>
 <p><code>上面只列了几个核心参数，更多参数详细说明可参考《基于mycat中间件P22》</code></p>
 <h4 id="_4">配置文件：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
@@ -10281,12 +10281,12 @@
 <li>多线程架构</li>
 </ul>
 <p>维护一个线程池 NameableExecutor，继承自 ThreadPoolExecutor。mycat 内部有两大线程池：timerExectuor 和 businessExecutor。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>timerExectuor：
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>定时更新任务、处理器定时检查任务，数据节点定时心跳检测，主要是后勤工作。
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>businessExecutor:
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>处理业务请求，比如执行SQL语句，SQL拦截，数据合并，查询结果
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>timerExectuor：
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>定时更新任务、处理器定时检查任务，数据节点定时心跳检测，主要是后勤工作。
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>businessExecutor:
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>处理业务请求，比如执行SQL语句，SQL拦截，数据合并，查询结果
+</span></code></pre></div>
 <ul>
 <li>内存管理及缓存架构</li>
 </ul>
@@ -10312,24 +10312,24 @@
 <p>如何安装？</p>
 <p><a href="https://github.com/MyCATApache/Mycat-Server">https://github.com/MyCATApache/Mycat-Server</a></p>
 <p><code>下载文件直接解压。执行./mycat start 启动</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./mycat start 启动
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>./mycat stop 停止
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>./mycat console 前台运行
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>./mycat restart 重启服务
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>./mycat pause 暂停
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>./mycat status 查看启动状态
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./mycat start 启动
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>./mycat stop 停止
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>./mycat console 前台运行
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>./mycat restart 重启服务
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>./mycat pause 暂停
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>./mycat status 查看启动状态
+</span></code></pre></div>
 <h3 id="mycat_4">七、Mycat 实战<a class="headerlink" href="#mycat_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://github.com/MyCATApache/Mycat-doc">入门指南、开发指南、生产部署、设计文档</a></li>
 </ul>
 <h4 id="1">1.搭建读写分离<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
 <p>主数据提供写操作，从数据库提供读操作，有效减轻单台数据库的压力，主数据库进行写操作后，数据及时同步到所读的数据库，尽可能保证两边数据一致。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>主（M1）&lt;----&gt; 备(M2)
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>|
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>|
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>从(S1)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>主（M1）&lt;----&gt; 备(M2)
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>|
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>|
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>从(S1)
+</span></code></pre></div>
 <ul>
 <li>balance 为 0。不开启读写分离，所有的读全发送到 M1</li>
 <li>balance 为 1。所有的读发送到 S1 和 M2</li>
@@ -10424,6 +10424,12 @@
       <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

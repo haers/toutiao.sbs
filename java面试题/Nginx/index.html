@@ -4714,6 +4714,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/" class="md-nav__link">
         平衡二叉树
       </a>
@@ -4828,20 +4842,6 @@
     <li class="md-nav__item">
       <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinarySearchTree/" class="md-nav__link">
         二叉搜索树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/BinaryTree/" class="md-nav__link">
-        二叉树(BinaryTree)
       </a>
     </li>
   
@@ -10123,14 +10123,14 @@ FastCGI：Nginx 本身不支持 PHP 等语言，但是它可以通过 FastCGI �
 <ul>
 <li>nginx 接收一个请求后，首先由 listen 和 server_name 指令匹配 server 模块，再匹配 server 模块里的 location，location 就是实际地址</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> server {                                   # 第一个Server区块开始，表示一个独立的虚拟主机站点
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        listen       80；                        # 提供服务的端口，默认80
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        server_name  localhost；                 # 提供服务的域名主机名
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        location / {                            # 第一个location区块开始
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            root   html；                    # 站点的根目录，相当于Nginx的安装目录
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            index  index.html index.htm；        # 默认的首页文件，多个用空格分开
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> server {                                   # 第一个Server区块开始，表示一个独立的虚拟主机站点
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        listen       80；                        # 提供服务的端口，默认80
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        server_name  localhost；                 # 提供服务的域名主机名
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        location / {                            # 第一个location区块开始
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            root   html；                    # 站点的根目录，相当于Nginx的安装目录
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            index  index.html index.htm；        # 默认的首页文件，多个用空格分开
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        }
+</span></code></pre></div>
 <h4 id="4nginx">4.Nginx 的优缺点？<a class="headerlink" href="#4nginx" title="Permanent link">&para;</a></h4>
 <p>优点：
 占内存小，可实现高并发连接，处理响应快
@@ -10152,16 +10152,16 @@ nginz 中也可以配置安全管理、比如可以使用 Nginx 搭建 API 接�
 <p>Nginx 使用反应器模式。主事件循环等待操作系统发出准备事件的信号，这样数据就可以从套接字读取，在该实例中读取到缓冲区并进行处理。单个线程可以提供数万个并发连接。</p>
 <h4 id="9-nginx">9.在 Nginx 中，如何使用未定义的服务器名称来阻止处理请求?<a class="headerlink" href="#9-nginx" title="Permanent link">&para;</a></h4>
 <p>只需将请求删除的服务器就可以定义为：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Server {
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>listen 80;
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>server_name “ “ ;
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>return 444;
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>}
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Server {
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>listen 80;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>server_name “ “ ;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>return 444;
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>}
+</span></code></pre></div>
 <p>这里，服务器名被保留为一个空字符串，它将在没有“主机”头字段的情况下匹配请求，而一个特殊的<code>Nginx</code>的非标准代码<code>444</code>被返回，从而终止连接。</p>
 <h4 id="10-nginx-url">10.在 Nginx 中如何在 URL 中保留双斜线?<a class="headerlink" href="#10-nginx-url" title="Permanent link">&para;</a></h4>
 <p>要在 URL 中保留双斜线，就必须使用 merge_slashes_off；语法:merge_slashes [on/off] ； 默认值: merge_slashes on ；环境: http，server</p>
@@ -10183,32 +10183,32 @@ nginz 中也可以配置安全管理、比如可以使用 Nginx 搭建 API 接�
 检查配置文件是否正确 nginx -t 。
 显示帮助信息 nginx -h 。</p>
 <h4 id="14nginx">14.Nginx 常用配置？<a class="headerlink" href="#14nginx" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">worker_processes</span><span class="w">  </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="c1"># 工作进程个数</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">worker_connections</span><span class="w">  </span><span class="mi">65535</span><span class="p">;</span><span class="w"> </span><span class="c1"># 每个工作进程能并发处理（发起）的最大连接数（包含所有连接数）</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">error_log</span><span class="w">         </span><span class="s">/data/logs/nginx/error.log</span><span class="p">;</span><span class="w"> </span><span class="c1"># 错误日志打印地址</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">access_log</span><span class="w">      </span><span class="s">/data/logs/nginx/access.log</span><span class="p">;</span><span class="w"> </span><span class="c1"># 进入日志打印地址</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">log_format</span><span class="w">  </span><span class="s">main</span><span class="w">  </span><span class="s">&#39;</span><span class="nv">$remote_addr&quot;$request&quot;</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="nv">$status</span><span class="w"> </span><span class="nv">$upstream_addr</span><span class="w"> </span><span class="s">&quot;</span><span class="nv">$request_time&quot;&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1"># 进入日志格式</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">## 如果未使用 fastcgi 功能的，可以无视</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">fastcgi_connect_timeout=300</span><span class="p">;</span><span class="w"> </span><span class="c1"># 连接到后端 fastcgi 超时时间</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">fastcgi_send_timeout=300</span><span class="p">;</span><span class="w"> </span><span class="c1"># 向 fastcgi 请求超时时间(这个指定值已经完成两次握手后向fastcgi传送请求的超时时间)</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">fastcgi_rend_timeout=300</span><span class="p">;</span><span class="w"> </span><span class="c1"># 接收 fastcgi 应答超时时间，同理也是2次握手后</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">fastcgi_buffer_size=64k</span><span class="p">;</span><span class="w"> </span><span class="c1"># 读取 fastcgi 应答第一部分需要多大缓冲区，该值表示使用1个64kb的缓冲区读取应答第一部分(应答头),可以设置为fastcgi_buffers选项缓冲区大小</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">fastcgi_buffers</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">64k</span><span class="p">;</span><span class="w"> </span><span class="c1"># 指定本地需要多少和多大的缓冲区来缓冲fastcgi应答请求，假设一个php或java脚本所产生页面大小为256kb,那么会为其分配4个64kb的缓冲来缓存</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">fastcgi_cache</span><span class="w"> </span><span class="s">TEST</span><span class="p">;</span><span class="w"> </span><span class="c1"># 开启fastcgi缓存并为其指定为TEST名称，降低cpu负载,防止502错误发生</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">listen</span><span class="w">       </span><span class="mi">80</span><span class="p">;</span><span class="w"> </span><span class="c1"># 监听端口</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="k">server_name</span><span class="w">  </span><span class="s">rrc.test.jiedaibao.com</span><span class="p">;</span><span class="w"> </span><span class="c1"># 允许域名</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">root</span><span class="w">  </span><span class="s">/data/release/rrc/web</span><span class="p">;</span><span class="w"> </span><span class="c1"># 项目根目录</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">index</span><span class="w">  </span><span class="s">index.php</span><span class="w"> </span><span class="s">index.html</span><span class="w"> </span><span class="s">index.htm</span><span class="p">;</span><span class="w"> </span><span class="c1"># 访问根文件</span>
-</code></pre></div>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">worker_processes</span><span class="w">  </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="c1"># 工作进程个数</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">worker_connections</span><span class="w">  </span><span class="mi">65535</span><span class="p">;</span><span class="w"> </span><span class="c1"># 每个工作进程能并发处理（发起）的最大连接数（包含所有连接数）</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">error_log</span><span class="w">         </span><span class="s">/data/logs/nginx/error.log</span><span class="p">;</span><span class="w"> </span><span class="c1"># 错误日志打印地址</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">access_log</span><span class="w">      </span><span class="s">/data/logs/nginx/access.log</span><span class="p">;</span><span class="w"> </span><span class="c1"># 进入日志打印地址</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">log_format</span><span class="w">  </span><span class="s">main</span><span class="w">  </span><span class="s">&#39;</span><span class="nv">$remote_addr&quot;$request&quot;</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="nv">$status</span><span class="w"> </span><span class="nv">$upstream_addr</span><span class="w"> </span><span class="s">&quot;</span><span class="nv">$request_time&quot;&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1"># 进入日志格式</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">## 如果未使用 fastcgi 功能的，可以无视</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">fastcgi_connect_timeout=300</span><span class="p">;</span><span class="w"> </span><span class="c1"># 连接到后端 fastcgi 超时时间</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">fastcgi_send_timeout=300</span><span class="p">;</span><span class="w"> </span><span class="c1"># 向 fastcgi 请求超时时间(这个指定值已经完成两次握手后向fastcgi传送请求的超时时间)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">fastcgi_rend_timeout=300</span><span class="p">;</span><span class="w"> </span><span class="c1"># 接收 fastcgi 应答超时时间，同理也是2次握手后</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">fastcgi_buffer_size=64k</span><span class="p">;</span><span class="w"> </span><span class="c1"># 读取 fastcgi 应答第一部分需要多大缓冲区，该值表示使用1个64kb的缓冲区读取应答第一部分(应答头),可以设置为fastcgi_buffers选项缓冲区大小</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">fastcgi_buffers</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">64k</span><span class="p">;</span><span class="w"> </span><span class="c1"># 指定本地需要多少和多大的缓冲区来缓冲fastcgi应答请求，假设一个php或java脚本所产生页面大小为256kb,那么会为其分配4个64kb的缓冲来缓存</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">fastcgi_cache</span><span class="w"> </span><span class="s">TEST</span><span class="p">;</span><span class="w"> </span><span class="c1"># 开启fastcgi缓存并为其指定为TEST名称，降低cpu负载,防止502错误发生</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">listen</span><span class="w">       </span><span class="mi">80</span><span class="p">;</span><span class="w"> </span><span class="c1"># 监听端口</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="k">server_name</span><span class="w">  </span><span class="s">rrc.test.jiedaibao.com</span><span class="p">;</span><span class="w"> </span><span class="c1"># 允许域名</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">root</span><span class="w">  </span><span class="s">/data/release/rrc/web</span><span class="p">;</span><span class="w"> </span><span class="c1"># 项目根目录</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">index</span><span class="w">  </span><span class="s">index.php</span><span class="w"> </span><span class="s">index.html</span><span class="w"> </span><span class="s">index.htm</span><span class="p">;</span><span class="w"> </span><span class="c1"># 访问根文件</span>
+</span></code></pre></div>
 <h4 id="15-stub_status-sub_filter">15.请陈述 stub_status 和 sub_filter 指令的作用是什么?<a class="headerlink" href="#15-stub_status-sub_filter" title="Permanent link">&para;</a></h4>
 <p>（1）Stub_status 指令：该指令用于了解 Nginx 当前状态的当前状态，如当前的活动连接，接受和处理当前读/写/等待连接的总数 ；</p>
 <p>（2）Sub_filter 指令：它用于搜索和替换响应中的内容，并快速修复陈旧的数据</p>
 <h4 id="_1">参考链接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p>https://blog.csdn.net/a303549861/article/details/88672901</p>
-<p>https://blog.csdn.net/weixin_43122090/article/details/105461971</p>
-<p>https://www.wkcto.com/article/detail/233</p>
+<p><a href="https://blog.csdn.net/a303549861/article/details/88672901">https://blog.csdn.net/a303549861/article/details/88672901</a></p>
+<p><a href="https://blog.csdn.net/weixin_43122090/article/details/105461971">https://blog.csdn.net/weixin_43122090/article/details/105461971</a></p>
+<p><a href="https://www.wkcto.com/article/detail/233">https://www.wkcto.com/article/detail/233</a></p>
 
 
 
@@ -10294,6 +10294,12 @@ nginz 中也可以配置安全管理、比如可以使用 Nginx 搭建 API 接�
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
