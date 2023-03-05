@@ -12,20 +12,20 @@
         <meta name="author" content="Mr.yu">
       
       
-        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/TwoDimensionalArray/">
+        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/2.Array/">
       
       
-        <link rel="prev" href="../Trie/">
+        <link rel="prev" href="../2-3Tree/">
       
       
-        <link rel="next" href="../Vector/">
+        <link rel="next" href="../3.TwoDimensionalArray/">
       
       <link rel="icon" href="../../../assets/favicon2.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
-        <title>二维数组 - 宇头条</title>
+        <title>2.数组(array) - 宇头条</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#2array" class="md-skip">
           跳转至
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              二维数组
+              2.数组(array)
             
           </span>
         </div>
@@ -4489,10 +4489,177 @@
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2.数组(array)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        2.数组(array)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    所有的数据结构都支持几个基本操作：读取、插入、删除。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    简单解释一下为什么
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    举个例子：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    数组和链表的区别？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    为什么数组插入会很低效？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0-1" class="md-nav__link">
+    为什么大多数语言数组都是 0 开头？而不是 1 开头呢？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-string" class="md-nav__link">
+    一个 Characters 数组不是一个 String
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length-length" class="md-nav__link">
+    为什么数组有 length 属性，而字符串没有？或者，为什么字符串有 length()方法，而数组没有？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    对象数组和基本类型数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    数组与其他种类的容器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    容器能否完全替代数组？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    有些时候，用数组会更合适些，我总结了几点自己的经验。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    数组的算法实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    栈内存
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    堆内存
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    与结构或类中的字段的区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    面试中关于数组的常见问题
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="../AVLTree/" class="md-nav__link">
-        平衡二叉树
+      <a href="../3.TwoDimensionalArray/" class="md-nav__link">
+        3.二维数组
       </a>
     </li>
   
@@ -4505,8 +4672,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../Array/" class="md-nav__link">
-        数组(array)
+      <a href="../4.Vector/" class="md-nav__link">
+        4.向量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AVLTree/" class="md-nav__link">
+        平衡二叉树
       </a>
     </li>
   
@@ -4969,89 +5150,6 @@
     <li class="md-nav__item">
       <a href="../Trie/" class="md-nav__link">
         字典树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          二维数组
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        二维数组
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二维数组的创建
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    二维数组的初始化
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    使用二维数组
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Vector/" class="md-nav__link">
-        向量
       </a>
     </li>
   
@@ -9847,22 +9945,120 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    所有的数据结构都支持几个基本操作：读取、插入、删除。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    二维数组的创建
+    简单解释一下为什么
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    二维数组的初始化
+    举个例子：
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    使用二维数组
+    数组和链表的区别？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    为什么数组插入会很低效？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0-1" class="md-nav__link">
+    为什么大多数语言数组都是 0 开头？而不是 1 开头呢？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters-string" class="md-nav__link">
+    一个 Characters 数组不是一个 String
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length-length" class="md-nav__link">
+    为什么数组有 length 属性，而字符串没有？或者，为什么字符串有 length()方法，而数组没有？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    对象数组和基本类型数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    数组与其他种类的容器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    容器能否完全替代数组？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    有些时候，用数组会更合适些，我总结了几点自己的经验。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    数组的算法实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    栈内存
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    堆内存
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    与结构或类中的字段的区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    面试中关于数组的常见问题
   </a>
   
 </li>
@@ -9882,61 +10078,185 @@
                   
 
 
-<h1 id="_1">二维数组<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>如果一维数组的各个元素仍然是一个数组，那么它就是一个二维数组。
-二维数组常用于表示表，表中的信息以行和列的形式组织，
-第一个下标代表元素所在的行，第二个下标代表所在的列。</p>
-<h3 id="_2">二维数组的创建<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>先声明，再用 new 运算符进行内存分配</p>
-<p>声明语法格式：</p>
-<div class="highlight"><pre><span></span><code>数组元素的类型 数组名字[][];
-数组元素的类型[][] 数组名字；
-</code></pre></div>
-<p>分配内存语法：</p>
-<div class="highlight"><pre><span></span><code>数组名字 = new 数组类型[][]
-a = new int[2][4];        // 直接给每一维分配内存空间
-b = new int[2][];         //分别为每一维分配内存，这种方式列可省，行不可省
-a[0] = new int[2];
-a[1] = new int[3];
-</code></pre></div>
-<p>声明的同时为数组分配内存</p>
-<div class="highlight"><pre><span></span><code>数组元素的类型 数组名字[][] = new 数组元素的类型[][]
-</code></pre></div>
-<h3 id="_3">二维数组的初始化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>二维数组的初始化与一位数组初始化类似，同样使用大括号完成。</p>
-<p>语法格式：</p>
-<p><img alt="" src="../../image/c2/tda-1.png" /></p>
+<h1 id="2array">2.数组(array)<a class="headerlink" href="#2array" title="Permanent link">&para;</a></h1>
+<p>数组是数据结构中很基本的结构，很多编程语言都内置数组。</p>
+<p>在 Java 中当创建数组时会在内存中划分出<strong>一块连续的内存</strong>，
+然后当有数据进入的时候会将数据按顺序的存储在这块连续的内存中。
+当需要读取数组中的数据时，需要提供数组中的索引，然后数组根据索引将内存中的数据取出来，
+返回给读取程序。</p>
+<p><img alt="数组" src="../../image/c2/array-1.png" /></p>
+<p>在 Java 中并不是所有的数据都能存储到数组中，只有相同类型的数据才可以一起存储到数组中。</p>
+<p>在 Java 语言中，数组是对象（An object is a class instance or an array.），
+而且是动态创建的。数组超类是 Objcet，可以在数组上调用 Object 类的所有方法。
+每个数组都有一个关联的 Class 对象，与具有相同组成类型的所有其他数组共享</p>
+<p>虽然数组类型不是一个 class，但每个数组的 Class 对象的行为如下：</p>
 <ul>
-<li>type：数组数据类型;</li>
-<li>arrayname：数组名称，一个合法的标识符;</li>
-<li>value：数组中各元素的值。</li>
+<li>每个数组类型的直接超类都是 Object。</li>
+<li>每个数组类型都实现了 Cloneable 和 java.io.Serializable 接口。</li>
 </ul>
-<h3 id="_4">使用二维数组<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>使用二维数组常见的就是遍历数组，介绍两种遍历数组的方法。</p>
-<p>先来学习一下各种表示方法：</p>
-<div class="highlight"><pre><span></span><code>表示二维数组的行数： 二维数组名.length
-表示一行：　　　　　 二维数组名[行下标]  （行下标的范围：[0，二维数组总行数 - 1]）
-表示每一行的列数：     二维数组名[行下标].length
-表示具体的一个数据： 二维数组名[行下标][列下标]  （列下标的范围：[0，该行总列数 - 1]）
+<p>数组在 java 里是一种特殊类型，既不是基本数据类型（开玩笑，当然不是）也不是引用数据类型。
+有别于普通的“类的实例”对象，java 里数组不是类，所以也就没有对应的 class 文件，数组类型是由 jvm 从元素类型合成出来的；在 jvm 中获取数组的长度是用 arraylength 这个专门的字节码指令的；
+在数组的对象头里有一个_length 字段，记录数组长度，只需要去读_length 字段就可以了。</p>
+<h5 id="_1">所有的数据结构都支持几个基本操作：读取、插入、删除。<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
+<p>因为数组在存储数据时是按顺序存储的，存储数据的内存也是连续的，
+所以他的特点就是寻址读取数据比较容易，插入和删除比较困难。</p>
+<h5 id="_2">简单解释一下为什么<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<p>在读取数据时，只需要告诉数组要从哪个位置（索引）取数据就可以了，
+数组会直接把你想要的位置的数据取出来给你。
+插入和删除比较困难是因为这些存储数据的内存是连续的，
+要插入和删除就需要变更整个数组中的数据的位置。</p>
+<h5 id="_3">举个例子：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
+<p>一个数组中编号 0-&gt;1-&gt;2-&gt;3-&gt;4 这五个内存地址中都存了数组的数据，
+但现在你需要往 4 中插入一个数据，那就代表着从 4 开始，
+后面的所有内存中的数据都要往后移一个位置。这可是很耗时的。</p>
+<div class="highlight"><pre><span></span><code>数组是线性表，就是数据排成像一条直线一样的结构，除了数组，链表，队列，栈都是线性结构
+而非线性表就是二叉树，堆，图等，数据之间不是简单的先后关系。
 </code></pre></div>
-<p>1、使用 for 循环遍历</p>
-<p>2、使用 foreach 循环遍历</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="o">[][]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span><span class="w">               </span><span class="c1">//创建一个3行4列的数组，并且里面值都为默认值</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// 使用 for 循环</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">             </span><span class="c1">// 第一个循环，循环每一行</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1">//第二个循环，循环每行的每一列</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">       </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">);</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">// 使用 foreach</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="o">[]</span><span class="p">:</span><span class="w"> </span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                          </span><span class="c1">// 第一个循环，第一个参数代表循环中的类型，即数组，第二个参数为循环对象</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">:</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                           </span><span class="c1">// 循环上一个循环中的第一个参数中的每一个即可</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">       </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span>
-</code></pre></div>
+<h5 id="_4">数组和链表的区别？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
+<p>我们时常会回答：链表适合插入，删除，时间复杂度为 O(1);
+数组适合查找，查找时间复杂度是 O(1)</p>
+<p>实际上，这种表达是不准确的，数组是适合查找，但是查找的时间复杂度并不是 O(1).
+即便是排好序的数组，用二分查找，时间复杂度也是 O(logn)。
+所以，正确的表述是，数组支持随机访问，根据下表随机访问的时间复杂度是 O(1)</p>
+<h5 id="_5">为什么数组插入会很低效？<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
+<p>你插入一个元素，其他元素就要往后面排，最坏的情况是 O(N)，
+因为我们在每个位置插入元素的概率是一样，
+所以平均情况时间复杂度是（1+2+。。。n）/n = O(n)</p>
+<p>如果数组中的数据是有序的，我们在某一位置插入一个新的元素，
+就必须按照刚才的方法搬移后面的数据，
+但是，若数组没有任何规律，如果要插入到第 k 个位置，为了避免大规模搬移，
+还有一个简单的就是直接将第 k 位数据搬移到数组元素的最后，把新的元素直接放入第 k 个位置。</p>
+<p>那删除操作呢？</p>
+<p>和插入数据类似，内存因为是连续的,也需要搬移，若删除数组末尾数据，就是 O(1)，
+删除开头就是 O(n)，平均也是 O(n)。</p>
+<h5 id="0-1">为什么大多数语言数组都是 0 开头？而不是 1 开头呢？<a class="headerlink" href="#0-1" title="Permanent link">&para;</a></h5>
+<p>从数组存储的内存模型上来看，“下标”最确切的定义应该是“偏移(offset)”,
+如果用 a 来表示数组的首地址，
+a[0]就是偏移为 0 的位置，也就是首地址，a[k]就表示偏移 k 个 type<em>size 的位置，
+所以计算 a[k]的内存地址只需要 a[k]_address = base_address + k * type</em>size
+若是数组从 1 开始计数，
+那么我们计算数组元素 a[k]的内存地址就是
+a[k]_address = base_address + (k-1) * type_size</p>
+<p>从 1 开始编号，每次随机访问数组元素都多了一次减法运算，
+对于 cpu 来说，就是多了一次减法指令。</p>
+<h5 id="characters-string">一个 Characters 数组不是一个 String<a class="headerlink" href="#characters-string" title="Permanent link">&para;</a></h5>
+<p>在 Java 语言中，一个 char 数组并不是一个 String，并且 String 和 char 数组都不会被'\ u0000'（NUL 字符）终止。</p>
+<p>String 对象是不可变的，它的内容永远不变，而 char 数组有可变元素。</p>
+<p>String 类中的 toCharArray 方法返回一个包含与 String 相同字符序列的字符数组。StringBuffer 类在可变字符数组上实现有用的方法。</p>
+<h5 id="length-length">为什么数组有 length 属性，而字符串没有？或者，为什么字符串有 length()方法，而数组没有？<a class="headerlink" href="#length-length" title="Permanent link">&para;</a></h5>
+<p>一旦数组被创建，他的长度就是固定的了。
+数组的长度可以作为 final 实例变量的长度。
+因此，长度可以被视为一个数组的属性。</p>
+<p>String 背后的数据结构是一个 char 数组,
+所以没有必要来定义一个不必要的属性（因为该属性在 char 数值中已经提供了）。</p>
+<h5 id="_6">对象数组和基本类型数组<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
+<p>对象数组和基本类型数组在使用上几乎是相同的，
+唯一的区别就是对象数组保存的是引用，基本类型数组直接保存基本类型的值。</p>
+<p>多维数组中构成矩阵的每个向量都可以具有任意的长度（这被称为粗糙数组）。</p>
+<h5 id="_7">数组与其他种类的容器<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
+<p>数组与其他种类的容器之间的区别有三方面：效率、类型和保存基本类型的能力。</p>
+<p>在 Java 中，数组是一种效率最高的存储和随机访问对象引用序列的方式。</p>
+<p>数组是一个简单的线性序列，这使得元素访问非常快速。
+付出的代价是数组对象的大小被固定，并且在其生命周期中不可改变。
+数组之所以优于泛型之前的同期，就是因为可以创建一个数组去持有某种具体类型。</p>
+<p>在泛型之前，其他的容器在处理对象时，都将他们视为没有任何具体类型，即将这些对象当做 Java 中根类的根类 Object 处理。
+有了泛型后，容器可以指定并检查它们所持有对象的类型，并且有了自动包装机制，容器看起来还能够持有基本类型。
+随着自动包装机制的出现，容器已经可以与数组几乎一样方便的用于基本类型中了。</p>
+<p><strong>数组硕果仅存的优点就是效率</strong> 。
+然而，如果要解决更一般化的问题，数组可能会受到过多的限制，因此在这些情形下还是会使用容器。</p>
+<h5 id="_8">容器能否完全替代数组？<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
+<p>针对数组类型，很多语言都提供了容器类，比如 Java 中的 ArrayList、C++ STL 中的 vector。
+在项目开发中，什么时候适合用数组，什么时候适合用容器呢？</p>
+<ul>
+<li>
+<p>这里我拿 Java 语言来举例。如果你是 Java 工程师，
+  几乎天天都在用 ArrayList，对它应该非常熟悉。
+  那它与数组相比，到底有哪些优势呢？</p>
+</li>
+<li>
+<p>我个人觉得，ArrayList 最大的优势就是可以将很多数组操作的细节封装起来。
+  比如前面提到的数组插入、删除数据时需要搬移其他数据等。
+  另外，它还有一个优势，就是支持动态扩容。</p>
+</li>
+<li>
+<p>数组本身在定义的时候需要预先指定大小，因为需要分配连续的内存空间。
+  如果我们申请了大小为 10 的数组，当第 11 个数据需要存储到数组中时，
+  我们就需要重新分配一块更大的空间，将原来的数据复制过去，
+  然后再将新的数据插入。</p>
+</li>
+<li>
+<p>如果使用 ArrayList，我们就完全不需要关心底层的扩容逻辑，
+  ArrayList 已经帮我们实现好了。每次存储空间不够的时候，
+  它都会将空间自动扩容为 1.5 倍大小。</p>
+</li>
+<li>
+<p>不过，这里需要注意一点，因为扩容操作涉及内存申请和数据搬移，
+  是比较耗时的。所以，如果事先能确定需要存储的数据大小，
+  最好在创建 ArrayList 的时候事先指定数据大小。</p>
+</li>
+</ul>
+<h5 id="_9">有些时候，用数组会更合适些，我总结了几点自己的经验。<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>Java ArrayList 无法存储基本类型，比如 int、long，
+  需要封装为 Integer、Long 类，
+  而 Autoboxing、Unboxing 则有一定的性能消耗，
+  所以如果特别关注性能，或者希望使用基本类型，就可以选用数组。</p>
+</li>
+<li>
+<p>如果数据大小事先已知，并且对数据的操作非常简单，
+  用不到 ArrayList 提供的大部分方法，也可以直接使用数组。</p>
+</li>
+<li>
+<p>还有一个是我个人的喜好，当要表示多维数组时，
+  用数组往往会更加直观。比如 Object[][] array；
+  而用容器的话则需要这样定义：ArrayList<ArrayList > array。</p>
+</li>
+</ul>
+<h5 id="_10">数组的算法实现<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h5>
+<ul>
+<li><a href="../Chapter03/BubbleSort.md">冒泡排序</a></li>
+<li><a href="../Chapter03/SelectionSort.md">直接选择排序</a></li>
+</ul>
+<h5 id="_11">栈内存<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h5>
+<p>在方法中定义的一些基本类型的变量和对象的引用变量都在方法的栈内存中分配，
+当在一段代码中定义一个变量时，java 就在栈内存中为这个变量分配内存空间，
+当超出变量的作用域后，java 会自动释放掉为该变量所分配的内存空间。</p>
+<h5 id="_12">堆内存<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h5>
+<p>堆内存用来存放由 new 运算符创建的对象和数组，在堆中分配的内存，
+由 java 虚拟机的自动垃圾回收器来管理。</p>
+<p>在堆中创建了一个数组或对象后，同时还在栈内存中定义一个特殊的变量。
+让栈内存中的这个变量的取值等于数组或者对象在堆内存中的首地址，
+栈中的这个变量就成了数组或对象的引用变量，
+引用变量实际上保存的是数组或对象在堆内存中的地址（也称为对象的句柄），
+以后就可以在程序中使用栈的引用变量来访问堆中的数组或对象。</p>
+<h5 id="_13">与结构或类中的字段的区别<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h5>
+<p>数组中的所有元素都具有相同类型(这一点和结构或类中的字段不同，它们可以是不同类型)。
+数组中的元素存储在一个连续性的内存块中，
+并通过索引来访问(这一点也和结构和类中的字段不同，它们通过名称来访问)。</p>
+<h5 id="_14">面试中关于数组的常见问题<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h5>
+<ul>
+<li>寻找数组中第二小的元素</li>
+</ul>
+<p>第一种：先排序然后找出第一个大于 array[0]的数
+  第二种：定义两个变量分别代表第一小和第二小的数,以此和数组的数进行比较
+  第三种：用小顶堆，但是这个比较适合找出数组中第 n 小的数</p>
+<ul>
+<li>找到数组中第一个不重复出现的整数</li>
+</ul>
+<p>第一种：计数排序法，把数组出现的次数放到另一个数组中，然后找出全部出现一次的数字和原始数组嵌套遍历，原始数组最先出现在新数组的即为第一个。</p>
+<p>第二种：双循环：内循环中一个也没重复的即为第一个，即刻停止，时间复杂度是 O(N^2)</p>
+<p>第三种：借助有序哈希表。每一个数字作为 key，出现的次数为 value，这个算法的时间复杂度是 O(n)</p>
+<ul>
+<li>合并两个有序数组</li>
+</ul>
+<blockquote>
+<p>第一种：混合插入有序数组，由于两个数组都是有序的，所以只要按顺序比较大小即可。</p>
+</blockquote>
+<ul>
+<li>将数组里的正数排在数组的后面，正数排在数组的后面。但不改变原先正数和正数的排列次序。</li>
+</ul>
+<p>例：input: -5，2，-3, 4，-8，-9, 1, 3，-10；output: -5, -3, -8, -9, -10, 2, 4, 1, 3。</p>
 
 
 
@@ -9958,7 +10278,7 @@ a[1] = new int[3];
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../Trie/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 字典树" rel="prev">
+          <a href="../2-3Tree/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 2-3 树" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -9967,20 +10287,20 @@ a[1] = new int[3];
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                字典树
+                2-3 树
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Vector/" class="md-footer__link md-footer__link--next" aria-label="下一页: 向量" rel="next">
+          <a href="../3.TwoDimensionalArray/" class="md-footer__link md-footer__link--next" aria-label="下一页: 3.二维数组" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                向量
+                3.二维数组
               </div>
             </div>
             <div class="md-footer__button md-icon">
