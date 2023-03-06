@@ -12,20 +12,20 @@
         <meta name="author" content="Mr.yu">
       
       
-        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AVLTree/">
+        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/010.AVLTree/">
       
       
-        <link rel="prev" href="../7.BinaryTree/">
+        <link rel="prev" href="../009.BalanceTree/">
       
       
-        <link rel="next" href="../ArrayList/">
+        <link rel="next" href="../2-3-4Tree/">
       
       <link rel="icon" href="../../../assets/favicon2.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
-        <title>平衡二叉树 - 宇头条</title>
+        <title>10.平衡二叉树 - 宇头条</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#10" class="md-skip">
           跳转至
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              平衡二叉树
+              10.平衡二叉树
             
           </span>
         </div>
@@ -4449,9 +4449,265 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.DataStructure/" class="md-nav__link">
+      <a href="../001.DataStructure/" class="md-nav__link">
         1.数据结构
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../002.Array/" class="md-nav__link">
+        2.数组(array)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../003.TwoDimensionalArray/" class="md-nav__link">
+        3.二维数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../004.Vector/" class="md-nav__link">
+        4.向量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../005.LinkedList/" class="md-nav__link">
+        5.链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../006.Tree/" class="md-nav__link">
+        6.树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../007.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../008.BinarySearchTree/" class="md-nav__link">
+        8.二叉搜索树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../009.BalanceTree/" class="md-nav__link">
+        9.平衡树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          10.平衡二叉树
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        10.平衡二叉树
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    生成平衡二叉树
+  </a>
+  
+    <nav class="md-nav" aria-label="生成平衡二叉树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    平衡因子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    左旋
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    右旋
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    先左旋再右旋
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    先右旋再左旋
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    插入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    删除
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    如何判断一棵二叉树是否是平衡二叉树.
+  </a>
+  
+    <nav class="md-nav" aria-label="如何判断一棵二叉树是否是平衡二叉树.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    复杂度分析
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    复杂度分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    拓展：判断一棵树是否平衡
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4480,234 +4736,6 @@
       <a href="../2-3Tree/" class="md-nav__link">
         2-3 树
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.Array/" class="md-nav__link">
-        2.数组(array)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.TwoDimensionalArray/" class="md-nav__link">
-        3.二维数组
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4.Vector/" class="md-nav__link">
-        4.向量
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../5.LinkedList/" class="md-nav__link">
-        5.链表
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../6.Tree/" class="md-nav__link">
-        6.树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../7.BinaryTree/" class="md-nav__link">
-        7.二叉树(BinaryTree)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          平衡二叉树
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        平衡二叉树
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    生成平衡二叉树
-  </a>
-  
-    <nav class="md-nav" aria-label="生成平衡二叉树">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    平衡因子
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    左旋
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    右旋
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    先左旋再右旋
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    先右旋再左旋
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    插入
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    删除
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    如何判断一棵二叉树是否是平衡二叉树.
-  </a>
-  
-    <nav class="md-nav" aria-label="如何判断一棵二叉树是否是平衡二叉树.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    复杂度分析
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    复杂度分析
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    拓展：判断一棵树是否平衡
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4789,36 +4817,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../BalanceTree/" class="md-nav__link">
-        平衡树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../BinaryHeap/" class="md-nav__link">
         二叉堆
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BinarySearchTree/" class="md-nav__link">
-        二叉搜索树
       </a>
     </li>
   
@@ -9922,7 +9922,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     生成平衡二叉树
   </a>
   
@@ -9930,49 +9930,49 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     平衡因子
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     左旋
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     右旋
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     先左旋再右旋
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     先右旋再左旋
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     插入
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     删除
   </a>
   
@@ -9984,7 +9984,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     如何判断一棵二叉树是否是平衡二叉树.
   </a>
   
@@ -9992,14 +9992,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     复杂度分析
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     复杂度分析
   </a>
   
@@ -10011,7 +10011,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     拓展：判断一棵树是否平衡
   </a>
   
@@ -10032,7 +10032,7 @@
                   
 
 
-<h1 id="_1">平衡二叉树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="10">10.平衡二叉树<a class="headerlink" href="#10" title="Permanent link">&para;</a></h1>
 <p>平衡二叉树，又称 AVL 树，指的是左子树上的所有节点的值都比根节点的值小，
 而右子树上的所有节点的值都比根节点的值大，且左子树与右子树的高度差最大为 1。
 因此，平衡二叉树满足所有二叉排序（搜索）树的性质。
@@ -10045,13 +10045,13 @@
 <p><img alt="" src="../../image/c2/avltree-2.jpg" /></p>
 <p>依据此序列构造的二叉搜索树为右斜树，同时二叉树退化成单链表，搜索效率降低为 O(n)。</p>
 <p>为了避免二叉搜索树变成“链表”，我们引入了平衡二叉树，即让树的结构看起来尽量“均匀”，左右子树的节点数尽量一样多。</p>
-<h4 id="_2">生成平衡二叉树<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<h4 id="_1">生成平衡二叉树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p>那给定插入序列，如何生成一棵平衡二叉树呢？</p>
 <p>先按照生成二叉搜索树的方法构造二叉树，直至二叉树变得不平衡，
 即出现这样的节点：左子树与右子树的高度差大于 1。
 至于如何调整，要看插入的导致二叉树不平衡的节点的位置。
 主要有四种调整方式：LL（左旋）、RR（右旋）、LR（先左旋再右旋）、RL（先右旋再左旋）。</p>
-<h6 id="_3">平衡因子<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
+<h6 id="_2">平衡因子<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h6>
 <p>某节点的左子树与右子树的高度(深度)差即为该节点的平衡因子（BF,Balance Factor），
 平衡二叉树中不存在平衡因子大于 1 的节点。
 在一棵平衡二叉树中，节点的平衡因子只能取-1、1 或者 0。</p>
@@ -10067,7 +10067,7 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="p">}</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
 </span></code></pre></div>
-<h6 id="_4">左旋<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h6>
+<h6 id="_3">左旋<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
 <p>如下图所示的平衡二叉树</p>
 <p><img alt="" src="../../image/c2/avltree-3.png" /></p>
 <p>如在此平衡二叉树插入节点 62，树结构变为：</p>
@@ -10108,7 +10108,7 @@
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
 </span></code></pre></div>
-<h6 id="_5">右旋<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h6>
+<h6 id="_4">右旋<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h6>
 <p>右旋操作与左旋类似，操作流程为：</p>
 <ol>
 <li>节点的左孩子代表此节点</li>
@@ -10135,7 +10135,7 @@
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="p">}</span>
 </span></code></pre></div>
-<h6 id="_6">先左旋再右旋<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h6>
+<h6 id="_5">先左旋再右旋<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h6>
 <p>所谓 LR（先左旋再右旋）就是先将左子树左旋，再整体右旋，
 下图为最简洁的 LR 旋转（插入 2 导致值为 3 的节点不平衡）：</p>
 <p><img alt="" src="../../image/c2/avltree-11.jpg" /></p>
@@ -10162,7 +10162,7 @@
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">rightRotate</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="p">}</span>
 </span></code></pre></div>
-<h6 id="_7">先右旋再左旋<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h6>
+<h6 id="_6">先右旋再左旋<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h6>
 <p>所谓 RL（先右旋再左旋）就是先将右子树右旋，再整体左旋，下图为最简洁的 RL 旋转（插入 2 导致值为 1 的节点不平衡）：</p>
 <p><img alt="" src="../../image/c2/avltree-13.jpg" /></p>
 <p>然而更多时候根节点并不是只有一个子树，下图为复杂的 RL 旋转（插入 8 导致值为 4 的节点不平衡）：</p>
@@ -10187,7 +10187,7 @@
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">leftRotate</span><span class="p">(</span><span class="n">element</span><span class="p">);</span>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="p">}</span>
 </span></code></pre></div>
-<h6 id="_8">插入<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h6>
+<h6 id="_7">插入<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h6>
 <p>假设一颗 AVL 树的某个节点为 A，有四种操作会使 A 的左右子树高度差大于 1，
 从而破坏了原有 AVL 树的平衡性。平衡二叉树插入节点的情况分为以下四种：</p>
 <ul>
@@ -10304,7 +10304,7 @@
 </span><span id="__span-5-81"><a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeInfo</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </span><span id="__span-5-82"><a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a><span class="w">    </span><span class="p">}</span>
 </span></code></pre></div>
-<h6 id="_9">删除<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h6>
+<h6 id="_8">删除<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h6>
 <p>比如要下从下图中删除节点 20</p>
 <p><img alt="" src="../../image/c2/avltree-17.png" /></p>
 <p>首先找到替换 20 被删除的节点 15，并将二者内容替换，如下图所示：</p>
@@ -10319,7 +10319,7 @@
 <p><img alt="" src="../../image/c2/avltree-22.png" /></p>
 <p>另一种情形如下图所示：</p>
 <p><img alt="" src="../../image/c2/avltree-23.png" /></p>
-<h4 id="_10">如何判断一棵二叉树是否是平衡二叉树.<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<h4 id="_9">如何判断一棵二叉树是否是平衡二叉树.<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <p>根据定义，一棵二叉树 T 存在节点 p∈T，满足 height(p.left)−height(p.right)&gt;1 时，它是不平衡的。
 下图中每个节点的高度都被标记出来，高亮区域是一棵不平衡子树。</p>
 <p><img alt="" src="../../image/c2/avltree-15.png" /></p>
@@ -10387,7 +10387,7 @@ TT 中，只有每个节点左右子树高度差不大于 1 时，该树才是�
 <img alt="" src="../../image/c2/topDown-28.png" />
 <img alt="" src="../../image/c2/topDown-29.png" />
 <img alt="" src="../../image/c2/topDown-30.png" /></p>
-<h6 id="_11">复杂度分析<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h6>
+<h6 id="_10">复杂度分析<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h6>
 <ul>
 <li>时间复杂度：O(nlogn)。</li>
 </ul>
@@ -10477,11 +10477,11 @@ TT 中，只有每个节点左右子树高度差不大于 1 时，该树才是�
 <img alt="" src="../../image/c2/bottomUp-28.png" />
 <img alt="" src="../../image/c2/bottomUp-29.png" />
 <img alt="" src="../../image/c2/bottomUp-30.png" /></p>
-<h6 id="_12">复杂度分析<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h6>
+<h6 id="_11">复杂度分析<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h6>
 <p>时间复杂度：O(n)，计算每棵子树的高度和判断平衡操作都在恒定时间内完成。</p>
 <p>空间复杂度：O(n)，如果树不平衡，递归栈可能达到 O(n)。</p>
 <p><a href="https://leetcode-cn.com/problems/balanced-binary-tree/">https://leetcode-cn.com/problems/balanced-binary-tree/</a></p>
-<h4 id="_13">拓展：判断一棵树是否平衡<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<h4 id="_12">拓展：判断一棵树是否平衡<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <div class="language-text highlight"><pre><span></span><code>实现一个函数检查一棵树是否平衡。对于这个问题而言， 平衡指的是这棵树任意两个叶子结点到根结点的距离之差不大于1。
 </code></pre></div>
 <p>对于这道题，要审清题意。它并不是让你判断一棵树是否为平衡二叉树。</p>
@@ -10539,7 +10539,7 @@ TT 中，只有每个节点左右子树高度差不大于 1 时，该树才是�
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../7.BinaryTree/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 7.二叉树(BinaryTree)" rel="prev">
+          <a href="../009.BalanceTree/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 9.平衡树" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -10548,20 +10548,20 @@ TT 中，只有每个节点左右子树高度差不大于 1 时，该树才是�
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                7.二叉树(BinaryTree)
+                9.平衡树
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ArrayList/" class="md-footer__link md-footer__link--next" aria-label="下一页: 动态数组(向量)" rel="next">
+          <a href="../2-3-4Tree/" class="md-footer__link md-footer__link--next" aria-label="下一页: 2-3—4 树" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                动态数组(向量)
+                2-3—4 树
               </div>
             </div>
             <div class="md-footer__button md-icon">

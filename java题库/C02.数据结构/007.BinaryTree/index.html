@@ -12,20 +12,20 @@
         <meta name="author" content="Mr.yu">
       
       
-        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/3.TwoDimensionalArray/">
+        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/007.BinaryTree/">
       
       
-        <link rel="prev" href="../2.Array/">
+        <link rel="prev" href="../006.Tree/">
       
       
-        <link rel="next" href="../4.Vector/">
+        <link rel="next" href="../008.BinarySearchTree/">
       
       <link rel="icon" href="../../../assets/favicon2.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
-        <title>3.二维数组 - 宇头条</title>
+        <title>7.二叉树(BinaryTree) - 宇头条</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3" class="md-skip">
+        <a href="#7binarytree" class="md-skip">
           跳转至
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.二维数组
+              7.二叉树(BinaryTree)
             
           </span>
         </div>
@@ -4449,8 +4449,278 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.DataStructure/" class="md-nav__link">
+      <a href="../001.DataStructure/" class="md-nav__link">
         1.数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../002.Array/" class="md-nav__link">
+        2.数组(array)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../003.TwoDimensionalArray/" class="md-nav__link">
+        3.二维数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../004.Vector/" class="md-nav__link">
+        4.向量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../005.LinkedList/" class="md-nav__link">
+        5.链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../006.Tree/" class="md-nav__link">
+        6.树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          7.二叉树(BinaryTree)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        7.二叉树(BinaryTree)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    二叉树特点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二叉树性质
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    斜树
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    满二叉树
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    完全二叉树
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    二叉树的存储结构
+  </a>
+  
+    <nav class="md-nav" aria-label="二叉树的存储结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    顺序存储
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    二叉链表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    二叉树遍历
+  </a>
+  
+    <nav class="md-nav" aria-label="二叉树遍历">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    前序遍历
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    中序遍历
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    后序遍历
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    层次遍历
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    面试中关于二叉树结构的常见问题
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../008.BinarySearchTree/" class="md-nav__link">
+        8.二叉搜索树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../009.BalanceTree/" class="md-nav__link">
+        9.平衡树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../010.AVLTree/" class="md-nav__link">
+        10.平衡二叉树
       </a>
     </li>
   
@@ -4479,159 +4749,6 @@
     <li class="md-nav__item">
       <a href="../2-3Tree/" class="md-nav__link">
         2-3 树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.Array/" class="md-nav__link">
-        2.数组(array)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          3.二维数组
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        3.二维数组
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    二维数组的创建
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二维数组的初始化
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    使用二维数组
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4.Vector/" class="md-nav__link">
-        4.向量
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../5.LinkedList/" class="md-nav__link">
-        5.链表
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../6.Tree/" class="md-nav__link">
-        6.树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../7.BinaryTree/" class="md-nav__link">
-        7.二叉树(BinaryTree)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../AVLTree/" class="md-nav__link">
-        平衡二叉树
       </a>
     </li>
   
@@ -4714,36 +4831,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../BalanceTree/" class="md-nav__link">
-        平衡树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../BinaryHeap/" class="md-nav__link">
         二叉堆
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BinarySearchTree/" class="md-nav__link">
-        二叉搜索树
       </a>
     </li>
   
@@ -9848,21 +9937,110 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    二维数组的创建
+    二叉树特点
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    二维数组的初始化
+    二叉树性质
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    使用二维数组
+    斜树
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    满二叉树
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    完全二叉树
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    二叉树的存储结构
+  </a>
+  
+    <nav class="md-nav" aria-label="二叉树的存储结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    顺序存储
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    二叉链表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    二叉树遍历
+  </a>
+  
+    <nav class="md-nav" aria-label="二叉树遍历">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    前序遍历
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    中序遍历
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    后序遍历
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    层次遍历
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    面试中关于二叉树结构的常见问题
   </a>
   
 </li>
@@ -9882,61 +10060,520 @@
                   
 
 
-<h1 id="3">3.二维数组<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
-<p>如果一维数组的各个元素仍然是一个数组，那么它就是一个二维数组。
-二维数组常用于表示表，表中的信息以行和列的形式组织，
-第一个下标代表元素所在的行，第二个下标代表所在的列。</p>
-<h3 id="_1">二维数组的创建<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>先声明，再用 new 运算符进行内存分配</p>
-<p>声明语法格式：</p>
-<div class="language-text highlight"><pre><span></span><code>数组元素的类型 数组名字[][];
-数组元素的类型[][] 数组名字；
-</code></pre></div>
-<p>分配内存语法：</p>
-<div class="language-text highlight"><pre><span></span><code>数组名字 = new 数组类型[][]
-a = new int[2][4];        // 直接给每一维分配内存空间
-b = new int[2][];         //分别为每一维分配内存，这种方式列可省，行不可省
-a[0] = new int[2];
-a[1] = new int[3];
-</code></pre></div>
-<p>声明的同时为数组分配内存</p>
-<div class="language-text highlight"><pre><span></span><code>数组元素的类型 数组名字[][] = new 数组元素的类型[][]
-</code></pre></div>
-<h3 id="_2">二维数组的初始化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>二维数组的初始化与一位数组初始化类似，同样使用大括号完成。</p>
-<p>语法格式：</p>
-<p><img alt="" src="../../image/c2/tda-1.png" /></p>
-<ul>
-<li>type：数组数据类型;</li>
-<li>arrayname：数组名称，一个合法的标识符;</li>
-<li>value：数组中各元素的值。</li>
-</ul>
-<h3 id="_3">使用二维数组<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>使用二维数组常见的就是遍历数组，介绍两种遍历数组的方法。</p>
-<p>先来学习一下各种表示方法：</p>
-<div class="language-text highlight"><pre><span></span><code>表示二维数组的行数： 二维数组名.length
-表示一行：　　　　　 二维数组名[行下标]  （行下标的范围：[0，二维数组总行数 - 1]）
-表示每一行的列数：     二维数组名[行下标].length
-表示具体的一个数据： 二维数组名[行下标][列下标]  （列下标的范围：[0，该行总列数 - 1]）
-</code></pre></div>
-<p>1、使用 for 循环遍历</p>
-<p>2、使用 foreach 循环遍历</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="o">[][]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span><span class="w">               </span><span class="c1">//创建一个3行4列的数组，并且里面值都为默认值</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// 使用 for 循环</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">             </span><span class="c1">// 第一个循环，循环每一行</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1">//第二个循环，循环每行的每一列</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">       </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">);</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">// 使用 foreach</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="o">[]</span><span class="p">:</span><span class="w"> </span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                          </span><span class="c1">// 第一个循环，第一个参数代表循环中的类型，即数组，第二个参数为循环对象</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">:</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                           </span><span class="c1">// 循环上一个循环中的第一个参数中的每一个即可</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">       </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">j</span><span class="p">);</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span>
+<h1 id="7binarytree">7.二叉树(BinaryTree)<a class="headerlink" href="#7binarytree" title="Permanent link">&para;</a></h1>
+<p>二叉树是 n(n&gt;=0)个结点的有限集合，
+该集合或者为空集（称为空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树组成。</p>
+<p><img alt="一颗二叉树" src="../../image/c2/binarytree-1.png" /></p>
+<h4 id="_1">二叉树特点<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>由二叉树定义以及图示分析得出二叉树有以下特点：</p>
+<ol>
+<li>每个结点最多有两颗子树，所以二叉树中不存在度大于 2 的结点。</li>
+<li>左子树和右子树是有顺序的，次序不能任意颠倒。</li>
+<li>即使树中某结点只有一棵子树，也要区分它是左子树还是右子树。</li>
+</ol>
+<h4 id="_2">二叉树性质<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>在二叉树的第 i 层上最多有 2<sup>(i-1)</sup>  个节点 。（i&gt;=1）</li>
+<li>二叉树中如果深度为 k,那么最多有 2<sup>k</sup>-1 个节点。(k&gt;=1）</li>
+<li>n0=n2+1 n0 表示度数为 0 的节点数，n2 表示度数为 2 的节点数。</li>
+<li>在完全二叉树中，具有 n 个节点的完全二叉树的深度为[log2n]+1，其中[log2n]是向下取整。</li>
+<li>若对含 n 个结点的完全二叉树从上到下且从左至右进行 1 至 n 的编号，则对完全二叉树中任意一个编号为 i 的结点有如下特性：</li>
+</ol>
+<p>(1) 若 i=1，则该结点是二叉树的根，无双亲, 否则，编号为 [i/2] 的结点为其双亲结点;
+   (2) 若 2i&gt;n，则该结点无左孩子， 否则，编号为 2i 的结点为其左孩子结点；
+   (3) 若 2i+1&gt;n，则该结点无右孩子结点， 否则，编号为 2i+1 的结点为其右孩子结点。</p>
+<h4 id="_3">斜树<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>斜树：所有的结点都只有左子树的二叉树叫左斜树。所有结点都是只有右子树的二叉树叫右斜树。这两者统称为斜树。</p>
+<p><img alt="左斜树" src="../../image/c2/binarytree-2.png" /></p>
+<p><img alt="右斜树" src="../../image/c2/binarytree-3.png" /></p>
+<h4 id="_4">满二叉树<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>在一棵二叉树中。如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树称为满二叉树。
+满二叉树的特点有：</p>
+<ol>
+<li>叶子只能出现在最下一层。出现在其它层就不可能达成平衡。</li>
+<li>非叶子结点的度一定是 2。</li>
+<li>在同样深度的二叉树中，满二叉树的结点个数最多，叶子数最多。</li>
+</ol>
+<p><img alt="满二叉树" src="../../image/c2/binarytree-4.png" /></p>
+<h4 id="_5">完全二叉树<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>对一颗具有 n 个结点的二叉树按层编号，如果编号为 i(1&lt;=i&lt;=n)的结点与同样深度的满二叉树中编号为 i 的结点在二叉树中位置完全相同，则这棵二叉树称为完全二叉树。
+<img alt="满二叉树" src="../../image/c2/binarytree-5.png" /></p>
+<p>特点：
+1）叶子结点只能出现在最下层和次下层。
+2）最下层的叶子结点集中在树的左部。
+3）倒数第二层若存在叶子结点，一定在右部连续位置。
+4）如果结点度为 1，则该结点只有左孩子，即没有右子树。
+5）同样结点数目的二叉树，完全二叉树深度最小。
+注：满二叉树一定是完全二叉树，但反过来不一定成立。</p>
+<h4 id="_6">二叉树的存储结构<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h6 id="_7">顺序存储<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h6>
+<p>二叉树的顺序存储结构就是使用一维数组存储二叉树中的结点，并且结点的存储位置，就是数组的下标索引。</p>
+<p><img alt="完全二叉树" src="../../image/c2/binarytree-6.png" /></p>
+<p>上图所示的一棵完全二叉树采用顺序存储方式，如下图表示：</p>
+<p><img alt="顺序存储2" src="../../image/c2/binarytree-7.png" /></p>
+<p>由图上图可以看出，当二叉树为完全二叉树时，结点数刚好填满数组。
+那么当二叉树不为完全二叉树时，采用顺序存储形式如何呢?</p>
+<p><img alt="顺序存储3" src="../../image/c2/binarytree-8.png" /></p>
+<p>其中浅色结点表示结点不存在。那么上图所示的二叉树的顺序存储结构如下图所示：</p>
+<p><img alt="顺序存储4" src="../../image/c2/binarytree-9.png" /></p>
+<p>其中，∧ 表示数组中此位置没有存储结点。
+此时可以发现，顺序存储结构中已经出现了空间浪费的情况。
+那么对于右斜树极端情况对应的顺序存储结构如下图所示：</p>
+<p><img alt="顺序存储5" src="../../image/c2/binarytree-10.png" /></p>
+<p>由上图可以看出，对于这种右斜树极端情况，采用顺序存储的方式是十分浪费空间的。
+因此，顺序存储一般适用于完全二叉树。</p>
+<h6 id="_8">二叉链表<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h6>
+<p>既然顺序存储不能满足二叉树的存储需求，那么考虑采用链式存储。
+由二叉树定义可知，二叉树的每个结点最多有两个孩子。
+因此，可以将结点数据结构定义为一个数据和两个指针域。
+表示方式如下图所示：</p>
+<p><img alt="二叉链表存储1" src="../../image/c2/binarytree-11.png" /></p>
+<p>定义节点代码</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rchild</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lchild</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
 </span></code></pre></div>
+<p>则完全二叉树可以采用下图表示。</p>
+<p><img alt="完全二叉树" src="../../image/c2/binarytree-6.png" /></p>
+<p><img alt="二叉链表存储2" src="../../image/c2/binarytree-12.png" /></p>
+<p>上图中采用一种链表结构存储二叉树，这种链表称为二叉链表。</p>
+<h4 id="_9">二叉树遍历<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>二叉树的遍历是指从二叉树的根结点出发，
+按照某种次序依次访问二叉树中的所有结点，
+使得每个结点被访问一次，且仅被访问一次。
+二叉树的访问次序可以分为四种：</p>
+<div class="language-text highlight"><pre><span></span><code>前序遍历: 根-&gt;左子树-&gt;右子树
+中序遍历: 左子树-&gt;根-&gt;右子树
+后序遍历; 左子树-&gt;右子树-&gt;根
+层序遍历
+</code></pre></div>
+<h6 id="_10">前序遍历<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h6>
+<p>通俗的说就是从二叉树的根结点出发，
+当第一次到达结点时就输出结点数据，
+按照先向左在向右的方向访问。</p>
+<p><img alt="完全二叉树" src="../../image/c2/binarytree-6.png" /></p>
+<p>上图所示二叉树访问如下：</p>
+<ol>
+<li>从根结点出发，则第一次到达结点 A，故输出 A;</li>
+<li>继续向左访问，第一次访问结点 B，故输出 B；</li>
+<li>按照同样规则，输出 D，输出 H；</li>
+<li>当到达叶子结点 H，返回到 D，此时已经是第二次到达 D，故不在输出 D，进而向 D 右子树访问，D 右子树不为空，则访问至 I，第一次到达 I，则输出 I；</li>
+<li>I 为叶子结点，则返回到 D，D 左右子树已经访问完毕，则返回到 B，进而到 B 右子树，第一次到达 E，故输出 E；</li>
+<li>向 E 左子树，故输出 J；</li>
+<li>按照同样的访问规则，继续输出 C、F、G；</li>
+</ol>
+<p>则上图所示二叉树的前序遍历输出为：</p>
+<div class="language-text highlight"><pre><span></span><code>ABDHIEJCFG
+</code></pre></div>
+<h6 id="_11">中序遍历<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h6>
+<p>就是从二叉树的根结点出发，当第二次到达结点时就输出结点数据，按照先向左在向右的方向访问。</p>
+<p>上图所示二叉树中序访问如下：</p>
+<ol>
+<li>从根结点出发，则第一次到达结点 A，不输出 A，继续向左访问，第一次访问结点 B，不输出 B；继续到达 D，H；</li>
+<li>到达 H，H 左子树为空，则返回到 H，此时第二次访问 H，故输出 H；</li>
+<li>H 右子树为空，则返回至 D，此时第二次到达 D，故输出 D；</li>
+<li>由 D 返回至 B，第二次到达 B，故输出 B；</li>
+<li>按照同样规则继续访问，输出 J、E、A、F、C、G；</li>
+</ol>
+<p>则上图所示二叉树的中序遍历输出为：</p>
+<div class="language-text highlight"><pre><span></span><code>HDIBJEAFCG
+</code></pre></div>
+<h6 id="_12">后序遍历<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h6>
+<p>就是从二叉树的根结点出发，当第三次到达结点时就输出结点数据，按照先向左在向右的方向访问。</p>
+<p>上图所示二叉树后序访问如下：</p>
+<ol>
+<li>从根结点出发，则第一次到达结点 A，不输出 A，继续向左访问，第一次访问结点 B，不输出 B；继续到达 D，H；</li>
+<li>到达 H，H 左子树为空，则返回到 H，此时第二次访问 H，不输出 H；</li>
+<li>H 右子树为空，则返回至 H，此时第三次到达 H，故输出 H；</li>
+<li>由 H 返回至 D，第二次到达 D，不输出 D；</li>
+<li>继续访问至 I，I 左右子树均为空，故第三次访问 I 时，输出 I；</li>
+<li>返回至 D，此时第三次到达 D，故输出 D；</li>
+<li>按照同样规则继续访问，输出 J、E、B、F、G、C，A；</li>
+</ol>
+<p>则上图所示二叉树的后序遍历输出为：</p>
+<div class="language-text highlight"><pre><span></span><code>HIDJEBFGCA
+</code></pre></div>
+<h6 id="_13">层次遍历<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h6>
+<p>层次遍历就是按照树的层次自上而下的遍历二叉树。
+针对上图所示二叉树的层次遍历结果为：</p>
+<div class="language-text highlight"><pre><span></span><code>ABCDEFGHIJ
+</code></pre></div>
+<p>虽然二叉树的遍历过程看似繁琐，但是由于二叉树是一种递归定义的结构，
+故采用递归方式遍历二叉树的代码十分简单。
+递归实现代码如下：</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">datastructure.tree</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.Getter</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">lombok.Setter</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Queue</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.concurrent.LinkedBlockingDeque</span><span class="p">;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="cm">/**</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cm"> * 二叉树</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="cm"> *</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="cm"> * &lt;p&gt;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="cm"> * 定义:二叉树是n(n&gt;=0)个结点的有限集合，该集合或者为空集（称为空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树组成</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="cm"> * &lt;/p&gt;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="cm"> * &lt;p&gt;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="cm"> * 二叉树特点: 由二叉树定义以及图示分析得出二叉树有以下特点： 1）每个结点最多有两颗子树，所以二叉树中不存在度大于2的结点。</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="cm"> * 2）左子树和右子树是有顺序的，次序不能任意颠倒。 3）即使树中某结点只有一棵子树，也要区分它是左子树还是右子树。</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="cm"> * &lt;/p&gt;</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="cm"> * &lt;p&gt;</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="cm"> * 二叉树性质: 1）在二叉树的第i层上最多有2i-1 个节点 。（i&gt;=1） 2）二叉树中如果深度为k,那么最多有2k-1个节点。(k&gt;=1）</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="cm"> * 3）n0=n2+1 n0表示度数为0的节点数，n2表示度数为2的节点数。</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="cm"> * 4）在完全二叉树中，具有n个节点的完全二叉树的深度为[log2n]+1，其中[log2n]是向下取整。 5）若对含 n</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="cm"> * 个结点的完全二叉树从上到下且从左至右进行 1 至 n 的编号，则对完全二叉树中任意一个编号为 i 的结点有如下特性：</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="cm"> * &lt;/p&gt;</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="cm"> * &lt;p&gt;</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="cm"> * (1) 若 i=1，则该结点是二叉树的根，无双亲, 否则，编号为 [i/2] 的结点为其双亲结点; (2) 若 2i&gt;n，则该结点无左孩子， 否则，编号为</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="cm"> * 2i 的结点为其左孩子结点； (3) 若 2i+1&gt;n，则该结点无右孩子结点， 否则，编号为2i+1 的结点为其右孩子结点。 。</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="cm"> * &lt;/p&gt;</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="cm"> *</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="cm"> * @author liuyi27</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="cm"> *</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="cm"> */</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="nd">@Setter</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="nd">@Getter</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BinaryTree</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">BinaryTree</span><span class="w"> </span><span class="n">lchild</span><span class="p">,</span><span class="w"> </span><span class="n">rchild</span><span class="p">;</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">    </span><span class="cm">/**</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="cm">     * 前序遍历递归算法</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="cm">     * &lt;p&gt;</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="cm">     * 前序遍历通俗的说就是从二叉树的根结点出发，当第一次到达结点时就输出结点数据，按照先向左再向右的方向访问。</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="cm">     * &lt;/p&gt;</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="cm">     */</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preOrderTraverse</span><span class="p">(</span><span class="n">BinaryTree</span><span class="w"> </span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">tree</span><span class="p">.</span><span class="na">getData</span><span class="p">());</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">        </span><span class="n">preOrderTraverse</span><span class="p">(</span><span class="n">tree</span><span class="p">.</span><span class="na">getLchild</span><span class="p">());</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">        </span><span class="n">preOrderTraverse</span><span class="p">(</span><span class="n">tree</span><span class="p">.</span><span class="na">getRchild</span><span class="p">());</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="w">    </span><span class="cm">/**</span>
+</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="cm">     * 中序遍历递归算法</span>
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="cm">     * &lt;p&gt;</span>
+</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="cm">     * 中序遍历就是从二叉树的根结点出发，当第二次到达结点时就输出结点数据，按照先向左再向右的方向访问</span>
+</span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="cm">     * &lt;/p&gt;</span>
+</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="cm">     */</span>
+</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">inOrderTraverse</span><span class="p">(</span><span class="n">BinaryTree</span><span class="w"> </span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>
+</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a><span class="w">        </span><span class="n">inOrderTraverse</span><span class="p">(</span><span class="n">tree</span><span class="p">.</span><span class="na">getLchild</span><span class="p">());</span>
+</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">tree</span><span class="p">.</span><span class="na">getData</span><span class="p">());</span>
+</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a><span class="w">        </span><span class="n">inOrderTraverse</span><span class="p">(</span><span class="n">tree</span><span class="p">.</span><span class="na">getRchild</span><span class="p">());</span>
+</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>
+</span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a><span class="w">    </span><span class="cm">/**</span>
+</span><span id="__span-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a><span class="cm">     * 后序遍历递归算法</span>
+</span><span id="__span-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a><span class="cm">     * &lt;p&gt;</span>
+</span><span id="__span-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a><span class="cm">     * 后序遍历就是从二叉树的根结点出发，当第三次到达结点时就输出结点数据，按照先向左再向右的方向访问</span>
+</span><span id="__span-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a><span class="cm">     * &lt;/p&gt;</span>
+</span><span id="__span-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a><span class="cm">     */</span>
+</span><span id="__span-1-78"><a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postOrderTraverse</span><span class="p">(</span><span class="n">BinaryTree</span><span class="w"> </span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-79"><a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-80"><a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-1-81"><a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-82"><a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>
+</span><span id="__span-1-83"><a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a><span class="w">        </span><span class="n">postOrderTraverse</span><span class="p">(</span><span class="n">tree</span><span class="p">.</span><span class="na">getLchild</span><span class="p">());</span>
+</span><span id="__span-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a><span class="w">        </span><span class="n">postOrderTraverse</span><span class="p">(</span><span class="n">tree</span><span class="p">.</span><span class="na">getRchild</span><span class="p">());</span>
+</span><span id="__span-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">tree</span><span class="p">.</span><span class="na">getData</span><span class="p">());</span>
+</span><span id="__span-1-86"><a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-87"><a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>
+</span><span id="__span-1-88"><a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a><span class="w">    </span><span class="cm">/**</span>
+</span><span id="__span-1-89"><a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a><span class="cm">     * 前序建立二叉树</span>
+</span><span id="__span-1-90"><a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a><span class="cm">     */</span>
+</span><span id="__span-1-91"><a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preCreate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-92"><a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>
+</span><span id="__span-1-93"><a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-94"><a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a>
+</span><span id="__span-1-95"><a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a><span class="w">    </span><span class="cm">/**</span>
+</span><span id="__span-1-96"><a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a><span class="cm">     * 层序遍历</span>
+</span><span id="__span-1-97"><a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a><span class="cm">     * &lt;p&gt;</span>
+</span><span id="__span-1-98"><a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a><span class="cm">     * 层次遍历就是按照树的层次自上而下的遍历二叉树</span>
+</span><span id="__span-1-99"><a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a><span class="cm">     * &lt;/p&gt;</span>
+</span><span id="__span-1-100"><a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a><span class="cm">     *</span>
+</span><span id="__span-1-101"><a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a><span class="cm">     * @param node</span>
+</span><span id="__span-1-102"><a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a><span class="cm">     * @param queue</span>
+</span><span id="__span-1-103"><a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a><span class="cm">     */</span>
+</span><span id="__span-1-104"><a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">LayerOrder</span><span class="p">(</span><span class="n">BinaryTree</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">BinaryTree</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-105"><a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a>
+</span><span id="__span-1-106"><a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-107"><a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a><span class="w">            </span><span class="c1">// 将当前节点放入队列首指针所指位置</span>
+</span><span id="__span-1-108"><a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a><span class="w">            </span><span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+</span><span id="__span-1-109"><a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+</span><span id="__span-1-110"><a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-111"><a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">getData</span><span class="p">());</span>
+</span><span id="__span-1-112"><a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-113"><a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a>
+</span><span id="__span-1-114"><a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">lchild</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-115"><a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a><span class="w">            </span><span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">lchild</span><span class="p">);</span>
+</span><span id="__span-1-116"><a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-117"><a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a>
+</span><span id="__span-1-118"><a id="__codelineno-1-118" name="__codelineno-1-118" href="#__codelineno-1-118"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">rchild</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-119"><a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a><span class="w">            </span><span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">rchild</span><span class="p">);</span>
+</span><span id="__span-1-120"><a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-121"><a id="__codelineno-1-121" name="__codelineno-1-121" href="#__codelineno-1-121"></a>
+</span><span id="__span-1-122"><a id="__codelineno-1-122" name="__codelineno-1-122" href="#__codelineno-1-122"></a><span class="w">        </span><span class="n">BinaryTree</span><span class="w"> </span><span class="n">nextNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span>
+</span><span id="__span-1-123"><a id="__codelineno-1-123" name="__codelineno-1-123" href="#__codelineno-1-123"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nextNode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-124"><a id="__codelineno-1-124" name="__codelineno-1-124" href="#__codelineno-1-124"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">LayerOrder</span><span class="p">(</span><span class="n">nextNode</span><span class="p">,</span><span class="w"> </span><span class="n">queue</span><span class="p">);</span>
+</span><span id="__span-1-125"><a id="__codelineno-1-125" name="__codelineno-1-125" href="#__codelineno-1-125"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-126"><a id="__codelineno-1-126" name="__codelineno-1-126" href="#__codelineno-1-126"></a>
+</span><span id="__span-1-127"><a id="__codelineno-1-127" name="__codelineno-1-127" href="#__codelineno-1-127"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-128"><a id="__codelineno-1-128" name="__codelineno-1-128" href="#__codelineno-1-128"></a>
+</span><span id="__span-1-129"><a id="__codelineno-1-129" name="__codelineno-1-129" href="#__codelineno-1-129"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-130"><a id="__codelineno-1-130" name="__codelineno-1-130" href="#__codelineno-1-130"></a>
+</span><span id="__span-1-131"><a id="__codelineno-1-131" name="__codelineno-1-131" href="#__codelineno-1-131"></a><span class="w">        </span><span class="n">BinaryTree</span><span class="w"> </span><span class="n">biTree2L3L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BinaryTree</span><span class="p">();</span>
+</span><span id="__span-1-132"><a id="__codelineno-1-132" name="__codelineno-1-132" href="#__codelineno-1-132"></a><span class="w">        </span><span class="n">biTree2L3L</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="s">&quot;D&quot;</span><span class="p">);</span>
+</span><span id="__span-1-133"><a id="__codelineno-1-133" name="__codelineno-1-133" href="#__codelineno-1-133"></a>
+</span><span id="__span-1-134"><a id="__codelineno-1-134" name="__codelineno-1-134" href="#__codelineno-1-134"></a><span class="w">        </span><span class="n">BinaryTree</span><span class="w"> </span><span class="n">biTree2L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BinaryTree</span><span class="p">();</span>
+</span><span id="__span-1-135"><a id="__codelineno-1-135" name="__codelineno-1-135" href="#__codelineno-1-135"></a><span class="w">        </span><span class="n">biTree2L</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">);</span>
+</span><span id="__span-1-136"><a id="__codelineno-1-136" name="__codelineno-1-136" href="#__codelineno-1-136"></a><span class="w">        </span><span class="n">biTree2L</span><span class="p">.</span><span class="na">setLchild</span><span class="p">(</span><span class="n">biTree2L3L</span><span class="p">);</span>
+</span><span id="__span-1-137"><a id="__codelineno-1-137" name="__codelineno-1-137" href="#__codelineno-1-137"></a>
+</span><span id="__span-1-138"><a id="__codelineno-1-138" name="__codelineno-1-138" href="#__codelineno-1-138"></a><span class="w">        </span><span class="n">BinaryTree</span><span class="w"> </span><span class="n">biTree2R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BinaryTree</span><span class="p">();</span>
+</span><span id="__span-1-139"><a id="__codelineno-1-139" name="__codelineno-1-139" href="#__codelineno-1-139"></a><span class="w">        </span><span class="n">biTree2R</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">);</span>
+</span><span id="__span-1-140"><a id="__codelineno-1-140" name="__codelineno-1-140" href="#__codelineno-1-140"></a>
+</span><span id="__span-1-141"><a id="__codelineno-1-141" name="__codelineno-1-141" href="#__codelineno-1-141"></a><span class="w">        </span><span class="n">BinaryTree</span><span class="w"> </span><span class="n">biTree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BinaryTree</span><span class="p">();</span>
+</span><span id="__span-1-142"><a id="__codelineno-1-142" name="__codelineno-1-142" href="#__codelineno-1-142"></a><span class="w">        </span><span class="n">biTree</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">);</span>
+</span><span id="__span-1-143"><a id="__codelineno-1-143" name="__codelineno-1-143" href="#__codelineno-1-143"></a><span class="w">        </span><span class="n">biTree</span><span class="p">.</span><span class="na">setLchild</span><span class="p">(</span><span class="n">biTree2L</span><span class="p">);</span>
+</span><span id="__span-1-144"><a id="__codelineno-1-144" name="__codelineno-1-144" href="#__codelineno-1-144"></a><span class="w">        </span><span class="n">biTree</span><span class="p">.</span><span class="na">setRchild</span><span class="p">(</span><span class="n">biTree2R</span><span class="p">);</span>
+</span><span id="__span-1-145"><a id="__codelineno-1-145" name="__codelineno-1-145" href="#__codelineno-1-145"></a>
+</span><span id="__span-1-146"><a id="__codelineno-1-146" name="__codelineno-1-146" href="#__codelineno-1-146"></a><span class="w">        </span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">BinaryTree</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedBlockingDeque</span><span class="o">&lt;</span><span class="n">BinaryTree</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span id="__span-1-147"><a id="__codelineno-1-147" name="__codelineno-1-147" href="#__codelineno-1-147"></a><span class="w">        </span><span class="n">biTree</span><span class="p">.</span><span class="na">LayerOrder</span><span class="p">(</span><span class="n">biTree</span><span class="p">,</span><span class="w"> </span><span class="n">queue</span><span class="p">);</span>
+</span><span id="__span-1-148"><a id="__codelineno-1-148" name="__codelineno-1-148" href="#__codelineno-1-148"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+</span><span id="__span-1-149"><a id="__codelineno-1-149" name="__codelineno-1-149" href="#__codelineno-1-149"></a><span class="w">        </span><span class="n">biTree</span><span class="p">.</span><span class="na">preOrderTraverse</span><span class="p">(</span><span class="n">biTree</span><span class="p">);</span>
+</span><span id="__span-1-150"><a id="__codelineno-1-150" name="__codelineno-1-150" href="#__codelineno-1-150"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+</span><span id="__span-1-151"><a id="__codelineno-1-151" name="__codelineno-1-151" href="#__codelineno-1-151"></a><span class="w">        </span><span class="n">biTree</span><span class="p">.</span><span class="na">inOrderTraverse</span><span class="p">(</span><span class="n">biTree</span><span class="p">);</span>
+</span><span id="__span-1-152"><a id="__codelineno-1-152" name="__codelineno-1-152" href="#__codelineno-1-152"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+</span><span id="__span-1-153"><a id="__codelineno-1-153" name="__codelineno-1-153" href="#__codelineno-1-153"></a><span class="w">        </span><span class="n">biTree</span><span class="p">.</span><span class="na">postOrderTraverse</span><span class="p">(</span><span class="n">biTree</span><span class="p">);</span>
+</span><span id="__span-1-154"><a id="__codelineno-1-154" name="__codelineno-1-154" href="#__codelineno-1-154"></a>
+</span><span id="__span-1-155"><a id="__codelineno-1-155" name="__codelineno-1-155" href="#__codelineno-1-155"></a>
+</span><span id="__span-1-156"><a id="__codelineno-1-156" name="__codelineno-1-156" href="#__codelineno-1-156"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-157"><a id="__codelineno-1-157" name="__codelineno-1-157" href="#__codelineno-1-157"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="_14">面试中关于二叉树结构的常见问题<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>求二叉树的高度</p>
+</li>
+<li>
+<p>在二叉树中查找给定节点的祖先节点</p>
+</li>
+<li>
+<p>求二叉树的最低公共祖先 LCA</p>
+</li>
+</ul>
+<p>性质:如果两条链有公共祖先,那么公共祖先往上的结点都重合.因为如果 x=x',那么 x-&gt;next=x'-&gt;next 必然成立.</p>
+<p>可能性一:若是二叉搜索树.</p>
+<p>1 如果 x,y 小于 root,则在左边找</p>
+<p>2 如果 x,y 大于 root,则在右边找</p>
+<p>3 如果 x,y 在 root 之间,则 root 就是 LCA</p>
+<p>可能性二:不是二叉搜索树,甚至不是二叉树,但是,每个一节点都有 parent 指针</p>
+<p>那么解法有 2:</p>
+<p>1:空间换时间:从 x,y 到 root 的链表可以保存在栈中,找出最后一个相同结点即可.</p>
+<p>2.不用空间换时间,多重扫描法,x,y 到 root 两条链路可能一长一短,相差为 n 个结点,那么长链表先前移 n 步,然后,二者同步前移,找到第一个相同结点即可.(树不含环,这种办法有效.)</p>
+<p>可能性三:这是一棵只有 left 和 right 的平凡二叉树.</p>
+<p>那么需要辅助空间,空间换时间法,先调用 16.中的 GetNodePath()获得两条从 root-&gt;x 和 root-&gt;y 的链表路径.然后比较两条链表,找到最后一个相同的结点即可.</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">//若是二叉搜索树,返回x和y的公共最低祖先LCA</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="nf">LowestCommonAncestor1</span><span class="p">(</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">x</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">LowestCommonAncestor1</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">LowestCommonAncestor1</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">}</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1">//若不是搜索二叉树,但是,每个结点都有父结点,空间换时间法,否则需要重重复复地扫描路径</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="nf">LowestCommonAncestor2</span><span class="p">(</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">{</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="n">stack</span><span class="o">&lt;</span><span class="n">node</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">st1</span><span class="p">,</span><span class="n">st2</span><span class="p">;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="n">st1</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="n">st2</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="o">-&gt;</span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">pLCA</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">st1</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">st2</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">st1</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">==</span><span class="n">st2</span><span class="p">.</span><span class="n">top</span><span class="p">())</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">        </span><span class="n">pLCA</span><span class="o">=</span><span class="n">st1</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">        </span><span class="n">st1</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">        </span><span class="n">st2</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pLCA</span><span class="p">;</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="p">}</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="c1">//不用空间换时间法</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="kt">int</span><span class="w"> </span><span class="nf">GetListLength</span><span class="p">(</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="p">{</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Count</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">        </span><span class="o">++</span><span class="n">Count</span><span class="p">;</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">        </span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Count</span><span class="p">;</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="p">}</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="kt">int</span><span class="w"> </span><span class="nf">Myabs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="p">{</span>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="n">val</span><span class="p">;</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="p">}</span>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="nf">LowestCommonAncestor3</span><span class="p">(</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="p">{</span>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">LengthX</span><span class="o">=</span><span class="n">GetListLength</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">LengthY</span><span class="o">=</span><span class="n">GetListLength</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="w">    </span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">pLong</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="o">*</span><span class="n">pShort</span><span class="o">=</span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">LengthX</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">LengthY</span><span class="p">)</span>
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="w">        </span><span class="n">pLong</span><span class="o">=</span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="w">        </span><span class="n">pShort</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">Myabs</span><span class="p">(</span><span class="n">LengthX</span><span class="o">-</span><span class="n">LengthY</span><span class="p">);</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-2-62"><a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="w">        </span><span class="n">pLong</span><span class="o">=</span><span class="n">pLong</span><span class="o">-&gt;</span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-2-63"><a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="n">pLong</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pShort</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pLong</span><span class="w"> </span><span class="o">!=</span><span class="n">pShort</span><span class="p">)</span>
+</span><span id="__span-2-64"><a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-65"><a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a><span class="w">        </span><span class="n">pLong</span><span class="o">=</span><span class="n">pLong</span><span class="o">-&gt;</span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-2-66"><a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="w">        </span><span class="n">pShort</span><span class="o">=</span><span class="n">pShort</span><span class="o">-&gt;</span><span class="n">p</span><span class="p">;</span>
+</span><span id="__span-2-67"><a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-68"><a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">pLong</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">pShort</span><span class="p">)</span>
+</span><span id="__span-2-69"><a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pLong</span><span class="p">;</span>
+</span><span id="__span-2-70"><a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-2-71"><a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a><span class="p">}</span>
+</span><span id="__span-2-72"><a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a><span class="c1">//既不是二叉搜索树,也不没有parent指针,只是一棵平凡的二叉树</span>
+</span><span id="__span-2-73"><a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">GetNodePath</span><span class="p">(</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">pNode</span><span class="p">,</span><span class="w"> </span><span class="n">list</span><span class="o">&lt;</span><span class="n">node</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+</span><span id="__span-2-74"><a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="nf">LowestCommonAncestor4</span><span class="p">(</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-2-75"><a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a><span class="p">{</span>
+</span><span id="__span-2-76"><a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a><span class="w">    </span><span class="n">list</span><span class="o">&lt;</span><span class="n">node</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">path1</span><span class="p">;</span>
+</span><span id="__span-2-77"><a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a><span class="w">    </span><span class="n">list</span><span class="o">&lt;</span><span class="n">node</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">path2</span><span class="p">;</span>
+</span><span id="__span-2-78"><a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a><span class="w">    </span><span class="n">GetNodePath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">path1</span><span class="p">);</span>
+</span><span id="__span-2-79"><a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a><span class="w">    </span><span class="n">GetNodePath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">path2</span><span class="p">);</span>
+</span><span id="__span-2-80"><a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a><span class="w">    </span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">pLCA</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-2-81"><a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a><span class="w">    </span><span class="n">list</span><span class="o">&lt;</span><span class="n">node</span><span class="o">*&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it1</span><span class="o">=</span><span class="n">path1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span><span id="__span-2-82"><a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a><span class="w">    </span><span class="n">list</span><span class="o">&lt;</span><span class="n">node</span><span class="o">*&gt;::</span><span class="n">const_iterator</span><span class="w"> </span><span class="n">it2</span><span class="o">=</span><span class="n">path2</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span><span id="__span-2-83"><a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">it1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">path1</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">it2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">path2</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">*</span><span class="n">it1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">it2</span><span class="p">)</span>
+</span><span id="__span-2-84"><a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-85"><a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a><span class="w">        </span><span class="n">pLCA</span><span class="o">=*</span><span class="n">it1</span><span class="p">;</span>
+</span><span id="__span-2-86"><a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a><span class="w">        </span><span class="o">++</span><span class="n">it1</span><span class="p">;</span>
+</span><span id="__span-2-87"><a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a><span class="w">        </span><span class="o">++</span><span class="n">it2</span><span class="p">;</span>
+</span><span id="__span-2-88"><a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-89"><a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">pLCA</span><span class="p">;</span>
+</span><span id="__span-2-90"><a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a>
+</span><span id="__span-2-91"><a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p>已知前序遍历序列和中序遍历序列，确定一棵二叉树。 <a href="https://www.cnblogs.com/pullself/p/10136568.html">https://www.cnblogs.com/pullself/p/10136568.html</a></p>
+</li>
+<li>
+<p>已知后序遍历序列和中序遍历序列，确定一棵二叉树。</p>
+</li>
+<li>
+<p>在二叉树中找出和为某一值的所有路径</p>
+</li>
+</ul>
+<p>要求所有路径,路径即 root 到某一结点的结点之集合.这是一个深度优先原则的搜索.我们很容易想到先序遍历.</p>
+<p>为了跟踪路径和,我们需要一个额外的辅助栈来跟踪递归调用栈的操作过程.</p>
+<p>在进入到下一个调用 FindPath(left)和 FindPath(right)时,递归栈会将 root 压入栈,因此我们也模仿进栈.当 FindPath(left)和 FindPath(right)返回,FindPath(root)运行周期到之后,
+局部函数变量 root 会被析造,root 会从递归栈中弹出,因此,我们也从辅助栈中弹出 root,只需要在中间加上判断条件,将满足条件的结果输出即可.改成迭代版也很简单.</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">FindPath</span><span class="p">(</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">expectedSum</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Path</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">currentSum</span><span class="p">);</span><span class="c1">//先序遍历改装版</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">FindPath</span><span class="p">(</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">expectedSum</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">currentSum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Path</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">FindPath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">expectedSum</span><span class="p">,</span><span class="n">Path</span><span class="p">,</span><span class="n">currentSum</span><span class="p">);</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">FindPath</span><span class="p">(</span><span class="n">node</span><span class="o">*</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">expectedSum</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">Path</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">currentSum</span><span class="p">)</span><span class="c1">//先序遍历改装版</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">{</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">root</span><span class="p">)</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="c1">//访问根结点,同时将root-&gt;value加入辅助栈</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="n">currentSum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="n">Path</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">==</span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">==</span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">currentSum</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">expectedSum</span><span class="p">)</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">size_type</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Path</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">            </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">Path</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="n">FindPath</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="n">expectedSum</span><span class="p">,</span><span class="n">Path</span><span class="p">,</span><span class="n">currentSum</span><span class="p">);</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="n">FindPath</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="n">expectedSum</span><span class="p">,</span><span class="n">Path</span><span class="p">,</span><span class="n">currentSum</span><span class="p">);</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="c1">//递归栈中,此时返回时,会将父结点销毁,因为,局部函数生命周期已经到了.</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="c1">//所以辅助栈也需要和递归栈同步,将栈顶元素弹栈,同时当前路径减去栈顶元素</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="n">Path</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="n">currentSum</span><span class="o">-=</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li>编写一个程序，把一个有序整数数组放到二叉树中</li>
+</ul>
+<p>这道题做法非常多,单纯是这么要求比较奇怪,因此,我选择广度优先插入,
+利用队列实现,其实插成一个链表,或者随便插入不知道可不可以?没有其它要求真不知道怎么弄.</p>
+<ul>
+<li>判断整数序列是不是二叉搜索树的后序遍历结果</li>
+</ul>
+<p>典型的递归思维,后序遍历,根在最后,因此用根将二叉搜索树可以分成左右子树,再递归处理左右子树即可.</p>
+<ul>
+<li>求二叉树的镜像</li>
+</ul>
+<p>画出一个特例,我们发现只需要交换每个结点的左右指针(注意:不是数值)即可.因此在先序遍历的时候换指针即可,没有顺序要求.</p>
+<ul>
+<li>一棵排序二叉树（即二叉搜索树 BST），令 f=(最大值+最小值)/2，设计一个算法，找出距离 f 值最近、大于 f 值的结点。复杂度应尽可能低。</li>
+</ul>
+<p>BST 中最大值是最右边的值,最小值是最左边的值,这样就容易求出 f,再求 f 的父指针或者右指针都可以?(我是这么认为的).这里求父指针.</p>
+<ul>
+<li>把二叉搜索树转变成排序的双向链表</li>
+</ul>
+<p>其实就是中序遍历的迭代版本,只是将中间的访问结点代码换成了调整指针.这种办法返回的是链表的最后一个指针 LastVist,因为是双链表,这也可以接受.</p>
+<ul>
+<li>打印二叉树中的所有路径.</li>
+</ul>
+<p>和前边的思路类似,用辅助栈记录递归栈的运行过程,先序遍历(深搜)的过程中,遇到叶子结点(!left &amp;&amp; !right 的结点)就输出辅助栈的内容.</p>
+<ul>
+<li>求二叉树中从根到某一结点的一条路径.</li>
+</ul>
+<p>思路一如既往还是利用辅助栈来追踪递归调用栈的运行过程,只是过程有所区别,将结点入栈,如果在结点的左边能找到一条路径,那么不需要和递归栈同步(即弹栈),直接返回 true,如果左边没找到这样的一条路径,再到右边找,如果找到了,返回 true.如果左右都找不到存在一条这样的路径,则说明在这个结点上不可能存在这样的路径,需要在辅助栈中弹出这个结点.再遍历其它结点.实质上也是先序遍历的改装版.</p>
+<ul>
+<li>
+<p>判断 B 子树是否是 A 子树的子结构</p>
+</li>
+<li>
+<p>利用先序和中序结果重建二叉树</p>
+</li>
+<li>
+<p>求二叉树中叶子结点的个数</p>
+</li>
+<li>
+<p>求二叉树中节点的最大距离。</p>
+</li>
+</ul>
+<p>如果我们把二叉树看成一个图，父子节点之间的连线是双向的，我们定义距离为两个节点之间边的个数。（来自编程之美）</p>
+<p>特点：相距最远的两个节点，一定是两个叶子节点，或者一个结点到它的根节点。（为什么？）因为如果当前结点不是叶子结点，即它还有子结点，那么它的子结点到另一个端点的距离肯定可以达到更远。如果是根结点，那么根结点只可能有一条支路。</p>
+<ul>
+<li>
+<p>打印二叉树中某层的结点。</p>
+</li>
+<li>
+<p>判断两棵二叉树是否相等</p>
+</li>
+</ul>
 
 
 
@@ -9958,7 +10595,7 @@ a[1] = new int[3];
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../2.Array/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 2.数组(array)" rel="prev">
+          <a href="../006.Tree/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 6.树" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -9967,20 +10604,20 @@ a[1] = new int[3];
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                2.数组(array)
+                6.树
               </div>
             </div>
           </a>
         
         
           
-          <a href="../4.Vector/" class="md-footer__link md-footer__link--next" aria-label="下一页: 4.向量" rel="next">
+          <a href="../008.BinarySearchTree/" class="md-footer__link md-footer__link--next" aria-label="下一页: 8.二叉搜索树" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                4.向量
+                8.二叉搜索树
               </div>
             </div>
             <div class="md-footer__button md-icon">

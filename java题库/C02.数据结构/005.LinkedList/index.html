@@ -12,20 +12,20 @@
         <meta name="author" content="Mr.yu">
       
       
-        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/1.DataStructure/">
+        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/005.LinkedList/">
       
       
-        <link rel="prev" href="../../C01.%E5%BC%80%E7%AF%87/3.experience1/">
+        <link rel="prev" href="../004.Vector/">
       
       
-        <link rel="next" href="../2-3-4Tree/">
+        <link rel="next" href="../006.Tree/">
       
       <link rel="icon" href="../../../assets/favicon2.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
-        <title>1.数据结构 - 宇头条</title>
+        <title>5.链表 - 宇头条</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1" class="md-skip">
+        <a href="#5" class="md-skip">
           跳转至
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.数据结构
+              5.链表
             
           </span>
         </div>
@@ -4447,6 +4447,62 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../001.DataStructure/" class="md-nav__link">
+        1.数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../002.Array/" class="md-nav__link">
+        2.数组(array)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../003.TwoDimensionalArray/" class="md-nav__link">
+        3.二维数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../004.Vector/" class="md-nav__link">
+        4.向量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -4459,12 +4515,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          1.数据结构
+          5.链表
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        1.数据结构
+        5.链表
       </a>
       
         
@@ -4484,120 +4540,91 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    基本概念
+    单向链表
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="单向链表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    抽象数据类型
+    单链表删除节点
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    研究内容
+    单链表添加节点
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    数据的逻辑结构
+    代码实现
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    数据的物理结构
+    循环链表
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    数据存储结构
+    双向链表
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    常用的数据结构(八大数据结构)
-  </a>
-  
-    <nav class="md-nav" aria-label="常用的数据结构(八大数据结构)">
+    <nav class="md-nav" aria-label="双向链表">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#array" class="md-nav__link">
-    数组(Array)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stack" class="md-nav__link">
-    栈( Stack)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#queue" class="md-nav__link">
-    队列(Queue)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linked-list" class="md-nav__link">
-    链表( Linked List)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tree" class="md-nav__link">
-    树( Tree)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#graph" class="md-nav__link">
-    图(Graph)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#heap" class="md-nav__link">
-    堆(Heap)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hash" class="md-nav__link">
-    散列表(Hash)
+  <a href="#_7" class="md-nav__link">
+    双向链表删除节点
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    为什么我们需要数据结构
+    双向链表添加节点
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    未来添加
+    代码实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    用链表的目的是什么？省空间还是省时间？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    数组（非动态）对比链表：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    面试中关于链表的常见问题
   </a>
   
 </li>
@@ -4611,6 +4638,76 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../006.Tree/" class="md-nav__link">
+        6.树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../007.BinaryTree/" class="md-nav__link">
+        7.二叉树(BinaryTree)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../008.BinarySearchTree/" class="md-nav__link">
+        8.二叉搜索树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../009.BalanceTree/" class="md-nav__link">
+        9.平衡树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../010.AVLTree/" class="md-nav__link">
+        10.平衡二叉树
+      </a>
     </li>
   
 
@@ -4638,104 +4735,6 @@
     <li class="md-nav__item">
       <a href="../2-3Tree/" class="md-nav__link">
         2-3 树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.Array/" class="md-nav__link">
-        2.数组(array)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.TwoDimensionalArray/" class="md-nav__link">
-        3.二维数组
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4.Vector/" class="md-nav__link">
-        4.向量
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../5.LinkedList/" class="md-nav__link">
-        5.链表
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../6.Tree/" class="md-nav__link">
-        6.树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../7.BinaryTree/" class="md-nav__link">
-        7.二叉树(BinaryTree)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../AVLTree/" class="md-nav__link">
-        平衡二叉树
       </a>
     </li>
   
@@ -4818,36 +4817,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../BalanceTree/" class="md-nav__link">
-        平衡树
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../BinaryHeap/" class="md-nav__link">
         二叉堆
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BinarySearchTree/" class="md-nav__link">
-        二叉搜索树
       </a>
     </li>
   
@@ -9952,120 +9923,91 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    基本概念
+    单向链表
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="单向链表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    抽象数据类型
+    单链表删除节点
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    研究内容
+    单链表添加节点
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    数据的逻辑结构
+    代码实现
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    数据的物理结构
+    循环链表
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    数据存储结构
+    双向链表
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    常用的数据结构(八大数据结构)
-  </a>
-  
-    <nav class="md-nav" aria-label="常用的数据结构(八大数据结构)">
+    <nav class="md-nav" aria-label="双向链表">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#array" class="md-nav__link">
-    数组(Array)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stack" class="md-nav__link">
-    栈( Stack)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#queue" class="md-nav__link">
-    队列(Queue)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linked-list" class="md-nav__link">
-    链表( Linked List)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tree" class="md-nav__link">
-    树( Tree)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#graph" class="md-nav__link">
-    图(Graph)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#heap" class="md-nav__link">
-    堆(Heap)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hash" class="md-nav__link">
-    散列表(Hash)
+  <a href="#_7" class="md-nav__link">
+    双向链表删除节点
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    为什么我们需要数据结构
+    双向链表添加节点
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    未来添加
+    代码实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    用链表的目的是什么？省空间还是省时间？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    数组（非动态）对比链表：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    面试中关于链表的常见问题
   </a>
   
 </li>
@@ -10090,213 +10032,336 @@
                   
 
 
-<h1 id="1">1.数据结构<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
-<p>人们在使用计算机解决客观世界中存在的具体问题时，通常过程如下：</p>
+<h1 id="5">5.链表<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
+<p>链表这类数据结构，有点像生活中的火车，一节车厢连着下一节车厢，
+在火车里面，只有到了 4 号车厢你才能进入 5 号车厢，
+一般情况下，不可能直接在 3 号车厢绕过 4 号车厢进入 5 号车厢。
+不过更准确来说，火车是双向链表，
+也就是说在 4 号车厢也可以反向进入 3 号车厢。</p>
+<ul>
+<li>
+<p>链表是一系列的存储数据元素的单元通过指针串接起来形成的，
+  因此每个单元至少有两个域，一个域用于数据元素的存储，
+  另一个或两个域是指向其他单元的指针(Pointer)。
+  这里具有一个数据域和多个指针域的存储单元通常称为节点（node）。</p>
+</li>
+<li>
+<p>链表的第一个节点和最后一个节点，分别称为链表的头节点和尾节点。
+  尾节点的特征是其 next 引用为空（null）。
+  链表中每个节点的 next 引用都相当于一个指针，指向另一个节点，
+  借助这些 next 引用，我们可以从链表的头节点移动到尾节点。</p>
+</li>
+<li>
+<p>链表数据结构中主要包含单向链表、双向链表及循环链表</p>
+</li>
+<li>
+<p>由于不必须按顺序存储，链表的插入和删除操作可以达到 O(1)的复杂度。</p>
+</li>
+<li>
+<p>这里的链表是一种抽象的数据结构，每个节点有信息和下一个节点的地址，和怎么实现半毛钱关系也没有。
+  链表当然也可以用数组实现，也可以用 STL 的 vector，都不用动态 allocate</p>
+</li>
+</ul>
+<h2 id="_1">单向链表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>单向链表(单链表)是链表的一种，它由节点组成，
+每个节点都包含下一个节点的指针，下图就是一个单链表，
+表头为空，表头的后继节点是"结点 10"(数据为 10 的结点)，
+"节点 10"的后继结点是"节点 20"(数据为 10 的结点)，...</p>
+<p><img alt="单向链表" src="../../image/c2/ll-1.jpg" /></p>
+<h6 id="_2">单链表删除节点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h6>
+<p>我们看看单链表删除节点的操作，比如说下面这个单链表中我们要删除"节点 30"。</p>
+<p><strong>删除之前</strong>："节点 20" 的后继节点为"节点 30"，而"节点 30" 的后继节点为"节点 40"。</p>
+<p><strong>删除之后</strong>："节点 20" 的后继节点为"节点 40"。</p>
+<p><img alt="单向链表删除节点" src="../../image/c2/ll-2.jpg" /></p>
+<h6 id="_3">单链表添加节点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
+<p>我们再来看看单链表添加节点的操作，比如说下面这个单链表中我们在"节点 10"与"节点 20"之间添加"节点 15"</p>
+<p><strong>添加之前</strong>："节点 10" 的后继节点为"节点 20"。</p>
+<p><strong>添加之后</strong>："节点 10" 的后继节点为"节点 15"，而"节点 15" 的后继节点为"节点 20"。</p>
+<p><img alt="单向链表添加节点" src="../../image/c2/ll-3.jpg" /></p>
+<h6 id="_4">代码实现<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h6>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">datastructure.sequence</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm">/**</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm"> * 单向链表</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm"> */</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FireSinglyLinkedList</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">first</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">FireSinglyLinkedList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">size</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="p">;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">E</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">last</span><span class="p">;</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">            </span><span class="n">last</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">        </span><span class="n">checkPositionInde</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">            </span><span class="n">add</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">            </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">            </span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first</span><span class="p">;</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">            </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">            </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">newNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">            </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pre</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">            </span><span class="n">pre</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newNode</span><span class="p">;</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">            </span><span class="n">newNode</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkPositionInde</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isPositionIndex</span><span class="p">(</span><span class="n">index</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IndexOutOfBoundsException</span><span class="p">(</span><span class="s">&quot;Index: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, Size: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isPositionIndex</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="p">;</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="w">        </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="w">        </span><span class="n">x</span><span class="p">.</span><span class="na">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">node</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="w">        </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first</span><span class="p">;</span>
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">index</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="w">            </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">node</span><span class="p">(</span><span class="n">index</span><span class="p">).</span><span class="na">item</span><span class="p">;</span>
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">remove</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="w">            </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first</span><span class="p">;</span>
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a><span class="w">            </span><span class="n">head</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="w">            </span><span class="c1">//last = null;</span>
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="w">            </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="w">            </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pre</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">            </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="na">next</span><span class="p">;</span>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="w">            </span><span class="n">pre</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">            </span><span class="n">x</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a><span class="w">        </span><span class="n">size</span><span class="o">--</span><span class="p">;</span>
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a>
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a><span class="w">        </span><span class="n">E</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a><span class="w">        </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a>
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a><span class="w">        </span><span class="n">Node</span><span class="p">(</span><span class="n">E</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">;</span>
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="_5">循环链表<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">双向链表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>双向链表(双链表)是链表的一种。和单链表一样，双链表也是由节点组成，它的每个数据结点中都有两个指针，分别指向直接后继和直接前驱。
+所以，从双向链表中的任意一个结点开始，都可以很方便地访问它的前驱结点和后继结点。一般我们都构造双向循环链表。</p>
+<p><img alt="双向链表" src="../../image/c2/ll-4.jpg" /></p>
+<p>表头为空，表头的后继节点为"节点 10"(数据为 10 的节点)；
+"节点 10"的后继节点是"节点 20"(数据为 10 的节点)，
+"节点 20"的前继节点是"节点 10"；"节点 20"的后继节点是"节点 30"，
+"节点 30"的前继节点是"节点 20"；...；末尾节点的后继节点是表头。</p>
+<h6 id="_7">双向链表删除节点<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h6>
+<p>我们看看双向链表删除节点的操作，比如说下面这个单链表中我们要删除"节点 30"。</p>
+<p><strong>删除之前</strong>："节点 20"的后继节点为"节点 30"，"节点 30" 的前继节点为"节点 20"。
+"节点 30"的后继节点为"节点 40"，"节点 40" 的前继节点为"节点 30"。</p>
+<p><strong>删除之后</strong>："节点 20"的后继节点为"节点 40"，"节点 40" 的前继节点为"节点 20"。</p>
+<p><img alt="双向链表删除" src="../../image/c2/ll-5.jpg" /></p>
+<h6 id="_8">双向链表添加节点<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h6>
+<p>我们再来看看双向链表添加节点的操作，比如说下面这个双向链表在"节点 10"与"节点 20"之间添加"节点 15"</p>
+<p><strong>添加之前</strong>："节点 10"的后继节点为"节点 20"，"节点 20" 的前继节点为"节点 10"。</p>
+<p><strong>添加之后</strong>："节点 10"的后继节点为"节点 15"，"节点 15" 的前继节点为"节点 10"。"节点 15"的后继节点为"节点 20"，"节点 20" 的前继节点为"节点 15"。</p>
+<p><img alt="双向链表添加" src="../../image/c2/ll-6.jpg" /></p>
+<h6 id="_9">代码实现<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h6>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
+</span></code></pre></div>
+<h4 id="_10">用链表的目的是什么？省空间还是省时间？<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>链表的优点除了「插入删除不需要移动其他元素」之外，还在于它是一个局部化结构。
+就是说当你拿到链表的一个 node 之后，不需要太多其它数据，就可以完成插入，删除的操作。而其它的数据结构不行。
+比如说 array，你只拿到一个 item 是断不敢做插入删除的。</p>
+<p>当然了，局部化这个好处只有 intrusive 链表才有，就是必须 prev/next 嵌入在数据结构中。
+像 STL 和 Java 那种设计是失败了。</p>
+<h4 id="_11">数组（非动态）对比链表：<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>数组（非动态）对比链表：数组简单易用，在实现上使用的是连续的内存空间。
+得益于现代处理器的缓存机制，其访问效率很高。
+数组的缺点是大小固定，一经声明就要占用整块内存空间。如果声明的数组过大，系统可能没有足够的连续内存空间分配给它。
+而如果声明的数组过小，则可能出现不够用的情况。这时只能再声明一个更大的数组，然后把原数组拷贝进去，非常费时。
+链表最大的特点是大小动态可调，其大小与已经而不是计划存储的元素个数成正比。在确定了操作点之后，插入和删除的操作耗时是固定的。
+但是使用链表也要为其动态特性付出代价，例如每个元素都需要消耗额外的存储空间去存储一份指向下一个元素的指针类数据。
+链表与数组的各种操作复杂度如下所示：</p>
+<p>操作 ------------------- 链表 ---- 数组</p>
+<p>查找 -------------------- O(n) ---- O(1)</p>
+<p>在头部插入/删除 ------ O(1) ---- O(n)</p>
+<p>在尾部插入/删除 ------ O(n) ---- O(1)</p>
+<p>在中间插入/删除 ------ O(n) ---- O(n)</p>
+<p>额外的存储空间 ------- O(n) ---- 0</p>
+<p><strong>注意虽然表面看起来复杂度都是 O(n)，但是链表和数组在插入和删除时进行的是完全不同的操作。</strong>
+链表的主要耗时操作是历遍查找，删除和插入操作本身的复杂度是 O(1)。
+数组查找很快，主要耗时的操作是拷贝覆盖。
+因为除了目标元素在尾部的特殊情况，数组进行插入和删除时需要对操作点之后的所有元素进行前后移位操作，只能通过拷贝和覆盖的方法进行。</p>
+<p>from "Data Structures and Algorithms Made Easy"</p>
+<p><strong>关于数据结构与 ADT:</strong>
+Linked-list 中的 linked 描述的仍然是数据的结构而不是实现的手段。
+一般意义上的实现即 implementation 是跟具体的编程语言挂钩的。
+另外计算机科学中一般说 Abstract data type (ADT) 而不是 Abstract data structure。ADT 是从用户的角度出发，
+关心的重点既包括数据的定义也包括数据的使用方法。
+而数据结构是从设计者的角度出发，关心的重点是数据的组织和存储方式。单论链表的组织和存储方法，这时链表的概念就是数据结构。
+如果再加上链表的创建、历遍、删除、插入等操作，这时链表的概念就是 ADT。而用某一种编程语言实现了链表的 ADT，这叫做链表的实现。</p>
+<h4 id="_12">面试中关于链表的常见问题<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li>反转链表</li>
+</ul>
+<p>链表反转一般指的是单向链表，常见的方式是按原始顺序迭代结点，并将它们逐个移动到列表的头部</p>
+<ul>
+<li>寻找中间节点</li>
+</ul>
+<p>看看我们如何来理解快慢指针的：把链表看作一条赛道，运动员 A 速度是运动员 B 的两倍，当运动员 A 跑完全程，运动员 B 就刚刚好跑了一半。</p>
+<p>我们要做的代码如下，fast 的 next 指针为空或者 fast 的 next 的 next 指针为空，则退出寻址循环</p>
+<div class="language-text highlight"><pre><span></span><code>slow = slow.next
+fast = fast.next.next
+</code></pre></div>
+<p><img alt="寻找中间节点" src="../../image/c2/ll-7.png" /></p>
+<ul>
+<li>删除链表中的节点</li>
+</ul>
+<p>输入: 1-&gt;2-&gt;6-&gt;3-&gt;4-&gt;5-&gt;6, val = 6
+  输出: 1-&gt;2-&gt;3-&gt;4-&gt;5</p>
+<ul>
+<li>奇偶链表</li>
+</ul>
+<p>给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。请注意，这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。</p>
+<p>请尝试使用原地算法完成。你的算法的空间复杂度应为 O(1)，时间复杂度应为 O(nodes)，nodes 为节点总数。</p>
+<div class="language-text highlight"><pre><span></span><code>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+输出: 1-&gt;3-&gt;5-&gt;2-&gt;4-&gt;NULL
+
+
+输入: 2-&gt;1-&gt;3-&gt;5-&gt;6-&gt;4-&gt;7-&gt;NULL
+输出: 2-&gt;3-&gt;6-&gt;7-&gt;1-&gt;5-&gt;4-&gt;NULL
+</code></pre></div>
+<ul>
+<li>
+<p>回文链表</p>
+</li>
+<li>
+<p>返回链表倒数第 N 个节点</p>
+</li>
+<li>
+<p>删除链表中的重复项</p>
+</li>
+</ul>
+<p>第一种使用额外的存储空间，引入 hash 表
+第二种不能使用额外的存储空间，直接在原始链表上进行操作</p>
 <ol>
-<li>首先通过对客观世界的认知形成印象和概念从而得到了信息，在此基础上建立概念模型，它必须能够如实地反映客观世界中的事物以及事物间的联系；</li>
-<li>根据概念模型将实际问题转化为计算机能够理解的形式，然后设计程序；</li>
-<li>用户通过人机交互界面与系统交流，使系统执行相应操作，最后解决实际的问题。</li>
+<li>建立指针 p，用于遍历链表；</li>
+<li>建立指针 q，q 遍历 p 后面的结点，并与 p 数值比较；</li>
+<li>
+<p>建立指针 r，r 保存需要删掉的结点，再把需要删掉的结点的前后结点相接。由此去掉重复值。</p>
+</li>
+<li>
+<p>合并两个有序的单链表，合并之后的链表依然有序</p>
+</li>
 </ol>
-<p>数据结构主要与在上述过程中从建立概念模型到实现模型转化并为后续程序设计提供基础的内容相关。
-它是用来反映一个概念模型的内部构成，即一个概念模型由那些成分数据构成，以什么方式构成，呈现什么结构。</p>
-<p>数据结构主要是研究程序设计问题中计算机的操作对象以及它们之间的关系和操作的学科。</p>
-<h2 id="_1">基本概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>这个类似于归并排序，你创建一个新链表，然后把上面两个链表依次比较，插入新链表</p>
 <ul>
-<li>**数据（data**是描述客观事物的数值、字符以及能输入机器且能被处理的各种符号集合。
-  数据的含义非常广泛，除了通常的数值数据、字符、字符串是数据以外，声音、图像等一切可以输入计算机并能被处理的都是数据。
-  例如除了表示人的姓名、身高、体重等的字符、数字是数据，人的照片、指纹、三维模型、语音指令等也都是数据。</li>
+<li>检测链表中的循环</li>
+</ul>
+<p>这里也是用到两个指针，如果一个链表有环，那么用一个指针去遍历，是永远走不到头的。
+因此，我们用两个指针去遍历：first 指针每次走一步，second 指针每次走两步，如果 first 指针和 second 指针相遇，说明有环。
+;如果不存在环，指针 fast 遇到 NULL 退出。</p>
+<p><img alt="链表有环" src="../../image/c2/ll-8.png" /></p>
+<ul>
+<li>取出有环链表中，环的长度</li>
+</ul>
+<p>在环上相遇后，记录第一次相遇点为 Pos，之后指针 slow 继续每次走 1 步，fast 每次走 2 步。
+在下次相遇的时候 fast 比 slow 正好又多走了一圈，也就是多走的距离等于环长。</p>
+<p>设从第一次相遇到第二次相遇，设 slow 走了 len 步，则 fast 走了 2*len 步，相遇时多走了一圈：</p>
+<div class="language-text highlight"><pre><span></span><code>环长=2*len-len。
+</code></pre></div>
+<ul>
+<li>单链表中，取出环的起始点</li>
+</ul>
+<p>第一次碰撞点 Pos 到连接点 Join 的距离=头指针到连接点 Join 的距离，
+因此，分别从第一次碰撞点 Pos、头指针 head 开始走，相遇的那个点就是连接点。</p>
+<p><img alt="链表环的起始位置" src="../../image/c2/ll-9.png" /></p>
+<p>在环上相遇后，记录第一次相遇点为 Pos，连接点为 Join，假设头结点到连接点的长度为 LenA，连接点到第一次相遇点的长度为 x，环长为 R。</p>
+<div class="language-text highlight"><pre><span></span><code>这里是对上面两个距离的解释，记住，距离都是逆时针算的！！！
+第一次相遇时，slow走的长度 S = LenA + x;
+第一次相遇时，fast走的长度 2S = LenA + n*R + x;
+所以可以知道，LenA + x =  n*R;　　LenA = n*R -x;
+</code></pre></div>
+<ul>
+<li>求有环单链表的链表长</li>
+</ul>
+<p>上述中求出了环的长度和连接点的位置，就可以求出头结点到连接点的长度。两者相加就是链表的长度。</p>
+<ul>
+<li>判断两个单链表相交的第一个交点</li>
+</ul>
+<p>解这道题之前，我们需要首先明确一个概念：
+如果两个单链表有共同的节点，那么从第一个共同节点开始，后面的节点都会重叠，直到链表结束。
+因为两个链表中有一个共同节点，则这个节点里的指针域指向的下一个节点地址一样，所以下一个节点也会相交，依次类推。所以，若相交，则两个链表呈“Y”字形。如下图：</p>
+<p><img alt="单链表相交" src="../../image/c2/ll-10.png" /></p>
+<ol>
 <li>
-<p>**数据元素（dataelement**是数据的基本单位，是数据集合的个体，在计算机程序中通常作为一个整体来进行处理。例如一条描述一位学生的完整信息的数据记录就是一个数据元素；
-  空间中一点的三维坐标也可以是一个数据元素。数据元素通常由若干个数据项组成，例如描述学生相关信息的姓名、性别、学号等都是数据项；
-  三维坐标中的每一维坐标值也是数据项。数据项具有原子性，是不可分割的最小单位。</p>
+<p>暴力解法。
+   从头开始遍历第一个链表，遍历第一个链表的每个节点时，同时从头到尾遍历第二个链表，看是否有相同的节点，第一次找到相同的节点即第一个交点。若第一个链表遍历结束后，还未找到相同的节点，即不存在交点。时间复杂度为 O(n^2)。这种方法显然不是写这篇博客的重点。。。不多说了。</p>
 </li>
 <li>
-<p>**数据对象（dataobject**是性质相同的数据元素的集合，是数据的子集。
-  例如一个学校的所有学生的集合就是数据对象，空间中所有点的集合也是数据对象。</p>
+<p>使用栈。
+   我们可以从头遍历两个链表。创建两个栈，第一个栈存储第一个链表的节点，第二个栈存储第二个链表的节点。每遍历到一个节点时，就将该节点入栈。两个链表都入栈结束后。则通过 top 判断栈顶的节点是否相等即可判断两个单链表是否相交。因为我们知道，若两个链表相交，则从第一个相交节点开始，后面的节点都相交。
+   若两链表相交，则循环出栈，直到遇到两个出栈的节点不相同，则这个节点的后一个节点就是第一个相交的节点。</p>
 </li>
 <li>
-<p>**数据结构（datastructure**是指相互之间存在一种或多种特定关系的数据元素的集合。
-  是组织并存储数据以便能够有效使用的一种专门格式，它用来反映一个数据的内部构成，
-  即一个数据由那些成分数据构成，以什么方式构成，呈什么结构。</p>
+<p>遍历链表记录长度。
+   同时遍历两个链表到尾部，同时记录两个链表的长度。若两个链表最后的一个节点相同，则两个链表相交。
+   有两个链表的长度后，我们就可以知道哪个链表长，设较长的链表长度为 len1,短的链表长度为 len2。
+   则先让较长的链表向后移动(len1-len2)个长度。然后开始从当前位置同时遍历两个链表，当遍历到的链表的节点相同时，则这个节点就是第一个相交的节点。</p>
 </li>
-</ul>
-<p>由于信息可以存在于逻辑思维领域，也可以存在于计算机世界，因此作为信息载体的数据同样存在于两个世界中。
-表示一组数据元素及其相互关系的数据结构同样也有两种不同的表现形式，</p>
-<ul>
-<li>一种是数据结构的逻辑层面，即数据的**逻辑结构**；</li>
-<li>一种是存在于计算机世界的物理层面，即数据的**存储结构**。</li>
-</ul>
-<p>数据的逻辑结构按照数据元素之间相互关系的特性来分，
-可以分为以下四种结构：集合、线性结构、树形结构和图状结构。
-主要有线性表、栈、队列、树和图，其中线性表、栈、队列属于线性结构，树和图属于非线性结构。</p>
-<h2 id="_2">抽象数据类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>抽象数据类型是描述数据结构的一种理论工具。在介绍抽象数据类型之前我们先介绍一下数据类型的基本概念。</p>
-<p><strong>数据类型(datatype)</strong> 是一组性质相同的数据元素的集合以及加在这个集合上的一组操作。
-例如 Java 语言中就有许多不同的数据类型，包括数值型的数据类型、字符串、布尔型等数据类型。
-以 Java 中的 int 型为例，int 型的数据元素的集合是[-2147483648,2147483647]间的整数，定义在其上的操作有加、减、乘、除四则运算，还有模运算等。</p>
-<p>定义数据类型的作用一个是隐藏计算机硬件及其特性和差别，使硬件对于用户而言是透明的，即用户可以不关心数据类型是怎么实现的而可以使用它。
-定义数据类型的另一个作用是，用户能够使用数据类型定义的操作，方便的实现问题的求解。
-例如，用户可以使用 Java 定义在 int 型的加法操作完成两个整数的加法运算，而不用关心两个整数的加法在计算机中到底是如何实现的。
-这样不但加快了用户解决问题的速度，也使得用户可以在更高的层面上考虑问题。</p>
-<p>与机器语言、汇编语言相比，高级语言的出现大大地简便了程序设计。
-但是要将解答问题的步骤从非形式的自然语言表达到形式化的高级语言表达，
-仍然是一个复杂的过程，仍然要做很多繁杂琐碎的事情，因而仍然需要抽象。
-对于一个明确的问题，要解答这个问题，总是先选用该问题的一个数据模型。
-接着，弄清该问题所选用的数据模型在已知条件下的初始状态和要求的结果状态，以及隐含着的两个状态之间的关系。
-然后探索从数据模型的已知初始状态出发到达要求的结果状态所必需的运算步骤。</p>
-<p>我们在探索运算步骤时，首先应该考虑顶层的运算步骤，然后再考虑底层的运算步骤。
-所谓顶层的运算步骤是指定义在数据模型级上的运算步骤，或叫宏观运算。
-它们组成解答问题步骤的主干部分。
-其中涉及的数据是数据模型中的一个变量，暂时不关心它的数据结构；
-涉及的运算以数据模型中的数据变量作为运算对象，或作为运算结果，或二者兼而为之，简称为定义在数据模型上的运算。
-由于暂时不关心变量的数据结构，这些运算都带有抽象性质，不含运算的细节。
-所谓底层的运算步骤是指顶层抽象的运算的具体实现。
-它们依赖于数据模型的结构，依赖于数据模型结构的具体表示。
-因此，底层的运算步骤包括两部分：一是数据模型的具体表示；
-二是定义在该数据模型上的运算的具体实现。我们可以把它们理解为微观运算。
-于是，底层运算是顶层运算的细化，底层运算为顶层运算服务。
-为了将顶层算法与底层算法隔开，使二者在设计时不会互相牵制、互相影响，必须对二者的接口进行一次抽象。
-让底层只通过这个接口为顶层服务，顶层也只通过这个接口调用底层的运算。
-这个接口就是抽象数据类型。</p>
-<p><strong>抽象数据类型(abstractdatatype,简称 ADT)</strong> 由一种数据模型和在该数据模型上的一组操作组成。</p>
-<p>抽象数据类型包括定义和实现两个方面，其中定义是独立于实现的。
-抽象数据类型的定义仅取决于它的逻辑特性，而与其在计算机内部的实现无关，即无论它的内部结构如何变化，只要它的逻辑特性不变，都不会影响到它的使用。
-其内部的变化（抽象数据类型实现的变化）只是可能会对外部在使用它解决问题时的效率上产生影响，因此我们的一个重要任务就是如何简单、高效地实现抽象数据类型。
-很明显，对于不同的运算组，为使组中所有运算的效率都尽可能地高，其相应的数据模型具体表示的选择将是不同的。
-在这个意义下，数据模型的具体表示又依赖于数据模型上定义的那些运算。
-特别是，当不同运算的效率互相制约时，还必须事先将所有的运算的相应使用频度排序，让所选择的数据模型的具体表示优先保证使用频度较高的运算有较高的效率。</p>
-<p>我们应该看到，抽象数据类型的概念并不是全新的概念。
-抽象数据类型和数据类型在实质上是一个概念，只不过是对数据类型的进一步抽象，不仅限于各种不同的计算机处理器中已经实现的数据类型，还包括为解决更为复杂的问题而由用户自定义的复杂数据类型。
-例如高级语言都有的“整数”类型就是一种抽象数据类型，只不过高级语言中的整型引进实现了，并且实现的细节可能不同而已。
-我们没有意识到抽象数据类型的概念已经孕育在基本数据类型的概念之中，是因为我们已经习惯于在程序设计中使用基本数据类型和相关的运算，没有进一步深究而已。</p>
-<p>抽象数据类型一方面使得使用它的人可以只关心它的逻辑特征，不需要了解它的实现方式。另一方面可以使我们更容易描述现实世界，使得我们可以在更高的层面上来考虑问题。例如可以使用树来描述行政区划，使用图来描述通信网络。</p>
-<p>根据抽象数据类型的概念，对抽象数据类型进行定义就是约定抽象数据类型的名字，同时，约定在该类型上定义的一组运算的各个运算的名字，明确各个运算分别要有多少个参数，这些参数的含义和顺序，以及运算的功能。
-一旦定义清楚，人们在使用时就可以像引用基本数据类型那样，十分简便地引用抽象数据类型；
-同时，抽象数据类型的实现就有了设计的依据和目标。
-抽象数据类型的使用和实现都与抽象数据类型的定义打交道，这样使用与实现没有直接的联系。因此，只要严格按照定义，抽象数据类型的使用和实现就可以互相独立，互不影响，实现对它们的隔离，达到抽象的目的。
-为此抽象数据类型可以使用一个三元组来表示：</p>
-<div class="language-text highlight"><pre><span></span><code>ADT=(D,S,P)
-</code></pre></div>
-<p>其中 D 是数据对象，S 是 D 上的关系集，P 是加在 D 上的一组操作。
-在定义抽象数据类型时，我们使用以下格式：</p>
-<div class="language-text highlight"><pre><span></span><code>ADT抽象数据类型名{数据对象：&lt;数据对象的定义&gt;数据关系：&lt;数据关系的定义&gt;基本操作：&lt;基本操作的定义&gt;}
-</code></pre></div>
-<p>网站补充：想一下ADT的定义java实现就知道了。</p>
-<h2 id="_3">研究内容<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>数据结构的研究内容是构造复杂软件系统的基础，它的核心技术是分解与抽象。
-通过分解可以划分出数据的 3 个层次；
-再通过抽象，舍弃数据元素的具体内容，就得到逻辑结构。
-类似地，通过分解将处理要求划分成各种功能，
-再通过抽象舍弃实现细节，就得到运算的定义。
-上述两个方面的结合可以将问题变换为数据结构。
-这是一个从具体（即具体问题）到抽象（即数据结构）的过程。
-然后，通过增加对实现细节的考虑进一步得到存储结构和实现运算，
-从而完成设计任务。这是一个从抽象（即数据结构）到具体（即具体实现）的过程。</p>
-<h2 id="_4">数据的逻辑结构<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>指反映数据元素之间的逻辑关系的数据结构，其中的逻辑关系是指数据元素之间的前后间关系，而与他们在计算机中的存储位置无关。逻辑结构包括：</p>
-<ul>
-<li>集合：数据结构中的元素之间除了“同属一个集合” 的相互关系外，别无其他关系</li>
-<li>线性结构：数据结构中的元素存在一对一的相互关系；</li>
-<li>树形结构：数据结构中的元素存在一对多的相互关系；</li>
-<li>图形结构：数据结构中的元素存在多对多的相互关系。</li>
-</ul>
-<h2 id="_5">数据的物理结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>指数据的逻辑结构在计算机存储空间的存放形式。</p>
-<p>数据的物理结构是数据结构在计算机中的表示（又称映像），
-它包括数据元素的机内表示和关系的机内表示。
-由于具体实现的方法有顺序、链接、索引、散列等多种，
-所以，一种数据结构可表示成一种或多种存储结构。</p>
-<p>数据元素的机内表示（映像方法）：
-用二进制位（bit）的位串表示数据元素。通常称这种位串为节点（node）。
-当数据元素有若干个数据项组成时，
-位串中与个数据项对应的子位串称为数据域（data field）。
-因此，节点是数据元素的机内表示（或机内映像）。</p>
-<p>关系的机内表示（映像方法）：
-数据元素之间的关系的机内表示可以分为顺序映像和非顺序映像，
-常用两种存储结构：顺序存储结构和链式存储结构。
-顺序映像借助元素在存储器中的相对位置来表示数据元素之间的逻辑关系。
-非顺序映像借助指示元素存储位置的指针（pointer）来表示数据元素之间的逻辑关系。</p>
-<h2 id="_6">数据存储结构<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>数据的逻辑结构在计算机存储空间中的存放形式称为数据的物理结构(也称为存储结构)。
-一般来说，一种数据结构的逻辑结构根据需要可以表示成多种存储结构，
-常用的存储结构有顺序存储、链式存储、索引存储和哈希存储等。</p>
-<p>数据的顺序存储结构的特点是：
-借助元素在存储器中的相对位置来表示数据元素之间的逻辑关系；</p>
-<p>非顺序存储的特点是：
-借助指示元素存储地址的指针表示数据元素之间的逻辑关系</p>
-<h2 id="_7">常用的数据结构(八大数据结构)<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>在计算机科学的发展过程中，数据结构也随之发展。程序设计中常用的数据结构包括如下几个。
-<img alt="八大数据结构" src="../../image/c2/ds-1.png" /></p>
-<h4 id="array">数组(Array)<a class="headerlink" href="#array" title="Permanent link">&para;</a></h4>
-<p>数组是一种聚合数据类型，
-它是将具有相同类型的若干变量有序地组织在一起的集合。
-数组可以说是最基本的数据结构，在各种编程语言中都有对应。
-一个数组可以分解为多个数组元素，
-按照数据元素的类型，数组可以分为整型数组、字符型数组、
-浮点型数组、指针数组和结构数组等。数组还可以有一维、
-二维以及多维等表现形式。</p>
-<div class="language-text highlight"><pre><span></span><code>int[] data = new int[100]；
-data[0]  = 1;
-</code></pre></div>
-<h4 id="stack">栈( Stack)<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h4>
-<p>栈是一种特殊的线性表，
-它只能在一个表的一个固定端进行数据结点的插入和删除操作。
-栈按照后进先出的原则来存储数据，也就是说，先插入的数据将被压入栈底，
-最后插入的数据在栈顶，读出数据时，从栈顶开始逐个读出。
-栈在汇编语言程序中，经常用于重要数据的现场保护。栈中没有数据时，
-称为空栈。</p>
-<p><img alt="栈" src="../../image/c2/ds-2.jpg" /></p>
-<h4 id="queue">队列(Queue)<a class="headerlink" href="#queue" title="Permanent link">&para;</a></h4>
-<p>队列和栈类似，也是一种特殊的线性表。
-和栈不同的是，队列只允许在表的一端进行插入操作，
-而在另一端进行删除操作。一般来说，进行插入操作的一端称为队尾，
-进行删除操作的一端称为队头。队列中没有元素时，称为空队列。</p>
-<p><img alt="队列" src="../../image/c2/ds-3.png" /></p>
-<h4 id="linked-list">链表( Linked List)<a class="headerlink" href="#linked-list" title="Permanent link">&para;</a></h4>
-<p>链表是一种数据元素按照链式存储结构进行存储的数据结构，
-这种存储结构具有在物理上存在非连续的特点。
-链表由一系列数据结点构成，每个数据结点包括数据域和指针域两部分。
-其中，指针域保存了数据结构中下一个元素存放的地址。
-链表结构中数据元素的逻辑顺序是通过链表中的指针链接次序来实现的。</p>
-<p><img alt="链表" src="../../image/c2/ds-4.png" /></p>
-<h4 id="tree">树( Tree)<a class="headerlink" href="#tree" title="Permanent link">&para;</a></h4>
-<p>树是典型的非线性结构，它是包括，2 个结点的有穷集合 K。
-在树结构中，有且仅有一个根结点，该结点没有前驱结点。
-在树结构中的其他结点都有且仅有一个前驱结点，
-而且可以有两个后继结点，m≥0。</p>
-<p><img alt="树" src="../../image/c2/ds-6.png" /></p>
-<h4 id="graph">图(Graph)<a class="headerlink" href="#graph" title="Permanent link">&para;</a></h4>
-<p>图是另一种非线性数据结构。在图结构中，
-数据结点一般称为顶点，而边是顶点的有序偶对。
-如果两个顶点之间存在一条边，那么就表示这两个顶点具有相邻关系。</p>
-<p><img alt="无向图" src="../../image/c2/ds-8.png" /></p>
-<p><img alt="有向图" src="../../image/c2/ds-9.png" /></p>
-<h4 id="heap">堆(Heap)<a class="headerlink" href="#heap" title="Permanent link">&para;</a></h4>
-<p>堆是一种特殊的树形数据结构，
-一般讨论的堆都是二叉堆。
-堆的特点是根结点的值是所有结点中最小的或者最大的，
-并且根结点的两个子树也是一个堆结构。</p>
-<p><img alt="堆" src="../../image/c2/ds-7.png" /></p>
-<h4 id="hash">散列表(Hash)<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h4>
-<p>散列表源自于散列函数(Hash function)，
-其思想是如果在结构中存在关键字和 T 相等的记录，
-那么必定在 F(T)的存储位置可以找到该记录，
-这样就可以不用进行比较操作而直接取得所查记录</p>
-<p><img alt="散列表" src="../../image/c2/ds-5.png" /></p>
-<h4 id="_8">为什么我们需要数据结构<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p>数据是计算机科学当中最关键的实体，
-而数据结构则可以将数据以某种组织形式存储，
-因此，数据结构的价值不言而喻。</p>
-<p>无论你以何种方式解决何种问题，
-你都需要处理数据——无论是涉及员工薪水、股票价格、
-购物清单，还是只是简单的电话簿问题。</p>
-<p>数据需要根据不同的场景，按照特定的格式进行存储。
-有很多数据结构能够满足以不同格式存储数据的需求。</p>
-<h4 id="_9">未来添加<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<p>图论、深度优先搜索、广度优先搜索、Prim 算法、
-Kruskal 算法、Boruvka 算法、迪杰斯特拉（Dijkstra）算法、
-Bellman-Ford 算法、弗洛伊德（Floyd）算法、
-拓扑排序、关键路径、欧拉回路、Fleury 算法</p>
+</ol>
+<p><img alt="单链表相交2" src="../../image/c2/ll-11.png" /></p>
+<p><a href="https://xiaozhuanlan.com/topic/5021347986">https://xiaozhuanlan.com/topic/5021347986</a></p>
 
 
 
@@ -10318,7 +10383,7 @@ Bellman-Ford 算法、弗洛伊德（Floyd）算法、
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../C01.%E5%BC%80%E7%AF%87/3.experience1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 计算机基础知识对程序员来说有多重要？" rel="prev">
+          <a href="../004.Vector/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 4.向量" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -10327,20 +10392,20 @@ Bellman-Ford 算法、弗洛伊德（Floyd）算法、
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                计算机基础知识对程序员来说有多重要？
+                4.向量
               </div>
             </div>
           </a>
         
         
           
-          <a href="../2-3-4Tree/" class="md-footer__link md-footer__link--next" aria-label="下一页: 2-3—4 树" rel="next">
+          <a href="../006.Tree/" class="md-footer__link md-footer__link--next" aria-label="下一页: 6.树" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                2-3—4 树
+                6.树
               </div>
             </div>
             <div class="md-footer__button md-icon">
