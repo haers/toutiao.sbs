@@ -11,11 +11,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/basic-knowledge/HashMap%E7%9A%84%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
@@ -717,336 +712,6 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/other/%E5%B0%BD%E5%9C%A8%E5%8F%8C11%E2%80%94%E2%80%94%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E6%8A%80%E6%9C%AF%E6%BC%94%E8%BF%9B%E4%B8%8E%E8%B6%85%E8%B6%8A/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/project-management/ab%E6%B5%8B%E8%AF%95/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/project-management/code/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/project-management/git-commands/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/project-management/product-lifecycle/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/project-management/project-management/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/project-management/test/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/project-management/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/project-management/%E8%AE%BA%E9%9C%80%E6%B1%82%E8%B0%83%E7%A0%94%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/project-management/%E9%A1%B9%E7%9B%AE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/FreeMarker/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/Gateway/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/InfluxDB/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/SOA%E4%B8%8E%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/architecture-experience/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/architecture-good-case/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/cache-summary/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/cache-talk/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/cache%E7%9B%B8%E5%85%B3/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/demotion/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/flow-dispatch/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/fusing/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/groovy/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/idempotent/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/isolate/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/jsoup/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/knowledge-outline/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/load-balance/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/lock-db/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/lock-zk/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/lock/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/microservice-introduce/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/pinyin/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/re-try/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/software-performance/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/split-table/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/technology-selection/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1API%E7%9A%84%E9%99%90%E6%B5%81/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8BQps/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9E%B6%E6%9E%84/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%9E%B6%E6%9E%84%E5%8E%9F%E5%88%99/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9A%84%E8%81%8C%E8%B4%A3%E4%B8%8E%E6%80%9D%E8%80%83/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%A1%88%E4%BE%8B-%E5%85%AC%E4%BC%97%E5%8F%B7%E5%A2%9E%E9%87%8F%E6%B6%88%E6%81%AF%E5%90%8C%E6%AD%A5%E6%94%B9%E9%80%A0/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%A1%88%E4%BE%8B-%E5%BE%AE%E5%8D%9A%E4%B8%8E%E7%90%86%E8%B4%A2%E7%A4%BE%E5%8C%BAcache%E5%88%86%E6%9E%90/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%A1%88%E4%BE%8B-%E7%A7%92%E6%9D%80%E5%B0%8F%E7%BB%93/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%A1%88%E4%BE%8B-%E8%AE%A1%E6%95%B0%E5%99%A8/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E6%A1%88%E4%BE%8B-%E8%B4%B4%E5%AD%90%E6%A5%BC%E5%B1%82%E5%8F%B7/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E7%A4%BE%E5%8C%BA%E7%A8%B3%E5%AE%9A%E6%80%A7%E4%B9%8B%E9%99%8D%E7%BA%A7/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E7%BC%93%E5%AD%98%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%98%B2%E9%9B%AA%E5%B4%A9%E8%AE%BE%E8%AE%A1/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E7%BC%96%E7%A0%81%E5%89%8D3000%E9%97%AE/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/%E9%94%81%E6%9C%BA%E5%88%B6/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/outline/1/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/outline/2/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/outline/3/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/system-architecture/outline/4/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/web/CDN/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/web/LVS/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/web/Nginx/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/web/http/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/web/load-balance/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/web/other/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/web/tcp/</loc>
-         <lastmod>2023-03-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/java%E5%BF%83%E5%BE%97/web/tomcat/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2446,12 +2111,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/CDN%E7%9A%84%E5%89%AF%E6%9C%AC/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/ICMP/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/LVS/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/NetworkLayer/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/Nginx/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2491,12 +2171,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/net/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/http%E7%9A%84%E5%89%AF%E6%9C%AC/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/ziliao/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/load-balance/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/other/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/tomcat/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C10.%E7%BD%91%E7%BB%9C/%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2751,6 +2446,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/FreeMarker/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/Gateway/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/InfluxDB/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/LargeNumberOfRequests/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
@@ -2771,12 +2481,242 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/SOA%E4%B8%8E%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/architecture-experience/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/architecture-good-case/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/architecture/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/cache-summary/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/cache-talk/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/cache%E7%9B%B8%E5%85%B3/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/demotion/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/flow-dispatch/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/fusing/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/groovy/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/idempotent/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/isolate/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/jsoup/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/knowledge-outline/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/load-balance/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/lock-db/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/lock-zk/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/lock/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/microservice-introduce/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/pinyin/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/re-try/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/saas/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/software-performance/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/split-table/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/technology-selection/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1API%E7%9A%84%E9%99%90%E6%B5%81/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B9%8BQps/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9E%B6%E6%9E%84/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84%E5%8E%9F%E5%88%99/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9A%84%E8%81%8C%E8%B4%A3%E4%B8%8E%E6%80%9D%E8%80%83/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%9E%B6%E6%9E%84%E6%80%9D%E6%83%B3/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%A1%88%E4%BE%8B-%E5%85%AC%E4%BC%97%E5%8F%B7%E5%A2%9E%E9%87%8F%E6%B6%88%E6%81%AF%E5%90%8C%E6%AD%A5%E6%94%B9%E9%80%A0/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%A1%88%E4%BE%8B-%E5%BE%AE%E5%8D%9A%E4%B8%8E%E7%90%86%E8%B4%A2%E7%A4%BE%E5%8C%BAcache%E5%88%86%E6%9E%90/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%A1%88%E4%BE%8B-%E7%A7%92%E6%9D%80%E5%B0%8F%E7%BB%93/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%A1%88%E4%BE%8B-%E8%AE%A1%E6%95%B0%E5%99%A8/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E6%A1%88%E4%BE%8B-%E8%B4%B4%E5%AD%90%E6%A5%BC%E5%B1%82%E5%8F%B7/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E7%A4%BE%E5%8C%BA%E7%A8%B3%E5%AE%9A%E6%80%A7%E4%B9%8B%E9%99%8D%E7%BA%A7/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E7%BC%93%E5%AD%98%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%98%B2%E9%9B%AA%E5%B4%A9%E8%AE%BE%E8%AE%A1/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E7%BC%96%E7%A0%81%E5%89%8D3000%E9%97%AE/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/%E9%94%81%E6%9C%BA%E5%88%B6/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/outline/1/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/outline/2/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/outline/3/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C13.%E6%9E%B6%E6%9E%84/outline/4/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2886,42 +2826,47 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C20.%E5%B7%A5%E5%85%B7/DecompileTool/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C19.%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/ab%E6%B5%8B%E8%AF%95/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C20.%E5%B7%A5%E5%85%B7/Markdown/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C19.%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/code/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C20.%E5%B7%A5%E5%85%B7/devops/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C19.%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/git-commands/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C20.%E5%B7%A5%E5%85%B7/dockerjava/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C19.%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/product-lifecycle/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C20.%E5%B7%A5%E5%85%B7/ftp/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C19.%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/project-management/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C20.%E5%B7%A5%E5%85%B7/git/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C19.%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/test/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C20.%E5%B7%A5%E5%85%B7/gitbook/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C19.%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C20.%E5%B7%A5%E5%85%B7/ssh/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C19.%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/%E8%AE%BA%E9%9C%80%E6%B1%82%E8%B0%83%E7%A0%94%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C19.%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/%E9%A1%B9%E7%9B%AE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2931,12 +2876,47 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C22.%E9%9D%9E%E4%B8%BB%E6%B5%81/1.buronFilter/</loc>
+         <loc>https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C22.%E9%9D%9E%E4%B8%BB%E6%B5%81%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/1.buronFilter/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/%E7%9C%8B%E4%B8%96%E7%95%8C/%E9%82%A3%E4%BA%9B%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E4%BA%8B%E6%83%85/</loc>
+         <loc>https://toutiao.sbs/%E5%B7%A5%E5%85%B7/1.java%E5%8F%8D%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/%E5%B7%A5%E5%85%B7/2.ftp/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/%E5%B7%A5%E5%85%B7/3.git/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/%E5%B7%A5%E5%85%B7/4.gitbook/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/%E5%B7%A5%E5%85%B7/5.Markdown/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/%E5%B7%A5%E5%85%B7/6.ssh/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/%E5%B7%A5%E5%85%B7/docker%E9%83%A8%E7%BD%B2java%E9%A1%B9%E7%9B%AE/</loc>
+         <lastmod>2023-03-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/%E7%9C%8B%E4%B8%96%E7%95%8C/1.%E5%8F%91%E7%8E%B0%E4%B8%96%E7%95%8C/</loc>
          <lastmod>2023-03-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
