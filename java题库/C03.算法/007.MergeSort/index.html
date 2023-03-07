@@ -12,20 +12,20 @@
         <meta name="author" content="Mr.yu">
       
       
-        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C03.%E7%AE%97%E6%B3%95/MergeSort/">
+        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C03.%E7%AE%97%E6%B3%95/007.MergeSort/">
       
       
-        <link rel="prev" href="../LRU/">
+        <link rel="prev" href="../006.ShellSort/">
       
       
-        <link rel="next" href="../QuickSort/">
+        <link rel="next" href="../008.QuickSort/">
       
       <link rel="icon" href="../../../assets/favicon2.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
-        <title>归并排序 - 宇头条</title>
+        <title>7.归并排序 - 宇头条</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#7" class="md-skip">
           跳转至
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              归并排序
+              7.归并排序
             
           </span>
         </div>
@@ -4587,6 +4587,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/011.MultipathSearchTree/" class="md-nav__link">
+        11.多路查找树(N 叉树)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/2-3-4Tree/" class="md-nav__link">
         2-3—4 树
       </a>
@@ -4895,20 +4909,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/MultipathSearchTree/" class="md-nav__link">
-        多路查找树(N 叉树)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/PriorityQueue/" class="md-nav__link">
         优先队列
       </a>
@@ -5057,8 +5057,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.%E7%AE%97%E6%B3%95/" class="md-nav__link">
-        算法分类
+      <a href="../001.%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        1.算法分类
       </a>
     </li>
   
@@ -5071,8 +5071,203 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.sortingAlgorithm/" class="md-nav__link">
-        排序算法
+      <a href="../002.sortingAlgorithm/" class="md-nav__link">
+        2.排序算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../003.BubbleSort/" class="md-nav__link">
+        3.冒泡排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../004.SelectionSort/" class="md-nav__link">
+        4.选择排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../005.InsertionSort/" class="md-nav__link">
+        5.插入排序 (直接插入排序)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../006.ShellSort/" class="md-nav__link">
+        6.希尔排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          7.归并排序
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        7.归并排序
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    算法描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    过程演示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    代码实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    算法分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    复杂度
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../008.QuickSort/" class="md-nav__link">
+        8.快速排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../009.HeapSort/" class="md-nav__link">
+        9.堆排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../010.CountingSort/" class="md-nav__link">
+        10.计数排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../011.BucketSort/" class="md-nav__link">
+        11.桶排序
       </a>
     </li>
   
@@ -5127,50 +5322,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../BubbleSort/" class="md-nav__link">
-        冒泡排序
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BucketSort/" class="md-nav__link">
-        桶排序
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../CachingAlgorithm/" class="md-nav__link">
         缓存算法
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../CountingSort/" class="md-nav__link">
-        计数排序
       </a>
     </li>
   
@@ -5225,34 +5378,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../HeapSort/" class="md-nav__link">
-        堆排序
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../InsertionSort/" class="md-nav__link">
-        插入排序 (直接插入排序)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../InterpolationLookup/" class="md-nav__link">
         插值查找
       </a>
@@ -5293,103 +5418,6 @@
               
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          归并排序
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        归并排序
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    算法描述
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    过程演示
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    代码实现
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    算法分析
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    复杂度
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../QuickSort/" class="md-nav__link">
-        QuickSort
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
   
     <li class="md-nav__item">
       <a href="../RadixSort/" class="md-nav__link">
@@ -5420,36 +5448,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../SelectionSort/" class="md-nav__link">
-        选择排序
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../SequentialSearch/" class="md-nav__link">
         顺序查找
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ShellSort/" class="md-nav__link">
-        希尔排序
       </a>
     </li>
   
@@ -9861,35 +9861,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     算法描述
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     过程演示
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     代码实现
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     算法分析
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     复杂度
   </a>
   
@@ -9910,7 +9910,7 @@
                   
 
 
-<h1 id="_1">归并排序<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="7">7.归并排序<a class="headerlink" href="#7" title="Permanent link">&para;</a></h1>
 <p>和选择排序一样，归并排序的性能不受输入数据的影响，
 但表现比选择排序好的多，
 因为始终都是 O(n log n）的时间复杂度。代价是需要额外的内存空间。</p>
@@ -9923,13 +9923,13 @@
 将已有序的子序列合并，得到完全有序的序列；
 即先使每个子序列有序，再使子序列段间有序。
 若将两个有序表合并成一个有序表，称为 2-路归并。</p>
-<h6 id="_2">算法描述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h6>
+<h6 id="_1">算法描述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h6>
 <ul>
 <li>步骤 1：把长度为 n 的输入序列分成两个长度为 n/2 的子序列；</li>
 <li>步骤 2：对这两个子序列分别采用归并排序；</li>
 <li>步骤 3：将两个排序好的子序列合并成一个最终的排序序列。</li>
 </ul>
-<h6 id="_3">过程演示<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
+<h6 id="_2">过程演示<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h6>
 <ul>
 <li>分而治之
   <img alt="归并排序" src="../../image/c3/ms-2.png" /></li>
@@ -9948,7 +9948,7 @@
   <img alt="归并排序" src="../../image/c3/ms-1.jpg" /></p>
 </li>
 </ul>
-<h6 id="_4">代码实现<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h6>
+<h6 id="_3">代码实现<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
 <p>递归法</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">algorithm.sort</span><span class="p">;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -10006,14 +10006,14 @@
 从上文的图中可看出，每次合并操作的平均时间复杂度为 O(n)，而完全二叉树的深度为|log2n|。总的平均时间复杂度为 O(nlogn)。而且，归并排序的最好，最坏，平均时间复杂度均为 O(nlogn)</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
 </span></code></pre></div>
-<h6 id="_5">算法分析<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h6>
+<h6 id="_4">算法分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h6>
 <p>归并排序是一种稳定的排序方法。和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是 O(nlogn）的时间复杂度。代价是需要额外的内存空间。</p>
 <ul>
 <li>最佳情况：T(n) = O(n)</li>
 <li>最差情况：T(n) = O(nlogn)</li>
 <li>平均情况：T(n) = O(nlogn)</li>
 </ul>
-<h6 id="_6">复杂度<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h6>
+<h6 id="_5">复杂度<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h6>
 <p>归并排序比较占用内存，但却是一种效率高且稳定的算法。
 改进归并排序在归并时先判断前段序列的最大值与后段序列最小值的关系再确定是否进行复制比较。如果前段序列的最大值小于等于后段序列最小值，则说明序列可以直接形成一段有序序列不需要再归并，反之则需要。所以在序列本身有序的情况下时间复杂度可以降至 O(n)
 TimSort 可以说是归并排序的终极优化版本，主要思想就是检测序列中的天然有序子段（若检测到严格降序子段则翻转序列为升序子段）。在最好情况下无论升序还是降序都可以使时间复杂度降至为 O(n)，具有很强的自适应性。</p>
@@ -10077,7 +10077,7 @@ TimSort 可以说是归并排序的终极优化版本，主要思想就是检测
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../LRU/" class="md-footer__link md-footer__link--prev" aria-label="上一页: LRU" rel="prev">
+          <a href="../006.ShellSort/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 6.希尔排序" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -10086,20 +10086,20 @@ TimSort 可以说是归并排序的终极优化版本，主要思想就是检测
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                LRU
+                6.希尔排序
               </div>
             </div>
           </a>
         
         
           
-          <a href="../QuickSort/" class="md-footer__link md-footer__link--next" aria-label="下一页: QuickSort" rel="next">
+          <a href="../008.QuickSort/" class="md-footer__link md-footer__link--next" aria-label="下一页: 8.快速排序" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                QuickSort
+                8.快速排序
               </div>
             </div>
             <div class="md-footer__button md-icon">

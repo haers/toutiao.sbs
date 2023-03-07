@@ -12,20 +12,20 @@
         <meta name="author" content="Mr.yu">
       
       
-        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C03.%E7%AE%97%E6%B3%95/2.sortingAlgorithm/">
+        <link rel="canonical" href="https://toutiao.sbs/java%E9%A2%98%E5%BA%93/C03.%E7%AE%97%E6%B3%95/006.ShellSort/">
       
       
-        <link rel="prev" href="../1.%E7%AE%97%E6%B3%95/">
+        <link rel="prev" href="../005.InsertionSort/">
       
       
-        <link rel="next" href="../BigDataAlgorithm/">
+        <link rel="next" href="../007.MergeSort/">
       
       <link rel="icon" href="../../../assets/favicon2.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
-        <title>排序算法 - 宇头条</title>
+        <title>6.希尔排序 - 宇头条</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#6" class="md-skip">
           跳转至
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              排序算法
+              6.希尔排序
             
           </span>
         </div>
@@ -4587,6 +4587,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/011.MultipathSearchTree/" class="md-nav__link">
+        11.多路查找树(N 叉树)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/2-3-4Tree/" class="md-nav__link">
         2-3—4 树
       </a>
@@ -4895,20 +4909,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/MultipathSearchTree/" class="md-nav__link">
-        多路查找树(N 叉树)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/PriorityQueue/" class="md-nav__link">
         优先队列
       </a>
@@ -5057,8 +5057,64 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.%E7%AE%97%E6%B3%95/" class="md-nav__link">
-        算法分类
+      <a href="../001.%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        1.算法分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../002.sortingAlgorithm/" class="md-nav__link">
+        2.排序算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../003.BubbleSort/" class="md-nav__link">
+        3.冒泡排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../004.SelectionSort/" class="md-nav__link">
+        4.选择排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../005.InsertionSort/" class="md-nav__link">
+        5.插入排序 (直接插入排序)
       </a>
     </li>
   
@@ -5081,12 +5137,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          排序算法
+          6.希尔排序
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        排序算法
+        6.希尔排序
       </a>
       
         
@@ -5105,56 +5161,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    排序的定义
-  </a>
-  
-    <nav class="md-nav" aria-label="排序的定义">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    术语说明
+  <a href="#_1" class="md-nav__link">
+    算法描述
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    过程演示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    代码实现
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    排序算法分类
+    算法分析
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    算法复杂度
+    时间性能
   </a>
   
-    <nav class="md-nav" aria-label="算法复杂度">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    图片名词解释：
+    稳定性
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    比较和非比较的区别
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5162,6 +5206,76 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../007.MergeSort/" class="md-nav__link">
+        7.归并排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../008.QuickSort/" class="md-nav__link">
+        8.快速排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../009.HeapSort/" class="md-nav__link">
+        9.堆排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../010.CountingSort/" class="md-nav__link">
+        10.计数排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../011.BucketSort/" class="md-nav__link">
+        11.桶排序
+      </a>
     </li>
   
 
@@ -5215,50 +5329,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../BubbleSort/" class="md-nav__link">
-        冒泡排序
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../BucketSort/" class="md-nav__link">
-        桶排序
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../CachingAlgorithm/" class="md-nav__link">
         缓存算法
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../CountingSort/" class="md-nav__link">
-        计数排序
       </a>
     </li>
   
@@ -5313,34 +5385,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../HeapSort/" class="md-nav__link">
-        堆排序
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../InsertionSort/" class="md-nav__link">
-        插入排序 (直接插入排序)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../InterpolationLookup/" class="md-nav__link">
         插值查找
       </a>
@@ -5383,34 +5427,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../MergeSort/" class="md-nav__link">
-        归并排序
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../QuickSort/" class="md-nav__link">
-        QuickSort
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../RadixSort/" class="md-nav__link">
         基数排序
       </a>
@@ -5439,36 +5455,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../SelectionSort/" class="md-nav__link">
-        选择排序
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../SequentialSearch/" class="md-nav__link">
         顺序查找
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ShellSort/" class="md-nav__link">
-        希尔排序
       </a>
     </li>
   
@@ -9880,56 +9868,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    排序的定义
-  </a>
-  
-    <nav class="md-nav" aria-label="排序的定义">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    术语说明
+  <a href="#_1" class="md-nav__link">
+    算法描述
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    过程演示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    代码实现
+  </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    排序算法分类
+    算法分析
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    算法复杂度
+    时间性能
   </a>
   
-    <nav class="md-nav" aria-label="算法复杂度">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    图片名词解释：
+    稳定性
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    比较和非比较的区别
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -9948,46 +9924,94 @@
                   
 
 
-<h1 id="_1">排序算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h4 id="_2">排序的定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>对一序列对象根据某个关键字进行排序。</p>
-<h6 id="_3">术语说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
+<h1 id="6">6.希尔排序<a class="headerlink" href="#6" title="Permanent link">&para;</a></h1>
+<p>希尔排序是希尔（Donald Shell）  于 1959 年提出的一种排序算法。
+希尔排序也是一种插入排序，它是简单插入排序经过改进之后的一个更高效的版本，也称为缩小增量排序，同时该算法是冲破 O(n2）的第一批算法之一。
+它与插入排序的不同之处在于，它会优先比较距离较远的元素。
+希尔排序又叫缩小增量排序。</p>
+<p>希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；
+随着增量逐渐减少，每组包含的关键词越来越多，当增量减至 1 时，整个文件恰被分成一组，算法便终止。</p>
+<h6 id="_1">算法描述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h6>
+<p>我们来看下希尔排序的基本步骤，在此我们选择增量 gap=length/2，缩小增量继续以 gap = gap/2 的方式，这种增量选择我们可以用一个序列来表示，{n/2,(n/2)/2…1}，称为增量序列。
+希尔排序的增量序列的选择与证明是个数学难题，我们选择的这个增量序列是比较常用的，也是希尔建议的增量，称为希尔增量，但其实这个增量序列不是最优的。
+此处我们做示例使用希尔增量。</p>
+<p>先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，具体算法描述：</p>
 <ul>
-<li>稳定  ：如果 a 原本在 b 前面，而 a=b，排序之后 a 仍然在 b 的前面；</li>
-<li>不稳定  ：如果 a 原本在 b 的前面，而 a=b，排序之后 a 可能会出现在 b 的后面；</li>
-<li>内排序  ：所有排序操作都在内存中完成；</li>
-<li>外排序  ：由于数据太大，因此把数据放在磁盘中，而排序通过磁盘和内存的数据传输才能进行；</li>
-<li>时间复杂度  ： 一个算法执行所耗费的时间。</li>
-<li>空间复杂度  ：运行完一个程序所需内存的大小。</li>
+<li>步骤 1：选择一个增量序列 t1，t2，…，tk，其中 ti&gt;tj，tk=1；</li>
+<li>步骤 2：按增量序列个数 k，对序列进行 k 趟排序；</li>
+<li>步骤 3：每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。
+  仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</li>
 </ul>
-<h4 id="_4">排序算法分类<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>十种常见排序算法可以分为两大类：</p>
+<h6 id="_2">过程演示<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h6>
+<p><img alt="希尔排序1" src="../../image/c3/ss-2.jpg" /></p>
+<p><img alt="希尔排序2" src="../../image/c3/ss-3.gif" /></p>
+<h6 id="_3">代码实现<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">algorithm.sort</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Arrays</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ShellSort</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;原始数组：&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">array</span><span class="p">));</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;排序后数组：&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">ShellSort</span><span class="p">.</span><span class="na">shell</span><span class="p">(</span><span class="n">array</span><span class="p">)));</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="nf">shell</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">array</span><span class="p">;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="p">,</span><span class="w"> </span><span class="n">preIndex</span><span class="p">,</span><span class="w"> </span><span class="n">gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">gap</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gap</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">                </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">                </span><span class="n">preIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">gap</span><span class="p">;</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">                </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">preIndex</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="n">preIndex</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="n">preIndex</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">gap</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">                    </span><span class="n">array</span><span class="o">[</span><span class="n">preIndex</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">gap</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="n">preIndex</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">                    </span><span class="n">preIndex</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">gap</span><span class="p">;</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">                </span><span class="n">array</span><span class="o">[</span><span class="n">preIndex</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">gap</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">            </span><span class="n">gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gap</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">array</span><span class="p">;</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="p">}</span>
+</span></code></pre></div>
+<h6 id="_4">算法分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h6>
 <ul>
-<li>比较类排序：通过比较来决定元素间的相对次序，
-  由于其时间复杂度不能突破 O(nlogn)，
-  因此也称为非线性时间比较类排序。</li>
-<li>非比较类排序：不通过比较来决定元素间的相对次序，
-  它可以突破基于比较排序的时间下界，以线性时间运行，
-  因此也称为线性时间非比较类排序。</li>
+<li>最佳情况：T(n) = O(nlog2 n)</li>
+<li>最坏情况：T(n) = O(nlog2 n)</li>
+<li>平均情况：T(n) =O(nlog2n)</li>
 </ul>
-<p><img alt="排序算法分类" src="../../image/c3/sa-1.png" /></p>
-<h4 id="_5">算法复杂度<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p><img alt="排序算法时间复杂度1" src="../../image/c3/sa-2.png" /></p>
-<p><img alt="排序算法时间复杂度2" src="../../image/c3/sa-3.jpg" /></p>
-<h6 id="_6">图片名词解释：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h6>
-<ul>
-<li>n: 数据规模</li>
-<li>k: “桶”的个数</li>
-<li>In-place: 占用常数内存，不占用额外内存</li>
-<li>Out-place: 占用额外内存</li>
-</ul>
-<h6 id="_7">比较和非比较的区别<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h6>
-<p>常见的快速排序、归并排序、堆排序、冒泡排序   等属于比较排序  。在排序的最终结果里，元素之间的次序依赖于它们之间的比较。每个数都必须和其他数进行比较，才能确定自己的位置  。</p>
-<p>在冒泡排序之类的排序中，问题规模为 n，又因为需要比较 n 次，所以平均时间复杂度为 O(n²)。在归并排序、快速排序之类的排序中，问题规模通过分治法消减为 logN 次，所以时间复杂度平均 O(nlogn)。</p>
-<p>比较排序的优势是，适用于各种规模的数据，也不在乎数据的分布，都能进行排序。可以说，比较排序适用于一切需要排序的情况。</p>
-<p>计数排序、基数排序、桶排序则属于非比较排序  。非比较排序是通过确定每个元素之前，应该有多少个元素来排序。针对数组 arr，计算 arr[i]之前有多少个元素，则唯一确定了 arr[i]在排序后数组中的位置  。</p>
-<p>非比较排序只要确定每个元素之前的已有的元素个数即可，所有一次遍历即可解决。算法时间复杂度 O(n)。</p>
-<p>非比较排序时间复杂度底，但由于非比较排序需要占用空间来确定唯一位置。所以对数据规模和数据分布有一定的要求。</p>
+<p>希尔排序的核心在于间隔序列的设定。
+既可以提前设定好间隔序列，也可以动态的定义间隔序列。
+动态定义间隔序列的算法是《算法（第 4 版）》的合著者 Robert Sedgewick 提出的</p>
+<h6 id="_5">时间性能<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h6>
+<p>1．增量序列的选择
+Shell 排序的执行时间依赖于增量序列。
+好的增量序列的共同特征：
+① 最后一个增量必须为 1；
+② 应该尽量避免序列中的值(尤其是相邻的值)互为倍数的情况。
+有人通过大量的实验，给出了较好的结果：当 n 较大时，比较和移动的次数约在 n^1.25 到(1.6n)^1.25 之间。</p>
+<p>2．Shell 排序的时间性能优于直接插入排序
+希尔排序的时间性能优于直接插入排序的原因：
+① 当文件初态基本有序时直接插入排序所需的比较和移动次数均较少。
+② 当 n 值较小时，n 和 的差别也较小，即直接插入排序的最好时间复杂度 O(n)和最坏时间复杂度 0( )差别不大。
+③ 在希尔排序开始时增量较大，分组较多，每组的记录数目少，故各组内直接插入较快，后来增量 di 逐渐缩小，分组数逐渐减少，而各组的记录数目逐渐增多，但由于已经按 di-1 作为距离排过序，使文件较接近于有序状态，所以新的一趟排序过程也较快。
+因此，希尔排序在效率上较直接插入排序有较大的改进。</p>
+<h6 id="_6">稳定性<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h6>
+<p>由于多次插入排序，我们知道一次插入排序是稳定的，
+不会改变相同元素的相对顺序，但在不同的插入排序过程中，
+相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，
+所以 shell 排序是不稳定的。</p>
 
 
 
@@ -10009,7 +10033,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../1.%E7%AE%97%E6%B3%95/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 算法分类" rel="prev">
+          <a href="../005.InsertionSort/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 5.插入排序 (直接插入排序)" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -10018,20 +10042,20 @@
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                算法分类
+                5.插入排序 (直接插入排序)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../BigDataAlgorithm/" class="md-footer__link md-footer__link--next" aria-label="下一页: 大数据算法" rel="next">
+          <a href="../007.MergeSort/" class="md-footer__link md-footer__link--next" aria-label="下一页: 7.归并排序" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                大数据算法
+                7.归并排序
               </div>
             </div>
             <div class="md-footer__button md-icon">
