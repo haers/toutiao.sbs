@@ -2916,17 +2916,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/java/other/</loc>
+         <lastmod>2023-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java/other/decompiler/</loc>
+         <lastmod>2023-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java/other/java-docker/</loc>
+         <lastmod>2023-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java/other/jdk/</loc>
+         <lastmod>2023-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/other/company-blacklist/</loc>
          <lastmod>2023-03-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/other/ftp/</loc>
-         <lastmod>2023-03-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/other/git/</loc>
+         <loc>https://toutiao.sbs/other/experience-share/</loc>
          <lastmod>2023-03-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2937,11 +2952,6 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/other/markdown/</loc>
-         <lastmod>2023-03-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/other/ssh/</loc>
          <lastmod>2023-03-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2966,37 +2976,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/other/cms/gitbook/</loc>
-         <lastmod>2023-03-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://toutiao.sbs/other/cms/mac-cms/</loc>
          <lastmod>2023-03-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://toutiao.sbs/other/independent-developer/</loc>
-         <lastmod>2023-03-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/other/java/</loc>
-         <lastmod>2023-03-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/other/java/decompiler/</loc>
-         <lastmod>2023-03-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/other/java/java-docker/</loc>
-         <lastmod>2023-03-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://toutiao.sbs/other/java/jdk/</loc>
          <lastmod>2023-03-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
