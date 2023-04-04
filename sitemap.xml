@@ -3006,12 +3006,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/other/java/java-mytatis/</loc>
+         <lastmod>2023-04-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/other/java/java-timer/</loc>
          <lastmod>2023-04-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://toutiao.sbs/other/java/lombok-automatic-injection/</loc>
+         <lastmod>2023-04-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/java/mybatis-generator/</loc>
+         <lastmod>2023-04-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/java/mybatis-page/</loc>
          <lastmod>2023-04-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
