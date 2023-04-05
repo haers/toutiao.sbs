@@ -3061,6 +3061,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/other/miscellaneous/monitor/</loc>
+         <lastmod>2023-04-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/other/miscellaneous/multi-tenant/</loc>
          <lastmod>2023-04-05</lastmod>
          <changefreq>daily</changefreq>
