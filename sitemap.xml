@@ -2996,12 +2996,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/other/git/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/git/git-The-authenticity-of-host-can-not-be-established/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/other/high-quality-article/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://toutiao.sbs/other/independent-developer/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/java/Gaode-map-calculates-the-distance-between-two-points-java/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
