@@ -3006,6 +3006,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/other/java/idea/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/other/java/java-guava/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
@@ -3041,7 +3046,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/other/java/non-mybatis-orm-tools/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/other/mac/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/mac/mac-google-chrome/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3052,6 +3067,11 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/other/mac/mac-vpn/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/miscellaneous/brew/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3107,6 +3127,11 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/other/team/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/windows/tools/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
