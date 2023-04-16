@@ -3036,6 +3036,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/other/idea/</loc>
+         <lastmod>2023-04-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/idea/idea-uses-statistics-plug--in-statistical-code-quantity/</loc>
+         <lastmod>2023-04-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/other/independent-developer/</loc>
          <lastmod>2023-04-16</lastmod>
          <changefreq>daily</changefreq>
@@ -3232,6 +3242,11 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/spring/spring-multipartFile-file/</loc>
+         <lastmod>2023-04-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/spring/spring-authorization-server/</loc>
          <lastmod>2023-04-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
