@@ -3296,12 +3296,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/spring/spring-authorization-server/jwt-tutorial/</loc>
+         <lastmod>2023-04-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/spring/spring-authorization-server/oauth-grant-types/</loc>
+         <lastmod>2023-04-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/spring/spring-authorization-server/security-base/</loc>
          <lastmod>2023-04-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/spring/spring-authorization-server/spring-security-start/</loc>
+         <loc>https://toutiao.sbs/spring/spring-authorization-server/spring-security-oauth2-authorization-server-demo/</loc>
+         <lastmod>2023-04-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/spring/spring-authorization-server/spring-security-relation/</loc>
          <lastmod>2023-04-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
