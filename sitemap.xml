@@ -2221,6 +2221,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/java/annotation/</loc>
+         <lastmod>2023-04-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java/annotation/Documented/</loc>
+         <lastmod>2023-04-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java/annotation/Inherited/</loc>
+         <lastmod>2023-04-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/java/annotation/Target/</loc>
+         <lastmod>2023-04-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/java/java%E5%BF%83%E5%BE%97/basic-knowledge/HashMap%E7%9A%84%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6/</loc>
          <lastmod>2023-04-18</lastmod>
          <changefreq>daily</changefreq>
@@ -3272,6 +3292,11 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/spring/spring-authorization-server/</loc>
+         <lastmod>2023-04-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/spring/spring-authorization-server/security-base/</loc>
          <lastmod>2023-04-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
