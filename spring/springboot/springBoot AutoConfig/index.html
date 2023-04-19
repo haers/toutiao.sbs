@@ -13165,7 +13165,7 @@
 </span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>
 </span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="1_1">1、写个自己的自动配置类<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<h3 id="1_1">1、写个自己的自动配置类<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.autoconfigure.condition.ConditionalOnProperty</span><span class="p">;</span>
 </span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.context.annotation.Configuration</span><span class="p">;</span>
 </span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
@@ -13182,19 +13182,19 @@
 </span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="p">}</span>
 </span></code></pre></div>
-<h4 id="2springfactories">2、创建spring.factories文件<a class="headerlink" href="#2springfactories" title="Permanent link">&para;</a></h4>
+<h3 id="2springfactories">2、创建spring.factories文件<a class="headerlink" href="#2springfactories" title="Permanent link">&para;</a></h3>
 <p>然后在<code>resources</code>目录下新建<code>META-INF</code>目录，并创建<code>spring.factories</code>文件：</p>
 <p>properties</p>
 <div class="language-properties highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># Auto Configure</span>
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="na">org.springframework.boot.autoconfigure.EnableAutoConfiguration</span><span class="o">=</span>\
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="s">com.xiaocai.base.demo.auto.MyHelloWorldConfiguration</span>
 </span></code></pre></div>
-<h4 id="3_1">3、添加配置<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
+<h3 id="3_1">3、添加配置<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <p>在配置文件<code>application.properties</code>中添加</p>
 <p>properties</p>
 <div class="language-properties highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="na">helloWorld.enabled</span><span class="o">=</span><span class="s">true</span>
 </span></code></pre></div>
-<h4 id="4_2">4、测试一下<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h4>
+<h3 id="4_2">4、测试一下<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cm">/**</span>
 </span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="cm"> * @author Xiaocai.Zhang</span>
 </span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="cm"> */</span>
