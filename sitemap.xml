@@ -3311,6 +3311,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/spring/spring/annonation-EnableConfigurationProperties/</loc>
+         <lastmod>2023-04-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/spring/spring-authorization-server/</loc>
          <lastmod>2023-04-19</lastmod>
          <changefreq>daily</changefreq>
@@ -3357,6 +3362,11 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/spring/springboot/spring-Factories-will-be-abandoned/</loc>
+         <lastmod>2023-04-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/spring/springboot/springBoot%20AutoConfig/</loc>
          <lastmod>2023-04-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
