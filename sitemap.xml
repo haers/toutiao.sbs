@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/db/mysql/mysql-java-sql-SQLException-the-server-time-zone-value-exception/</loc>
+         <lastmod>2023-04-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/interview/</loc>
          <lastmod>2023-04-23</lastmod>
          <changefreq>daily</changefreq>
