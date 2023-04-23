@@ -9112,6 +9112,54 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_25" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_25" id="__nav_3_25_label" tabindex="0">
+          Video
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_25_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_25">
+          <span class="md-nav__icon md-icon"></span>
+          Video
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/video/mac-recording-video/" class="md-nav__link">
+        mac 录制视频
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -10051,7 +10099,7 @@
       
         <li class="md-nav__item">
   <a href="#spring-security-enableglobalmethodsecurity" class="md-nav__link">
-    spring security 注解@EnableGlobalMethodSecurity详解
+    spring security 注解@EnableGlobalMethodSecurity 详解
   </a>
   
 </li>
@@ -10757,7 +10805,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/cms/open-wiki/" class="md-nav__link">
-        wiki开源项目文档
+        wiki 开源项目文档
       </a>
     </li>
   
@@ -12188,7 +12236,7 @@
       
         <li class="md-nav__item">
   <a href="#spring-security-enableglobalmethodsecurity" class="md-nav__link">
-    spring security 注解@EnableGlobalMethodSecurity详解
+    spring security 注解@EnableGlobalMethodSecurity 详解
   </a>
   
 </li>
@@ -12212,8 +12260,8 @@
 
 
 <h1 id="spring-security">spring security 注解备份<a class="headerlink" href="#spring-security" title="Permanent link">&para;</a></h1>
-<h2 id="spring-security-enableglobalmethodsecurity">spring security 注解@EnableGlobalMethodSecurity详解<a class="headerlink" href="#spring-security-enableglobalmethodsecurity" title="Permanent link">&para;</a></h2>
-<p><strong>1、Spring Security默认是禁用注解的，要想开启注解，需要在继承WebSecurityConfigurerAdapter的类上加@EnableGlobalMethodSecurity注解，来判断用户对某个控制层的方法是否具有访问权限</strong></p>
+<h2 id="spring-security-enableglobalmethodsecurity">spring security 注解<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableGlobalMethodSecurity" title="GitHub User: EnableGlobalMethodSecurity">@EnableGlobalMethodSecurity</a> 详解<a class="headerlink" href="#spring-security-enableglobalmethodsecurity" title="Permanent link">&para;</a></h2>
+<p><strong>1、Spring Security 默认是禁用注解的，要想开启注解，需要在继承 WebSecurityConfigurerAdapter 的类上加<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableGlobalMethodSecurity" title="GitHub User: EnableGlobalMethodSecurity">@EnableGlobalMethodSecurity</a> 注解，来判断用户对某个控制层的方法是否具有访问权限</strong></p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@Configuration</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nd">@EnableWebSecurity</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nd">@EnableGlobalMethodSecurity</span><span class="p">(</span><span class="n">prePostEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
@@ -12221,7 +12269,7 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w"> </span><span class="p">...........................</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><strong>2、例如下面代码就表示如果用户具有admin角色，就能访问listAllUsers方法，但是如果方法前不加@preAuthorize注解，意味着所有用户都能访问listAllUsers</strong></p>
+<p><strong>2、例如下面代码就表示如果用户具有 admin 角色，就能访问 listAllUsers 方法，但是如果方法前不加<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/preAuthorize" title="GitHub User: preAuthorize">@preAuthorize</a> 注解，意味着所有用户都能访问 listAllUsers</strong></p>
 <p><strong>方法</strong></p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="nd">@PreAuthorize</span><span class="p">(</span><span class="s">&quot;hasRole(&#39;admin&#39;)&quot;</span><span class="p">)</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/user/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RequestMethod</span><span class="p">.</span><span class="na">GET</span><span class="p">)</span>
@@ -12234,19 +12282,19 @@
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span>
 </span></code></pre></div>
-<p><strong>3、@EnableGlobalMethodSecurity详解</strong></p>
+<p><strong>3、<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableGlobalMethodSecurity" title="GitHub User: EnableGlobalMethodSecurity">@EnableGlobalMethodSecurity</a> 详解</strong></p>
 <p>3.1、<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableGlobalMethodSecurity" title="GitHub User: EnableGlobalMethodSecurity">@EnableGlobalMethodSecurity</a>(securedEnabled=true)
-     开启<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Secured" title="GitHub User: Secured">@Secured</a> 注解过滤权限</p>
+开启<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Secured" title="GitHub User: Secured">@Secured</a> 注解过滤权限</p>
 <p>3.2、<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableGlobalMethodSecurity" title="GitHub User: EnableGlobalMethodSecurity">@EnableGlobalMethodSecurity</a>(jsr250Enabled=true)</p>
-<p>​     开启<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/RolesAllowed" title="GitHub User: RolesAllowed">@RolesAllowed</a> 注解过滤权限 </p>
+<p>​ 开启<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/RolesAllowed" title="GitHub User: RolesAllowed">@RolesAllowed</a> 注解过滤权限</p>
 <p>3.3、<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/EnableGlobalMethodSecurity" title="GitHub User: EnableGlobalMethodSecurity">@EnableGlobalMethodSecurity</a>(prePostEnabled=true)
-     使用表达式时间方法级别的安全性 4个注解可用</p>
+使用表达式时间方法级别的安全性 4 个注解可用</p>
 <ul>
 <li>
 <p><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/PreAuthorize" title="GitHub User: PreAuthorize">@PreAuthorize</a> 在方法调用之前,基于表达式的计算结果来限制对方法的访问</p>
 </li>
 <li>
-<p><em><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/PostAuthorize" title="GitHub User: PostAuthorize">@PostAuthorize</a> 允许方法调用,但是如果表达式计算结果为false,将抛出一个安全性异常</em></p>
+<p><em><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/PostAuthorize" title="GitHub User: PostAuthorize">@PostAuthorize</a> 允许方法调用,但是如果表达式计算结果为 false,将抛出一个安全性异常</em></p>
 </li>
 <li><em><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/PostFilter" title="GitHub User: PostFilter">@PostFilter</a> 允许方法调用,但必须按照表达式来过滤方法的结果</em></li>
 <li><strong><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/PreFilter" title="GitHub User: PreFilter">@PreFilter</a> 允许方法调用,但必须在进入方法之前过滤输入值</strong></li>

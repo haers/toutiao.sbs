@@ -9112,6 +9112,54 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_25" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_25" id="__nav_3_25_label" tabindex="0">
+          Video
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_25_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_25">
+          <span class="md-nav__icon md-icon"></span>
+          Video
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/video/mac-recording-video/" class="md-nav__link">
+        mac 录制视频
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -10141,7 +10189,7 @@
       
         <li class="md-nav__item">
   <a href="#springboot_1" class="md-nav__link">
-    什么是SpringBoot
+    什么是 SpringBoot
   </a>
   
 </li>
@@ -10189,10 +10237,10 @@
       
         <li class="md-nav__item">
   <a href="#enable" class="md-nav__link">
-    @Enable模块驱动
+    @Enable 模块驱动
   </a>
   
-    <nav class="md-nav" aria-label="@Enable模块驱动">
+    <nav class="md-nav" aria-label="@Enable 模块驱动">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -10333,8 +10381,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2springfactories" class="md-nav__link">
-    2、创建spring.factories文件
+  <a href="#2-springfactories" class="md-nav__link">
+    2、创建 spring.factories 文件
   </a>
   
 </li>
@@ -10969,7 +11017,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/cms/open-wiki/" class="md-nav__link">
-        wiki开源项目文档
+        wiki 开源项目文档
       </a>
     </li>
   
@@ -12400,7 +12448,7 @@
       
         <li class="md-nav__item">
   <a href="#springboot_1" class="md-nav__link">
-    什么是SpringBoot
+    什么是 SpringBoot
   </a>
   
 </li>
@@ -12448,10 +12496,10 @@
       
         <li class="md-nav__item">
   <a href="#enable" class="md-nav__link">
-    @Enable模块驱动
+    @Enable 模块驱动
   </a>
   
-    <nav class="md-nav" aria-label="@Enable模块驱动">
+    <nav class="md-nav" aria-label="@Enable 模块驱动">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -12592,8 +12640,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2springfactories" class="md-nav__link">
-    2、创建spring.factories文件
+  <a href="#2-springfactories" class="md-nav__link">
+    2、创建 spring.factories 文件
   </a>
   
 </li>
@@ -12636,12 +12684,12 @@
 
 
 <h1 id="springboot">SpringBoot 自动装配<a class="headerlink" href="#springboot" title="Permanent link">&para;</a></h1>
-<h2 id="springboot_1">什么是SpringBoot<a class="headerlink" href="#springboot_1" title="Permanent link">&para;</a></h2>
+<h2 id="springboot_1">什么是 SpringBoot<a class="headerlink" href="#springboot_1" title="Permanent link">&para;</a></h2>
 <p>SpringBoot 自动装配。</p>
-<p>Springboot主要思想是遵循”约定优于配置”的设计，使用注解对一些常规的配置项做默认配置，减少使用XML配置，让你的项目结构快速搭建运行起来。</p>
-<p>Springboot针对主流常用的框架技术将其封装成starter组件，现在引入框架只要引入一个starter，你就可以使用这个框架，只需少量的配置甚至是不需要任何配置就可以实现快速集成。可以让开发者关注业务，减少技术开发成本。</p>
+<p>Springboot 主要思想是遵循”约定优于配置”的设计，使用注解对一些常规的配置项做默认配置，减少使用 XML 配置，让你的项目结构快速搭建运行起来。</p>
+<p>Springboot 针对主流常用的框架技术将其封装成 starter 组件，现在引入框架只要引入一个 starter，你就可以使用这个框架，只需少量的配置甚至是不需要任何配置就可以实现快速集成。可以让开发者关注业务，减少技术开发成本。</p>
 <h2 id="_1">自动装配原理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Spring Boot中的自动装配常用技术：</p>
+<p>Spring Boot 中的自动装配常用技术：</p>
 <p>1、Spring 模式注解装配。 如<code>@AutoConfiguration</code>，<code>@Configration</code>。</p>
 <p>2、Spring <code>@Enable</code>模块装配。通过<code>@EnableXxx</code>注解灵活开启某些模块组件，如<code>@EnableAutoConfiguration</code>开启默认组件的自动化装配。</p>
 <p>3、Spring 条件装配装。通过<code>@ConditionalOnXxx</code>注解进行条件判断是否加载相关组件。</p>
@@ -12650,7 +12698,7 @@
 <h3 id="_3">模式注解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p><code>stereotype annotation</code> 一般翻译为模式注解，样板注解。</p>
 <h3 id="_4">什么叫模式注解？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>比如Spring中常见的模式注解有<code>@Component</code>，<code>@Service</code>，<code>@Repository</code>，<code>@Controller</code> ，后面3个是<code>@Component</code>的派生注解，凡是被<code>@Component</code>标注的类都会被Spring扫描并纳入到IOC容器中。那么后面三个注解就有<code>@Component</code>相同的作用。</p>
+<p>比如 Spring 中常见的模式注解有<code>@Component</code>，<code>@Service</code>，<code>@Repository</code>，<code>@Controller</code> ，后面 3 个是<code>@Component</code>的派生注解，凡是被<code>@Component</code>标注的类都会被 Spring 扫描并纳入到 IOC 容器中。那么后面三个注解就有<code>@Component</code>相同的作用。</p>
 <p><code>@Component</code> 定义：</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@Target</span><span class="p">({</span><span class="n">ElementType</span><span class="p">.</span><span class="na">TYPE</span><span class="p">})</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nd">@Retention</span><span class="p">(</span><span class="n">RetentionPolicy</span><span class="p">.</span><span class="na">RUNTIME</span><span class="p">)</span>
@@ -12672,13 +12720,13 @@
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">value</span><span class="p">()</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>可以发现 <code>@Controller</code>注解是被<code>@Component</code> 修饰的，确实是从<code>@Component</code>派生出来的模式注解，在开发中我们使用过很多次，肯定是能够被扫描到IOC容器中的。</p>
+<p>可以发现 <code>@Controller</code>注解是被<code>@Component</code> 修饰的，确实是从<code>@Component</code>派生出来的模式注解，在开发中我们使用过很多次，肯定是能够被扫描到 IOC 容器中的。</p>
 <p>还有<code>@RestController</code>, <code>@RequestMapping</code>， <code>@ResponseBody</code>等之类的。</p>
 <blockquote>
 <p>模式注解，可以理解为就是这个注解专门用来处理解决某个事情的。让我联想到设计模式的单一职责原则。注解的本质不也是一个类吗？只是这个类比较特殊，可以对其他元素进行注解修饰。</p>
 </blockquote>
 <h3 id="_5">模式注解装配<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>那么在SpringBoot中，也有不少派生注解，如<code>@SpringBootApplication</code>，<code>@Configuration</code>，<code>@AutoConfiguration</code> 注解。比如<code>SpringBootApplication</code> 注解：</p>
+<p>那么在 SpringBoot 中，也有不少派生注解，如<code>@SpringBootApplication</code>，<code>@Configuration</code>，<code>@AutoConfiguration</code> 注解。比如<code>SpringBootApplication</code> 注解：</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@Target</span><span class="p">({</span><span class="n">ElementType</span><span class="p">.</span><span class="na">TYPE</span><span class="p">})</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nd">@Retention</span><span class="p">(</span><span class="n">RetentionPolicy</span><span class="p">.</span><span class="na">RUNTIME</span><span class="p">)</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nd">@Documented</span>
@@ -12732,16 +12780,16 @@
 </span></code></pre></div>
 <p>这一层一层的像不像楼梯一样可爱？ 🤣</p>
 <p>这些都是派出来的注解。</p>
-<h2 id="enable">@Enable模块驱动<a class="headerlink" href="#enable" title="Permanent link">&para;</a></h2>
+<h2 id="enable"><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Enable" title="GitHub User: Enable">@Enable</a> 模块驱动<a class="headerlink" href="#enable" title="Permanent link">&para;</a></h2>
 <h3 id="_6">什么是模块驱动？<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>找个例子怎么判断呢？在逐渐转向面向注解开发之后，模块驱动典型特征是**以<code>@Enable</code>开头的注解**。</p>
-<p>比如Spring 中 开启web模块的<code>@EnableWebMvc</code>，开启事物管理的<code>@EnableTransactionManagement</code>，开启缓存模块的<code>@EnableCaching</code>，开启异步执行的<code>@EnableAsync</code>，开启响应编程的<code>@EnableWebFlux</code>等。</p>
-<p>比如SpringBoot里的自动装配<code>@EnableAutoConfiguration</code>，开启属性绑定的<code>@EnableConfigurationProperties</code>,</p>
+<p>比如 Spring 中 开启 web 模块的<code>@EnableWebMvc</code>，开启事物管理的<code>@EnableTransactionManagement</code>，开启缓存模块的<code>@EnableCaching</code>，开启异步执行的<code>@EnableAsync</code>，开启响应编程的<code>@EnableWebFlux</code>等。</p>
+<p>比如 SpringBoot 里的自动装配<code>@EnableAutoConfiguration</code>，开启属性绑定的<code>@EnableConfigurationProperties</code>,</p>
 <p>模块驱动其实就是功能组件开发模块化过程，需要使用的时候通过一个注解开启模块的使用，不使用的时候不加载模块相关组件和配置。</p>
 <blockquote>
 <p>模块驱动可以简化组件使用时的配置步骤，实现按需装配，典型的可插拔式使用，同时屏蔽组件集合装配的细节。</p>
 </blockquote>
-<p>Srping实现<code>@Enable</code>模块驱动的方法大致分为两类: <strong>注解驱动</strong> 和 <strong>接口编程</strong>。</p>
+<p>Srping 实现<code>@Enable</code>模块驱动的方法大致分为两类: <strong>注解驱动</strong> 和 <strong>接口编程</strong>。</p>
 <h3 id="_7">实现方式一：注解驱动<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>注解驱动的实现<code>@Enable</code>模块驱动，可以参考现有的<code>@EnableWebMvc</code>或<code>EnableScheduling</code>：</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@Target</span><span class="p">({</span><span class="n">ElementType</span><span class="p">.</span><span class="na">TYPE</span><span class="p">})</span>
@@ -12769,20 +12817,20 @@
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>可以看到里面使用<code>@Bean</code>的方式注入了一个Bean。</p>
+<p>可以看到里面使用<code>@Bean</code>的方式注入了一个 Bean。</p>
 <p>有人就要说了这个玩意怎么就能加入到容器呢？</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ScheduledAnnotationBeanPostProcessor</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ScheduledTaskHolder</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="n">MergedBeanDefinitionPostProcessor</span><span class="p">,</span><span class="w"> </span><span class="n">DestructionAwareBeanPostProcessor</span><span class="p">,</span><span class="w"> </span><span class="n">Ordered</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">EmbeddedValueResolverAware</span><span class="p">,</span><span class="w"> </span><span class="n">BeanNameAware</span><span class="p">,</span><span class="w"> </span><span class="n">BeanFactoryAware</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">ApplicationContextAware</span><span class="p">,</span><span class="w"> </span><span class="n">SmartInitializingSingleton</span><span class="p">,</span><span class="w"> </span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ScheduledAnnotationBeanPostProcessor</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ScheduledTaskHolder</span><span class="p">,</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="n">MergedBeanDefinitionPostProcessor</span><span class="p">,</span><span class="w"> </span><span class="n">DestructionAwareBeanPostProcessor</span><span class="p">,</span><span class="w"> </span><span class="n">Ordered</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">EmbeddedValueResolverAware</span><span class="p">,</span><span class="w"> </span><span class="n">BeanNameAware</span><span class="p">,</span><span class="w"> </span><span class="n">BeanFactoryAware</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">ApplicationContextAware</span><span class="p">,</span><span class="w"> </span><span class="n">SmartInitializingSingleton</span><span class="p">,</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">ApplicationListener</span><span class="o">&lt;</span><span class="n">ContextRefreshedEvent</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">DisposableBean</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>这个名字很长的玩意<code>ScheduledAnnotationBeanPostProcessor</code> 实现了那么多接口，乍一看是很吓人啊~ 不过不要担心，里面有一堆熟悉spring的接口呀<code>BeanNameAware</code>,
-<code>BeanFactoryAware</code>，<code>ApplicationContextAware</code>，<code>SmartInitializingSingleton</code>。不说别的，就凭它实现了Spring的一系列接口，不能加入到容器，我吃了它。</p>
+<p>这个名字很长的玩意<code>ScheduledAnnotationBeanPostProcessor</code> 实现了那么多接口，乍一看是很吓人啊~ 不过不要担心，里面有一堆熟悉 spring 的接口呀<code>BeanNameAware</code>,
+<code>BeanFactoryAware</code>，<code>ApplicationContextAware</code>，<code>SmartInitializingSingleton</code>。不说别的，就凭它实现了 Spring 的一系列接口，不能加入到容器，我吃了它。</p>
 <blockquote>
-<p>基于注解驱动实现<code>@Enable</code>模块驱动，本质就是通过<code>@Import</code>注解来导入一个对应配置类，来实现将相应的模块组件注册到IOC容器中，那么这个模块对应的功能也就可以让程序使用。</p>
+<p>基于注解驱动实现<code>@Enable</code>模块驱动，本质就是通过<code>@Import</code>注解来导入一个对应配置类，来实现将相应的模块组件注册到 IOC 容器中，那么这个模块对应的功能也就可以让程序使用。</p>
 </blockquote>
 <h3 id="_8">注解驱动示例<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <h4 id="1bean">1、先定义个<code>Bean</code><a class="headerlink" href="#1bean" title="Permanent link">&para;</a></h4>
@@ -12859,7 +12907,7 @@
 </span></code></pre></div>
 <p>**结论：**使用<code>@EnableHelloWorld</code>通过导入配置<code>HelloWorldConfiguration</code>成功注册<code>HelloWorldService</code>组件。</p>
 <h3 id="import">关于<code>@Import</code>注解<a class="headerlink" href="#import" title="Permanent link">&para;</a></h3>
-<p><code>@Import</code>注解是Spring 注册组件的其中一种方式。</p>
+<p><code>@Import</code>注解是 Spring 注册组件的其中一种方式。</p>
 <p>一般如果是个普通的类，可以直接导入，导入的名字默认为全类名</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cm">/**</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="cm"> * @author Xiaocai.Zhang</span>
@@ -12900,7 +12948,7 @@
 </span></code></pre></div>
 <p>从代码可以看到，该类间接实现了<code>ImportSelector</code>接口。</p>
 <p>那<code>ImportSelector</code>接口又是干嘛的？</p>
-<p>刚才留了一个问题<code>@Import</code>要导入一堆组件怎么办？这个两个都有个Import关键字会不会有关系呢？</p>
+<p>刚才留了一个问题<code>@Import</code>要导入一堆组件怎么办？这个两个都有个 Import 关键字会不会有关系呢？</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">ImportSelector</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="cm">/**</span>
@@ -12910,10 +12958,10 @@
 </span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">     </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="nf">selectImports</span><span class="p">(</span><span class="n">AnnotationMetadata</span><span class="w"> </span><span class="n">importingClassMetadata</span><span class="p">);</span>
 </span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><code>ImportSelector</code>接口包含一个<code>selectImports()</code>方法，方法返回类的全类名数组，即需要导入到IOC容器中组件的全类名数组，包含一个<code>AnnotationMetadata</code>类型入参，通过这个参数我们可以获取到使用<code>ImportSelector</code>的类的全部注解信息。</p>
-<p>也就说是<code>@Import({CachingConfigurationSelector.class})</code> 这个东东其实是<code>CachingConfigurationSelector</code>类借助父类<code>AdviceModeImportSelector</code>实现了<code>ImportSelector</code>接口的特征，从而导入了一个组件全类名的数组，向IOC容器注册组件。</p>
+<p><code>ImportSelector</code>接口包含一个<code>selectImports()</code>方法，方法返回类的全类名数组，即需要导入到 IOC 容器中组件的全类名数组，包含一个<code>AnnotationMetadata</code>类型入参，通过这个参数我们可以获取到使用<code>ImportSelector</code>的类的全部注解信息。</p>
+<p>也就说是<code>@Import({CachingConfigurationSelector.class})</code> 这个东东其实是<code>CachingConfigurationSelector</code>类借助父类<code>AdviceModeImportSelector</code>实现了<code>ImportSelector</code>接口的特征，从而导入了一个组件全类名的数组，向 IOC 容器注册组件。</p>
 <blockquote>
-<p>接口编程实现@Enable模块驱动的本质是：通过@Import来导入<code>ImportSelector</code>接口的实现类，该实现类里可以定义需要注册到IOC容器中的组件，以此实现相应模块对应组件的注册。</p>
+<p>接口编程实现<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Enable" title="GitHub User: Enable">@Enable</a> 模块驱动的本质是：通过<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Import" title="GitHub User: Import">@Import</a> 来导入<code>ImportSelector</code>接口的实现类，该实现类里可以定义需要注册到 IOC 容器中的组件，以此实现相应模块对应组件的注册。</p>
 </blockquote>
 <p>多说一句：</p>
 <blockquote>
@@ -13033,7 +13081,7 @@
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
 </span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">FACTORIES_RESOURCE_LOCATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;META-INF/spring.factories&quot;</span><span class="p">;</span>
 </span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
-</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">ClassLoader</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">cache</span><span class="w"> </span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">ClassLoader</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">cache</span>
 </span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConcurrentReferenceHashMap</span><span class="p">();</span>
 </span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
 </span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="p">}</span>
@@ -13068,7 +13116,7 @@
 </span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="s">org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration,</span><span class="se">\</span>
 </span><span id="__span-24-26"><a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a><span class="s">org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration,</span><span class="se">\</span>
 </span></code></pre></div>
-<p>当启动类被<code>@EnableAutoConfiguration</code>标注后，上面所以配置在<code>org.springframework.boot.autoconfigure.EnableAutoConfiguration</code>中的所有类Spring都会去扫描，看是否可以纳入到IOC容器中进行管理。</p>
+<p>当启动类被<code>@EnableAutoConfiguration</code>标注后，上面所以配置在<code>org.springframework.boot.autoconfigure.EnableAutoConfiguration</code>中的所有类 Spring 都会去扫描，看是否可以纳入到 IOC 容器中进行管理。</p>
 <p>比如我们查看<code>org.springframework.boot.autoconfigure.aop.AopAutoConfiguration</code>的源码：</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nd">@Configuration</span><span class="p">(</span>
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="n">proxyBeanMethods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
@@ -13148,7 +13196,7 @@
 </span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="2springfactories">2、创建spring.factories文件<a class="headerlink" href="#2springfactories" title="Permanent link">&para;</a></h3>
+<h3 id="2-springfactories">2、创建 spring.factories 文件<a class="headerlink" href="#2-springfactories" title="Permanent link">&para;</a></h3>
 <p>然后在<code>resources</code>目录下新建<code>META-INF</code>目录，并创建<code>spring.factories</code>文件：</p>
 <p>properties</p>
 <div class="language-properties highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># Auto Configure</span>
