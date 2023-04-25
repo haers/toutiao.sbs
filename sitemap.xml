@@ -3026,12 +3026,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/other/markdown/</loc>
+         <loc>https://toutiao.sbs/other/scaffold/</loc>
          <lastmod>2023-04-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/other/scaffold/</loc>
+         <loc>https://toutiao.sbs/other/tutorial-website/</loc>
          <lastmod>2023-04-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3226,6 +3226,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/other/markdown/</loc>
+         <lastmod>2023-04-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/markdown/markdown-class-diagram/</loc>
+         <lastmod>2023-04-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/markdown/typora/</loc>
+         <lastmod>2023-04-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/other/miscellaneous/2023-Several-Free-and-Open-Source-Custom-Navigation-Website-Source-Codes-to-Share/</loc>
          <lastmod>2023-04-25</lastmod>
          <changefreq>daily</changefreq>
@@ -3381,11 +3396,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://toutiao.sbs/spring/spring-authorization-server/security-base/</loc>
-         <lastmod>2023-04-25</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://toutiao.sbs/spring/spring-authorization-server/spring-security-annotation/</loc>
          <lastmod>2023-04-25</lastmod>
          <changefreq>daily</changefreq>
@@ -3397,6 +3407,11 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/spring/spring-authorization-server/spring-security-relation/</loc>
+         <lastmod>2023-04-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/spring/spring-authorization-server/sso-auth2/</loc>
          <lastmod>2023-04-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3417,6 +3432,11 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/spring/springboot/springBoot%20AutoConfig/</loc>
+         <lastmod>2023-04-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/spring/springcloud/</loc>
          <lastmod>2023-04-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
