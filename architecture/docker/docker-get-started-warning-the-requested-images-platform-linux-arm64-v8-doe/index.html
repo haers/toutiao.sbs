@@ -18,14 +18,14 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../failed-to-solve-with-frontend-dockerfile-v0-failed-to-create-LLB-definition/">
+        <link rel="next" href="../docker-privileged/">
       
       <link rel="icon" href="../../../assets/favicon5.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Mac docker v8 arm碰到的问题 - 头条.SBS</title>
+        <title>Mac docker v8 arm 碰到的问题 - 头条.SBS</title>
       
     
     
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mac docker v8 arm碰到的问题
+              Mac docker v8 arm 碰到的问题
             
           </span>
         </div>
@@ -506,6 +506,82 @@
       <a href="../../../base/negative-binary-representation/" class="md-nav__link">
         负数的二进制如何表示
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/linux/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/linux/Linux-commonly-used-commands/" class="md-nav__link">
+        Linux 常用命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/linux/create-copy-cut-rename-clear-and-delete-commands-of-folders-under-the-linux/" class="md-nav__link">
+        linux 下文件夹的创建、复制、剪切、重命名、清空和删除命令
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -10262,7 +10338,7 @@
   
     <li class="md-nav__item">
       <a href="../../../db/mysql/mysql-java-sql-SQLException-the-server-time-zone-value-exception/" class="md-nav__link">
-        MySql数据库时区异常，java.sql.SQLException: The server time zone value 'xxx' is unrecognized or represents more than one time zone
+        MySql 数据库时区异常，java.sql.SQLException: The server time zone value 'xxx' is unrecognized or represents more than one time zone
       </a>
     </li>
   
@@ -10496,9 +10572,23 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Mac docker v8 arm碰到的问题
+        Mac docker v8 arm 碰到的问题
       </a>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-privileged/" class="md-nav__link">
+        docker --privileged=true 参数作用
+      </a>
     </li>
   
 
@@ -11610,7 +11700,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/mac/mac-running-SH-file/" class="md-nav__link">
-        Mac 运行sh文件，也就是传说中的shell脚本
+        Mac 运行 sh 文件，也就是传说中的 shell 脚本
       </a>
     </li>
   
@@ -12317,21 +12407,21 @@
   
 
 
-<h1 id="mac-docker-v8-arm">Mac docker v8 arm碰到的问题<a class="headerlink" href="#mac-docker-v8-arm" title="Permanent link">&para;</a></h1>
-<p>很少研究docker，有了云之后，有了管理平台后，很少去从头写Dockerfile。今天碰到问题很神奇</p>
+<h1 id="mac-docker-v8-arm">Mac docker v8 arm 碰到的问题<a class="headerlink" href="#mac-docker-v8-arm" title="Permanent link">&para;</a></h1>
+<p>很少研究 docker，有了云之后，有了管理平台后，很少去从头写 Dockerfile。今天碰到问题很神奇</p>
 <blockquote>
 <p>电脑：mac arm m1</p>
 <p>服务器：ubuntu</p>
 </blockquote>
-<p>经理了很多困难，终于在mac编译Dockerfile成功了，但是在服务器上就是不行，然后无限重启。只能查找原因。</p>
+<p>经理了很多困难，终于在 mac 编译 Dockerfile 成功了，但是在服务器上就是不行，然后无限重启。只能查找原因。</p>
 <p>报错如下：</p>
 <blockquote>
 <p>WARNING: The requested image's platform (linux/arm64/v8) does not match the detected host platform (linux/amd64) and no specific platform was requested</p>
 </blockquote>
-<p>解释下，ubuntu架构为linux/amd64，Mac arm 为 linux/arm64/v8</p>
+<p>解释下，ubuntu 架构为 linux/amd64，Mac arm 为 linux/arm64/v8</p>
 <p>尝试过以下的方案</p>
 <ul>
-<li>在mac上修改Dockerfile From源从v8改为linux/amd64架构源，也不行！</li>
+<li>在 mac 上修改 Dockerfile From 源从 v8 改为 linux/amd64 架构源，也不行！</li>
 <li>在上面的基础上，添加编译参数，不行！会导致报找不到镜像的异常！</li>
 </ul>
 <blockquote>
@@ -12339,10 +12429,10 @@
 </blockquote>
 <ul>
 <li>
-<p>buildx跨平台解决方案也不行</p>
+<p>buildx 跨平台解决方案也不行</p>
 </li>
 <li>
-<p>在1的基础上，将Dockerfile copy到服务器去生成镜像，然后可以了！！！</p>
+<p>在 1 的基础上，将 Dockerfile copy 到服务器去生成镜像，然后可以了！！！</p>
 </li>
 </ul>
 
@@ -12387,13 +12477,13 @@
         
         
           
-          <a href="../failed-to-solve-with-frontend-dockerfile-v0-failed-to-create-LLB-definition/" class="md-footer__link md-footer__link--next" aria-label="下一页: failed to solve with frontend dockerfile v0 failed to create LLB definition" rel="next">
+          <a href="../docker-privileged/" class="md-footer__link md-footer__link--next" aria-label="下一页: docker --privileged=true 参数作用" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                failed to solve with frontend dockerfile v0 failed to create LLB definition
+                docker --privileged=true 参数作用
               </div>
             </div>
             <div class="md-footer__button md-icon">

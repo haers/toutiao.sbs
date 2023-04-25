@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/architecture/docker/docker-privileged/</loc>
+         <lastmod>2023-04-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/architecture/docker/failed-to-solve-with-frontend-dockerfile-v0-failed-to-create-LLB-definition/</loc>
          <lastmod>2023-04-25</lastmod>
          <changefreq>daily</changefreq>
@@ -62,6 +67,21 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/base/negative-binary-representation/</loc>
+         <lastmod>2023-04-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/base/linux/</loc>
+         <lastmod>2023-04-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/base/linux/Linux-commonly-used-commands/</loc>
+         <lastmod>2023-04-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/base/linux/create-copy-cut-rename-clear-and-delete-commands-of-folders-under-the-linux/</loc>
          <lastmod>2023-04-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
