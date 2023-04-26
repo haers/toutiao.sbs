@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/</loc>
+         <lastmod>2023-04-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/architecture/docker/docker-get-started-warning-the-requested-images-platform-linux-arm64-v8-doe/</loc>
          <lastmod>2023-04-26</lastmod>
          <changefreq>daily</changefreq>
