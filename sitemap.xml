@@ -106,6 +106,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/db/mysql/Cannot-load-driver-class-com-mysql-cj-jdbc-Driver/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/db/mysql/com-mysql-jdbc-exceptions-jdbc4-MySQLNonTransientConnectionException/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/db/mysql/mvcc/</loc>
          <lastmod>2023-05-08</lastmod>
          <changefreq>daily</changefreq>
@@ -3182,6 +3192,11 @@
     </url>
     <url>
          <loc>https://toutiao.sbs/other/java/java-json/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://toutiao.sbs/other/java/java-lang-noclassdeffounderror-ch-qos-logback-core-joran-spi-joranexception-whi/</loc>
          <lastmod>2023-05-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
