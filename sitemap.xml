@@ -3291,6 +3291,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://toutiao.sbs/other/markdown/markdown-formatting-tool/</loc>
+         <lastmod>2023-05-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://toutiao.sbs/other/markdown/typora/</loc>
          <lastmod>2023-05-09</lastmod>
          <changefreq>daily</changefreq>
