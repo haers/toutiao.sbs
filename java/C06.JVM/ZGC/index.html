@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4775,7 +4775,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4789,7 +4789,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10346,7 +10346,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10374,7 +10374,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10430,7 +10430,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10506,7 +10506,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10956,7 +10956,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10998,7 +10998,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11799,7 +11799,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11923,7 +11923,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12749,7 +12749,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12907,7 +12907,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13268,7 +13268,7 @@
 </ul>
 <h2 id="gc">GC 之痛<a class="headerlink" href="#gc" title="Permanent link">&para;</a></h2>
 <p>很多低延迟高可用 Java 服务的系统可用性经常受 GC 停顿的困扰。GC 停顿指垃圾回收期间 STW（Stop The World），当 STW 时，所有应用线程停止活动，等待 GC 停顿结束。</p>
-<p>以风控服务为例，部分上游业务要求风控服务 65ms 内返回结果，并且可用性要达到 99.99%。但因为 GC 停顿，我们未能达到上述可用性目标。当时使用的是 CMS 垃圾回收器，单次 Young GC 40ms，一分钟 10 次，接口平均响应时间 30ms。通过计算可知，有（ 40ms + 30ms ) _ 10 次 / 60000ms = 1.12%的请求的响应时间会增加 0 ~ 40ms 不等，其中 30ms _ 10 次 / 60000ms = 0.5%的请求响应时间会增加 40ms。</p>
+<p>以风控服务为例，部分上游业务要求风控服务 65ms 内返回结果，并且可用性要达到 99.99%。但因为 GC 停顿，我们未能达到上述可用性目标。当时使用的是 CMS 垃圾回收器，单次 Young GC 40ms，一分钟 10 次，接口平均响应时间 30ms。通过计算可知，有（ 40ms + 30ms ) _ 10 次 / 60000ms = 1.12% 的请求的响应时间会增加 0 ~ 40ms 不等，其中 30ms _ 10 次 / 60000ms = 0.5% 的请求响应时间会增加 40ms。</p>
 <p>可见，GC 停顿对响应时间的影响较大。为了降低 GC 停顿对系统可用性的影响，我们从降低单次 GC 时间和降低 GC 频率两个角度出发进行了调优，还测试过 G1 垃圾回收器，但这三项措施均未能降低 GC 对服务可用性的影响。</p>
 <h4 id="cms-g1">CMS 与 G1 停顿时间瓶颈<a class="headerlink" href="#cms-g1" title="Permanent link">&para;</a></h4>
 <p>在介绍 ZGC 之前，首先回顾一下 CMS 和 G1 的 GC 过程以及停顿时间的瓶颈。CMS 新生代的 Young GC、G1 和 ZGC 都基于标记-复制算法，但算法具体实现的不同就导致了巨大的性能差异。</p>
@@ -13362,7 +13362,7 @@
 <ul>
 <li>阻塞内存分配请求触发：当垃圾来不及回收，垃圾将堆占满时，会导致部分线程阻塞。我们应当避免出现这种触发方式。日志中关键字是“Allocation Stall”。</li>
 <li>基于分配速率的自适应算法：最主要的 GC 触发方式，其算法原理可简单描述为”ZGC 根据近期的对象分配速率以及 GC 时间，计算出当内存占用达到什么阈值时触发下一次 GC”。自适应算法的详细理论可参考彭成寒《新一代垃圾回收器 ZGC 设计与实现》一书中的内容。通过 ZAllocationSpikeTolerance 参数控制阈值大小，该参数默认 2，数值越大，越早的触发 GC。我们通过调整此参数解决了一些问题。日志中关键字是“Allocation Rate”。</li>
-<li>基于固定时间间隔：通过 ZCollectionInterval 控制，适合应对突增流量场景。流量平稳变化时，自适应算法可能在堆使用率达到 95%以上才触发 GC。流量突增时，自适应算法触发的时机可能会过晚，导致部分线程阻塞。我们通过调整此参数解决流量突增场景的问题，比如定时活动、秒杀等场景。日志中关键字是“Timer”。</li>
+<li>基于固定时间间隔：通过 ZCollectionInterval 控制，适合应对突增流量场景。流量平稳变化时，自适应算法可能在堆使用率达到 95% 以上才触发 GC。流量突增时，自适应算法触发的时机可能会过晚，导致部分线程阻塞。我们通过调整此参数解决流量突增场景的问题，比如定时活动、秒杀等场景。日志中关键字是“Timer”。</li>
 <li>主动触发规则：类似于固定间隔规则，但时间间隔不固定，是 ZGC 自行算出来的时机，我们的服务因为已经加了基于固定时间间隔的触发机制，所以通过-ZProactive 参数将该功能关闭，以免 GC 频繁，影响服务可用性。日志中关键字是“Proactive”。</li>
 <li>预热规则：服务刚启动时出现，一般不需要关注。日志中关键字是“Warmup”。</li>
 <li>外部触发：代码中显式调用 System.gc 触发。日志中关键字是“System.gc”。</li>

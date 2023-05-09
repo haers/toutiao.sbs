@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4636,7 +4636,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4650,7 +4650,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10207,7 +10207,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10235,7 +10235,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10291,7 +10291,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10367,7 +10367,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10817,7 +10817,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10859,7 +10859,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11660,7 +11660,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11784,7 +11784,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12610,7 +12610,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12768,7 +12768,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13012,31 +13012,31 @@ Java 对象实例化过程中对实例域的初始化赋值操作全部在<init>
 <init>方法以构造方法作为结束。</p>
 <p>三、init 和 clinit 区别：</p>
 <p>①init 和 clinit 方法执行时机不同</p>
-<div class="language-text highlight"><pre><span></span><code>init是对象构造器方法，也就是说在程序执行 new 一个对象调用该对象类的 constructor 方法时才会执行init方法，而clinit是类构造器方法，也就是在jvm进行类加载—–验证—-解析—–初始化，中的初始化阶段jvm会调用clinit方法。
-</code></pre></div>
-<p>②init 和 clinit 方法执行目的不同</p>
-<div class="language-text highlight"><pre><span></span><code>init is the (or one of the) constructor(s) for the instance, and non-static field initialization.
-clinit are the static initialization blocks for the class, and static field initialization.
-</code></pre></div>
-<p>上面这两句是 Stack Overflow 上的解析，很清楚 init 是 instance 实例构造器，对非静态变量解析初始化，而 clinit 是 class 类构造器对静态变量，静态代码块进行初始化。看看下面的这段程序就很清楚了。</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span> <span class="nc">X</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">   </span><span class="kd">static</span><span class="w"> </span><span class="n">Log</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogFactory</span><span class="p">.</span><span class="na">getLog</span><span class="p">();</span><span class="w"> </span><span class="c1">// &lt;clinit&gt;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">// &lt;init&gt;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">   </span><span class="n">X</span><span class="p">(){</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="c1">// &lt;init&gt;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">   </span><span class="p">}</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">   </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="c1">// &lt;clinit&gt;</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">   </span><span class="p">}</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>init是对象构造器方法，也就是说在程序执行 new 一个对象调用该对象类的 constructor 方法时才会执行init方法，而clinit是类构造器方法，也就是在jvm进行类加载—–验证—-解析—–初始化，中的初始化阶段jvm会调用clinit方法。
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>clinit一定优先于init
-</code></pre></div>
+<p>②init 和 clinit 方法执行目的不同</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>init is the (or one of the) constructor(s) for the instance, and non-static field initialization.
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>clinit are the static initialization blocks for the class, and static field initialization.
+</span></code></pre></div>
+<p>上面这两句是 Stack Overflow 上的解析，很清楚 init 是 instance 实例构造器，对非静态变量解析初始化，而 clinit 是 class 类构造器对静态变量，静态代码块进行初始化。看看下面的这段程序就很清楚了。</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">class</span> <span class="nc">X</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">   </span><span class="kd">static</span><span class="w"> </span><span class="n">Log</span><span class="w"> </span><span class="n">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LogFactory</span><span class="p">.</span><span class="na">getLog</span><span class="p">();</span><span class="w"> </span><span class="c1">// &lt;clinit&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">   </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">// &lt;init&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">   </span><span class="n">X</span><span class="p">(){</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="c1">// &lt;init&gt;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">   </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="c1">// &lt;clinit&gt;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">   </span><span class="p">}</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clinit一定优先于init
+</span></code></pre></div>
 <p>今天先来分析一下经常遇到的一个问题，在笔试面试中可能会经常遇见，类中字段代码块的加载顺序等，从 jvm 角度分析一下这个问题。我们先来看下知识点，接下来进行代码实践验证。</p>
 <p><clinit>，类构造器方法，在 jvm 第一次加载 class 文件时调用，因为是类级别的，所以只加载一次，是编译器自动收集类中所有类变量（static 修饰的变量）和静态语句块（static{}），中的语句合并产生的，编译器收集的顺序，是由程序员在写在源文件中的代码的顺序决定的。
 <init>，实例构造器方法，在实例创建出来的时候调用，包括调用 new 操作符；调用 Class 或 java.lang.reflect.Constructor 对象的 newInstance()方法；调用任何现有对象的 clone()方法；通过 java.io.ObjectInputStream 类的 getObject()方法反序列化。</p>

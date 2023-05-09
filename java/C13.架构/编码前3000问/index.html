@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4624,7 +4624,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4638,7 +4638,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10247,7 +10247,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10275,7 +10275,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10331,7 +10331,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10407,7 +10407,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10857,7 +10857,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10899,7 +10899,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11700,7 +11700,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11824,7 +11824,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12650,7 +12650,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12808,7 +12808,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13077,77 +13077,37 @@
 </ul>
 <blockquote>
 <p>一名优秀的工程师至少可以抵半个产品经理！</p>
+<ul>
+<li>新功能会不会对历史业务产生影响？如果会的话，要把影响的范围尽可能全的罗列出来，产品和技术共同探讨老业务的兼容问题</li>
+<li>如果涉及底层老的数据库表重构，要考虑新、老数据如何平稳迁移，不影响线上用户的正常访问</li>
+<li>是否存在并发，如何保证数据质量？要采用什么锁机制？</li>
+<li>做好概要设计方案、详情设计方案，并组织所有相关人员参加评审，如果涉及数据库变动，最好叫上 DBA。做方案尽量多想一想，如果担心老业务吃不透，可以叫上一些老员工，先整体再细节再整体，做到有点有面，一定要以全局性视野对待项目，否则很容易陷入误区。</li>
+<li>容量规划。新功能上线后，数据量有多大？后续每日预估新增多少数据？采用什么形式的存储？是关系型数据库（如 mysql）? 要不要分库分表？还是采用 Nosql 存储？</li>
+<li>数据是否存在冷数据、热数据之分（例如微博），是否要分开存储？</li>
+<li>尽可能采用服务化形式，但是抽象到何种程度，要视具体的业务而定，尽量朝着高内聚、低耦合设计原则。</li>
+</ul>
 </blockquote>
 <ul>
-<li>
-<p>新功能会不会对历史业务产生影响？如果会的话，要把影响的范围尽可能全的罗列出来，产品和技术共同探讨老业务的兼容问题</p>
-</li>
-<li>
-<p>如果涉及底层老的数据库表重构，要考虑新、老数据如何平稳迁移，不影响线上用户的正常访问</p>
-</li>
-<li>
-<p>是否存在并发，如何保证数据质量？要采用什么锁机制？</p>
-</li>
-<li>
-<p>做好概要设计方案、详情设计方案，并组织所有相关人员参加评审，如果涉及数据库变动，最好叫上 DBA。做方案尽量多想一想，如果担心老业务吃不透，可以叫上一些老员工，先整体再细节再整体，做到有点有面，一定要以全局性视野对待项目，否则很容易陷入误区。</p>
-</li>
-<li>
-<p>容量规划。新功能上线后，数据量有多大？后续每日预估新增多少数据？采用什么形式的存储？是关系型数据库（如 mysql）? 要不要分库分表？还是采用 Nosql 存储？</p>
-</li>
-<li>
-<p>数据是否存在冷数据、热数据之分（例如微博），是否要分开存储？</p>
-</li>
-<li>
-<p>尽可能采用服务化形式，但是抽象到何种程度，要视具体的业务而定，尽量朝着高内聚、低耦合设计原则。</p>
-</li>
-<li>
-<p>集中式调用改为 HSF 分布式远程调用，走的网络调用。为了提高性能，封装 client 二方包，通过 xml bean 配置控制逻辑，先从 tair 中查询，然后再走远程调用。</p>
-</li>
-<li>
-<p>如果有多处地方代码用到同样的模型数据，最好能过上下文的方式传递，避免每次用到都走接口查询</p>
-</li>
-<li>
-<p>模块化、组件化，具备乐高积木的特性</p>
-</li>
-<li>
-<p>多使用一些设计模式，提升系统的可扩展性</p>
-</li>
-<li>
-<p>尽量往平台方向思考，但要注意控制成本，即便一期做不到大而全，但一定要留好扩展，便于后续的不断迭代。</p>
-</li>
-<li>
-<p>如果是新应用，另起炉灶，要做好技术选型，最好选一些主流技术框架，切勿凭个人喜好，最后搞成百花齐放，后面的维护成本极高</p>
-</li>
+<li>集中式调用改为 HSF 分布式远程调用，走的网络调用。为了提高性能，封装 client 二方包，通过 xml bean 配置控制逻辑，先从 tair 中查询，然后再走远程调用。</li>
+<li>如果有多处地方代码用到同样的模型数据，最好能过上下文的方式传递，避免每次用到都走接口查询</li>
+<li>模块化、组件化，具备乐高积木的特性</li>
+<li>多使用一些设计模式，提升系统的可扩展性</li>
+<li>尽量往平台方向思考，但要注意控制成本，即便一期做不到大而全，但一定要留好扩展，便于后续的不断迭代。</li>
+<li>如果是新应用，另起炉灶，要做好技术选型，最好选一些主流技术框架，切勿凭个人喜好，最后搞成百花齐放，后面的维护成本极高</li>
 </ul>
 <blockquote>
 <p>统一、标准化是一个亘古不变的话题，这一点非常重要</p>
-</blockquote>
 <ul>
-<li>
-<p>如果是跨部门跨团队合作，需要提前约定好交互方式，联调时间，并要想一想，如果一方挂了，另一方如何做才能将影响降到最小。</p>
-</li>
-<li>
-<p>对于很多技术改造，可能会配置开关，做好开关两面的测试工作，必要时可以紧急切换开关降低影响</p>
-</li>
-<li>
-<p>接口响应时间。是否需要引入缓存，缓存的数据如何维护？数据预热、数据有效期，空间不足、缓存的命中率怎么样？</p>
-</li>
-<li>
-<p>接口的最大并发量，需要做性能压测，了解系统能支撑的上限，便于大促活动时机器扩容</p>
-</li>
-<li>
-<p>接口的容错性，如果出现意外情况时，尽量保住核心业务，不受边缘业务或非核心接口的影响</p>
-</li>
-<li>
-<p>有条件的话，做好接口的流量控制，配置阈值，超过预设值能自我保护，并有对应的业务提示。</p>
-</li>
-<li>
-<p>做好单元测试、项目代码 code review</p>
-</li>
-<li>
-<p>发布时，要提前准备发布计划，以及回滚计划</p>
-</li>
+<li>如果是跨部门跨团队合作，需要提前约定好交互方式，联调时间，并要想一想，如果一方挂了，另一方如何做才能将影响降到最小。</li>
+<li>对于很多技术改造，可能会配置开关，做好开关两面的测试工作，必要时可以紧急切换开关降低影响</li>
+<li>接口响应时间。是否需要引入缓存，缓存的数据如何维护？数据预热、数据有效期，空间不足、缓存的命中率怎么样？</li>
+<li>接口的最大并发量，需要做性能压测，了解系统能支撑的上限，便于大促活动时机器扩容</li>
+<li>接口的容错性，如果出现意外情况时，尽量保住核心业务，不受边缘业务或非核心接口的影响</li>
+<li>有条件的话，做好接口的流量控制，配置阈值，超过预设值能自我保护，并有对应的业务提示。</li>
+<li>做好单元测试、项目代码 code review</li>
+<li>发布时，要提前准备发布计划，以及回滚计划</li>
 </ul>
+</blockquote>
 
 
 

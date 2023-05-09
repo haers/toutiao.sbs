@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4763,7 +4763,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4777,7 +4777,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10334,7 +10334,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10362,7 +10362,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10418,7 +10418,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10494,7 +10494,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10944,7 +10944,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10986,7 +10986,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11787,7 +11787,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11911,7 +11911,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12737,7 +12737,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12895,7 +12895,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13253,9 +13253,9 @@
 <li>MappedStatement 对象，该对象是对映射 SQL 的封装，用于存储要映射的 SQL 语句的 id、参数等信息。</li>
 <li>ResultHandler 对象，用于对返回的结果进行处理，最终得到自己想要的数据格式或类型。可以自定义返回类型。</li>
 </ol>
-<p>在 JDBC 中，Connection 不直接执行 SQL 方法，而是利用 Statement 或者 PrepareStatement 来执行方法。在使用 JDBC 建立了连接之后，可以使用 Connection 接口的 createStatement()方法来获取 Statement 对象，也可以调用 prepareStatement()方法获得 PrepareStatement 对象，通过 executeUpdate()方法来执行 SQL 语句。而在 MyBatis 中，SqlSession 对象包含了执行 SQL 语句的所有方法，但是它是委托 Executor 执行的。从某种意义上来看，MyBatis 里面的 SqlSession 类似于 JDBC 中的 Connection，他们都是委托给其他类去执行。虽然 SqlSession 对象包含了执行 SQL 语句的所有方法，但是它同样包括了&lt;<strong>T</strong>&gt; T getMapper(Class&lt;<strong>T</strong>&gt; type);所以 SqlSession 也可以委托给映射器来执行数据的增删改查操作，这样来看，SqlSession 是不是也类似于 JDBC 中的 Connection 呢？</p>
+<p>在 JDBC 中，Connection 不直接执行 SQL 方法，而是利用 Statement 或者 PrepareStatement 来执行方法。在使用 JDBC 建立了连接之后，可以使用 Connection 接口的 createStatement()方法来获取 Statement 对象，也可以调用 prepareStatement()方法获得 PrepareStatement 对象，通过 executeUpdate()方法来执行 SQL 语句。而在 MyBatis 中，SqlSession 对象包含了执行 SQL 语句的所有方法，但是它是委托 Executor 执行的。从某种意义上来看，MyBatis 里面的 SqlSession 类似于 JDBC 中的 Connection，他们都是委托给其他类去执行。虽然 SqlSession 对象包含了执行 SQL 语句的所有方法，但是它同样包括了 &lt;<strong>T</strong>&gt; T getMapper(Class&lt;<strong>T</strong>&gt; type);所以 SqlSession 也可以委托给映射器来执行数据的增删改查操作，这样来看，SqlSession 是不是也类似于 JDBC 中的 Connection 呢？</p>
 <h2 id="mybatis_2">MyBatis 的工作原理以及核心流程详解<a class="headerlink" href="#mybatis_2" title="Permanent link">&para;</a></h2>
-<p><img alt="截屏2023-02-09 20.18.52" src="/Users/apple/gitbook/Attacking-Java-Rookie/image/c9/m1.png" /></p>
+<p><img alt="截屏 2023-02-09 20.18.52" src="/Users/apple/gitbook/Attacking-Java-Rookie/image/c9/m1.png" /></p>
 <p>上面中流程就是 MyBatis 内部核心流程，每一步流程的详细说明如下文所述：</p>
 <ol>
 <li>读取 MyBatis 的配置文件。mybatis-config.xml 为 MyBatis 的全局配置文件，用于配置数据库连接信息。</li>
@@ -13286,7 +13286,7 @@
 <h4 id="resultsethandler">ResultSetHandler<a class="headerlink" href="#resultsethandler" title="Permanent link">&para;</a></h4>
 <p>处理查询结果。</p>
 <h3 id="mybatis_3">MyBatis 核心类工作流程<a class="headerlink" href="#mybatis_3" title="Permanent link">&para;</a></h3>
-<p><img alt="截屏2023-02-09 20.40.31" src="../../image/c9/m2.png" /></p>
+<p><img alt="截屏 2023-02-09 20.40.31" src="../../image/c9/m2.png" /></p>
 <p>以上核心类，侧重于刻画数据库的交互过程，而在 SQL 封装以及动态 SQL 方面，还有两大核心类：MappedStatement 和 SqlSource。前者存储 sql 节点的属性，包括：id，resultMap，resultType，useCache 等等；后者存储 sql 语句，实现动态 sql 的解析和处理。</p>
 <h3 id="sqlsession_1">SqlSession 线程安全性分析<a class="headerlink" href="#sqlsession_1" title="Permanent link">&para;</a></h3>
 <p>SqlSession 是应用程序与持久存储层之间执行交互操作的一个单线程对象，也是 MyBatis 执行持久化操作的关键对象。</p>

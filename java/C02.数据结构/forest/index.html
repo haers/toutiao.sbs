@@ -946,7 +946,7 @@
   
     <li class="md-nav__item">
       <a href="../B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4688,7 +4688,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4702,7 +4702,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10259,7 +10259,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10287,7 +10287,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10343,7 +10343,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10419,7 +10419,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10869,7 +10869,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10911,7 +10911,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11712,7 +11712,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11836,7 +11836,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12662,7 +12662,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12820,7 +12820,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13095,37 +13095,25 @@
 <h3 id="-">树 -&gt; 二叉树<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../../image/c2/porest-2.jpg" /></p>
 <ol>
-<li>
-<p>加线。在所有的兄弟结点之间加一条线。
-   <img alt="" src="../../image/c2/porest-3.gif" /></p>
-</li>
-<li>
-<p>去线。树中的每个结点，只保留它与第一个孩子结点的连线，
+<li>加线。在所有的兄弟结点之间加一条线。
+   <img alt="" src="../../image/c2/porest-3.gif" /></li>
+<li>去线。树中的每个结点，只保留它与第一个孩子结点的连线，
    删除其他孩子结点之间的连线。
-   <img alt="" src="../../image/c2/porest-4.gif" /></p>
-</li>
-<li>
-<p>调整。以树的根结点为轴心，将整个树调节一下（第一个孩子是结点的左孩子，兄弟转过来的孩子是结点的右孩子）
-   <img alt="" src="../../image/c2/porest-5.gif" /></p>
-</li>
+   <img alt="" src="../../image/c2/porest-4.gif" /></li>
+<li>调整。以树的根结点为轴心，将整个树调节一下（第一个孩子是结点的左孩子，兄弟转过来的孩子是结点的右孩子）
+   <img alt="" src="../../image/c2/porest-5.gif" /></li>
 </ol>
 <p>所以最终结果为：
 <img alt="" src="../../image/c2/porest-6.jpg" /></p>
 <h3 id="-_1">二叉树 -&gt; 树<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h3>
 <p>知道了树转换为二叉树，那么二叉树转换为树就是个逆过程呗。</p>
 <ol>
-<li>
-<p>调整。将二叉树从左上到右下分为若干层。然后调整成水平方向。
-   <img alt="" src="../../image/c2/porest-7.gif" /></p>
-</li>
-<li>
-<p>加线。找到每一层节点在其上一层的父节点，加线。
-   <img alt="" src="../../image/c2/porest-8.gif" /></p>
-</li>
-<li>
-<p>去线。去除兄弟节点之间的连线。
-   <img alt="" src="../../image/c2/porest-9.gif" /></p>
-</li>
+<li>调整。将二叉树从左上到右下分为若干层。然后调整成水平方向。
+   <img alt="" src="../../image/c2/porest-7.gif" /></li>
+<li>加线。找到每一层节点在其上一层的父节点，加线。
+   <img alt="" src="../../image/c2/porest-8.gif" /></li>
+<li>去线。去除兄弟节点之间的连线。
+   <img alt="" src="../../image/c2/porest-9.gif" /></li>
 </ol>
 <p>所以最终结果为：</p>
 <p><img alt="" src="../../image/c2/porest-10.jpg" /></p>

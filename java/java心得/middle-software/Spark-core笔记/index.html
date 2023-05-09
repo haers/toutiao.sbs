@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4624,7 +4624,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4638,7 +4638,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10305,7 +10305,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10333,7 +10333,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10389,7 +10389,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10465,7 +10465,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10915,7 +10915,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10957,7 +10957,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11758,7 +11758,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11882,7 +11882,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12708,7 +12708,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12866,7 +12866,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13191,14 +13191,12 @@
 <ul>
 <li>RDD(Resilient Distributed Datasets)，弹性分布式数据集。生成只有两种途径：一种来自内存集合或外部存储系统；另一种是通过转换操作来自于其他 RDD，比如 map、filter、join 等。</li>
 </ul>
-<p>Spark 中，所有的计算都是通过 RDDs 的创建、转换，操作完成的。一个 RDD 内部由许多 partitions(分片)组成。</p>
-<ul>
-<li>Spark Core：包含任务调度、内存管理、容错机制等，内部定义了 RDD,提供了很多 API 来创建和操作这些 RDD，使的 Spark 能够更加灵活的处理类似 MapReduce 的批处理作业</li>
-<li>Spark SQL/ Shark：兼容 Hive 的接口 HQL，提供比 Hive 高出数 10~100 倍的查询速度的分布式 SQL 引擎</li>
-<li>Spark Streaming：提供了 API 来操作实时流数据，将流式计算分解成一系列的短小的批处理作业。应用场景，企业中接收 kafka 消息来做实时统计。</li>
-<li>MLlib：迭代式运算，MLlib 是构建在 Spark 上的机器学习算法库，目前支持常用的分类算法、聚类算法、推荐算法，模型评估和数据导入。并支持集群上的横向扩展。</li>
-<li>GraphX：基于 Spark 的图计算框架</li>
-</ul>
+<p>Spark 中，所有的计算都是通过 RDDs 的创建、转换，操作完成的。一个 RDD 内部由许多 partitions(分片)组成。
+- Spark Core：包含任务调度、内存管理、容错机制等，内部定义了 RDD,提供了很多 API 来创建和操作这些 RDD，使的 Spark 能够更加灵活的处理类似 MapReduce 的批处理作业
+- Spark SQL/ Shark：兼容 Hive 的接口 HQL，提供比 Hive 高出数 10~100 倍的查询速度的分布式 SQL 引擎
+- Spark Streaming：提供了 API 来操作实时流数据，将流式计算分解成一系列的短小的批处理作业。应用场景，企业中接收 kafka 消息来做实时统计。
+- MLlib：迭代式运算，MLlib 是构建在 Spark 上的机器学习算法库，目前支持常用的分类算法、聚类算法、推荐算法，模型评估和数据导入。并支持集群上的横向扩展。
+- GraphX：基于 Spark 的图计算框架</p>
 <p>Spark 架构的组成</p>
 <p><img alt="image" src="../img/17.png" /></p>
 <ul>
@@ -13240,41 +13238,23 @@
 <p>通过 SparkContext 对象访问 Spark，SparkContext 对象代表和一个集群的连接。</p>
 <h4 id="rdd">RDD 常用的转换函数<a class="headerlink" href="#rdd" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p>map 数据转换，输入 1 个，输出 1 个。</p>
-</li>
-<li>
-<p>filter 过滤，满足条件的保留</p>
-</li>
-<li>
-<p>flatMap</p>
-</li>
+<li>map 数据转换，输入 1 个，输出 1 个。</li>
+<li>filter 过滤，满足条件的保留</li>
+<li>flatMap</li>
 </ul>
-<p>对每个输入元素，输出多个输出元素。flat 压扁的意思，将 RDD 中元素压扁后返回一个新的 RDD。比如对一行文本按空格分割得到多个单词。</p>
-<ul>
-<li>distinct 去重</li>
-<li>union 两个 RDD 合并，不会去重</li>
-<li>intersection 两个 RDD 交集</li>
-<li>
-<p>subtract （返回一个只存在于第一个 RDD 而不存在于第二个 RDD 中的所有元素组成的 RDD）</p>
-</li>
-<li>
-<p>reduce</p>
-</li>
-</ul>
-<p>接收一个函数，作用在 RDD 两个类型相同的元素上，返回新元素。可以实现，RDD 中元素的累加、计数和其它类型的聚集操作。</p>
-<ul>
-<li>结果返回</li>
-</ul>
+<p>对每个输入元素，输出多个输出元素。flat 压扁的意思，将 RDD 中元素压扁后返回一个新的 RDD。比如对一行文本按空格分割得到多个单词。
+- distinct 去重
+- union 两个 RDD 合并，不会去重
+- intersection 两个 RDD 交集
+- subtract （返回一个只存在于第一个 RDD 而不存在于第二个 RDD 中的所有元素组成的 RDD）
+- reduce</p>
+<p>接收一个函数，作用在 RDD 两个类型相同的元素上，返回新元素。可以实现，RDD 中元素的累加、计数和其它类型的聚集操作。
+- 结果返回</p>
 <p><img alt="image" src="../img/Snip20170806_134.png" /></p>
 <h4 id="key-value-rdds">Key Value 对 RDDs<a class="headerlink" href="#key-value-rdds" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p>使用 map（）函数，返回 key---value 对</p>
-</li>
-<li>
-<p>reduceByKey 等函数用法</p>
-</li>
+<li>使用 map（）函数，返回 key---value 对</li>
+<li>reduceByKey 等函数用法</li>
 </ul>
 <p><img alt="image" src="../img/Snip20170806_138.png" /></p>
 <p><img alt="image" src="../img/Snip20170806_137.png" /></p>

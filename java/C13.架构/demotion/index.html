@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4624,7 +4624,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4638,7 +4638,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10268,7 +10268,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10296,7 +10296,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10352,7 +10352,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10428,7 +10428,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10878,7 +10878,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10920,7 +10920,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11721,7 +11721,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11845,7 +11845,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12671,7 +12671,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12829,7 +12829,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13137,18 +13137,10 @@
 <li>要对业务做非常仔细的梳理。</li>
 <li>分类处理，比如吞吐量大、响应时间过慢、失败次数较多，有网络或者服务故障等等，要分类做好预案。并写成代码，可以快速地自动化或半自动化执行</li>
 <li>分好等级，哪些是“必须有的”，哪些是“可以有的”，事前评估好</li>
-<li>
-<p>降级的时候，需要牺牲掉一致性，或是一些业务流程：对于读操作来说，使用缓存来解决，对于写操作来说，需要异步调用来解决。并且，我们需要以流水账的方式记录下来，这样方便对账，以免漏掉或是和正常的流程混淆。</p>
-</li>
-<li>
-<p>降级的功能的开关可以是一个系统的配置开关。做成配置时，你需要在要降级的时候推送相应的配置。另一种方式是，在对外服务的 API 上有所区分（方法签名或是开关参数），这样可以由上游调用者来驱动。</p>
-</li>
-<li>
-<p>比如：一个网关在限流时，在协议头中加入了一个限流程度的参数，让后端服务能知道限流在发生中。当限流程度达到某个值时，或是限流时间超过某个值时，就自动开始降级，直到限流好转。</p>
-</li>
-<li>
-<p>对于数据方面的降级，需要前端程序的配合。一般来说，前端的程序可以根据后端传来的数据来决定展示哪些界面模块。比如，当前端收不到商品评论时，就不展示。为了区分本来就没有数据，还是因为降级了没有数据的两种情况，在协议头中也应该加上降级的标签。</p>
-</li>
+<li>降级的时候，需要牺牲掉一致性，或是一些业务流程：对于读操作来说，使用缓存来解决，对于写操作来说，需要异步调用来解决。并且，我们需要以流水账的方式记录下来，这样方便对账，以免漏掉或是和正常的流程混淆。</li>
+<li>降级的功能的开关可以是一个系统的配置开关。做成配置时，你需要在要降级的时候推送相应的配置。另一种方式是，在对外服务的 API 上有所区分（方法签名或是开关参数），这样可以由上游调用者来驱动。</li>
+<li>比如：一个网关在限流时，在协议头中加入了一个限流程度的参数，让后端服务能知道限流在发生中。当限流程度达到某个值时，或是限流时间超过某个值时，就自动开始降级，直到限流好转。</li>
+<li>对于数据方面的降级，需要前端程序的配合。一般来说，前端的程序可以根据后端传来的数据来决定展示哪些界面模块。比如，当前端收不到商品评论时，就不展示。为了区分本来就没有数据，还是因为降级了没有数据的两种情况，在协议头中也应该加上降级的标签。</li>
 </ul>
 <p>因为降级的功能平时不会总是会发生，属于应急的情况，所以，降级的这些业务流程和功能有可能长期不用而出现 bug 或问题，对此我们平时要做些演练。</p>
 

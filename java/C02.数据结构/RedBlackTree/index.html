@@ -946,7 +946,7 @@
   
     <li class="md-nav__item">
       <a href="../B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4816,7 +4816,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4830,7 +4830,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10387,7 +10387,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10415,7 +10415,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10471,7 +10471,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10547,7 +10547,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10997,7 +10997,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -11039,7 +11039,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11840,7 +11840,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11964,7 +11964,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12790,7 +12790,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12948,7 +12948,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13353,14 +13353,10 @@ JDK1.8 中 HashMap 中也加入了红黑树。C++ STL 中的 map 和 set 同样�
 <p>平衡二叉树真的很不错，在查找时既有着二叉查找树的优越性，
 在插入时还能通过调整继续保持着。那么为什么还要使用到红黑树呢？我觉得可以从以下两个方面来考虑：</p>
 <ol>
-<li>
-<p>删除：对于平衡二叉树来说，在最坏情况下，需要维护从被删节点到根节点这条路径上所有节点的平衡性，
-   旋转的量级是 O(logN)。但是红黑树就不一样了，最多只需 3 次旋转就会重新平衡，旋转的量级是 O(1)。</p>
-</li>
-<li>
-<p>保持平衡：平衡二叉树高度平衡，这也就意味着在大量插入和删除节点的场景下，
-   平衡二叉树为了保持平衡需要调整的频率会更高。</p>
-</li>
+<li>删除：对于平衡二叉树来说，在最坏情况下，需要维护从被删节点到根节点这条路径上所有节点的平衡性，
+   旋转的量级是 O(logN)。但是红黑树就不一样了，最多只需 3 次旋转就会重新平衡，旋转的量级是 O(1)。</li>
+<li>保持平衡：平衡二叉树高度平衡，这也就意味着在大量插入和删除节点的场景下，
+   平衡二叉树为了保持平衡需要调整的频率会更高。</li>
 </ol>
 <p>注意：在大量查找的情况下，平衡二叉树的效率更高，也是首要选择。在大量增删的情况下，红黑树是首选。</p>
 <p>鉴于以上原因，因此我们才使用到了红黑树这种更好的结构。</p>
@@ -13390,18 +13386,18 @@ JDK1.8 中 HashMap 中也加入了红黑树。C++ STL 中的 map 和 set 同样�
 其实红黑树并不是真正的平衡二叉树，它只能保证大致是平衡的，因为红黑树的高度不会无限增高，
 在实际应用用，红黑树的统计性能要高于平衡二叉树，但极端性能略差。</p>
 <h6 id="_3">定义节点名称：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h6>
-<div class="language-text highlight"><pre><span></span><code>父节点——P(Parent)
-祖父节点——G(GrandParent)
-叔叔节点——U(Uncle)
-当前节点——C(Current)
-兄弟节点——B(Brother)
-左孩子——L(Left)
-右孩子——R(Right)
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>父节点——P(Parent)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>祖父节点——G(GrandParent)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>叔叔节点——U(Uncle)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>当前节点——C(Current)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>兄弟节点——B(Brother)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>左孩子——L(Left)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>右孩子——R(Right)
+</span></code></pre></div>
 <h3 id="_4">性质<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>根节点到任意叶子节点的路径长度，最多相差一半。若树存在最短路径，则最短路径上均为黑色节点，
 那么第五条性质保证根节点到达最长路径与最短路径所包含的黑色节点数目相同，若最短路径长为 N，
-则最长路径 M=N+红色节点数目，性质 4 要求红色节点必定不连续，因此红色节点数目最多为 N，
+则最长路径 M=N+ 红色节点数目，性质 4 要求红色节点必定不连续，因此红色节点数目最多为 N，
 则最长路径与最短路径最多相差 N。</p>
 <h3 id="avl">红黑树与 AVL<a class="headerlink" href="#avl" title="Permanent link">&para;</a></h3>
 <p>AVL 是一种极度平衡的二叉树，那为什么不用 AVL 呢？因为 AVL 插入删除要保持平衡，
@@ -13548,7 +13544,7 @@ JDK1.8 中 HashMap 中也加入了红黑树。C++ STL 中的 map 和 set 同样�
 <p><img alt="" src="../../image/c2/rbt-34.gif" /></p>
 <p>首先用子节点代替当前待删除节点，然后再把子节点删除。</p>
 <p><img alt="" src="../../image/c2/rbt-35.gif" /></p>
-<p>最终的红黑树结构如下面所示，这个结构的红黑树我们是不需要通过变色+旋转来保持红黑树的平衡了，因为将子节点删除后树已经是平衡的了。</p>
+<p>最终的红黑树结构如下面所示，这个结构的红黑树我们是不需要通过变色 + 旋转来保持红黑树的平衡了，因为将子节点删除后树已经是平衡的了。</p>
 <p><img alt="" src="../../image/c2/rbt-36.gif" /></p>
 <p>还有一种场景是当我们待删除节点是黑色的，黑色的节点被删除后，树的黑高就会出现不一致的情况，这个时候就需要重新调整结构。</p>
 <p>还是拿上面这颗删除节点后的红黑树举例，我们现在需要删除节点 67。</p>
@@ -13599,14 +13595,10 @@ JDK1.8 中 HashMap 中也加入了红黑树。C++ STL 中的 map 和 set 同样�
 <p><img alt="" src="../../image/c2/rbt-1.png" /></p>
 <p><img alt="" src="../../image/c2/rbt-2.png" /></p>
 <ul>
-<li>
-<p>黑结点可以同时包含一个红子结点和一个黑子结点吗？
+<li>黑结点可以同时包含一个红子结点和一个黑子结点吗？
   答：可以。如下图的 F 结点：
-  <img alt="" src="../../image/c2/rbt-3.png" /></p>
-</li>
-<li>
-<p>请画出下图的删除自平衡处理过程。</p>
-</li>
+  <img alt="" src="../../image/c2/rbt-3.png" /></li>
+<li>请画出下图的删除自平衡处理过程。</li>
 </ul>
 <p><img alt="" src="../../image/c2/rbt-4.png" /></p>
 <p><img alt="" src="../../image/c2/rbt-5.png" /></p>

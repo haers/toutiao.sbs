@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4624,7 +4624,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4638,7 +4638,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10295,7 +10295,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10323,7 +10323,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10379,7 +10379,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10455,7 +10455,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10905,7 +10905,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10947,7 +10947,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11748,7 +11748,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11872,7 +11872,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12698,7 +12698,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12856,7 +12856,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13167,14 +13167,14 @@
 但随着业务的快速度发展，逐渐出现瓶颈，按一定原则**（应用拆分、服务拆分、数据拆分、应用解耦）**，向分布式系统转型，涉及到以下环节改造。</p>
 <h4 id="_2">主要环节<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ul>
-<li>业务拆分：将整个网站业务拆分成不同的应用，每个应用独立部署维护，应用之间通过RPC或消息队列通信。</li>
-<li>集群化（应用服务器；基于RPC的微服务应用等）</li>
-<li>LVS负载均衡，负责将请求转发给不同业务集群</li>
-<li>反向代理服务器，常用的如Nginx</li>
-<li>应用服务器，servlet容器，如tomcat</li>
-<li>应用和数据服务分离，分别部署在不同的服务器</li>
-<li>后端应用合理分层，通常分为表现层或网关层、业务逻辑层、数据持久层</li>
-<li>缓存。分为两种：本地缓存；分布式缓存</li>
+<li><code>业务拆分：将整个网站业务拆分成不同的应用，每个应用独立部署维护，应用之间通过RPC或消息队列通信。</code></li>
+<li><code>集群化（应用服务器；基于RPC的微服务应用等）</code></li>
+<li><code>LVS负载均衡，负责将请求转发给不同业务集群</code></li>
+<li><code>反向代理服务器，常用的如Nginx</code></li>
+<li><code>应用服务器，servlet容器，如tomcat</code></li>
+<li><code>应用和数据服务分离，分别部署在不同的服务器</code></li>
+<li><code>后端应用合理分层，通常分为表现层或网关层、业务逻辑层、数据持久层</code></li>
+<li><code>缓存。分为两种：本地缓存；分布式缓存</code></li>
 <li>CDN 化。静态内容部署到 CDN，就近获取，加速网站响应。</li>
 <li>数据库读写分离。数据库采用主从热备，应用服务器在写数据时访问主数据库，主数据库通过主从复制机制将数据更新同步到从数据库。</li>
 <li>分库分表，引入分布式数据框架</li>
@@ -13211,9 +13211,7 @@
 <li>使用浏览器缓存</li>
 <li>启用压缩</li>
 <li>CSS 放在页面最上面，JavaScript 放在页面最下面</li>
-<li>
-<p>减少 Cookie 传输</p>
-</li>
+<li>减少 Cookie 传输</li>
 <li>
 <p>应用服务器性能优化：主要手段有 缓存、集群、异步</p>
 </li>
@@ -13228,13 +13226,13 @@
 <li>应用服务器端，可以使用服务器本地缓存和分布式缓存(网站性能优化第一定律：优化考虑使用缓存优化性能)</li>
 <li>代码层面，也可以通过使用多线程、改善内存管理等手段优化性能。</li>
 <li>数据库服务器端，索引、缓存、SQL 优化等性能优化手段</li>
-<li>
-<p>NoSQL 数据库通过优化数据模型、存储结构、伸缩特性等</p>
-</li>
+<li>NoSQL 数据库通过优化数据模型、存储结构、伸缩特性等</li>
 <li>
 <p>存储服务器性能优化</p>
 </li>
-<li>机械硬盘 vs. 固态硬盘</li>
+<li>
+<p>机械硬盘 vs. 固态硬盘</p>
+</li>
 <li>B+ 树 vs. LSM 树</li>
 <li>RAID vs. HDFS</li>
 </ul>
@@ -13321,9 +13319,11 @@
 <li>SQL 注入</li>
 <li>html 危险字符转义</li>
 <li>XSS 攻击：跨站点脚本攻击（Cross Site Script）
-    &gt; 对 js 转义，使其失去执行功能，只作为纯字符串展示</li>
+    &gt; 对 js 转义，使其失去执行功能，只作为纯字符串展示
+    &gt;</li>
 <li>CSRF 攻击：跨站点请求伪造（Cross Site Request Forgery）
-    &gt; 防范：httpOnly;增加 token 校验;通过 Referer 识别。</li>
+    &gt; 防范：httpOnly;增加 token 校验;通过 Referer 识别。
+    &gt;</li>
 <li>网站安全漏洞扫描</li>
 </ul>
 

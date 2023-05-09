@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4624,7 +4624,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4638,7 +4638,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10263,7 +10263,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10291,7 +10291,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10347,7 +10347,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10423,7 +10423,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10873,7 +10873,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10915,7 +10915,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11716,7 +11716,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11840,7 +11840,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12666,7 +12666,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12824,7 +12824,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13150,8 +13150,8 @@
 <p>Mesos 由四个组件组成，分别是 Mesos-master，mesos-slave，framework 和 executor。
 Mesos-master 是整个系统的核心，负责管理接入 mesos 的各个 framework（由 frameworks_manager 管理）和 slave（由 slaves_manager 管理），并将 slave 上的资源按照某种策略分配给 framework（由独立插拔模块 Allocator 管理）。</p>
 <p>Mesos-slave 负责接收并执行来自 mesos-master 的命令、管理节点上的 mesos-task，并为各个 task 分配资源。mesos-slave 将自己的资源量发送给 mesos-master，由 mesos-master 中的 Allocator 模块决定将资源分配给哪个 framework，当前考虑的资源有 CPU 和内存两种，也就是说，mesos-slave 会将 CPU 个数和内存量发送给 mesos-master，而用户提交作业时，需要指定每个任务需要的 CPU 个数和内存量，这样，当任务运行时，mesos-slave 会将任务放到包含固定资源的 linux container 中运行，以达到资源隔离的效果。很明显，master 存在单点故障问题，为此，mesos 采用了 zookeeper 解决该问题。</p>
-<p>Framework 是指外部的计算框架，如 Hadoop，Spark 等，这些计算框架可通过注册的方式接入 mesos，以便 mesos 进行统一管理和资源分配。Mesos 要求可接入的框架必须有一个调度器模块，该调度器负责框架内部的任务调度。当一个 framework 想要接入 mesos 时，需要修改自己的调度器，以便向 mesos 注册，并获取 mesos 分配给自己的资源， 这样再由自己的调度器将这些资源分配给框架中的任务，也就是说，整个 mesos 系统采用了双层调度框架：第一层，由 mesos 将资源分配给框架；第二层，框架自己的调度器将资源分配给自己内部的任务。当前 Mesos 支持三种语言编写的调度器，分别是 C++，java 和 python，为了向各种调度器提供统一的接入方式，Mesos 内部采用 C++实现了一个 MesosSchedulerDriver（调度器驱动器），framework 的调度器可调用该 driver 中的接口与 Mesos-master 交互，完成一系列功能（如注册，资源分配等）。</p>
-<p>Executor 主要用于启动框架内部的 task。由于不同的框架，启动 task 的接口或者方式不同，当一个新的框架要接入 mesos 时，需要编写一个 executor，告诉 mesos 如何启动该框架中的 task。为了向各种框架提供统一的执行器编写方式，Mesos 内部采用 C++实现了一个 MesosExecutorDiver（执行器驱动器），framework 可通过该驱动器的相关接口告诉 mesos 启动 task 的方法。</p>
+<p>Framework 是指外部的计算框架，如 Hadoop，Spark 等，这些计算框架可通过注册的方式接入 mesos，以便 mesos 进行统一管理和资源分配。Mesos 要求可接入的框架必须有一个调度器模块，该调度器负责框架内部的任务调度。当一个 framework 想要接入 mesos 时，需要修改自己的调度器，以便向 mesos 注册，并获取 mesos 分配给自己的资源， 这样再由自己的调度器将这些资源分配给框架中的任务，也就是说，整个 mesos 系统采用了双层调度框架：第一层，由 mesos 将资源分配给框架；第二层，框架自己的调度器将资源分配给自己内部的任务。当前 Mesos 支持三种语言编写的调度器，分别是 C++，java 和 python，为了向各种调度器提供统一的接入方式，Mesos 内部采用 C++ 实现了一个 MesosSchedulerDriver（调度器驱动器），framework 的调度器可调用该 driver 中的接口与 Mesos-master 交互，完成一系列功能（如注册，资源分配等）。</p>
+<p>Executor 主要用于启动框架内部的 task。由于不同的框架，启动 task 的接口或者方式不同，当一个新的框架要接入 mesos 时，需要编写一个 executor，告诉 mesos 如何启动该框架中的 task。为了向各种框架提供统一的执行器编写方式，Mesos 内部采用 C++ 实现了一个 MesosExecutorDiver（执行器驱动器），framework 可通过该驱动器的相关接口告诉 mesos 启动 task 的方法。</p>
 <p>在 Mesos 集群上运行 Spark 应用：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./bin/spark-submit  --master mesos://zk://ip1:2181,ip2:2181,ip3:2181  &lt;jar包地址&gt; [参数]
 </span></code></pre></div>

@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4626,7 +4626,7 @@
   
     <li class="md-nav__item">
       <a href="../AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4640,7 +4640,7 @@
   
     <li class="md-nav__item">
       <a href="../Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10258,7 +10258,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10286,7 +10286,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10342,7 +10342,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10418,7 +10418,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10868,7 +10868,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10910,7 +10910,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11711,7 +11711,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11835,7 +11835,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12661,7 +12661,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12819,7 +12819,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13090,20 +13090,16 @@
 <ol>
 <li>BeanDefinition 的 Resource 定位过程。</li>
 </ol>
-<p>这个 Resource 定位是指 BeanDefinition 资源定位，它由 ResourceLoader 通过统一的 Resource 接口完成。这个定位过程就是容器寻找数据的过程，就像水桶要装水首先需要找到水一样。</p>
-<ol>
-<li>BeanDefinition 的载入和解析过程。</li>
-</ol>
-<p>这个过程就是根据上一步定位的 Resource 资源文件，把用户定义好的 Bean 表示成 IOC 容器内部的 BeanDefinition 数据结构。BeanDefinition 实际就是 POJO 对象在 IOC 容器中的抽象，通过 BeanDefinition 定义数据结构，使 IOC 容器能够方便地对 POJO 对象也就是 Bean 进行管理。</p>
-<ol>
-<li>向 IOC 容器注册 BeanDefinition 的过程。</li>
-</ol>
+<p>这个 Resource 定位是指 BeanDefinition 资源定位，它由 ResourceLoader 通过统一的 Resource 接口完成。这个定位过程就是容器寻找数据的过程，就像水桶要装水首先需要找到水一样。
+2. BeanDefinition 的载入和解析过程。</p>
+<p>这个过程就是根据上一步定位的 Resource 资源文件，把用户定义好的 Bean 表示成 IOC 容器内部的 BeanDefinition 数据结构。BeanDefinition 实际就是 POJO 对象在 IOC 容器中的抽象，通过 BeanDefinition 定义数据结构，使 IOC 容器能够方便地对 POJO 对象也就是 Bean 进行管理。
+3. 向 IOC 容器注册 BeanDefinition 的过程。</p>
 <p>这个过程是通过调用 BeanDefinitionRegistry 接口的实现来完成的，把载入过程生成的 BeanDefinition 向 IOC 容器注册。最终在 IOC 容器内部将 BeanDefinition 注入到一个 HashMap 中，IOC 容器就是通过这个 HashMap 来持有这些 BeanDefinition 数据的。</p>
 <p>注意： 这里需要注意的是，上面谈到的只是 IOC 容器的初始化过程，这个过程一般不包含 Bean 依赖注入的实现。Bean 的定义和依赖注入是两个独立的过程。依赖注入一般发生在第一次 getBean()向容器索要 Bean 的时候，但是如果配置了 lazyinit，则初始化的时候这样的 Bean 已经触发了依赖注入。</p>
 <p>这里先分析 IOC 容器的第一个过程，BeanDefinition 的 Resource 定位过程。</p>
 <h2 id="beandefinition-resource_1">BeanDefinition 的 Resource 定位过程<a class="headerlink" href="#beandefinition-resource_1" title="Permanent link">&para;</a></h2>
 <p>一般我们通常使用的 IOC 容器有 FileSystemXmlApplicationContext、ClassPathXmlApplicationContext、XmlWebApplicationContext、WebApplicationContext、AnnotationConfigApplicationContext 等。</p>
-<p>注解方式 AnnotationConfigApplicationContext 前置读取资源跟 Xml 方式容器有区别，注解方式 AnnotationConfigApplicationContext 是读取指定扫描包下的.class，组装成元数据，然后解析每个类，判断是否有<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 注解（<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Service" title="GitHub User: Service">@Service</a> 含<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 注解）进行 BeanDefinition 数据结构读取，
+<p>注解方式 AnnotationConfigApplicationContext 前置读取资源跟 Xml 方式容器有区别，注解方式 AnnotationConfigApplicationContext 是读取指定扫描包下的.class，组装成元数据，然后解析每个类，判断是否有 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 注解（<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Service" title="GitHub User: Service">@Service</a> 含 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Component" title="GitHub User: Component">@Component</a> 注解）进行 BeanDefinition 数据结构读取，
 Xml 方式则是解析 Spring 配置的 applicationContext.xml 的文件，读取 BeanDefinition 数据结构，但是最后都走 AbstractApplicationContext#refresh()模板方法，理解了 Xml 实现方式容器的核心，注解方式就比较好理解。</p>
 <p>因为 Xml 实现方式理解 IOC 容器会更直观些，以 Xml 方式实现进行 IOC 容器源码解读。下面以 FileSystemXmlApplicationContext 为例，分析 Resource 的定位过程。</p>
 <h4 id="filesystemxmlapplicationcontext">FileSystemXmlApplicationContext 应用：<a class="headerlink" href="#filesystemxmlapplicationcontext" title="Permanent link">&para;</a></h4>
@@ -13339,7 +13335,7 @@ Xml 方式则是解析 Spring 配置的 applicationContext.xml 的文件，读�
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AbstractApplicationContext</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">DefaultResourceLoader</span>
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="kd">implements</span><span class="w"> </span><span class="n">ConfigurableApplicationContext</span><span class="w"> </span><span class="p">{</span>
 </span></code></pre></div>
-<p>这里的 ResourceLoader 是一个**DefaultResourceLoader**</p>
+<p>这里的 ResourceLoader 是一个 <strong>DefaultResourceLoader</strong></p>
 <p>继续调用 loadBeanDefinitions()，咱们现在目标就是定位 BeanDEfinition 的 Resource 看下方法源码：</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loadBeanDefinitions</span><span class="p">(</span><span class="n">XmlBeanDefinitionReader</span><span class="w"> </span><span class="n">reader</span><span class="p">)</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
@@ -13477,8 +13473,8 @@ Xml 方式则是解析 Spring 配置的 applicationContext.xml 的文件，读�
 <p>getResourceByPath 方法调用过程：</p>
 <p><img alt="" src="../../image/c11/rpobd-3.png" /></p>
 <p>通过 FileSystemResource 对象，Spring 可以进行相关的 I/O 操作，完成 BeanDefinition 的 Resource 定位过程。</p>
-<div class="language-text highlight"><pre><span></span><code>这里只是分析了FileSystemXmlApplicationContext的容器下Resource定位过程，
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>这里只是分析了FileSystemXmlApplicationContext的容器下Resource定位过程，
+</span></code></pre></div>
 <p>如果是其他的 ApplicationContext，那么对应生成其他的 Resource，比如 ClassPathResource、</p>
 <p>ServletContextResource 等。关于 Spring 中 Resource 的种类，继承关系如下：</p>
 <p><img alt="" src="../../image/c11/rpobd-4.png" /></p>

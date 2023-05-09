@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4695,7 +4695,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4709,7 +4709,7 @@
   
     <li class="md-nav__item">
       <a href="../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10266,7 +10266,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10294,7 +10294,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10350,7 +10350,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10426,7 +10426,7 @@
   
     <li class="md-nav__item">
       <a href="../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10876,7 +10876,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10918,7 +10918,7 @@
   
     <li class="md-nav__item">
       <a href="../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11719,7 +11719,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11843,7 +11843,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12669,7 +12669,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12827,7 +12827,7 @@
   
     <li class="md-nav__item">
       <a href="../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13103,19 +13103,19 @@
 <p>目前在 Java 语言层面能实现阻塞唤醒的方式一共有三种：suspend 与 resume 组合、wait 与 notify 组合、park 与 unpark 组合。
 其中 suspend 与 resume 因为存在无法解决的竟态问题而被 Java 废弃。同样地，wait 与 notify 也存在竟态条件，wait 必须在 notify 之前执行，假如一个线程先执行 notify 再执行 wait 将可能导致一个线程永远阻塞。</p>
 <p>如此一来，必须要另外一种解决方案，即 park 与 unpark 组合。该方案的实现类位于 juc 包下，自 JDK1.5 版本引入，应该也是因为当时编写 JUC 时发现 Java 现有方式无法解决问题而引入的新阻塞唤醒方式。由于 park 与 unpark 的实现基于许可机制，许可只能为 0 或 1 两种状态，所以 unpark 与 park 的操作不会累加状态值。也就是说许可是一次性的，也就是说不管是先 unpark 一次还是一百次，只要使用了 park 后许可就没了，下次要得到许可就得重新 unpark。此外 park 与 unpark 没有时序性要求，unpark 可以在 park 之前执行。如 unpark 先执行，后面 park 将不阻塞。下面我们将重新回顾下阻塞与唤醒相关操作知识。</p>
-<p><img alt="Java的阻塞与唤醒方式" src="../../image/c7/bawut-1.png" /></p>
+<p><img alt="Java 的阻塞与唤醒方式" src="../../image/c7/bawut-1.png" /></p>
 <h3 id="_1">为什么需要阻塞和唤醒<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>对于线程的阻塞和唤醒我们已经非常熟悉了，但为什么需要阻塞和唤醒操作呢？笼统地说，就是为了控制线程在某些关键节点执行的先后顺序。因为线程之间是独立的，它们要互相通信就比较麻烦，而为了让线程之间能够通信我们就引入共享变量。比如某个线程将信息写到变量上，而另外一个线程就能够读取信息了，这样便能够实现线程之间的通信。比如下面的例子，线程一通过共享变量 message 与线程二进行通信。但这种方式并不总是正确，因为两个线程是独立执行的，无法控制线程二先赋值共享变量，导致偶尔线程一接收到的 message 是 null。</p>
 <p><img alt="线程通信" src="../../image/c7/bawut-2.png" /></p>
 <p>为了解决上述问题，我们可以在线程一中增加一个 while 判断，当 message 变量为 null 时就一直循环，直到线程二将信息赋值到 message。这样做确实能解决问题，但这种做法最多只能算是二流方法。</p>
-<p><img alt="Java层的while阻塞" src="../../image/c7/bawut-3.png" /></p>
+<p><img alt="Java 层的 while 阻塞" src="../../image/c7/bawut-3.png" /></p>
 <p>所以，最终还是需要 Java 从内置角度来提供阻塞与唤醒的操作，这样才能是线程之间通信更加高效。也就是 suspend 与 resume、wait 与 notify、park 与 unpark 三套组合解决方案。</p>
 <h3 id="wait-notify">wait 与 notify 实现阻塞与唤醒<a class="headerlink" href="#wait-notify" title="Permanent link">&para;</a></h3>
 <p>suspend 与 resume 很早就已弃用，我们跳过，先看 wait 与 notify 组合。这两个线程通过 wait 与 notify 组合来实现阻塞与唤醒。需要注意到按要求必须使用 synchronized 对 wait 和 notify 进行加锁，否则将会产生异常。假如线程一先得到锁，那么 message 肯定为 null，这时线程一会调用 wait 方法进去阻塞状态。而如果线程二先获得锁，那么 message 则已经被赋值，肯定不为空。这两种情况都没问题，保证了程序的准确性。</p>
-<p><img alt="wait与notify组合" src="../../image/c7/bawut-4.png" /></p>
+<p><img alt="wait 与 notify 组合" src="../../image/c7/bawut-4.png" /></p>
 <h3 id="park-unpark">park 与 unpark 实现阻塞与唤醒<a class="headerlink" href="#park-unpark" title="Permanent link">&para;</a></h3>
 <p>对于 wait 与 notify 方式，仍然存在不足。wait 必须在 notify 之前执行，假如先执行 notify 再执行 wait 将可能导致线程永远无法被唤醒。可以看到使用了 park 与 unpark 组合后代码也简洁很多，而且更容易理解。假如线程一执行得更快则该线程执行 park 操作而阻塞，等到线程二对 message 赋值后执行 unpark 操作才能让线程一继续往下执行。假如线程二执行得更快则对 message 赋值后会对线程一进行 unpark 操作，那么线程一在执行 park 操作时就能直接通过了。这就是 park 与 unpark 使用许可机制的优势。</p>
-<p><img alt="park与unpark组合" src="../../image/c7/bawut-5.png" /></p>
+<p><img alt="park 与 unpark 组合" src="../../image/c7/bawut-5.png" /></p>
 <p>另外，我们需要注意的是许可是一次性的。也就是说不管是先 unpark 一次还是一百次，只要使用了 park 后许可就没了，下次要得到许可就得重新 unpark。比如下面先对当前线程 unpark 了五次，然后第一次 park 就将许可使用掉了，那么第二个 park 就阻塞了，主线程被阻塞无法往下执行。</p>
 <p><img alt="一次性的许可" src="../../image/c7/bawut-6.png" /></p>
 <h3 id="locksupport">阻塞唤醒核心类 LockSupport<a class="headerlink" href="#locksupport" title="Permanent link">&para;</a></h3>

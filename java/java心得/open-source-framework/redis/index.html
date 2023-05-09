@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4624,7 +4624,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4638,7 +4638,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10331,7 +10331,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10359,7 +10359,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10415,7 +10415,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10491,7 +10491,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10941,7 +10941,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10983,7 +10983,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11784,7 +11784,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11908,7 +11908,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12734,7 +12734,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12892,7 +12892,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13319,61 +13319,35 @@
 <h3 id="_4">内部方法详解：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <h4 id="1string">1.String<a class="headerlink" href="#1string" title="Permanent link">&para;</a></h4>
 <ul>
-<li>String setBin(String key, byte[] value)</li>
+<li><code>String setBin(String key, byte[] value)</code></li>
 </ul>
-<p>按字节数组关联到 key 下</p>
-<ul>
-<li>byte[] getBin(String key)</li>
-</ul>
-<p>根据 key 查找对应下的字节数组</p>
-<ul>
-<li>String set(String key, String value)</li>
-</ul>
-<p>将字符串值 value 关联到 key</p>
-<ul>
-<li>String get(String key)</li>
-</ul>
-<p>返回 key 所关联的字符串值,如果 key 不存在则返回 null</p>
-<ul>
-<li>long setnx(String key, String value)</li>
-</ul>
-<p>将字符串值 value 关联到 key，如果 key 已存在则不做任何改变。返回 1 表示 key 不存在，第一次设置；返回 0 表示 key 已经存在</p>
-<ul>
-<li>String setex(String key, int seconds, String value)</li>
-</ul>
-<p>将值 value 关联到 key，并将 key 的生命周期设为 seconds(以秒为单位)。如果 key 已经存在，SETEX 命令将覆写旧值。</p>
-<ul>
-<li>long append(String key, String value)</li>
-</ul>
+<p>按字节数组关联到 key 下
+- byte[] getBin(String key)</p>
+<p>根据 key 查找对应下的字节数组
+- <code>String set(String key, String value)</code></p>
+<p>将字符串值 value 关联到 key
+- String get(String key)</p>
+<p>返回 key 所关联的字符串值,如果 key 不存在则返回 null
+- long setnx(String key, String value)</p>
+<p>将字符串值 value 关联到 key，如果 key 已存在则不做任何改变。返回 1 表示 key 不存在，第一次设置；返回 0 表示 key 已经存在
+- String setex(String key, int seconds, String value)</p>
+<p>将值 value 关联到 key，并将 key 的生命周期设为 seconds(以秒为单位)。如果 key 已经存在，SETEX 命令将覆写旧值。
+- long append(String key, String value)</p>
 <p>如果 key 已经存在并且是一个字符串，APPEND 命令将 value 追加到 key 原来的值之后<BR>
-  如果 key 不存在，APPEND 就简单地将给定 key 设为 value，同 SET key value</p>
-<ul>
-<li>long strlen(String key) throws RedisException;</li>
-</ul>
-<p>获取 key 所对应的 value 字符串长度</p>
-<ul>
-<li>long incr(String key)</li>
-</ul>
-<p>将 key 中储存的数字值加 1,如果 key 不存在,以 0 为 key 的初始值,然后执行 INCR 操作。线程安全</p>
-<ul>
-<li>long incrBy(String key, long n)</li>
-</ul>
-<p>将 key 中储存的数字值加 n,如果 key 不存在,以 0 为 key 的初始值,然后执行 INCRBY 操作</p>
-<ul>
-<li>long decr(String key)</li>
-</ul>
-<p>将 key 中储存的数字值减 1,如果 key 不存在,以 0 为 key 的初始值,然后执行 DECR 操作。</p>
-<ul>
-<li>long decrBy(String key, long n)</li>
-</ul>
-<p>将 key 中储存的数字值减 n,如果 key 不存在,以 0 为 key 的初始值,然后执行 DECRBY 操</p>
-<ul>
-<li>String getSet(String key, String value)</li>
-</ul>
-<p>设置 key 为当前值，并返回旧的值</p>
-<ul>
-<li>String set(String key, String value, String nxxx, String expx, long time) throws RedisException;</li>
-</ul>
+  如果 key 不存在，APPEND 就简单地将给定 key 设为 value，同 SET key value
+- long strlen(String key) throws RedisException;</p>
+<p>获取 key 所对应的 value 字符串长度
+- long incr(String key)</p>
+<p>将 key 中储存的数字值加 1,如果 key 不存在,以 0 为 key 的初始值,然后执行 INCR 操作。线程安全
+- long incrBy(String key, long n)</p>
+<p>将 key 中储存的数字值加 n,如果 key 不存在,以 0 为 key 的初始值,然后执行 INCRBY 操作
+- long decr(String key)</p>
+<p>将 key 中储存的数字值减 1,如果 key 不存在,以 0 为 key 的初始值,然后执行 DECR 操作。
+- long decrBy(String key, long n)</p>
+<p>将 key 中储存的数字值减 n,如果 key 不存在,以 0 为 key 的初始值,然后执行 DECRBY 操
+- String getSet(String key, String value)</p>
+<p>设置 key 为当前值，并返回旧的值
+- String set(String key, String value, String nxxx, String expx, long time) throws RedisException;</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>将字符串值value关联到key:
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>nxxx：必须是NX或者XX，NX表示不存在则设置否则不做操作；XX表示存在才设置否则不做操作
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>expx：过期时间单位必须是EX或PX，EX表示单位是“秒”，PX表示单位是“毫秒”
@@ -13388,50 +13362,28 @@
 <ul>
 <li>long lpush(String key, String value)</li>
 </ul>
-<p>将值 value 插入到列表 key 的表头。 如果 key 不存在，一个空列表会被创建并执行 LPUSH 操作</p>
-<ul>
-<li>long lpushBin(String key, byte[] value)</li>
-</ul>
-<p>同上</p>
-<ul>
-<li>long rpush(String key, String value)</li>
-</ul>
-<p>将值 value 插入到列表 key 的表尾。 如果 key 不存在，一个空列表会被创建并执行 RPUSH 操作</p>
-<ul>
-<li>long rpushBin(String key, byte[] value)</li>
-</ul>
-<p>同上</p>
-<ul>
-<li>String lpop(String key)</li>
-</ul>
-<p>移除并返回列表 key 的头元素</p>
-<ul>
-<li>byte[] lpopBin(String key)</li>
-</ul>
-<p>同上</p>
-<ul>
-<li>String rpop(String key)</li>
-</ul>
-<p>移除并返回列表 key 的尾元素</p>
-<ul>
-<li>byte[] rpopBin(String key)</li>
-</ul>
-<p>同上</p>
-<ul>
-<li>long llen(String key)</li>
-</ul>
-<p>计算列表长度</p>
-<ul>
-<li>List<String> lrange(String key, long start, long end)</li>
-</ul>
-<p>返回列表 key 中指定区间内的元素，[start,end]，区间为 0 开始</p>
-<ul>
-<li>String ltrim(String key, int start, int end)</li>
-</ul>
-<p>列表只保留指定区间内的元素，不在指定区间之内的元素都将被删除</p>
-<ul>
-<li>long lrem(final String key, final long count, final String value)</li>
-</ul>
+<p>将值 value 插入到列表 key 的表头。 如果 key 不存在，一个空列表会被创建并执行 LPUSH 操作
+- long lpushBin(String key, byte[] value)</p>
+<p>同上
+- long rpush(String key, String value)</p>
+<p>将值 value 插入到列表 key 的表尾。 如果 key 不存在，一个空列表会被创建并执行 RPUSH 操作
+- long rpushBin(String key, byte[] value)</p>
+<p>同上
+- String lpop(String key)</p>
+<p>移除并返回列表 key 的头元素
+- byte[] lpopBin(String key)</p>
+<p>同上
+- String rpop(String key)</p>
+<p>移除并返回列表 key 的尾元素
+- byte[] rpopBin(String key)</p>
+<p>同上
+- long llen(String key)</p>
+<p>计算列表长度
+- List<String> lrange(String key, long start, long end)</p>
+<p>返回列表 key 中指定区间内的元素，[start,end]，区间为 0 开始
+- String ltrim(String key, int start, int end)</p>
+<p>列表只保留指定区间内的元素，不在指定区间之内的元素都将被删除
+- long lrem(final String key, final long count, final String value)</p>
 <p>根据参数 count 的值，移除列表中与参数 value 相等的元素<BR>
   count 的值可以是以下几种：<BR>
   count &gt; 0: 从表头开始向表尾搜索，移除与 value 相等的元素，数量为 count <BR>
@@ -13441,140 +13393,80 @@
 <ul>
 <li>long sadd(String key, String member)</li>
 </ul>
-<p>将 member 单个元素加入到集合 key 当中</p>
-<ul>
-<li>long sadd(String key, String... members)</li>
-</ul>
-<p>将 members 元素数组加入到集合 key 当中</p>
-<ul>
-<li>long srem(String key, String member)</li>
-</ul>
-<p>移除集合中的 member 元素</p>
-<ul>
-<li>long scard(String key)</li>
-</ul>
-<p>集合中元素的数量</p>
-<ul>
-<li>Set<String> smembers(String key)</li>
-</ul>
+<p>将 member 单个元素加入到集合 key 当中
+- long sadd(String key, String... members)</p>
+<p>将 members 元素数组加入到集合 key 当中
+- long srem(String key, String member)</p>
+<p>移除集合中的 member 元素
+- long scard(String key)</p>
+<p>集合中元素的数量
+- Set<String> smembers(String key)</p>
 <p>返回 set 中的所有元素</p>
 <h4 id="4sorted-set">4.sorted set<a class="headerlink" href="#4sorted-set" title="Permanent link">&para;</a></h4>
 <ul>
 <li>long zadd(String key, double score, String member)</li>
 </ul>
-<p>将 member 元素及其 score 值加入到有序集 key 当中</p>
-<ul>
-<li>double zincrby(String key, double score, String member)</li>
-</ul>
-<p>对 member 元素增加 score 值</p>
-<ul>
-<li>long zrem(String key, String member)</li>
-</ul>
-<p>移除有序集合 key 中的成员 member，如果 member 不是有序集中的成员，不做任何操作</p>
-<ul>
-<li>long zremrangeByScore(String key, double start, double end)</li>
-</ul>
-<p>删除的有序集合保存在 key 的最小值和最大值(含)之间的分数的所有元素</p>
-<ul>
-<li>long zcard(String key)</li>
-</ul>
-<p>集合长度</p>
-<ul>
-<li>long zcount(String key, double min, double max)</li>
-</ul>
-<p>有序集 key 中，score 值在 min 和 max 之间的成员数量</p>
-<ul>
-<li>double zscore(String key, String member)</li>
-</ul>
-<p>有序集 key 中，成员 member 的 score 值</p>
-<ul>
-<li>long zrank(String key, String member)</li>
-</ul>
+<p>将 member 元素及其 score 值加入到有序集 key 当中
+- double zincrby(String key, double score, String member)</p>
+<p>对 member 元素增加 score 值
+- long zrem(String key, String member)</p>
+<p>移除有序集合 key 中的成员 member，如果 member 不是有序集中的成员，不做任何操作
+- long zremrangeByScore(String key, double start, double end)</p>
+<p>删除的有序集合保存在 key 的最小值和最大值(含)之间的分数的所有元素
+- long zcard(String key)</p>
+<p>集合长度
+- long zcount(String key, double min, double max)</p>
+<p>有序集 key 中，score 值在 min 和 max 之间的成员数量
+- double zscore(String key, String member)</p>
+<p>有序集 key 中，成员 member 的 score 值
+- long zrank(String key, String member)</p>
 <p>返回有序集 key 中成员 member 的排名。其中有序集成员按 score 值递增(从小到大)顺序排列<BR>
-  排名以 0 为底，也就是说，score 值最小的成员排名为 0</p>
-<ul>
-<li>Set\<String> zrange(String key, int start, int end)</li>
-</ul>
-<p>返回索引区间之间的元素，最小元素索引号为 0，[start,end]</p>
-<ul>
-<li>Set\<String> zrangeByScore(String key, double min, double max)</li>
-</ul>
-<p>返回分数之间的元素,[min,max]</p>
-<ul>
-<li>Set\<String> zrangeByScore(String key, double min, double max, int offset, int count)</li>
-</ul>
-<p>分数由小到大的顺序，取[min,max]之间的数据，offset 表示取数据的开始位置（O：表示最小分数的那个位置），最多返回 count 个结果</p>
-<ul>
-<li>long zrevrank(String key, String member)</li>
-</ul>
+  排名以 0 为底，也就是说，score 值最小的成员排名为 0
+- Set\<String> zrange(String key, int start, int end)</p>
+<p>返回索引区间之间的元素，最小元素索引号为 0，[start,end]
+- Set\<String> zrangeByScore(String key, double min, double max)</p>
+<p>返回分数之间的元素,[min,max]
+- Set\<String> zrangeByScore(String key, double min, double max, int offset, int count)</p>
+<p>分数由小到大的顺序，取[min,max]之间的数据，offset 表示取数据的开始位置（O：表示最小分数的那个位置），最多返回 count 个结果
+- long zrevrank(String key, String member)</p>
 <p>返回有序集 key 中成员 member 的排名。其中有序集成员按 score 值递减(从大到小)排序<BR>
-  排名以 0 为底，也就是说，score 值最大的成员排名为 0</p>
-<ul>
-<li>Set\<String> zrevrange(String key, int start, int end)</li>
-</ul>
-<p>返回索引区间之间的元素，最大元素索引号为 0,[start,end]</p>
-<ul>
-<li>Set\<Tuple> zrevrangeByScoreWithScores(String key, double max,
-  double min, int offset, int count)</li>
-</ul>
+  排名以 0 为底，也就是说，score 值最大的成员排名为 0
+- Set\<String> zrevrange(String key, int start, int end)</p>
+<p>返回索引区间之间的元素，最大元素索引号为 0,[start,end]
+- Set\<Tuple> zrevrangeByScoreWithScores(String key, double max,
+  double min, int offset, int count)</p>
 <p>分数按大到小的顺序，取[min,max]之间的数据，offset 表示取数据的开始位置（O：表示最大分数的那个位置），最多返回 count 个结果，Tuple 包含分数、value 值等信息。</p>
 <h4 id="5hash">5.Hash<a class="headerlink" href="#5hash" title="Permanent link">&para;</a></h4>
 <ul>
 <li>long hset(String key, String field, String value)</li>
 </ul>
-<p>将哈希表 key 中的域 field 的值设为 value,如果 key 不存在，一个新的哈希表被创建并进行 HSET 操作。</p>
-<ul>
-<li>long hsetBin(String key, String field, byte[] value)</li>
-</ul>
-<p>同上</p>
-<ul>
-<li>long hsetnx(String key, String field, String value)</li>
-</ul>
-<p>将哈希表 key 中的域 field 的值设为 value，如果 key 已经存在，不做任何处理</p>
-<ul>
-<li>String hmset(String key, Map<String, String> hash)</li>
-</ul>
-<p>同时将多个 field - value(域-值)对设置到哈希表 key 中</p>
-<ul>
-<li>String hget(String key, String field)</li>
-</ul>
-<p>返回哈希表 key 中给定域 field 的值</p>
-<ul>
-<li>byte[] hgetBin(String key, String field)</li>
-</ul>
-<p>同上</p>
-<ul>
-<li>Map<String, String> hgetAll(String key)</li>
-</ul>
-<p>返回哈希表 key 中，所有的域和值</p>
-<ul>
-<li>List<String> hmget(String key, String... fields)</li>
-</ul>
+<p>将哈希表 key 中的域 field 的值设为 value,如果 key 不存在，一个新的哈希表被创建并进行 HSET 操作。
+- long hsetBin(String key, String field, byte[] value)</p>
+<p>同上
+- long hsetnx(String key, String field, String value)</p>
+<p>将哈希表 key 中的域 field 的值设为 value，如果 key 已经存在，不做任何处理
+- String hmset(String key, Map<String, String> hash)</p>
+<p>同时将多个 field - value(域-值)对设置到哈希表 key 中
+- String hget(String key, String field)</p>
+<p>返回哈希表 key 中给定域 field 的值
+- byte[] hgetBin(String key, String field)</p>
+<p>同上
+- Map<String, String> hgetAll(String key)</p>
+<p>返回哈希表 key 中，所有的域和值
+- List<String> hmget(String key, String... fields)</p>
 <p>返回哈希表 key 中，一个或多个给定域的值，一一对应的<BR>
-  如果给定的域不存在于哈希表，那么返回一个 null.</p>
-<ul>
-<li>long hlen(String key)</li>
-</ul>
-<p>返回 Hash 表中的元素个数</p>
-<ul>
-<li>Set<String> hkeys(String key)</li>
-</ul>
-<p>返回 Hash 表中的 keys</p>
-<ul>
-<li>List<String> hvals(String key)</li>
-</ul>
-<p>返回 Hash 表中的 values</p>
-<ul>
-<li>boolean hexists(String key, String field)</li>
-</ul>
-<p>哈希表 key 中，给定域 field 是否存在</p>
-<ul>
-<li>long hdel(String key, String field)</li>
-</ul>
-<p>删除哈希表 key 中的一个指定域</p>
-<ul>
-<li>long hincrBy(String key, String field, long value)</li>
-</ul>
+  如果给定的域不存在于哈希表，那么返回一个 null.
+- long hlen(String key)</p>
+<p>返回 Hash 表中的元素个数
+- Set<String> hkeys(String key)</p>
+<p>返回 Hash 表中的 keys
+- List<String> hvals(String key)</p>
+<p>返回 Hash 表中的 values
+- boolean hexists(String key, String field)</p>
+<p>哈希表 key 中，给定域 field 是否存在
+- long hdel(String key, String field)</p>
+<p>删除哈希表 key 中的一个指定域
+- long hincrBy(String key, String field, long value)</p>
 <p>对哈希中的某个 key 对应的值增加计数，线程安全。<br>
   如果 field 不存在，初始值为 0<br></p>
 <h3 id="lua">lua 脚本<a class="headerlink" href="#lua" title="Permanent link">&para;</a></h3>

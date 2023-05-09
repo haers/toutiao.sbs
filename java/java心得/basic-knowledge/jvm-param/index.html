@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4624,7 +4624,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4638,7 +4638,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10256,7 +10256,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10284,7 +10284,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10340,7 +10340,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10416,7 +10416,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10866,7 +10866,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10908,7 +10908,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11709,7 +11709,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11833,7 +11833,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12659,7 +12659,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12817,7 +12817,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13143,22 +13143,12 @@
 </span></code></pre></div>
 <p><strong>经验：</strong></p>
 <ol>
-<li>
-<p>Xmn 用于设置新生代的大小。过小会增加 Minor GC 频率，过大会减小老年代的大小。一般设为整个堆空间的 &frac14; 或 &#8531;.</p>
-</li>
-<li>
-<p>XX:SurvivorRatio 用于设置新生代中 survivor 空间（from/to）和 eden 空间的大小比例；
-   XX:TargetSurvivorRatio 表示，当经历 Minor GC 后，survivor 空间占有量（百分比）超过它的时候，就会压缩进入老年代（当然，如果 survivor 空间不够，则直接进入老年代）。默认值为 50%。</p>
-</li>
-<li>
-<p>为了性能考虑，一开始尽量将新生代对象留在新生代，避免新生的大对象直接进入老年代。因为新生对象大部分都是短期的，这就造成了老年代的内存浪费，并且回收代价也高（Full GC 发生在老年代和方法区 Perm）.</p>
-</li>
-<li>
-<p>当 Xms=Xmx，可以使得堆相对稳定，避免不停震荡</p>
-</li>
-<li>
-<p>一般来说，MaxPermSize 设为 64MB 可以满足绝大多数的应用了。若依然出现方法区溢出，则可以设为 128MB。若 128MB 还不能满足需求，那么就应该考虑程序优化了，减少**动态类**的产生。</p>
-</li>
+<li>Xmn 用于设置新生代的大小。过小会增加 Minor GC 频率，过大会减小老年代的大小。一般设为整个堆空间的 &frac14; 或 &#8531;.</li>
+<li>XX:SurvivorRatio 用于设置新生代中 survivor 空间（from/to）和 eden 空间的大小比例；
+   XX:TargetSurvivorRatio 表示，当经历 Minor GC 后，survivor 空间占有量（百分比）超过它的时候，就会压缩进入老年代（当然，如果 survivor 空间不够，则直接进入老年代）。默认值为 50%。</li>
+<li>为了性能考虑，一开始尽量将新生代对象留在新生代，避免新生的大对象直接进入老年代。因为新生对象大部分都是短期的，这就造成了老年代的内存浪费，并且回收代价也高（Full GC 发生在老年代和方法区 Perm）.</li>
+<li>当 Xms=Xmx，可以使得堆相对稳定，避免不停震荡</li>
+<li>一般来说，MaxPermSize 设为 64MB 可以满足绝大多数的应用了。若依然出现方法区溢出，则可以设为 128MB。若 128MB 还不能满足需求，那么就应该考虑程序优化了，减少**动态类**的产生。</li>
 </ol>
 <h4 id="_1">二、垃圾回收<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p><strong>垃圾回收算法：</strong></p>
@@ -13217,7 +13207,7 @@
 <ul>
 <li>-XX:CMSInitiatingOccupancyFraction</li>
 </ul>
-<p>使用 CMS 作为垃圾回收，使用 70%后开始 CMS 收集</p>
+<p>使用 CMS 作为垃圾回收，使用 70% 后开始 CMS 收集</p>
 <ul>
 <li>-XX:CMSInitiatingPermOccupancyFraction</li>
 </ul>

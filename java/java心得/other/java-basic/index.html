@@ -944,7 +944,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C02.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/B%26BPlusTree/" class="md-nav__link">
-        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+树
+        为什么 MongoDB 索引选择 B-树，而 Mysql 选择 B+ 树
       </a>
     </li>
   
@@ -4624,7 +4624,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C11.spring/AutowireCandidateResolver/" class="md-nav__link">
-        AutowireCandidateResolver 深度分析，解析@Lazy、@Qualifier 注解的原理
+        AutowireCandidateResolver 深度分析，解析 @Lazy、@Qualifier 注解的原理
       </a>
     </li>
   
@@ -4638,7 +4638,7 @@
   
     <li class="md-nav__item">
       <a href="../../../C11.spring/Autowired/" class="md-nav__link">
-        Spring 依赖注入@Autowired 深层原理、源码级分析
+        Spring 依赖注入 @Autowired 深层原理、源码级分析
       </a>
     </li>
   
@@ -10236,7 +10236,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/common-problem-spring-security-oauth2-authorization-server-the-login-succeeds-and-the-error-page-is-displayed/" class="md-nav__link">
-        spring security oauth2 authorization server登录成功跳转到error页面
+        spring security oauth2 authorization server 登录成功跳转到 error 页面
       </a>
     </li>
   
@@ -10264,7 +10264,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/jwt-jwt-jwk/" class="md-nav__link">
-        jwt，jwt，jwk到底是什么
+        jwt，jwt，jwk 到底是什么
       </a>
     </li>
   
@@ -10320,7 +10320,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/spring-authorization-server/spring-security-print-log/" class="md-nav__link">
-        spring security打印日志（兼容spring-security-oauth2-authorization-server）
+        spring security 打印日志（兼容 spring-security-oauth2-authorization-server）
       </a>
     </li>
   
@@ -10396,7 +10396,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../spring/springboot/Spring-Boot-project-Maven-multi--module-package-submissions-error-Unable-To-Find-Main-Class-solution/" class="md-nav__link">
-        Spring boot项目 maven多模块打包 子模块报错 Unable to find main class 解决方案
+        Spring boot 项目 maven 多模块打包 子模块报错 Unable to find main class 解决方案
       </a>
     </li>
   
@@ -10846,7 +10846,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../architecture/docker/docker-exports-the-image-to-the-local-area-and-upload-it-to-the-inner-network-server/" class="md-nav__link">
-        Docker将镜像导出到本地,上传至内网服务器上
+        Docker 将镜像导出到本地,上传至内网服务器上
       </a>
     </li>
   
@@ -10888,7 +10888,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../architecture/docker/docker-update-the-three-methods-of-container-mirror-image/" class="md-nav__link">
-        Docker更新容器镜像的三种方法
+        Docker 更新容器镜像的三种方法
       </a>
     </li>
   
@@ -11689,7 +11689,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/idea/start-Maven-project-error-in-IDEA%3A-Program-package-lombok.extRn.slf4j-does-not-have-any-problems.-How-to-solve-the-problem/" class="md-nav__link">
-        idea中启动maven项目报错：程序包lombok.extern.slf4j不存在问题如何解决
+        idea 中启动 maven 项目报错：程序包 lombok.extern.slf4j 不存在问题如何解决
       </a>
     </li>
   
@@ -11813,7 +11813,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/java/The-back-end-interface-of-the-SpringBoot%2BVue-project-returns-500-errors/" class="md-nav__link">
-        SpringBoot+Vue项目的后端接口全部返回500错误
+        SpringBoot+Vue 项目的后端接口全部返回 500 错误
       </a>
     </li>
   
@@ -12639,7 +12639,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/social/twitter-video-download/" class="md-nav__link">
-        如何下载Twitter视频？
+        如何下载 Twitter 视频？
       </a>
     </li>
   
@@ -12797,7 +12797,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../other/website/self-built-website-Favicon-icon-API-interface/" class="md-nav__link">
-        自建获取网站Favicon图标API接口
+        自建获取网站 Favicon 图标 API 接口
       </a>
     </li>
   
@@ -13076,27 +13076,13 @@
 </ol>
 <p>Java 内存模型规定和指引 Java 程序在不同的内存架构、CPU 和操作系统间有确定性地行为。它在多线程的情况下尤其重要。Java 内存模型对一个线程所做的变动能被其它线程可见提供了保证，它们之间是先行发生关系。这个关系定义了一些规则让程序员在并发编程时思路更清晰。比如，先行发生关系确保了：</p>
 <ul>
-<li>
-<p>线程内的代码能够按先后顺序执行，这被称为程序次序规则。</p>
-</li>
-<li>
-<p>对于同一个锁，一个解锁操作一定要发生在时间上后发生的另一个锁定操作之前，也叫做管程锁定规则。</p>
-</li>
-<li>
-<p>前一个对 volatile 的写操作在后一个 volatile 的读操作之前，也叫 volatile 变量规则。</p>
-</li>
-<li>
-<p>一个线程内的任何操作必需在这个线程的 start()调用之后，也叫作线程启动规则。</p>
-</li>
-<li>
-<p>一个线程的所有操作都会在线程终止之前，线程终止规则。</p>
-</li>
-<li>
-<p>一个对象的终结操作必需在这个对象构造完成之后，也叫对象终结规则。</p>
-</li>
-<li>
-<p>可传递性</p>
-</li>
+<li>线程内的代码能够按先后顺序执行，这被称为程序次序规则。</li>
+<li>对于同一个锁，一个解锁操作一定要发生在时间上后发生的另一个锁定操作之前，也叫做管程锁定规则。</li>
+<li>前一个对 volatile 的写操作在后一个 volatile 的读操作之前，也叫 volatile 变量规则。</li>
+<li>一个线程内的任何操作必需在这个线程的 start()调用之后，也叫作线程启动规则。</li>
+<li>一个线程的所有操作都会在线程终止之前，线程终止规则。</li>
+<li>一个对象的终结操作必需在这个对象构造完成之后，也叫对象终结规则。</li>
+<li>可传递性</li>
 </ul>
 <p>我强烈建议大家阅读《Java 并发编程实践》第十六章来加深对 Java 内存模型的理解。</p>
 <ol>
@@ -13120,7 +13106,7 @@
 </ol>
 <p>这是我在一次面试中遇到的一个很刁钻的 Java 面试题, 简单的说，如果异常没有被捕获该线程将会停止执行。Thread.UncaughtExceptionHandler 是用于处理未捕获异常造成线程突然中断情况的一个内嵌接口。当一个未捕获异常将造成线程中断的时候 JVM 会使用 Thread.getUncaughtExceptionHandler()来查询线程的 UncaughtExceptionHandler 并将线程和异常作为参数传递给 handler 的 uncaughtException()方法进行处理。</p>
 <p>15） 如何在两个线程间共享数据？</p>
-<p>你可以通过共享对象来实现这个目的，或者是使用像阻塞队列这样并发的数据结构。这篇教程《Java 线程间通信》（<a href="http://javarevisited.blogspot.sg/2013/12/inter-thread-communication-in-java-wait-notify-example.html">http://javarevisited.blogspot.sg/2013/12/inter-thread-communication-in-java-wait-notify-example.html</a>）(涉及到在两个线程间共享对象)用wait和notify方法实现了生产者消费者模型。</p>
+<p>你可以通过共享对象来实现这个目的，或者是使用像阻塞队列这样并发的数据结构。这篇教程《Java 线程间通信》（<a href="http://javarevisited.blogspot.sg/2013/12/inter-thread-communication-in-java-wait-notify-example.html">http://javarevisited.blogspot.sg/2013/12/inter-thread-communication-in-java-wait-notify-example.html</a>）(涉及到在两个线程间共享对象)用 wait 和 notify 方法实现了生产者消费者模型。</p>
 <ol>
 <li>Java 中 notify 和 notifyAll 有什么区别？</li>
 </ol>
@@ -13163,18 +13149,10 @@
 <p>Java 多线程中的死锁</p>
 <p>死锁是指两个或两个以上的进程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，它们都将无法推进下去。这是一个严重的问题，因为死锁会让你的程序挂起无法完成任务，死锁的发生必须满足以下四个条件：</p>
 <ul>
-<li>
-<p>互斥条件：一个资源每次只能被一个进程使用。</p>
-</li>
-<li>
-<p>请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。</p>
-</li>
-<li>
-<p>不剥夺条件：进程已获得的资源，在末使用完之前，不能强行剥夺。</p>
-</li>
-<li>
-<p>循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。</p>
-</li>
+<li>互斥条件：一个资源每次只能被一个进程使用。</li>
+<li>请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
+<li>不剥夺条件：进程已获得的资源，在末使用完之前，不能强行剥夺。</li>
+<li>循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。</li>
 </ul>
 <p>避免死锁最简单的方法就是阻止循环等待条件，将系统中所有的资源设置标志位、排序，规定所有的进程申请资源必须以一定的顺序（升序或降序）做操作来避免死锁。</p>
 <ol>
@@ -13226,7 +13204,7 @@
 <ol>
 <li>如何在 Java 中创建 Immutable 对象？</li>
 </ol>
-<p>这个问题看起来和多线程没什么关系， 但不变性有助于简化已经很复杂的并发程序。Immutable 对象可以在没有同步的情况下共享，降低了对该对象进行并发访问时的同步化开销。可是 Java 没有<a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Immutable" title="GitHub User: Immutable">@Immutable</a> 这个注解符，要创建不可变类，要实现下面几个步骤：通过构造方法初始化所有成员、对变量不要提供 setter 方法、将所有的成员声明为私有的，这样就不允许直接访问这些成员、在 getter 方法中，不要直接返回对象本身，而是克隆对象，并返回对象的拷贝。我的文章 how to make an object Immutable in Java 有详细的教程，看完你可以充满自信。</p>
+<p>这个问题看起来和多线程没什么关系， 但不变性有助于简化已经很复杂的并发程序。Immutable 对象可以在没有同步的情况下共享，降低了对该对象进行并发访问时的同步化开销。可是 Java 没有 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/Immutable" title="GitHub User: Immutable">@Immutable</a> 这个注解符，要创建不可变类，要实现下面几个步骤：通过构造方法初始化所有成员、对变量不要提供 setter 方法、将所有的成员声明为私有的，这样就不允许直接访问这些成员、在 getter 方法中，不要直接返回对象本身，而是克隆对象，并返回对象的拷贝。我的文章 how to make an object Immutable in Java 有详细的教程，看完你可以充满自信。</p>
 <p>44） Java 中的 ReadWriteLock 是什么？</p>
 <p>一般而言，读写锁是用来提升并发程序性能的锁分离技术的成果。Java 中的 ReadWriteLock 是 Java 5 中新增的一个接口，一个 ReadWriteLock 维护一对关联的锁，一个用于只读操作一个用于写。在没有写线程的情况下一个读锁可能会同时被多个读线程持有。写锁是独占的，你可以使用 JDK 中的 ReentrantReadWriteLock 来实现这个规则，它最多支持 65535 个写锁和 65535 个读锁。</p>
 <ol>
@@ -13248,18 +13226,12 @@
 </ol>
 <p>这种问题我最喜欢了，我相信你在写并发代码来提升性能的时候也会遵循某些最佳实践。以下三条最佳实践我觉得大多数 Java 程序员都应该遵循：</p>
 <ul>
-<li>
-<p>给你的线程起个有意义的名字。
-  这样可以方便找 bug 或追踪。OrderProcessor, QuoteProcessor or TradeProcessor 这种名字比 Thread-1. Thread-2 and Thread-3 好多了，给线程起一个和它要完成的任务相关的名字，所有的主要框架甚至 JDK 都遵循这个最佳实践。</p>
-</li>
-<li>
-<p>避免锁定和缩小同步的范围
-  锁花费的代价高昂且上下文切换更耗费时间空间，试试最低限度的使用同步和锁，缩小临界区。因此相对于同步方法我更喜欢同步块，它给我拥有对锁的绝对控制权。</p>
-</li>
-<li>
-<p>多用同步类少用 wait 和 notify
-  首先，CountDownLatch, Semaphore, CyclicBarrier 和 Exchanger 这些同步类简化了编码操作，而用 wait 和 notify 很难实现对复杂控制流的控制。其次，这些类是由最好的企业编写和维护在后续的 JDK 中它们还会不断优化和完善，使用这些更高等级的同步工具你的程序可以不费吹灰之力获得优化。</p>
-</li>
+<li>给你的线程起个有意义的名字。
+  这样可以方便找 bug 或追踪。OrderProcessor, QuoteProcessor or TradeProcessor 这种名字比 Thread-1. Thread-2 and Thread-3 好多了，给线程起一个和它要完成的任务相关的名字，所有的主要框架甚至 JDK 都遵循这个最佳实践。</li>
+<li>避免锁定和缩小同步的范围
+  锁花费的代价高昂且上下文切换更耗费时间空间，试试最低限度的使用同步和锁，缩小临界区。因此相对于同步方法我更喜欢同步块，它给我拥有对锁的绝对控制权。</li>
+<li>多用同步类少用 wait 和 notify
+  首先，CountDownLatch, Semaphore, CyclicBarrier 和 Exchanger 这些同步类简化了编码操作，而用 wait 和 notify 很难实现对复杂控制流的控制。其次，这些类是由最好的企业编写和维护在后续的 JDK 中它们还会不断优化和完善，使用这些更高等级的同步工具你的程序可以不费吹灰之力获得优化。</li>
 <li>
 <p>多用并发集合少用同步集合
   这是另外一个容易遵循且受益巨大的最佳实践，并发集合比同步集合的可扩展性更好，所以在并发编程时使用并发集合效果更好。如果下一次你需要用到 map，你应该首先想到用 ConcurrentHashMap。我的文章 Java 并发集合有更详细的说明。</p>
